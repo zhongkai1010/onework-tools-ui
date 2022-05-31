@@ -1,23 +1,14 @@
 <template>
-  <el-config-provider :locale="currentLocale">
-    <router-view />
-  </el-config-provider>
+  <router-view />
 </template>
-
 <script lang="ts">
-import { defineComponent } from "vue";
-import { ElConfigProvider } from "element-plus";
-import zhCn from "element-plus/lib/locale/lang/zh-cn";
-import en from "element-plus/lib/locale/lang/en";
+import { defineComponent, onMounted } from "vue";
 export default defineComponent({
   name: "app",
-  components: {
-    [ElConfigProvider.name]: ElConfigProvider
+  setup() {
+    onMounted(() => {
+      console.log("组件挂载");
+    });
   },
-  computed: {
-    currentLocale() {
-      return this.$storage.locale?.locale === "zh" ? zhCn : en;
-    }
-  }
 });
 </script>
