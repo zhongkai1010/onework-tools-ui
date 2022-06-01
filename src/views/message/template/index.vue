@@ -1,4 +1,4 @@
-<template>User</template>
+<template>message template</template>
 
 <script setup lang="ts"></script>
 
