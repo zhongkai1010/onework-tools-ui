@@ -16,10 +16,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-interface Tab {
-  name: string;
-  component: any;
-}
 
 const props = defineProps<{
   tabs: Tab[];

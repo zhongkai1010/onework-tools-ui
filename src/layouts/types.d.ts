@@ -3,3 +3,9 @@ interface MenuItem {
   title: string;
   menus?: MenuItem[];
 }
+
+
+interface Tab {
+  name: string;
+  component: any;
+}
