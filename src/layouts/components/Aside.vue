@@ -1,24 +1,25 @@
 <template>
   <el-menu
     mode="horizontal"
-    @select="(_: string, keyPath: string[])=>emit('menuClick',keyPath)"
+    @select="(_, keyPath) => emit('menuClick', keyPath)"
   >
-    <template v-for="item in props.menus" :index="item.key">
+    <template v-for="item in props.menus">
       <template v-if="item.menus">
-        <el-sub-menu :index="item.key" class="menu">
+        <el-sub-menu :index="item.key" :key="item.key">
           <template #title>
-            <el-icon><location /></el-icon>
             <span>{{ item.title }}</span>
           </template>
-          <el-menu-item v-for="subItem in item.menus" :index="subItem.key">{{
-            subItem.title
-          }}</el-menu-item>
+          <el-menu-item
+            v-for="subItem in item.menus"
+            :index="subItem.key"
+            :key="subItem.key"
+            >{{ subItem.title }}</el-menu-item
+          >
         </el-sub-menu>
       </template>
       <template v-else>
-        <el-menu-item :index="item.key" class="menu">
+        <el-menu-item :index="item.key" :key="item.key">
           <template #title>
-            <el-icon><location /></el-icon>
             <span>{{ item.title }}</span>
           </template></el-menu-item
         >
@@ -40,8 +41,13 @@ const emit = defineEmits<{
 }>();
 </script>
 <style lang="scss" scoped>
-.menu {
- 
-  height: 40px;
+.el-menu-item {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  border-bottom: 2px solid transparent;
+  color: var(--el-menu-text-color);
 }
 </style>

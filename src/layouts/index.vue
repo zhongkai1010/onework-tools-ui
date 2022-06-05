@@ -1,20 +1,18 @@
 <template>
   <el-container>
-    <el-header>
-      <el-row>
-        <el-col :span="4">login</el-col>
-        <el-col :span="16">
-          <Aside @menu-click="onMenuClick" :menus="menus"
-        /></el-col>
-        <el-col :span="4">tools</el-col>
-      </el-row>
-      <el-row>
+    <el-header class="ow_header">
+      <div class="ow_main">
+        <div class="logo-container">login</div>
+        <Aside @menu-click="onMenuClick" :menus="menus" />
+        <div>tools</div>
+      </div>
+      <div>
         <ul style="display: inline-flex">
           <li v-for="(item, index) in store.menus" :key="index">
             {{ item.name }}
           </li>
         </ul>
-      </el-row>
+      </div>
     </el-header>
     <el-main>
       <router-view></router-view>
@@ -30,38 +28,6 @@ import { useMultiTagsStore } from "../store/multiTags";
 
 const store = useMultiTagsStore();
 
-const getMenus = (
-  items: RouteRecordRaw[] = [],
-  data: MenuItem[] = []
-): void => {
-  items.forEach((item) => {
-    const children = item.children || [];
-    const childrenLen = children.length;
-    if (childrenLen == 1) {
-      const page = children[0];
-      const menu: MenuItem = {
-        key: page.name as string,
-        title: (page.meta ? page.meta.title : page.name) as string,
-      };
-      data.push(menu);
-    }
-    if (childrenLen > 1) {
-      const menu: MenuItem = {
-        key: item.name as string,
-        title: (item.meta ? item.meta.title : item.name) as string,
-        menus: [],
-      };
-      children.forEach((subItem) => {
-        menu.menus?.push({
-          key: subItem.name as string,
-          title: (subItem.meta ? subItem.meta.title : subItem.name) as string,
-        });
-      });
-      data.push(menu);
-    }
-  });
-};
-
 const tabs: Tab[] = [
   {
     name: "主页",
@@ -69,21 +35,51 @@ const tabs: Tab[] = [
   },
 ];
 
-const menus = [];
-getMenus(modulePages, menus);
+const menus: MenuItem[] = [];
+modulePages.forEach((item) => {
+  console.log(item);
+  if (item.children) {
+    if (item.children.length == 1) {
+      const menu = {
+        key: item.children[0].name,
+        title: item.children[0].meta.title,
+      };
+      menus.push(menu);
+    }
+    if (item.children.length > 1) {
+      const menu = {
+        key: item.name,
+        title: item.meta.title,
+        menus: [],
+      };
+      item.children.forEach((subItem) => {
+        menu.menus.push({
+          key: subItem.name,
+          title: subItem.meta.title,
+        });
+      });
+
+      menus.push(menu);
+    }
+  }
+});
+
+console.log("-----------menus----------------", menus);
 
 const router = useRouter();
 
-const onMenuClick = async (keyPath: string[]) => {
+const onMenuClick = (keyPath: string[]) => {
   const name = keyPath[keyPath.length - 1];
+
+  console.log(name, pageNameMap);
   const pageFun = pageNameMap.get(name);
-  const component = await pageFun();
+
+  console.log("pageFun", pageFun);
+  const component = pageFun();
   tabs.push({
     name,
     component,
   });
-
-  console.log();
   const names = name.split("_");
   const url = `/${names.join("/")}`;
 
@@ -91,4 +87,24 @@ const onMenuClick = async (keyPath: string[]) => {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.ow_header {
+  display: flex;
+  height: 60px;
+  background-color: #000;
+  color: #fff;
+  align-items: center;
+  justify-items: flex-end;
+}
+.ow_main {
+  width: 92%;
+  margin: auto;
+}
+
+.logo-container {
+  position: relative;
+  height: 60px;
+  overflow: hidden;
+  line-height: 60px;
+}
+</style>
