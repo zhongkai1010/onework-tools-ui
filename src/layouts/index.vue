@@ -1,10 +1,22 @@
 <template>
   <el-container>
-    <el-header class="ow_header">
-      <div class="ow_main">
-        <div class="logo-container">login</div>
-        <Aside @menu-click="onMenuClick" :menus="menus" />
-        <div>tools</div>
+    <el-header class="header">
+      <div class="header-container">
+        <a class="logo" href="/">
+          <img src="../assets/logo.png" />
+          <span class="title">OneWork Toools UI</span>
+        </a>
+        <div class="menu">
+          <Aside :menus="menus" />
+        </div>
+        <div class="tool">
+          <el-button :icon="Search" circle />
+          <el-button type="primary" :icon="Edit" />
+          <el-button type="success" :icon="Check" />
+          <el-button type="info" :icon="Message" />
+          <el-button type="warning" :icon="Star" />
+          <el-button type="danger" :icon="Delete" />
+        </div>
       </div>
       <div>
         <ul style="display: inline-flex">
@@ -14,7 +26,7 @@
         </ul>
       </div>
     </el-header>
-    <el-main>
+    <el-main class="content">
       <router-view></router-view>
     </el-main>
   </el-container>
@@ -22,9 +34,18 @@
 
 <script setup lang="ts">
 import Aside from "./components/Aside.vue";
+
 import { RouteRecordRaw, useRouter } from "vue-router";
 import { modulePages, pageNameMap } from "../router/index";
 import { useMultiTagsStore } from "../store/multiTags";
+import {
+  Check,
+  Delete,
+  Edit,
+  Message,
+  Search,
+  Star,
+} from "@element-plus/icons-vue";
 
 const store = useMultiTagsStore();
 
@@ -88,23 +109,75 @@ const onMenuClick = (keyPath: string[]) => {
 </script>
 
 <style lang="scss" scoped>
-.ow_header {
-  display: flex;
-  height: 60px;
-  background-color: #000;
-  color: #fff;
-  align-items: center;
-  justify-items: flex-end;
+:root {
+  --el-color-primary: #409eff;
+  --el-color-primary-light-3: #79bbff;
+  --el-color-primary-light-5: #a0cfff;
+  --el-color-primary-light-7: #c6e2ff;
+  --el-color-primary-light-8: #d9ecff;
+  --el-color-primary-light-9: #ecf5ff;
+  --el-color-primary-dark-2: #337ecc;
 }
-.ow_main {
-  width: 92%;
-  margin: auto;
+html body {
+  font-family: PingFang SC, Arial, Microsoft YaHei, sans-serif;
+  font-size: 14px;
+  color: var(--el-color-black);
+}
+.header {
+  height: 60px;
+
+  .header-container {
+    display: flex;
+    padding: 0 20px 0 20px;
+    min-height: 100%;
+    width: 92% !important;
+    margin: auto !important;
+
+    .logo {
+      display: flex;
+      a {
+        margin-right: 10%;
+      }
+      img {
+        height: 32px;
+        margin: auto;
+      }
+    }
+    .title {
+      display: inline-block;
+      margin-left: 5px;
+      overflow: hidden;
+      font-size: 20px;
+      line-height: 55px;
+
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+    .menu {
+      height: 60px;
+      margin-left: 60px;
+    }
+    .menu > .el-menu {
+      height: 40px;
+      top: 10px;
+      border-bottom: 0px;
+    }
+  }
+}
+</style>
+<style>
+.el-menu--horizontal > .el-menu-item {
+  margin-right: 5px;
+  border-radius: 5px;
 }
 
-.logo-container {
-  position: relative;
-  height: 60px;
-  overflow: hidden;
-  line-height: 60px;
+.el-menu--horizontal > .el-sub-menu {
+  border-radius: 5px;
+}
+
+.el-menu--horizontal > .el-menu-item.is-active {
+  background-color: aquamarine;
+  border-bottom: 0px;
 }
 </style>
