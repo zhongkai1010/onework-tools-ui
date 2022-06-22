@@ -18,13 +18,6 @@
           <el-button type="danger" :icon="Delete" />
         </div>
       </div>
-      <div>
-        <ul style="display: inline-flex">
-          <li v-for="(item, index) in store.menus" :key="index">
-            {{ item.name }}
-          </li>
-        </ul>
-      </div>
     </el-header>
     <el-main class="content">
       <router-view></router-view>
@@ -35,9 +28,8 @@
 <script setup lang="ts">
 import Aside from "./components/Aside.vue";
 
-import { RouteRecordRaw, useRouter } from "vue-router";
-import { modulePages, pageNameMap } from "../router/index";
-import { useMultiTagsStore } from "../store/multiTags";
+import { modulePages } from "../router/index";
+
 import {
   Check,
   Delete,
@@ -46,37 +38,30 @@ import {
   Search,
   Star,
 } from "@element-plus/icons-vue";
-
-const store = useMultiTagsStore();
-
-const tabs: Tab[] = [
-  {
-    name: "主页",
-    component: import("../views/home/index.vue"),
-  },
-];
+import { RouteRecordRaw } from "vue-router";
 
 const menus: MenuItem[] = [];
-modulePages.forEach((item) => {
+modulePages.forEach((item: RouteRecordRaw) => {
   console.log(item);
   if (item.children) {
     if (item.children.length == 1) {
-      const menu = {
-        key: item.children[0].name,
-        title: item.children[0].meta.title,
+      const rootItem: RouteRecordRaw = item.children[0];
+      const menu: MenuItem = {
+        key: rootItem.name as string,
+        title: rootItem.meta?.title as string,
       };
       menus.push(menu);
     }
     if (item.children.length > 1) {
-      const menu = {
-        key: item.name,
-        title: item.meta.title,
-        menus: [],
+      const menu: MenuItem = {
+        key: item.name as string,
+        title: item.meta?.title as string,
+        menus: [] as MenuItem[],
       };
-      item.children.forEach((subItem) => {
-        menu.menus.push({
-          key: subItem.name,
-          title: subItem.meta.title,
+      item.children.forEach((subItem: RouteRecordRaw) => {
+        menu.menus?.push({
+          key: subItem.name as string,
+          title: subItem.meta?.title as string,
         });
       });
 
@@ -86,26 +71,6 @@ modulePages.forEach((item) => {
 });
 
 console.log("-----------menus----------------", menus);
-
-const router = useRouter();
-
-const onMenuClick = (keyPath: string[]) => {
-  const name = keyPath[keyPath.length - 1];
-
-  console.log(name, pageNameMap);
-  const pageFun = pageNameMap.get(name);
-
-  console.log("pageFun", pageFun);
-  const component = pageFun();
-  tabs.push({
-    name,
-    component,
-  });
-  const names = name.split("_");
-  const url = `/${names.join("/")}`;
-
-  router.push(url);
-};
 </script>
 
 <style lang="scss" scoped>
