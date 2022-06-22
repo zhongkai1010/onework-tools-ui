@@ -15,4 +15,11 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "./src/styles/variable.scss";'
+      }
+    }
+  }
 });
