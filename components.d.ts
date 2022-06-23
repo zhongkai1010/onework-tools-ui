@@ -17,6 +17,7 @@ declare module '@vue/runtime-core' {
     OwTable: typeof import('./src/components/OwTable/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SubMenu: typeof import('./src/components/OwSubMenu/src/subMenu.vue')['default']
     VexTable: typeof import('./src/components/VexTable/index.vue')['default']
   }
 }

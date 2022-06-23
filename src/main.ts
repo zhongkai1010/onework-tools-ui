@@ -10,9 +10,11 @@ import "./styles/element.scss";
 import "./styles/base.scss";
 
 import { IconifyIcon } from "./components/OwIcon/index";
+import { SubMenu } from "./components/OwSubMenu/index";
 
 const app = createApp(App);
 app.use(router);
 app.use(createPinia());
 app.component("IconifyIcon", IconifyIcon);
+app.component("SubMenu", SubMenu);
 app.mount("#app");

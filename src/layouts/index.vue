@@ -2,10 +2,10 @@
   <div class="ow-wrapper">
     <el-container>
       <el-header class="header-wrapper">
-        <Header />
+        <Header :menus="menus" />
         <Tabs />
       </el-header>
-      <el-main class="content"> content</el-main>
+      <el-main class="content-wrapper"> content</el-main>
     </el-container>
   </div>
 </template>
@@ -13,6 +13,7 @@
 <script setup lang="ts">
 import Header from "./components/Header/index.vue";
 import Tabs from "./components/Tabs/index.vue";
+import { menus } from "./components/helper/index";
 </script>
 
 <style lang="scss" scoped>
@@ -21,6 +22,10 @@ import Tabs from "./components/Tabs/index.vue";
   background-color: $header-background;
   .header-wrapper {
     padding: 0 5%;
+  }
+  .content-wrapper {
+    height: calc(100vh - 60px);
+    background-color: $main-background;
   }
 }
 </style>

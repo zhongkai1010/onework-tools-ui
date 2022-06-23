@@ -10,7 +10,7 @@ import { CSSProperties } from "vue";
 
 const { icon = "", size = 20 } = defineProps<{
   icon: string;
-  size: number;
-  color: Pick<CSSProperties, "color">;
+  size?: number;
+  color?: Pick<CSSProperties, "color">;
 }>();
 </script>

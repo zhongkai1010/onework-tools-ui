@@ -4,103 +4,20 @@
       <img src="../../../assets/logo.png" />
       <span class="title">OneWork Toools UI</span>
     </a>
-    <el-menu :default-active="1" mode="horizontal">
-      <el-menu-item index="1">
-        <template #title>
-          <IconifyIcon icon="lucide:toggle-right" />
-          <span>菜单1</span>
-        </template>
-      </el-menu-item>
-      <el-sub-menu index="2">
-        <template #title>
-          <IconifyIcon icon="lucide:toggle-right" />
-          <span> 菜单2</span>
-        </template>
-        <el-menu-item index="2-1">
-          <template #title>
-            <IconifyIcon icon="lucide:toggle-right" />
-            <span> 菜单2-1</span>
-          </template>
-        </el-menu-item>
-        <el-menu-item index="2-2">
-          <template #title>
-            <IconifyIcon icon="lucide:toggle-right" />
-            <span> 菜单2-1</span>
-          </template>
-        </el-menu-item>
-        <el-menu-item index="2-3">
-          <template #title>
-            <IconifyIcon icon="lucide:toggle-right" />
-            <span> 菜单2-1</span>
-          </template>
-        </el-menu-item>
-        <el-sub-menu index="2-4">
-          <template #title>
-            <IconifyIcon icon="lucide:toggle-right" />
-            <span> 菜单2-1</span>
-          </template>
-          <el-menu-item index="2-4-1">
-            <template #title>
-              <IconifyIcon icon="lucide:toggle-right" />
-              <span> 菜单2-1</span>
-            </template>
-          </el-menu-item>
-          <el-menu-item index="2-4-2">
-            <template #title>
-              <IconifyIcon icon="lucide:toggle-right" />
-              <span> 菜单2-1</span>
-            </template>
-          </el-menu-item>
-          <el-menu-item index="2-4-3">
-            <template #title>
-              <IconifyIcon icon="lucide:toggle-right" />
-              <span> 菜单2-1</span>
-            </template>
-          </el-menu-item>
-        </el-sub-menu>
-      </el-sub-menu>
-      <el-menu-item index="3">
-        <template #title>
-          <IconifyIcon icon="lucide:toggle-right" />
-          <span> 菜单2-1</span>
-        </template>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <template #title>
-          <IconifyIcon icon="lucide:toggle-right" />
-          <span> 菜单2-1</span>
-        </template>
-      </el-menu-item>
-      <el-menu-item index="5">
-        <template #title>
-          <IconifyIcon icon="lucide:toggle-right" />
-          <span> 菜单2-1</span>
-        </template>
-      </el-menu-item>
-      <el-menu-item index="6">
-        <template #title>
-          <IconifyIcon icon="lucide:toggle-right" />
-          <span> 菜单2-1</span>
-        </template>
-      </el-menu-item>
-      <el-menu-item index="7">
-        <template #title>
-          <IconifyIcon icon="lucide:toggle-right" />
-          <span> 菜单2-1</span>
-        </template>
-      </el-menu-item>
-      <el-menu-item index="8">
-        <template #title>
-          <IconifyIcon icon="lucide:toggle-right" />
-          <span> 菜单2-1</span>
-        </template>
-      </el-menu-item>
+    <el-menu mode="horizontal">
+      <template v-for="menu in menus">
+        <SubMenu :menu="menu" />
+      </template>
     </el-menu>
     <div class="tool">123</div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { menus } = defineProps<{
+  menus: Menu[];
+}>();
+</script>
 
 <style lang="scss" scoped>
 .header-container {
@@ -109,6 +26,7 @@
   padding: 0 20px 0 20px;
   .logo {
     display: flex;
+    width: 15%;
     margin-right: 5%;
     a {
       margin-right: 10%;
@@ -129,6 +47,7 @@
     vertical-align: middle;
   }
   .el-menu {
+    width: 60%;
     border-bottom: 0;
     background-color: $header-background;
     .el-menu-item {
@@ -146,7 +65,8 @@
     &:deep(.el-sub-menu__title) {
       height: 40px;
       border-bottom: 0;
-      margin: 10px 5px 0px 0px;
+      margin-top: 10px;
+      margin-right: 0px;
     }
     &:deep(.el-sub-menu__title:hover) {
       background-color: $header-menu-activate-background;
