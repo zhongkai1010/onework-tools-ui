@@ -5,7 +5,9 @@
         <Header :menus="menus" />
         <Tabs />
       </el-header>
-      <el-main class="content-wrapper"> content</el-main>
+      <el-main class="content-wrapper">
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </div>
 </template>

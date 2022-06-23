@@ -6,6 +6,7 @@ export default {
   path: "/application",
   component: LAYOUT,
   redirect: "/application/index",
+  meta: { title: "应用管理" },
   children: [
     {
       name: "application_index",

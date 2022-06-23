@@ -2,7 +2,10 @@ import { RouteRecordRaw } from "vue-router";
 import { moduleRoutes } from "../../../router/index";
 import _ from "lodash";
 
-const routeConvertMenu = (routes: RouteRecordRaw[]): Menu[] => {
+const routeConvertMenu = (
+  routes: RouteRecordRaw[],
+  parent?: Menu | undefined
+): Menu[] => {
   const menus = [] as Menu[];
   for (let index = 0; index < routes.length; index++) {
     const route = routes[index];
@@ -17,9 +20,13 @@ const routeConvertMenu = (routes: RouteRecordRaw[]): Menu[] => {
     menu.title = (route.meta?.title || route.name) as string;
     menu.order = index;
     menu.icon = (route.meta?.icon || "ep:element-plus") as string;
-    menu.path = route.path;
+    if (parent) {
+      menu.path = `${parent.path}/${route.path}`;
+    } else {
+      menu.path = route.path;
+    }
     if (route.children) {
-      menu.children = routeConvertMenu(route.children);
+      menu.children = routeConvertMenu(route.children, menu);
     }
     menus.push(menu);
   }
@@ -27,5 +34,7 @@ const routeConvertMenu = (routes: RouteRecordRaw[]): Menu[] => {
 };
 
 const menus = routeConvertMenu(moduleRoutes);
+
+console.log(menus);
 
 export { menus, routeConvertMenu };

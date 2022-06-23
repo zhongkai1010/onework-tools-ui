@@ -1,6 +1,6 @@
 <template>
   <template v-if="menu.children">
-    <el-sub-menu :index="menu.index">
+    <el-sub-menu :index="menu.path">
       <template #title>
         <IconifyIcon :icon="menu.icon" />
         <span>{{ menu.title }}</span>
@@ -11,7 +11,7 @@
     </el-sub-menu>
   </template>
   <template v-else>
-    <el-menu-item :index="menu.index">
+    <el-menu-item :index="menu.path">
       <IconifyIcon :icon="menu.icon" />
       <span>{{ menu.title }}</span>
     </el-menu-item>

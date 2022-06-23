@@ -4,7 +4,7 @@
       <img src="../../../assets/logo.png" />
       <span class="title">OneWork Toools UI</span>
     </a>
-    <el-menu mode="horizontal">
+    <el-menu mode="horizontal" :router="true">
       <template v-for="menu in menus">
         <SubMenu :menu="menu" />
       </template>
@@ -66,7 +66,7 @@ const { menus } = defineProps<{
       height: 40px;
       border-bottom: 0;
       margin-top: 10px;
-      margin-right: 0px;
+      margin-right: 5px;
     }
     &:deep(.el-sub-menu__title:hover) {
       background-color: $header-menu-activate-background;

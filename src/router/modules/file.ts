@@ -6,12 +6,13 @@ export default {
   path: "/file",
   component: LAYOUT,
   redirect: "/file/index",
+  meta: { title: "文件管理", icon: "akar-icons:file" },
   children: [
     {
       name: "file_index",
       path: "index",
       component: () => import("../../views/file/index.vue"),
-      meta: { title: "文件附件" },
-    },
-  ],
+      meta: { title: "文件附件" }
+    }
+  ]
 } as RouteRecordRaw;
