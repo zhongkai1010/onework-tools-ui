@@ -1,7 +1,7 @@
 <template>
   <div class="ow-wrapper">
     <el-container>
-      <el-header class="header">
+      <el-header class="header-wrapper">
         <Header />
         <Tabs />
       </el-header>
@@ -11,13 +11,16 @@
 </template>
 
 <script setup lang="ts">
-import Header from "./components/header/index.vue";
-import Tabs from "./components/tabs/index.vue";
+import Header from "./components/Header/index.vue";
+import Tabs from "./components/Tabs/index.vue";
 </script>
 
 <style lang="scss" scoped>
 .ow-wrapper {
   min-height: 100vh;
   background-color: $header-background;
+  .header-wrapper {
+    padding: 0 5%;
+  }
 }
 </style>

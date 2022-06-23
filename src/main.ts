@@ -9,8 +9,10 @@ import "./styles/element.scss";
 // 基础样式
 import "./styles/base.scss";
 
+import { IconifyIcon } from "./components/OwIcon/index";
 
 const app = createApp(App);
 app.use(router);
 app.use(createPinia());
+app.component("IconifyIcon", IconifyIcon);
 app.mount("#app");

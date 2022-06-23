@@ -13,10 +13,11 @@ declare module '@vue/runtime-core' {
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
-    ElTabPane: typeof import('element-plus/es')['ElTabPane']
-    ElTabs: typeof import('element-plus/es')['ElTabs']
+    IconifyIcon: typeof import('./src/components/OwIcon/src/iconifyIcon.vue')['default']
+    OwTable: typeof import('./src/components/OwTable/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    VexTable: typeof import('./src/components/VexTable/index.vue')['default']
   }
 }
 

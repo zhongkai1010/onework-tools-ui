@@ -5,34 +5,98 @@
       <span class="title">OneWork Toools UI</span>
     </a>
     <el-menu :default-active="1" mode="horizontal">
-      <el-menu-item index="1">Processing Center</el-menu-item>
+      <el-menu-item index="1">
+        <template #title>
+          <IconifyIcon icon="lucide:toggle-right" />
+          <span>菜单1</span>
+        </template>
+      </el-menu-item>
       <el-sub-menu index="2">
-        <template #title>Workspace</template>
-        <el-menu-item index="2-1">item one</el-menu-item>
-        <el-menu-item index="2-2">item two</el-menu-item>
-        <el-menu-item index="2-3">item three</el-menu-item>
+        <template #title>
+          <IconifyIcon icon="lucide:toggle-right" />
+          <span> 菜单2</span>
+        </template>
+        <el-menu-item index="2-1">
+          <template #title>
+            <IconifyIcon icon="lucide:toggle-right" />
+            <span> 菜单2-1</span>
+          </template>
+        </el-menu-item>
+        <el-menu-item index="2-2">
+          <template #title>
+            <IconifyIcon icon="lucide:toggle-right" />
+            <span> 菜单2-1</span>
+          </template>
+        </el-menu-item>
+        <el-menu-item index="2-3">
+          <template #title>
+            <IconifyIcon icon="lucide:toggle-right" />
+            <span> 菜单2-1</span>
+          </template>
+        </el-menu-item>
         <el-sub-menu index="2-4">
-          <template #title>item four</template>
-          <el-menu-item index="2-4-1">用户管理</el-menu-item>
-          <el-menu-item index="2-4-2">用户管理</el-menu-item>
-          <el-menu-item index="2-4-3">用户管理</el-menu-item>
+          <template #title>
+            <IconifyIcon icon="lucide:toggle-right" />
+            <span> 菜单2-1</span>
+          </template>
+          <el-menu-item index="2-4-1">
+            <template #title>
+              <IconifyIcon icon="lucide:toggle-right" />
+              <span> 菜单2-1</span>
+            </template>
+          </el-menu-item>
+          <el-menu-item index="2-4-2">
+            <template #title>
+              <IconifyIcon icon="lucide:toggle-right" />
+              <span> 菜单2-1</span>
+            </template>
+          </el-menu-item>
+          <el-menu-item index="2-4-3">
+            <template #title>
+              <IconifyIcon icon="lucide:toggle-right" />
+              <span> 菜单2-1</span>
+            </template>
+          </el-menu-item>
         </el-sub-menu>
       </el-sub-menu>
-      <el-menu-item index="3">用户管理</el-menu-item>
-      <el-menu-item index="4">用户管理</el-menu-item>
-      <el-menu-item index="5">用户管理</el-menu-item>
-      <el-menu-item index="6">用户管理</el-menu-item>
-      <el-menu-item index="7">用户管理</el-menu-item>
-      <el-menu-item index="8">用户管理</el-menu-item>
+      <el-menu-item index="3">
+        <template #title>
+          <IconifyIcon icon="lucide:toggle-right" />
+          <span> 菜单2-1</span>
+        </template>
+      </el-menu-item>
+      <el-menu-item index="4">
+        <template #title>
+          <IconifyIcon icon="lucide:toggle-right" />
+          <span> 菜单2-1</span>
+        </template>
+      </el-menu-item>
+      <el-menu-item index="5">
+        <template #title>
+          <IconifyIcon icon="lucide:toggle-right" />
+          <span> 菜单2-1</span>
+        </template>
+      </el-menu-item>
+      <el-menu-item index="6">
+        <template #title>
+          <IconifyIcon icon="lucide:toggle-right" />
+          <span> 菜单2-1</span>
+        </template>
+      </el-menu-item>
+      <el-menu-item index="7">
+        <template #title>
+          <IconifyIcon icon="lucide:toggle-right" />
+          <span> 菜单2-1</span>
+        </template>
+      </el-menu-item>
+      <el-menu-item index="8">
+        <template #title>
+          <IconifyIcon icon="lucide:toggle-right" />
+          <span> 菜单2-1</span>
+        </template>
+      </el-menu-item>
     </el-menu>
-    <div class="tool">
-      <el-button :icon="Search" circle />
-      <el-button type="primary" :icon="Edit" />
-      <el-button type="success" :icon="Check" />
-      <el-button type="info" :icon="Message" />
-      <el-button type="warning" :icon="Star" />
-      <el-button type="danger" :icon="Delete" />
-    </div>
+    <div class="tool">123</div>
   </div>
 </template>
 
