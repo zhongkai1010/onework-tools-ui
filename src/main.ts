@@ -6,6 +6,7 @@ import { createPinia } from "pinia";
 import "./styles/reset.scss";
 // 重置element plus样式
 import "./styles/element.scss";
+import 'element-plus/es/components/message/style/css'
 // 基础样式
 import "./styles/base.scss";
 

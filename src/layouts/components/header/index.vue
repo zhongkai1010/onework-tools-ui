@@ -9,7 +9,35 @@
         <SubMenu :menu="menu" />
       </template>
     </el-menu>
-    <div class="tool">123</div>
+    <div class="tool">
+      <IconifyIcon icon="akar-icons:lock-on" class="button" title="锁定" />
+      <IconifyIcon icon="akar-icons:search" class="button" title="搜索" />
+      <el-badge :value="12" class="button">
+        <IconifyIcon icon="akar-icons:bell" title="通知" />
+      </el-badge>
+      <IconifyIcon icon="akar-icons:full-screen" class="button" title="全屏" />
+      <IconifyIcon
+        icon="uil:english-to-chinese"
+        class="button"
+        title="中英切换"
+      />
+      <IconifyIcon
+        icon="carbon:cloud-satellite-config"
+        class="button"
+        title="设置"
+      />
+      <IconifyIcon icon=" carbon:renew" class="button" title="刷新" />
+      <el-dropdown class="avatar">
+        <el-avatar src="../../../assets/logo.png" />
+        <span class="username">管理员</span>
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item>个人中心</el-dropdown-item>
+            <el-dropdown-item>退出系统</el-dropdown-item>
+          </el-dropdown-menu>
+        </template>
+      </el-dropdown>
+    </div>
   </div>
 </template>
 
@@ -23,7 +51,7 @@ const { menus } = defineProps<{
 .header-container {
   display: flex;
   min-height: 100%;
-  padding: 0 20px 0 20px;
+  padding: 0px 5%;
   .logo {
     display: flex;
     width: 15%;
@@ -41,7 +69,7 @@ const { menus } = defineProps<{
     margin-left: 5px;
     overflow: hidden;
     font-size: 20px;
-    line-height: 55px;
+    line-height: 60px;
     text-overflow: ellipsis;
     white-space: nowrap;
     vertical-align: middle;
@@ -83,6 +111,15 @@ const { menus } = defineProps<{
     justify-content: flex-end;
     display: flex;
     align-items: center;
+    .button {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+    .avatar {
+      .username {
+        font-size: 14px;
+      }
+    }
   }
 }
 </style>

@@ -23,10 +23,14 @@ import { menus } from "./components/helper/index";
   min-height: 100vh;
   background-color: $header-background;
   .header-wrapper {
-    padding: 0 5%;
+    position: fixed;
+    height: auto;
+    width: 100%;
   }
   .content-wrapper {
-    height: calc(100vh - 60px);
+    position: relative;
+    top: 100px;
+    height: calc(100vh - 100px);
     background-color: $main-background;
   }
 }

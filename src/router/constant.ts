@@ -7,7 +7,7 @@ export const LAYOUT = () => import('../layouts/index.vue')
 export const LOGIN_PAGE = {
   name: "login",
   path: "/login",
-  component: () => import("../views/home/index.vue"),
+  component: () => import("../views/login/index.vue"),
 } as RouteRecordRaw;
 
 export const NOT_PAGE = {
