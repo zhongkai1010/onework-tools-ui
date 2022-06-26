@@ -1,6 +1,14 @@
 html,
-body {
+body,
+#app {
+    position: relative;
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 0;
+    overflow: hidden;
     font-family: PingFang SC, Arial, Microsoft YaHei, sans-serif;
     font-size: 14px;
-    color: #000
+    color: var(--el-color-black);
+    background: #f6f8f9;
+    -webkit-font-smoothing: antialiased;
 }

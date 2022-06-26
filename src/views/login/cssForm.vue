@@ -31,19 +31,18 @@
       <el-col :span="10">
         <el-form-item label="width">
           <el-slider
-            :min="1"
-            :max="100"
+            style="width: 400px"
             v-model="formValue.width"
-            @change="() => emit('onChange', formValue)"
+            @input="() => emit('onChange', formValue)"
           />
         </el-form-item>
       </el-col>
       <el-col :span="10">
         <el-form-item label="height">
-          <el-input-number
-            :step="50"
+          <el-slider
+            style="width: 400px"
             v-model="formValue.height"
-            @change="() => emit('onChange', formValue)"
+            @input="() => emit('onChange', formValue)"
           />
         </el-form-item>
       </el-col>
@@ -57,13 +56,7 @@ import { reactive } from "vue";
 const inputs = {
   flexDirection: ["row", "row-reverse", "column", "column-reverse"],
   flexWrap: ["nowrap", "wrap", "wrap-reverse"],
-  justifyContent: [
-    "flex-start",
-    "flex-end",
-    "center",
-    "space-between",
-    "space-around"
-  ],
+  justifyContent: ["flex-start", "flex-end", "center", "space-between", "space-around"],
   alignItems: ["flex-start ", "flex-end", "center", "baseline", "stretch"],
   alignContent: [
     "flex-start",
@@ -71,20 +64,19 @@ const inputs = {
     "center",
     "space-between",
     "space-around",
-    "space-around",
-    "stretch"
-  ]
+    "stretch",
+  ],
 };
 
 const formValue = reactive({
-  width: 1,
-  height: 400,
+  width: 40,
+  height: 40,
   flexDirection: "row",
   flexWrap: "",
   justifyContent: "flex-start",
   alignItems: "stretch",
   alignContent: "stretch",
-  numBox: 10
+  numBox: 10,
 });
 
 const emit = defineEmits(["onChange"]);

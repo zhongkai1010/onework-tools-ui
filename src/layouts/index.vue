@@ -1,37 +1,61 @@
 <template>
   <div class="ow-wrapper">
-    <el-container>
-      <el-header class="header-wrapper">
-        <Header :menus="menus" />
-        <Tabs />
-      </el-header>
-      <el-main class="content-wrapper">
+    <div class="header-wrapper">
+      <Header :menus="menus" />
+      <Tabs />
+    </div>
+    <div class="content-wrapper">
+      <div class="content-container">
         <router-view></router-view>
-      </el-main>
-    </el-container>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Header from "./components/Header/index.vue";
-import Tabs from "./components/Tabs/index.vue";
-import { menus } from "./components/helper/index";
+import Header from './components/header/index.vue'
+import Tabs from './components/tabs/index.vue'
+import { menus } from './components/helper/index'
 </script>
 
 <style lang="scss" scoped>
 .ow-wrapper {
-  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  height: 100%;
   background-color: $header-background;
+
   .header-wrapper {
     position: fixed;
     height: auto;
+    padding: 0px;
     width: 100%;
+    border-bottom: 1px solid rgb(0 21 41 / 8%);
+    z-index: 100;
   }
+
   .content-wrapper {
-    position: relative;
-    top: 100px;
-    height: calc(100vh - 100px);
+    height: 100vh;
     background-color: $main-background;
+    padding-top: 110px;
+    z-index: 1;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 10px;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 4px;
+      background: #bfc7e0;
+      opacity: 0.3;
+    }
+
+    .content-container {
+      padding: 20px;
+    }
   }
 }
 </style>

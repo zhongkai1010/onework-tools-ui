@@ -20,18 +20,18 @@ const state = reactive<{
   boxNum: number;
 }>({
   boxStyle: {
-    width: "1%",
-    height: "400px"
+    width: "40%",
+    height: "40vh",
   },
-  boxNum: 10
+  boxNum: 10,
 });
 
-const onFormChange = value => {
+const onFormChange = (value) => {
   for (const key in value) {
     if (key == "width") {
       state.boxStyle[key] = `${value[key]}%`;
     } else if (key == "height") {
-      state.boxStyle[key] = `${value[key]}px`;
+      state.boxStyle[key] = `${value[key]}vh`;
     } else if (key == "numBox") {
       state.boxNum = value[key];
     } else {
@@ -47,19 +47,13 @@ const onFormChange = value => {
   flex-direction: column;
 }
 .tools-container {
-  display: flex;
   padding: 10px;
-  .el-dropdown {
-    margin-right: 10px;
-  }
 }
 
 .box-container {
   display: flex;
   padding: 10px;
   margin: 10px;
-  // width: 80%;
-  // height: 600px;
   border: 1px solid rgb(192, 192, 192);
   div {
     width: 40px;
