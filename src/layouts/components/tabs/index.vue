@@ -1,60 +1,60 @@
 <template>
   <div class="tabs-container">
-    <el-tabs class="tabs" type="card" @contextmenu="onTabContextMenu">
-     <el-tab-pane>
+    <ElTabs class="tabs" type="card" @contextmenu="onTabContextMenu">
+      <ElTabPane>
         <template #label>
           <span class="label">
             <IconifyIcon icon="akar-icons:lock-on" class="button" title="首页" />
             <span>首页</span>
           </span>
         </template>
-      </el-tab-pane>
-      <el-tab-pane closable>
+      </ElTabPane>
+      <ElTabPane closable>
         <template #label>
           <span class="label">
             <IconifyIcon icon="akar-icons:lock-on" class="button" title="锁定" />
             <span>Route</span>
           </span>
         </template>
-      </el-tab-pane>
-      <el-tab-pane closable label="Config">
+      </ElTabPane>
+      <ElTabPane closable label="Config">
         <template #label>
           <span class="label">
             <IconifyIcon icon="akar-icons:lock-on" class="button" title="锁定" />
             <span>Route</span>
           </span>
         </template>
-      </el-tab-pane>
-      <el-tab-pane closable label="Role">
+      </ElTabPane>
+      <ElTabPane closable label="Role">
         <template #label>
           <span class="label">
             <IconifyIcon icon="akar-icons:lock-on" class="button" title="锁定" />
             <span>Route</span>
           </span>
         </template>
-      </el-tab-pane>
-      <el-tab-pane closable label="Task">
+      </ElTabPane>
+      <ElTabPane closable label="Task">
         <template #label>
           <span class="label">
             <IconifyIcon icon="akar-icons:lock-on" class="button" title="锁定" />
             <span>Route</span>
           </span>
         </template>
-      </el-tab-pane>
-    </el-tabs>
+      </ElTabPane>
+    </ElTabs>
 
-    <el-dropdown class="dropdown">
+    <ElDropdown class="dropdown">
       <IconifyIcon icon="fe:app-menu" :size="20" />
       <template #dropdown>
-        <el-dropdown-menu>
-          <el-dropdown-item>刷新</el-dropdown-item>
-          <el-dropdown-item>关闭其它</el-dropdown-item>
-          <el-dropdown-item>关闭左侧</el-dropdown-item>
-          <el-dropdown-item>关闭右侧</el-dropdown-item>
-          <el-dropdown-item>Action 5</el-dropdown-item>
-        </el-dropdown-menu>
+        <ElDropdownMenu>
+          <ElDropdownItem>刷新</ElDropdownItem>
+          <ElDropdownItem>关闭其它</ElDropdownItem>
+          <ElDropdownItem>关闭左侧</ElDropdownItem>
+          <ElDropdownItem>关闭右侧</ElDropdownItem>
+          <ElDropdownItem>Action 5</ElDropdownItem>
+        </ElDropdownMenu>
       </template>
-    </el-dropdown>
+    </ElDropdown>
     <TabTools
       :show="tabsMenuState.show"
       :x="tabsMenuState.x"
@@ -66,27 +66,27 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
-import TabTools from './TabTools.vue'
+import { reactive } from 'vue';
+import TabTools from './TabTools.vue';
 const tabsMenuState = reactive({
   show: false,
   x: 0,
   y: 0,
-})
+});
 const onToolsClick = () => {
-  tabsMenuState.show = false
-  console.log('onToolsClick')
-}
+  tabsMenuState.show = false;
+  console.log('onToolsClick');
+};
 const onToolsblur = () => {
-  tabsMenuState.show = false
-  console.log('onToolsblur')
-}
+  tabsMenuState.show = false;
+  console.log('onToolsblur');
+};
 const onTabContextMenu = (e: MouseEvent) => {
-  e.preventDefault()
-  tabsMenuState.show = true
-  tabsMenuState.x = e.x
-  tabsMenuState.y = e.y
-}
+  e.preventDefault();
+  tabsMenuState.show = true;
+  tabsMenuState.x = e.x;
+  tabsMenuState.y = e.y;
+};
 </script>
 <style lang="scss" scoped>
 .tabs-container {

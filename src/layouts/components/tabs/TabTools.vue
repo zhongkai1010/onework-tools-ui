@@ -1,7 +1,11 @@
 <template>
   <ul
     class="el-dropdown-menu tabs-menu"
-    :style="{ display: show ? 'block' : 'none', top: `${y + 5}px`, left: `${x}px` }"
+    :style="{
+      display: props.show ? 'block' : 'none',
+      top: `${props.y + 5}px`,
+      left: `${props.x}px`,
+    }"
     @mouseleave="() => emit('onBlur')"
   >
     <li
@@ -17,17 +21,13 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits } from 'vue'
-const emit = defineEmits(['onBlur', 'onClick'])
-const {
-  show = false,
-  x = 0,
-  y = 0,
-} = defineProps<{
-  show: boolean
-  x: number
-  y: number
-}>()
+import { defineEmits } from 'vue';
+const emit = defineEmits(['onBlur', 'onClick']);
+const props = defineProps<{
+  show: boolean;
+  x: number;
+  y: number;
+}>();
 
 const menuItems = [
   {
@@ -50,7 +50,7 @@ const menuItems = [
     text: '关闭全部',
     icon: 'ant-design:close-outlined',
   },
-]
+];
 </script>
 <style lang="scss" scoped>
 .tabs-menu {

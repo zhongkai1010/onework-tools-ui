@@ -4,35 +4,35 @@
       <img :src="logoPng" />
       <span class="title">OneWork Toools UI</span>
     </a>
-    <el-menu mode="horizontal" :router="true" @select="onMenuSelect">
-      <template v-for="menu in menus" :key="menu.index">
+    <ElMenu mode="horizontal" :router="true" @select="onMenuSelect">
+      <template v-for="menu in props.menus" :key="menu.path">
         <SubMenu :menu="menu" />
       </template>
-    </el-menu>
+    </ElMenu>
     <div class="tool">
       <IconifyIcon icon="akar-icons:lock-on" class="button" title="锁定" />
       <IconifyIcon icon="akar-icons:search" class="button" title="搜索" />
-      <el-badge :value="12" class="button">
+      <ElBadge :value="12" class="button">
         <IconifyIcon icon="akar-icons:bell" title="通知" />
-      </el-badge>
+      </ElBadge>
       <IconifyIcon icon="akar-icons:full-screen" class="button" title="全屏" />
       <IconifyIcon icon="uil:english-to-chinese" class="button" title="中英切换" />
       <IconifyIcon icon="carbon:cloud-satellite-config" class="button" title="设置" />
       <IconifyIcon icon=" carbon:renew" class="button" title="刷新" />
-      <el-dropdown popper-class="avatar">
+      <ElDropdown popper-class="avatar">
         <span class="avatar">
-          <el-avatar />
+          <ElAvatar />
           <span class="username">管理员</span>
           <IconifyIcon icon="ant-design:down-outlined" />
         </span>
 
         <template #dropdown>
-          <el-dropdown-menu>
-            <el-dropdown-item>个人中心</el-dropdown-item>
-            <el-dropdown-item>退出系统</el-dropdown-item>
-          </el-dropdown-menu>
+          <ElDropdownMenu>
+            <ElDropdownItem>个人中心</ElDropdownItem>
+            <ElDropdownItem>退出系统</ElDropdownItem>
+          </ElDropdownMenu>
         </template>
-      </el-dropdown>
+      </ElDropdown>
     </div>
   </div>
 </template>
@@ -41,7 +41,7 @@
 import logoPng from '../../../assets/logo.png';
 import { HeaderMenu } from '../../types';
 
-const { menus } = defineProps<{
+const props = defineProps<{
   menus: HeaderMenu[];
 }>();
 
@@ -91,8 +91,8 @@ const onMenuSelect = (index, path, item, routeResult) => {
     background-color: $header-background;
     .el-menu-item {
       margin: 10px 5px 0 0;
-      height: 40px;
       border-bottom: 0;
+      height: 40px;
       background-color: $header-menu-background;
       &:hover {
         background-color: $header-menu-activate-background;
