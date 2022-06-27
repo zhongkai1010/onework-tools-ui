@@ -1,4 +1,4 @@
-<template></template>
+<template>OwTable</template>
 
 <script setup lang="ts"></script>
 

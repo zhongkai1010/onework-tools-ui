@@ -51,7 +51,7 @@
           <ElDropdownItem>关闭其它</ElDropdownItem>
           <ElDropdownItem>关闭左侧</ElDropdownItem>
           <ElDropdownItem>关闭右侧</ElDropdownItem>
-          <ElDropdownItem>Action 5</ElDropdownItem>
+          <ElDropdownItem>关闭全部</ElDropdownItem>
         </ElDropdownMenu>
       </template>
     </ElDropdown>

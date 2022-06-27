@@ -1,4 +1,4 @@
-<template></template>
+<template>message-log</template>
 
 <script setup lang="ts"></script>
 

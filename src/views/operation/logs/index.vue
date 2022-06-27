@@ -1,4 +1,4 @@
-<template></template>
+<template>operation-logs</template>
 
 <script setup lang="ts"></script>
 

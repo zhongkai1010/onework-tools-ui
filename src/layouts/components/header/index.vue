@@ -38,18 +38,18 @@
 </template>
 
 <script setup lang="ts">
-import logoPng from '../../../assets/logo.png';
-import { HeaderMenu } from '../../types';
+import logoPng from "../../../assets/logo.png";
+import { HeaderMenu } from "../../types";
 
 const props = defineProps<{
   menus: HeaderMenu[];
 }>();
 
 const onMenuSelect = (index, path, item, routeResult) => {
-  console.log('index', index);
-  console.log('path', path);
-  console.log('item', item);
-  console.log('routeResult', routeResult);
+  console.log("index", index);
+  console.log("path", path);
+  console.log("item", item);
+  console.log("routeResult", routeResult);
 
   // tagsStore.addTab({
   //   path: index as string,
