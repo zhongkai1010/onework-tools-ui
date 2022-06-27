@@ -1,5 +1,4 @@
-import type { RouteRecordRaw } from 'vue-router'
-import { LAYOUT } from '../constant'
+import { LAYOUT } from '../constant';
 
 export default {
   name: 'announcement',
@@ -15,4 +14,4 @@ export default {
       meta: { title: '通知公告' },
     },
   ],
-} as RouteRecordRaw
+};

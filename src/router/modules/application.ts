@@ -1,18 +1,17 @@
-import type { RouteRecordRaw } from "vue-router";
-import { LAYOUT } from "../constant";
+import { LAYOUT } from '../constant';
 
 export default {
-  name: "application",
-  path: "/application",
+  name: 'application',
+  path: '/application',
   component: LAYOUT,
-  redirect: "/application/index",
-  meta: { title: "应用管理" },
+  redirect: '/application/index',
+  meta: { title: '应用管理' },
   children: [
     {
-      name: "application_index",
-      path: "index",
-      component:  () => import("../../views/application/index.vue"),
-      meta: { title: "应用管理" },
+      name: 'application_index',
+      path: 'index',
+      component: () => import('../../views/application/index.vue'),
+      meta: { title: '应用管理' },
     },
   ],
-} as RouteRecordRaw;
+};

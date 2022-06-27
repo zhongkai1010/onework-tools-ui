@@ -19,7 +19,14 @@
 </template>
 
 <script setup lang="ts">
+interface Menu {
+  title: string
+  path: string
+  icon: string
+  children?: Menu[]
+}
+
 const { menu } = defineProps<{
-  menu: Menu;
-}>();
+  menu: Menu
+}>()
 </script>

@@ -1,6 +1,14 @@
 <template>
   <div class="tabs-container">
     <el-tabs class="tabs" type="card" @contextmenu="onTabContextMenu">
+     <el-tab-pane>
+        <template #label>
+          <span class="label">
+            <IconifyIcon icon="akar-icons:lock-on" class="button" title="首页" />
+            <span>首页</span>
+          </span>
+        </template>
+      </el-tab-pane>
       <el-tab-pane closable>
         <template #label>
           <span class="label">

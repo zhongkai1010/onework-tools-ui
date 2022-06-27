@@ -4,7 +4,7 @@
       <img :src="logoPng" />
       <span class="title">OneWork Toools UI</span>
     </a>
-    <el-menu mode="horizontal" :router="true">
+    <el-menu mode="horizontal" :router="true" @select="onMenuSelect">
       <template v-for="menu in menus" :key="menu.index">
         <SubMenu :menu="menu" />
       </template>
@@ -38,97 +38,97 @@
 </template>
 
 <script setup lang="ts">
-import logoPng from '../../../assets/logo.png'
+import logoPng from '../../../assets/logo.png';
+import { HeaderMenu } from '../../types';
+
 const { menus } = defineProps<{
-  menus: Menu[]
-}>()
+  menus: HeaderMenu[];
+}>();
+
+const onMenuSelect = (index, path, item, routeResult) => {
+  console.log('index', index);
+  console.log('path', path);
+  console.log('item', item);
+  console.log('routeResult', routeResult);
+
+  // tagsStore.addTab({
+  //   path: index as string,
+  //   name:
+  // })
+};
 </script>
 
 <style lang="scss" scoped>
 .header-container {
   display: flex;
   justify-content: space-between;
-  background-color: $header-background;
+  padding: 0 5%;
   min-height: 100%;
-  padding: 0px 5%;
   border-bottom: 1px solid rgb(0 21 41 / 8%);
-
+  background-color: $header-background;
   .logo {
     display: flex;
     margin-right: 40px;
-
     img {
-      height: 32px;
       margin: auto;
+      height: 32px;
     }
   }
-
   .title {
-    color: #515a6e !important;
     display: inline-block;
-    margin-left: 5px;
     overflow: hidden;
+    margin-left: 5px;
     font-size: 20px;
-    line-height: 60px;
     text-overflow: ellipsis;
     white-space: nowrap;
+    color: #515a6e !important;
+    line-height: 60px;
     vertical-align: middle;
   }
-
   .el-menu {
     width: 60%;
     border-bottom: 0;
     background-color: $header-background;
-
     .el-menu-item {
+      margin: 10px 5px 0 0;
       height: 40px;
       border-bottom: 0;
-      margin: 10px 5px 0px 0px;
       background-color: $header-menu-background;
-
       &:hover {
         background-color: $header-menu-activate-background;
       }
-
       &.is-active {
         background-color: $header-menu-activate-background;
       }
     }
-
     &:deep(.el-sub-menu__title) {
-      height: 40px;
-      border-bottom: 0;
       margin-top: 10px;
       margin-right: 5px;
+      height: 40px;
+      border-bottom: 0;
     }
-
     &:deep(.el-sub-menu__title:hover) {
       background-color: $header-menu-activate-background;
     }
-
     &:deep(.el-sub-menu.is-active .el-sub-menu__title) {
-      background-color: $header-menu-activate-background;
       border: 0;
+      background-color: $header-menu-activate-background;
     }
   }
-
   .tool {
     display: flex;
     align-items: center;
-
     .button {
       margin-left: 20px;
       cursor: pointer;
     }
-
     .avatar {
       display: flex;
       align-content: center;
       align-items: center;
-
       .username {
-        height: 40px;
         margin-left: 6px;
+        height: 40px;
         line-height: 40px;
         cursor: pointer;
       }

@@ -1,8 +1,6 @@
-interface Menu {
-  index: string;
+export interface HeaderMenu {
   title: string;
-  order: number;
-  icon: string;
   path: string;
-  children?: Menu[];
+  icon: string;
+  children?: HeaderMenu[];
 }

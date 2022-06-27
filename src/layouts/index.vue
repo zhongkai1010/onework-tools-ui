@@ -13,9 +13,13 @@
 </template>
 
 <script setup lang="ts">
-import Header from './components/header/index.vue'
-import Tabs from './components/tabs/index.vue'
-import { menus } from './components/helper/index'
+import Header from './components/header/index.vue';
+import Tabs from './components/tabs/index.vue';
+import { getModuleRoutes } from '../router/utils';
+import { getHeaderMenus } from './utils';
+
+const routes = getModuleRoutes();
+const menus = getHeaderMenus(routes);
 </script>
 
 <style lang="scss" scoped>
@@ -24,35 +28,30 @@ import { menus } from './components/helper/index'
   width: 100%;
   height: 100%;
   background-color: $header-background;
-
   .header-wrapper {
     position: fixed;
-    height: auto;
-    padding: 0px;
-    width: 100%;
-    border-bottom: 1px solid rgb(0 21 41 / 8%);
     z-index: 100;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgb(0 21 41 / 8%);
   }
-
   .content-wrapper {
-    height: 100vh;
-    background-color: $main-background;
-    padding-top: 110px;
     z-index: 1;
     overflow: auto;
-
+    padding-top: 110px;
+    height: 100vh;
+    background-color: $main-background;
     &::-webkit-scrollbar {
       width: 5px;
       height: 10px;
       border-radius: 4px;
     }
-
     &::-webkit-scrollbar-thumb {
       border-radius: 4px;
       background: #bfc7e0;
       opacity: 0.3;
     }
-
     .content-container {
       padding: 20px;
     }
