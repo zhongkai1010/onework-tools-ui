@@ -1,4 +1,4 @@
-import { RouteLocationNormalized } from 'vue-router';
+import { RouteLocationNormalized } from "vue-router";
 
 export interface OwRouteRecordRaw extends RouteLocationNormalized {
   meta: {

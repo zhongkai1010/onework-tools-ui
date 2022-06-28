@@ -1,5 +1,5 @@
-import { OwRouteRecordRaw } from '../router/types';
-import { HeaderMenu } from './types';
+import { OwRouteRecordRaw } from "../router/types";
+import { HeaderMenu } from "./types";
 
 export const getHeaderMenus = (routes: OwRouteRecordRaw[], parent?: HeaderMenu): HeaderMenu[] => {
   const menus = [] as HeaderMenu[];
@@ -7,10 +7,10 @@ export const getHeaderMenus = (routes: OwRouteRecordRaw[], parent?: HeaderMenu):
     const route = routes[index];
     const menu = {} as HeaderMenu;
     if (!route.name) {
-      throw new Error('route name is null');
+      throw new Error("route name is null");
     }
     menu.title = (route.meta?.title || route.name) as string;
-    menu.icon = (route.meta?.icon || 'ep:element-plus') as string;
+    menu.icon = (route.meta?.icon || "ep:element-plus") as string;
     if (parent) {
       menu.path = `${parent.path}/${route.path}`;
     } else {

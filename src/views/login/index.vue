@@ -12,27 +12,27 @@
 </template>
 
 <script setup lang="ts">
-import { CSSProperties, reactive } from 'vue';
-import CSSForm from './cssForm.vue';
+import { CSSProperties, reactive } from "vue";
+import CSSForm from "./cssForm.vue";
 
 const state = reactive<{
   boxStyle: CSSProperties;
   boxNum: number;
 }>({
   boxStyle: {
-    width: '40%',
-    height: '40vh',
+    width: "40%",
+    height: "40vh"
   },
-  boxNum: 10,
+  boxNum: 10
 });
 
-const onFormChange = (value) => {
+const onFormChange = value => {
   for (const key in value) {
-    if (key == 'width') {
+    if (key == "width") {
       state.boxStyle[key] = `${value[key]}%`;
-    } else if (key == 'height') {
+    } else if (key == "height") {
       state.boxStyle[key] = `${value[key]}vh`;
-    } else if (key == 'numBox') {
+    } else if (key == "numBox") {
       state.boxNum = value[key];
     } else {
       state.boxStyle[key] = value[key];

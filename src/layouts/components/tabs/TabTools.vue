@@ -4,7 +4,7 @@
     :style="{
       display: props.show ? 'block' : 'none',
       top: `${props.y + 5}px`,
-      left: `${props.x}px`,
+      left: `${props.x}px`
     }"
     @mouseleave="() => emit('onBlur')"
   >
@@ -21,8 +21,8 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits } from 'vue';
-const emit = defineEmits(['onBlur', 'onClick']);
+import { defineEmits } from "vue";
+const emit = defineEmits(["onBlur", "onClick"]);
 const props = defineProps<{
   show: boolean;
   x: number;
@@ -31,25 +31,25 @@ const props = defineProps<{
 
 const menuItems = [
   {
-    text: '刷新',
-    icon: 'ant-design:sync-outlined',
+    text: "刷新",
+    icon: "ant-design:sync-outlined"
   },
   {
-    text: '关闭其他',
-    icon: 'ant-design:close-outlined',
+    text: "关闭其他",
+    icon: "ant-design:close-outlined"
   },
   {
-    text: '关闭右侧',
-    icon: 'ant-design:arrow-right-outlined',
+    text: "关闭右侧",
+    icon: "ant-design:arrow-right-outlined"
   },
   {
-    text: '关闭左侧',
-    icon: 'ant-design:arrow-left-outlined',
+    text: "关闭左侧",
+    icon: "ant-design:arrow-left-outlined"
   },
   {
-    text: '关闭全部',
-    icon: 'ant-design:close-outlined',
-  },
+    text: "关闭全部",
+    icon: "ant-design:close-outlined"
+  }
 ];
 </script>
 <style lang="scss" scoped>

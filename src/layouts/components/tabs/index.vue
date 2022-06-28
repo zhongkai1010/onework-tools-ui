@@ -66,20 +66,20 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue';
-import TabTools from './TabTools.vue';
+import { reactive } from "vue";
+import TabTools from "./TabTools.vue";
 const tabsMenuState = reactive({
   show: false,
   x: 0,
-  y: 0,
+  y: 0
 });
 const onToolsClick = () => {
   tabsMenuState.show = false;
-  console.log('onToolsClick');
+  console.log("onToolsClick");
 };
 const onToolsblur = () => {
   tabsMenuState.show = false;
-  console.log('onToolsblur');
+  console.log("onToolsblur");
 };
 const onTabContextMenu = (e: MouseEvent) => {
   e.preventDefault();

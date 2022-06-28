@@ -1,7 +1,7 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
-import type { RouteRecordRaw } from 'vue-router';
-import { LOGIN_PAGE, NOT_PAGE, HOME_PAGE } from '../router/constant';
-import { getModuleRoutes } from './utils';
+import { createRouter, createWebHashHistory } from "vue-router";
+import type { RouteRecordRaw } from "vue-router";
+import { LOGIN_PAGE, NOT_PAGE, HOME_PAGE } from "../router/constant";
+import { getModuleRoutes } from "./utils";
 
 /**
  * 遍历modules目录，获取RouteRecordRaw集合
@@ -17,7 +17,7 @@ const routes: RouteRecordRaw[] = [LOGIN_PAGE, ...moduleRoutes, HOME_PAGE, NOT_PA
  */
 const router = createRouter({
   history: createWebHashHistory(),
-  routes,
+  routes
 });
 
 export { routes, router };

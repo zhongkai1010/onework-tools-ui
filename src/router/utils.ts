@@ -1,4 +1,4 @@
-import { OwRouteRecordRaw } from './types';
+import { OwRouteRecordRaw } from "./types";
 
 /**
  * 通过vite import.meta.globEager特性将modules目录文件转换集合
@@ -6,10 +6,10 @@ import { OwRouteRecordRaw } from './types';
  * @returns RouteRecordRaw[]
  */
 const getModuleRoutes = (): OwRouteRecordRaw[] => {
-  const modulePages = import.meta.globEager('./modules/*.ts');
+  const modulePages = import.meta.globEager("./modules/*.ts");
   const moduleRoutes: OwRouteRecordRaw[] = [];
 
-  Object.keys(modulePages).forEach((key) => {
+  Object.keys(modulePages).forEach(key => {
     const mod = modulePages[key].default || {};
     const modList = (Array.isArray(mod) ? [...mod] : [mod]) as OwRouteRecordRaw[];
     moduleRoutes.push(...modList);
@@ -25,7 +25,7 @@ const getRouteMap = (): { [key: string]: OwRouteRecordRaw } => {
   const result = {};
   const records = getModuleRoutes();
   const childrenProcess = (childs: OwRouteRecordRaw[], parent?: OwRouteRecordRaw) => {
-    childs.forEach((value) => {
+    childs.forEach(value => {
       let path = value.path;
       if (parent) {
         path = `${parent.path}/${value.path}`;

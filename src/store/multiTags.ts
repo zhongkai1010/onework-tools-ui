@@ -1,21 +1,21 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
 // useStore 可以是 useUser、useCart 之类的任何东西
 // 第一个参数是应用程序中 store 的唯一 id
 export const useMultiTagsStore = defineStore({
-  id: 'ow-header-tabs',
+  id: "ow-header-tabs",
   state: () => {
     return {
-      current: '/', // 当前路径
+      current: "/", // 当前路径
       currentIndex: 0, // 当前索引
       tabs: [
         {
-          name: 'home',
-          path: '/',
-          icon: 'ant-design:home-outlined',
-          closed: false,
-        },
-      ],
+          name: "home",
+          path: "/",
+          icon: "ant-design:home-outlined",
+          closed: false
+        }
+      ]
     };
   },
   actions: {
@@ -24,7 +24,7 @@ export const useMultiTagsStore = defineStore({
      * @param tab 标签
      */
     openTab(tab) {
-      const index = this.tabs.findIndex((value) => value === tab.path);
+      const index = this.tabs.findIndex(value => value === tab.path);
       if (index > 0) {
         const tab = this.tabs[index];
         this.current = tab.path;
@@ -35,23 +35,23 @@ export const useMultiTagsStore = defineStore({
         this.currentIndex = this.tabs.length - 1;
       }
     },
-    handleTab(type: 'close' | 'left' | 'right' | 'all', path: string) {
-      const tab = this.tabs.find((value) => value.path === path);
+    handleTab(type: "close" | "left" | "right" | "all", path: string) {
+      const tab = this.tabs.find(value => value.path === path);
       if (!tab) {
-        new Error('');
+        new Error("");
       }
       switch (type) {
-        case 'close':
+        case "close":
           break;
-        case 'left':
+        case "left":
           break;
-        case 'right':
+        case "right":
           break;
-        case 'all':
+        case "all":
           break;
         default:
           break;
       }
-    },
-  },
+    }
+  }
 });

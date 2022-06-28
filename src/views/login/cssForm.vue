@@ -40,28 +40,28 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { reactive } from "vue";
 
 const inputs = {
-  flexDirection: ['row', 'row-reverse', 'column', 'column-reverse'],
-  flexWrap: ['nowrap', 'wrap', 'wrap-reverse'],
-  justifyContent: ['flex-start', 'flex-end', 'center', 'space-between', 'space-around'],
-  alignItems: ['flex-start ', 'flex-end', 'center', 'baseline', 'stretch'],
-  alignContent: ['flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'stretch'],
+  flexDirection: ["row", "row-reverse", "column", "column-reverse"],
+  flexWrap: ["nowrap", "wrap", "wrap-reverse"],
+  justifyContent: ["flex-start", "flex-end", "center", "space-between", "space-around"],
+  alignItems: ["flex-start ", "flex-end", "center", "baseline", "stretch"],
+  alignContent: ["flex-start", "flex-end", "center", "space-between", "space-around", "stretch"]
 };
 
 const formValue = reactive({
   width: 40,
   height: 40,
-  flexDirection: 'row',
-  flexWrap: '',
-  justifyContent: 'flex-start',
-  alignItems: 'stretch',
-  alignContent: 'stretch',
-  numBox: 10,
+  flexDirection: "row",
+  flexWrap: "",
+  justifyContent: "flex-start",
+  alignItems: "stretch",
+  alignContent: "stretch",
+  numBox: 10
 });
 
-const emit = defineEmits(['onChange']);
+const emit = defineEmits(["onChange"]);
 </script>
 
 <style></style>

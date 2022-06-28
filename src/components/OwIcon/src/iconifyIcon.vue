@@ -5,12 +5,12 @@
 </template>
 
 <script setup lang="ts">
-import { Icon } from '@iconify/vue';
-import { CSSProperties } from 'vue';
+import { Icon } from "@iconify/vue";
+import { CSSProperties } from "vue";
 
 const props = defineProps<{
   icon: string;
   size?: number;
-  color?: Pick<CSSProperties, 'color'>;
+  color?: Pick<CSSProperties, "color">;
 }>();
 </script>

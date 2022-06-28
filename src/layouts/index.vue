@@ -6,17 +6,17 @@
     </div>
     <div class="content-wrapper">
       <div class="content-container">
-        <router-view></router-view>
+        <router-view />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Header from './components/header/index.vue';
-import Tabs from './components/tabs/index.vue';
-import { getModuleRoutes } from '../router/utils';
-import { getHeaderMenus } from './utils';
+import Header from "./components/header/index.vue";
+import Tabs from "./components/tabs/index.vue";
+import { getModuleRoutes } from "../router/utils";
+import { getHeaderMenus } from "./utils";
 
 const routes = getModuleRoutes();
 const menus = getHeaderMenus(routes);
