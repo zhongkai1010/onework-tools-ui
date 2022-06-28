@@ -13,7 +13,8 @@ export const useMultiTagsStore = defineStore({
           name: "home",
           path: "/",
           icon: "ant-design:home-outlined",
-          closed: false
+          closed: false,
+          component: () => import("/@/views/home/index.vue")
         }
       ]
     };

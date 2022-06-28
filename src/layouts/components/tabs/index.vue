@@ -1,46 +1,16 @@
 <template>
   <div class="tabs-container">
     <ElTabs class="tabs" type="card" @contextmenu="onTabContextMenu">
-      <ElTabPane>
-        <template #label>
-          <span class="label">
-            <IconifyIcon icon="akar-icons:lock-on" class="button" title="首页" />
-            <span>首页</span>
-          </span>
-        </template>
-      </ElTabPane>
-      <ElTabPane closable>
-        <template #label>
-          <span class="label">
-            <IconifyIcon icon="akar-icons:lock-on" class="button" title="锁定" />
-            <span>Route</span>
-          </span>
-        </template>
-      </ElTabPane>
-      <ElTabPane closable label="Config">
-        <template #label>
-          <span class="label">
-            <IconifyIcon icon="akar-icons:lock-on" class="button" title="锁定" />
-            <span>Route</span>
-          </span>
-        </template>
-      </ElTabPane>
-      <ElTabPane closable label="Role">
-        <template #label>
-          <span class="label">
-            <IconifyIcon icon="akar-icons:lock-on" class="button" title="锁定" />
-            <span>Route</span>
-          </span>
-        </template>
-      </ElTabPane>
-      <ElTabPane closable label="Task">
-        <template #label>
-          <span class="label">
-            <IconifyIcon icon="akar-icons:lock-on" class="button" title="锁定" />
-            <span>Route</span>
-          </span>
-        </template>
-      </ElTabPane>
+      <template v-for="(tab, index) in tabsState" :key="index">
+        <ElTabPane :closable="tab.closed" :index="tab.path">
+          <template #label>
+            <span class="label">
+              <IconifyIcon :icon="tab.icon" :title="tab.name" class="button" />
+              <span>{{ tab.name }}</span>
+            </span>
+          </template>
+        </ElTabPane>
+      </template>
     </ElTabs>
 
     <ElDropdown class="dropdown">
@@ -66,8 +36,16 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
+import { computed, reactive } from "vue";
 import TabTools from "./TabTools.vue";
+import { useMultiTagsStore } from "../../../store/multiTags";
+
+const tabsState = computed(() => {
+  return useMultiTagsStore().tabs;
+});
+
+console.log(tabsState.value);
+
 const tabsMenuState = reactive({
   show: false,
   x: 0,

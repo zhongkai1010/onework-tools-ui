@@ -5,9 +5,7 @@
       <Tabs />
     </div>
     <div class="content-wrapper">
-      <div class="content-container">
-        <router-view />
-      </div>
+      <div class="content-container"><component :is="Home" /></div>
     </div>
   </div>
 </template>
@@ -17,7 +15,11 @@ import Header from "./components/header/index.vue";
 import Tabs from "./components/tabs/index.vue";
 import { getModuleRoutes } from "../router/utils";
 import { getHeaderMenus } from "./utils";
-
+import Home from "/@/views/application/index.vue";
+console.log(Home);
+import("/@/views/application/index.vue").then(e => {
+  console.log(e);
+});
 const routes = getModuleRoutes();
 const menus = getHeaderMenus(routes);
 </script>

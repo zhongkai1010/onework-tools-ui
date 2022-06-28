@@ -40,21 +40,28 @@
 <script setup lang="ts">
 import logoPng from "../../../assets/logo.png";
 import { HeaderMenu } from "../../types";
+import _ from "lodash";
+import { getRouteMap } from "/@/router/utils";
+import { useMultiTagsStore } from "/@/store/multiTags";
 
 const props = defineProps<{
   menus: HeaderMenu[];
 }>();
 
-const onMenuSelect = (index, path, item, routeResult) => {
-  console.log("index", index);
-  console.log("path", path);
-  console.log("item", item);
-  console.log("routeResult", routeResult);
+const routes = getRouteMap();
 
-  // tagsStore.addTab({
-  //   path: index as string,
-  //   name:
-  // })
+const onMenuSelect = (index: any, path: string[]): void => {
+  console.log("onMenuSelect", routes);
+  console.log("onMenuSelect", path);
+  console.log("onMenuSelect", routes[_.last(path)]);
+  const route = routes[_.last(path)];
+
+  useMultiTagsStore().openTab({
+    name: route.meta.title,
+    path: _.last(path),
+    icon: route.meta.icon,
+    closed: true
+  });
 };
 </script>
 
