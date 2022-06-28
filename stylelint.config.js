@@ -71,7 +71,7 @@ module.exports = {
   overrides: [
     {
       files: ["*.vue", "**/*.vue", "*.html", "**/*.html"],
-      extends: ["stylelint-config-recommended", "stylelint-config-html"],
+      extends: ["stylelint-config-recommended-vue", "stylelint-config-recommended-vue/scss"],
       rules: {
         "keyframes-name-pattern": null,
         "selector-pseudo-class-no-unknown": [
