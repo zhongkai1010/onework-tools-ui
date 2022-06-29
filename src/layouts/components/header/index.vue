@@ -1,39 +1,12 @@
 <template>
   <div class="header-container">
-    <a class="logo" href="/">
-      <img :src="logoPng" />
-      <span class="title">OneWork Toools UI</span>
-    </a>
+    <Logo :title="`OneWork Tools UI`" :logo="logoPng" />
     <ElMenu mode="horizontal" :router="true" @select="onMenuSelect">
       <template v-for="menu in props.menus" :key="menu.path">
         <SubMenu :menu="menu" />
       </template>
     </ElMenu>
-    <div class="tool">
-      <IconifyIcon icon="akar-icons:lock-on" class="button" title="锁定" />
-      <IconifyIcon icon="akar-icons:search" class="button" title="搜索" />
-      <ElBadge :value="12" class="button">
-        <IconifyIcon icon="akar-icons:bell" title="通知" />
-      </ElBadge>
-      <IconifyIcon icon="akar-icons:full-screen" class="button" title="全屏" />
-      <IconifyIcon icon="uil:english-to-chinese" class="button" title="中英切换" />
-      <IconifyIcon icon="carbon:cloud-satellite-config" class="button" title="设置" />
-      <IconifyIcon icon=" carbon:renew" class="button" title="刷新" />
-      <ElDropdown popper-class="avatar">
-        <span class="avatar">
-          <ElAvatar />
-          <span class="username">管理员</span>
-          <IconifyIcon icon="ant-design:down-outlined" />
-        </span>
-
-        <template #dropdown>
-          <ElDropdownMenu>
-            <ElDropdownItem>个人中心</ElDropdownItem>
-            <ElDropdownItem>退出系统</ElDropdownItem>
-          </ElDropdownMenu>
-        </template>
-      </ElDropdown>
-    </div>
+    <Tools />
   </div>
 </template>
 
@@ -43,7 +16,9 @@ import { HeaderMenu } from "../../types";
 import _ from "lodash";
 import { getRouteMap } from "/@/router/utils";
 import { useMultiTagsStore } from "/@/store/multiTags";
+import Logo from "./Logo.vue";
 
+import Tools from "./Tools.vue";
 const props = defineProps<{
   menus: HeaderMenu[];
 }>();
@@ -128,17 +103,6 @@ const onMenuSelect = (index: any, path: string[]): void => {
     .button {
       margin-left: 20px;
       cursor: pointer;
-    }
-    .avatar {
-      display: flex;
-      align-content: center;
-      align-items: center;
-      .username {
-        margin-left: 6px;
-        height: 40px;
-        line-height: 40px;
-        cursor: pointer;
-      }
     }
   }
 }
