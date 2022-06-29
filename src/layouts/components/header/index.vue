@@ -1,6 +1,6 @@
 <template>
   <div class="header-container">
-    <Logo :title="`OneWork Tools UI`" :logo="logoPng" />
+    <Logo :title="`OneWork Tools UI3`" :logo="logoPng" />
     <ElMenu mode="horizontal" :router="true" @select="onMenuSelect">
       <template v-for="menu in props.menus" :key="menu.path">
         <SubMenu :menu="menu" />

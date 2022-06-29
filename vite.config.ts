@@ -40,7 +40,9 @@ export default defineConfig({
     eslint(),
     visualizer()
   ],
-
+  server: {
+    watch: { usePolling: true }
+  },
   css: {
     preprocessorOptions: {
       scss: {
