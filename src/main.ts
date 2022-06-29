@@ -12,7 +12,10 @@ import "./styles/base.scss";
 // 组件
 import { IconifyIcon } from "./components/OwIcon/index";
 import { SubMenu } from "./components/OwSubMenu/index";
-
+// vxe-table
+import "xe-utils";
+import VXETable from "vxe-table";
+import "vxe-table/lib/style.css";
 const app = createApp(App);
 /**
  * 路由
@@ -30,4 +33,5 @@ app.component("SubMenu", SubMenu);
 /**
  *  入口
  */
+app.use(VXETable);
 app.mount("#app");
