@@ -5,7 +5,11 @@
       <Tabs />
     </div>
     <div class="content-wrapper">
-      <div class="content-container"><component :is="Home" /></div>
+      <router-view v-slot="{ Component }">
+        <KeepAlive>
+          <component :is="Component" />
+        </KeepAlive>
+      </router-view>
     </div>
   </div>
 </template>
@@ -15,14 +19,22 @@ import Header from "./components/header/index.vue";
 import Tabs from "./components/tabs/index.vue";
 import { getModuleRoutes } from "../router/utils";
 import { getHeaderMenus } from "./utils";
-import Home from "/@/views/application/index.vue";
-console.log(Home);
-import("/@/views/application/index.vue").then(e => {
-  console.log(e);
-});
+
 const routes = getModuleRoutes();
 const menus = getHeaderMenus(routes);
 </script>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>
 
 <style lang="scss" scoped>
 .ow-wrapper {

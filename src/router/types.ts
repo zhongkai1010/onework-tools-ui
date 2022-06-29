@@ -1,9 +1,9 @@
-import { RouteLocationNormalized } from "vue-router";
+import { RouteRecordNormalized } from "vue-router";
 
-export interface OwRouteRecordRaw extends RouteLocationNormalized {
+export interface OwRouteRecordRaw extends RouteRecordNormalized {
   meta: {
     title: string;
     icon: string;
   };
-  children?: OwRouteRecordRaw[];
+  children: OwRouteRecordRaw[];
 }
