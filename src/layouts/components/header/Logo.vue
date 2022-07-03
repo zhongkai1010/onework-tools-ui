@@ -27,9 +27,8 @@ const props = defineProps<{
   margin-left: 5px;
   font-size: 20px;
   text-overflow: ellipsis;
-  white-space: nowrap;
   color: #515a6e !important;
   line-height: 60px;
-  vertical-align: middle;
+  width: 200px;
 }
 </style>

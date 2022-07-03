@@ -8,7 +8,6 @@
     <IconifyIcon icon="akar-icons:full-screen" class="button" title="全屏" />
     <IconifyIcon icon="uil:english-to-chinese" class="button" title="中英切换" />
     <IconifyIcon icon="carbon:cloud-satellite-config" class="button" title="设置" />
-    <IconifyIcon icon=" carbon:renew" class="button" title="刷新" />
     <Avatar :username="'管理员'" avatar="logoPng" />
   </div>
 </template>
@@ -20,7 +19,15 @@ import Avatar from "./Avatar.vue";
 <style lang="scss" scoped>
 .tool {
   display: flex;
+  margin-left: auto;
   align-items: center;
+  flex-direction: row;
+  &:deep(.el-badge) {
+    margin-top: 6px;
+  }
+  .button {
+    width: 20px;
+  }
   .button {
     margin-left: 20px;
     cursor: pointer;

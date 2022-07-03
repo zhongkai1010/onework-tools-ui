@@ -6,9 +6,7 @@
     </div>
     <div class="content-wrapper">
       <router-view v-slot="{ Component }">
-        <KeepAlive>
-          <component :is="Component" />
-        </KeepAlive>
+        <component :is="Component" />
       </router-view>
     </div>
   </div>
@@ -24,18 +22,6 @@ const routes = getModuleRoutes();
 const menus = getHeaderMenus(routes);
 </script>
 
-<style>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>
-
 <style lang="scss" scoped>
 .ow-wrapper {
   position: relative;
@@ -43,12 +29,13 @@ const menus = getHeaderMenus(routes);
   height: 100%;
   background-color: $header-background;
   .header-wrapper {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     z-index: 100;
     padding: 0;
+    border-bottom: 1px solid #dcdfe6;
     width: 100%;
-    height: auto;
-    border-bottom: 1px solid rgb(0 21 41 / 8%);
   }
   .content-wrapper {
     z-index: 1;

@@ -1,20 +1,22 @@
 <template>
-  <vxe-table :data="tableData">
-    <vxe-column type="seq" width="60" />
-    <vxe-column field="name" title="Name">
-      <template #default="{ row }">
+  <div style="padding: 5px">
+    <vxe-table :data="tableData">
+      <vxe-column type="seq" width="60" />
+      <vxe-column field="name" title="Name">
+        <template #default="{ row }">
+          <span>自定义插槽模板 {{ row.name }}</span>
+        </template>
+      </vxe-column>
+      <vxe-column field="sex" title="Sex" />
+      <vxe-column field="age" title="Age" />
+    </vxe-table>
+
+    <vxe-grid v-bind="gridOptions">
+      <template #name="{ row }">
         <span>自定义插槽模板 {{ row.name }}</span>
       </template>
-    </vxe-column>
-    <vxe-column field="sex" title="Sex" />
-    <vxe-column field="age" title="Age" />
-  </vxe-table>
-
-  <vxe-grid v-bind="gridOptions">
-    <template #name="{ row }">
-      <span>自定义插槽模板 {{ row.name }}</span>
-    </template>
-  </vxe-grid>
+    </vxe-grid>
+  </div>
 </template>
 
 <script setup lang="ts">

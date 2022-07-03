@@ -27,9 +27,12 @@ const props = defineProps<{
   display: flex;
   align-content: center;
   align-items: center;
+  margin-left: 20px;
   .username {
     margin-left: 6px;
+    white-space: nowrap;
     height: 40px;
+    text-overflow: ellipsis;
     line-height: 40px;
     cursor: pointer;
   }
