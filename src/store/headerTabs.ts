@@ -57,13 +57,13 @@ const headerTabStore = defineStore({
     },
     operateTab(type: "close" | "left" | "right" | "all", name: string) {
       const tabs = this.tabs as TabOption[];
-      const index = this.tabs.findIndex(value => value.path === name);
+      const index = tabs.findIndex(value => value.name === name);
       if (index === -1) {
         return;
       }
       switch (type) {
         case "close":
-          this.tabs = tabs.slice(index - 1, 1);
+          this.tabs.slice(index, 1);
           break;
         case "left":
           this.tabs = tabs.slice(index - 1, 1);
