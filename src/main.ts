@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import { router } from "./router/index";
-import { createPinia } from "pinia";
+import { setupStore } from "./store/index";
 // 重置浏览器样式
 import "./styles/reset.scss";
 // 重置element plus样式
@@ -24,7 +24,7 @@ app.use(router);
 /**
  * state管理
  */
-app.use(createPinia());
+setupStore(app);
 /**
  * 加载全局组件
  */

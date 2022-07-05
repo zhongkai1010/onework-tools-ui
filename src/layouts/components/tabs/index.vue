@@ -1,20 +1,32 @@
 <template>
   <div class="tabs-container">
     <div class="tabs">
-      <el-tabs type="card" @contextmenu="onTabContextMenu">
-        <template v-for="(tab, index) in tabsState" :key="index">
-          <el-tab-pane :closable="tab.closed" :index="tab.path">
+      <el-tabs
+        type="card"
+        @contextmenu="onTabContextMenu"
+        :model-value="selectTab.name"
+        @tab-click="onTabClick"
+      >
+        <el-tab-pane :name="defaultTab.name">
+          <template #label>
+            <span class="label">
+              <IconifyIcon :icon="defaultTab.icon" :title="defaultTab.text" class="button" />
+              <span>{{ defaultTab.text }}</span>
+            </span>
+          </template>
+        </el-tab-pane>
+        <template v-for="tab in tabs" :key="tab.name">
+          <el-tab-pane :closable="true" :name="tab.name">
             <template #label>
               <span class="label">
-                <IconifyIcon :icon="tab.icon" :title="tab.name" class="button" />
-                <span>{{ tab.name }}</span>
+                <IconifyIcon :icon="tab.icon" :title="tab.text" class="button" />
+                <span>{{ tab.text }}</span>
               </span>
             </template>
           </el-tab-pane>
         </template>
       </el-tabs>
     </div>
-
     <ElDropdown class="dropdown">
       <IconifyIcon icon="fe:app-menu" :size="20" />
       <template #dropdown>
@@ -31,41 +43,41 @@
       :show="tabsMenuState.show"
       :x="tabsMenuState.x"
       :y="tabsMenuState.y"
-      @on-blur="onToolsblur"
-      @on-click="onToolsClick"
+      @on-blur="tabsMenuState.show = false"
+      @on-click="tabsMenuState.show = false"
     />
   </div>
 </template>
 
 <script setup lang="ts">
+import { TabsPaneContext } from "element-plus";
 import { computed, reactive } from "vue";
 import TabTools from "./TabTools.vue";
-import { useMultiTagsStore } from "../../../store/multiTags";
+import { headerTabStoreHook, defaultTab } from "/@/store/headerTabs";
+import { useRouter } from "vue-router";
 
-const tabsState = computed(() => {
-  return useMultiTagsStore().tabs;
+const selectTab = computed(() => {
+  return headerTabStoreHook().selectTab;
 });
-
-console.log(tabsState.value);
+const tabs = computed(() => {
+  return headerTabStoreHook().tabs;
+});
 
 const tabsMenuState = reactive({
   show: false,
   x: 0,
   y: 0
 });
-const onToolsClick = () => {
-  tabsMenuState.show = false;
-  console.log("onToolsClick");
-};
-const onToolsblur = () => {
-  tabsMenuState.show = false;
-  console.log("onToolsblur");
-};
+
 const onTabContextMenu = (e: MouseEvent) => {
   e.preventDefault();
   tabsMenuState.show = true;
   tabsMenuState.x = e.x;
   tabsMenuState.y = e.y;
+};
+const router = useRouter();
+const onTabClick = (pane: TabsPaneContext) => {
+  router.push(pane.props.name as string);
 };
 </script>
 <style lang="scss" scoped>

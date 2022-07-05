@@ -15,10 +15,11 @@ import logoPng from "../../../assets/logo.png";
 import { HeaderMenu } from "../../types";
 import _ from "lodash";
 import { getRouteMap } from "/@/router/utils";
-import { useMultiTagsStore } from "/@/store/multiTags";
-import Logo from "./Logo.vue";
+import { headerTabStoreHook } from "/@/store/headerTabs";
 
+import Logo from "./Logo.vue";
 import Tools from "./Tools.vue";
+
 const props = defineProps<{
   menus: HeaderMenu[];
 }>();
@@ -30,12 +31,10 @@ const onMenuSelect = (index: any, path: string[]): void => {
   console.log("onMenuSelect", path);
   console.log("onMenuSelect", routes[_.last(path)]);
   const route = routes[_.last(path)];
-
-  useMultiTagsStore().openTab({
-    name: route.meta.title,
-    path: _.last(path),
-    icon: route.meta.icon,
-    closed: true
+  headerTabStoreHook().setSelectTab({
+    name: _.last(path) as string,
+    text: route.meta.title as string,
+    icon: route.meta.icon as string
   });
 };
 </script>
