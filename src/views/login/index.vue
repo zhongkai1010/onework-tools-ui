@@ -1,14 +1,16 @@
 <template>
-  <div class="main">
-    <div class="tools-container">
-      <CSSForm @on-change="onFormChange" />
-    </div>
-    <div class="box-container" :style="state.boxStyle">
-      <div v-for="(item, index) in state.boxNum" :key="index">
-        {{ item }}
+  <PageContainer>
+    <div class="main">
+      <div class="tools-container">
+        <CSSForm @on-change="onFormChange" />
+      </div>
+      <div class="box-container" :style="state.boxStyle">
+        <div v-for="(item, index) in state.boxNum" :key="index">
+          {{ item }}
+        </div>
       </div>
     </div>
-  </div>
+  </PageContainer>
 </template>
 
 <script setup lang="ts">

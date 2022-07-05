@@ -46,6 +46,8 @@ const onMenuSelect = (index: any, path: string[]): void => {
   flex-direction: row;
   padding: 0 5%;
   border-bottom: 1px solid rgb(0 21 41 / 8%);
+  outline-style: dotted;
+  outline-color: rgb(81, 90, 110);
   background-color: $header-background;
   & :deep(.el-menu--horizontal) {
     border-bottom: 0px;

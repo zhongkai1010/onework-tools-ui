@@ -76,6 +76,7 @@ const onTabContextMenu = (e: MouseEvent) => {
   max-height: 50px;
   padding: 0 5%;
   user-select: none;
+
   .tabs {
     display: flex;
     overflow-x: hidden;

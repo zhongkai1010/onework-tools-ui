@@ -10,8 +10,7 @@ import "element-plus/es/components/message/style/css";
 // 基础样式
 import "./styles/base.scss";
 // 组件
-import { IconifyIcon } from "./components/OwIcon/index";
-import { SubMenu } from "./components/OwSubMenu/index";
+import setupComponents from "./components/index";
 // vxe-table
 import "xe-utils";
 import VXETable from "vxe-table";
@@ -29,8 +28,7 @@ app.use(createPinia());
 /**
  * 加载全局组件
  */
-app.component("IconifyIcon", IconifyIcon);
-app.component("SubMenu", SubMenu);
+setupComponents(app);
 /**
  *  入口
  */

@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { ConfigEnv, UserConfigExport } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
 import AutoImport from "unplugin-auto-import/vite";
@@ -6,6 +6,7 @@ import Components from "unplugin-vue-components/vite";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import visualizer from "rollup-plugin-visualizer";
 import eslint from "vite-plugin-eslint";
+import { viteMockServe } from "vite-plugin-mock";
 
 // 路径查找
 const pathResolve = (dir: string): string => {
@@ -19,35 +20,42 @@ const alias: Record<string, string> = {
 };
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  resolve: {
-    alias
-  },
-  plugins: [
-    vue(),
-    /**
-     * element plus 按需加载
-     */
-    AutoImport({
-      resolvers: [ElementPlusResolver()]
-    }),
-    Components({
-      resolvers: [ElementPlusResolver()]
-    }),
-    /**
-     *  eslint
-     */
-    eslint(),
-    visualizer()
-  ],
-  server: {
-    watch: { usePolling: true }
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: '@import "./src/styles/variable.scss";'
+export default ({ command }: ConfigEnv): UserConfigExport => {
+  return {
+    resolve: {
+      alias
+    },
+    plugins: [
+      vue(),
+      /**
+       * element plus 按需加载
+       */
+      AutoImport({
+        resolvers: [ElementPlusResolver()]
+      }),
+      Components({
+        resolvers: [ElementPlusResolver()]
+      }),
+      /**
+       *  eslint
+       */
+      eslint(),
+      visualizer(),
+      viteMockServe({
+        // default
+        mockPath: "mock",
+        localEnabled: command === "serve"
+      })
+    ],
+    server: {
+      watch: { usePolling: true }
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "./src/styles/variable.scss";'
+        }
       }
     }
-  }
-});
+  };
+};
