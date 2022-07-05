@@ -34,7 +34,7 @@ const onMenuSelect = (index: any, path: string[]): void => {
   headerTabStoreHook().setSelectTab({
     name: _.last(path) as string,
     text: route.meta.title as string,
-    icon: route.meta.icon as string
+    icon: (route.meta.icon || "ant-design:home-outlined") as string
   });
 };
 </script>

@@ -4,8 +4,9 @@
       <el-tabs
         type="card"
         @contextmenu="onTabContextMenu"
-        :model-value="selectTab.name"
+        :model-value="selectName"
         @tab-click="onTabClick"
+        @tab-remove="onTabClose"
       >
         <el-tab-pane :name="defaultTab.name">
           <template #label>
@@ -27,18 +28,18 @@
         </template>
       </el-tabs>
     </div>
-    <ElDropdown class="dropdown">
+    <el-dropdown class="dropdown">
       <IconifyIcon icon="fe:app-menu" :size="20" />
       <template #dropdown>
-        <ElDropdownMenu>
-          <ElDropdownItem>刷新</ElDropdownItem>
-          <ElDropdownItem>关闭其它</ElDropdownItem>
-          <ElDropdownItem>关闭左侧</ElDropdownItem>
-          <ElDropdownItem>关闭右侧</ElDropdownItem>
-          <ElDropdownItem>关闭全部</ElDropdownItem>
-        </ElDropdownMenu>
+        <el-dropdown-menu>
+          <el-dropdown-item>刷新</el-dropdown-item>
+          <el-dropdown-item>关闭其它</el-dropdown-item>
+          <el-dropdown-item>关闭左侧</el-dropdown-item>
+          <el-dropdown-item>关闭右侧</el-dropdown-item>
+          <el-dropdown-item>关闭全部</el-dropdown-item>
+        </el-dropdown-menu>
       </template>
-    </ElDropdown>
+    </el-dropdown>
     <TabTools
       :show="tabsMenuState.show"
       :x="tabsMenuState.x"
@@ -50,34 +51,49 @@
 </template>
 
 <script setup lang="ts">
-import { TabsPaneContext } from "element-plus";
+import { TabPanelName, TabsPaneContext } from "element-plus";
 import { computed, reactive } from "vue";
 import TabTools from "./TabTools.vue";
 import { headerTabStoreHook, defaultTab } from "/@/store/headerTabs";
 import { useRouter } from "vue-router";
-
-const selectTab = computed(() => {
-  return headerTabStoreHook().selectTab;
-});
-const tabs = computed(() => {
-  return headerTabStoreHook().tabs;
-});
-
+/**
+ *   init
+ */
+const router = useRouter();
+/**
+ *  右键状态
+ */
 const tabsMenuState = reactive({
   show: false,
   x: 0,
   y: 0
 });
-
+/**
+ *  store tab state
+ */
+const selectName = computed(() => {
+  return headerTabStoreHook().selectedTabName;
+});
+const tabs = computed(() => {
+  return headerTabStoreHook().tabs;
+});
+/**
+ *  events
+ */
+const onTabClose = (name: TabPanelName) => {
+  headerTabStoreHook().closeTab(name as string);
+};
+const onTabClick = (pane: TabsPaneContext) => {
+  const name = pane.props.name as string;
+  router.push(name);
+  headerTabStoreHook().setSelectTab(name);
+};
 const onTabContextMenu = (e: MouseEvent) => {
   e.preventDefault();
   tabsMenuState.show = true;
   tabsMenuState.x = e.x;
   tabsMenuState.y = e.y;
-};
-const router = useRouter();
-const onTabClick = (pane: TabsPaneContext) => {
-  router.push(pane.props.name as string);
+  console.log("onTabContextMenu", e.);
 };
 </script>
 <style lang="scss" scoped>
