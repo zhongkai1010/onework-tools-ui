@@ -9,10 +9,10 @@
     @mouseleave="() => emit('onBlur')"
   >
     <li
-      v-for="(item, index) in menuItems"
+      v-for="(item, index) in tabOperateItems"
       :key="index"
       class="el-dropdown-menu__item"
-      @click="() => emit('onClick')"
+      @click="() => emit('onClick', item.command)"
     >
       <IconifyIcon :icon="item.icon" />
       <span>{{ item.text }}</span>
@@ -22,35 +22,14 @@
 
 <script setup lang="ts">
 import { defineEmits } from "vue";
+import { tabOperateItems } from "/@/layouts/utils";
+
 const emit = defineEmits(["onBlur", "onClick"]);
 const props = defineProps<{
   show: boolean;
   x: number;
   y: number;
 }>();
-
-const menuItems = [
-  {
-    text: "刷新",
-    icon: "ant-design:sync-outlined"
-  },
-  {
-    text: "关闭其他",
-    icon: "ant-design:close-outlined"
-  },
-  {
-    text: "关闭右侧",
-    icon: "ant-design:arrow-right-outlined"
-  },
-  {
-    text: "关闭左侧",
-    icon: "ant-design:arrow-left-outlined"
-  },
-  {
-    text: "关闭全部",
-    icon: "ant-design:close-outlined"
-  }
-];
 </script>
 <style lang="scss" scoped>
 .tabs-menu {

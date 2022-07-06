@@ -54,6 +54,9 @@ const headerTabStore = defineStore({
       const tabsLen = this.tabs.length;
       const selectedName = this.selectedTabName;
       const index = this.tabs.findIndex(value => value.name === name);
+      const maxIndex = tabsLen - 1;
+      const afterIndex = index + 1;
+      const foreIndex = index - 1;
       if (index === -1) {
         return;
       }
@@ -64,34 +67,41 @@ const headerTabStore = defineStore({
       }
       if (name === selectedName && index == 0) {
         this.selectedTabName = defaultTab.name;
-      }
-      if (name === selectedName && index !== 0) {
-        this.selectedTabName = this.tabs[index + 1].name;
+      } else {
+        if (afterIndex <= maxIndex) {
+          this.selectedTabName = this.tabs[afterIndex].name;
+        } else {
+          this.selectedTabName = this.tabs[foreIndex].name;
+        }
       }
       this.tabs.splice(index, 1);
     },
     operateTab(type: "other" | "left" | "right" | "all", name: string) {
-      const tabs = this.tabs as TabOption[];
-      const index = tabs.findIndex(value => value.name === name);
+      const index = this.tabs.findIndex(value => value.name === name);
       const tab = this.tabs[index];
       if (index === -1) {
+        this.tabs = [];
+        this.selectedTabName = name;
         return;
       }
       switch (type) {
         case "other":
           this.tabs = [tab];
+          this.selectedTabName = name;
           break;
         case "left":
-          tabs.splice((index - 1) * -1);
+          this.tabs.splice(0, index);
+          this.selectedTabName = name;
           break;
         case "right":
-          tabs.splice(index - 1);
+          this.tabs.splice(index + 1);
+          this.selectedTabName = name;
           break;
         case "all":
           this.tabs = [];
+          this.selectedTabName = defaultTab.name;
           break;
       }
-      this.selectedTabName = tab.name;
     }
   }
 });

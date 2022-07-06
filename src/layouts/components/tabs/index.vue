@@ -3,10 +3,10 @@
     <div class="tabs">
       <el-tabs
         type="card"
-        @contextmenu="onTabContextMenu"
         :model-value="selectName"
-        @tab-click="onTabClick"
         @tab-remove="onTabClose"
+        @contextmenu="onTabContextMenu"
+        @tab-change="onTabChange"
       >
         <el-tab-pane :name="defaultTab.name">
           <template #label>
@@ -28,34 +28,37 @@
         </template>
       </el-tabs>
     </div>
-    <el-dropdown class="dropdown">
+    <el-dropdown class="dropdown" @command="onToolItemClick">
       <IconifyIcon icon="fe:app-menu" :size="20" />
       <template #dropdown>
         <el-dropdown-menu>
-          <el-dropdown-item>刷新</el-dropdown-item>
-          <el-dropdown-item>关闭其它</el-dropdown-item>
-          <el-dropdown-item>关闭左侧</el-dropdown-item>
-          <el-dropdown-item>关闭右侧</el-dropdown-item>
-          <el-dropdown-item>关闭全部</el-dropdown-item>
+          <el-dropdown-item
+            v-for="(item, index) in tabOperateItems"
+            :key="index"
+            :command="item.command"
+          >
+            {{ item.text }}
+          </el-dropdown-item>
         </el-dropdown-menu>
       </template>
     </el-dropdown>
-    <TabTools
-      :show="tabsMenuState.show"
-      :x="tabsMenuState.x"
-      :y="tabsMenuState.y"
-      @on-blur="tabsMenuState.show = false"
-      @on-click="tabsMenuState.show = false"
-    />
   </div>
+  <TabTools
+    :show="tabsMenuState.show"
+    :x="tabsMenuState.x"
+    :y="tabsMenuState.y"
+    @on-blur="tabsMenuState.show = false"
+    @on-click="onToolItemClick"
+  />
 </template>
 
 <script setup lang="ts">
-import { TabPanelName, TabsPaneContext } from "element-plus";
+import { TabPanelName } from "element-plus";
 import { computed, reactive } from "vue";
 import TabTools from "./TabTools.vue";
 import { headerTabStoreHook, defaultTab } from "/@/store/headerTabs";
 import { useRouter } from "vue-router";
+import { findElementParentId, tabOperateItems } from "../../utils";
 /**
  *   init
  */
@@ -64,6 +67,7 @@ const router = useRouter();
  *  右键状态
  */
 const tabsMenuState = reactive({
+  name: defaultTab.name,
   show: false,
   x: 0,
   y: 0
@@ -83,19 +87,37 @@ const tabs = computed(() => {
 const onTabClose = (name: TabPanelName) => {
   headerTabStoreHook().closeTab(name as string);
 };
-const onTabClick = (pane: TabsPaneContext) => {
-  const name = pane.props.name as string;
+const onTabChange = (tab: TabPanelName) => {
+  const name = tab as string;
+  // 路由
   router.push(name);
-  headerTabStoreHook().setSelectTab(name);
+  // tab 状态
+  if (name !== defaultTab.name) {
+    headerTabStoreHook().setSelectTab(name);
+  }
+  tabsMenuState.name = name;
 };
 const onTabContextMenu = (e: MouseEvent) => {
   e.preventDefault();
   tabsMenuState.show = true;
   tabsMenuState.x = e.x;
   tabsMenuState.y = e.y;
-  console.log("onTabContextMenu", e.);
+
+  const target = e.target as Element;
+  const id = findElementParentId(target);
+  tabsMenuState.name = id.replace("tab-", "");
+};
+
+const onToolItemClick = (command: "other" | "left" | "right" | "all" | "refresh") => {
+  if (command === "refresh") {
+    router.push(tabsMenuState.name);
+  } else {
+    headerTabStoreHook().operateTab(command, tabsMenuState.name);
+  }
+  tabsMenuState.show = false;
 };
 </script>
+
 <style lang="scss" scoped>
 .tabs-container {
   display: flex;

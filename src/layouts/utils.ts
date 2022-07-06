@@ -23,3 +23,45 @@ export const getHeaderMenus = (routes: OwRouteRecordRaw[], parent?: HeaderMenu):
   }
   return menus;
 };
+
+export const findElementParentId = (el: Element) => {
+  if (el.id) {
+    return el.id;
+  } else {
+    return findElementParentId(el.parentElement);
+  }
+};
+
+interface TabOperateItem {
+  text: string;
+  icon: string;
+  command: "other" | "left" | "right" | "all" | "refresh";
+}
+
+export const tabOperateItems: TabOperateItem[] = [
+  {
+    text: "刷新",
+    icon: "ant-design:sync-outlined",
+    command: "refresh"
+  },
+  {
+    text: "关闭其他",
+    icon: "ant-design:close-outlined",
+    command: "other"
+  },
+  {
+    text: "关闭右侧",
+    icon: "ant-design:arrow-right-outlined",
+    command: "right"
+  },
+  {
+    text: "关闭左侧",
+    icon: "ant-design:arrow-left-outlined",
+    command: "left"
+  },
+  {
+    text: "关闭全部",
+    icon: "ant-design:close-outlined",
+    command: "all"
+  }
+];
