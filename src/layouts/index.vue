@@ -1,7 +1,7 @@
 <template>
   <div class="ow-wrapper">
     <div class="header-wrapper">
-      <Header :menus="menus" />
+      <Header />
       <Tabs />
     </div>
     <div class="content-wrapper">
@@ -13,13 +13,8 @@
 </template>
 
 <script setup lang="ts">
-import Header from "./components/header/index.vue";
-import Tabs from "./components/tabs/index.vue";
-import { getModuleRoutes } from "../router/utils";
-import { getHeaderMenus } from "./utils";
-
-const routes = getModuleRoutes();
-const menus = getHeaderMenus(routes);
+import Header from "/@/layouts/components/header/index.vue";
+import Tabs from "/@/layouts/components/tabs/index.vue";
 </script>
 
 <style lang="scss" scoped>

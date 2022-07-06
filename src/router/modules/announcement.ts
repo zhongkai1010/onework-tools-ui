@@ -10,7 +10,7 @@ export default {
     {
       name: "announcement_index",
       path: "index",
-      component: () => import("../../views/login/index.vue"),
+      component: () => import("../../views/announcement/index.vue"),
       meta: { title: "通知公告" }
     }
   ]

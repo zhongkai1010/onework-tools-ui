@@ -1,14 +1,14 @@
 <template>
   <template v-if="props.menu.children">
-    <ElSubMenu :index="props.menu.path">
+    <el-sub-menu :index="props.menu.path">
       <template #title>
         <IconifyIcon :icon="menu.icon" />
         <span>{{ menu.title }}</span>
       </template>
       <template v-for="item in props.menu.children" :key="item.path">
-        <SubMenu :menu="item" />
+        <sub-menu :menu="item" />
       </template>
-    </ElSubMenu>
+    </el-sub-menu>
   </template>
   <template v-else>
     <el-menu-item :index="props.menu.path">

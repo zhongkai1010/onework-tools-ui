@@ -1,38 +1,47 @@
 <template>
   <div class="header-container">
     <Logo :title="`OneWork Tools UI`" :logo="logoPng" />
-    <ElMenu mode="horizontal" :router="true" @select="onMenuSelect">
-      <template v-for="menu in props.menus" :key="menu.path">
-        <SubMenu :menu="menu" />
+    <el-menu
+      mode="horizontal"
+      :router="true"
+      @select="onMenuSelect"
+      :default-active="(selectRoute as string)"
+    >
+      <template v-for="menu in menus" :key="menu.path">
+        <sub-menu :menu="menu" />
       </template>
-    </ElMenu>
+    </el-menu>
     <Tools />
   </div>
 </template>
 
 <script setup lang="ts">
-import logoPng from "../../../assets/logo.png";
-import { HeaderMenu } from "../../types";
 import _ from "lodash";
-import { getRouteMap } from "/@/router/utils";
-import { headerTabStoreHook } from "/@/store/headerTabs";
-
+import { getModuleRoutes, getRouteMap } from "/@/router/utils";
+import { getHeaderMenus } from "/@/layouts/utils";
+import { headerTabStoreHook, defaultTab } from "/@/store/headerTabs";
+import logoPng from "/@/assets/logo.png";
 import Logo from "./Logo.vue";
 import Tools from "./Tools.vue";
+import { computed } from "vue";
 
-const props = defineProps<{
-  menus: HeaderMenu[];
-}>();
+const routes = getModuleRoutes();
+const routeMap = getRouteMap();
+const menus = getHeaderMenus(routes);
 
-const routes = getRouteMap();
+const selectRoute = computed(() => {
+  const name = headerTabStoreHook().selectedTabName;
+  if (name === defaultTab.name) {
+    return undefined;
+  }
+  return name;
+});
 
-const onMenuSelect = (index: any, path: string[]): void => {
-  console.log("onMenuSelect", routes);
-  console.log("onMenuSelect", path);
-  console.log("onMenuSelect", routes[_.last(path)]);
-  const route = routes[_.last(path)];
+const onMenuSelect = (_index: any, paths: string[]): void => {
+  const path = _.last(paths);
+  const route = routeMap[path];
   headerTabStoreHook().setSelectTab({
-    name: _.last(path) as string,
+    name: path,
     text: route.meta.title as string,
     icon: (route.meta.icon || "ant-design:home-outlined") as string
   });
@@ -48,9 +57,36 @@ const onMenuSelect = (index: any, path: string[]): void => {
   outline-style: dotted;
   outline-color: rgb(81, 90, 110);
   background-color: $header-background;
-  & :deep(.el-menu--horizontal) {
-    border-bottom: 0px;
-    width: 50%;
+
+  .el-menu {
+    width: 60%;
+    border-bottom: 0;
+    background-color: $header-background;
+    .el-menu-item {
+      margin: 10px 5px 0 0;
+      border-bottom: 0;
+      height: 40px;
+      background-color: $header-menu-background;
+      &:hover {
+        background-color: $header-menu-activate-background;
+      }
+      &.is-active {
+        background-color: $header-menu-activate-background;
+      }
+    }
+    &:deep(.el-sub-menu__title) {
+      margin-top: 10px;
+      margin-right: 5px;
+      height: 40px;
+      border-bottom: 0;
+    }
+    &:deep(.el-sub-menu__title:hover) {
+      background-color: $header-menu-activate-background;
+    }
+    &:deep(.el-sub-menu.is-active .el-sub-menu__title) {
+      border: 0;
+      background-color: $header-menu-activate-background;
+    }
   }
 }
 </style>
