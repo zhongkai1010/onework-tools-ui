@@ -7,7 +7,7 @@ const globalConfigStore = defineStore("global-configs", {
     showTabs: boolean;
   } {
     return {
-      layout: "horizontal",
+      layout: "column",
       showTabs: true
     };
   },

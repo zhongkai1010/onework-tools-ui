@@ -1,20 +1,21 @@
 <template>
   <div class="ow-wrapper">
-    <div class="header-wrapper">
-      <Header />
-      <Tabs />
-    </div>
-    <div class="content-wrapper">
-      <router-view v-slot="{ Component }">
-        <component :is="Component" />
-      </router-view>
-    </div>
+    <template v-if="layout === 'column'">
+      <ColumnLayout />
+    </template>
+    <template v-if="layout === 'horizontal'">
+      <HorizontalLayout />
+    </template>
   </div>
 </template>
 
-<script setup lang="ts">
-import Header from "/@/layouts/components/header/index.vue";
-import Tabs from "/@/layouts/components/tabs/index.vue";
+<script lang="ts" setup>
+import { computed } from "vue";
+import { siteConfigStoreHook } from "/@/store/globalConfig";
+import ColumnLayout from "/@/layouts/column.vue";
+import HorizontalLayout from "/@/layouts/horizontal.vue";
+
+const layout = computed(() => siteConfigStoreHook().layout);
 </script>
 
 <style lang="scss" scoped>
@@ -22,35 +23,6 @@ import Tabs from "/@/layouts/components/tabs/index.vue";
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: $header-background;
-  .header-wrapper {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    z-index: 100;
-    padding: 0;
-    box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
-    width: 100%;
-  }
-  .content-wrapper {
-    z-index: 1;
-    overflow: auto;
-    padding-top: 110px;
-    height: 100vh;
-    background-color: $main-background;
-    &::-webkit-scrollbar {
-      width: 5px;
-      height: 10px;
-      border-radius: 4px;
-    }
-    &::-webkit-scrollbar-thumb {
-      border-radius: 4px;
-      background: #bfc7e0;
-      opacity: 0.3;
-    }
-    .content-container {
-      padding: 20px;
-    }
-  }
+  background-color: $body-background;
 }
 </style>

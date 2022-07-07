@@ -7,7 +7,12 @@
       <div class="tab-wrapper">
         <div class="tab-container">
           <el-tabs type="card" :model-value="selectName">
-            <el-tab-pane v-for="(item, index) in items" :key="index" :name="item.name">
+            <el-tab-pane
+              v-for="(item, index) in items"
+              :key="index"
+              :name="item.name"
+              :closable="true"
+            >
               <template #label>
                 <span class="tab-lable">
                   <iconify-icon :icon="item.icon" />
@@ -88,9 +93,7 @@ const onRemoveClick = () => {
       padding: 0 20px;
       margin-right: 5px;
       border-radius: 5px 5px 0px 0px;
-      &:last-child {
-        margin-right: 0px;
-      }
+
       &:hover {
         background-color: #dee1e6;
         color: #515a6e;
