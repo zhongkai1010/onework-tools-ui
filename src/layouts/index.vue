@@ -14,8 +14,11 @@ import { computed } from "vue";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
 import ColumnLayout from "/@/layouts/column.vue";
 import HorizontalLayout from "/@/layouts/horizontal.vue";
+import { getModuleRoutes } from "/@/router/utils";
 
 const layout = computed(() => siteConfigStoreHook().layout);
+
+console.log(getModuleRoutes());
 </script>
 
 <style lang="scss" scoped>
