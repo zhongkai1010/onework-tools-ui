@@ -25,7 +25,10 @@
           </el-scrollbar>
         </div>
         <div class="menu-container">
-          <el-menu default-active="2" class="el-menu-vertical-demo">
+          <el-divider>
+            <span> 菜单 </span>
+          </el-divider>
+          <el-menu default-active="2">
             <el-sub-menu index="1">
               <template #title>
                 <el-icon><location /></el-icon>
@@ -79,7 +82,7 @@ const data = mock({
   "tabs|20": [
     {
       name: "@word",
-      text: "@ctitle(2,5)",
+      text: "@ctitle(2,3)",
       "icon|+1": [
         "ant-design:audio-outlined",
         ":ant-design:android-filled",
@@ -111,10 +114,14 @@ console.log(data);
   .logo-container {
     line-height: 60px;
     text-align: center;
+    &:deep(.el-tabs__active-bar) {
+      width: 0;
+      border: 0px;
+    }
     .logo {
       position: fixed;
       top: 0;
-      background-color: #000;
+      background-color: #282c34;
       display: block;
       width: 64px;
       height: 60px;
@@ -143,33 +150,63 @@ console.log(data);
   }
   .menu-wrapper {
     display: flex;
-
+    height: calc(100vh - 60px);
     .tab-container {
       max-width: 64px;
       height: calc(100vh - 60px);
+      background-color: #282c34;
+      color: #fff;
+      &:deep(.el-tabs__nav-wrap) {
+        margin: 0px;
+      }
+      &:deep(.el-tabs__active-bar) {
+        width: 0px;
+        height: 0px;
+        border: 0px;
+      }
       &:deep(.el-menu) {
         height: calc(100vh - 60px);
       }
       &:deep(.el-tabs__item) {
         padding: 5px;
         height: auto;
+        &.is-active {
+          color: #fff;
+          background-color: #41b584;
+        }
       }
       .menu-item {
         display: flex;
+        color: #fff;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 54px;
+        width: 56px;
         height: 54px;
         border-radius: 5px;
-        // span {
-        //   text-overflow: ellipsis;
-        //   white-space: nowrap;
-        // }
+        padding: 10px 0px;
+        & > .el-icon {
+          margin-top: 10px;
+        }
       }
     }
     .menu-container {
-      max-width: 200px;
+      &:deep(.el-sub-menu__title) {
+        height: 50px;
+        overflow: hidden;
+        line-height: 50px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: middle;
+      }
+      &:deep(.el-menu-item) {
+        height: 50px;
+        overflow: hidden;
+        line-height: 50px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: middle;
+      }
     }
   }
 }

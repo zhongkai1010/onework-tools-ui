@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import Header from "/@/layouts/components/header/index.vue";
+import Header from "/@/layouts/header/index.vue";
 import Tabs from "/@/layouts/components/tabs/index.vue";
 </script>
 
