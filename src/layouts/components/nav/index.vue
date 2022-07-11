@@ -1,18 +1,14 @@
 <template>
-  <div class="tab-container">
-    <el-scrollbar>
-      <el-tabs :tab-position="'left'">
-        <el-tab-pane v-for="(item, index) in data.tabs" :key="index">
-          <template #label>
-            <div class="menu-item">
-              <IconifyIcon :icon="item.icon" />
-              <span>{{ item.text }}</span>
-            </div>
-          </template>
-        </el-tab-pane>
-      </el-tabs>
-    </el-scrollbar>
-  </div>
+  <el-tabs :tab-position="'left'" class="tab-container">
+    <el-tab-pane v-for="(item, index) in data.tabs" :key="index">
+      <template #label>
+        <div class="menu-item">
+          <IconifyIcon :icon="item.icon" />
+          <span>{{ item.text }}</span>
+        </div>
+      </template>
+    </el-tab-pane>
+  </el-tabs>
 </template>
 
 <script lang="ts" setup>
@@ -49,7 +45,6 @@ console.log(data);
 <style lang="scss" scoped>
 .tab-container {
   max-width: 64px;
-  height: calc(100vh - 60px);
   background-color: #282c34;
   color: #fff;
   &:deep(.el-tabs__nav-wrap) {
@@ -59,9 +54,6 @@ console.log(data);
     width: 0px;
     height: 0px;
     border: 0px;
-  }
-  &:deep(.el-menu) {
-    height: calc(100vh - 60px);
   }
   &:deep(.el-tabs__item) {
     padding: 5px;

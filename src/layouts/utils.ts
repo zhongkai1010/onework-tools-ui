@@ -65,3 +65,49 @@ export const tabOperateItems: TabOperateItem[] = [
     command: "all"
   }
 ];
+
+export const layoutItems = [
+  {
+    value: "column",
+    label: "分栏"
+  },
+  {
+    value: "complex",
+    label: "综合"
+  },
+  {
+    value: "portrait",
+    label: "纵向"
+  },
+  {
+    value: "horizontal",
+    label: "横向"
+  },
+  {
+    value: "standard",
+    label: "标准"
+  },
+  {
+    value: "float",
+    label: "浮动"
+  }
+];
+
+export const menuWidthItems = [
+  {
+    value: "200px",
+    label: "200px"
+  },
+  {
+    value: "266px",
+    label: "266px"
+  },
+  {
+    value: "277px",
+    label: "277px"
+  },
+  {
+    value: "288px",
+    label: "288px"
+  }
+];
