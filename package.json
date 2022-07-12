@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.1",
+    "@vueuse/core": "^8.9.1",
+    "animate.css": "^4.1.1",
     "element-plus": "^2.2.2",
     "lodash": "^4.17.21",
     "mockjs": "^1.1.0",

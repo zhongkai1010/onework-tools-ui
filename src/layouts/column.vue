@@ -19,10 +19,7 @@
         <el-header class="header-wrapper"> header </el-header>
         <el-main class="main-wrapper">
           <div class="tabs-wrapper">tabs-wrapper</div>
-          <div class="body-wrapper">
-            body-wrapper
-            <placeholder />
-          </div>
+          <div class="body-wrapper">body-wrapper</div>
         </el-main>
       </el-container>
     </el-main>
@@ -45,7 +42,7 @@ $header-height: 60px;
 .aside-wrapper {
   display: flex;
   width: calc($logo-width + v-bind(menuWidth));
-  background-color: #51557e;
+
   font-style: 60px;
   color: #fff;
   .nav-wrapper {
@@ -53,24 +50,20 @@ $header-height: 60px;
       display: block;
       width: $logo-width;
       height: $header-height;
-      background-color: #231955;
     }
     .nav-container {
       width: $logo-width;
       height: calc(100vh - $header-height);
-      background-color: #1f4690;
     }
   }
   .menu-wrapper {
     .title {
       width: v-bind(menuWidth);
       height: $header-height;
-      background-color: #ffe5b4;
     }
     .menu-container {
       width: v-bind(menuWidth);
       height: calc(100vh - $header-height);
-      background-color: #e8aa42;
     }
   }
 }
@@ -83,16 +76,12 @@ $header-height: 60px;
   }
   .header-wrapper {
     height: $header-height;
-    background-color: #51557e;
   }
   .tabs-wrapper {
     height: 50px;
-    background-color: #816797;
   }
   .body-wrapper {
     position: relative;
-
-    background-color: #d6d5a8;
   }
 }
 </style>

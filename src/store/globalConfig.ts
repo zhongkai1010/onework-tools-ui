@@ -9,9 +9,9 @@ const globalConfigStore = defineStore("global-configs", {
     drawerState: false;
   } {
     return {
-      layout: "float",
+      layout: "standard",
       showTabs: true,
-      menuWidth: 200,
+      menuWidth: 266,
       drawerState: false
     };
   },

@@ -1,5 +1,5 @@
 <template>
-  <el-menu :unique-opened="true">
+  <el-menu :unique-opened="true" class="menu-container">
     <sub-menu v-for="menu in menus" :menu="menu" :key="menu.path" />
   </el-menu>
 </template>
@@ -44,4 +44,8 @@ const getMenus = () => {
 const menus = getMenus();
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.menu-container {
+  bottom: 0px;
+}
+</style>

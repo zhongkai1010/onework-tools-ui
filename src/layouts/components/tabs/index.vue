@@ -59,6 +59,7 @@ import TabTools from "./TabTools.vue";
 import { headerTabStoreHook, defaultTab } from "/@/store/headerTabs";
 import { useRouter } from "vue-router";
 import { findElementParentId, tabOperateItems } from "../../utils";
+import { mock } from "mockjs";
 /**
  *   init
  */
@@ -78,8 +79,21 @@ const tabsMenuState = reactive({
 const selectName = computed(() => {
   return headerTabStoreHook().selectedTabName;
 });
+const mockData = mock({
+  "tabs|2": [
+    {
+      name: "@guid",
+      text: "@ctitle(2,3)",
+      "icon|+1": [
+        "ant-design:audio-outlined",
+        ":ant-design:android-filled",
+        "ant-design:alipay-square-filled"
+      ]
+    }
+  ]
+}).tabs;
 const tabs = computed(() => {
-  return headerTabStoreHook().tabs;
+  return [...headerTabStoreHook().tabs, ...mockData];
 });
 /**
  *  events
