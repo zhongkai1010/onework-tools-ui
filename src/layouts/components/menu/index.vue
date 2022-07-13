@@ -46,6 +46,11 @@ const menus = getMenus();
 
 <style lang="scss" scoped>
 .menu-container {
-  bottom: 0px;
+  border: 0px;
+  &:deep(.el-menu-item) {
+    &.is-active {
+      background-color: $header-activate-color;
+    }
+  }
 }
 </style>

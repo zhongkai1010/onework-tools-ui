@@ -22,7 +22,7 @@ import Tabs from "/@/layouts/components/tabs/index.vue";
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: $header-background;
+  background-color: $header-color;
   .header-wrapper {
     display: flex;
     flex-direction: column;
@@ -37,7 +37,7 @@ import Tabs from "/@/layouts/components/tabs/index.vue";
     overflow: auto;
     padding-top: 110px;
     height: 100vh;
-    background-color: $main-background;
+    background-color: $header-color;
     &::-webkit-scrollbar {
       width: 5px;
       height: 10px;

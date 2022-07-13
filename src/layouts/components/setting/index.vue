@@ -56,6 +56,7 @@ const onClickConfig = () => {
       padding: 10px;
       list-style: none;
       color: #fff;
+      font-size: 12px;
       a {
         display: flex;
         flex-direction: column;
@@ -64,7 +65,6 @@ const onClickConfig = () => {
         height: 60px;
         padding: 10px 5px;
         text-align: center;
-
         border-radius: 5.5px;
         i {
           margin-bottom: 5px;

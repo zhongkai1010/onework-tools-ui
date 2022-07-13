@@ -56,22 +56,22 @@ const onMenuSelect = (_index: any, paths: string[]): void => {
   border-bottom: 1px solid rgb(0 21 41 / 8%);
   outline-style: dotted;
   outline-color: rgb(81, 90, 110);
-  background-color: $header-background;
+  background-color: $header-color;
 
   .el-menu {
     width: 60%;
     border-bottom: 0;
-    background-color: $header-background;
+    background-color: $header-color;
     .el-menu-item {
       margin: 10px 5px 0 0;
       border-bottom: 0;
       height: 40px;
-      background-color: $header-menu-background;
+      background-color: $header-color;
       &:hover {
-        background-color: $header-menu-activate-background;
+        background-color: $header-activate-color;
       }
       &.is-active {
-        background-color: $header-menu-activate-background;
+        background-color: $header-activate-color;
       }
     }
     &:deep(.el-sub-menu__title) {
@@ -81,11 +81,11 @@ const onMenuSelect = (_index: any, paths: string[]): void => {
       border-bottom: 0;
     }
     &:deep(.el-sub-menu__title:hover) {
-      background-color: $header-menu-activate-background;
+      background-color: $header-activate-color;
     }
     &:deep(.el-sub-menu.is-active .el-sub-menu__title) {
       border: 0;
-      background-color: $header-menu-activate-background;
+      background-color: $header-activate-color;
     }
   }
 }

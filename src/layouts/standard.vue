@@ -20,7 +20,24 @@
             </div>
           </div>
           <div class="tabs-wrapper">
-            <LayoutTabs />
+            <div>
+              <IconifyIcon icon="fe:app-menu" />
+            </div>
+            <div class="tabs-container">
+              <el-tabs type="card">
+                <el-tab-pane>
+                  <template #label>
+                    <span class="label">
+                      <IconifyIcon icon="fe:app-menu" :title="`首页`" />
+                      <span>首页</span>
+                    </span>
+                  </template>
+                </el-tab-pane>
+              </el-tabs>
+              <div>
+                <IconifyIcon icon="fe:app-menu" />
+              </div>
+            </div>
           </div>
         </el-header>
         <el-main class="body-wrapper">
@@ -39,7 +56,7 @@ import { computed } from "vue";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
 import LayoutMenu from "/@/layouts/components/menu/index.vue";
 import LayoutTools from "/@/layouts/components/tools/index.vue";
-import LayoutTabs from "/@/layouts/components/tabs/index.vue";
+
 import logoImg from "/@/assets/logo.png";
 
 const menuWidth = computed(() => `${siteConfigStoreHook().menuWidth}px`);
@@ -73,12 +90,11 @@ console.log(data);
 </script>
 
 <style lang="scss" scoped>
-$logo-width: 64px;
-$header-height: 60px;
 .aside-wrapper {
   display: flex;
   flex-direction: column;
   width: v-bind(menuWidth);
+  background-color: $header-color;
   .logo-wrapper {
     height: $header-height;
     width: v-bind(menuWidth);
@@ -88,6 +104,7 @@ $header-height: 60px;
       align-items: center;
       justify-content: center;
       margin-top: 14px;
+      color: $header-font-color;
     }
     img {
       width: 32px;
@@ -100,6 +117,7 @@ $header-height: 60px;
     }
   }
   .menu-wrapper {
+    box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
     width: v-bind(menuWidth);
     height: calc(100vh - $header-height);
   }
@@ -109,6 +127,7 @@ $header-height: 60px;
   .header-wrapper {
     padding: 0;
     height: calc($header-height + 50px);
+    background-color: $header-color;
     .nav-wrapper {
       width: calc(100vw - v-bind(menuWidth));
       height: $header-height;
@@ -122,6 +141,66 @@ $header-height: 60px;
     .tabs-wrapper {
       height: 50px;
       width: calc(100vw - v-bind(menuWidth));
+      .tabs-container {
+        display: flex;
+        box-sizing: border-box;
+        background-color: $header-color;
+        max-height: 50px;
+        padding: 0 5%;
+        align-content: center;
+        align-items: center;
+        justify-content: space-between;
+        &:deep(.el-tabs) {
+          display: flex;
+        }
+        &:deep(.el-tabs__header) {
+          border-bottom: 0px;
+        }
+
+        &:deep(.el-tabs__item) {
+          height: 38px;
+          padding: 0 30px 0 30px;
+          margin-top: 10px;
+          margin-right: 10px;
+          line-height: 38px;
+          text-align: center;
+          border: 0;
+          border-radius: 5px 5px 0px 0px;
+          transition: padding 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+        }
+
+        &:deep(.el-tabs__header .el-tabs__item:last-child) {
+          padding: 0 30px 0 30px;
+        }
+
+        &:deep(.el-tabs__nav) {
+          border: 0px;
+        }
+
+        &:deep(.el-tabs__header) {
+          margin: 0;
+        }
+
+        &:deep(.el-tabs__item.is-active) {
+          border-bottom: 0px;
+          color: #1890ff;
+          background-color: #e8f4ff;
+        }
+
+        &:deep(.el-tabs__item:hover) {
+          border-bottom: 0px;
+          background-color: #dee1e6;
+          color: #515a6e;
+        }
+
+        .label {
+          i {
+            vertical-align: top;
+            margin-top: 11px;
+            margin-right: 5px;
+          }
+        }
+      }
     }
   }
   .body-wrapper {

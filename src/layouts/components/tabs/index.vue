@@ -136,7 +136,7 @@ const onToolItemClick = (command: "other" | "left" | "right" | "all" | "refresh"
 .tabs-container {
   display: flex;
   box-sizing: border-box;
-  background-color: $header-background;
+  background-color: $header-color;
   max-height: 50px;
   padding: 0 5%;
   user-select: none;

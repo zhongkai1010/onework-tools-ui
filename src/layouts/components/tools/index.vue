@@ -1,5 +1,5 @@
 <template>
-  <el-space :size="25" class="tools-container">
+  <el-space :size="20" class="tools-container">
     <IconifyIcon icon="akar-icons:lock-on" title="锁定" />
     <IconifyIcon icon="akar-icons:search" title="搜索" />
     <ElBadge :value="12" class="notice">
@@ -25,6 +25,7 @@
       <span class="avatar">
         <el-avatar :size="40" />
         <span class="username">{{ random.cword(3, 5) }}</span>
+        <IconifyIcon icon="ant-design:down-outlined" :size="15" />
       </span>
       <template #dropdown>
         <el-dropdown-menu>

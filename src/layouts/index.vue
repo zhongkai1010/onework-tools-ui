@@ -42,6 +42,5 @@ const layout = computed(() => siteConfigStoreHook().layout);
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: $body-background;
 }
 </style>
