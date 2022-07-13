@@ -1,6 +1,7 @@
 @import "./mixin.scss";
 @import "./transition.scss";
 @import "./element-plus.scss";
+@import "remixicon/fonts/remixicon.css";
 
 body {
   width: 100%;
@@ -30,7 +31,7 @@ html {
 
 /* 灰色模式 */
 .html-grey {
-  filter: grayscale(100%);
+  filter: grayscalce(100%);
 }
 
 /* 色弱模式 */

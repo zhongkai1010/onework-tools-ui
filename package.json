@@ -19,6 +19,7 @@
     "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.14",
+    "remixicon": "^2.5.0",
     "resize-observer-polyfill": "^1.5.1",
     "vue": "^3.2.25",
     "vue-router": "4",

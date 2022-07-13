@@ -19,13 +19,6 @@
 </template>
 
 <script setup lang="ts">
-interface Menu {
-  title: string;
-  path: string;
-  icon: string;
-  children?: Menu[];
-}
-
 const props = defineProps<{
   menu: Menu;
 }>();

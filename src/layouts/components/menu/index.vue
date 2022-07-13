@@ -1,53 +1,40 @@
 <template>
-  <el-menu :unique-opened="true" class="menu-container">
-    <sub-menu v-for="menu in menus" :menu="menu" :key="menu.path" />
-  </el-menu>
+  <el-scrollbar class="container">
+    <el-menu
+      :unique-opened="true"
+      @select="onSelect"
+      :collapse="props.collapse"
+      :default-active="props.defaultActive"
+    >
+      <sub-menu v-for="menu in data" :menu="menu" :key="menu.path" />
+    </el-menu>
+  </el-scrollbar>
 </template>
 
 <script lang="ts" setup>
-import { mock } from "mockjs";
+const props = defineProps<{
+  collapse?: boolean;
+  data: Menu[];
+  defaultActive?: string;
+}>();
 
-const getMenus = () => {
-  const menus = mock({
-    "tabs|20": [
-      {
-        title: "@cword(2,4)",
-        path: "@url",
-        "icon|+1": [
-          "ant-design:audio-outlined",
-          "ant-design:android-filled",
-          "ant-design:alipay-square-filled"
-        ]
-      }
-    ]
-  }).tabs;
-  for (let index = 0; index < menus.length; index++) {
-    if (index % 3 === 0) {
-      menus[index].children = mock({
-        "data|1-3": [
-          {
-            title: "@cword(2,4)",
-            path: "@url",
-            "icon|+1": [
-              "ant-design:audio-outlined",
-              "ant-design:android-filled",
-              "ant-design:alipay-square-filled"
-            ]
-          }
-        ]
-      }).data;
-    }
-  }
-  return menus;
+const emit = defineEmits<{
+  (e: "select", indexPath: string[]): void;
+}>();
+
+const onSelect = (_index, indexPath: string[]): void => {
+  emit("select", indexPath);
 };
-
-const menus = getMenus();
 </script>
 
 <style lang="scss" scoped>
-.menu-container {
+.container {
   border: 0px;
+  &:deep(.el-menu) {
+    border: 0px;
+  }
   &:deep(.el-menu-item) {
+    height: $menu-height;
     &.is-active {
       background-color: $header-activate-color;
     }

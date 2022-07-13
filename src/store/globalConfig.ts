@@ -7,12 +7,14 @@ const globalConfigStore = defineStore("global-configs", {
     showTabs: boolean;
     menuWidth: number;
     drawerState: false;
+    menuState: boolean;
   } {
     return {
       layout: "standard",
       showTabs: true,
       menuWidth: 266,
-      drawerState: false
+      drawerState: false,
+      menuState: false
     };
   },
   actions: {

@@ -1,40 +1,16 @@
 <template>
   <div class="ow-wrapper">
-    <template v-if="layout === 'column'">
-      <ColumnLayout />
-    </template>
-    <template v-else-if="layout === 'horizontal'">
-      <HorizontalLayout />
-    </template>
-    <template v-else-if="layout === 'complex'">
-      <ComplexLayout />
-    </template>
-    <template v-else-if="layout === 'float'">
-      <FloatLayout />
-    </template>
-    <template v-else-if="layout === 'portrait'">
-      <PortraitLayout />
-    </template>
-    <template v-else>
-      <StandardLayout />
-    </template>
-    <Setting />
+    <div class="tabs-wrapper">
+      <LayoutTools />
+      <LayoutAvatar :username="'系统管理员'" :avatar="avatarImg" />
+    </div>
   </div>
-  <config-drawer />
 </template>
 
 <script lang="ts" setup>
-import { computed } from "vue";
-import { siteConfigStoreHook } from "/@/store/globalConfig";
-import ColumnLayout from "/@/layouts/column.vue";
-import HorizontalLayout from "/@/layouts/horizontal.vue";
-import ComplexLayout from "/@/layouts/complex.vue";
-import FloatLayout from "/@/layouts/float.vue";
-import PortraitLayout from "/@/layouts/portrait.vue";
-import StandardLayout from "/@/layouts/standard.vue";
-import Setting from "/@/layouts/components/setting/index.vue";
-import ConfigDrawer from "/@/layouts/components/setting/ConfigDrawer.vue";
-const layout = computed(() => siteConfigStoreHook().layout);
+import LayoutTools from "/@/layouts/components/tools/index.vue";
+import LayoutAvatar from "/@/layouts/components/avatar/index.vue";
+import avatarImg from "/@/assets/logo.png";
 </script>
 
 <style lang="scss" scoped>
@@ -42,5 +18,11 @@ const layout = computed(() => siteConfigStoreHook().layout);
   position: relative;
   width: 100%;
   height: 100%;
+  .tabs-wrapper {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    height: 60px;
+  }
 }
 </style>

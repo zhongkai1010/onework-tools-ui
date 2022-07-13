@@ -1,15 +1,40 @@
 <template>
-  <el-space :size="20" class="tools-container">
-    <IconifyIcon icon="akar-icons:lock-on" title="锁定" />
-    <IconifyIcon icon="akar-icons:search" title="搜索" />
-    <ElBadge :value="12" class="notice">
-      <IconifyIcon icon="akar-icons:bell" title="通知" />
-    </ElBadge>
-    <IconifyIcon icon="akar-icons:full-screen" title="全屏" />
-    <el-dropdown>
-      <span class="lang">
-        <IconifyIcon icon="uil:english-to-chinese" title="中英切换" />
-      </span>
+  <div class="container">
+    <i class="ri-lock-line button" title="锁屏" />
+    <i class="ri-search-line button" title="搜索" />
+    <el-popover>
+      <template #reference>
+        <ElBadge :value="12" class="button">
+          <i class="ri-notification-line" title="通知" />
+        </ElBadge>
+      </template>
+      <template #default>
+        <div class="demo-rich-conent" style="display: flex; gap: 16px; flex-direction: column">
+          <el-avatar
+            :size="60"
+            src="https://avatars.githubusercontent.com/u/72015883?v=4"
+            style="margin-bottom: 8px"
+          />
+          <div>
+            <p class="demo-rich-content__name" style="margin: 0; font-weight: 500">Element Plus</p>
+            <p
+              class="demo-rich-content__mention"
+              style="margin: 0; font-size: 14px; color: var(--el-color-info)"
+            >
+              @element-plus
+            </p>
+          </div>
+
+          <p class="demo-rich-content__desc" style="margin: 0">
+            Element Plus, a Vue 3 based component library for developers, designers and product
+            managers
+          </p>
+        </div>
+      </template>
+    </el-popover>
+    <i class="ri-fullscreen-line button" title="全屏" />
+    <el-dropdown class="button">
+      <i class="ri-translate" title="中英切换" />
       <template #dropdown>
         <el-dropdown-menu>
           <el-dropdown-item>Action 1</el-dropdown-item>
@@ -20,46 +45,31 @@
         </el-dropdown-menu>
       </template>
     </el-dropdown>
-    <IconifyIcon icon="carbon:cloud-satellite-config" title="设置" />
-    <el-dropdown>
-      <span class="avatar">
-        <el-avatar :size="40" />
-        <span class="username">{{ random.cword(3, 5) }}</span>
-        <IconifyIcon icon="ant-design:down-outlined" :size="15" />
-      </span>
-      <template #dropdown>
-        <el-dropdown-menu>
-          <el-dropdown-item>Action 1</el-dropdown-item>
-          <el-dropdown-item>Action 2</el-dropdown-item>
-          <el-dropdown-item>Action 3</el-dropdown-item>
-          <el-dropdown-item disabled>Action 4</el-dropdown-item>
-          <el-dropdown-item divided>Action 5</el-dropdown-item>
-        </el-dropdown-menu>
-      </template>
-    </el-dropdown>
-  </el-space>
+    <i class="ri-settings-line button" title="设置" />
+  </div>
 </template>
 
-<script lang="ts" setup>
-import { Random as random } from "mockjs";
-</script>
+<script lang="ts" setup></script>
 
 <style lang="scss" scoped>
-.tools-container {
-  i {
-    cursor: pointer;
+@mixin text-center {
+  text-align: center;
+  cursor: pointer;
+  width: 40px;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  .button {
+    @include text-center();
   }
-  .notice {
-    margin-top: 6px;
+  .el-dropdown {
+    padding-left: 14px;
   }
-  .avatar {
-    display: flex;
-    align-items: center;
-    .username {
-      margin-left: 12px;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
+  &:deep(.el-badge__content) {
+    right: 20px;
   }
 }
 </style>

@@ -1,52 +1,36 @@
 <template>
-  <el-tabs :tab-position="'left'" class="tab-container">
-    <el-tab-pane v-for="(item, index) in data.tabs" :key="index">
-      <template #label>
-        <div class="menu-item">
-          <IconifyIcon :icon="item.icon" />
-          <span>{{ item.text }}</span>
-        </div>
-      </template>
-    </el-tab-pane>
-  </el-tabs>
+  <el-scrollbar class="container">
+    <el-tabs
+      :tab-position="'left'"
+      :model-value="props.selectName"
+      @tab-change="name => emit('select', name as string)"
+    >
+      <el-tab-pane v-for="tab in props.data" :key="tab.name" :name="tab.name">
+        <template #label>
+          <div class="menu-item">
+            <IconifyIcon :icon="tab.icon" />
+            <span>{{ tab.label }}</span>
+          </div>
+        </template>
+      </el-tab-pane>
+    </el-tabs>
+  </el-scrollbar>
 </template>
 
 <script lang="ts" setup>
-import { mock } from "mockjs";
-const data = mock({
-  "tabs|20": [
-    {
-      name: "@word",
-      text: "@ctitle(2,3)",
-      "icon|+1": [
-        "ant-design:audio-outlined",
-        ":ant-design:android-filled",
-        "ant-design:alipay-square-filled"
-      ],
-      menus: mock({
-        "data|5-10": [
-          {
-            name: "@guid()",
-            text: "@ctitle(2,5)",
-            "icon|+1": [
-              "ant-design:audio-outlined",
-              ":ant-design:android-filled",
-              "ant-design:alipay-square-filled"
-            ]
-          }
-        ]
-      }).data
-    }
-  ]
-});
-console.log(data);
+const props = defineProps<{
+  data: Tab[];
+  selectName?: string;
+}>();
+const emit = defineEmits<{
+  (e: "select", name: string): void;
+}>();
 </script>
 
 <style lang="scss" scoped>
-.tab-container {
-  max-width: 64px;
-  background-color: #282c34;
-  color: #fff;
+.container {
+  max-width: $logo-width;
+  background-color: $header-color;
   &:deep(.el-tabs__nav-wrap) {
     margin: 0px;
   }
@@ -58,14 +42,14 @@ console.log(data);
   &:deep(.el-tabs__item) {
     padding: 5px;
     height: auto;
+    color: $header-font-color;
     &.is-active {
-      color: #fff;
-      background-color: #41b584;
+      color: $header-font-activate-color;
+      background-color: $header-activate-color;
     }
   }
   .menu-item {
     display: flex;
-    color: #fff;
     flex-direction: column;
     align-items: center;
     justify-content: center;

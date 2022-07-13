@@ -1,5 +1,6 @@
 import { OwRouteRecordRaw } from "../router/types";
 import { HeaderMenu } from "./types";
+import { mock } from "mockjs";
 
 export const getHeaderMenus = (routes: OwRouteRecordRaw[], parent?: HeaderMenu): HeaderMenu[] => {
   const menus = [] as HeaderMenu[];
@@ -65,7 +66,6 @@ export const tabOperateItems: TabOperateItem[] = [
     command: "all"
   }
 ];
-
 export const layoutItems = [
   {
     value: "column",
@@ -92,7 +92,6 @@ export const layoutItems = [
     label: "浮动"
   }
 ];
-
 export const menuWidthItems = [
   {
     value: "200px",
@@ -111,3 +110,62 @@ export const menuWidthItems = [
     label: "288px"
   }
 ];
+export const avatarItems = [
+  { text: "个人中心", command: "info" },
+  { text: "退出系统", command: "quit" }
+];
+
+export const getTabs = (count = 20): Tab[] => {
+  const tabs = mock({
+    "tabs|100": [
+      {
+        label: "@cword(2,4)",
+        name: "@url",
+        "icon|+1": [
+          "ant-design:audio-outlined",
+          "ant-design:android-filled",
+          "ant-design:alipay-square-filled"
+        ]
+      }
+    ]
+  }).tabs as Tab[];
+  return tabs.slice(count);
+};
+
+export const getMenus = (): { selectPath: string; menus: Menu[] } => {
+  let selectPath: string;
+  const menus: Menu[] = mock({
+    "tabs|20": [
+      {
+        title: "@cword(2,4)",
+        path: "@url",
+        "icon|+1": [
+          "ant-design:audio-outlined",
+          "ant-design:android-filled",
+          "ant-design:alipay-square-filled"
+        ]
+      }
+    ]
+  }).tabs;
+  for (let index = 0; index < menus.length; index++) {
+    if (index % 3 === 0) {
+      menus[index].children = mock({
+        "data|1-3": [
+          {
+            title: "@cword(2,4)",
+            path: "@url",
+            "icon|+1": [
+              "ant-design:audio-outlined",
+              "ant-design:android-filled",
+              "ant-design:alipay-square-filled"
+            ]
+          }
+        ]
+      }).data;
+    }
+    if (index == 6) {
+      selectPath = menus[index].children[0].path;
+    }
+  }
+  return { selectPath, menus };
+};

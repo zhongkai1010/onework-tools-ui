@@ -9,9 +9,7 @@
       </div>
       <div class="menu-wrapper">
         <div class="title">title</div>
-        <el-scrollbar class="menu-container">
-          <LayoutMenu />
-        </el-scrollbar>
+        <LayoutMenu class="menu-container" :data="[]" />
       </div>
     </el-aside>
     <el-main class="main-content">
