@@ -1,16 +1,14 @@
 <template>
   <div class="ow-wrapper">
     <div class="tabs-wrapper">
-      <LayoutTools />
-      <LayoutAvatar :username="'系统管理员'" :avatar="avatarImg" />
+      <LayoutLogo :title="'OneWork Tools UI'" :logo="logoImg" :fold="true" />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import LayoutTools from "/@/layouts/components/tools/index.vue";
-import LayoutAvatar from "/@/layouts/components/avatar/index.vue";
-import avatarImg from "/@/assets/logo.png";
+import logoImg from "/@/assets/logo.png";
+import LayoutLogo from "/@/layouts/components/logo/index.vue";
 </script>
 
 <style lang="scss" scoped>
