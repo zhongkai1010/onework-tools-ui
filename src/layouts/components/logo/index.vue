@@ -1,37 +1,39 @@
 <template>
-  <div :class="props.fold ? 'container fold' : 'container'">
+  <div class="container" :class="{ fold: props.fold, column: props.column }">
     <a href="/">
-      <span class="logo">
+      <IconifyIcon icon="ri:vuejs-fill" class="logo" :size="32" />
+      <!-- <span class="logo">
         <img :src="props.logo" />
-      </span>
+      </span> -->
       <span class="title">{{ props.title }}</span>
     </a>
   </div>
 </template>
 
 <script lang="ts" setup>
+import IconifyIcon from "/@/components/OwIcon/src/iconifyIcon.vue";
 const props = defineProps<{
   logo: string;
   title: string;
   fold?: boolean;
+  column?: boolean;
 }>();
 </script>
 
 <style lang="scss" scoped>
 .container {
-  background-color: $header-color;
-  color: $header-font-color;
-
+  background-color: $header-background-color;
+  color: $header-color;
   a {
     display: flex;
     align-items: center;
-    height: $header-height;
   }
   .logo {
+    height: $header-height;
     width: $logo-width;
-
-    padding: 0 16px;
     box-sizing: border-box;
+    background-color: $logo-background;
+    color: $logo-color;
     img {
       width: 32px;
     }
@@ -39,9 +41,17 @@ const props = defineProps<{
   .title {
     display: inline-block;
     overflow: hidden;
-    margin-left: 5px;
     font-size: 20px;
     text-overflow: ellipsis;
+    line-height: $header-height;
+    background-color: $title-background;
+    color: $title-color;
+  }
+}
+.column {
+  .logo {
+  }
+  .title {
   }
 }
 .fold {

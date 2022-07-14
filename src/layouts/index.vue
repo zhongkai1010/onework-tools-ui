@@ -1,25 +1,29 @@
 <template>
   <div class="ow-wrapper">
-    <div class="tabs-wrapper">
-      <LayoutLogo :title="'OneWork Tools UI'" :logo="logoImg" :fold="true" />
+    <div class="header">
+      <ColumnHeader />
+    </div>
+    <br />
+    <br />
+    <div class="header">
+      <StandardHeader />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import logoImg from "/@/assets/logo.png";
-import LayoutLogo from "/@/layouts/components/logo/index.vue";
+import ColumnHeader from "/@/layouts/components/header/column.vue";
+import StandardHeader from "/@/layouts/components/header/standard.vue";
 </script>
 
 <style lang="scss" scoped>
 .ow-wrapper {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
-  .tabs-wrapper {
-    display: flex;
-    align-items: center;
-    justify-items: center;
+  .header {
+    width: 100%;
     height: 60px;
   }
 }

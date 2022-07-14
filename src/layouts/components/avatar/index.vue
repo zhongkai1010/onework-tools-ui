@@ -2,7 +2,7 @@
   <div class="container">
     <ElDropdown @visible-change="onChange">
       <span class="avatar">
-        <ElAvatar :src="props.avatar" />
+        <ElAvatar :src="props.avatar" shape="circle" />
         <span class="username">{{ props.username }}</span>
         <i :class="visibleState ? 'ri-arrow-down-s-line active' : 'ri-arrow-down-s-line'" />
       </span>
@@ -39,7 +39,17 @@ const onChange = state => {
     display: flex;
     align-content: center;
     align-items: center;
-    & .active {
+    i {
+      color: $header-color;
+    }
+    &:deep(.el-avatar) {
+      background-color: $header-background-color;
+      img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+    &.active {
       transform: rotate(180deg);
       transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), border 0s, color 0.1s, font-size 0s;
     }
@@ -51,6 +61,7 @@ const onChange = state => {
     text-overflow: ellipsis;
     line-height: 40px;
     cursor: pointer;
+    color: $header-color;
   }
 }
 </style>

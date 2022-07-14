@@ -138,9 +138,9 @@ const onToolItemClick = (command: "other" | "left" | "right" | "all" | "refresh"
   align-content: center;
   align-items: center;
   justify-content: space-between;
-  background-color: $header-color;
+  background-color: $header-background-color;
   width: 100%;
-  color: $header-font-color;
+  color: $header-color;
   line-height: $menu-height;
   padding: 0 20px;
   .fold {
@@ -169,8 +169,8 @@ const onToolItemClick = (command: "other" | "left" | "right" | "all" | "refresh"
     margin-right: 10px;
     &.is-active {
       border-bottom: 0px;
-      color: #1890ff;
-      background-color: #e8f4ff;
+      color: $activate-color;
+      background-color: $activate-background;
     }
     &:hover {
       border-bottom: 0px;
