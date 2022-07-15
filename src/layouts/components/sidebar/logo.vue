@@ -13,7 +13,7 @@
 <script lang="ts" setup>
 import IconifyIcon from "/@/components/OwIcon/src/iconifyIcon.vue";
 const props = defineProps<{
-  logo: string;
+  // logo: string;
   title: string;
   fold?: boolean;
   column?: boolean;

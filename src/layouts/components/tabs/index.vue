@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="tab-container">
     <i
       :class="menuState ? 'ri-menu-fold-line fold' : 'ri-menu-unfold-fill fold'"
       v-show="props.showFold"
@@ -133,7 +133,7 @@ const onToolItemClick = (command: "other" | "left" | "right" | "all" | "refresh"
 </script>
 
 <style lang="scss" scoped>
-.container {
+.tab-container {
   display: flex;
   align-content: center;
   align-items: center;
