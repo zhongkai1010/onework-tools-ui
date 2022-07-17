@@ -1,7 +1,7 @@
 <template>
   <div class="tab-container">
     <i
-      :class="menuState ? 'ri-menu-fold-line fold' : 'ri-menu-unfold-fill fold'"
+      :class="menufold ? 'ri-menu-unfold-fill fold' : 'ri-menu-fold-line fold fold'"
       v-show="props.showFold"
       @click="onFoldClick"
     />
@@ -60,8 +60,8 @@
 import { TabPanelName } from "element-plus";
 import { computed, reactive } from "vue";
 import TabTools from "./TabTools.vue";
-import { headerTabStoreHook, defaultTab } from "/@/store/headerTabs";
-import { siteConfigStoreHook } from "/@/store/globalConfig";
+import { pageStateStoreHook, defaultTab } from "/@/store/pageState";
+
 import { useRouter } from "vue-router";
 import { findElementParentId, tabOperateItems } from "../../utils";
 
@@ -85,19 +85,19 @@ const tabsMenuState = reactive({
  *  store tab state
  */
 const selectName = computed(() => {
-  return headerTabStoreHook().selectedTabName;
+  return pageStateStoreHook().currentPath;
 });
 const tabs = computed(() => {
-  return [...headerTabStoreHook().tabs];
+  return [...pageStateStoreHook().tabs];
 });
-const menuState = computed(() => {
-  return siteConfigStoreHook().menuState;
+const menufold = computed(() => {
+  return pageStateStoreHook().menufold;
 });
 /**
  *  events
  */
 const onTabClose = (name: TabPanelName) => {
-  headerTabStoreHook().closeTab(name as string);
+  pageStateStoreHook().closeTab(name as string);
 };
 const onTabChange = (tab: TabPanelName) => {
   const name = tab as string;
@@ -105,7 +105,7 @@ const onTabChange = (tab: TabPanelName) => {
   router.push(name);
   // tab 状态
   if (name !== defaultTab.name) {
-    headerTabStoreHook().setSelectTab(name);
+    pageStateStoreHook().setSelectTab(name);
   }
   tabsMenuState.name = name;
 };
@@ -120,13 +120,14 @@ const onTabContextMenu = (e: MouseEvent) => {
   tabsMenuState.name = id.replace("tab-", "");
 };
 const onFoldClick = () => {
-  siteConfigStoreHook().setValue("menuState", !menuState.value);
+  const store = pageStateStoreHook();
+  pageStateStoreHook().setValue("menufold", !store.menufold);
 };
 const onToolItemClick = (command: "other" | "left" | "right" | "all" | "refresh") => {
   if (command === "refresh") {
     router.push(tabsMenuState.name);
   } else {
-    headerTabStoreHook().operateTab(command, tabsMenuState.name);
+    pageStateStoreHook().operateTab(command, tabsMenuState.name);
   }
   tabsMenuState.show = false;
 };

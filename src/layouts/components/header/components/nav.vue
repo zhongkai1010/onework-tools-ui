@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { defaultTab } from "/@/store/headerTabs";
+import { defaultTab } from "/@/store/pageState";
 const props = defineProps<{
   data: Tab[];
   selectName?: string;

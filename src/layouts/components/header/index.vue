@@ -1,8 +1,9 @@
 <template>
   <div class="header-container" :class="[showState.layout]">
+    <Logo class="logo" v-if="showState.logo" />
     <i class="ri-menu-fold-line fold" v-if="showState.i" />
-    <Nav :data="getTabs()" class="nav" v-if="showState.nav && showState.layout == 'complex'" />
-    <Menu :data="getTabs()" class="nav" v-if="showState.nav && showState.layout == 'horizontal'" />
+    <Nav :data="tabs" class="nav" v-if="showState.nav && showState.layout == 'complex'" />
+    <Menu :data="menus" class="nav" v-if="showState.nav && showState.layout == 'horizontal'" />
     <Breadcrumb
       class="breadcrumb"
       v-if="showState.breadcrumb"
@@ -18,24 +19,29 @@
 </template>
 
 <script setup lang="ts">
-import Tools from "./tools.vue";
-import Breadcrumb from "./breadcrumb.vue";
-import Avatar from "./avatar.vue";
-import Nav from "./nav.vue";
-import Menu from "./menu.vue";
+import Tools from "./components/tools.vue";
+import Breadcrumb from "./components/breadcrumb.vue";
+import Avatar from "./components/avatar.vue";
+import Nav from "./components/nav.vue";
+import Menu from "./components/menu.vue";
+import Logo from "./components/logo.vue";
 import logoImg from "/@/assets/logo.png";
-import { getTabs } from "/@/layouts/utils";
+import { getTabs, getMenus } from "/@/layouts/utils";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
 import { computed } from "vue";
+
 const showState = computed(() => {
   const layout = siteConfigStoreHook().layout;
   return {
+    logo: layout === "horizontal" || layout === "standard",
     i: layout === "column" || layout === "complex" || layout === "portrait",
     nav: layout === "horizontal",
     breadcrumb: layout === "column" || layout === "float" || layout === "portrait",
     layout
   };
 });
+const { menus } = getMenus();
+const tabs = getTabs();
 </script>
 
 <style lang="scss" scoped>
@@ -75,7 +81,13 @@ const showState = computed(() => {
 }
 .horizontal {
   .nav {
-    width: calc(100% - 420px);
+    width: calc(100% - 640px);
+    margin-right: auto;
+  }
+}
+.standard {
+  .logo {
+    margin-left: 20px;
     margin-right: auto;
   }
 }

@@ -37,13 +37,14 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
+import { pageStateStoreHook } from "/@/store/pageState";
 import { layoutItems, menuWidthItems } from "/@/layouts/utils";
 
 const show = computed(() => {
-  return siteConfigStoreHook().drawerState;
+  return pageStateStoreHook().showDrawer;
 });
 const onClosed = () => {
-  siteConfigStoreHook().showDrawer(false);
+  pageStateStoreHook().setValue("showDrawer", false);
 };
 
 const fromValue = computed(() => {

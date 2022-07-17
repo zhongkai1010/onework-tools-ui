@@ -30,11 +30,11 @@
 </template>
 
 <script setup lang="ts">
-import { siteConfigStoreHook } from "/@/store/globalConfig";
+import { pageStateStoreHook } from "/@/store/pageState";
 
 const onClickConfig = () => {
   console.log("onClickConfig");
-  siteConfigStoreHook().showDrawer(true);
+  pageStateStoreHook().setValue("showDrawer", true);
 };
 </script>
 

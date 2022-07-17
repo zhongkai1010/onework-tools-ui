@@ -15,24 +15,30 @@ export const defaultTab: TabOption = {
 
 // useStore 可以是 useUser、useCart 之类的任何东西
 // 第一个参数是应用程序中 store 的唯一 id
-const headerTabStore = defineStore({
+const pageStateStore = defineStore({
   id: "ow-header-tabs",
-  state: (): { selectedTabName: string; tabs: TabOption[] } => {
+  state: (): {
+    routePaths: string[];
+    tabs: TabOption[];
+    menufold: boolean;
+    showDrawer: boolean;
+  } => {
     return {
-      selectedTabName: defaultTab.name,
-      tabs: []
+      routePaths: [defaultTab.name],
+      tabs: [],
+      menufold: false,
+      showDrawer: false
     };
   },
   getters: {
-    selectTab: (state): TabOption => {
-      const index = state.tabs.findIndex(t => t.name === state.selectedTabName);
-      if (index < 0) {
-        return defaultTab;
-      }
-      return state.tabs[index];
+    currentPath(): string {
+      return this.routePaths[this.routePaths.length - 1];
     }
   },
   actions: {
+    setValue(type: string, value: any) {
+      this[type] = value;
+    },
     setSelectTab(tab: TabOption | string) {
       const tabs = this.tabs as TabOption[];
       const tabOption: TabOption =
@@ -106,6 +112,6 @@ const headerTabStore = defineStore({
   }
 });
 
-export function headerTabStoreHook() {
-  return headerTabStore(store);
+export function pageStateStoreHook() {
+  return pageStateStore(store);
 }
