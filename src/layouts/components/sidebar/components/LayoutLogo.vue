@@ -13,6 +13,9 @@
 import { computed } from "vue";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
 const menuWidth = computed(() => `${siteConfigStoreHook().menuWidth}px`);
+const titleLineHeight = computed(
+  () => `${siteConfigStoreHook().layout === "column" ? "50" : "60"}px`
+);
 const props = defineProps<{
   logo?: string;
   title?: string;
@@ -22,9 +25,10 @@ const props = defineProps<{
 
 <style lang="scss" scoped>
 .container {
-  background-color: $header-background-color;
-  color: $header-color;
+  text-align: center;
   &.is-logo {
+    color: $nav-color;
+    background-color: $nav-background;
     width: $logo-width;
     height: $header-height;
     padding: 16px;
@@ -37,13 +41,18 @@ const props = defineProps<{
   }
   &.is-title {
     width: v-bind(menuWidth);
-    line-height: $header-height;
+    height: v-bind(titleLineHeight);
+    color: $header-color;
+    background-color: $header-background-color;
     .img {
       display: none;
     }
     .text {
+      line-height: $header-height;
       overflow: hidden;
-      font-size: 22px;
+      font-size: 20px;
+      padding-right: 15px;
+      padding-left: 15px;
       text-overflow: ellipsis;
       vertical-align: bottom;
     }
@@ -51,6 +60,8 @@ const props = defineProps<{
   &.is-all {
     width: v-bind(menuWidth);
     height: $header-height;
+    color: $header-color;
+    background-color: $header-background-color;
     display: flex;
     align-items: center;
     justify-content: center;

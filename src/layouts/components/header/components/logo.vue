@@ -2,7 +2,7 @@
   <div class="container">
     <a href="/">
       <img :src="logoImg" />
-      <span>OneWork Tools UI</span>
+      <span>Drug Clinical Trials</span>
     </a>
   </div>
 </template>

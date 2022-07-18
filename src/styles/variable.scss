@@ -1,3 +1,9 @@
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+  $colors: (
+
+  )
+);
+
 $logo-width: 64px;
 $header-height: 60px;
 $menu-height: 50px;
@@ -13,3 +19,6 @@ $logo-background: #fff;
 
 $title-color: #282c34;
 $title-background: #fff;
+
+$nav-color: #fff;
+$nav-background: #282c34;

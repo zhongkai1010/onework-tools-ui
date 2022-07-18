@@ -2,7 +2,7 @@
   <div class="tab-container">
     <i
       :class="menufold ? 'ri-menu-unfold-fill fold' : 'ri-menu-fold-line fold fold'"
-      v-show="props.showFold"
+      v-show="layout === 'standard'"
       @click="onFoldClick"
     />
     <el-tabs
@@ -61,7 +61,7 @@ import { TabPanelName } from "element-plus";
 import { computed, reactive } from "vue";
 import TabTools from "./TabTools.vue";
 import { pageStateStoreHook, defaultTab } from "/@/store/pageState";
-
+import { siteConfigStoreHook } from "/@/store/globalConfig";
 import { useRouter } from "vue-router";
 import { findElementParentId, tabOperateItems } from "../../utils";
 
@@ -69,9 +69,6 @@ import { findElementParentId, tabOperateItems } from "../../utils";
  *   init
  */
 const router = useRouter();
-const props = defineProps<{
-  showFold?: boolean;
-}>();
 /**
  *  右键状态
  */
@@ -92,6 +89,9 @@ const tabs = computed(() => {
 });
 const menufold = computed(() => {
   return pageStateStoreHook().menufold;
+});
+const layout = computed(() => {
+  return siteConfigStoreHook().layout;
 });
 /**
  *  events
@@ -120,8 +120,7 @@ const onTabContextMenu = (e: MouseEvent) => {
   tabsMenuState.name = id.replace("tab-", "");
 };
 const onFoldClick = () => {
-  const store = pageStateStoreHook();
-  pageStateStoreHook().setValue("menufold", !store.menufold);
+  pageStateStoreHook().setValue("menufold", !menufold.value);
 };
 const onToolItemClick = (command: "other" | "left" | "right" | "all" | "refresh") => {
   if (command === "refresh") {
@@ -140,15 +139,16 @@ const onToolItemClick = (command: "other" | "left" | "right" | "all" | "refresh"
   align-items: center;
   justify-content: space-between;
   background-color: $header-background-color;
-  width: 100%;
   color: $header-color;
   line-height: $menu-height;
+  width: 100%;
   padding: 0 20px;
+  box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
   .fold {
     cursor: pointer;
   }
   .tabs {
-    width: calc(100% - 96px);
+    width: 400px;
   }
   .label {
     i {
@@ -170,13 +170,9 @@ const onToolItemClick = (command: "other" | "left" | "right" | "all" | "refresh"
     margin-right: 10px;
     &.is-active {
       border-bottom: 0px;
-      color: $activate-color;
-      background-color: $activate-background;
     }
     &:hover {
       border-bottom: 0px;
-      background-color: #dee1e6;
-      color: #515a6e;
     }
   }
   &:deep(.el-tabs__nav-prev) {

@@ -13,6 +13,7 @@ const globalConfigStore = defineStore("global-configs", {
       menuWidth: 266
     };
   },
+
   actions: {
     setLayout(value: string) {
       this.layout = value;

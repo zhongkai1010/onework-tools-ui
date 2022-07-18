@@ -30,7 +30,8 @@ const emit = defineEmits<{
 <style lang="scss" scoped>
 .container {
   max-width: $logo-width;
-  background-color: $logo-background;
+  color: $nav-color;
+  background-color: $nav-background;
   &:deep(.el-tabs__nav-wrap) {
     margin: 0px;
   }
@@ -42,7 +43,7 @@ const emit = defineEmits<{
   &:deep(.el-tabs__item) {
     padding: 5px;
     height: auto;
-    color: $logo-color;
+    color: $nav-color;
     &.is-active {
       color: $activate-color;
       background-color: $activate-background;

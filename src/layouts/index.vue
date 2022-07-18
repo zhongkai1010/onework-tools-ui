@@ -1,19 +1,21 @@
 <template>
   <div class="wrapper">
     <el-container>
-      <el-header v-if="showState.horizontal">
+      <el-header v-if="layout === 'horizontal' || layout === 'standard'">
         <layout-header />
       </el-header>
       <el-container>
         <el-aside>
-          <layout-sidebar v-if="!showState.horizontal" />
+          <layout-sidebar v-if="layout !== 'horizontal'" />
         </el-aside>
         <el-container>
           <el-header>
-            <layout-header v-if="!showState.horizontal" />
-            <layout-tabs :show-fold="true" />
+            <layout-header v-if="!(layout === 'horizontal' || layout === 'standard')" />
+            <layout-tabs />
           </el-header>
-          <el-main>Main</el-main>
+          <el-main>
+            <router-view />
+          </el-main>
           <el-footer>Footer</el-footer>
         </el-container>
       </el-container>
@@ -31,13 +33,7 @@ import Config from "/@/layouts/components/setting/index.vue";
 import ConfigDrawer from "/@/layouts/components/setting/ConfigDrawer.vue";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
 import { computed } from "vue";
-const showState = computed(() => {
-  const layout = siteConfigStoreHook().layout;
-  return {
-    horizontal: layout === "horizontal" || layout === "standard",
-    layout
-  };
-});
+const layout = computed(() => siteConfigStoreHook().layout);
 </script>
 
 <style lang="scss" scoped>
@@ -46,6 +42,12 @@ const showState = computed(() => {
   height: 100vh;
   :deep(.el-aside) {
     width: auto;
+  }
+  :deep(.el-header) {
+    padding: 0px;
+  }
+  :deep(.el-main) {
+    padding: 0px;
   }
 }
 </style>

@@ -8,7 +8,13 @@
       </div>
     </div>
     <div class="right">
-      <layout-logo title="OneWork Toos UI" :logo="logoImg" :state="showLeft ? 'title' : 'all'" />
+      <layout-logo
+        title="Drug Clinical Trials"
+        :logo="logoImg"
+        :state="menufold ? 'logo' : showLeft ? 'title' : 'all'"
+        v-show="layout !== 'standard'"
+      />
+      <el-divider content-position="center" v-if="layout === 'column'">其它</el-divider>
       <div class="menu">
         <layout-menu :data="menus" :collapse="menufold" />
       </div>
@@ -21,11 +27,12 @@ import { computed } from "vue";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
 import { pageStateStoreHook } from "/@/store/pageState";
 import LayoutMenu from "./components/LayoutMenu.vue";
-import LayoutNav from "./components/nav.vue";
-import LayoutLogo from "./components/logo.vue";
+import LayoutNav from "./components/LayoutNav.vue";
+import LayoutLogo from "./components/LayoutLogo.vue";
 import { getMenus, getTabs } from "/@/layouts/utils";
 import logoImg from "/@/assets/logo.png";
 const layout = computed(() => siteConfigStoreHook().layout);
+const menuWidth = computed(() => `${siteConfigStoreHook().menuWidth}px`);
 const menufold = computed(() => pageStateStoreHook().menufold);
 const showLeft = computed(() => {
   const value = siteConfigStoreHook().layout;
@@ -39,24 +46,42 @@ const tabs = getTabs();
 <style lang="scss" scoped>
 .sidebar-container {
   display: flex;
+  box-shadow: 4px 0px 10px rgba(0, 21, 41, 0.08);
+  background-color: $header-background-color;
+  color: $header-color;
   .left {
-    .logo {
+    .nav {
       width: $logo-width;
-      height: $header-height;
-      padding: 16px;
-      img {
-        width: 32px;
-      }
+      height: calc(100vh - $header-height);
     }
   }
-  &.float {
-    .right {
-      display: none;
+  .right {
+    .menu {
+      width: v-bind(menuWidth);
+      height: calc(100vh - $header-height);
+    }
+  }
+}
+.column {
+  &:deep(.el-divider--horizontal) {
+    margin: 10px 10%;
+    width: 80%;
+  }
+  .right {
+    .menu {
+      height: calc(100vh - 11px - $header-height);
     }
   }
   &.fold {
     .right {
-      width: 64px;
+      display: none;
+    }
+  }
+}
+.fold {
+  .right {
+    .menu {
+      width: $logo-width;
     }
   }
 }

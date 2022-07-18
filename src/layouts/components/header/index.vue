@@ -1,7 +1,11 @@
 <template>
   <div class="header-container" :class="[showState.layout]">
     <Logo class="logo" v-if="showState.logo" />
-    <i class="ri-menu-fold-line fold" v-if="showState.i" />
+    <i
+      :class="`${menufold ? 'ri-menu-unfold-fill' : 'ri-menu-fold-line'} fold`"
+      v-if="showState.i"
+      @click="onClickFold"
+    />
     <Nav :data="tabs" class="nav" v-if="showState.nav && showState.layout == 'complex'" />
     <Menu :data="menus" class="nav" v-if="showState.nav && showState.layout == 'horizontal'" />
     <Breadcrumb
@@ -28,6 +32,7 @@ import Logo from "./components/logo.vue";
 import logoImg from "/@/assets/logo.png";
 import { getTabs, getMenus } from "/@/layouts/utils";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
+import { pageStateStoreHook } from "/@/store/pageState";
 import { computed } from "vue";
 
 const showState = computed(() => {
@@ -40,8 +45,14 @@ const showState = computed(() => {
     layout
   };
 });
+const menufold = computed(() => pageStateStoreHook().menufold);
+
 const { menus } = getMenus();
 const tabs = getTabs();
+
+const onClickFold = () => {
+  pageStateStoreHook().setValue("menufold", !menufold.value);
+};
 </script>
 
 <style lang="scss" scoped>
