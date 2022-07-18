@@ -6,8 +6,7 @@ import { setupStore } from "./store/index";
 import "animate.css";
 // 重置浏览器样式
 import "./styles/reset.scss";
-// 基础样式
-import "./styles/index.scss";
+
 // 组件
 import setupComponents from "./components/index";
 // vxe-table

@@ -15,7 +15,7 @@ export const NOT_PAGE = {
 export const HOME_PAGE = {
   name: "root",
   path: "/",
-  redirect: "/home",
+  redirect: "/application/index",
   component: LAYOUT,
   children: [
     {

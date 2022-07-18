@@ -1,24 +1,47 @@
 <template>
   <div class="sidebar-container" :class="[layout, menufold ? 'fold ' : '']">
-    <div class="left" v-if="showLeft">
-      <layout-logo :logo="logoImg" state="logo" />
-      <div class="nav">
-        <layout-nav :data="tabs" v-if="layout !== 'float'" />
-        <layout-menu :data="menus" :collapse="true" v-if="layout === 'float'" />
+    <template v-if="layout == 'column'">
+      <div class="left">
+        <layout-logo :logo="logoImg" state="logo" />
+        <div class="nav">
+          <layout-nav :data="tabs" />
+        </div>
       </div>
-    </div>
-    <div class="right">
-      <layout-logo
-        title="Drug Clinical Trials"
-        :logo="logoImg"
-        :state="menufold ? 'logo' : showLeft ? 'title' : 'all'"
-        v-show="layout !== 'standard'"
-      />
-      <el-divider content-position="center" v-if="layout === 'column'">其它</el-divider>
-      <div class="menu">
-        <layout-menu :data="menus" :collapse="menufold" />
+      <div class="right">
+        <layout-logo title="Drug Clinical Trials" state="title" />
+        <el-divider content-position="center">其它</el-divider>
+        <div class="menu">
+          <layout-menu :data="menus" :collapse="false" />
+        </div>
       </div>
-    </div>
+    </template>
+    <template v-if="layout == 'complex' || layout == 'portrait'">
+      <div class="right">
+        <layout-logo
+          title="Drug Clinical Trials"
+          :state="menufold ? 'logo' : 'all'"
+          :logo="logoImg"
+        />
+        <div class="menu">
+          <layout-menu :data="menus" :collapse="menufold" />
+        </div>
+      </div>
+    </template>
+    <template v-if="layout == 'standard'">
+      <div class="right">
+        <div class="menu">
+          <layout-menu :data="menus" :collapse="menufold" />
+        </div>
+      </div>
+    </template>
+    <template v-if="layout == 'float'">
+      <div class="right">
+        <layout-logo :logo="logoImg" state="logo" />
+        <div class="menu">
+          <layout-menu :data="menus" :collapse="true" />
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -34,10 +57,6 @@ import logoImg from "/@/assets/logo.png";
 const layout = computed(() => siteConfigStoreHook().layout);
 const menuWidth = computed(() => `${siteConfigStoreHook().menuWidth}px`);
 const menufold = computed(() => pageStateStoreHook().menufold);
-const showLeft = computed(() => {
-  const value = siteConfigStoreHook().layout;
-  return value === "column" || value === "float";
-});
 
 const { menus } = getMenus();
 const tabs = getTabs();
@@ -56,6 +75,8 @@ const tabs = getTabs();
     }
   }
   .right {
+    z-index: 2000;
+    box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
     .menu {
       width: v-bind(menuWidth);
       height: calc(100vh - $header-height);
@@ -75,6 +96,13 @@ const tabs = getTabs();
   &.fold {
     .right {
       display: none;
+    }
+  }
+}
+.float {
+  .right {
+    .menu {
+      width: $logo-width;
     }
   }
 }
