@@ -22,12 +22,14 @@ const pageStateStore = defineStore({
     tabs: TabOption[];
     menufold: boolean;
     showDrawer: boolean;
+    menus: any[];
   } => {
     return {
       routePaths: [defaultTab.name],
       tabs: [],
       menufold: false,
-      showDrawer: false
+      showDrawer: false,
+      menus: []
     };
   },
   getters: {

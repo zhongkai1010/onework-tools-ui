@@ -9,7 +9,7 @@ import "nprogress/nprogress.css";
 /**
  * 遍历modules目录，获取RouteRecordRaw集合
  */
-const moduleRoutes: RouteRecordRaw[] = getModuleRoutes();
+const moduleRoutes: RouteRecordRaw[] = getModuleRoutes() as RouteRecordRaw[];
 
 /**
  * routes 集合

@@ -1,7 +1,5 @@
 @forward "element-plus/theme-chalk/src/common/var.scss" with (
-  $colors: (
-
-  )
+  $colors: ()
 );
 
 $logo-width: 64px;
@@ -22,3 +20,11 @@ $title-background: #fff;
 
 $nav-color: #fff;
 $nav-background: #282c34;
+
+$z-layers: (
+  "level_one": 1,
+  "level_two": 10,
+  "level_three": 100,
+  "level_four": 1000,
+  "level_zero": -1
+);

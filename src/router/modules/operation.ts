@@ -1,4 +1,5 @@
 import { LAYOUT } from "../constant";
+import { OwRouteRecordRaw } from "../types";
 
 export default [
   {
@@ -34,4 +35,4 @@ export default [
       }
     ]
   }
-];
+] as OwRouteRecordRaw[];

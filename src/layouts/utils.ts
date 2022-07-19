@@ -1,6 +1,6 @@
-import { OwRouteRecordRaw } from "../router/types";
 import { HeaderMenu } from "./types";
 import { mock } from "mockjs";
+import { OwRouteRecordRaw } from "../router/types";
 
 export const getHeaderMenus = (routes: OwRouteRecordRaw[], parent?: HeaderMenu): HeaderMenu[] => {
   const menus = [] as HeaderMenu[];

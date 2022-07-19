@@ -21,7 +21,8 @@ const globalConfigStore = defineStore("global-configs", {
     setValue(type: string, value: any) {
       this[type] = value;
     }
-  }
+  },
+  persist: true
 });
 
 export function siteConfigStoreHook() {

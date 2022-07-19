@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar-container" :class="[layout, menufold ? 'fold ' : '']">
+  <div class="sidebar-container" :data-layout="layout" :class="{ fold: menufold }">
     <template v-if="layout == 'column'">
       <div class="left">
         <layout-logo :logo="logoImg" state="logo" />
@@ -65,9 +65,6 @@ const tabs = getTabs();
 <style lang="scss" scoped>
 .sidebar-container {
   display: flex;
-  box-shadow: 4px 0px 10px rgba(0, 21, 41, 0.08);
-  background-color: $header-background-color;
-  color: $header-color;
   .left {
     .nav {
       width: $logo-width;
@@ -75,15 +72,21 @@ const tabs = getTabs();
     }
   }
   .right {
-    z-index: 2000;
-    box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
     .menu {
       width: v-bind(menuWidth);
       height: calc(100vh - $header-height);
     }
   }
+  &.fold {
+    .right {
+      .menu {
+        width: $logo-width;
+      }
+    }
+  }
 }
-.column {
+
+.sidebar-container[data-layout="column"] {
   &:deep(.el-divider--horizontal) {
     margin: 10px 10%;
     width: 80%;
@@ -99,14 +102,8 @@ const tabs = getTabs();
     }
   }
 }
-.float {
-  .right {
-    .menu {
-      width: $logo-width;
-    }
-  }
-}
-.fold {
+
+.sidebar-container[data-layout="float"] {
   .right {
     .menu {
       width: $logo-width;

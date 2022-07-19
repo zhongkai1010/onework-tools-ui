@@ -13,16 +13,8 @@
       @contextmenu="onTabContextMenu"
       @tab-change="onTabChange"
     >
-      <el-tab-pane :name="defaultTab.name" :closable="false">
-        <template #label>
-          <span class="label">
-            <IconifyIcon :icon="defaultTab.icon" :title="defaultTab.text" class="button" />
-            <span>{{ defaultTab.text }}</span>
-          </span>
-        </template>
-      </el-tab-pane>
       <template v-for="tab in tabs" :key="tab.name">
-        <el-tab-pane :closable="true" :name="tab.name">
+        <el-tab-pane :closable="tab.name !== defaultTab.name" :name="tab.name">
           <template #label>
             <span class="label">
               <IconifyIcon :icon="tab.icon" :title="tab.text" class="button" />
@@ -63,7 +55,7 @@ import TabTools from "./TabTools.vue";
 import { pageStateStoreHook, defaultTab } from "/@/store/pageState";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
 import { useRouter } from "vue-router";
-import { findElementParentId, tabOperateItems } from "../../utils";
+import { findElementParentId, tabOperateItems } from "/@/layouts/utils";
 
 /**
  *   init
@@ -85,7 +77,7 @@ const selectName = computed(() => {
   return pageStateStoreHook().currentPath;
 });
 const tabs = computed(() => {
-  return [...pageStateStoreHook().tabs];
+  return [defaultTab, ...pageStateStoreHook().tabs];
 });
 const menufold = computed(() => {
   return pageStateStoreHook().menufold;

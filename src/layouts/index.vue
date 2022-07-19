@@ -1,5 +1,9 @@
 <template>
-  <div class="wrapper" :data-layout="layout">
+  <div
+    class="wrapper"
+    :data-layout="layout"
+    :style="{ '--layout-nav-height': navHeight, '--layout-left-width': leftWidth }"
+  >
     <el-container>
       <el-header v-if="horizontal" class="wrapper_header">
         <layout-header />
@@ -25,14 +29,21 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from "vue";
+import { siteConfigStoreHook } from "/@/store/globalConfig";
+import { pageStateStoreHook } from "/@/store/pageState";
+
 import LayoutHeader from "/@/layouts/components/header/index.vue";
 import LayoutSidebar from "/@/layouts/components/sidebar/index.vue";
 import LayoutTabs from "/@/layouts/components/tabs/index.vue";
 import Config from "/@/layouts/components/setting/index.vue";
 import ConfigDrawer from "/@/layouts/components/setting/ConfigDrawer.vue";
-import { siteConfigStoreHook } from "/@/store/globalConfig";
-import { pageStateStoreHook } from "/@/store/pageState";
-import { computed } from "vue";
+
+import { getModuleRoutes, getRouteMap } from "/@/router/utils";
+
+console.log("getModuleRoutes", getModuleRoutes());
+console.log("getRouteMap", getRouteMap());
+
 const showTabs = computed(() => siteConfigStoreHook().showTabs);
 const layout = computed(() => siteConfigStoreHook().layout);
 const horizontal = computed(() => {
@@ -59,12 +70,24 @@ const navHeight = computed(() => (siteConfigStoreHook().showTabs ? "50px" : "0px
 
 <style lang="scss" scoped>
 .wrapper {
-  :deep(.el-header) {
+  .wrapper_header,
+  .wrapper_left,
+  .wrapper_nav {
     padding: 0px;
+    background-color: $header-background-color;
+    color: $header-color;
   }
-  :deep(.el-main) {
-    padding: 0px;
+  .wrapper_header {
+    box-shadow: 0px 1px 4px rgb(0 21 41 / 8%);
+    z-index: map-get($z-layers, "level_one");
+  }
+  .wrapper_left {
+    box-shadow: 0px 1px 4px rgb(0 21 41 / 8%);
+    z-index: map-get($z-layers, "level_two");
+  }
+  .wrapper_body {
     @include scrollBar;
+    overflow: auto;
   }
 }
 
@@ -73,21 +96,21 @@ const navHeight = computed(() => (siteConfigStoreHook().showTabs ? "50px" : "0px
 .wrapper[data-layout="column"] {
   .wrapper_left {
     position: fixed;
-    width: v-bind(leftWidth);
+    width: var(--layout-left-width);
     height: 100vh;
   }
   .wrapper_nav {
     position: fixed;
-    margin-left: v-bind(leftWidth);
-    width: calc(100vw - v-bind(leftWidth));
-    height: calc($header-height + v-bind(navHeight));
+    margin-left: var(--layout-left-width);
+    width: calc(100vw - var(--layout-left-width));
+    height: calc($header-height + var(--layout-nav-height));
   }
   .wrapper_body {
     position: fixed;
-    width: calc(100vw - v-bind(leftWidth));
-    height: calc(100vh - ($header-height + v-bind(navHeight)));
-    margin-top: calc($header-height + v-bind(navHeight));
-    margin-left: v-bind(leftWidth);
+    width: calc(100vw - var(--layout-left-width));
+    height: calc(100vh - ($header-height + var(--layout-nav-height)));
+    margin-top: calc($header-height + var(--layout-nav-height));
+    margin-left: var(--layout-left-width);
   }
 }
 
@@ -99,23 +122,23 @@ const navHeight = computed(() => (siteConfigStoreHook().showTabs ? "50px" : "0px
   }
   .wrapper_left {
     position: fixed;
-    width: v-bind(leftWidth);
+    width: var(--layout-left-width);
     height: calc(100vh - $header-height);
     margin-top: $header-height;
   }
   .wrapper_nav {
     position: fixed;
-    width: calc(100vw - v-bind(leftWidth));
-    height: v-bind(navHeight);
+    width: calc(100vw - var(--layout-left-width));
+    height: var(--layout-nav-height);
     margin-top: $header-height;
-    margin-left: v-bind(leftWidth);
+    margin-left: var(--layout-left-width);
   }
   .wrapper_body {
     position: fixed;
-    width: 100vw;
-    height: calc(100vh - $header-height - v-bind(navHeight));
-    margin-top: calc($header-height + v-bind(navHeight));
-    margin-left: v-bind(leftWidth);
+    width: calc(100vw - var(--layout-left-width));
+    height: calc(100vh - $header-height - var(--layout-nav-height));
+    margin-top: calc($header-height + var(--layout-nav-height));
+    margin-left: var(--layout-left-width);
   }
 }
 
@@ -128,15 +151,15 @@ const navHeight = computed(() => (siteConfigStoreHook().showTabs ? "50px" : "0px
   .wrapper_nav {
     position: fixed;
     width: 100vw;
-    height: v-bind(navHeight);
+    height: var(--layout-nav-height);
     margin-top: $header-height;
   }
   .wrapper_body {
     position: fixed;
 
     width: 100vw;
-    height: calc(100vh - $header-height - v-bind(navHeight));
-    margin-top: calc($header-height + v-bind(navHeight));
+    height: calc(100vh - $header-height - var(--layout-nav-height));
+    margin-top: calc($header-height + var(--layout-nav-height));
   }
 }
 
@@ -156,7 +179,7 @@ const navHeight = computed(() => (siteConfigStoreHook().showTabs ? "50px" : "0px
     position: fixed;
     width: calc(100vw - $logo-width);
     height: calc(100vh - $header-height);
-    margin-top: calc($header-height + v-bind(navHeight));
+    margin-top: calc($header-height + var(--layout-nav-height));
     margin-left: $logo-width;
   }
 }
