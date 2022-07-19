@@ -49,6 +49,7 @@ const onClickConfig = () => {
   transform: translateY(-50%);
   background-color: #fff;
   border: 1px solid #dcdfe6;
+  z-index: 3;
   ul {
     display: flex;
     flex-direction: column;
