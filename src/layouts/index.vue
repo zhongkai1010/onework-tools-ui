@@ -11,7 +11,7 @@
         <el-container>
           <el-header class="wrapper_nav">
             <layout-header v-if="!horizontal" />
-            <layout-tabs />
+            <layout-tabs v-if="showTabs" />
           </el-header>
           <el-main class="wrapper_body">
             <router-view />
@@ -33,7 +33,7 @@ import ConfigDrawer from "/@/layouts/components/setting/ConfigDrawer.vue";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
 import { pageStateStoreHook } from "/@/store/pageState";
 import { computed } from "vue";
-
+const showTabs = computed(() => siteConfigStoreHook().showTabs);
 const layout = computed(() => siteConfigStoreHook().layout);
 const horizontal = computed(() => {
   const store = siteConfigStoreHook();
@@ -53,6 +53,8 @@ const leftWidth = computed(() => {
     }
   }
 });
+
+const navHeight = computed(() => (siteConfigStoreHook().showTabs ? "50px" : "0px"));
 </script>
 
 <style lang="scss" scoped>
@@ -73,30 +75,25 @@ const leftWidth = computed(() => {
     position: fixed;
     width: v-bind(leftWidth);
     height: 100vh;
-    box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
-    z-index: 2;
   }
   .wrapper_nav {
     position: fixed;
     margin-left: v-bind(leftWidth);
     width: calc(100vw - v-bind(leftWidth));
-    height: calc($header-height + $menu-height);
-    z-index: 1;
+    height: calc($header-height + v-bind(navHeight));
   }
   .wrapper_body {
     position: fixed;
     width: calc(100vw - v-bind(leftWidth));
-    height: calc(100vh - ($header-height + $menu-height));
-    margin-top: calc($header-height + $menu-height);
+    height: calc(100vh - ($header-height + v-bind(navHeight)));
+    margin-top: calc($header-height + v-bind(navHeight));
     margin-left: v-bind(leftWidth);
-    z-index: 1;
   }
 }
 
 .wrapper[data-layout="standard"] {
   .wrapper_header {
     position: fixed;
-    z-index: 1;
     width: 100vw;
     height: $header-height;
   }
@@ -105,21 +102,19 @@ const leftWidth = computed(() => {
     width: v-bind(leftWidth);
     height: calc(100vh - $header-height);
     margin-top: $header-height;
-    z-index: 2;
   }
   .wrapper_nav {
     position: fixed;
-    z-index: 1;
-    width: 100vw;
-    height: $menu-height;
+    width: calc(100vw - v-bind(leftWidth));
+    height: v-bind(navHeight);
     margin-top: $header-height;
+    margin-left: v-bind(leftWidth);
   }
   .wrapper_body {
     position: fixed;
-    z-index: 3;
     width: 100vw;
-    height: calc(100vh - $header-height - $menu-height);
-    margin-top: calc($header-height + $menu-height);
+    height: calc(100vh - $header-height - v-bind(navHeight));
+    margin-top: calc($header-height + v-bind(navHeight));
     margin-left: v-bind(leftWidth);
   }
 }
@@ -127,23 +122,21 @@ const leftWidth = computed(() => {
 .wrapper[data-layout="horizontal"] {
   .wrapper_header {
     position: fixed;
-    z-index: 1;
     width: 100vw;
     height: $header-height;
   }
   .wrapper_nav {
     position: fixed;
-    z-index: 2;
     width: 100vw;
-    height: $menu-height;
+    height: v-bind(navHeight);
     margin-top: $header-height;
   }
   .wrapper_body {
     position: fixed;
-    z-index: 3;
+
     width: 100vw;
-    height: calc(100vh - $header-height - $menu-height);
-    margin-top: calc($header-height + $menu-height);
+    height: calc(100vh - $header-height - v-bind(navHeight));
+    margin-top: calc($header-height + v-bind(navHeight));
   }
 }
 
@@ -161,10 +154,9 @@ const leftWidth = computed(() => {
   }
   .wrapper_body {
     position: fixed;
-    z-index: 3;
     width: calc(100vw - $logo-width);
     height: calc(100vh - $header-height);
-    margin-top: calc($header-height + $menu-height);
+    margin-top: calc($header-height + v-bind(navHeight));
     margin-left: $logo-width;
   }
 }
