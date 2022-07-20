@@ -7,7 +7,7 @@ export default [
     path: "/process",
     component: LAYOUT,
     redirect: "/process/management",
-    meta: { title: "流程管理", icon: "clarity:flow-chart-line" },
+    meta: { title: "流程", icon: "clarity:flow-chart-line", orderNo: 3 },
     children: [
       {
         name: "flow_management",

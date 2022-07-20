@@ -7,7 +7,7 @@ export default [
     path: "/tool",
     redirect: "/tool/model",
     component: LAYOUT,
-    meta: { title: "系统工具" },
+    meta: { title: "工具", orderNo: 7, icon: "carbon:tool-kit" },
     children: [
       {
         name: "tool_model",

@@ -7,7 +7,7 @@ export default [
     path: "/system",
     redirect: "/system/role",
     component: LAYOUT,
-    meta: { title: "系统管理" },
+    meta: { title: "系统", icon: "ic:sharp-manage-accounts", orderNo: 2 },
     children: [
       {
         name: "system_user",

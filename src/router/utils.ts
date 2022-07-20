@@ -21,9 +21,8 @@ const getModuleRoutes = (): OwRouteRecordRaw[] => {
  *
  * @returns 返回已路径为key的route集合
  */
-const getRouteMap = (): { [key: string]: OwRouteRecordRaw } => {
+const getRouteMap = (routes: OwRouteRecordRaw[]): { [key: string]: OwRouteRecordRaw } => {
   const result = {};
-  const records = getModuleRoutes();
   const childrenProcess = (childs: OwRouteRecordRaw[], parent?: OwRouteRecordRaw) => {
     childs.forEach(value => {
       let path = value.path;
@@ -36,7 +35,7 @@ const getRouteMap = (): { [key: string]: OwRouteRecordRaw } => {
       }
     });
   };
-  childrenProcess(records);
+  childrenProcess(routes);
   return result;
 };
 

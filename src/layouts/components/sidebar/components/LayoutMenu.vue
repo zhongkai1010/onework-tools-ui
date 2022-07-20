@@ -12,9 +12,10 @@
 </template>
 
 <script lang="ts" setup>
+import { NavRecordRaw } from "/@/layouts/types";
 const props = defineProps<{
   collapse?: boolean;
-  data: Menu[];
+  data: NavRecordRaw[];
   defaultActive?: string;
 }>();
 

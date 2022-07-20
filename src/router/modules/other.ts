@@ -6,7 +6,7 @@ export default [
     name: "other",
     path: "/other",
     redirect: "/other/flow",
-    meta: { title: "其它" },
+    meta: { title: "其它", orderNo: 9, icon: "ic:baseline-devices-other" },
     component: LAYOUT,
     children: [
       {

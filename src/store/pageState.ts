@@ -1,58 +1,62 @@
 import { defineStore } from "pinia";
+import { useRoute } from "vue-router";
+import { NavRecordRaw } from "../layouts/types";
+import { getNavRecordRaw, getNavRecordRawMap } from "../layouts/utils";
 import { store } from "./index";
 
-interface TabOption {
-  name: string;
-  icon?: string;
-  text: string;
-}
-
-export const defaultTab: TabOption = {
-  name: "/",
+export const defaultNav: NavRecordRaw = {
+  name: "home",
+  title: "主页",
   icon: "ant-design:home-outlined",
-  text: "主页"
+  path: "/",
+  paths: ["/"]
 };
 
 // useStore 可以是 useUser、useCart 之类的任何东西
 // 第一个参数是应用程序中 store 的唯一 id
 const pageStateStore = defineStore({
-  id: "ow-header-tabs",
+  id: "page-state",
   state: (): {
-    routePaths: string[];
-    tabs: TabOption[];
+    current: string;
+    tabs: NavRecordRaw[];
     menufold: boolean;
     showDrawer: boolean;
-    menus: any[];
+    menus: NavRecordRaw[];
+    menuMap: { [key: string]: NavRecordRaw };
   } => {
+    const route = useRoute();
+    const menus = getNavRecordRaw();
     return {
-      routePaths: [defaultTab.name],
+      current: route.fullPath,
       tabs: [],
       menufold: false,
       showDrawer: false,
-      menus: []
+      menus,
+      menuMap: getNavRecordRawMap(menus)
     };
   },
   getters: {
-    currentPath(): string {
-      return this.routePaths[this.routePaths.length - 1];
+    navs(): NavRecordRaw[] {
+      const navs = this.menus as NavRecordRaw[];
+      return Object.values(navs)
+        .filter(t => !t.parent)
+        .sort((a, b) => a.order - b.order);
     }
   },
   actions: {
     setValue(type: string, value: any) {
       this[type] = value;
     },
-    setSelectTab(tab: TabOption | string) {
-      const tabs = this.tabs as TabOption[];
-      const tabOption: TabOption =
+    setSelectTab(tab: NavRecordRaw | string) {
+      const tabs = this.tabs as NavRecordRaw[];
+      const tabOption =
         typeof tab === "object"
           ? tab
           : {
-              name: tab,
-              icon: "ant-design:home-outlined",
-              text: `页面(${tabs.length})`
+              name: tab
             };
       const name = tabOption.name;
-      const index = tabs.findIndex((t: TabOption) => t.name == name);
+      const index = tabs.findIndex((t: NavRecordRaw) => t.name == name);
       if (index < 0) {
         this.tabs.push(tabOption);
       }
@@ -70,11 +74,11 @@ const pageStateStore = defineStore({
       }
       if (tabsLen == 1) {
         this.tabs = [];
-        this.selectedTabName = defaultTab.name;
+        this.selectedTabName = defaultNav.name;
         return;
       }
       if (name === selectedName && index == 0) {
-        this.selectedTabName = defaultTab.name;
+        this.selectedTabName = defaultNav.name;
       } else {
         if (afterIndex <= maxIndex) {
           this.selectedTabName = this.tabs[afterIndex].name;
@@ -107,7 +111,7 @@ const pageStateStore = defineStore({
           break;
         case "all":
           this.tabs = [];
-          this.selectedTabName = defaultTab.name;
+          this.selectedTabName = defaultNav.name;
           break;
       }
     }

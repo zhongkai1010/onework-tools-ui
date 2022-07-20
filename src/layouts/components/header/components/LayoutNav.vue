@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <el-tabs :model-value="props.selectName" @tab-change="name => emit('select', name as string)">
-      <el-tab-pane :name="defaultTab.name">
+      <el-tab-pane :name="defaultNav.name">
         <template #label>
           <div class="tab">
-            <IconifyIcon :icon="defaultTab.icon" />
-            <span>{{ defaultTab.text }}</span>
+            <IconifyIcon :icon="defaultNav.icon" />
+            <span>{{ defaultNav.title }}</span>
           </div>
         </template>
       </el-tab-pane>
@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { defaultTab } from "/@/store/pageState";
+import { defaultNav } from "/@/store/pageState";
 const props = defineProps<{
   data: Tab[];
   selectName?: string;

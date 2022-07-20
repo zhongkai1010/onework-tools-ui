@@ -15,13 +15,5 @@ export const NOT_PAGE = {
 export const HOME_PAGE = {
   name: "root",
   path: "/",
-  redirect: "/application/index",
-  component: LAYOUT,
-  children: [
-    {
-      name: "home",
-      path: "/home",
-      component: () => import("../views/home/index.vue")
-    }
-  ]
+  redirect: "/user/index"
 };

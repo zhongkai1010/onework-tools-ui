@@ -39,11 +39,6 @@ import LayoutTabs from "/@/layouts/components/tabs/index.vue";
 import Config from "/@/layouts/components/setting/index.vue";
 import ConfigDrawer from "/@/layouts/components/setting/ConfigDrawer.vue";
 
-import { getModuleRoutes, getRouteMap } from "/@/router/utils";
-
-console.log("getModuleRoutes", getModuleRoutes());
-console.log("getRouteMap", getRouteMap());
-
 const showTabs = computed(() => siteConfigStoreHook().showTabs);
 const layout = computed(() => siteConfigStoreHook().layout);
 const horizontal = computed(() => {

@@ -6,7 +6,7 @@ export default [
     name: "operation",
     path: "/operation",
     redirect: "/operation/database",
-    meta: { title: "运维平台", icon: "akar-icons:file" },
+    meta: { title: "运维", icon: "akar-icons:file", orderNo: 6 },
     component: LAYOUT,
     children: [
       {

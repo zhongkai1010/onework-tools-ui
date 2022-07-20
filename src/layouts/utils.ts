@@ -1,28 +1,56 @@
-import { HeaderMenu } from "./types";
+import { NavRecordRaw } from "./types";
 import { mock } from "mockjs";
 import { OwRouteRecordRaw } from "../router/types";
+import { getModuleRoutes } from "../router/utils";
 
-export const getHeaderMenus = (routes: OwRouteRecordRaw[], parent?: HeaderMenu): HeaderMenu[] => {
-  const menus = [] as HeaderMenu[];
-  for (let index = 0; index < routes.length; index++) {
-    const route = routes[index];
-    const menu = {} as HeaderMenu;
-    if (!route.name) {
-      throw new Error("route name is null");
+export const getNavRecordRaw = (): NavRecordRaw[] => {
+  const routes: OwRouteRecordRaw[] = getModuleRoutes();
+  const getSubNav = (childs: OwRouteRecordRaw[], parent?: NavRecordRaw): NavRecordRaw[] => {
+    const records: NavRecordRaw[] = [];
+    for (let i = 0; i < childs.length; i++) {
+      const child = childs[i];
+
+      const nav: NavRecordRaw = {
+        order: child.meta?.orderNo,
+        name: child.name,
+        title: child.meta.title,
+        path: parent ? `${parent.path}/${child.path}` : child.path,
+        paths: parent ? [...parent.paths, `${parent.path}/${child.path}`] : [child.path],
+        parent: parent ? parent.name : undefined,
+        icon: child.meta.icon,
+        iframeSrc: child.meta.frameSrc,
+        islink: child.meta.isLink,
+        cache: child.meta.ignoreKeepAlive,
+        system: false
+      };
+      if (child.children) {
+        nav.children = getSubNav(child.children, nav);
+      }
+      console.log("nav", nav);
+      records.push(nav);
     }
-    menu.title = (route.meta?.title || route.name) as string;
-    menu.icon = (route.meta?.icon || "ep:element-plus") as string;
-    if (parent) {
-      menu.path = `${parent.path}/${route.path}`;
-    } else {
-      menu.path = route.path;
-    }
-    if (route.children) {
-      menu.children = getHeaderMenus(route.children, menu);
-    }
-    menus.push(menu);
-  }
-  return menus;
+    return records;
+  };
+  const navs = getSubNav(routes);
+  return navs;
+};
+
+export const getNavRecordRawMap = (nas: NavRecordRaw[]): { [key: string]: NavRecordRaw } => {
+  const result = {};
+  const childrenProcess = (childs: NavRecordRaw[], parent?: NavRecordRaw) => {
+    childs.forEach(value => {
+      let path = value.path;
+      if (parent) {
+        path = `${parent.path}/${value.path}`;
+      }
+      result[path] = value;
+      if (value.children) {
+        childrenProcess(value.children, value);
+      }
+    });
+  };
+  childrenProcess(nas);
+  return result;
 };
 
 export const findElementParentId = (el: Element) => {

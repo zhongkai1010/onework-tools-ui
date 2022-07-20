@@ -1,9 +1,14 @@
 <template>
-  <PageContainer>
-    <span>123</span>
-  </PageContainer>
+  <div v-for="property in properties" :key="property">
+    <span>{{ property }} : {{ route.meta[property] }}</span>
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRoute } from "vue-router";
 
-<style></style>
+const route = useRoute();
+const properties = Object.keys(route.meta);
+</script>
+
+<style lang="scss" scoped></style>

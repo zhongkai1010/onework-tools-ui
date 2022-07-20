@@ -7,7 +7,7 @@ export default [
     path: "/monitor",
     redirect: "/monitor/user",
     component: LAYOUT,
-    meta: { title: "系统监控", icon: "akar-icons:file" },
+    meta: { title: "监控", icon: "akar-icons:file", orderNo: 4 },
     children: [
       {
         name: "monitor_user",

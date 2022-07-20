@@ -14,11 +14,11 @@
       @tab-change="onTabChange"
     >
       <template v-for="tab in tabs" :key="tab.name">
-        <el-tab-pane :closable="tab.name !== defaultTab.name" :name="tab.name">
+        <el-tab-pane :closable="tab.name !== defaultNav.name" :name="tab.name">
           <template #label>
             <span class="label">
-              <IconifyIcon :icon="tab.icon" :title="tab.text" class="button" />
-              <span>{{ tab.text }}</span>
+              <IconifyIcon :icon="tab.icon" :title="tab.title" class="button" />
+              <span>{{ tab.title }}</span>
             </span>
           </template>
         </el-tab-pane>
@@ -52,7 +52,7 @@
 import { TabPanelName } from "element-plus";
 import { computed, reactive } from "vue";
 import TabTools from "./TabTools.vue";
-import { pageStateStoreHook, defaultTab } from "/@/store/pageState";
+import { pageStateStoreHook, defaultNav } from "/@/store/pageState";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
 import { useRouter } from "vue-router";
 import { findElementParentId, tabOperateItems } from "/@/layouts/utils";
@@ -65,7 +65,7 @@ const router = useRouter();
  *  右键状态
  */
 const tabsMenuState = reactive({
-  name: defaultTab.name,
+  name: defaultNav.name,
   show: false,
   x: 0,
   y: 0
@@ -74,10 +74,10 @@ const tabsMenuState = reactive({
  *  store tab state
  */
 const selectName = computed(() => {
-  return pageStateStoreHook().currentPath;
+  return pageStateStoreHook().current;
 });
 const tabs = computed(() => {
-  return [defaultTab, ...pageStateStoreHook().tabs];
+  return [defaultNav, ...pageStateStoreHook().tabs];
 });
 const menufold = computed(() => {
   return pageStateStoreHook().menufold;
@@ -96,7 +96,7 @@ const onTabChange = (tab: TabPanelName) => {
   // 路由
   router.push(name);
   // tab 状态
-  if (name !== defaultTab.name) {
+  if (name !== defaultNav.name) {
     pageStateStoreHook().setSelectTab(name);
   }
   tabsMenuState.name = name;

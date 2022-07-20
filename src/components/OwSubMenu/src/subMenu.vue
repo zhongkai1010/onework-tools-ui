@@ -19,7 +19,9 @@
 </template>
 
 <script setup lang="ts">
+import { NavRecordRaw } from "/@/layouts/types";
+
 const props = defineProps<{
-  menu: Menu;
+  menu: NavRecordRaw;
 }>();
 </script>

@@ -7,7 +7,7 @@ export default [
     path: "/demo",
     redirect: "/demo/table/complex",
     component: LAYOUT,
-    meta: { title: "组件示例", icon: "akar-icons:file" },
+    meta: { title: "示例", orderNo: 8, icon: "carbon:calendar-tools" },
     children: [
       {
         name: "demo_table",

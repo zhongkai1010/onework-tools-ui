@@ -9,7 +9,7 @@
         <template #label>
           <div class="menu-item">
             <IconifyIcon :icon="tab.icon" />
-            <span>{{ tab.label }}</span>
+            <span>{{ tab.title }}</span>
           </div>
         </template>
       </el-tab-pane>
@@ -18,8 +18,9 @@
 </template>
 
 <script lang="ts" setup>
+import { NavRecordRaw } from "/@/layouts/types";
 const props = defineProps<{
-  data: Tab[];
+  data: NavRecordRaw[];
   selectName?: string;
 }>();
 const emit = defineEmits<{
