@@ -11,7 +11,7 @@ export default [
     children: [
       {
         name: "demo_table",
-        path: "table",
+        path: "",
         redirect: "/demo/table/complex",
         meta: { title: "表格", icon: "akar-icons:file" },
         children: [

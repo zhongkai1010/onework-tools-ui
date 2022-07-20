@@ -1,4 +1,4 @@
-import { NavRecordRaw } from "./types";
+import { NavRecordRaw, TabOperateItem } from "./types";
 import { mock } from "mockjs";
 import { OwRouteRecordRaw } from "../router/types";
 import { getModuleRoutes } from "../router/utils";
@@ -16,12 +16,13 @@ export const getNavRecordRaw = (): NavRecordRaw[] => {
         title: child.meta.title,
         path: parent ? `${parent.path}/${child.path}` : child.path,
         paths: parent ? [...parent.paths, `${parent.path}/${child.path}`] : [child.path],
-        parent: parent ? parent.name : undefined,
+        parentPath: parent ? parent.path : undefined,
         icon: child.meta.icon,
         iframeSrc: child.meta.frameSrc,
         islink: child.meta.isLink,
         cache: child.meta.ignoreKeepAlive,
-        system: false
+        system: false,
+        redirect: child.redirect as string
       };
       if (child.children) {
         nav.children = getSubNav(child.children, nav);
@@ -37,15 +38,11 @@ export const getNavRecordRaw = (): NavRecordRaw[] => {
 
 export const getNavRecordRawMap = (nas: NavRecordRaw[]): { [key: string]: NavRecordRaw } => {
   const result = {};
-  const childrenProcess = (childs: NavRecordRaw[], parent?: NavRecordRaw) => {
+  const childrenProcess = (childs: NavRecordRaw[]) => {
     childs.forEach(value => {
-      let path = value.path;
-      if (parent) {
-        path = `${parent.path}/${value.path}`;
-      }
-      result[path] = value;
+      result[value.path] = value;
       if (value.children) {
-        childrenProcess(value.children, value);
+        childrenProcess(value.children);
       }
     });
   };
@@ -60,12 +57,6 @@ export const findElementParentId = (el: Element) => {
     return findElementParentId(el.parentElement);
   }
 };
-
-interface TabOperateItem {
-  text: string;
-  icon: string;
-  command: "other" | "left" | "right" | "all" | "refresh";
-}
 
 export const tabOperateItems: TabOperateItem[] = [
   {

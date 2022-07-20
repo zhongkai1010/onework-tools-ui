@@ -17,7 +17,8 @@ export const defaultNav: NavRecordRaw = {
 const pageStateStore = defineStore({
   id: "page-state",
   state: (): {
-    current: string;
+    currentPath: string;
+    currentNav?: NavRecordRaw;
     tabs: NavRecordRaw[];
     menufold: boolean;
     showDrawer: boolean;
@@ -26,26 +27,53 @@ const pageStateStore = defineStore({
   } => {
     const route = useRoute();
     const menus = getNavRecordRaw();
+    const menuMap = getNavRecordRawMap(menus);
+    const currentNav = menuMap[route.fullPath];
     return {
-      current: route.fullPath,
+      currentPath: route.fullPath,
+      currentNav,
       tabs: [],
       menufold: false,
       showDrawer: false,
       menus,
-      menuMap: getNavRecordRawMap(menus)
+      menuMap
     };
   },
   getters: {
-    navs(): NavRecordRaw[] {
+    rootNavs(): NavRecordRaw[] {
       const navs = this.menus as NavRecordRaw[];
       return Object.values(navs)
-        .filter(t => !t.parent)
+        .filter(t => !t.parentPath)
         .sort((a, b) => a.order - b.order);
+    },
+    getSubMenu: state => {
+      return (path: string): NavRecordRaw[] => {
+        const nav = state.menus.find(t => t.path === path);
+        if (!nav || !nav.children) {
+          return [];
+        }
+        return nav.children;
+      };
     }
   },
   actions: {
     setValue(type: string, value: any) {
       this[type] = value;
+    },
+    goRoute(path: string) {
+      let currentNav: NavRecordRaw = this.menuMap[path];
+      if (currentNav.redirect) {
+        currentNav = this.menuMap[currentNav.redirect];
+      }
+      this.currentPath = currentNav.path;
+      this.currentNav = currentNav;
+      if (currentNav.islink) return;
+
+      const tabs = this.tabs as NavRecordRaw[];
+      const index = tabs.findIndex((t: NavRecordRaw) => t.path == this.currentPath);
+      if (index < 0) {
+        this.tabs.push(this.currentNav);
+      }
     },
     setSelectTab(tab: NavRecordRaw | string) {
       const tabs = this.tabs as NavRecordRaw[];

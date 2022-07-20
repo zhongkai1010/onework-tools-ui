@@ -5,7 +5,7 @@
       :model-value="props.selectName"
       @tab-change="name => emit('select', name as string)"
     >
-      <el-tab-pane v-for="tab in props.data" :key="tab.name" :name="tab.name">
+      <el-tab-pane v-for="tab in props.data" :key="tab.name" :name="tab.path">
         <template #label>
           <div class="menu-item">
             <IconifyIcon :icon="tab.icon" />

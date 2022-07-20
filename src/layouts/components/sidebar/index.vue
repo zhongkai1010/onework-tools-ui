@@ -4,14 +4,14 @@
       <div class="left">
         <layout-logo :logo="logoImg" state="logo" />
         <div class="nav">
-          <layout-nav :data="navs" @select="onNavSelect" />
+          <layout-nav :data="navs" :select-name="currentNav?.parentPath" @select="onNavSelect" />
         </div>
       </div>
       <div class="right">
         <layout-logo title="Drug Clinical Trials" state="title" />
         <el-divider content-position="center">其它</el-divider>
         <div class="menu">
-          <layout-menu :data="rightMenus" :collapse="false" />
+          <layout-menu :data="rightMenus" :collapse="false" :default-active="currentNav?.path" />
         </div>
       </div>
     </template>
@@ -48,33 +48,31 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
-import { defaultNav, pageStateStoreHook } from "/@/store/pageState";
+import { pageStateStoreHook } from "/@/store/pageState";
 import LayoutMenu from "./components/LayoutMenu.vue";
 import LayoutNav from "./components/LayoutNav.vue";
 import LayoutLogo from "./components/LayoutLogo.vue";
 import logoImg from "/@/assets/logo.png";
 import { useRouter } from "vue-router";
-import { NavRecordRaw } from "../../types";
-const layout = computed(() => siteConfigStoreHook().layout);
-const menuWidth = computed(() => `${siteConfigStoreHook().menuWidth}px`);
-const menufold = computed(() => pageStateStoreHook().menufold);
-const menus = computed(() => pageStateStoreHook().menus);
-const navs = computed(() => pageStateStoreHook().navs);
+const siteConfigStore = siteConfigStoreHook();
+const pageStateStore = pageStateStoreHook();
+const layout = computed(() => siteConfigStore.layout);
+const menuWidth = computed(() => `${siteConfigStore.menuWidth}px`);
+const menufold = computed(() => pageStateStore.menufold);
+const menus = computed(() => pageStateStore.menus);
+const navs = computed(() => pageStateStore.rootNavs);
+const currentNav = computed(() => pageStateStore.currentNav);
 const router = useRouter();
-const rightMenus = ref([]);
+const rightMenus = ref(pageStateStore.getSubMenu(pageStateStore.currentNav?.parentPath));
 
-const onNavSelect = (name: string) => {
-  const menu = menus.value.find(t => t.name == name);
+const onNavSelect = (path: string) => {
+  const menu = menus.value.find(t => t.path == path);
   if (menu.islink) {
     window.open(menu.path);
   }
-  rightMenus.value = menu.children || [];
-  if (rightMenus.value.length == 0) {
-    router.push(defaultNav.path);
-  } else {
-    const nav = rightMenus.value[0] as NavRecordRaw;
-    router.push(nav.path);
-  }
+  pageStateStore.goRoute(path);
+  rightMenus.value = pageStateStore.getSubMenu(path);
+  router.push(path);
 };
 </script>
 
