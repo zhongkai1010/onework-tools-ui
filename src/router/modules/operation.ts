@@ -5,33 +5,47 @@ export default [
   {
     name: "operation",
     path: "/operation",
-    redirect: "/operation/operation_organization",
-    meta: { title: "运维平台" },
+    redirect: "/operation/database",
+    meta: { title: "运维平台", icon: "akar-icons:file" },
     component: LAYOUT,
     children: [
       {
-        name: "operation_organization",
-        path: "organization",
-        component: () => import("../../views/operation/organization/index.vue"),
-        meta: { title: "组织机构" }
-      },
-      {
         name: "operation_database",
         path: "database",
-        component: () => import("../../views/operation/database/index.vue"),
-        meta: { title: "数据库管理" }
+        component: () => import("../../views/operation/database.vue"),
+        meta: { title: "数据库管理", icon: "akar-icons:file" }
       },
       {
-        name: "operation_translate",
-        path: "translate",
-        component: () => import("../../views/operation/translate/index.vue"),
-        meta: { title: "翻译记录" }
+        name: "operation_file",
+        path: "file",
+        component: () => import("../../views/operation/file.vue"),
+        meta: { title: "文件附件", icon: "akar-icons:file" }
       },
       {
-        name: "operation_logs",
-        path: "logs",
-        component: () => import("../../views/operation/logs/index.vue"),
-        meta: { title: "日志记录" }
+        name: "operation_interface",
+        path: "interface",
+        component: () => import("../../views/operation/interface.vue"),
+        meta: { title: "系统接口", icon: "akar-icons:file" }
+      },
+      {
+        name: "operation_message",
+        path: "message",
+        meta: { title: "消息管理", icon: "akar-icons:file" },
+        redirect: "/operation/message/log",
+        children: [
+          {
+            name: "operation_message_log",
+            path: "log",
+            component: () => import("../../views/operation/message/log.vue"),
+            meta: { title: "消息记录", icon: "akar-icons:file" }
+          },
+          {
+            name: "operation_message_template",
+            path: "template",
+            component: () => import("../../views/operation/message/template.vue"),
+            meta: { title: "消息模板", icon: "akar-icons:file" }
+          }
+        ]
       }
     ]
   }
