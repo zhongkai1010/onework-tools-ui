@@ -6,77 +6,26 @@
         <layout-nav :data="navs" :select-name="selectNav" @select="onNavSelect" />
       </div>
     </div>
+
     <div class="right">
-      <layout-logo title="Drug Clinical Trials" state="title" />
-      <el-divider content-position="center">其它</el-divider>
-      <div class="menu">
-        <layout-menu
-          :data="rightMenus"
-          :collapse="false"
-          :default-active="selectMenu"
-          @select="onMenuSelect"
-        />
-      </div>
-    </div>
-    <div class="right" v-if="layout != 'column'">
       <layout-logo
-        v-if="layout == 'complex' || layout == 'portrait' || layout == 'float'"
         title="Drug Clinical Trials"
         :logo="logoImg"
-        :state="layout == 'float' ? 'logo' : menufold ? 'logo' : 'all'"
+        v-if="layout !== 'standard'"
+        :state="
+          layout == 'float' ? 'logo' : menufold ? 'logo' : layout === 'column' ? 'title' : 'all'
+        "
       />
+      <el-divider content-position="center" v-if="layout == 'column'">其它</el-divider>
       <div class="menu">
         <layout-menu
-          :data="layout === 'complex' ? rightMenus :(layout === 'float') menus"
-          :collapse="menufold"
+          :data="layout === 'complex' ? rightMenus : layout === 'float' ? navs : menus"
+          :collapse="layout == 'float' ? true : menufold"
           :default-active="selectMenu"
           @select="onMenuSelect"
         />
       </div>
     </div>
-
-    <template v-if="layout == 'complex' || layout == 'portrait'">
-      <div class="right">
-        <layout-logo
-          title="Drug Clinical Trials"
-          :state="menufold ? 'logo' : 'all'"
-          :logo="logoImg"
-        />
-        <div class="menu">
-          <layout-menu
-            :data="layout === 'complex' ? rightMenus : menus"
-            :collapse="menufold"
-            :default-active="selectMenu"
-            @select="onMenuSelect"
-          />
-        </div>
-      </div>
-    </template>
-    <template v-if="layout == 'standard'">
-      <div class="right">
-        <div class="menu">
-          <layout-menu
-            :data="menus"
-            :collapse="menufold"
-            :default-active="selectMenu"
-            @select="onMenuSelect"
-          />
-        </div>
-      </div>
-    </template>
-    <template v-if="layout == 'float'">
-      <div class="right">
-        <layout-logo :logo="logoImg" state="logo" />
-        <div class="menu">
-          <layout-menu
-            :data="navs"
-            :collapse="true"
-            :default-active="selectNav"
-            @select="onMenuSelect"
-          />
-        </div>
-      </div>
-    </template>
   </div>
 </template>
 
