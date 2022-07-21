@@ -27,13 +27,56 @@
       />
       <div class="menu">
         <layout-menu
-          :data="layout === 'complex' ? rightMenus : layout === 'float' ? navs : menus"
+          :data="layout === 'complex' ? rightMenus :(layout === 'float') menus"
           :collapse="menufold"
           :default-active="selectMenu"
           @select="onMenuSelect"
         />
       </div>
     </div>
+
+    <template v-if="layout == 'complex' || layout == 'portrait'">
+      <div class="right">
+        <layout-logo
+          title="Drug Clinical Trials"
+          :state="menufold ? 'logo' : 'all'"
+          :logo="logoImg"
+        />
+        <div class="menu">
+          <layout-menu
+            :data="layout === 'complex' ? rightMenus : menus"
+            :collapse="menufold"
+            :default-active="selectMenu"
+            @select="onMenuSelect"
+          />
+        </div>
+      </div>
+    </template>
+    <template v-if="layout == 'standard'">
+      <div class="right">
+        <div class="menu">
+          <layout-menu
+            :data="menus"
+            :collapse="menufold"
+            :default-active="selectMenu"
+            @select="onMenuSelect"
+          />
+        </div>
+      </div>
+    </template>
+    <template v-if="layout == 'float'">
+      <div class="right">
+        <layout-logo :logo="logoImg" state="logo" />
+        <div class="menu">
+          <layout-menu
+            :data="navs"
+            :collapse="true"
+            :default-active="selectNav"
+            @select="onMenuSelect"
+          />
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
