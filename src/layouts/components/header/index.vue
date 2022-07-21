@@ -6,7 +6,13 @@
       v-if="showState.i"
       @click="onClickFold"
     />
-    <layout-nav :data="tabs" class="nav" v-if="showState.layout == 'complex'" />
+    <layout-nav
+      :data="tabs"
+      :select-name="selectNav"
+      class="nav"
+      v-if="showState.layout == 'complex'"
+      @select="onNavSelect"
+    />
     <layout-menu :data="menus" class="nav" v-if="showState.layout == 'horizontal'" />
     <layout-breadcrumb
       class="breadcrumb"
@@ -33,6 +39,7 @@ import logoImg from "/@/assets/logo.png";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
 import { pageStateStoreHook } from "/@/store/pageState";
 import { computed } from "vue";
+import { useRouter } from "vue-router";
 const pageStateStore = pageStateStoreHook();
 const showState = computed(() => {
   const layout = siteConfigStoreHook().layout;
@@ -46,9 +53,19 @@ const showState = computed(() => {
 const menufold = computed(() => pageStateStoreHook().menufold);
 const menus = computed(() => pageStateStore.menus);
 const tabs = computed(() => pageStateStore.rootNavs);
-
+const selectNav = computed(() => pageStateStore.selectNav);
+const router = useRouter();
 const onClickFold = () => {
   pageStateStoreHook().setValue("menufold", !menufold.value);
+};
+
+const onNavSelect = (path: string) => {
+  const menu = menus.value.find(t => t.path == path);
+  if (menu.islink) {
+    window.open(menu.path);
+  }
+  pageStateStore.setSelectNav(path);
+  router.push(pageStateStore.selectMenu);
 };
 </script>
 

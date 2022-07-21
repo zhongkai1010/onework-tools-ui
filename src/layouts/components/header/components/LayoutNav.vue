@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <el-tabs :model-value="props.selectName" @tab-change="name => emit('select', name as string)">
-      <el-tab-pane :name="(HOME_PAGE.redirect as string) ?? HOME_PAGE.path">
+      <el-tab-pane :name="HOME_PAGE.path">
         <template #label>
           <div class="tab">
             <IconifyIcon :icon="HOME_PAGE.meta.icon" />
@@ -9,11 +9,11 @@
           </div>
         </template>
       </el-tab-pane>
-      <el-tab-pane v-for="tab in props.data" :key="tab.name" :name="tab.name">
+      <el-tab-pane v-for="tab in props.data" :key="tab.name" :name="tab.path">
         <template #label>
           <div class="tab">
             <IconifyIcon :icon="tab.icon" />
-            <span>{{ tab.label }}</span>
+            <span>{{ tab.title }}</span>
           </div>
         </template>
       </el-tab-pane>
@@ -22,9 +22,10 @@
 </template>
 
 <script setup lang="ts">
+import { NavRecordRaw } from "/@/layouts/types";
 import { HOME_PAGE } from "/@/router/constant";
 const props = defineProps<{
-  data: Tab[];
+  data: NavRecordRaw[];
   selectName?: string;
 }>();
 const emit = defineEmits<{
