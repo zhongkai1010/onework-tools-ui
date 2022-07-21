@@ -2,9 +2,9 @@
   <div class="container">
     <el-breadcrumb separator=">">
       <template v-if="props.data.length === 0">
-        <el-breadcrumb-item :to="{ path: defaultNav.name }">
-          <IconifyIcon :icon="defaultNav.icon" :size="14" />
-          <span>{{ defaultNav.title }}</span>
+        <el-breadcrumb-item :to="{ path: HOME_PAGE.path }">
+          <IconifyIcon :icon="HOME_PAGE.meta.icon" :size="14" />
+          <span>{{ HOME_PAGE.meta.title }}</span>
         </el-breadcrumb-item>
       </template>
       <el-breadcrumb-item :to="{ path: item.path }" v-for="item in props.data" :key="item.path">
@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { defaultNav } from "/@/store/pageState";
+import { HOME_PAGE } from "/@/router/constant";
 const props = defineProps<{
   data: Menu[];
 }>();

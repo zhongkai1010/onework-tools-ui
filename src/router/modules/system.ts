@@ -1,4 +1,4 @@
-import { LAYOUT } from "../constant";
+import { EMPTY_LAYOUT, LAYOUT } from "../constant";
 import { OwRouteRecordRaw } from "../types";
 
 export default [
@@ -24,7 +24,7 @@ export default [
       {
         name: "system_menu",
         path: "menu",
-        component: () => import("../../views/system/menu.vue"),
+        component: () => import("../../views/system/navigation.vue"),
         meta: { title: "菜单管理", icon: "ant-design:menu-outlined" }
       },
       {
@@ -44,6 +44,7 @@ export default [
         path: "dictionary",
         redirect: "/system/dictionary/single",
         meta: { title: "数据字典", icon: "arcticons:dictionary" },
+        component: EMPTY_LAYOUT,
         children: [
           {
             name: "system_dictionary_single",
@@ -76,6 +77,7 @@ export default [
         path: "log",
         redirect: "/system/log/operate",
         meta: { title: "日志管理", icon: "codicon:symbol-parameter" },
+        component: EMPTY_LAYOUT,
         children: [
           {
             name: "system_log_operate",

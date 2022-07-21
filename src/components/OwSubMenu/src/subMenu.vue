@@ -5,7 +5,7 @@
         <IconifyIcon :icon="menu.icon" />
         <span>{{ menu.title }}</span>
       </template>
-      <template v-for="item in props.menu.children" :key="item.path">
+      <template v-for="item in props.menu.children" :key="item.name">
         <sub-menu :menu="item" />
       </template>
     </el-sub-menu>

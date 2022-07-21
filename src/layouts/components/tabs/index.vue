@@ -8,21 +8,32 @@
     <el-tabs
       class="tabs"
       type="card"
-      :model-value="selectName"
+      :model-value="selectTab"
       @tab-remove="onTabClose"
       @contextmenu="onTabContextMenu"
       @tab-change="onTabChange"
     >
-      <template v-for="tab in tabs" :key="tab.name">
-        <el-tab-pane :closable="tab.name !== defaultNav.name" :name="tab.name">
-          <template #label>
-            <span class="label">
-              <IconifyIcon :icon="tab.icon" :title="tab.title" class="button" />
-              <span>{{ tab.title }}</span>
-            </span>
-          </template>
-        </el-tab-pane>
-      </template>
+      <el-tab-pane :name="HOME_PAGE.path">
+        <template #label>
+          <span class="label">
+            <IconifyIcon :icon="HOME_PAGE.meta.icon" :title="HOME_PAGE.meta.title" class="button" />
+            <span>{{ HOME_PAGE.meta.title }}</span>
+          </span>
+        </template>
+      </el-tab-pane>
+      <el-tab-pane
+        v-for="tab in tabs"
+        :key="tab.name"
+        :closable="tab.path !== HOME_PAGE.path"
+        :name="tab.path"
+      >
+        <template #label>
+          <span class="label">
+            <IconifyIcon :icon="tab.icon" :title="tab.title" class="button" />
+            <span>{{ tab.title }}</span>
+          </span>
+        </template>
+      </el-tab-pane>
     </el-tabs>
     <el-dropdown>
       <IconifyIcon icon="fe:app-menu" :size="15" />
@@ -52,20 +63,22 @@
 import { TabPanelName } from "element-plus";
 import { computed, reactive } from "vue";
 import TabTools from "./TabTools.vue";
-import { pageStateStoreHook, defaultNav } from "/@/store/pageState";
+import { pageStateStoreHook } from "/@/store/pageState";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
 import { useRouter } from "vue-router";
 import { findElementParentId, tabOperateItems } from "/@/layouts/utils";
+import { HOME_PAGE } from "/@/router/constant";
 
 /**
  *   init
  */
 const router = useRouter();
+const pageStateStore = pageStateStoreHook();
 /**
  *  右键状态
  */
 const tabsMenuState = reactive({
-  name: defaultNav.name,
+  name: HOME_PAGE.path,
   show: false,
   x: 0,
   y: 0
@@ -73,12 +86,9 @@ const tabsMenuState = reactive({
 /**
  *  store tab state
  */
-const selectName = computed(() => {
-  return pageStateStoreHook().current;
-});
-const tabs = computed(() => {
-  return [defaultNav, ...pageStateStoreHook().tabs];
-});
+const selectTab = computed(() => pageStateStore.selectTab);
+const tabs = computed(() => pageStateStore.tabs);
+
 const menufold = computed(() => {
   return pageStateStoreHook().menufold;
 });
@@ -96,7 +106,7 @@ const onTabChange = (tab: TabPanelName) => {
   // 路由
   router.push(name);
   // tab 状态
-  if (name !== defaultNav.name) {
+  if (name !== HOME_PAGE.path) {
     pageStateStoreHook().setSelectTab(name);
   }
   tabsMenuState.name = name;
@@ -140,7 +150,7 @@ const onToolItemClick = (command: "other" | "left" | "right" | "all" | "refresh"
     cursor: pointer;
   }
   .tabs {
-    width: 400px;
+    width: calc(100% - 200px);
   }
   .label {
     i {

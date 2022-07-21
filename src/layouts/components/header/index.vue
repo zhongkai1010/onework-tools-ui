@@ -30,11 +30,10 @@ import LayoutNav from "./components/LayoutNav.vue";
 import LayoutMenu from "./components/LayoutMenu.vue";
 import LayoutLogo from "./components/LayoutLogo.vue";
 import logoImg from "/@/assets/logo.png";
-import { getTabs, getMenus } from "/@/layouts/utils";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
 import { pageStateStoreHook } from "/@/store/pageState";
 import { computed } from "vue";
-
+const pageStateStore = pageStateStoreHook();
 const showState = computed(() => {
   const layout = siteConfigStoreHook().layout;
   return {
@@ -45,9 +44,8 @@ const showState = computed(() => {
   };
 });
 const menufold = computed(() => pageStateStoreHook().menufold);
-
-const { menus } = getMenus();
-const tabs = getTabs();
+const menus = computed(() => pageStateStore.menus);
+const tabs = computed(() => pageStateStore.rootNavs);
 
 const onClickFold = () => {
   pageStateStoreHook().setValue("menufold", !menufold.value);

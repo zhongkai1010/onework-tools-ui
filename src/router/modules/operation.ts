@@ -1,4 +1,4 @@
-import { LAYOUT } from "../constant";
+import { EMPTY_LAYOUT, LAYOUT } from "../constant";
 import { OwRouteRecordRaw } from "../types";
 
 export default [
@@ -32,6 +32,7 @@ export default [
         path: "message",
         meta: { title: "消息管理", icon: "akar-icons:file" },
         redirect: "/operation/message/log",
+        component: EMPTY_LAYOUT,
         children: [
           {
             name: "operation_message_log",

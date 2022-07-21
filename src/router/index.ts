@@ -9,18 +9,18 @@ import "nprogress/nprogress.css";
 /**
  * 遍历modules目录，获取RouteRecordRaw集合
  */
-const moduleRoutes: RouteRecordRaw[] = getModuleRoutes() as RouteRecordRaw[];
+const moduleRoutes = getModuleRoutes();
 
 /**
  * routes 集合
  */
-const routes: RouteRecordRaw[] = [LOGIN_PAGE, ...moduleRoutes, HOME_PAGE, NOT_PAGE];
+const routes = [LOGIN_PAGE, ...moduleRoutes, HOME_PAGE, NOT_PAGE];
 /**
  * router
  */
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes: routes as RouteRecordRaw[]
 });
 /**
  * 页面头部加载进度条

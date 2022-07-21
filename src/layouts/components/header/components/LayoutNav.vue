@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <el-tabs :model-value="props.selectName" @tab-change="name => emit('select', name as string)">
-      <el-tab-pane :name="defaultNav.name">
+      <el-tab-pane :name="(HOME_PAGE.redirect as string) ?? HOME_PAGE.path">
         <template #label>
           <div class="tab">
-            <IconifyIcon :icon="defaultNav.icon" />
-            <span>{{ defaultNav.title }}</span>
+            <IconifyIcon :icon="HOME_PAGE.meta.icon" />
+            <span>{{ HOME_PAGE.meta.title }}</span>
           </div>
         </template>
       </el-tab-pane>
@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { defaultNav } from "/@/store/pageState";
+import { HOME_PAGE } from "/@/router/constant";
 const props = defineProps<{
   data: Tab[];
   selectName?: string;

@@ -7,8 +7,10 @@
 </template>
 
 <script setup lang="ts">
-import { getMenus } from "/@/layouts/utils";
-const { menus } = getMenus();
+import { pageStateStoreHook } from "/@/store/pageState";
+import { computed } from "vue";
+const pageStateStore = pageStateStoreHook();
+const menus = computed(() => pageStateStore.menus);
 </script>
 
 <style lang="scss" scoped>

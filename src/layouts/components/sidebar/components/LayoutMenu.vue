@@ -20,11 +20,11 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: "select", indexPath: string[]): void;
+  (e: "select", path: string): void;
 }>();
 
-const onSelect = (_index, indexPath: string[]): void => {
-  emit("select", indexPath);
+const onSelect = (index): void => {
+  emit("select", index);
 };
 </script>
 

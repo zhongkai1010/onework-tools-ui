@@ -1,19 +1,20 @@
 import { OwRouteRecordRaw } from "../types";
-import { LAYOUT } from "../constant";
+import { LAYOUT, EMPTY_LAYOUT } from "../constant";
 
 export default [
   {
     name: "demo",
     path: "/demo",
-    redirect: "/demo/table/complex",
+    redirect: "/demo/table",
     component: LAYOUT,
     meta: { title: "示例", orderNo: 8, icon: "carbon:calendar-tools" },
     children: [
       {
         name: "demo_table",
-        path: "",
+        path: "table",
         redirect: "/demo/table/complex",
         meta: { title: "表格", icon: "akar-icons:file" },
+        component: EMPTY_LAYOUT,
         children: [
           {
             name: "demo_table_complex",
@@ -70,6 +71,7 @@ export default [
         path: "form",
         meta: { title: "表单", icon: "akar-icons:file" },
         redirect: "/demo/form/complex",
+        component: EMPTY_LAYOUT,
         children: [
           {
             name: "demo_form_complex",

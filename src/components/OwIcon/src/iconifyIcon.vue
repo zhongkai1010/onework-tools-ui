@@ -1,6 +1,6 @@
 <template>
   <el-icon :size="props.size || 16" :color="(props.color as string)">
-    <Icon :icon="props.icon || 'akar-icons:home'" />
+    <Icon :icon="props.icon" />
   </el-icon>
 </template>
 

@@ -4,14 +4,19 @@
       <div class="left">
         <layout-logo :logo="logoImg" state="logo" />
         <div class="nav">
-          <layout-nav :data="navs" :select-name="currentNav?.parentPath" @select="onNavSelect" />
+          <layout-nav :data="navs" :select-name="selectNav" @select="onNavSelect" />
         </div>
       </div>
       <div class="right">
         <layout-logo title="Drug Clinical Trials" state="title" />
         <el-divider content-position="center">其它</el-divider>
         <div class="menu">
-          <layout-menu :data="rightMenus" :collapse="false" :default-active="currentNav?.path" />
+          <layout-menu
+            :data="rightMenus"
+            :collapse="false"
+            :default-active="selectMenu"
+            @select="onMenuSelect"
+          />
         </div>
       </div>
     </template>
@@ -46,7 +51,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed } from "vue";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
 import { pageStateStoreHook } from "/@/store/pageState";
 import LayoutMenu from "./components/LayoutMenu.vue";
@@ -61,18 +66,23 @@ const menuWidth = computed(() => `${siteConfigStore.menuWidth}px`);
 const menufold = computed(() => pageStateStore.menufold);
 const menus = computed(() => pageStateStore.menus);
 const navs = computed(() => pageStateStore.rootNavs);
-const currentNav = computed(() => pageStateStore.currentNav);
+const selectMenu = computed(() => pageStateStore.selectMenu);
+const selectNav = computed(() => pageStateStore.selectNav);
 const router = useRouter();
-const rightMenus = ref(pageStateStore.getSubMenu(pageStateStore.currentNav?.parentPath));
+const rightMenus = computed(() => pageStateStore.getNavMenus);
 
 const onNavSelect = (path: string) => {
   const menu = menus.value.find(t => t.path == path);
   if (menu.islink) {
     window.open(menu.path);
   }
-  pageStateStore.goRoute(path);
-  rightMenus.value = pageStateStore.getSubMenu(path);
-  router.push(path);
+  pageStateStore.setSelectNav(path);
+  router.push(pageStateStore.selectMenu);
+};
+
+const onMenuSelect = (path: string) => {
+  pageStateStore.setSelectMenu(path);
+  router.push(pageStateStore.selectMenu);
 };
 </script>
 
