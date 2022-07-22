@@ -22,7 +22,7 @@ import logoImg from "/@/assets/logo.png";
     span {
       margin-left: 5px;
       overflow: hidden;
-      font-size: 22px;
+      font-size: 20px;
       text-overflow: ellipsis;
       vertical-align: bottom;
     }

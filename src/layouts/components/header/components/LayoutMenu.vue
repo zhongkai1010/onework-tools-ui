@@ -19,12 +19,12 @@ const menus = computed(() => pageStateStore.menus);
   border-bottom: 0;
   height: 40px;
   &:hover {
-    background-color: $activate-background;
-    color: $activate-color;
+    // background-color: $activate-background;
+    // color: $activate-color;
   }
   &.is-active {
-    background-color: $activate-background;
-    color: $activate-color;
+    // background-color: $activate-background;
+    // color: $activate-color;
   }
 }
 

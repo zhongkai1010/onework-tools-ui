@@ -16,7 +16,9 @@
           layout == 'float' ? 'logo' : menufold ? 'logo' : layout === 'column' ? 'title' : 'all'
         "
       />
-      <el-divider content-position="center" v-if="layout == 'column'">其它</el-divider>
+      <el-divider content-position="center" v-if="layout == 'column'">{{
+        dividerTitle
+      }}</el-divider>
       <div class="menu">
         <layout-menu
           :data="layout === 'complex' ? rightMenus : layout === 'float' ? navs : menus"
@@ -49,6 +51,11 @@ const selectMenu = computed(() => pageStateStore.selectMenu);
 const selectNav = computed(() => pageStateStore.selectNav);
 const router = useRouter();
 const rightMenus = computed(() => pageStateStore.getNavMenus);
+const dividerTitle = computed(() => {
+  const menuMap = pageStateStore.menuMap;
+  const selectMenu = pageStateStore.selectMenu;
+  return menuMap[selectMenu].title;
+});
 
 const onNavSelect = (path: string) => {
   const menu = menus.value.find(t => t.path == path);

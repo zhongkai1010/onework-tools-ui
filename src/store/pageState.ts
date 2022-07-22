@@ -20,6 +20,12 @@ const pageStateStore = defineStore({
     showDrawer: boolean;
     menus: NavRecordRaw[];
     menuMap: { [key: string]: NavRecordRaw };
+    tabTool: {
+      x: number;
+      y: number;
+      show: boolean;
+      name?: string;
+    };
   } => {
     const route = useRoute();
     const menus = getNavRecordRaw();
@@ -35,7 +41,12 @@ const pageStateStore = defineStore({
       menufold: false,
       showDrawer: false,
       menus,
-      menuMap
+      menuMap,
+      tabTool: {
+        x: 0,
+        y: 0,
+        show: false
+      }
     };
   },
   getters: {
@@ -49,6 +60,10 @@ const pageStateStore = defineStore({
       const menus = this.menus as NavRecordRaw[];
       const rootMenu = menus.find(t => t.path === this.selectNav);
       return rootMenu.children || [];
+    },
+    breadcrumbNavs(): NavRecordRaw[] {
+      const nav: NavRecordRaw = this.menuMap[this.selectMenu];
+      return nav.paths.map(t => this.menuMap[t]);
     }
   },
   actions: {

@@ -7,7 +7,7 @@
         <i :class="visibleState ? 'ri-arrow-down-s-line active' : 'ri-arrow-down-s-line'" />
       </span>
       <template #dropdown>
-        <ElDropdownMenu @command="(command:string)=>emit('select',command)">
+        <ElDropdownMenu>
           <ElDropdownItem v-for="item in avatarItems" :key="item.command" :command="item.command">
             {{ item.text }}
           </ElDropdownItem>
@@ -24,9 +24,7 @@ const props = defineProps<{
   avatar?: string;
   username: string;
 }>();
-const emit = defineEmits<{
-  (e: "select", type: string): void;
-}>();
+
 const visibleState = ref(true);
 const onChange = state => {
   visibleState.value = state;
@@ -39,11 +37,11 @@ const onChange = state => {
     display: flex;
     align-content: center;
     align-items: center;
-    i {
-      color: $header-color;
-    }
+    // i {
+    //   color: $header-color;
+    // }
     &:deep(.el-avatar) {
-      background-color: $header-background-color;
+      // background-color: $header-background-color;
       img {
         width: 32px;
         height: 32px;
@@ -61,7 +59,7 @@ const onChange = state => {
     text-overflow: ellipsis;
     line-height: 40px;
     cursor: pointer;
-    color: $header-color;
+    // color: $header-color;
   }
 }
 </style>

@@ -37,8 +37,8 @@ const onSelect = (index): void => {
   &:deep(.el-menu-item) {
     height: $menu-height;
     &.is-active {
-      color: $activate-color;
-      background-color: $activate-background;
+      // color: $activate-color;
+      // background-color: $activate-background;
     }
   }
 }

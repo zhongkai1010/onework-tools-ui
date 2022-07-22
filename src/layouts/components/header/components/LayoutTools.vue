@@ -62,13 +62,13 @@
   align-items: center;
   justify-content: center;
   padding: 0 20px;
-  color: $header-color;
+  // color: $header-color;
   .button {
     @include text-center();
   }
   .el-dropdown {
     padding-left: 14px;
-    color: $header-color;
+    // color: $header-color;
   }
   &:deep(.el-badge__content) {
     right: 20px;

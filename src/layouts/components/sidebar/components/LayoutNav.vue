@@ -31,8 +31,6 @@ const emit = defineEmits<{
 <style lang="scss" scoped>
 .container {
   max-width: $logo-width;
-  color: $nav-color;
-  background-color: $nav-background;
   &:deep(.el-tabs__nav-wrap) {
     margin: 0px;
   }
@@ -46,8 +44,8 @@ const emit = defineEmits<{
     height: auto;
     color: $nav-color;
     &.is-active {
-      color: $activate-color;
-      background-color: $activate-background;
+      // color: $activate-color;
+      // background-color: $activate-background;
     }
   }
   .menu-item {

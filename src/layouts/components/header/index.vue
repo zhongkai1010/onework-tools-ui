@@ -14,15 +14,7 @@
       @select="onNavSelect"
     />
     <layout-menu :data="menus" class="nav" v-if="showState.layout == 'horizontal'" />
-    <layout-breadcrumb
-      class="breadcrumb"
-      v-if="showState.breadcrumb"
-      :data="[
-        { title: '首页', path: '/', icon: 'ant-design:home-outlined' },
-        { title: '示例', path: '/demo', icon: 'mdi:ev-plug-chademo' },
-        { title: '布局', path: '/demo/layout', icon: 'ant-design:layout-outlined' }
-      ]"
-    />
+    <layout-breadcrumb class="breadcrumb" v-if="showState.breadcrumb" />
     <layout-tools />
     <layout-avatar :avatar="logoImg" :username="'系统管理员'" />
   </div>
@@ -76,9 +68,8 @@ const onNavSelect = (path: string) => {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background-color: $header-background-color;
-  color: $header-color;
   padding: 0 20px;
+  box-shadow: 0px 0px 4px rgb(0 21 41 / 8%);
 }
 
 .header-container[data-layout="column"],

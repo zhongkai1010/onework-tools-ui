@@ -1,106 +1,85 @@
 <template>
   <div class="tab-container">
-    <i
-      :class="menufold ? 'ri-menu-unfold-fill fold' : 'ri-menu-fold-line fold fold'"
-      v-show="layout === 'standard'"
-      @click="onFoldClick"
-    />
-    <el-tabs
-      class="tabs"
-      type="card"
-      :model-value="selectTab"
-      @tab-remove="onTabClose"
-      @contextmenu="onTabContextMenu"
-      @tab-change="onTabChange"
-    >
-      <el-tab-pane :name="HOME_PAGE.path">
-        <template #label>
-          <span class="label">
-            <IconifyIcon :icon="HOME_PAGE.meta.icon" :title="HOME_PAGE.meta.title" class="button" />
-            <span>{{ HOME_PAGE.meta.title }}</span>
-          </span>
-        </template>
-      </el-tab-pane>
-      <el-tab-pane
-        v-for="tab in tabs"
-        :key="tab.name"
-        :closable="tab.path !== HOME_PAGE.path"
-        :name="tab.path"
+    <div class="left" v-if="layout === 'standard'">
+      <i
+        :class="menufold ? 'ri-menu-unfold-fill fold' : 'ri-menu-fold-line fold'"
+        @click="onFoldClick"
+      />
+    </div>
+    <div class="center">
+      <el-tabs
+        :model-value="selectTab"
+        @tab-remove="onTabClose"
+        @contextmenu="onTabContextMenu"
+        @tab-change="onTabChange"
       >
-        <template #label>
-          <span class="label">
-            <IconifyIcon :icon="tab.icon" :title="tab.title" class="button" />
-            <span>{{ tab.title }}</span>
-          </span>
+        <el-tab-pane :name="HOME_PAGE.path">
+          <template #label>
+            <span class="content">
+              <IconifyIcon class="icon" :icon="HOME_PAGE.meta.icon" :title="HOME_PAGE.meta.title" />
+              <span class="title">{{ HOME_PAGE.meta.title }}</span>
+            </span>
+          </template>
+        </el-tab-pane>
+        <el-tab-pane
+          v-for="tab in tabs"
+          :key="tab.name"
+          :closable="tab.path !== HOME_PAGE.path"
+          :name="tab.path"
+        >
+          <template #label>
+            <span class="content">
+              <IconifyIcon class="icon" :icon="tab.icon" :title="tab.title" />
+              <span class="title">{{ tab.title }}</span>
+            </span>
+          </template>
+        </el-tab-pane>
+      </el-tabs>
+    </div>
+    <div class="right">
+      <el-dropdown @command="onClickCommand">
+        <IconifyIcon icon="fe:app-menu" :size="15" />
+        <template #dropdown>
+          <el-dropdown-menu>
+            <el-dropdown-item
+              v-for="(item, index) in tabOperateItems"
+              :key="index"
+              :command="item.command"
+            >
+              {{ item.text }}
+            </el-dropdown-item>
+          </el-dropdown-menu>
         </template>
-      </el-tab-pane>
-    </el-tabs>
-    <el-dropdown>
-      <IconifyIcon icon="fe:app-menu" :size="15" />
-      <template #dropdown>
-        <el-dropdown-menu>
-          <el-dropdown-item
-            v-for="(item, index) in tabOperateItems"
-            :key="index"
-            :command="item.command"
-          >
-            {{ item.text }}
-          </el-dropdown-item>
-        </el-dropdown-menu>
-      </template>
-    </el-dropdown>
-    <TabTools
-      :show="tabsMenuState.show"
-      :x="tabsMenuState.x"
-      :y="tabsMenuState.y"
-      @on-blur="tabsMenuState.show = false"
-      @on-click="onToolItemClick"
-    />
+      </el-dropdown>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { TabPanelName } from "element-plus";
-import { computed, reactive } from "vue";
-import TabTools from "./TabTools.vue";
+import { computed } from "vue";
 import { pageStateStoreHook } from "/@/store/pageState";
 import { siteConfigStoreHook } from "/@/store/globalConfig";
 import { useRouter } from "vue-router";
 import { findElementParentId, tabOperateItems } from "/@/layouts/utils";
 import { HOME_PAGE } from "/@/router/constant";
 
-/**
- *   init
- */
 const router = useRouter();
-const pageStateStore = pageStateStoreHook();
+const pageState = pageStateStoreHook();
+const siteConfig = siteConfigStoreHook();
+const selectTab = computed(() => pageState.selectTab);
+const tabs = computed(() => pageState.tabs);
+const menufold = computed(() => pageState.menufold);
+const layout = computed(() => siteConfig.layout);
 /**
- *  右键状态
- */
-const tabsMenuState = reactive({
-  name: HOME_PAGE.path,
-  show: false,
-  x: 0,
-  y: 0
-});
-/**
- *  store tab state
- */
-const selectTab = computed(() => pageStateStore.selectTab);
-const tabs = computed(() => pageStateStore.tabs);
-
-const menufold = computed(() => {
-  return pageStateStoreHook().menufold;
-});
-const layout = computed(() => {
-  return siteConfigStoreHook().layout;
-});
-/**
- *  events
+ * 标签关闭
  */
 const onTabClose = (name: TabPanelName) => {
   pageStateStoreHook().closeTab(name as string);
 };
+/**
+ * 标签切换
+ */
 const onTabChange = (tab: TabPanelName) => {
   const name = tab as string;
   // 路由
@@ -109,28 +88,28 @@ const onTabChange = (tab: TabPanelName) => {
   if (name !== HOME_PAGE.path) {
     pageStateStoreHook().setSelectTab(name);
   }
-  tabsMenuState.name = name;
 };
+/**
+ * 标签右键
+ */
 const onTabContextMenu = (e: MouseEvent) => {
-  e.preventDefault();
-  tabsMenuState.show = true;
-  tabsMenuState.x = e.x;
-  tabsMenuState.y = e.y;
-
   const target = e.target as Element;
-  const id = findElementParentId(target);
-  tabsMenuState.name = id.replace("tab-", "");
+  const id = findElementParentId(target) as string;
+  if (id.includes("tab-")) {
+    e.preventDefault();
+    pageState.setValue("tabTool", {
+      x: e.x,
+      y: e.y,
+      show: true,
+      name: id.replace("tab-", "")
+    });
+  }
+};
+const onClickCommand = command => {
+  pageState.operateTab(command, selectTab.value);
 };
 const onFoldClick = () => {
   pageStateStoreHook().setValue("menufold", !menufold.value);
-};
-const onToolItemClick = (command: "other" | "left" | "right" | "all" | "refresh") => {
-  if (command === "refresh") {
-    router.push(tabsMenuState.name);
-  } else {
-    pageStateStoreHook().operateTab(command, tabsMenuState.name);
-  }
-  tabsMenuState.show = false;
 };
 </script>
 
@@ -140,51 +119,60 @@ const onToolItemClick = (command: "other" | "left" | "right" | "all" | "refresh"
   align-content: center;
   align-items: center;
   justify-content: space-between;
-  background-color: $header-background-color;
-  color: $header-color;
-  line-height: $menu-height;
-  width: 100%;
+  height: $menu-height;
   padding: 0 20px;
-  box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
-  .fold {
+  // background-color: $header-background-color;
+  // color: $header-color;
+  box-shadow: 0px 1px 4px rgb(0 21 41 / 8%);
+  .left {
     cursor: pointer;
+    width: 20px;
   }
-  .tabs {
-    width: calc(100% - 200px);
-  }
-  .label {
-    i {
+  .center {
+    padding: 0 20px;
+    width: calc(100% - 40px);
+
+    &:deep(.el-tabs) {
+      margin-bottom: -10px;
+    }
+
+    &:deep(.el-tabs__header) {
+      margin: 0px;
+    }
+    &:deep(.el-tabs__nav-wrap::after) {
+      height: 0px;
+    }
+    &:deep(.el-tabs__active-bar) {
+      height: 0;
+    }
+    &:deep(.el-tabs__item) {
+      margin-right: 10px;
+      padding: 0 20px;
+      i {
+        vertical-align: middle;
+      }
+      &.is-active {
+        // background-color: #e8f4ff;
+        // color: #1890ff;
+      }
+      &:hover {
+        // background-color: #e4e7ed;
+        // color: #303133;
+      }
+    }
+    .content {
       vertical-align: middle;
-      margin-right: 5px;
+      .el-icon {
+        vertical-align: middle;
+      }
+      span {
+        vertical-align: middle;
+        margin-left: 4px;
+      }
     }
   }
-  &:deep(.el-tabs__nav) {
-    border: 0px;
-  }
-  &:deep(.el-tabs__header) {
-    margin: 0px;
-    border: 0px;
-  }
-  &:deep(.el-tabs__item) {
-    border: 0;
-    border-radius: 5px 5px 0px 0px;
-    text-align: center;
-    margin-right: 10px;
-    &.is-active {
-      border-bottom: 0px;
-    }
-    &:hover {
-      border-bottom: 0px;
-    }
-  }
-  &:deep(.el-tabs__nav-prev) {
-    line-height: $menu-height;
-  }
-  &:deep(.el-tabs__nav-next) {
-    line-height: $menu-height;
-  }
-  &:deep(.el-tabs__nav-wrap) {
-    margin: 0px;
+  .right {
+    width: 20px;
   }
 }
 </style>

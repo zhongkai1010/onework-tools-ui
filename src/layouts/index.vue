@@ -26,6 +26,7 @@
   </div>
   <Config />
   <ConfigDrawer />
+  <TabTools />
 </template>
 
 <script lang="ts" setup>
@@ -38,6 +39,7 @@ import LayoutSidebar from "/@/layouts/components/sidebar/index.vue";
 import LayoutTabs from "/@/layouts/components/tabs/index.vue";
 import Config from "/@/layouts/components/setting/index.vue";
 import ConfigDrawer from "/@/layouts/components/setting/ConfigDrawer.vue";
+import TabTools from "/@/layouts/components/tabs/TabTools.vue";
 
 const showTabs = computed(() => siteConfigStoreHook().showTabs);
 const layout = computed(() => siteConfigStoreHook().layout);
@@ -69,8 +71,8 @@ const navHeight = computed(() => (siteConfigStoreHook().showTabs ? "50px" : "0px
   .wrapper_left,
   .wrapper_nav {
     padding: 0px;
-    background-color: $header-background-color;
-    color: $header-color;
+    // background-color: $header-background-color;
+    // color: $header-color;
   }
   .wrapper_header {
     box-shadow: 0px 1px 4px rgb(0 21 41 / 8%);

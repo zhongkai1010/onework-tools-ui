@@ -1,5 +1,9 @@
 @forward "element-plus/theme-chalk/src/common/var.scss" with (
-  $colors: ()
+  $colors: (
+    'primary': (
+      'base': #6954f0,
+    ),
+  )
 );
 
 $logo-width: 64px;

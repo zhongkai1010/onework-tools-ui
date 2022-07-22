@@ -10,7 +10,7 @@ const globalConfigStore = defineStore("global-configs", {
     return {
       layout: "standard",
       showTabs: true,
-      menuWidth: 200
+      menuWidth: 266
     };
   },
 

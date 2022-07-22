@@ -27,8 +27,8 @@ const props = defineProps<{
 .container {
   text-align: center;
   &.is-logo {
-    color: $nav-color;
-    background-color: $nav-background;
+    // color: $nav-color;
+    // background-color: $nav-background;
     width: $logo-width;
     height: $header-height;
     padding: 16px;
@@ -42,8 +42,8 @@ const props = defineProps<{
   &.is-title {
     width: v-bind(menuWidth);
     height: v-bind(titleLineHeight);
-    color: $header-color;
-    background-color: $header-background-color;
+    // color: $header-color;
+    // background-color: $header-background-color;
     .img {
       display: none;
     }
@@ -60,8 +60,8 @@ const props = defineProps<{
   &.is-all {
     width: v-bind(menuWidth);
     height: $header-height;
-    color: $header-color;
-    background-color: $header-background-color;
+    // color: $header-color;
+    // background-color: $header-background-color;
     display: flex;
     align-items: center;
     justify-content: center;
