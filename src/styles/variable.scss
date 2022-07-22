@@ -1,8 +1,25 @@
 @forward "element-plus/theme-chalk/src/common/var.scss" with (
   $colors: (
+    'white': #ffffff,
+    'black': #000000,
     'primary': (
-      'base': #6954f0,
+      'base': #409eff,
     ),
+    'success': (
+      'base': #67c23a,
+    ),
+    'warning': (
+      'base': #e6a23c,
+    ),
+    'danger': (
+      'base': #f56c6c,
+    ),
+    'error': (
+      'base': #f56c6c,
+    ),
+    'info': (
+      'base': #909399,
+    )
   )
 );
 
@@ -10,20 +27,10 @@ $logo-width: 64px;
 $header-height: 60px;
 $menu-height: 50px;
 
-$header-color: #282c34;
-$header-background-color: #fff;
-
-$activate-color: #e8f4ff;
-$activate-background: #1890ff;
-
-$logo-color: #282c34;
-$logo-background: #fff;
-
-$title-color: #282c34;
-$title-background: #fff;
-
 $nav-color: #fff;
 $nav-background: #282c34;
+
+
 
 $z-layers: (
   "level_one": 1,

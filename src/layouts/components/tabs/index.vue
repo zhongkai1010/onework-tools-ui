@@ -121,8 +121,7 @@ const onFoldClick = () => {
   justify-content: space-between;
   height: $menu-height;
   padding: 0 20px;
-  // background-color: $header-background-color;
-  // color: $header-color;
+  background-color: $color-white;
   box-shadow: 0px 1px 4px rgb(0 21 41 / 8%);
   .left {
     cursor: pointer;

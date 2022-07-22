@@ -45,7 +45,7 @@ const emit = defineEmits<{
     color: $nav-color;
     &.is-active {
       // color: $activate-color;
-      // background-color: $activate-background;
+      background-color: $color-primary;
     }
   }
   .menu-item {

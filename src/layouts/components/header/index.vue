@@ -70,6 +70,7 @@ const onNavSelect = (path: string) => {
   justify-content: flex-end;
   padding: 0 20px;
   box-shadow: 0px 0px 4px rgb(0 21 41 / 8%);
+  background-color: $color-white;
 }
 
 .header-container[data-layout="column"],

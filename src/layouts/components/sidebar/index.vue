@@ -9,6 +9,7 @@
 
     <div class="right">
       <layout-logo
+        class="logo"
         title="Drug Clinical Trials"
         :logo="logoImg"
         v-if="layout !== 'standard'"
@@ -16,7 +17,7 @@
           layout == 'float' ? 'logo' : menufold ? 'logo' : layout === 'column' ? 'title' : 'all'
         "
       />
-      <el-divider content-position="center" v-if="layout == 'column'">{{
+      <el-divider class="divider" content-position="center" v-if="layout == 'column'">{{
         dividerTitle
       }}</el-divider>
       <div class="menu">
@@ -76,15 +77,22 @@ const onMenuSelect = (path: string) => {
 .sidebar-container {
   display: flex;
   .left {
+    background-color: $nav-background;
+    color: $nav-color;
     .nav {
       width: $logo-width;
       height: calc(100vh - $header-height);
     }
   }
   .right {
+    background-color: $color-white;
+    .log {
+      box-shadow: 0px 0px 4px rgb(0 21 41 / 8%);
+    }
     .menu {
       width: v-bind(menuWidth);
       height: calc(100vh - $header-height);
+      box-shadow: 0px 1px 4px rgb(0 21 41 / 8%);
     }
   }
   &.fold {

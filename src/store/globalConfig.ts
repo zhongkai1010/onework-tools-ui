@@ -6,11 +6,13 @@ const globalConfigStore = defineStore("global-configs", {
     layout: "column" | "complex" | "portrait" | "horizontal" | "standard" | "float";
     showTabs: boolean;
     menuWidth: number;
+    locale: "en" | "zh-CN";
   } {
     return {
       layout: "standard",
       showTabs: true,
-      menuWidth: 266
+      menuWidth: 266,
+      locale: "zh-CN"
     };
   },
 

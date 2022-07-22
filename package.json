@@ -23,6 +23,7 @@
     "remixicon": "^2.5.0",
     "resize-observer-polyfill": "^1.5.1",
     "vue": "^3.2.25",
+    "vue-i18n": "^9.1.10",
     "vue-router": "4",
     "vxe-table": "^4.2.8",
     "xe-utils": "^3.5.4"
