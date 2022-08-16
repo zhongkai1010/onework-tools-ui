@@ -5,5 +5,5 @@ export default {
   path: '/test',
   component: () => import('/@/views/test/index.vue'),
 
-  meta: { title: '测试' },
+  meta: { title: '测试', hideMenu: true },
 } as AppRouteRecordRaw;
