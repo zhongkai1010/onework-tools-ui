@@ -1,0 +1,28 @@
+@import './element-plus.scss';
+@import 'remixicon/fonts/remixicon.css';
+@import './variable.scss';
+@import './mixin.scss';
+@import './transition.scss';
+
+html,
+body,
+#app {
+  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+    '微软雅黑', Arial, sans-serif;
+  background-color: #f6f8f9;
+  color: #515a6e;
+}
+
+/* 灰色模式 */
+.html-grey {
+  filter: grayscalce(100%);
+}
+
+/* 色弱模式 */
+.html-weakness {
+  filter: invert(80%);
+}

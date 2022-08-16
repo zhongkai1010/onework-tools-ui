@@ -1,0 +1,3 @@
+<template>
+  <blank-view />
+</template>
