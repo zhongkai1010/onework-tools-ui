@@ -9,6 +9,7 @@ import {
   MapChart,
   PictorialBarChart,
   RadarChart,
+  ScatterChart,
 } from 'echarts/charts';
 // 引入提示框，标题，直角坐标系，数据集，内置数据转换器组件，组件后缀都为 Component
 import {
@@ -45,6 +46,7 @@ use([
   ParallelComponent,
   BarChart,
   LineChart,
+  ScatterChart,
   PieChart,
   MapChart,
   RadarChart,
