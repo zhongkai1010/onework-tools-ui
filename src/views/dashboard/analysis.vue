@@ -3,42 +3,42 @@
     <el-row :gutter="20">
       <el-col :span="6">
         <el-card class="mini-card">
-          <v-chart :option="option" />
+          <e-chart :option="option" />
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card class="mini-card">
-          <v-chart :option="option" />
+          <e-chart :option="option" />
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card class="mini-card">
-          <v-chart :option="option" />
+          <e-chart :option="option" />
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card class="mini-card">
-          <v-chart :option="option" />
+          <e-chart :option="option" />
         </el-card>
       </el-col>
       <el-col :span="24">
         <el-card class="small-card">
-          <v-chart :option="option" />
+          <e-chart :option="option" />
         </el-card>
       </el-col>
       <el-col :span="12">
         <el-card class="medium-card">
-          <v-chart :option="option" />
+          <e-chart :option="option" />
         </el-card>
       </el-col>
       <el-col :span="12">
         <el-card class="medium-card">
-          <v-chart :option="option" />
+          <e-chart :option="option" />
         </el-card>
       </el-col>
       <el-col :span="24">
         <el-card class="small-card">
-          <v-chart :option="option" />
+          <e-chart :option="option" />
         </el-card>
       </el-col>
     </el-row>
