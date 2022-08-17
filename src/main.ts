@@ -10,6 +10,8 @@ import { setupVueCodemirror } from '/@/plugins/vue-codemirror/index';
 
 // 动画
 import 'animate.css';
+// remixicon icon
+import 'remixicon/fonts/remixicon.css';
 // 重置浏览器样式
 import './styles/reset.scss';
 // element-plus

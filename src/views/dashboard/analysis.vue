@@ -3,42 +3,42 @@
     <el-row :gutter="20">
       <el-col :span="6">
         <el-card class="mini-card">
-          <e-chart :option="data.data1" />
+          <resize-chart :option="data.data1" />
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card class="mini-card">
-          <e-chart :option="data.data2" />
+          <resize-chart :option="data.data2" />
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card class="mini-card">
-          <e-chart :option="data.data3" />
+          <resize-chart :option="data.data3" />
         </el-card>
       </el-col>
       <el-col :span="6">
         <el-card class="mini-card">
-          <e-chart :option="option" />
+          <resize-chart :option="option" />
         </el-card>
       </el-col>
       <el-col :span="24">
         <el-card class="small-card">
-          <e-chart :option="data.data4" />
+          <resize-chart :option="data.data4" />
         </el-card>
       </el-col>
       <el-col :span="12">
         <el-card class="medium-card">
-          <e-chart :option="option" />
+          <resize-chart :option="option" />
         </el-card>
       </el-col>
       <el-col :span="12">
         <el-card class="medium-card">
-          <e-chart :option="data.data6" />
+          <resize-chart :option="data.data6" />
         </el-card>
       </el-col>
       <el-col :span="24">
         <el-card class="small-card">
-          <e-chart :option="data.data5" />
+          <resize-chart :option="data.data5" />
         </el-card>
       </el-col>
     </el-row>

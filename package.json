@@ -19,9 +19,8 @@
     "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/"
   },
   "dependencies": {
-    "@codemirror/lang-html": "^6.1.0",
-    "@codemirror/lang-javascript": "^6.0.2",
     "@codemirror/lang-json": "^6.0.0",
+    "@codemirror/view": "^6.2.0",
     "@element-plus/icons-vue": "^2.0.1",
     "@vueuse/core": "^8.9.1",
     "animate.css": "^4.1.1",

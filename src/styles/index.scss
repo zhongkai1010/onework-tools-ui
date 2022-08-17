@@ -1,5 +1,4 @@
 @import './element-plus.scss';
-@import 'remixicon/fonts/remixicon.css';
 @import './variable.scss';
 @import './mixin.scss';
 @import './transition.scss';
@@ -15,6 +14,7 @@ body,
     '微软雅黑', Arial, sans-serif;
   background-color: #f6f8f9;
   color: #515a6e;
+  @include scrollBar;
 }
 
 /* 灰色模式 */

@@ -1,4 +1,4 @@
-import { LAYOUT, EMPTY_LAYOUT } from '../constant';
+import { LAYOUT, EMPTY_LAYOUT, FRAME_VIEW } from '../constant';
 import { AppRouteRecordRaw } from '/#/route';
 import { t } from '/@/hooks/web/useI18n';
 
@@ -10,6 +10,38 @@ export default [
     component: LAYOUT,
     meta: { title: t('router.demo.demo'), orderNo: 2, icon: 'carbon:calendar-tools' },
     children: [
+      {
+        name: 'demo_message',
+        path: 'message',
+        meta: { title: t('router.demo.message'), icon: 'bi:credit-card' },
+        component: () => import('/@/views/demo/message.vue'),
+      },
+      {
+        name: 'demo_axios',
+        path: 'axios',
+        meta: { title: t('router.demo.axios'), icon: 'akar-icons:file' },
+        component: () => import('/@/views/demo/axios.vue'),
+      },
+      {
+        name: 'demo_list',
+        path: 'list',
+        meta: { title: t('router.demo.list.list'), icon: 'ant-design:unordered-list-outlined' },
+        component: EMPTY_LAYOUT,
+        children: [
+          {
+            name: 'demo_list_dynamic',
+            path: 'dynamic',
+            meta: { title: t('router.demo.list.dynamic'), icon: 'carbon:data-table-reference' },
+            component: () => import('/@/views/demo/list/dynamic.vue'),
+          },
+          {
+            name: 'demo_list_card',
+            path: 'card',
+            meta: { title: t('router.demo.list.card'), icon: 'dashicons:table-row-after' },
+            component: () => import('/@/views/demo/list/card.vue'),
+          },
+        ],
+      },
       {
         name: 'demo_layout',
         path: 'layout',
@@ -34,16 +66,16 @@ export default [
         meta: { title: t('router.demo.error'), icon: 'akar-icons:chat-error' },
         component: () => import('/@/views/demo/errorPage.vue'),
       },
-      // {
-      //   name: "demo_iframe",
-      //   path: "iframe",
-      //   component: FRAME_VIEW,
-      //   meta: {
-      //     title: "iframe示例",
-      //     icon: "akar-icons:frame",
-      //     : "https://element-plus.org/zh-CN/"
-      //   }
-      // },
+      {
+        name: 'demo_iframe',
+        path: 'iframe',
+        component: FRAME_VIEW,
+        meta: {
+          title: 'iframe示例',
+          icon: 'akar-icons:frame',
+          frameSrc: 'https://element-plus.org/zh-CN/',
+        },
+      },
       {
         name: 'demo_table',
         path: 'page',
@@ -77,38 +109,7 @@ export default [
           },
         ],
       },
-      {
-        name: 'demo_list',
-        path: 'list',
-        meta: { title: t('router.demo.list.list'), icon: 'ant-design:unordered-list-outlined' },
-        component: EMPTY_LAYOUT,
-        children: [
-          {
-            name: 'demo_list_dynamic',
-            path: 'dynamic',
-            meta: { title: t('router.demo.list.dynamic'), icon: 'carbon:data-table-reference' },
-            component: () => import('/@/views/demo/list/dynamic.vue'),
-          },
-          {
-            name: 'demo_list_card',
-            path: 'card',
-            meta: { title: t('router.demo.list.card'), icon: 'dashicons:table-row-after' },
-            component: () => import('/@/views/demo/list/card.vue'),
-          },
-        ],
-      },
-      {
-        name: 'demo_message',
-        path: 'message',
-        meta: { title: t('router.demo.message'), icon: 'bi:credit-card' },
-        component: () => import('/@/views/demo/message.vue'),
-      },
-      {
-        name: 'demo_axios',
-        path: 'axios',
-        meta: { title: t('router.demo.axios'), icon: 'akar-icons:file' },
-        component: () => import('/@/views/demo/axios.vue'),
-      },
+
       {
         name: 'demo_edit',
         path: 'edit',
