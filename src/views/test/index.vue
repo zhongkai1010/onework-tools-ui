@@ -21,13 +21,14 @@
 <script setup lang="ts">
   import { json, jsonParseLinter } from '@codemirror/lang-json';
 
+  import { linter } from '@codemirror/lint';
   const options = {
     line: false,
   };
   const log = console.log;
   const code = ref('');
   const view = ref(null);
-  const extensions = [json(), jsonParseLinter()];
+  const extensions = [json(), linter(jsonParseLinter())];
 
   console.log(view);
 </script>

@@ -5,10 +5,10 @@
         <el-color-picker v-model="formValues.color" />
       </el-form-item>
       <el-form-item label="外间距">
-        <el-input-number v-model="formValues.margin" :min="0" :max="20" />
+        <el-input-number v-model="formValues.margin" :min="0" :max="100" />
       </el-form-item>
       <el-form-item label="内间距">
-        <el-input-number v-model="formValues.padding" :min="0" :max="20" />
+        <el-input-number v-model="formValues.padding" :min="0" :max="100" />
       </el-form-item>
     </el-form>
   </page-view>
