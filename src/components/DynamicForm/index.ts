@@ -1,6 +1,7 @@
 import { FormItemRule } from 'element-plus';
 import dynamicForm from './src/index.vue';
 import asynAutodcomplete from './src/components/AsynAutodcomplete.vue';
+import formItem from './src/components/FormItem.vue';
 
 export enum FormComponent {
   AUTODCOMPLETE = 'autodcomplete',
@@ -54,4 +55,5 @@ export interface FormConfig {
 export const AsynAutodcomplete = asynAutodcomplete;
 
 const DynamicForm = dynamicForm;
+export const DynamicFormItem = formItem;
 export default DynamicForm;

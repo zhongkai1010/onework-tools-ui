@@ -123,6 +123,7 @@ export default {
       name: 'name5',
       span: 12,
       component: 'date_picker',
+      defaultValue: '2022-02-01',
     },
     {
       label: '表单6',
@@ -174,6 +175,26 @@ export default {
       name: 'name10',
       span: 12,
       component: 'select',
+      props: {
+        options: [
+          {
+            label: '选项1',
+            value: 'value1',
+          },
+          {
+            label: '选项2',
+            value: 'value2',
+          },
+          {
+            label: '选项3',
+            value: 'value3',
+          },
+          {
+            label: '选项4',
+            value: 'value4',
+          },
+        ],
+      },
     },
     {
       label: '表单12',
