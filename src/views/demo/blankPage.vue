@@ -2,7 +2,12 @@
   <page-view class="page_wrapper">
     <el-row :gutter="20">
       <el-col :span="12">
-        <el-card class="box-card">
+        <el-card class="box-card" :title="`自定义表单`">
+          <template #header>
+            <div class="card-header">
+              <span>自定义表单</span>
+            </div>
+          </template>
           <el-form>
             <el-row :gutter="20">
               <el-col :span="item.span ?? 6" v-for="item in config.fields" :key="item.name">
@@ -16,19 +21,18 @@
       </el-col>
       <el-col :span="12">
         <el-card class="box-card">
-          <el-row :gutter="20">
-            <el-col :span="24" style="margin-bottom: 20px">
+          <template #header>
+            <div class="card-header">
+              <span>配置代码</span>
               <el-button type="primary" @click="onClickGenerate">生成表单</el-button>
               <el-button @click="onClickReset">重置</el-button>
-            </el-col>
-            <el-col :span="24">
-              <codemirror
-                v-model="code"
-                placeholder="Code goes here..."
-                :extensions="[json(), linter(jsonParseLinter())]"
-              />
-            </el-col>
-          </el-row>
+            </div>
+          </template>
+          <codemirror
+            v-model="code"
+            placeholder="Code goes here..."
+            :extensions="[json(), linter(jsonParseLinter())]"
+          />
         </el-card>
       </el-col>
     </el-row>
@@ -73,6 +77,14 @@
   .page_wrapper {
     background-color: transparent !important;
     padding: 0px !important;
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      span {
+        margin-right: auto;
+      }
+    }
     .box-card {
       min-height: $main-no-margin-height;
     }

@@ -7,6 +7,8 @@ import pageView from './src/PageView.vue';
 export const ErrorView = errorView;
 export const FrameView = frameView;
 export const BlankView = blankView;
-export const PageView = pageView;
+
 export const CardView = cardView;
+
+const PageView = pageView;
 export default PageView;

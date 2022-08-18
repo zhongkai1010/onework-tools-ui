@@ -2,9 +2,10 @@ import { App } from 'vue';
 import IconifyIcon from './IconifyIcon/index';
 import DynamicTable from './DynamicTable/index';
 import ResizeChart from './ResizeChart/index';
+import DynamicForm, { AsynAutodcomplete } from './DynamicForm/index';
 import SubMenu from './Menu/index';
 
-import { ErrorView, FrameView, BlankView, PageView, CardView } from './PageView/index';
+import PageView, { ErrorView, FrameView, BlankView, CardView } from './PageView/index';
 
 const setupComponents = (app: App<Element>) => {
   app.component('IconifyIcon', IconifyIcon);
@@ -16,6 +17,8 @@ const setupComponents = (app: App<Element>) => {
   app.component('ResizeChart', ResizeChart);
   app.component('CardView', CardView);
   app.component('PageView', PageView);
+  app.component('DynamicForm', DynamicForm);
+  app.component('AsynAutodcomplete', AsynAutodcomplete);
 };
 
 export { setupComponents };

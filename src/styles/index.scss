@@ -3,6 +3,8 @@
 @import './mixin.scss';
 @import './transition.scss';
 
+* { touch-action: pan-y; }
+
 html,
 body,
 #app {
