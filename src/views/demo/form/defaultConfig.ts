@@ -7,67 +7,43 @@ export default {
   labelWidth: '80px',
   fields: [
     {
-      label: '表单18',
-      name: 'name18',
+      label: '表单名称',
+      name: 'name',
       span: 24,
-      defaultValue: '123456@163.com',
+      defaultValue: '',
       component: 'input',
       required: true,
-      rules: [
-        {
-          type: 'email',
-          message: '请填写邮箱地址!',
-        },
-        {
-          required: true,
-          message: '请填写表单18值!',
-        },
-      ],
     },
     {
-      label: '表单1',
-      name: 'name1',
+      label: '栅栏间隔',
+      name: 'gutter',
       span: 12,
-      component: 'autodcomplete',
+      component: 'slider',
+      defaultValue: 20,
+      props: {
+        min: 1,
+        max: 24,
+      },
     },
     {
-      label: '表单2',
-      name: 'name2',
+      label: '标签对其方式',
+      name: 'labelPosition',
       span: 12,
-      component: 'cascader',
+      component: 'radio',
+      defaultValue: 'top',
       props: {
         options: [
           {
-            label: '选项1',
-            value: 'value1',
-            children: [
-              {
-                label: '选项1-1',
-                value: 'value1-1',
-              },
-              {
-                label: '选项1-2',
-                value: 'value1-2',
-                children: [
-                  {
-                    label: '选项1-2-1',
-                    value: 'value1-2-1',
-                  },
-                ],
-              },
-            ],
+            label: '顶部',
+            value: 'top',
           },
           {
-            label: '选项2',
-            value: 'value2',
+            label: '左侧',
+            value: 'left',
           },
           {
-            label: '选项3',
-            value: 'value3',
-          },
-          {
-            label: '选项4',
-            value: 'value4',
+            label: '右侧',
+            value: 'right',
           },
         ],
       },
@@ -77,13 +53,7 @@ export default {
       name: 'name3',
       span: 12,
       component: 'checkbox',
-      required: true,
-      rules: [
-        {
-          required: true,
-          message: '该项为必填项!',
-        },
-      ],
+
       props: {
         options: [
           {
@@ -110,13 +80,6 @@ export default {
       name: 'name4',
       span: 12,
       component: 'color_picker',
-      required: true,
-      rules: [
-        {
-          required: true,
-          message: '请填选择具体颜色!',
-        },
-      ],
     },
     {
       label: '表单5',
@@ -142,7 +105,7 @@ export default {
       name: 'name8',
       span: 12,
       component: 'radio',
-      required: true,
+
       props: {
         options: [
           {

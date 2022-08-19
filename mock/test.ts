@@ -1,3 +1,5 @@
+import { mock } from 'mockjs';
+
 export default [
   {
     url: '/api/mock/get/200',
@@ -43,6 +45,27 @@ export default [
       return {
         code: -1,
         message: 'Internal Server Error',
+      };
+    },
+  },
+  ,
+  {
+    url: '/api/mock/get/search',
+    method: 'get',
+    timeout: '2000',
+
+    response: () => {
+      return {
+        code: 0,
+        message: 'Internal Server Error',
+        result: mock({
+          'data|10': [
+            {
+              label: '@ctitle()',
+              value: '@guid()',
+            },
+          ],
+        }).data,
       };
     },
   },

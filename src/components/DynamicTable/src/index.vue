@@ -1,12 +1,5 @@
-<template>
-  <div> </div>
-</template>
-
-<script setup lang="ts"></script>
-
-<style scoped></style>
 <!-- <template>
-  <up-down-view class="container" v-loading="loading">
+  <div class="container" v-loading="loading">
     <template #top v-if="showSearch">
       <el-col class="search-container" :span="24">
         <TableSearchPanel
@@ -54,7 +47,7 @@
       @submit="showDialog = false"
       @cancel="showDialog = false"
     />
-  </up-down-view>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -70,30 +63,26 @@
 
   import { initFieldsValue } from '/@/components/utils';
   import { TABLE_PAGE_SIZE } from '/@/settings/constant';
-  import { useFetch, useGetFetch } from '/@/hooks/fetch';
-  import { PageResult, PaginatedRequest, ResponseResult } from '/@/api/model/baseModel';
+  import { useHttpFetch } from '/@/hooks/fetch';
+  import { PageResult, PaginatedRequest } from '/@/api/model/baseModel';
   /**
    *  页面初始化
    */
   const route = useRoute();
-
   const url = ref('');
   const pageSize = ref(TABLE_PAGE_SIZE);
   const page = ref(1);
-
   const keywords = ref('');
   const searchValue = ref({});
-
   const showSearch = ref(true);
   const slectedRow = ref([]);
   const showDialog = ref(false);
-
   const tableFields = ref([]);
 
   /**
    *  页面加载
    */
-  const { loading, result } = useFetch(PageApi.getConfig, { name: route.name as string });
+  const { loading, result } = useHttpFetch(PageApi.getConfig, { name: route.name as string });
   /**
    * 表格
    */
@@ -101,7 +90,7 @@
     if (!result) {
       return [];
     }
-    return result.value.data.fields;
+    return result.value.fields;
   });
   /**
    * 搜索面板
@@ -110,7 +99,7 @@
     if (!result) {
       return [];
     }
-    return result.value.data.fields.filter((t) => t.search);
+    return result.value.fields.filter((t) => t.search);
   });
   /**
    *  工具栏
@@ -119,7 +108,7 @@
     if (!result) {
       return [];
     }
-    return result.value.data.toolbar || [];
+    return result.value.toolbar || [];
   });
   /**
    * 列表请求参数

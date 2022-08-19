@@ -1,6 +1,6 @@
-import { FormComponent, FormItemConfig } from '..';
+import { FormComponent, FormItem } from '..';
 
-export const getDefauleVlues = (items: FormItemConfig[]) => {
+export const getDefauleVlues = (items: FormItem[]) => {
   const values = {};
   items.forEach((value) => {
     let defaultValue = value.defaultValue;

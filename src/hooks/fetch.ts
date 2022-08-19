@@ -1,75 +1,7 @@
-import { ref, unref, UnwrapRef } from 'vue';
-import { http } from '../utils/http';
+import { ref, UnwrapRef } from 'vue';
 
 interface FetchConfig extends Recordable<any> {
   immediate?: boolean; //是否立即执行
-}
-
-export function useFetch<T, P>(fun: (params: T) => Promise<P>, params: T) {
-  const loading = ref(true);
-  const isError = ref(false);
-  const error = ref(null);
-  const result = ref<P>(null);
-  const execute = (p: T) => {
-    loading.value = true;
-    fun(p)
-      .then((data: P) => {
-        result.value = data as UnwrapRef<P>;
-      })
-      .catch((data) => {
-        isError.value = true;
-        error.value = data;
-        result.value = data.response.data as UnwrapRef<P>;
-      })
-      .finally(() => (loading.value = false));
-  };
-  // 默认立即执行
-  execute(params);
-  return {
-    loading,
-    isError,
-    error,
-    result,
-    execute,
-  };
-}
-
-export function useGetFetch<T>(url, params) {
-  const loading = ref(false);
-  const isError = ref(false);
-  const error = ref(null);
-  const result = ref<T>(null);
-
-  const execute = () => {
-    loading.value = true;
-    isError.value = false;
-    result.value = null;
-    error.value = null;
-    const _url = unref(url);
-    const _params = { params: unref(params) };
-
-    http
-      .get(_url, _params)
-      .then((data) => {
-        result.value = data as UnwrapRef<T>;
-      })
-      .catch((data) => {
-        isError.value = true;
-        error.value = data;
-        result.value = data.response.data as UnwrapRef<T>;
-      })
-      .finally(() => {
-        loading.value = false;
-      });
-  };
-
-  return {
-    loading,
-    isError,
-    error,
-    result,
-    execute,
-  };
 }
 
 export function useHttpFetch<P, T>(
