@@ -49,6 +49,7 @@ module.exports = {
       },
     ],
     'space-before-function-paren': 'off',
+
     'prettier/prettier': [
       'warn',
       {

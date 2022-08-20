@@ -7,8 +7,8 @@ export default [
     response: ({}) => {
       return {
         code: 0,
-        data: Mock.mock({
-          'fileds|5-10': [
+        result: Mock.mock({
+          'fields|5-10': [
             {
               label: '@ctitle(4)',
               name: '@string("lower", 5)',

@@ -1,6 +1,6 @@
 import type { ErrorMessageMode } from '/#/axios';
 import { useI18n } from '/@/hooks/web/useI18n';
-import { useMessage, MessageType } from '/@/hooks/web/useMessage';
+import { useMessage, MessageTypeEnum } from '/@/hooks/web/useMessage';
 
 export function checkStatus(
   status: number,
@@ -60,7 +60,7 @@ export function checkStatus(
       message({
         message: errMessage,
         key: `global_error_message_status_${status}`,
-        type: MessageType.Error,
+        type: MessageTypeEnum.ERROR,
       });
     } else {
       console.log(errMessage);

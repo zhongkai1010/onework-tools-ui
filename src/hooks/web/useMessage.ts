@@ -10,15 +10,21 @@ import { AppContext, RendererElement, RendererNode, VNode } from 'vue';
 
 export declare type NotificationPlacement = 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
 
-export enum MessageType {
-  Success = 'success',
-  Info = 'info',
-  Error = 'error',
-  Warning = 'warning',
+export declare type MessageType = 'success' | 'info' | 'error' | 'warning';
+
+export enum MessageTypeEnum {
+  SUCCESS = 'success',
+  INFO = 'info',
+  ERROR = 'error',
+  WARNING = 'warning',
 }
 
-function createMessae(options?: MessageParams, appContext?: AppContext) {
-  return ElMessage(options, appContext);
+function createMessae(options?: MessageParams, appContext?: AppContext | MessageType) {
+  if (typeof options === 'string') {
+    return ElMessage({ message: options, type: appContext as MessageType });
+  } else {
+    return ElMessage(options, appContext as AppContext);
+  }
 }
 
 function createNotice(options?: NotificationParams) {

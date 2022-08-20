@@ -2,20 +2,20 @@
   <el-autocomplete
     :model-value="props.modelValue"
     v-bind="props.props"
-    v-if="props.component == FormComponent.AUTODCOMPLETE"
+    v-if="props.component == 'autodcomplete'"
   />
   <!-- Cascader 级联选择器 -->
   <el-cascader
     :model-value="props.modelValue"
-    v-bind="props.props"
-    v-if="props.component == FormComponent.CASCADER"
+    v-bind="(props.props as any)"
+    v-if="props.component == 'cascader'"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   />
   <!-- Checkbox 多选框 -->
   <el-checkbox-group
     :model-value="props.modelValue"
     v-bind="props.props"
-    v-if="props.component == FormComponent.CHECKBOX"
+    v-if="props.component == 'checkbox'"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   >
     <el-checkbox v-for="option in props.props?.options" :key="option.value" :label="option.label" />
@@ -24,26 +24,26 @@
   <el-color-picker
     :model-value="props.modelValue"
     v-bind="props.props"
-    v-if="props.component == FormComponent.COLOR_RPICKER"
+    v-if="props.component == 'color_picker'"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   />
   <!-- DatePicker 日期选择器 -->
   <el-date-picker
     :model-value="props.modelValue"
     v-bind="{ ...props.props, type: 'date' }"
-    v-if="props.component == FormComponent.DATE_PICKER"
+    v-if="props.component == 'date_picker'"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   />
   <!-- DateTimePicker 日期时间选择器 -->
   <el-date-picker
     :model-value="props.modelValue"
     v-bind="{ ...props.props, type: 'datetime' }"
-    v-if="props.component == FormComponent.DATE_TIME_PICKER"
+    v-if="props.component == 'date_time_picker'"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   />
   <!-- Input Number 数字输入框 -->
   <el-input-number
-    v-if="props.component == FormComponent.INPUT_NUMBER"
+    v-if="props.component == 'input_number'"
     v-bind="props.props"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   />
@@ -51,7 +51,7 @@
   <el-radio-group
     :model-value="props.modelValue"
     v-bind="props.props"
-    v-if="props.component == FormComponent.RADIO"
+    v-if="props.component == 'radio'"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   >
     <el-radio v-for="option in props.props?.options" :label="option.label" :key="option.value">
@@ -62,14 +62,14 @@
   <el-rate
     :model-value="props.modelValue"
     v-bind="props.props"
-    v-if="props.component == FormComponent.RATE"
+    v-if="props.component == 'rate'"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   />
   <!-- Select 选择器 -->
   <el-select
     :model-value="props.modelValue"
     v-bind="props.props"
-    v-if="props.component == FormComponent.SELECT"
+    v-if="props.component == 'select'"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   >
     <el-option
@@ -84,7 +84,7 @@
   <el-slider
     :model-value="props.modelValue"
     v-bind="props.props"
-    v-if="props.component == FormComponent.SLIDER"
+    v-if="props.component == 'slider'"
     style="width: 90%"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   />
@@ -92,28 +92,28 @@
   <el-switch
     :model-value="props.modelValue"
     v-bind="props.props"
-    v-if="props.component == FormComponent.SWITCH"
+    v-if="props.component == 'switch'"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   />
   <!--  TimePicker 时间选择器 -->
   <el-time-picker
     :model-value="props.modelValue"
     v-bind="props.props"
-    v-if="props.component == FormComponent.TIME_PICKER"
+    v-if="props.component == 'time_picker'"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   />
   <!--  TimeSelect 时间选择 -->
   <el-time-select
     :model-value="props.modelValue"
     v-bind="props.props"
-    v-if="props.component == FormComponent.TIME_SELECT"
+    v-if="props.component == 'time_select'"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   />
   <!--  Transfer 穿梭框 -->
   <el-transfer
     :model-value="props.modelValue"
     v-bind="props.props"
-    v-if="props.component == FormComponent.TRANSFER"
+    v-if="props.component == 'transfer'"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   />
   <!--  Upload 上传 -->
@@ -134,13 +134,13 @@
   <el-input
     v-bind="props.props"
     :model-value="props.modelValue"
-    v-if="props.component == FormComponent.INPUT"
+    v-if="props.component == 'input'"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   />
 </template>
 
 <script setup lang="ts">
-  import { FormComponent, FormItemProps } from '../..';
+  import { FormComponent, FormItemProps } from '/@/components/DynamicForm/index';
 
   const props = defineProps<{
     modelValue: any;

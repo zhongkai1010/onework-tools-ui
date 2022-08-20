@@ -9,7 +9,7 @@ import { checkStatus } from './checkStatus';
 import { useI18n } from '/@/hooks/web/useI18n';
 import { ContentTypeEnum, RequestEnum, ResultEnum } from '/@/enums/httpEnum';
 import { deepMerge, setObjToUrlParams } from '/@/utils';
-import { MessageType, useMessage } from '/@/hooks/web/useMessage';
+import { MessageTypeEnum, useMessage } from '/@/hooks/web/useMessage';
 import { isString } from 'lodash';
 import { formatRequestDate, joinTimestamp } from './helper';
 import { userStateStoreHook } from '/@/store/modules/userState';
@@ -68,7 +68,7 @@ const transform: AxiosTransform = {
     if (options.errorMessageMode === 'modal') {
       M.confirm(timeoutMsg, { title: t('app.api.errorTip') });
     } else if (options.errorMessageMode === 'message') {
-      M.message({ message: timeoutMsg, type: MessageType.Error });
+      M.message({ message: timeoutMsg, type: MessageTypeEnum.ERROR });
     } else {
       console.log(timeoutMsg);
     }
@@ -169,7 +169,7 @@ const transform: AxiosTransform = {
           M.message({
             message: errMessage,
             key: `global_error_message_status_${status}`,
-            type: MessageType.Error,
+            type: MessageTypeEnum.ERROR,
           });
         } else {
           console.log(errMessage);

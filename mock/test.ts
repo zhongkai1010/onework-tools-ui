@@ -1,4 +1,4 @@
-import { mock } from 'mockjs';
+import { mock, Random } from 'mockjs';
 
 export default [
   {
@@ -48,12 +48,10 @@ export default [
       };
     },
   },
-  ,
   {
-    url: '/api/mock/get/search',
+    url: '/api/test/getDictionaries',
     method: 'get',
     timeout: '2000',
-
     response: () => {
       return {
         code: 0,
@@ -66,6 +64,125 @@ export default [
             },
           ],
         }).data,
+      };
+    },
+  },
+  {
+    url: '/api/test/getPageConfig',
+    method: 'get',
+    timeout: '2000',
+    response: () => {
+      return {
+        code: 0,
+        message: 'Internal Server Error',
+        result: mock({
+          'data|10': [
+            {
+              label: '@ctitle()',
+              value: '@guid()',
+            },
+          ],
+        }).data,
+      };
+    },
+  },
+  {
+    url: '/api/test/getTableData',
+    method: 'get',
+    timeout: '2000',
+    response: () => {
+      return {
+        code: 0,
+        // message: 'Internal Server Error',
+        result: mock({
+          'data|10-100': [
+            {
+              uid: '@guid',
+              fieldName: '@string("lower",5,8)',
+              'componentType|1': [
+                'autodcomplete',
+                'cascader',
+                'checkbox',
+                'color_picker',
+                'date_picker',
+                'date_time_picker',
+                'input',
+                'input_number',
+                'radio',
+                'rate',
+                'select',
+                'slider',
+                'switch',
+                'time_picker',
+                'time_select',
+                'transfer',
+                'upload',
+              ],
+              title: '@ctitle()',
+              placeholderTips: '@string',
+              formGrid: '@string',
+              labelWidth: '@string',
+              componentWidth: '@string',
+              defaults: '@string',
+              minimum: '@string',
+              maximum: '@string',
+            },
+          ],
+        }).data,
+      };
+    },
+  },
+  {
+    url: '/api/test/getPageTableData',
+    method: 'get',
+    timeout: '2000',
+    response: ({ query }) => {
+      let data = mock({
+        'data|200': [
+          {
+            uid: '@guid',
+            fieldName: '@string("lower",5,8)',
+            'componentType|1': [
+              'autodcomplete',
+              'cascader',
+              'checkbox',
+              'color_picker',
+              'date_picker',
+              'date_time_picker',
+              'input',
+              'input_number',
+              'radio',
+              'rate',
+              'select',
+              'slider',
+              'switch',
+              'time_picker',
+              'time_select',
+              'transfer',
+              'upload',
+            ],
+            title: '@ctitle()',
+            placeholderTips: '@string',
+            formGrid: '@string',
+            labelWidth: '@string',
+            componentWidth: '@string',
+            defaults: '@string',
+            minimum: '@string',
+            maximum: '@string',
+          },
+        ],
+      }).data;
+      const total = Random.integer(query.pageSize ?? 10, 200);
+      if (query.pageSize) {
+        data = (data as any[]).slice(0, query.pageSize);
+      }
+      return {
+        code: 0,
+        message: 'Internal Server Error',
+        result: mock({
+          total: total,
+          data,
+        }),
       };
     },
   },
