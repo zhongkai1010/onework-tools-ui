@@ -1,6 +1,6 @@
-import dynamicTable from './src/index.vue';
+import configTable from './src/index.vue';
 import dataTable from './src/DataTable.vue';
-import { FormComponent } from '../DynamicForm';
+import { FormComponent, FormItemProps } from '../ConfigForm';
 import { PaginationProps } from 'element-plus';
 
 export declare type OperateType =
@@ -23,6 +23,11 @@ export interface DataTableProps {
   toolbar?: OperateType[]; // 工具栏选项
   operate?: OperateType[];
   url?: string;
+  remote?: {
+    get: string;
+    add: string;
+    remove: string;
+  };
   table?: any;
 }
 
@@ -31,8 +36,9 @@ export interface DataTableFieldProps {
   name: string;
   hide?: boolean;
   type: 'string' | 'number' | 'array';
+  columnProps?: any;
   search?: {
-    span: number;
+    span?: number;
     component: FormComponent;
     props?: any;
     defaultValue?: string | number | Array<string | number>;
@@ -45,15 +51,19 @@ export interface DataTableFieldProps {
     required?: boolean;
     rules?: any;
     defaultValue?: any;
+    props?: FormItemProps;
   };
-  props?: any;
 }
 
 export interface FormDialogInstance {
-  open: (editable?: boolean, defaultValue?: Recordable<any>, title?: string) => void;
+  open: (
+    editable?: 'add' | 'edit' | 'show',
+    defaultValue?: Recordable<any>,
+    title?: string,
+  ) => void;
   close: () => void;
 }
 
-export const DynamicTable = dynamicTable;
+export const ConfigTable = configTable;
 export const DataTable = dataTable;
-export default DynamicTable;
+export default ConfigTable;

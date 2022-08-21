@@ -1,18 +1,18 @@
 import { App } from 'vue';
 import IconifyIcon from './IconifyIcon/index';
-import DynamicTable, { DataTable } from './DynamicTable/index';
+import ConfigTable, { DataTable } from './ConfigTable/index';
 
 import ResizeChart from './ResizeChart/index';
-import DynamicForm, {
+import ConfigForm, {
   AsynAutodcomplete,
-  DynamicFormItem,
+  ConfigFormItem,
   AsynCascader,
   AsynCheckbox,
   AsynRadio,
   AsynSelect,
   AsynTreeSelect,
   AsynTable,
-} from './DynamicForm/index';
+} from './ConfigForm/index';
 import SubMenu from './Menu/index';
 
 import PageView, { ErrorView, FrameView, BlankView, CardView } from './PageView/index';
@@ -38,13 +38,13 @@ const setupComponents = (app: App<Element>) => {
   /**
    *  表格
    */
-  app.component('DynamicTable', DynamicTable);
+  app.component('ConfigTable', ConfigTable);
   app.component('DataTable', DataTable);
   /**
    *  表单
    */
-  app.component('DynamicForm', DynamicForm);
-  app.component('DynamicFormItem', DynamicFormItem);
+  app.component('ConfigForm', ConfigForm);
+  app.component('ConfigFormItem', ConfigFormItem);
   app.component('FormAsynTable', AsynTable);
   app.component('FormAutodcomplete', AsynAutodcomplete);
   app.component('FormCascader', AsynCascader);

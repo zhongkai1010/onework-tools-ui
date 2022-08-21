@@ -1,4 +1,4 @@
-import { FormItem } from '..';
+import { FormItem } from '.';
 
 export const getDefauleVlues = (items: FormItem[]) => {
   const values = {};

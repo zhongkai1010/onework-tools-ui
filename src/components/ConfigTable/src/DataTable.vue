@@ -1,52 +1,19 @@
 <template>
   <div class="container">
-    <div class="toolbar-container" v-if="state.showToolbar">
-      <div class="title" v-if="props.title">{{ props.title }}</div>
-      <div class="button">
-        <el-space wrap>
-          <el-button type="primary" v-if="state.toolbar.refresh" @click="onClickToolbarRefresh">
-            <iconify-icon icon="ci:refresh" />
-          </el-button>
-          <el-button type="primary" v-if="state.toolbar.add" @click="onClickToolbarAdd"
-            >新增</el-button
-          >
-          <el-button v-if="state.toolbar.edit" @click="onClickToolbarEdit">编辑</el-button>
-          <el-button type="danger" v-if="state.toolbar.remove" @click="onClickToolbarRemove"
-            >删除</el-button
-          >
-        </el-space>
-      </div>
-      <div class="search">
-        <el-input
-          placeholder="请输入搜索关键字"
-          @input="onInputKeywords"
-          :model-value="keywords"
-          clearable
-          @clear="onClearKeywords"
-          @keyup.enter="onInputEnter"
-          v-if="state.toolbar.search"
-        />
-        <el-button-group v-if="state.toolbar.search || state.toolbar.column">
-          <el-button @click="onClickToolbarSearch" type="primary">
-            <iconify-icon icon="ant-design:search-outlined" v-if="state.toolbar.search" />
-          </el-button>
-          <el-popover placement="bottom" v-if="state.toolbar.column">
-            <template #reference>
-              <el-button>
-                <iconify-icon icon="ci:table" />
-              </el-button>
-            </template>
-            <el-checkbox-group :model-value="showFields" @change="onFieldCheck">
-              <el-checkbox
-                v-for="(field, index) in props.fields"
-                :key="index"
-                :label="field.label"
-              />
-            </el-checkbox-group>
-          </el-popover>
-        </el-button-group>
-      </div>
-    </div>
+    <toolbar
+      :title="props.title"
+      :fields="props.fields"
+      :toolbar="props.toolbar"
+      :select-row="selectRow"
+      @refresh="loadData(requestConfig)"
+      @add="dialogRef.open()"
+      @edit="dialogRef.open('edit', selectRow)"
+      @remove="onRemoveRow"
+      @chang-keywords="(val) => (requestConfig.keywords = val)"
+      @clear-keywords="requestConfig.keywords = undefined"
+      @chang-field="(val) => (showFields = val)"
+      v-if="state.showToolbar"
+    />
     <el-table
       class="table-container"
       :row-key="props.rowKey"
@@ -74,14 +41,14 @@
         :label="filed.label"
         :key="index"
         :show-overflow-tooltip="true"
-        v-bind="filed.props"
+        v-bind="filed.columnProps"
       />
       <el-table-column prop="operate" label="操作" v-if="state.showOperate" align="center">
         <template #default="scope">
           <el-button
             link
             type="primary"
-            @click="onClickOperateEdit(scope)"
+            @click="dialogRef.open('edit', scope.row)"
             v-if="(props.operate??[] as OperateType[]).includes('edit')"
           >
             编辑
@@ -89,7 +56,7 @@
           <el-button
             link
             type="primary"
-            @click="onClickOperateShow(scope)"
+            @click="dialogRef.open('show', scope.row)"
             v-if="(props.operate??[] as OperateType[]).includes('show')"
           >
             查看
@@ -97,7 +64,7 @@
           <el-button
             link
             type="primary"
-            @click="onClickOperateRemove(scope)"
+            @click="onRemoveRow(scope.row)"
             v-if="(props.operate??[] as OperateType[]).includes('remove')"
           >
             删除
@@ -121,7 +88,7 @@
 
 <script setup lang="ts">
   import { PaginationProps } from 'element-plus';
-  import _, { isEmpty } from 'lodash';
+  import _ from 'lodash';
   import { isArray } from 'lodash';
   import { ref } from 'vue';
   import { DataTableFieldProps, FormDialogInstance, OperateType } from '..';
@@ -129,8 +96,9 @@
   import { http } from '/@/plugins/axios';
   import { TABLE_DEFAULT_PAGE_SIZE } from '/@/settings/constant';
   import FormDialog from './FormDialog.vue';
+  import Toolbar from './Toolbar.vue';
 
-  const { message } = useMessage();
+  const { message, confirm } = useMessage();
 
   const props = defineProps<{
     title?: string;
@@ -149,6 +117,7 @@
       remove: string;
     };
     table?: any;
+    columnProps?: any;
   }>();
 
   const data = ref(props.data ?? []);
@@ -160,7 +129,7 @@
   const loading = ref(false);
   const total = ref(props.data ? props.data.length : 0);
   const showFields = ref(props.fields.filter((t) => !t.hide).map((t) => t.label));
-  const keywords = ref('');
+
   const fields = computed(() => {
     let temp = props.fields.filter((t) => showFields.value.includes(t.label));
     if (temp.length > 0) {
@@ -221,6 +190,10 @@
     return true;
   };
 
+  const indexMethod = (index: number) => {
+    return index + 1;
+  };
+
   const loadData = (params: Record<string, any>) => {
     loading.value = true;
     http
@@ -242,18 +215,23 @@
         loading.value = false;
       });
   };
+  if (state.value.isRemote) {
+    loadData(requestConfig);
+  }
   watch([requestConfig], () => {
+    console.log('-----------watch requestConfig--------', requestConfig);
     if (state.value.isRemote) {
       loadData(requestConfig);
-    }
-    if (state.value.showPage && !state.value.isRemote) {
-      loading.value = true;
-      setTimeout(() => {
-        let filterSize =
-          requestConfig.page <= 0 ? 0 : requestConfig.pageSize * (requestConfig.page - 1);
-        data.value = props.data.slice(filterSize, filterSize + requestConfig.pageSize);
-        loading.value = false;
-      }, 500);
+    } else {
+      if (state.value.showPage && !state.value.isRemote) {
+        loading.value = true;
+        setTimeout(() => {
+          let filterSize =
+            requestConfig.page <= 0 ? 0 : requestConfig.pageSize * (requestConfig.page - 1);
+          data.value = props.data.slice(filterSize, filterSize + requestConfig.pageSize);
+          loading.value = false;
+        }, 500);
+      }
     }
   });
 
@@ -275,57 +253,12 @@
   const onSelectRow = (selection) => {
     selectRows.value = selection;
   };
-
-  const onClickOperateEdit = (row: any) => {
-    console.log('-----------onClickOperateEdit--------', row);
+  const onRemoveRow = (row) => {
+    confirm('确定是否删除?', 'warning').then(() => {
+      console.log('-----------onClickOperateRemove--------', row);
+    });
   };
 
-  const onClickOperateShow = (row: any) => {
-    console.log('-----------onClickOperateShow--------', row);
-  };
-  const onClickOperateRemove = (row: any) => {
-    console.log('-----------onClickOperateRemove--------', row);
-  };
-  const onClickToolbarRefresh = () => {
-    loadData(requestConfig);
-  };
-  const onClickToolbarAdd = () => {
-    dialogRef.value.open();
-  };
-  const onClickToolbarEdit = () => {
-    if (isEmpty(selectRow)) {
-      message('请选择一行数据操作！', 'warning');
-    } else {
-      dialogRef.value.open(true, unref(selectRow));
-    }
-  };
-  const onClickToolbarRemove = () => {
-    if (isEmpty(selectRow)) {
-      message('请选择一行数据操作！', 'warning');
-    }
-    console.log('-----------onClickToolbarRemove--------');
-  };
-  const onInputKeywords = (val) => {
-    keywords.value = val;
-    console.log('-----------onInputKeywords--------', val);
-  };
-  const onClearKeywords = () => {
-    requestConfig.keywords = undefined;
-    console.log('-----------onClearKeywords--------');
-  };
-  const onInputEnter = () => {
-    requestConfig.keywords = keywords.value;
-    console.log('-----------onInputEnter--------');
-  };
-  const onClickToolbarSearch = () => {
-    if (!isEmpty(keywords.value)) {
-      requestConfig.keywords = keywords.value;
-    }
-    console.log('-----------onClickToolbarSearch--------');
-  };
-  const indexMethod = (index: number) => {
-    return index + 1;
-  };
   const onSortChange = ({ column, prop, order }) => {
     console.log('----------onSortChange------', column);
     console.log('----------prop------', prop);
@@ -335,18 +268,7 @@
       requestConfig.sort = order === 'ascending' ? 'asc' : 'desc';
     }
   };
-  const onFieldCheck = (val) => {
-    showFields.value = val;
-  };
-  onMounted(() => {
-    data.value = [];
-    total.value = 0;
-    requestConfig.page = 0;
-    requestConfig.pageSize = TABLE_DEFAULT_PAGE_SIZE;
-    requestConfig.keywords = undefined;
-    selectRows.value = [];
-    selectRow.value = null;
-  });
+
   defineExpose({ selectRows });
 </script>
 
@@ -354,34 +276,6 @@
   .container {
     .table-container {
       height: auto;
-    }
-    .toolbar-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-
-      .title {
-        margin: 0px 20px;
-        font-size: large;
-        font-weight: 500;
-      }
-
-      .button {
-        margin-right: auto;
-      }
-
-      .search {
-        display: flex;
-
-        .el-input {
-          margin-right: 20px;
-        }
-
-        .el-button-group {
-          display: flex;
-        }
-      }
     }
 
     .page-container {

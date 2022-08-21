@@ -3,21 +3,16 @@ import {
   ElMessageBox,
   ElMessageBoxOptions,
   ElNotification,
+  MessageBoxData,
   MessageParams,
   NotificationParams,
 } from 'element-plus';
+import { isString } from 'lodash';
 import { AppContext, RendererElement, RendererNode, VNode } from 'vue';
 
 export declare type NotificationPlacement = 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
 
 export declare type MessageType = 'success' | 'info' | 'error' | 'warning';
-
-export enum MessageTypeEnum {
-  SUCCESS = 'success',
-  INFO = 'info',
-  ERROR = 'error',
-  WARNING = 'warning',
-}
 
 function createMessae(options?: MessageParams, appContext?: AppContext | MessageType) {
   if (typeof options === 'string') {
@@ -45,10 +40,22 @@ function createConfirm(
           [key: string]: any;
         }
       >,
-  options?: ElMessageBoxOptions,
+  options?: ElMessageBoxOptions | MessageType,
   appContext?: AppContext,
 ) {
-  return ElMessageBox.confirm(message, options, appContext);
+  if (isString(options)) {
+    return new Promise((resolve) => {
+      ElMessageBox.confirm(message, { type: options }, appContext)
+        .then((value: MessageBoxData) => resolve(value))
+        .catch(() => {});
+    });
+  } else {
+    return new Promise((resolve) => {
+      ElMessageBox.confirm(message, options, appContext)
+        .then(resolve)
+        .catch(() => {});
+    });
+  }
 }
 
 function createPrompt(

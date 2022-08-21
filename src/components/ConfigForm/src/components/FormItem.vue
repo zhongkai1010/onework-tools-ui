@@ -140,7 +140,7 @@
 </template>
 
 <script setup lang="ts">
-  import { FormComponent, FormItemProps } from '/@/components/DynamicForm/index';
+  import { FormComponent, FormItemProps } from '/@/components/ConfigForm/index';
 
   const props = defineProps<{
     modelValue: any;

@@ -9,7 +9,14 @@
           <el-button @click="onClickResetForm">重置表单</el-button>
         </div>
       </template>
-      <dynamic-form v-bind="config" ref="dynamicFormRef" />
+      <config-form
+        :name="config.name"
+        :gutter="config.gutter"
+        :labelPosition="config.labelPosition"
+        :labelWidth="config.labelWidth"
+        :fields="config.fields"
+        ref="dynamicFormRef"
+      />
     </el-card>
     <el-drawer v-model="show" size="50%" title="配置代码">
       <codemirror
@@ -35,7 +42,7 @@
 <script setup lang="ts">
   import { json, jsonParseLinter } from '@codemirror/lang-json';
   import { linter } from '@codemirror/lint';
-  import { MessageType, useMessage } from '/@/hooks/web/useMessage';
+  import { useMessage } from '/@/hooks/web/useMessage';
   import defaultConfig from './defaultConfig';
   import { FormInstance } from 'element-plus';
 
@@ -78,7 +85,7 @@
       config.value = JSON.parse(code.value);
       console.log(config.value);
     } catch (error) {
-      message({ message: error, type: MessageType.Error });
+      message({ message: error, type: 'error' });
     }
   };
 

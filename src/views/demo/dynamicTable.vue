@@ -5,57 +5,20 @@
 </template>
 
 <script setup lang="ts">
-  import { mock } from 'mockjs';
+  import { DataTableProps } from '/@/components/ConfigTable';
 
-  import { DataTableProps } from '/@/components/DynamicTable';
   let tableRef = ref<{ selectRows: any[] }>();
 
-  const data = mock({
-    'data|10-100': [
-      {
-        uid: '@guid',
-        fieldName: '@string("lower",5,8)',
-        'componentType|1': [
-          'autodcomplete',
-          'cascader',
-          'checkbox',
-          'color_picker',
-          'date_picker',
-          'date_time_picker',
-          'input',
-          'input_number',
-          'radio',
-          'rate',
-          'select',
-          'slider',
-          'switch',
-          'time_picker',
-          'time_select',
-          'transfer',
-          'upload',
-        ],
-        title: '@ctitle()',
-        placeholderTips: '@string',
-        formGrid: '@string',
-        labelWidth: '@string',
-        componentWidth: '@string',
-        defaults: '@string',
-        minimum: '@string',
-        maximum: '@string',
-      },
-    ],
-  }).data;
-  console.log('------data--------', data);
   const config = {
     title: '表格示例',
     rowKey: 'uid',
     serialNumber: true,
     multiple: true,
     pagination: true,
-    data,
+
     operate: ['remove', 'show', 'edit'],
     toolbar: ['add', 'column', 'edit', 'remove', 'search', 'refresh'],
-    // url: '/api/test/getPageTableData',
+    url: '/api/test/getPageTableData',
     fields: [
       {
         label: 'ID',

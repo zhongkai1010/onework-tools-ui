@@ -1,4 +1,4 @@
-import { FormConfig } from '/@/components/DynamicForm';
+import { FormConfig } from '/@/components/ConfigForm';
 
 export default {
   name: '',

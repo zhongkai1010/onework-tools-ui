@@ -1,5 +1,5 @@
 import { FormItemRule } from 'element-plus';
-import dynamicForm from './src/index.vue';
+import configForm from './src/index.vue';
 import asynAutodcomplete from './src/components/AsynAutodcomplete.vue';
 import asynCascader from './src/components/AsynCascader.vue';
 import asynCheckbox from './src/components/AsynCheckbox.vue';
@@ -66,6 +66,6 @@ export const AsynTreeSelect = asynTreeSelect;
 export const FormItem = formItem;
 export const AsynTable = asynTable;
 
-const DynamicForm = dynamicForm;
-export const DynamicFormItem = formItem;
-export default DynamicForm;
+const ConfigForm = configForm;
+export const ConfigFormItem = formItem;
+export default ConfigForm;

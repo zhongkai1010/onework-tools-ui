@@ -1,5 +1,5 @@
 <template>
-  <div>123</div>
+  <page-view>1 </page-view>
 </template>
 
 <script setup lang="ts"></script>

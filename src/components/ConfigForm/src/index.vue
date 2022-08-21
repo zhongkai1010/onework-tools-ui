@@ -14,7 +14,7 @@
           :prop="item.name"
           :rules="item.rules"
         >
-          <DynamicFormItem
+          <ConfigFormItem
             v-model="formValues[item.name]"
             :component="item.component"
             :props="item.props"
@@ -29,11 +29,10 @@
   import { FormInstance } from 'element-plus';
   import { FormItem } from '..';
 
-  import { getDefauleVlues } from './helps';
+  import { getDefauleVlues } from '../helps';
 
   const formRef = ref<FormInstance>();
   const props = defineProps<{
-    name: string;
     gutter: number;
     labelPosition: 'top' | 'left' | 'right';
     labelWidth: string | number;
@@ -45,4 +44,4 @@
   defineExpose({ formRef, formValues });
 </script>
 
-<style scoped></style>
+<style scoped></style> -->

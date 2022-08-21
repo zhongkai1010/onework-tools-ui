@@ -21,7 +21,7 @@
             :prop="item.name"
             :rules="item?.rules"
           >
-            <DynamicFormItem
+            <ConfigFormItem
               v-model="formValue[item.name]"
               :component="item.component"
               :props="item.props"
@@ -32,8 +32,10 @@
     </el-form>
     <template #footer>
       <span class="dialog-footer">
-        <el-button @click="onClickClose">取消</el-button>
-        <el-button type="primary" @click="onSubmit(formRef)">提交</el-button>
+        <el-button @click="onClickClose">{{ editabled != 'show' ? '取消' : '关闭' }}</el-button>
+        <el-button type="primary" @click="onSubmit(formRef)" v-if="editabled != 'show'"
+          >提交</el-button
+        >
       </span>
     </template>
   </el-dialog>
@@ -45,8 +47,8 @@
 
   import { reactive, ref } from 'vue';
   import { DataTableFieldProps, FormDialogInstance } from '..';
-  import { getDefauleVlues } from '/@/components/DynamicForm/src/helps';
-  import { FormItem } from '/@/components/DynamicForm';
+  import { getDefauleVlues } from '/@/components/ConfigForm/helps';
+  import { FormItem } from '/@/components/ConfigForm';
   import { CREATE_ITEM_TITLE_TEXT, EDITABLE_ITEM_TITLE_TEXT } from '/@/settings/constant';
 
   const props = defineProps<{
@@ -54,38 +56,48 @@
     title?: string;
     fields: DataTableFieldProps[];
     rules?: any;
-    editabled?: boolean;
+    editabled?: 'add' | 'edit' | 'show';
   }>();
 
+  const editabled = ref<'add' | 'edit' | 'show'>(props.editabled ?? 'add');
   const formFields = computed<FormItem[]>(() => {
     const tempFields = props.fields.filter((t) => !t.editable?.hide);
-    const newFields = [];
+    const newFields: FormItem[] = [];
     for (let index = 0; index < tempFields.length; index++) {
-      const field = tempFields[index];
-      newFields.push({
-        label: field.label,
-        name: field.name,
-        span: field.editable?.span ?? 24,
-        component: field.editable?.component ?? 'input',
-        defaultValue: field.editable?.defaultValue,
-        required: field.editable?.required ?? false,
-        rules: field.editable?.rules,
-      });
+      const tableField = tempFields[index];
+      const formField: FormItem = {
+        label: tableField.label,
+        name: tableField.name,
+        span: tableField.editable?.span ?? 24,
+        component: tableField.editable?.component ?? 'input',
+        defaultValue: tableField.editable?.defaultValue,
+        required: tableField.editable?.required ?? false,
+        rules: tableField.editable?.rules,
+        props: tableField.editable?.props || {},
+      };
+      if (editabled.value == 'show') {
+        formField.props.disabled = true;
+      }
+      newFields.push(formField);
     }
     return newFields;
   });
-
   const dialogShow = ref(props.modelValue ?? false);
   const dialogTitle = ref(props.title);
-  const editabled = ref(props.editabled ?? false);
   const formValue = reactive(getDefauleVlues(formFields.value));
   const formRef = ref(null);
 
-  const onClickOpen = (editable?: boolean, defaultValue?: Recordable<any>, title?: string) => {
+  const onClickOpen = (
+    editable?: 'add' | 'edit' | 'show',
+    defaultValue?: Recordable<any>,
+    title?: string,
+  ) => {
+    console.log('-------------defaultValue-------------', defaultValue);
     dialogShow.value = true;
-    editabled.value = editable ?? false;
+    editabled.value = editable ?? 'add';
     dialogTitle.value = title;
-    if (editable && defaultValue) {
+
+    if (editable != 'add' && defaultValue) {
       const keys = Object.keys(defaultValue);
       keys.forEach((t) => {
         formValue[t] = defaultValue[t];
