@@ -4,45 +4,30 @@
       <el-col :span="4">
         <el-card>
           <template #header> 组件 </template>
-          <el-collapse>
-            <el-collapse-item title="常规组件" name="1">
-              <ul>
-                <draggable
-                  v-model="myArray"
-                  :group="{ name: 'people', pull: 'clone', put: false }"
-                  @start="drag = true"
-                  @end="drag = false"
-                  item-key="id"
-                >
+          <el-collapse v-model="activeNames" accordion>
+            <el-collapse-item
+              :title="group.groupName"
+              :name="group.groupKey"
+              :key="group.groupKey"
+              v-for="group in formConfig"
+            >
+              <ul class="form-container">
+                <draggable v-model="group.components" :item-key="group.groupKey">
                   <template #item="{ element }">
-                    <li>{{ element.name }}</li>
+                    <li>
+                      <iconify-icon icon="ant-design:form-outlined" :size="16" />
+                      <span>{{ element.name }}</span>
+                    </li>
                   </template>
                 </draggable>
-              </ul>
-            </el-collapse-item>
-            <el-collapse-item title="异步组件" name="2">
-              <ul>
-                <li>asyn_autodcomplete</li>
-                <li>asyn_cascader</li>
-                <li>checkbox</li>
-                <li>asyn_checkbox</li>
-                <li>asyn_radio</li>
-                <li>asyn_select</li>
-                <li>asyn_table</li>
-                <li>asyn_treeSelect</li>
-              </ul>
-            </el-collapse-item>
-            <el-collapse-item title="其它组件" name="3">
-              <ul>
-                <li>object_item</li>
               </ul>
             </el-collapse-item>
           </el-collapse>
         </el-card>
       </el-col>
       <el-col :span="20" :offset="0">
-        <el-card shadow="always" :body-style="{ padding: '20px' }">
-          <template #header> 组件 </template>
+        <el-card shadow="always" class="card-container">
+          <template #header> 表单 </template>
           <config-form
             :name="`test`"
             :gutter="20"
@@ -60,21 +45,9 @@
 <script setup lang="ts">
   import draggable from 'vuedraggable';
   import { FormItemProps } from '/@/components/FormItem';
-  const drag = ref(false);
-  const myArray = ref([
-    {
-      id: 1,
-      name: 'asyn_autodcomplete',
-    },
-    {
-      id: 2,
-      name: 'asyn_cascader',
-    },
-    {
-      id: 3,
-      name: 'checkbox',
-    },
-  ]);
+  import formConfig from './data/formConfig';
+
+  const activeNames = ref(formConfig[0].groupKey);
   const fields = ref<FormItemProps[]>([
     {
       label: '表单',
@@ -87,13 +60,39 @@
 <style lang="scss" scoped>
   .container {
     background-color: transparent !important;
+
+    .form-container {
+      li {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+    .el-collapse {
+      border-top: 0px;
+    }
+
+    :deep(.el-collapse-item__header:last-of-type) {
+      border-bottom: 0px;
+    }
+
     .el-collapse-item__content {
       li {
         padding: 10px;
-        border: 1px solid #ccc;
+        border: 1px dashed var(--header-font-color);
         margin-bottom: 10px;
         cursor: pointer;
         user-select: none;
+      }
+    }
+    .card-container {
+      min-height: $main-no-margin-height;
+
+      &:deep(.el-col:hover) {
+        border: 1px dashed var(--header-font-color);
       }
     }
   }

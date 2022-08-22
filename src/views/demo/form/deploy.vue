@@ -43,7 +43,7 @@
   import { json, jsonParseLinter } from '@codemirror/lang-json';
   import { linter } from '@codemirror/lint';
   import { useMessage } from '/@/hooks/web/useMessage';
-  import defaultConfig from './defaultConfig';
+  import defaultConfig from './data/defaultConfig';
   import { FormInstance } from 'element-plus';
 
   const { message, alert } = useMessage();
