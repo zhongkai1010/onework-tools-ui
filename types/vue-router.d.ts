@@ -18,6 +18,8 @@ declare module 'vue-router' {
     transition?: string;
     // 是否显示菜单
     hideMenu?: boolean;
+    // 是否全屏
+    fullScreen?: boolean;
   }
 }
 

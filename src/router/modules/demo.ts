@@ -25,8 +25,47 @@ export default [
       {
         name: 'demo_form',
         path: 'form',
-        meta: { title: t('router.demo.form'), icon: 'ant-design:form-outlined' },
-        component: () => import('/@/views/demo/dynamicForm.vue'),
+        meta: { title: t('router.demo.form.form'), icon: 'ant-design:form-outlined' },
+        redirect: '/demo/form/deploy',
+        component: EMPTY_LAYOUT,
+        children: [
+          {
+            name: 'demo_form_deploy',
+            path: 'deploy',
+            meta: { title: t('router.demo.form.deploy'), icon: 'bi:layout-wtf' },
+            component: () => import('/@/views/demo/form/deploy.vue'),
+          },
+          {
+            name: 'demo_form_compo',
+            path: 'compo',
+            meta: { title: t('router.demo.form.component'), icon: 'bi:layout-wtf' },
+            component: () => import('/@/views/demo/form/compo.vue'),
+          },
+          {
+            name: 'demo_form_group',
+            path: 'group',
+            meta: { title: t('router.demo.form.group'), icon: 'bi:layout-wtf' },
+            component: () => import('/@/views/demo/form/group.vue'),
+          },
+          {
+            name: 'demo_form_step',
+            path: 'step',
+            meta: { title: t('router.demo.form.deploy'), icon: 'bi:layout-wtf' },
+            component: () => import('/@/views/demo/form/step.vue'),
+          },
+          {
+            name: 'demo_form_custom',
+            path: 'custom',
+            meta: { title: t('router.demo.form.custom'), icon: 'bi:layout-wtf' },
+            component: () => import('/@/views/demo/form/custom.vue'),
+          },
+          {
+            name: 'demo_form_description',
+            path: 'description',
+            meta: { title: t('router.demo.form.description'), icon: 'bi:layout-wtf' },
+            component: () => import('/@/views/demo/form/description.vue'),
+          },
+        ],
       },
       {
         name: 'demo_table',

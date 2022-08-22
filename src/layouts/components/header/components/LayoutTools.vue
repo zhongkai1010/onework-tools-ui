@@ -78,10 +78,11 @@
   import { permissionStateStoreHook } from '/@/store/modules/permissionState';
   import { tabStateStoreHook } from '/@/store/modules/tabState';
   import { getNavRecordRaw, getNavRecordRawMap } from '/@/layouts/utils';
+  import { useMessage } from '/@/hooks/web/useMessage';
+  import { useI18n } from '/@/hooks/web/useI18n';
 
   const siteConfig = siteConfigStoreHook();
   const pageState = pageStateStoreHook();
-
   const tabState = tabStateStoreHook();
   const show = computed(() => {
     return {
@@ -98,14 +99,27 @@
   const onClickLock = () => {
     siteConfig.$patch({ lock: true });
   };
-  const onSelectLocale = async (command) => {
+  const onSelectLocale = (command) => {
     const { changeLocale } = useLocale();
-    await changeLocale(command);
-    const data = getNavRecordRaw();
-    const map = getNavRecordRawMap(data);
-    const permissionState = permissionStateStoreHook();
-    permissionState.$patch({ menus: data, menuMap: map });
-    tabState.reloadAll();
+    const { message } = useMessage();
+    pageState.setLoading('page', true);
+    const { t } = useI18n();
+    changeLocale(command)
+      .then(() => {
+        const data = getNavRecordRaw();
+        const map = getNavRecordRawMap(data);
+        const permissionState = permissionStateStoreHook();
+        permissionState.$patch({ menus: data, menuMap: map });
+        tabState.reloadAll();
+        pageState.setLoading('page', false);
+        message(t('comp.layout.message.toggleLangSuccess', { lang: command }), 'success');
+      })
+      .catch(() => {
+        message(t('comp.layout.message.toggleLangError', { lang: command }), 'error');
+      })
+      .finally(() => {
+        pageState.setLoading('page', false);
+      });
   };
 </script>
 

@@ -1,29 +1,36 @@
 <template>
-  <div class="body_container" :style="cssStyle">
+  <div class="body_container">
     <slot></slot>
+    <div class="copyright">
+      Copyright <IconifyIcon icon="ant-design:copyright-circle-outlined" /> 2022 OneWork Tools UI
+    </div>
   </div>
 </template>
 
-<script lang="ts" setup>
-  const props = defineProps<{
-    margin?: number;
-    padding?: number;
-    color?: string;
-  }>();
-  const cssStyle = computed(() => {
-    return {
-      margin: props.margin ? `${props.margin}px` : props.margin === 0 ? '0px' : '20px',
-      padding: props.padding ? `${props.padding}px` : props.padding === 0 ? '0px' : '20px',
-      backgroundColor: props.color ? props.color : '#ffff',
-      borderRadius: props.margin ? '5px' : props.margin === 0 ? '0px' : '5px',
-    };
-  });
-</script>
+<script lang="ts" setup></script>
+
 <style lang="scss" scoped>
   .body_container {
-    min-height: calc(
-      100vh - $layout-header-height - var(--layout-header-tab-height) -
-        (v-bind('cssStyle.margin') * 2)
-    );
+    padding: 20px;
+    min-height: calc(100vh - $layout-header-height - var(--layout-header-tab-height));
+    background-color: #fff;
+
+    .copyright {
+      margin-left: $layout-sidebar-width;
+      position: fixed;
+      z-index: 0;
+      bottom: 0px;
+      right: 0px;
+      width: calc(100vw - $layout-sidebar-width);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      min-height: 16px;
+      color: rgba(0, 0, 0, 0.45);
+      i {
+        margin: 0 10px;
+      }
+    }
   }
 </style>

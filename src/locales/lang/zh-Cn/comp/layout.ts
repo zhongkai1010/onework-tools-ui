@@ -52,4 +52,8 @@ export default {
     float: '浮动',
   },
   unlock: '解锁',
+  message: {
+    toggleLangError: '加载{lang}语言异常，请稍后重试！',
+    toggleLangSuccess: '完成切换{lang}语言。',
+  },
 };

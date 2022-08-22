@@ -117,9 +117,9 @@
     @update:model-value="(value) => $emit('update:modelValue', value)"
   />
   <!--  Upload 上传 -->
-  <!-- <el-upload
+  <el-upload
     :model-value:file-list="props.modelValue"
-    v-if="props.component == FormComponent.UPLOAD"
+    v-if="props.component == 'upload'"
     class="upload-demo"
     action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
     multiple
@@ -129,7 +129,7 @@
     <template #tip>
       <div class="el-upload__tip"> jpg/png files with a size less than 500KB. </div>
     </template>
-  </el-upload> -->
+  </el-upload>
   <!--  Input 输入框 -->
   <el-input
     v-bind="props.props"
@@ -140,7 +140,7 @@
 </template>
 
 <script setup lang="ts">
-  import { FormComponent, FormItemProps } from '/@/components/ConfigForm/index';
+  import { FormComponent, FormItemProps } from '..';
 
   const props = defineProps<{
     modelValue: any;

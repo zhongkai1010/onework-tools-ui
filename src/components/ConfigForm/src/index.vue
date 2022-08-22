@@ -14,7 +14,7 @@
           :prop="item.name"
           :rules="item.rules"
         >
-          <ConfigFormItem
+          <form-item
             v-model="formValues[item.name]"
             :component="item.component"
             :props="item.props"
@@ -27,16 +27,16 @@
 
 <script setup lang="ts">
   import { FormInstance } from 'element-plus';
-  import { FormItem } from '..';
+  import { FormItemProps } from '../../FormItem';
 
-  import { getDefauleVlues } from '../helps';
+  import { getDefauleVlues } from '../../FormItem/helps';
 
   const formRef = ref<FormInstance>();
   const props = defineProps<{
     gutter: number;
     labelPosition: 'top' | 'left' | 'right';
     labelWidth: string | number;
-    fields: FormItem[];
+    fields: FormItemProps[];
   }>();
 
   const formValues = ref(getDefauleVlues(props.fields));

@@ -21,7 +21,7 @@
             :prop="item.name"
             :rules="item?.rules"
           >
-            <ConfigFormItem
+            <form-item
               v-model="formValue[item.name]"
               :component="item.component"
               :props="item.props"
@@ -47,8 +47,9 @@
 
   import { reactive, ref } from 'vue';
   import { DataTableFieldProps, FormDialogInstance } from '..';
-  import { getDefauleVlues } from '/@/components/ConfigForm/helps';
-  import { FormItem } from '/@/components/ConfigForm';
+  import { FormItemProps } from '../../FormItem';
+
+  import { getDefauleVlues } from '../../FormItem/helps';
   import { CREATE_ITEM_TITLE_TEXT, EDITABLE_ITEM_TITLE_TEXT } from '/@/settings/constant';
 
   const props = defineProps<{
@@ -60,12 +61,12 @@
   }>();
 
   const editabled = ref<'add' | 'edit' | 'show'>(props.editabled ?? 'add');
-  const formFields = computed<FormItem[]>(() => {
+  const formFields = computed<FormItemProps[]>(() => {
     const tempFields = props.fields.filter((t) => !t.editable?.hide);
-    const newFields: FormItem[] = [];
+    const newFields: FormItemProps[] = [];
     for (let index = 0; index < tempFields.length; index++) {
       const tableField = tempFields[index];
-      const formField: FormItem = {
+      const formField: FormItemProps = {
         label: tableField.label,
         name: tableField.name,
         span: tableField.editable?.span ?? 24,

@@ -1,4 +1,4 @@
-import { FormConfig } from '/@/components/ConfigForm';
+import { ConfigFormProps } from '/@/components/ConfigForm';
 
 export default {
   name: '',
@@ -31,49 +31,44 @@ export default {
       span: 12,
       component: 'radio',
       defaultValue: 'top',
-      props: {
-        options: [
-          {
-            label: '顶部',
-            value: 'top',
-          },
-          {
-            label: '左侧',
-            value: 'left',
-          },
-          {
-            label: '右侧',
-            value: 'right',
-          },
-        ],
-      },
+      options: [
+        {
+          label: '顶部',
+          value: 'top',
+        },
+        {
+          label: '左侧',
+          value: 'left',
+        },
+        {
+          label: '右侧',
+          value: 'right',
+        },
+      ],
     },
     {
       label: '表单3',
       name: 'name3',
       span: 12,
       component: 'checkbox',
-
-      props: {
-        options: [
-          {
-            label: '选项1',
-            value: 'value1',
-          },
-          {
-            label: '选项2',
-            value: 'value2',
-          },
-          {
-            label: '选项3',
-            value: 'value3',
-          },
-          {
-            label: '选项4',
-            value: 'value4',
-          },
-        ],
-      },
+      options: [
+        {
+          label: '选项1',
+          value: 'value1',
+        },
+        {
+          label: '选项2',
+          value: 'value2',
+        },
+        {
+          label: '选项3',
+          value: 'value3',
+        },
+        {
+          label: '选项4',
+          value: 'value4',
+        },
+      ],
     },
     {
       label: '表单4',
@@ -105,27 +100,24 @@ export default {
       name: 'name8',
       span: 12,
       component: 'radio',
-
-      props: {
-        options: [
-          {
-            label: '选项1',
-            value: 'value1',
-          },
-          {
-            label: '选项2',
-            value: 'value2',
-          },
-          {
-            label: '选项3',
-            value: 'value3',
-          },
-          {
-            label: '选项4',
-            value: 'value4',
-          },
-        ],
-      },
+      options: [
+        {
+          label: '选项1',
+          value: 'value1',
+        },
+        {
+          label: '选项2',
+          value: 'value2',
+        },
+        {
+          label: '选项3',
+          value: 'value3',
+        },
+        {
+          label: '选项4',
+          value: 'value4',
+        },
+      ],
     },
     {
       label: '表单9',
@@ -138,26 +130,24 @@ export default {
       name: 'name10',
       span: 12,
       component: 'select',
-      props: {
-        options: [
-          {
-            label: '选项1',
-            value: 'value1',
-          },
-          {
-            label: '选项2',
-            value: 'value2',
-          },
-          {
-            label: '选项3',
-            value: 'value3',
-          },
-          {
-            label: '选项4',
-            value: 'value4',
-          },
-        ],
-      },
+      options: [
+        {
+          label: '选项1',
+          value: 'value1',
+        },
+        {
+          label: '选项2',
+          value: 'value2',
+        },
+        {
+          label: '选项3',
+          value: 'value3',
+        },
+        {
+          label: '选项4',
+          value: 'value4',
+        },
+      ],
     },
     {
       label: '表单12',
@@ -196,4 +186,4 @@ export default {
       component: 'upload',
     },
   ],
-} as FormConfig;
+} as ConfigFormProps;

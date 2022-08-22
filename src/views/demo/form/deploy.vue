@@ -1,5 +1,5 @@
 <template>
-  <page-view class="page_wrapper">
+  <page-view class="container">
     <el-card class="box-card" :title="`自定义表单`">
       <template #header>
         <div class="card-header">
@@ -96,10 +96,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .page_wrapper {
-    background-color: transparent !important;
-    padding: 0px !important;
-
+  .container {
     .box-card {
       min-height: $main-no-margin-height;
       .card-header {

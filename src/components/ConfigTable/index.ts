@@ -1,7 +1,8 @@
 import configTable from './src/index.vue';
 import dataTable from './src/DataTable.vue';
-import { FormComponent, FormItemProps } from '../ConfigForm';
-import { PaginationProps } from 'element-plus';
+
+import { FormItemProps, PaginationProps } from 'element-plus';
+import { FormComponent } from '../FormItem';
 
 export declare type OperateType =
   | 'add'
