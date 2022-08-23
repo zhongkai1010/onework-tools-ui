@@ -1,7 +1,7 @@
 <template>
   <el-col :span="props.span" class="item-container">
     <el-form-item
-      :label="`${props.label}${props.index}`"
+      :label="props.label"
       :prop="props.name"
       :required="props.required"
       :rules="props.rules"
@@ -28,7 +28,7 @@
 
   const props = defineProps<{
     modelValue: any;
-    index: number;
+
     id: string;
     label: string;
     name: string;

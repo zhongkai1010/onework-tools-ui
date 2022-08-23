@@ -19,6 +19,7 @@
           group="component"
           :list="formItems"
           item-key="id"
+          :sort="true"
           @change="log"
           :component-data="{
             gutter: formConfig.gutter,
@@ -26,14 +27,14 @@
             justify: formConfig.justify,
           }"
         >
-          <template #item="{ element, index }: { element: DraggableItemProps, index: number }">
+          <template #item="{ element }: { element: DraggableItemProps, index: number }">
             <draggable-item
               v-bind="element"
-              :index="index"
               :model-value="formValue[element.name]"
               @setting="onItemSetting"
               @copy="onItemCopy"
               @remove="onItemRemove"
+              @update:model-value="(value) => (formValue[element.name] = value)"
             />
           </template>
         </draggable>
@@ -76,12 +77,14 @@
       };
     }
   });
-  const formValue = reactive({});
+  const formValue = reactive({
+    default: '1',
+  });
   const formItems = ref<DraggableItemProps[]>([
     {
       id: buildUUID(),
       label: '文本框',
-      name: buildUUID(),
+      name: 'default',
       span: 6,
       component: 'input',
     },
@@ -128,10 +131,14 @@
     background-color: transparent !important;
 
     .form-container {
-      width: calc(100vw - $layout-sidebar-width - 280px);
+      width: calc(100vw - $layout-sidebar-width);
       min-height: $main-no-margin-height;
       margin-left: 300px;
       user-select: none;
+
+      .el-row {
+        border: 1px dashed var(--header-font-color);
+      }
       .card-header {
         display: flex;
         align-items: center;

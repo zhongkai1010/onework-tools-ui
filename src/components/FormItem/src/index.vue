@@ -97,8 +97,8 @@
   />
   <!--  TimePicker 时间选择器 -->
   <el-time-picker
-    :model-value="props.modelValue"
     v-bind="props.props"
+    :model-value="props.modelValue"
     v-if="props.component == 'time_picker'"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   />
