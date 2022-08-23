@@ -1,7 +1,7 @@
 import configTable from './src/index.vue';
 import dataTable from './src/DataTable.vue';
 
-import { FormItemProps, PaginationProps } from 'element-plus';
+import { PaginationProps } from 'element-plus';
 import { FormComponent } from '../FormItem';
 
 export declare type OperateType =
@@ -52,7 +52,7 @@ export interface DataTableFieldProps {
     required?: boolean;
     rules?: any;
     defaultValue?: any;
-    props?: FormItemProps;
+    props?: any;
   };
 }
 

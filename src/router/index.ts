@@ -36,9 +36,9 @@ const router = createRouter({
  * 页面头部加载进度条
  */
 router.beforeEach((to, from, next) => {
-  const log = `----------------start load route  ${dayjs().format('YYYY-MM-DD HH:mm:ss')} to:"${
-    to.fullPath
-  }" from:"${from.fullPath}"----------------`;
+  const log = `----------------start load route  ${dayjs().format('YYYY-MM-DD HH:mm:ss')} from:"${
+    from.fullPath
+  }" to:"${to.fullPath}"----------------`;
   console.log(log);
 
   const { login } = userStateStoreHook();
@@ -66,9 +66,9 @@ router.beforeEach((to, from, next) => {
   }
 });
 router.afterEach((to, from) => {
-  const log = `----------------end load route ${dayjs().format('YYYY-MM-DD HH:mm:ss')} to:"${
-    to.fullPath
-  }" from:"${from.fullPath}"----------------`;
+  const log = `----------------end load route ${dayjs().format('YYYY-MM-DD HH:mm:ss')} from:"${
+    from.fullPath
+  }" to:"${to.fullPath}"----------------`;
   console.log(log);
 
   const { t } = useI18n();

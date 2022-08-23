@@ -1,6 +1,6 @@
-import { FormItemProps } from '.';
+import { ConfigFormItemProps } from '.';
 
-export const getDefauleVlues = (items: FormItemProps[]) => {
+export const getDefauleVlues = (items: ConfigFormItemProps[]) => {
   const values = {};
   items.forEach((value) => {
     let defaultValue = value.defaultValue;

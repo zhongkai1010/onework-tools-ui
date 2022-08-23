@@ -27,16 +27,16 @@
 
 <script setup lang="ts">
   import { FormInstance } from 'element-plus';
-  import { FormItemProps } from '../../FormItem';
+  import { ConfigFormItemProps } from '..';
 
-  import { getDefauleVlues } from '../../FormItem/helps';
+  import { getDefauleVlues } from '../helps';
 
   const formRef = ref<FormInstance>();
   const props = defineProps<{
     gutter: number;
     labelPosition: 'top' | 'left' | 'right';
     labelWidth: string | number;
-    fields: FormItemProps[];
+    fields: ConfigFormItemProps[];
   }>();
 
   const formValues = ref(getDefauleVlues(props.fields));

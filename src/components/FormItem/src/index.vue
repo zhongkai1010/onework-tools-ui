@@ -140,12 +140,12 @@
 </template>
 
 <script setup lang="ts">
-  import { FormComponent, FormItemProps } from '..';
+  import { FormComponent } from '..';
 
   const props = defineProps<{
     modelValue: any;
     component: FormComponent;
-    props?: FormItemProps;
+    props?: Recordable<any>;
   }>();
 </script>
 

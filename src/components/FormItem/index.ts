@@ -1,4 +1,3 @@
-import { FormItemRule, FormItemProps as EIFormItemProps } from 'element-plus';
 import formItem from './src/index.vue';
 import asynAutodcomplete from './src/asyn/AsynAutodcomplete.vue';
 import asynCascader from './src/asyn/AsynCascader.vue';
@@ -47,16 +46,13 @@ export interface FormItemOption {
   value: string;
   children?: FormItemOption[];
 }
+
 export interface FormItemProps extends Recordable<any> {
-  label: string;
-  name: string;
-  span?: number;
+  modelValue?: any;
   component: FormComponent;
-  props?: EIFormItemProps;
-  defaultValue?: any;
-  required?: boolean;
-  rules?: FormItemRule;
-  options?: FormItemOption[];
+  props?: Recordable<any> & {
+    options: FormItemOption[];
+  };
 }
 
 export const FormItem = formItem;

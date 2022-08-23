@@ -42,15 +42,13 @@
 </template>
 
 <script setup lang="ts">
-  import { FormInstance } from 'element-plus';
   import _ from 'lodash';
-
+  import { FormInstance } from 'element-plus';
   import { reactive, ref } from 'vue';
   import { DataTableFieldProps, FormDialogInstance } from '..';
-  import { FormItemProps } from '../../FormItem';
-
-  import { getDefauleVlues } from '../../FormItem/helps';
+  import { getDefauleVlues } from '/@/components/ConfigForm/helps';
   import { CREATE_ITEM_TITLE_TEXT, EDITABLE_ITEM_TITLE_TEXT } from '/@/settings/constant';
+  import { ConfigFormItemProps } from '/@/components/ConfigForm';
 
   const props = defineProps<{
     modelValue?: boolean;
@@ -61,12 +59,12 @@
   }>();
 
   const editabled = ref<'add' | 'edit' | 'show'>(props.editabled ?? 'add');
-  const formFields = computed<FormItemProps[]>(() => {
+  const formFields = computed<ConfigFormItemProps[]>(() => {
     const tempFields = props.fields.filter((t) => !t.editable?.hide);
-    const newFields: FormItemProps[] = [];
+    const newFields: ConfigFormItemProps[] = [];
     for (let index = 0; index < tempFields.length; index++) {
       const tableField = tempFields[index];
-      const formField: FormItemProps = {
+      const formField: ConfigFormItemProps = {
         label: tableField.label,
         name: tableField.name,
         span: tableField.editable?.span ?? 24,
