@@ -22,27 +22,38 @@
 </template>
 
 <script setup lang="ts">
-  import { FormItemRule } from 'element-plus';
   import { DraggableItemProps } from '../types';
   import { FormComponent, FormItemOption } from '/@/components/FormItem';
 
   const props = defineProps<{
     modelValue: any;
-
-    id: string;
-    label: string;
+    id?: string;
     name: string;
+    label: string;
+    placeholder?: string;
     span?: number;
-    required?: boolean;
-    rules?: FormItemRule;
-    component: FormComponent;
+    labelWidth?: number;
+    width?: number;
+    defaultValue?: any;
     props?: Recordable<any> & {
-      options: FormItemOption[];
+      options?: FormItemOption[];
+      remote?: {
+        url: string;
+        method: 'post' | 'get';
+        labelKey: string;
+        valueKey: string;
+        childerKey: string;
+      };
+      readonly?: boolean;
+      disabled?: boolean;
     };
+    showLabel?: boolean;
+    required?: boolean;
+    rules?: { pattern: string; message: string }[];
+    component: FormComponent;
   }>();
 
   const emits = defineEmits<{
-    (e: 'update:modelValue', value: any);
     (e: 'setting', value: DraggableItemProps);
     (e: 'copy', value: DraggableItemProps);
     (e: 'remove', value: DraggableItemProps);

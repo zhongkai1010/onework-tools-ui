@@ -1,5 +1,5 @@
 import { Ref } from 'vue';
-import { ConfigFormItemProps } from '/@/components/ConfigForm';
+import { FormComponent, FormItemOption } from '/@/components/FormItem';
 
 export interface FormConfigType {
   gutter: number;
@@ -16,9 +16,33 @@ export interface FormConfigDrawerInstance {
 }
 
 export interface FormItemDrawerInstance {
-  open: (config: ConfigFormItemProps) => void;
+  open: (config: DraggableItemProps) => void;
 }
 
-export interface DraggableItemProps extends ConfigFormItemProps {
-  id: string;
+export interface DraggableItemProps {
+  modelValue?: any;
+  id?: string;
+  name: string;
+  label: string;
+  placeholder?: string;
+  span?: number;
+  labelWidth?: number;
+  width?: number;
+  defaultValue?: any;
+  props?: Recordable<any> & {
+    options?: FormItemOption[];
+    remote?: {
+      url: string;
+      method: 'post' | 'get';
+      labelKey: string;
+      valueKey: string;
+      childerKey: string;
+    };
+    readonly?: boolean;
+    disabled?: boolean;
+  };
+  showLabel?: boolean;
+  required?: boolean;
+  rules?: { pattern: string; message: string }[];
+  component: FormComponent;
 }

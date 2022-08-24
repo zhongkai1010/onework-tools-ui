@@ -19,7 +19,6 @@
           group="component"
           :list="formItems"
           item-key="id"
-          :sort="true"
           @change="log"
           :component-data="{
             gutter: formConfig.gutter,
@@ -52,7 +51,7 @@
   import FormConfigDrawer from './components/FormConfigDrawer.vue';
   import FormItemDrawer from './components/FormItemDrawer.vue';
   import { buildUUID } from '/@/utils/uuid';
-  import { ConfigFormItemProps } from '/@/components/ConfigForm';
+
   import {
     DraggableItemProps,
     FormConfigDrawerInstance,
@@ -77,8 +76,13 @@
       };
     }
   });
-  const formValue = reactive({
-    default: '1',
+  const formValue = reactive<FormConfigType>({
+    gutter: 20,
+    labelWidth: 120,
+    labelPosition: 'top',
+    size: 'default',
+    justify: 'start',
+    align: 'middle',
   });
   const formItems = ref<DraggableItemProps[]>([
     {
@@ -95,10 +99,10 @@
     // console.log('-----------change formItems-------', formItems.value);
   };
 
-  const onItemSetting = (item: ConfigFormItemProps) => {
-    console.log('---------------onItemSetting-----------------', item);
+  const onItemSetting = (item: DraggableItemProps) => {
     currentItem.value = item;
     if (formItemDrawerRef.value) {
+      console.log('---------------onItemSetting-----------------', item);
       formItemDrawerRef.value.open(currentItem.value);
     }
   };
@@ -157,7 +161,8 @@
 </style>
 
 <style lang="scss">
-  .el-drawer__header {
-    margin-bottom: 0px;
+  .el-drawer__body {
+    padding: 0px 20px;
+    @include scrollBar;
   }
 </style>

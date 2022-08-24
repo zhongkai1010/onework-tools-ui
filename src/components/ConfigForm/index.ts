@@ -16,7 +16,7 @@ export interface ConfigFormItemProps extends FormItemProps {
   span?: number;
   defaultValue?: any;
   required?: boolean;
-  rules?: FormItemRule;
+  rules?: FormItemRule[];
 }
 
 const ConfigForm = configForm;
