@@ -135,6 +135,13 @@
       const elems = window.document.documentElement.getElementsByClassName('wrapper');
       elems[0].setAttribute('data-theme', value);
       themeState.$patch({ theme: value });
+      // 设置html :root css3 变量
+      const style = window.document.documentElement.style;
+      const values = themeState.themeVariables;
+      Object.keys(values).forEach((t) => {
+        style.setProperty(t, values[t]);
+      });
+
       return;
     } else {
       val = value;

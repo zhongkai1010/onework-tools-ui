@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" :data-layout="layout" :style="cassVariables" v-loading="reloading">
+  <div class="wrapper" :data-layout="layout" v-loading="reloading">
     <el-container>
       <el-header v-if="horizontal" class="wrapper_header">
         <layout-header
@@ -113,6 +113,13 @@
       ...cssVariables,
       ...themeVariables,
     };
+  });
+  watch(cassVariables, () => {
+    const rootStyle = window.document.documentElement.style;
+    const values = unref(cassVariables);
+    Object.keys(values).forEach((t) => {
+      rootStyle.setProperty(t, values[t]);
+    });
   });
 </script>
 

@@ -351,6 +351,7 @@
     height: $layout-header-height;
     background-color: var(--sidebar-bg-color);
     color: var(--sidebar-font-color);
+    box-shadow: 0px 0px 4px rgb(0 21 41 / 8%);
 
     .header-container {
       color: var(--sidebar-font-color);
@@ -389,6 +390,7 @@
     height: var(--layout-header-tab-height);
     background-color: var(--header-bg-color);
     color: var(--header-font-color);
+    box-shadow: 0px 0px 4px rgb(0 21 41 / 8%);
   }
 
   .wrapper_body {
