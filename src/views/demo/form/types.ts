@@ -36,7 +36,7 @@ export interface DraggableItemProps {
       method: 'post' | 'get';
       labelKey: string;
       valueKey: string;
-      childerKey: string;
+      childerKey?: string;
     };
     readonly?: boolean;
     disabled?: boolean;

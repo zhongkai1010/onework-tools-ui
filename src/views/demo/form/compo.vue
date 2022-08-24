@@ -39,8 +39,8 @@
         </draggable>
       </el-form>
     </el-card>
-    <FormConfigDrawer ref="formConfigDrawerRef" />
-    <FormItemDrawer ref="formItemDrawerRef" @save="onSaveItemConfig" />
+    <form-config-drawer ref="formConfigDrawerRef" />
+    <form-item-config-drawer ref="formItemDrawerRef" @save="onSaveItemConfig" />
   </page-view>
 </template>
 
@@ -49,7 +49,7 @@
   import DraggableItem from './components/DraggableItem.vue';
   import ComponentList from './components/ComponentList.vue';
   import FormConfigDrawer from './components/FormConfigDrawer.vue';
-  import FormItemDrawer from './components/FormItemDrawer.vue';
+  import FormItemConfigDrawer from './components/FormItemConfigDrawer.vue';
   import { buildUUID } from '/@/utils/uuid';
 
   import {

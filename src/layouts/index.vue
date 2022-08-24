@@ -114,12 +114,16 @@
       ...themeVariables,
     };
   });
-  watch(cassVariables, () => {
+  const setCssVariable = (values: Recordable<string>) => {
     const rootStyle = window.document.documentElement.style;
-    const values = unref(cassVariables);
     Object.keys(values).forEach((t) => {
       rootStyle.setProperty(t, values[t]);
     });
+  };
+  setCssVariable(unref(cassVariables));
+  watch(cassVariables, () => {
+    const values = unref(cassVariables);
+    setCssVariable(values);
   });
 </script>
 
