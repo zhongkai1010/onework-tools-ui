@@ -1,5 +1,5 @@
 <template>
-  <el-drawer :model-value="true" @closed="onClose" title="表单项配置">
+  <el-drawer :model-value="dialogShow" @closed="onClose" title="表单项配置">
     <div class="config-container">
       <el-form :model="formValue" label-width="120px" label-position="left">
         <el-divider content-position="left">基本配置</el-divider>
@@ -39,23 +39,35 @@
           >
         </el-button-group>
         <el-divider content-position="left" v-if="!remote">静态数据</el-divider>
-        <OptionsInput :model-value="formValue.props?.options" v-if="!remote" />
+        <OptionsInput :model-value="formValue.props.options" v-if="!remote" />
 
         <el-divider content-position="left" v-if="remote">动态数据</el-divider>
-        <RemoteInput :model-value="formValue.props?.remote" v-if="remote" />
+        <RemoteInput :model-value="formValue.props.remote" v-if="remote" />
 
         <el-divider content-position="left">状态设置</el-divider>
         <el-form-item label="是否显示标签">
-          <el-switch v-model="formValue.showLabel" />
+          <el-switch
+            v-model="formValue.showLabel"
+            @update:model-value="(val:boolean) => (formValue.props.showLabel = val)"
+          />
         </el-form-item>
         <el-form-item label="是否只读">
-          <el-switch :model-value="formValue.props?.readonly" />
+          <el-switch
+            :model-value="formValue.props.readonly"
+            @update:model-value="(val:boolean) => (formValue.props.readonly = val)"
+          />
         </el-form-item>
         <el-form-item label="是否禁用">
-          <el-switch :model-value="formValue.props?.disabled" />
+          <el-switch
+            :model-value="formValue.props.disabled"
+            @update:model-value="(val:boolean) => (formValue.props.disabled = val)"
+          />
         </el-form-item>
         <el-form-item label="是否必填">
-          <el-switch v-model="formValue.required" />
+          <el-switch
+            v-model="formValue.required"
+            @update:model-value="(val:boolean) => (formValue.props.required = val)"
+          />
         </el-form-item>
         <el-divider content-position="left">验证规则</el-divider>
         <RuleInput :model-value="formValue.rules" />
@@ -71,14 +83,14 @@
 </template>
 
 <script setup lang="ts">
+  import _ from 'lodash';
   import { DraggableItemProps, FormItemDrawerInstance } from '../types';
-
   import OptionsInput from './OptionsInput.vue';
   import RemoteInput from './RemoteInput.vue';
   import RuleInput from './RuleInput.vue';
   import { FormItemOption } from '/@/components/FormItem';
 
-  const formValue = reactive<DraggableItemProps>({
+  const defaultValue: DraggableItemProps = {
     component: 'input',
     name: '',
     label: '',
@@ -91,21 +103,27 @@
         valueKey: 'value',
         childerKey: 'children',
       },
+      readonly: false,
+      disabled: false,
     },
+    showLabel: true,
+    required: false,
     rules: [],
-  });
+  };
+
+  const formValue = reactive<DraggableItemProps>(defaultValue);
 
   const remote = ref(false); // true：动态数据 false ：静态数据
 
   const dialogShow = ref(false);
 
   const onOpen = (config: DraggableItemProps) => {
-    Object.keys(config).forEach((t) => {
-      formValue[t] = config[t];
-    });
+    _.defaultsDeep(formValue, config) as DraggableItemProps;
+    console.log('--------------onOpen-----------------', unref(formValue));
     dialogShow.value = true;
   };
   const onSave = () => {
+    console.log('----------------onSave----------', unref(formValue));
     emits('save', unref(formValue));
     dialogShow.value = false;
   };

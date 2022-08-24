@@ -103,7 +103,7 @@
     currentItem.value = item;
     if (formItemDrawerRef.value) {
       console.log('---------------onItemSetting-----------------', item);
-      formItemDrawerRef.value.open(currentItem.value);
+      formItemDrawerRef.value.open(unref(currentItem));
     }
   };
 
@@ -121,11 +121,10 @@
     formItems.value = newFormItems;
   };
   const onSaveItemConfig = (value: DraggableItemProps) => {
-    console.log('---------------onSaveItemConfig-----------------', value);
-    // const newFormItems = unref(formItems);
-    // const index = newFormItems.findIndex((t) => t.id == value.id);
-    // newFormItems.splice(index, 1, value);
-    // formItems.value = newFormItems;
+    const newFormItems = unref(formItems);
+    const index = newFormItems.findIndex((t) => t.id == value.id);
+    newFormItems.splice(index, 1, value);
+    formItems.value = newFormItems;
   };
 </script>
 

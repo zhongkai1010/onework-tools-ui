@@ -20,7 +20,6 @@ export interface FormItemDrawerInstance {
 }
 
 export interface DraggableItemProps {
-  modelValue?: any;
   id?: string;
   name: string;
   label: string;
