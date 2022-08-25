@@ -1,3 +1,4 @@
+import { DraggableItemConfig } from '../types';
 import { ConfigFormItemProps } from '/@/components/ConfigForm';
 
 export default [
@@ -40,7 +41,16 @@ export default [
           ],
         },
       },
-      { name: 'slider', label: 'Slider 滑块', component: 'slider' },
+      {
+        name: 'slider',
+        label: 'Slider 滑块',
+        component: 'slider',
+        props: {
+          style: {
+            width: '50%',
+          },
+        },
+      },
       { name: 'date_picker', label: 'DatePicker 日期选择器', component: 'date_picker' },
       { name: 'time_picker', label: 'TimePicker 时间选择器', component: 'time_picker' },
       { name: 'time_select', label: 'TimeSelect 时间选择', component: 'time_select' },
@@ -87,7 +97,7 @@ export default [
 
       { name: 'transfer', label: 'Transfer 穿梭框', component: 'transfer' },
       { name: 'upload', label: 'Upload 上传', component: 'upload' },
-    ] as ConfigFormItemProps[],
+    ] as DraggableItemConfig[],
   },
   {
     name: 'dynamic',

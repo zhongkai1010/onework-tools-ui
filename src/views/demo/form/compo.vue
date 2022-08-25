@@ -6,10 +6,11 @@
         <div class="card-header">
           <span>表单</span>
           <el-button type="primary" @click="formConfigDrawerRef.open()">表单配置</el-button>
+          <el-button type="primary" @click="log">查看配置</el-button>
         </div>
       </template>
       <el-form
-        :model="formValue"
+        :model="formConfigValue"
         :label-width="formConfig.labelWidth"
         :label-position="formConfig.labelPosition"
         :size="formConfig.size"
@@ -19,28 +20,25 @@
           group="component"
           :list="formItems"
           item-key="id"
-          @change="log"
           :component-data="{
             gutter: formConfig.gutter,
             align: formConfig.align,
             justify: formConfig.justify,
           }"
         >
-          <template #item="{ element }: { element: DraggableItemProps, index: number }">
+          <template #item="{ element }: { element: DraggableItemConfig, index: number }">
             <draggable-item
-              v-bind="element"
-              :model-value="formValue[element.name]"
-              @setting="onItemSetting"
-              @copy="onItemCopy"
-              @remove="onItemRemove"
-              @update:model-value="(value) => (formValue[element.name] = value)"
+              :id="element.id"
+              :model-value="formConfigValue[element.name]"
+              @update:model-value="(value) => (formConfigValue[element.name] = value)"
+              @set="(id) => formItemDrawerRef.open(id)"
             />
           </template>
         </draggable>
       </el-form>
     </el-card>
     <form-config-drawer ref="formConfigDrawerRef" />
-    <form-item-config-drawer ref="formItemDrawerRef" @save="onSaveItemConfig" />
+    <form-item-config-drawer ref="formItemDrawerRef" />
   </page-view>
 </template>
 
@@ -53,10 +51,11 @@
   import { buildUUID } from '/@/utils/uuid';
 
   import {
-    DraggableItemProps,
+    DraggableItemConfig,
     FormConfigDrawerInstance,
     FormConfigType,
     FormItemDrawerInstance,
+    FORM_LIST_PROVIDE_KEY,
   } from './types';
 
   const formConfigDrawerRef = ref<FormConfigDrawerInstance>();
@@ -76,7 +75,7 @@
       };
     }
   });
-  const formValue = reactive<FormConfigType>({
+  const formConfigValue = reactive<FormConfigType>({
     gutter: 20,
     labelWidth: 120,
     labelPosition: 'top',
@@ -84,7 +83,7 @@
     justify: 'start',
     align: 'middle',
   });
-  const formItems = ref<DraggableItemProps[]>([
+  const formItems = ref<DraggableItemConfig[]>([
     {
       id: buildUUID(),
       label: '文本框',
@@ -93,39 +92,10 @@
       component: 'input',
     },
   ]);
-  const currentItem = ref();
-  const log = (_evt) => {
-    // console.log('-----------change log-------------', evt);
-    // console.log('-----------change formItems-------', formItems.value);
+  const log = () => {
+    console.log(formItems.value);
   };
-
-  const onItemSetting = (item: DraggableItemProps) => {
-    currentItem.value = item;
-    if (formItemDrawerRef.value) {
-      console.log('---------------onItemSetting-----------------', item);
-      formItemDrawerRef.value.open(unref(currentItem));
-    }
-  };
-
-  const onItemCopy = (value: DraggableItemProps) => {
-    const newItem = { ...value, id: buildUUID(), name: buildUUID() };
-    const newFormItems = unref(formItems);
-    newFormItems.push(newItem);
-    formItems.value = newFormItems;
-    console.log('---------------onItemCopy-----------------', newFormItems);
-  };
-  const onItemRemove = (value: DraggableItemProps) => {
-    const newFormItems = unref(formItems);
-    const index = newFormItems.findIndex((t) => t.id == value.id);
-    newFormItems.splice(index, 1);
-    formItems.value = newFormItems;
-  };
-  const onSaveItemConfig = (value: DraggableItemProps) => {
-    const newFormItems = unref(formItems);
-    const index = newFormItems.findIndex((t) => t.id == value.id);
-    newFormItems.splice(index, 1, value);
-    formItems.value = newFormItems;
-  };
+  provide(FORM_LIST_PROVIDE_KEY, formItems);
 </script>
 
 <style lang="scss" scoped>
@@ -147,12 +117,6 @@
         align-items: center;
         span {
           margin-right: auto;
-        }
-      }
-
-      &:deep(.el-form-item__content) {
-        div:first-child {
-          width: 100%;
         }
       }
     }

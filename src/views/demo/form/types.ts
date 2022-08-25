@@ -1,5 +1,6 @@
 import { Ref } from 'vue';
 import { FormComponent, FormItemOption } from '/@/components/FormItem';
+import { buildUUID } from '/@/utils/uuid';
 
 export interface FormConfigType {
   gutter: number;
@@ -16,11 +17,12 @@ export interface FormConfigDrawerInstance {
 }
 
 export interface FormItemDrawerInstance {
-  open: (config: DraggableItemProps) => void;
+  open: (id: string) => void;
 }
 
-export interface DraggableItemProps {
+export interface DraggableItemConfig {
   id?: string;
+  component: FormComponent;
   name: string;
   label: string;
   placeholder?: string;
@@ -42,6 +44,43 @@ export interface DraggableItemProps {
   };
   showLabel?: boolean;
   required?: boolean;
-  rules?: { pattern: string; message: string }[];
-  component: FormComponent;
+  formRules?: { pattern: string; message: string }[];
 }
+
+export type DraggableItemProps = DraggableItemConfig;
+
+export const FORM_LIST_PROVIDE_KEY = 'formItems';
+
+export const DEFAULT_DRAGGABLE_ITEM_CONFIG: DraggableItemConfig = {
+  id: buildUUID(),
+  component: 'input',
+  name: '',
+  label: '',
+  props: {
+    options: [] as FormItemOption[],
+    remote: {
+      method: 'get',
+      url: '',
+      labelKey: 'label',
+      valueKey: 'value',
+      childerKey: 'children',
+    },
+    readonly: false,
+    disabled: false,
+  },
+  showLabel: true,
+  required: false,
+  formRules: [],
+};
+
+export interface FormComponentDrawerState extends Recordable<any> {
+  placeholder: boolean;
+  remote: 'all' | 'state' | 'dynamic' | 'none';
+}
+
+export const FormComponentConfig: Recordable<FormComponentDrawerState> = {
+  input: {
+    placeholder: true,
+    remote: 'none',
+  },
+};

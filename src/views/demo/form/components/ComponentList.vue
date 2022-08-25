@@ -32,13 +32,19 @@
 <script setup lang="ts">
   import draggable from 'vuedraggable';
   import formConfig from '../data/formConfig';
-  import { DraggableItemProps } from '../types';
+  import { DraggableItemConfig, DraggableItemProps } from '../types';
 
   import { buildUUID } from '/@/utils/uuid';
   const activeNames = ref(formConfig[0].name);
 
   const cloneDog = (item: DraggableItemProps) => {
-    const newItem = { ...item, id: buildUUID(), name: buildUUID(), span: 6 };
+    const newItem = {
+      ...item,
+      id: buildUUID(),
+      name: buildUUID(),
+      span: 6,
+      rules: [],
+    } as DraggableItemConfig;
     return newItem;
   };
 

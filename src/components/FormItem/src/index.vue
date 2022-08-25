@@ -82,10 +82,9 @@
 
   <!-- Slider 滑块 -->
   <el-slider
-    :model-value="props.modelValue"
     v-bind="props.props"
+    :model-value="props.modelValue"
     v-if="props.component == 'slider'"
-    style="width: 90%"
     @update:model-value="(value) => $emit('update:modelValue', value)"
   />
   <!-- Switch 开关 -->

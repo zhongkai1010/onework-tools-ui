@@ -11,13 +11,13 @@
       <template #item="{ element, index }">
         <div class="option">
           <iconify-icon icon="mi:drag" :size="32" class="drag" />
-          <el-form-item class="first">
+          <el-form-item class="first" :required="true">
             <el-input
               :model-value="list[index].label"
               @update:model-value="(value) => (list[index].label = value)"
             />
           </el-form-item>
-          <el-form-item>
+          <el-form-item :required="true">
             <el-input
               :model-value="list[index].value"
               @update:model-value="(value) => (list[index].value = value)"

@@ -1,17 +1,11 @@
 <template>
   <div class="rule-container">
-    <div class="item" v-for="(rule, index) in list" :key="index">
-      <el-form-item label="验证表达式">
-        <el-input
-          :model-value="list[index].pattern"
-          @update:model-value="(value) => (list[index].pattern = value)"
-        />
+    <div class="item" v-for="(rule, index) in props.modelValue" :key="index">
+      <el-form-item label="验证表达式" :prop="`${props.prop}.index.pattern`">
+        <el-input v-model="rule.pattern" :required="true" />
       </el-form-item>
-      <el-form-item label="错误消息">
-        <el-input
-          :model-value="list[index].message"
-          @update:model-value="(value) => (list[index].message = value)"
-        />
+      <el-form-item label="错误消息" :prop="`${props.prop}.index.message`">
+        <el-input v-model="rule.message" :required="true" />
       </el-form-item>
       <div class="close" @click="onCloseRule(index)">
         <iconify-icon icon="ant-design:close-circle-outlined" :size="16" />
@@ -28,17 +22,27 @@
 
 <script setup lang="ts">
   const props = defineProps<{
-    modelValue: { pattern: string; message: string; id?: string }[] | undefined;
+    prop: string;
+    modelValue: { pattern: string; message: string }[] | undefined;
   }>();
+
   const list = ref(props.modelValue ?? []);
+
+  const emits = defineEmits<{
+    (e: 'update:modelValue', value: { pattern: string; message: string }[]): void;
+  }>();
+
   const onAddRule = () => {
     list.value.push({
       pattern: '',
       message: '',
     });
+    emits('update:modelValue', list.value);
   };
+
   const onCloseRule = (index) => {
     list.value.splice(index, 1);
+    emits('update:modelValue', list.value);
   };
 </script>
 
