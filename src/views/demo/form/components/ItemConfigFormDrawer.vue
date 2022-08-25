@@ -41,10 +41,19 @@
           >
         </el-button-group>
         <el-divider content-position="left" v-if="!remote">静态数据</el-divider>
-        <OptionsInput v-model="formValue.props.options" v-if="!remote" />
+        <OptionsInput
+          :model-value="formValue.props?.options"
+          v-if="!remote"
+          @update:model-value="(value) => (formValue.props.options = value)"
+        />
 
         <el-divider content-position="left" v-if="remote">动态数据</el-divider>
-        <RemoteInput v-model="formValue.props.remote" prop="props.remote" v-if="remote" />
+        <RemoteInput
+          :model-value="formValue.props?.remote"
+          prop="props.remote"
+          v-if="remote"
+          @update:model-value="(value) => (formValue.props.remote = value)"
+        />
 
         <el-divider content-position="left">验证规则</el-divider>
         <RuleInput v-model="formValue.formRules" prop="formRules" />
@@ -77,46 +86,45 @@
 <script setup lang="ts">
   import { FormInstance } from 'element-plus';
   import _ from 'lodash';
-  import { Ref } from 'vue';
   import {
-    DraggableItemProps,
-    FormItemDrawerInstance,
     DEFAULT_DRAGGABLE_ITEM_CONFIG,
-    FORM_LIST_PROVIDE_KEY,
     DraggableItemConfig,
+    FormItemDrawerInstance,
   } from '../types';
   import OptionsInput from './OptionsInput.vue';
   import RemoteInput from './RemoteInput.vue';
   import RuleInput from './RuleInput.vue';
-  import { useMessage } from '/@/hooks/web/useMessage';
-  const { message } = useMessage();
+  // import { useMessage } from '/@/hooks/web/useMessage';
+  // const { message } = useMessage();
+
+  interface ItemConfigFormDrawerProps {
+    config: DraggableItemConfig | undefined;
+  }
+  const props = defineProps<ItemConfigFormDrawerProps>();
+  const formValue = reactive<DraggableItemConfig>(props.config || DEFAULT_DRAGGABLE_ITEM_CONFIG);
+
+  watch([props], () => {
+    console.log('----watch---', props);
+    Object.keys(formValue).forEach((t) => {
+      formValue[t] = props.config[t];
+    });
+  });
+
+  const emits = defineEmits<{ (e: 'save', value: DraggableItemConfig) }>();
+
   const formRef = ref<FormInstance>();
-  const formValue = reactive<DraggableItemConfig>(DEFAULT_DRAGGABLE_ITEM_CONFIG);
-  const formItems = inject<Ref<DraggableItemProps[]>>(FORM_LIST_PROVIDE_KEY);
   const remote = ref(false); // true：动态数据 false ：静态数据
   const dialogShow = ref(false);
-
-  const onOpen = (id: string) => {
-    const item = formItems.value.find((t) => t.id == id);
-    Object.keys(item).forEach((t) => {
-      console.log('-----------t--------------', t);
-      formValue[t] = item[t];
-    });
-    console.log('-----------onOpen------------', formValue);
+  const onOpen = () => {
     dialogShow.value = true;
   };
-
   const onSave = (form: FormInstance) => {
+    console.log('-----------onSave-------------', unref(formValue));
     form.validate((valid, fields) => {
       if (valid) {
-        console.log('-----------onSave formValue------------', formValue);
-        const index = formItems.value.findIndex((t) => t.id == formValue.id);
-        formItems.value.splice(index, 1, { ...formValue });
-        dialogShow.value = false;
-        console.log('-----------onSave fields------------', fields);
-        console.log('-----------onSave formItems------------', formItems);
+        emits('save', unref(formValue));
       } else {
-        message('。。。');
+        console.log('-----------onSave-------------', valid, fields);
       }
     });
   };

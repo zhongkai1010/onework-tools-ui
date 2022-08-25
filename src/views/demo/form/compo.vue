@@ -28,17 +28,17 @@
         >
           <template #item="{ element }: { element: DraggableItemConfig, index: number }">
             <draggable-item
-              :id="element.id"
               :model-value="formConfigValue[element.name]"
+              :config="element"
+              @set="onSetItem"
               @update:model-value="(value) => (formConfigValue[element.name] = value)"
-              @set="(id) => formItemDrawerRef.open(id)"
             />
           </template>
         </draggable>
       </el-form>
     </el-card>
-    <form-config-drawer ref="formConfigDrawerRef" />
-    <form-item-config-drawer ref="formItemDrawerRef" />
+    <form-config-form-drawer ref="formConfigDrawerRef" />
+    <item-config-form-drawer ref="formItemDrawerRef" :config="currentItem" @save="onSaveItem" />
   </page-view>
 </template>
 
@@ -46,20 +46,22 @@
   import draggable from 'vuedraggable';
   import DraggableItem from './components/DraggableItem.vue';
   import ComponentList from './components/ComponentList.vue';
-  import FormConfigDrawer from './components/FormConfigDrawer.vue';
-  import FormItemConfigDrawer from './components/FormItemConfigDrawer.vue';
-  import { buildUUID } from '/@/utils/uuid';
+  import FormConfigFormDrawer from './components/FormConfigFormDrawer.vue';
+  import ItemConfigFormDrawer from './components/ItemConfigFormDrawer.vue';
 
   import {
     DraggableItemConfig,
     FormConfigDrawerInstance,
     FormConfigType,
     FormItemDrawerInstance,
+    DEFAULT_DRAGGABLE_ITEM_CONFIG,
     FORM_LIST_PROVIDE_KEY,
   } from './types';
+  import _ from 'lodash';
 
   const formConfigDrawerRef = ref<FormConfigDrawerInstance>();
   const formItemDrawerRef = ref<FormItemDrawerInstance>();
+  const currentItem = ref<DraggableItemConfig | undefined>();
 
   const formConfig = computed<FormConfigType>(() => {
     if (formConfigDrawerRef.value != null) {
@@ -75,23 +77,25 @@
       };
     }
   });
-  const formConfigValue = reactive<FormConfigType>({
-    gutter: 20,
-    labelWidth: 120,
-    labelPosition: 'top',
-    size: 'default',
-    justify: 'start',
-    align: 'middle',
+  const formConfigValue = reactive({
+    name: 'test',
   });
-  const formItems = ref<DraggableItemConfig[]>([
-    {
-      id: buildUUID(),
-      label: '文本框',
-      name: 'default',
-      span: 6,
-      component: 'input',
-    },
-  ]);
+
+  const formItems = ref<DraggableItemConfig[]>([DEFAULT_DRAGGABLE_ITEM_CONFIG]);
+
+  const onSetItem = (id) => {
+    const config = toRaw(formItems.value).find((t) => t.id == id);
+    if (config) {
+      currentItem.value = { ...config };
+      formItemDrawerRef.value.open();
+    } else {
+      throw new Error(`not fond item by id ${id}`);
+    }
+  };
+  const onSaveItem = (value: DraggableItemConfig) => {
+    const index = formItems.value.findIndex((t) => t.id == value.id);
+    formItems.value.splice(index, 1, value);
+  };
   const log = () => {
     console.log(formItems.value);
   };

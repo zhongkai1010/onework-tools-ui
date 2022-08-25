@@ -1,21 +1,21 @@
 <template>
-  <el-col :span="formProps.span" class="item-container">
+  <el-col :span="props.config.span" class="item-container">
     <el-form-item
-      :label="formProps.label"
-      :prop="formProps.name"
-      :required="formProps.required"
-      :rules="formProps.formRules"
-      :label-width="formProps.labelWidth"
+      :label="props.config.label"
+      :prop="props.config.name"
+      :required="props.config.required"
+      :rules="props.config.formRules"
+      :label-width="props.config.labelWidth"
     >
       <form-item
-        :props="formProps.props"
-        :component="formProps.component"
+        :props="props.config.props"
+        :component="props.config.component"
         :model-value="props.modelValue"
         @update:model-value="(value) => $emit('update:modelValue', value)"
       />
     </el-form-item>
     <div class="tool">
-      <iconify-icon icon="ant-design:setting-outlined" @click="emits('set', props.id)" />
+      <iconify-icon icon="ant-design:setting-outlined" @click="emits('set', props.config.id)" />
       <iconify-icon icon="ant-design:copy-outlined" @click="onCopy" />
       <iconify-icon icon="ant-design:delete-outlined" @click="onRemove" />
     </div>
@@ -25,21 +25,18 @@
 <script setup lang="ts">
   import _ from 'lodash';
   import { Ref } from 'vue';
-  import { DraggableItemProps } from '../types';
+  import { DraggableItemConfig, DraggableItemProps } from '../types';
   import { buildUUID } from '/@/utils/uuid';
 
   const props = defineProps<{
     modelValue: any;
-    id: string;
+    config: DraggableItemConfig;
   }>();
   const emits = defineEmits<{
     (e: 'set', value: string);
   }>();
 
   const formItems = inject<Ref<DraggableItemProps[]>>('formItems');
-  const formProps = computed(() => {
-    return formItems.value.find((t) => t.id == props.id);
-  });
 
   // const formItemWidth = computed(() => {
   //   const width = formProps.value.width;
@@ -52,14 +49,14 @@
   // });
 
   const onCopy = () => {
-    const newItem: DraggableItemProps = _.defaultsDeep({}, formProps.value);
+    const newItem: DraggableItemProps = _.defaultsDeep({}, props.config);
     newItem.id = buildUUID();
     newItem.name = buildUUID();
     formItems.value.push(newItem);
   };
 
   const onRemove = () => {
-    const index = formItems.value.findIndex((t) => t.id == props.id);
+    const index = formItems.value.findIndex((t) => t.id == props.config.id);
     formItems.value.splice(index, 1);
   };
 </script>

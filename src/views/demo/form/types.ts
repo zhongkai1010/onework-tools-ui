@@ -17,18 +17,18 @@ export interface FormConfigDrawerInstance {
 }
 
 export interface FormItemDrawerInstance {
-  open: (id: string) => void;
+  open: () => void;
 }
 
 export interface DraggableItemConfig {
-  id?: string;
+  id: string;
   component: FormComponent;
   name: string;
   label: string;
   placeholder?: string;
   span?: number;
-  labelWidth?: number;
-  width?: number;
+  labelWidth?: number | string;
+  width?: number | string;
   defaultValue?: any;
   props?: Recordable<any> & {
     options?: FormItemOption[];
@@ -44,7 +44,12 @@ export interface DraggableItemConfig {
   };
   showLabel?: boolean;
   required?: boolean;
-  formRules?: { pattern: string; message: string }[];
+  formRules?: FormRulesValueType[];
+}
+
+export interface FormRulesValueType {
+  pattern: string;
+  message: string;
 }
 
 export type DraggableItemProps = DraggableItemConfig;
@@ -54,13 +59,18 @@ export const FORM_LIST_PROVIDE_KEY = 'formItems';
 export const DEFAULT_DRAGGABLE_ITEM_CONFIG: DraggableItemConfig = {
   id: buildUUID(),
   component: 'input',
-  name: '',
-  label: '',
+  name: 'name',
+  label: '表单名称',
+  placeholder: '请输入表单名称!',
+  labelWidth: '120px',
+  width: '90%',
+  defaultValue: 'value',
+  span: 6,
   props: {
-    options: [] as FormItemOption[],
+    options: [],
     remote: {
-      method: 'get',
       url: '',
+      method: 'get',
       labelKey: 'label',
       valueKey: 'value',
       childerKey: 'children',
