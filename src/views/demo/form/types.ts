@@ -20,8 +20,30 @@ export interface FormItemDrawerInstance {
   open: () => void;
 }
 
+export interface FormItemComponentConfig {
+  label: string;
+  key: string;
+  component: FormComponent;
+  value?: any;
+  props?: FormItemPropsConfig;
+}
+export interface FormItemRemoteConfig {
+  url: string;
+  method: 'post' | 'get';
+  labelKey: string;
+  valueKey: string;
+  childerKey?: string;
+}
+
+export interface FormItemPropsConfig extends Recordable<any> {
+  options?: FormItemOption[];
+  remote?: FormItemRemoteConfig;
+  readonly?: boolean;
+  disabled?: boolean;
+}
+
 export interface DraggableItemConfig {
-  id: string;
+  id?: string;
   component: FormComponent;
   name: string;
   label: string;
@@ -30,28 +52,17 @@ export interface DraggableItemConfig {
   labelWidth?: number | string;
   width?: number | string;
   defaultValue?: any;
-  props?: Recordable<any> & {
-    options?: FormItemOption[];
-    remote?: {
-      url: string;
-      method: 'post' | 'get';
-      labelKey: string;
-      valueKey: string;
-      childerKey?: string;
-    };
-    readonly?: boolean;
-    disabled?: boolean;
-  };
+  props?: FormItemPropsConfig;
   showLabel?: boolean;
   required?: boolean;
-  formRules?: FormRulesValueType[];
+  formRules?: FormItemRuleType[];
+  dataType?: 'all' | 'static' | 'dynamic' | 'none';
+  componentConfig?: FormItemComponentConfig[];
 }
-
-export interface FormRulesValueType {
+export interface FormItemRuleType {
   pattern: string;
   message: string;
 }
-
 export type DraggableItemProps = DraggableItemConfig;
 
 export const FORM_LIST_PROVIDE_KEY = 'formItems';
@@ -60,27 +71,47 @@ export const DEFAULT_DRAGGABLE_ITEM_CONFIG: DraggableItemConfig = {
   id: buildUUID(),
   component: 'input',
   name: 'name',
-  label: '表单名称',
-  placeholder: '请输入表单名称!',
+  label: '文本框',
+  placeholder: '请输入用户名!',
+  span: 6,
   labelWidth: '120px',
   width: '90%',
   defaultValue: 'value',
-  span: 6,
   props: {
-    options: [],
-    remote: {
-      url: '',
-      method: 'get',
-      labelKey: 'label',
-      valueKey: 'value',
-      childerKey: 'children',
-    },
     readonly: false,
     disabled: false,
   },
   showLabel: true,
   required: false,
-  formRules: [],
+  formRules: [
+    {
+      pattern: '^[A-Za-z0-9]+$',
+      message: '请输入正确用户名称！',
+    },
+  ],
+  dataType: 'all',
+  componentConfig: [
+    {
+      label: '最大输入长度',
+      key: 'maxlength',
+      component: 'input',
+    },
+    {
+      label: '最小输入长度',
+      key: 'minlength',
+      component: 'input',
+    },
+    {
+      label: '是否可清空',
+      key: 'clearable',
+      component: 'switch',
+    },
+    {
+      label: '显示密码图标',
+      key: 'show-password',
+      component: 'switch',
+    },
+  ],
 };
 
 export interface FormComponentDrawerState extends Recordable<any> {

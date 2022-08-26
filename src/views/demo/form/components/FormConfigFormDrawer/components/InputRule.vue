@@ -1,10 +1,11 @@
 <template>
   <div class="rule-container">
+    <el-divider content-position="left">验证规则</el-divider>
     <div class="item" v-for="(rule, index) in props.modelValue" :key="index">
-      <el-form-item label="验证表达式" :prop="`${props.prop}.index.pattern`">
+      <el-form-item label="验证表达式" prop="props.formRules.index.pattern">
         <el-input v-model="rule.pattern" :required="true" />
       </el-form-item>
-      <el-form-item label="错误消息" :prop="`${props.prop}.index.message`">
+      <el-form-item label="错误消息" prop="props.formRules.index.message">
         <el-input v-model="rule.message" :required="true" />
       </el-form-item>
       <div class="close" @click="onCloseRule(index)">
@@ -21,28 +22,22 @@
 </template>
 
 <script setup lang="ts">
+  import { FormItemRuleType } from '/@/views/demo/form/types';
   const props = defineProps<{
-    prop: string;
-    modelValue: { pattern: string; message: string }[] | undefined;
+    modelValue: FormItemRuleType[] | undefined;
   }>();
 
   const list = ref(props.modelValue ?? []);
-
-  const emits = defineEmits<{
-    (e: 'update:modelValue', value: { pattern: string; message: string }[]): void;
-  }>();
 
   const onAddRule = () => {
     list.value.push({
       pattern: '',
       message: '',
     });
-    emits('update:modelValue', list.value);
   };
 
   const onCloseRule = (index) => {
     list.value.splice(index, 1);
-    emits('update:modelValue', list.value);
   };
 </script>
 
@@ -64,7 +59,7 @@
       color: var(--el-color-error);
     }
     .button {
-      margin: 20px;
+      margin: 10px;
     }
   }
 </style>

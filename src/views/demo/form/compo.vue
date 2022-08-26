@@ -47,7 +47,7 @@
   import DraggableItem from './components/DraggableItem.vue';
   import ComponentList from './components/ComponentList.vue';
   import FormConfigFormDrawer from './components/FormConfigFormDrawer.vue';
-  import ItemConfigFormDrawer from './components/ItemConfigFormDrawer.vue';
+  import ItemConfigFormDrawer from './components/FormConfigFormDrawer/index.vue';
 
   import {
     DraggableItemConfig,
