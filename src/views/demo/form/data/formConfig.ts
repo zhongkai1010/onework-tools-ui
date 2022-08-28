@@ -1,8 +1,15 @@
-import { DEFAULT_DRAGGABLE_ITEM_CONFIG, DraggableItemConfig } from '../types';
+import _ from 'lodash';
+import {
+  DefaultFormItemComponentConfig,
+  DEFAULT_DRAGGABLE_ITEM_CONFIG,
+  DraggableItemConfig,
+  FormItemConfig,
+} from '../types';
 import { ConfigFormItemProps } from '/@/components/ConfigForm';
 
-function initDefaultValues(config: DraggableItemConfig) {
-  return { ...DEFAULT_DRAGGABLE_ITEM_CONFIG, ...config };
+function initDefaultValues(config: DefaultFormItemComponentConfig): FormItemConfig {
+  _.defaultsDeep(config, DEFAULT_DRAGGABLE_ITEM_CONFIG);
+  return config as FormItemConfig;
 }
 
 export default [
@@ -15,6 +22,10 @@ export default [
         label: 'Input 输入框',
         component: 'input',
         dataType: 'none',
+        props: {
+          options: [],
+        },
+        formRules: [],
         componentConfig: [
           {
             label: '最大输入长度',
@@ -39,25 +50,10 @@ export default [
         ],
       }),
       initDefaultValues({
-        name: 'input_number',
-        label: 'Input Number 数字输入框',
-        component: 'input_number',
-      }),
-      initDefaultValues({
         name: 'radio',
         label: 'Radio 单选框',
         component: 'radio',
-        props: {
-          options: [
-            { label: 'A', value: 'a' },
-            { label: 'B', value: 'b' },
-          ],
-        },
-      }),
-      initDefaultValues({
-        name: 'checkbox',
-        label: 'Checkbox 多选框',
-        component: 'checkbox',
+        dataType: 'static',
         props: {
           options: [
             { label: 'A', value: 'a' },
@@ -69,12 +65,31 @@ export default [
         name: 'select',
         label: 'Select 选择器',
         component: 'select',
+        dataType: 'dynamic',
         props: {
           options: [
             { label: 'A', value: 'a' },
             { label: 'B', value: 'b' },
           ],
         },
+      }),
+      initDefaultValues({
+        name: 'checkbox',
+        label: 'Checkbox 多选框',
+        component: 'checkbox',
+        dataType: 'all',
+        props: {
+          options: [
+            { label: 'A', value: 'a' },
+            { label: 'B', value: 'b' },
+          ],
+        },
+      }),
+
+      initDefaultValues({
+        name: 'input_number',
+        label: 'Input Number 数字输入框',
+        component: 'input_number',
       }),
       initDefaultValues({
         name: 'slider',

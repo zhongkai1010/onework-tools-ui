@@ -1,7 +1,7 @@
 <template>
   <div class="rule-container">
     <el-divider content-position="left">验证规则</el-divider>
-    <div class="item" v-for="(rule, index) in props.modelValue" :key="index">
+    <div class="item" v-for="(rule, index) in formValue.formRules" :key="index">
       <el-form-item label="验证表达式" prop="props.formRules.index.pattern">
         <el-input v-model="rule.pattern" :required="true" />
       </el-form-item>
@@ -22,22 +22,30 @@
 </template>
 
 <script setup lang="ts">
-  import { FormItemRuleType } from '/@/views/demo/form/types';
+  import { DraggableItemConfig } from '/@/views/demo/form/types';
   const props = defineProps<{
-    modelValue: FormItemRuleType[] | undefined;
+    modelValue: DraggableItemConfig;
   }>();
-
-  const list = ref(props.modelValue ?? []);
-
+  const formValue = reactive(props.modelValue);
+  // const initProps = () => {
+  //   if (!formValue.formRules) {
+  //     formValue.formRules = [];
+  //   } else {
+  //     console.log('object');
+  //     const index = formValue.formRules.findIndex((t) => !t.message);
+  //     formValue.formRules.splice(index, 1);
+  //   }
+  // };
+  // initProps();
   const onAddRule = () => {
-    list.value.push({
+    formValue.formRules.push({
       pattern: '',
       message: '',
     });
   };
 
   const onCloseRule = (index) => {
-    list.value.splice(index, 1);
+    formValue.formRules.splice(index, 1);
   };
 </script>
 

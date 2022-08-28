@@ -25,11 +25,12 @@
 
 <script setup lang="ts">
   import { FormItemRemoteConfig } from '/@/views/demo/form/types';
-
+  import { log } from '/@/utils/log';
   const props = defineProps<{
-    modelValue: FormItemRemoteConfig | undefined;
+    modelValue: FormItemRemoteConfig;
   }>();
   const formValue = reactive(props.modelValue);
+  log('remotoe', formValue);
 </script>
 
 <style scoped></style>

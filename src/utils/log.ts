@@ -7,3 +7,7 @@ export function warn(message: string) {
 export function error(message: string) {
   throw new Error(`[${projectName} error]:${message}`);
 }
+
+export function log(key, ...params) {
+  console.log(`----------------- ${key} ---------------------`, params);
+}

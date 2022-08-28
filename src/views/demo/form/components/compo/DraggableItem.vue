@@ -25,7 +25,7 @@
 <script setup lang="ts">
   import _ from 'lodash';
   import { Ref } from 'vue';
-  import { DraggableItemConfig, DraggableItemProps } from '../types';
+  import { DraggableItemConfig } from '/@/views/demo/form/types';
   import { buildUUID } from '/@/utils/uuid';
 
   const props = defineProps<{
@@ -36,20 +36,10 @@
     (e: 'set', value: string);
   }>();
 
-  const formItems = inject<Ref<DraggableItemProps[]>>('formItems');
-
-  // const formItemWidth = computed(() => {
-  //   const width = formProps.value.width;
-  //   if (!width) return 'auto';
-  //   if (typeof width == 'number') {
-  //     return `${width}px`;
-  //   } else {
-  //     return width;
-  //   }
-  // });
+  const formItems = inject<Ref<DraggableItemConfig[]>>('formItems');
 
   const onCopy = () => {
-    const newItem: DraggableItemProps = _.defaultsDeep({}, props.config);
+    const newItem: DraggableItemConfig = _.defaults({}, props.config);
     newItem.id = buildUUID();
     newItem.name = buildUUID();
     formItems.value.push(newItem);

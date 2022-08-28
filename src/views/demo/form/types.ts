@@ -1,6 +1,5 @@
 import { Ref } from 'vue';
 import { FormComponent, FormItemOption } from '/@/components/FormItem';
-import { buildUUID } from '/@/utils/uuid';
 
 export interface FormConfigType {
   gutter: number;
@@ -17,16 +16,33 @@ export interface FormConfigDrawerInstance {
 }
 
 export interface FormItemDrawerInstance {
-  open: () => void;
+  open: (config: DraggableItemConfig) => void;
 }
 
 export interface FormItemComponentConfig {
   label: string;
-  key: string;
   component: FormComponent;
   value?: any;
   props?: FormItemPropsConfig;
 }
+
+export interface FormItemConfig {
+  component: FormComponent;
+  name: string;
+  label: string;
+  placeholder?: string;
+  span?: number;
+  labelWidth?: number | string;
+  width?: number | string;
+  defaultValue?: any;
+  props: FormItemPropsConfig;
+  showLabel?: boolean;
+  required?: boolean;
+  formRules: FormItemRule[];
+  dataType: 'all' | 'static' | 'dynamic' | 'none';
+  componentConfig?: FormItemComponentConfig[];
+}
+
 export interface FormItemRemoteConfig {
   url: string;
   method: 'post' | 'get';
@@ -36,92 +52,51 @@ export interface FormItemRemoteConfig {
 }
 
 export interface FormItemPropsConfig extends Recordable<any> {
-  options?: FormItemOption[];
-  remote?: FormItemRemoteConfig;
+  options: FormItemOption[];
+  remote: FormItemRemoteConfig;
   readonly?: boolean;
   disabled?: boolean;
 }
-
-export interface DraggableItemConfig {
-  id?: string;
-  component: FormComponent;
-  name: string;
-  label: string;
-  placeholder?: string;
-  span?: number;
-  labelWidth?: number | string;
-  width?: number | string;
-  defaultValue?: any;
-  props?: FormItemPropsConfig;
-  showLabel?: boolean;
-  required?: boolean;
-  formRules?: FormItemRuleType[];
+export interface DefaultFormItemComponentConfig
+  extends Omit<FormItemConfig, 'props' | 'formRules' | 'dataType'> {
+  props?: Omit<FormItemPropsConfig, 'options'>;
+  formRules?: FormItemRule[];
   dataType?: 'all' | 'static' | 'dynamic' | 'none';
-  componentConfig?: FormItemComponentConfig[];
 }
-export interface FormItemRuleType {
+
+export interface FormItemRule {
   pattern: string;
   message: string;
 }
-export type DraggableItemProps = DraggableItemConfig;
+export interface DraggableItemConfig extends FormItemConfig {
+  id: string;
+}
 
 export const FORM_LIST_PROVIDE_KEY = 'formItems';
 
-export const DEFAULT_DRAGGABLE_ITEM_CONFIG: DraggableItemConfig = {
-  id: buildUUID(),
+export const DEFAULT_DRAGGABLE_ITEM_CONFIG: FormItemConfig = {
   component: 'input',
   name: 'name',
-  label: '文本框',
-  placeholder: '请输入用户名!',
+  label: '表单组件',
+  placeholder: undefined,
   span: 6,
-  labelWidth: '120px',
-  width: '90%',
-  defaultValue: 'value',
+  labelWidth: undefined,
+  width: undefined,
+  defaultValue: undefined,
   props: {
+    options: [],
+    remote: {
+      url: '',
+      method: 'get',
+      labelKey: 'lable',
+      valueKey: 'value',
+    },
     readonly: false,
     disabled: false,
   },
   showLabel: true,
   required: false,
-  formRules: [
-    {
-      pattern: '^[A-Za-z0-9]+$',
-      message: '请输入正确用户名称！',
-    },
-  ],
-  dataType: 'all',
-  componentConfig: [
-    {
-      label: '最大输入长度',
-      key: 'maxlength',
-      component: 'input',
-    },
-    {
-      label: '最小输入长度',
-      key: 'minlength',
-      component: 'input',
-    },
-    {
-      label: '是否可清空',
-      key: 'clearable',
-      component: 'switch',
-    },
-    {
-      label: '显示密码图标',
-      key: 'show-password',
-      component: 'switch',
-    },
-  ],
-};
-
-export interface FormComponentDrawerState extends Recordable<any> {
-  placeholder: boolean;
-  remote: 'all' | 'state' | 'dynamic' | 'none';
-}
-
-export const FormComponentConfig: Recordable<FormComponentDrawerState> = {
-  input: {
-    placeholder: true,
-    remote: 'none',
-  },
+  formRules: [],
+  dataType: 'none',
+  componentConfig: undefined,
 };

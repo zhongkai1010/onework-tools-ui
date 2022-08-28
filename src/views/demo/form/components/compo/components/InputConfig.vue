@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="props.modelValue.componentConfig">
     <el-divider content-position="left">组件配置</el-divider>
     <el-form-item
       v-for="config in props.modelValue.componentConfig"
