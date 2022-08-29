@@ -4,8 +4,8 @@ export default {
   axios: '异步请求',
   form: {
     form: '表单示例',
-    deploy: '配置表单',
-    component: '表单组件',
+    generate: '表单生成器',
+    designer: '表单设计器',
     group: '分组表单',
     step: '分步表单',
     custom: '自定义表单',

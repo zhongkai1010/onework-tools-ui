@@ -125,6 +125,10 @@
     const values = unref(cassVariables);
     setCssVariable(values);
   });
+
+  if (siteConfig.showTabs && pageState.selectTab) {
+    router.push(pageState.selectTab);
+  }
 </script>
 
 <style lang="scss" scoped>

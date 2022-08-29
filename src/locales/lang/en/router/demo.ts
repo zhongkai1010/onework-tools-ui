@@ -4,8 +4,8 @@ export default {
   axios: 'Asynchronous request',
   form: {
     form: 'Form example',
-    deploy: 'Configuration form',
-    component: 'form component',
+    generate: 'form generator',
+    designer: 'Form Designer',
     group: 'Group form',
     step: 'Step-by-step form',
     custom: 'custom form',
@@ -22,5 +22,5 @@ export default {
     leftRight: 'Navigation layout',
     upDown: 'Panel layout',
   },
-  edit: 'Code editor',
+  edit: 'Code Editor',
 };

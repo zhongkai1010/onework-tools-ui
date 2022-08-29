@@ -1,23 +1,13 @@
 <template>
-  <el-form
-    :model="formValues"
-    :label-position="props.labelPosition"
-    :label-width="props.labelWidth"
-    :hide-required-asterisk="false"
-    ref="formRef"
-  >
-    <el-row :gutter="props.gutter">
-      <el-col :span="item.span ?? 6" v-for="item in props.fields" :key="item.name">
-        <el-form-item
-          :label="item.label"
-          :required="item.required ?? false"
-          :prop="item.name"
-          :rules="item.rules"
-        >
+  <el-form v-bind="props" :model="formValue" ref="formRef">
+    <el-row :gutter="props.config.gutter">
+      <el-col :span="item.span ?? 6" v-for="item in props.config.fields" :key="item.name">
+        <el-form-item v-bind="item.props">
           <form-item
-            v-model="formValues[item.name]"
-            :component="item.component"
-            :props="item.props"
+            v-bind="item.component.props"
+            v-model="formValue[item.name]"
+            :component="item.component.component"
+            :config="item.component.config"
           />
         </el-form-item>
       </el-col>
@@ -28,20 +18,27 @@
 <script setup lang="ts">
   import { FormInstance } from 'element-plus';
   import { ConfigFormItemProps } from '..';
-
   import { getDefauleVlues } from '../helps';
+  import { log } from '/@/utils/log';
 
-  const formRef = ref<FormInstance>();
   const props = defineProps<{
-    gutter: number;
-    labelPosition: 'top' | 'left' | 'right';
-    labelWidth: string | number;
-    fields: ConfigFormItemProps[];
+    model?: Record<string, any>;
+    config: {
+      fields: ConfigFormItemProps[];
+      gutter?: number;
+      name: string;
+    };
   }>();
+  const formRef = ref<FormInstance>();
 
-  const formValues = ref(getDefauleVlues(props.fields));
+  const formValue = reactive(props.model ?? getDefauleVlues(props));
 
-  defineExpose({ formRef, formValues });
+  watch(formValue, () => {
+    log(`${props.config.name} config form value`, formValue);
+  });
+
+  const attrs = useAttrs();
+  log('config-form props', attrs, props);
 </script>
 
 <style scoped></style> -->

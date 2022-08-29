@@ -28,6 +28,7 @@
   import { pageStateStoreHook } from '/@/store/modules/pageState';
   import { tabStateStoreHook } from '/@/store/modules/tabState';
   import { permissionStateStoreHook } from '/@/store/modules/permissionState';
+  import { log } from '/@/utils/log';
   import { LOGIN_PAGE } from '/@/router/constant';
   import { useRouter } from 'vue-router';
 
@@ -46,20 +47,23 @@
 
   const onClickCommand = (command: string) => {
     if (command === 'quit') {
-      const userState = userStateStoreHook();
-      const pageState = pageStateStoreHook();
-      const tabStatee = tabStateStoreHook();
-      const permissionState = permissionStateStoreHook();
-      pageState.setLoading('page', true);
-      userState
+      pageStateStoreHook().setLoading('page', true);
+      userStateStoreHook()
         .userLogout()
         .then(() => {
-          tabStatee.clearAll();
-          permissionState.clearAll();
+          tabStateStoreHook().clearAll();
+          log('clear tabStatee');
+
+          permissionStateStoreHook().clearAll();
+          log('clear permission');
+
+          pageStateStoreHook().clearAll();
+          log('clear page');
+
           router.push(LOGIN_PAGE.path);
         })
         .finally(() => {
-          pageState.setLoading('page', false);
+          pageStateStoreHook().setLoading('page', false);
         });
     }
   };

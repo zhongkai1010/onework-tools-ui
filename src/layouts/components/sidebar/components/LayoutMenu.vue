@@ -60,7 +60,10 @@
       color: var(--el-color-white) !important;
     }
   }
-
+  .el-menu--popup .el-sub-menu:hover {
+    background-color: var(--el-color-primary) !important;
+    color: var(--el-color-white) !important;
+  }
   .el-menu--popup {
     padding: 0px;
   }

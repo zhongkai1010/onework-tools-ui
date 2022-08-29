@@ -30,15 +30,15 @@ export default [
         component: EMPTY_LAYOUT,
         children: [
           {
-            name: 'demo_form_deploy',
-            path: 'deploy',
-            meta: { title: t('router.demo.form.deploy'), icon: 'bi:layout-wtf' },
-            component: () => import('/@/views/demo/form/deploy.vue'),
+            name: 'demo_form_generate',
+            path: 'generate',
+            meta: { title: t('router.demo.form.generate'), icon: 'bi:layout-wtf' },
+            component: () => import('/@/views/demo/form/generate.vue'),
           },
           {
-            name: 'demo_form_compo',
-            path: 'compo',
-            meta: { title: t('router.demo.form.component'), icon: 'bi:layout-wtf' },
+            name: 'demo_form_designer',
+            path: 'designer',
+            meta: { title: t('router.demo.form.designer'), icon: 'bi:layout-wtf' },
             component: () => import('/@/views/demo/form/compo.vue'),
           },
           {

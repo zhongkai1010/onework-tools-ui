@@ -27,7 +27,7 @@ export const defaultTabStateStore: TabStateType = {
 
 const tabStateStore = defineStore('tabs-state', {
   state(): TabStateType {
-    return defaultTabStateStore;
+    return { ...defaultTabStateStore };
   },
   actions: {
     addTab(path: string) {

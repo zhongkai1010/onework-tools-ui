@@ -43,7 +43,7 @@ export const defaultPageState: PageStateType = {
 
 const pageStateStore = defineStore('page-state', {
   state: (): PageStateType => {
-    return defaultPageState;
+    return { ...defaultPageState };
   },
   getters: {
     dynamicCssVariables(): DynamicCssVariablesType {
@@ -133,6 +133,11 @@ const pageStateStore = defineStore('page-state', {
         this.selectTab = path;
       }
       router.push(this.selectTab);
+    },
+    clearAll() {
+      Object.keys(defaultPageState).forEach((t) => {
+        this[t] = defaultPageState[t];
+      });
     },
   },
   persist: true,

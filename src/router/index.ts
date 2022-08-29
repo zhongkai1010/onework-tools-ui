@@ -9,7 +9,7 @@ import { useI18n } from '/@/hooks/web/useI18n';
 import { pageStateStoreHook } from '/@/store/modules/pageState';
 import { userStateStoreHook } from '/@/store/modules/userState';
 import { siteConfigStoreHook } from '/@/store/modules/globalConfig';
-
+import { log } from '/@/utils/log';
 // nprogress
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
@@ -36,10 +36,10 @@ const router = createRouter({
  * 页面头部加载进度条
  */
 router.beforeEach((to, from, next) => {
-  const log = `----------------start load route  ${dayjs().format('YYYY-MM-DD HH:mm:ss')} from:"${
+  const info = `start load route  ${dayjs().format('YYYY-MM-DD HH:mm:ss')} from:"${
     from.fullPath
-  }" to:"${to.fullPath}"----------------`;
-  console.log(log);
+  }" to:"${to.fullPath}"`;
+  log(info);
 
   const { login } = userStateStoreHook();
   const { showProgress } = siteConfigStoreHook();
@@ -66,10 +66,10 @@ router.beforeEach((to, from, next) => {
   }
 });
 router.afterEach((to, from) => {
-  const log = `----------------end load route ${dayjs().format('YYYY-MM-DD HH:mm:ss')} from:"${
+  const info = `end load route ${dayjs().format('YYYY-MM-DD HH:mm:ss')} from:"${
     from.fullPath
-  }" to:"${to.fullPath}"----------------`;
-  console.log(log);
+  }" to:"${to.fullPath}"`;
+  log(info);
 
   const { t } = useI18n();
   const pageState = pageStateStoreHook();
@@ -85,7 +85,7 @@ router.afterEach((to, from) => {
 });
 
 router.onError((error: any) => {
-  console.log(`-----------route end error---------------`, error);
+  log(`route end error`, error);
 
   router.push({ name: LOGIN_PAGE.name });
 });

@@ -43,13 +43,13 @@
   import { json, jsonParseLinter } from '@codemirror/lang-json';
   import { linter } from '@codemirror/lint';
   import { useMessage } from '/@/hooks/web/useMessage';
-  import defaultConfig from './data/defaultConfig';
+  import formConfig from './data/generateConfig';
   import { FormInstance } from 'element-plus';
 
   const { message, alert } = useMessage();
   const log = console.log;
-  const code = ref(JSON.stringify(defaultConfig, null, '\t'));
-  const config = ref(defaultConfig);
+  const code = ref(JSON.stringify(formConfig, null, '\t'));
+  const config = ref(formConfig);
   const show = ref(false);
 
   const dynamicFormRef = ref<{
@@ -90,8 +90,8 @@
   };
 
   const onClickResetCode = () => {
-    config.value = defaultConfig;
-    code.value = JSON.stringify(defaultConfig, null, '\t');
+    config.value = formConfig;
+    code.value = JSON.stringify(formConfig, null, '\t');
   };
 </script>
 

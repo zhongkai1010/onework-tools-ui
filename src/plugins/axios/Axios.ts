@@ -8,6 +8,7 @@ import { isFunction } from '/@/utils/is';
 import { cloneDeep } from 'lodash-es';
 import { ContentTypeEnum } from '/@/enums/httpEnum';
 import { RequestEnum } from '/@/enums/httpEnum';
+import { log } from '/@/utils/log';
 
 export * from './axiosTransform';
 
@@ -192,7 +193,7 @@ export class Axios {
   }
 
   request<T = any>(config: AxiosRequestConfig, options?: RequestOptions): Promise<T> {
-    console.log('----------------start axios-----------------', config);
+    log('start axios', config);
 
     let conf: CreateAxiosOptions = cloneDeep(config);
     const transform = this.getTransform();
@@ -213,7 +214,7 @@ export class Axios {
       this.axiosInstance
         .request<any, AxiosResponse<Result>>(conf)
         .then((res: AxiosResponse<Result>) => {
-          console.log('----------------end axios-----------------', res);
+          log('end axios', res);
           if (transformRequestHook && isFunction(transformRequestHook)) {
             try {
               const ret = transformRequestHook(res, opt);
@@ -226,7 +227,7 @@ export class Axios {
           resolve(res as unknown as Promise<T>);
         })
         .catch((e: Error | AxiosError) => {
-          console.log('----------------error axios-----------------', e);
+          console.log('error axios', e);
           if (requestCatchHook && isFunction(requestCatchHook)) {
             reject(requestCatchHook(e, opt));
             return;

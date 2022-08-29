@@ -19,7 +19,7 @@ export const defaultUserStateStore: UserStateType = {
 
 const userStateStore = defineStore('user-state', {
   state: () => {
-    return _.cloneDeep(defaultUserStateStore);
+    return { ...defaultUserStateStore };
   },
   actions: {
     setToken(token: string) {
