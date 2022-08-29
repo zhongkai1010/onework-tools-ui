@@ -4,187 +4,321 @@ export default {
   labelPosition: 'top',
   labelWidth: '80px',
   config: {
-    name: '',
+    name: 'defalut',
     gutter: 20,
     fields: [
       {
-        label: '表单名称',
-        name: 'name',
+        name: 'input',
         span: 24,
-        defaultValue: '',
-        component: 'input',
-        required: true,
-      },
-      {
-        label: '栅栏间隔',
-        name: 'gutter',
-        span: 12,
-        component: 'slider',
-        defaultValue: 20,
         props: {
-          min: 1,
-          max: 24,
+          prop: 'input',
+          label: '文本框',
+          required: true,
+        },
+        component: {
+          component: 'el-input',
         },
       },
       {
-        label: '标签对其方式',
-        name: 'labelPosition',
-        span: 12,
-        component: 'radio',
-        defaultValue: 'top',
-        options: [
-          {
-            label: '顶部',
-            value: 'top',
-          },
-          {
-            label: '左侧',
-            value: 'left',
-          },
-          {
-            label: '右侧',
-            value: 'right',
-          },
-        ],
-      },
-      {
-        label: '表单3',
-        name: 'name3',
-        span: 12,
-        component: 'checkbox',
-        options: [
-          {
-            label: '选项1',
-            value: 'value1',
-          },
-          {
-            label: '选项2',
-            value: 'value2',
-          },
-          {
-            label: '选项3',
-            value: 'value3',
-          },
-          {
-            label: '选项4',
-            value: 'value4',
-          },
-        ],
-      },
-      {
-        label: '表单4',
-        name: 'name4',
-        span: 12,
-        component: 'color_picker',
-      },
-      {
-        label: '表单5',
-        name: 'name5',
-        span: 12,
-        component: 'date_picker',
-        defaultValue: '2022-02-01',
-      },
-      {
-        label: '表单6',
-        name: 'name6',
-        span: 12,
-        component: 'date_time_picker',
-      },
-      {
-        label: '表单7',
-        name: 'name7',
-        span: 12,
-        component: 'input_number',
-      },
-      {
-        label: '表单8',
-        name: 'name8',
-        span: 12,
-        component: 'radio',
-        options: [
-          {
-            label: '选项1',
-            value: 'value1',
-          },
-          {
-            label: '选项2',
-            value: 'value2',
-          },
-          {
-            label: '选项3',
-            value: 'value3',
-          },
-          {
-            label: '选项4',
-            value: 'value4',
-          },
-        ],
-      },
-      {
-        label: '表单9',
-        name: 'name9',
-        span: 12,
-        component: 'rate',
-      },
-      {
-        label: '表单10',
-        name: 'name10',
-        span: 12,
-        component: 'select',
-        options: [
-          {
-            label: '选项1',
-            value: 'value1',
-          },
-          {
-            label: '选项2',
-            value: 'value2',
-          },
-          {
-            label: '选项3',
-            value: 'value3',
-          },
-          {
-            label: '选项4',
-            value: 'value4',
-          },
-        ],
-      },
-      {
-        label: '表单12',
-        name: 'name12',
-        span: 12,
-        component: 'slider',
-      },
-      {
-        label: '表单13',
-        name: 'name13',
-        span: 12,
-        component: 'switch',
-      },
-      {
-        label: '表单14',
-        name: 'name14',
-        span: 12,
-        component: 'time_picker',
-      },
-      {
-        label: '表单15',
-        name: 'name15',
-        span: 12,
-        component: 'time_select',
-      },
-      {
-        label: '表单16',
-        name: 'name16',
+        name: 'autocomplete',
         span: 24,
-        component: 'transfer',
+        props: {
+          prop: 'autocomplete',
+          label: '自动补全输入框',
+          required: true,
+        },
+        component: {
+          component: 'el-autocomplete',
+          config: {
+            options: [
+              {
+                label: '选项1',
+                value: 'value1',
+              },
+              {
+                label: '选项2',
+                value: 'value2',
+              },
+              {
+                label: '选项3',
+                value: 'value3',
+              },
+              {
+                label: '选项4',
+                value: 'value4',
+              },
+            ],
+          },
+        },
       },
       {
-        label: '表单17',
-        name: 'name17',
+        name: 'cascader',
         span: 24,
-        component: 'upload',
+        props: {
+          prop: 'cascader',
+          label: '级联选择器',
+          required: true,
+        },
+        component: {
+          component: 'el-cascader',
+          config: {
+            options: [
+              {
+                label: '选项1',
+                value: 'value1',
+              },
+              {
+                label: '选项2',
+                value: 'value2',
+              },
+              {
+                label: '选项3',
+                value: 'value3',
+              },
+              {
+                label: '选项4',
+                value: 'value4',
+              },
+            ],
+          },
+        },
+      },
+      {
+        name: 'checkbox',
+        span: 24,
+        props: {
+          prop: 'checkbox',
+          label: '多选框',
+          required: true,
+        },
+        component: {
+          component: 'el-checkbox-group',
+          config: {
+            options: [
+              {
+                label: '选项1',
+                value: 'value1',
+              },
+              {
+                label: '选项2',
+                value: 'value2',
+              },
+              {
+                label: '选项3',
+                value: 'value3',
+              },
+              {
+                label: '选项4',
+                value: 'value4',
+              },
+            ],
+          },
+        },
+      },
+      {
+        name: 'color-picker',
+        span: 24,
+        props: {
+          prop: 'color-picker',
+          label: '颜色选择器',
+          required: true,
+        },
+        component: {
+          component: 'el-color-picker',
+          config: {
+            options: [
+              {
+                label: '选项1',
+                value: 'value1',
+              },
+              {
+                label: '选项2',
+                value: 'value2',
+              },
+              {
+                label: '选项3',
+                value: 'value3',
+              },
+              {
+                label: '选项4',
+                value: 'value4',
+              },
+            ],
+          },
+        },
+      },
+      {
+        name: 'date-picker',
+        span: 24,
+        props: {
+          prop: 'date-picker',
+          label: '日期选择器',
+          required: true,
+        },
+        component: {
+          component: 'el-date-picker',
+        },
+      },
+      {
+        name: 'input-number',
+        span: 24,
+        props: {
+          prop: 'input-number',
+          label: '数字输入框',
+          required: true,
+        },
+        component: {
+          component: 'el-input-number',
+        },
+      },
+      {
+        name: 'radio',
+        span: 24,
+        props: {
+          prop: 'radio',
+          label: '单选框',
+          required: true,
+        },
+        component: {
+          component: 'el-radio-group',
+          config: {
+            options: [
+              {
+                label: '选项1',
+                value: 'value1',
+              },
+              {
+                label: '选项2',
+                value: 'value2',
+              },
+              {
+                label: '选项3',
+                value: 'value3',
+              },
+              {
+                label: '选项4',
+                value: 'value4',
+              },
+            ],
+          },
+        },
+      },
+      {
+        name: 'rate',
+        span: 24,
+        props: {
+          prop: 'rate',
+          label: '评分',
+          required: true,
+        },
+        component: {
+          component: 'el-rate',
+        },
+      },
+      {
+        name: 'select',
+        span: 24,
+        props: {
+          prop: 'select',
+          label: '选择器',
+          required: true,
+        },
+        component: {
+          component: 'el-select',
+          config: {
+            options: [
+              {
+                label: '选项1',
+                value: 'value1',
+              },
+              {
+                label: '选项2',
+                value: 'value2',
+              },
+              {
+                label: '选项3',
+                value: 'value3',
+              },
+              {
+                label: '选项4',
+                value: 'value4',
+              },
+            ],
+          },
+        },
+      },
+      {
+        name: 'slider',
+        span: 24,
+        props: {
+          prop: 'slider',
+          label: '滑块',
+          required: true,
+        },
+        component: {
+          component: 'el-slider',
+        },
+      },
+      {
+        name: 'switch',
+        span: 24,
+        props: {
+          prop: 'switch',
+          label: '开关',
+          required: true,
+        },
+        component: {
+          component: 'el-switch',
+        },
+      },
+
+      {
+        name: 'time-picker',
+        span: 24,
+        props: {
+          prop: 'time-picker',
+          label: '时间选择器',
+          required: true,
+        },
+        component: {
+          component: 'el-time-picker',
+        },
+      },
+      {
+        name: 'time-select',
+        span: 24,
+        props: {
+          prop: 'time-select',
+          label: '时间选择',
+          required: true,
+        },
+        component: {
+          component: 'el-time-select',
+        },
+      },
+      {
+        name: 'transfer',
+        span: 24,
+        props: {
+          prop: 'transfer',
+          label: '穿梭框',
+          required: true,
+        },
+        component: {
+          component: 'el-transfer',
+        },
+      },
+      {
+        name: 'upload',
+        span: 24,
+        props: {
+          prop: 'upload',
+          label: '上传',
+          required: true,
+        },
+        component: {
+          component: 'el-upload',
+        },
       },
     ],
   },

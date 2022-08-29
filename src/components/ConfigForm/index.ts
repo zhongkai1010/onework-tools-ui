@@ -29,6 +29,7 @@ export interface ConfigFormItemProps {
     showMessage?: boolean;
     inlineMessage?: boolean;
     size?: 'large' | 'default' | 'small';
+    trigger?: 'blur' | 'change';
   };
   component: { props?: Recordable<any> } & FormItemProps;
 }

@@ -6,17 +6,10 @@
           <span>自定义表单</span>
           <el-button type="primary" @click="show = true">配置代码</el-button>
           <el-button @click="onClickSubmitForm">验证表单</el-button>
-          <el-button @click="onClickResetForm">重置表单</el-button>
+          <el-button @click="configFormRef.formRef.resetFields()">重置表单</el-button>
         </div>
       </template>
-      <config-form
-        :name="config.name"
-        :gutter="config.gutter"
-        :labelPosition="config.labelPosition"
-        :labelWidth="config.labelWidth"
-        :fields="config.fields"
-        ref="dynamicFormRef"
-      />
+      <config-form v-bind="formConfig" ref="configFormRef" :model="formValue" />
     </el-card>
     <el-drawer v-model="show" size="50%" title="配置代码">
       <codemirror
@@ -45,25 +38,20 @@
   import { useMessage } from '/@/hooks/web/useMessage';
   import formConfig from './data/generateConfig';
   import { FormInstance } from 'element-plus';
-
+  import { log } from '/@/utils/log';
   const { message, alert } = useMessage();
-  const log = console.log;
+
   const code = ref(JSON.stringify(formConfig, null, '\t'));
   const config = ref(formConfig);
   const show = ref(false);
-
-  const dynamicFormRef = ref<{
-    formRef: FormInstance;
-    formValues: Record<string, any>;
-  }>();
+  const formValue = reactive({});
+  const configFormRef = ref<{ formRef: FormInstance }>();
 
   const onClickSubmitForm = async () => {
-    console.log('dynamicFormRef', dynamicFormRef.value.formRef);
-    const formEl = dynamicFormRef.value.formRef;
-    if (!formEl) return;
-    await formEl.validate((valid: boolean, fields) => {
+    console.log(configFormRef.value);
+    await configFormRef.value.formRef.validate((valid: boolean, fields) => {
       if (valid) {
-        alert(JSON.stringify(dynamicFormRef.value.formValues, null, '\t\r\n'), {
+        alert(JSON.stringify(formValue, null, '\t\r\n'), {
           title: '表单值',
           type: 'info',
           dangerouslyUseHTMLString: true,
@@ -72,12 +60,6 @@
         console.log(fields);
       }
     });
-  };
-
-  const onClickResetForm = () => {
-    const formEl = dynamicFormRef.value.formRef;
-    console.log('onClickResetForm', formEl);
-    formEl.resetFields();
   };
 
   const onClickGenerate = () => {

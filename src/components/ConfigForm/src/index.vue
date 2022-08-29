@@ -8,7 +8,11 @@
             v-model="formValue[item.name]"
             :component="item.component.component"
             :config="item.component.config"
-          />
+          >
+            <el-button type="primary" v-if="item.component.component === 'el-upload'"
+              >Click to upload</el-button
+            >
+          </form-item>
         </el-form-item>
       </el-col>
     </el-row>
@@ -17,6 +21,7 @@
 
 <script setup lang="ts">
   import { FormInstance } from 'element-plus';
+  import { Ref } from 'vue';
   import { ConfigFormItemProps } from '..';
   import { getDefauleVlues } from '../helps';
   import { log } from '/@/utils/log';
@@ -36,6 +41,8 @@
   watch(formValue, () => {
     log(`${props.config.name} config form value`, formValue);
   });
+
+  defineExpose<{ formRef: Ref<FormInstance> }>({ formRef });
 
   const attrs = useAttrs();
   log('config-form props', attrs, props);
