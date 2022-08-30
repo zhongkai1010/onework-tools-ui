@@ -9,7 +9,7 @@
           <el-button @click="configFormRef.formRef.resetFields()">重置表单</el-button>
         </div>
       </template>
-      <config-form v-bind="formConfig" ref="configFormRef" :model="formValue" />
+      <DynamicForm v-bind="formConfig" ref="configFormRef" :model="formValue" />
     </el-card>
     <el-drawer v-model="show" size="50%" title="配置代码">
       <codemirror

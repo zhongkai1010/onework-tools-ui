@@ -9,15 +9,13 @@
           <el-button type="primary" @click="log('form-item', formItems)">查看配置</el-button>
         </div>
       </template>
-      <el-form v-bind="formConfig.form" :model="formValue">
+      <el-form v-bind="formConfig.props" :model="formValue">
         <draggable
           tag="el-row"
           group="component"
           :list="formItems"
           item-key="id"
-          :component-data="{
-            gutter: formConfig.row.gutter,
-          }"
+          :component-data="formConfig.layout"
         >
           <template #item="{ element }: { element: DraggableItemConfig, index: number }">
             <draggable-item
@@ -45,8 +43,8 @@
   import {
     DEFAULT_DRAGGABLE_ITEM_CONFIG,
     DraggableItemConfig,
-    FormConfigType,
     FormConfigDrawerInstance,
+    FormConfigDrawerProps,
     FormItemDrawerInstance,
     FORM_LIST_PROVIDE_KEY,
   } from './types';
@@ -55,13 +53,13 @@
   import { log } from '/@/utils/log';
 
   const formValue = reactive({});
-  const formConfig = reactive<FormConfigType>({
-    row: {
+  const formConfig = reactive<FormConfigDrawerProps>({
+    layout: {
       gutter: 20,
       justify: 'start',
       align: 'middle',
     },
-    form: {
+    props: {
       labelWidth: 80,
       labelPosition: 'top',
       size: 'default',

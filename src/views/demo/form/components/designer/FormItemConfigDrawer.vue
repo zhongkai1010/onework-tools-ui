@@ -3,8 +3,9 @@
     <el-drawer :model-value="dialogShow" @closed="onClose" title="表单项配置">
       <el-form :model="formValue" label-width="120px" label-position="left" ref="formRef">
         <InputBase v-model="formValue" />
-        <!-- <InputConfig v-model="formValue" />
-        <InputData v-model="formValue" />
+        <!-- <InputData v-model="formValue.component.config" />
+        <InputConfig v-model="formValue" />
+       
         <InputRule v-model="formValue" />
         <InputState v-model="formValue" /> -->
       </el-form>

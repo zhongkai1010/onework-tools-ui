@@ -1,4 +1,11 @@
 <template>
+  <div> </div>
+</template>
+
+<script setup></script>
+
+<style lang="scss" scoped></style>
+<!-- <template>
   <el-dialog
     :model-value="dialogShow"
     :title="`${dialogTitle ? dialogTitle + ' - ' : ''}${$t(
@@ -46,9 +53,10 @@
   import { FormInstance } from 'element-plus';
   import { reactive, ref } from 'vue';
   import { DataTableFieldProps, FormDialogInstance } from '..';
-  import { getDefauleVlues } from '/@/components/ConfigForm/helps';
+
   import { CREATE_ITEM_TITLE_TEXT, EDITABLE_ITEM_TITLE_TEXT } from '/@/settings/constant';
-  import { ConfigFormItemProps } from '/@/components/ConfigForm';
+  import { DynamicFormField } from '../../DynamicForm';
+  import { getFormDefauleVlue } from '../../DynamicForm/helps';
 
   const props = defineProps<{
     modelValue?: boolean;
@@ -59,12 +67,12 @@
   }>();
 
   const editabled = ref<'add' | 'edit' | 'show'>(props.editabled ?? 'add');
-  const formFields = computed<ConfigFormItemProps[]>(() => {
+  const formFields = computed<DataTableFieldProps[]>(() => {
     const tempFields = props.fields.filter((t) => !t.editable?.hide);
-    const newFields: ConfigFormItemProps[] = [];
+    const newFields: DynamicFormField[] = [];
     for (let index = 0; index < tempFields.length; index++) {
       const tableField = tempFields[index];
-      const formField: ConfigFormItemProps = {
+      const formField: DynamicFormField = {
         label: tableField.label,
         name: tableField.name,
         span: tableField.editable?.span ?? 24,
@@ -83,7 +91,7 @@
   });
   const dialogShow = ref(props.modelValue ?? false);
   const dialogTitle = ref(props.title);
-  const formValue = reactive(getDefauleVlues(formFields.value));
+  const formValue = reactive(getFormDefauleVlue(formFields.value));
   const formRef = ref(null);
 
   const onClickOpen = (
@@ -123,4 +131,4 @@
   defineExpose<FormDialogInstance>({ open: onClickOpen, close: onClickClose });
 </script>
 
-<style scoped></style>
+<style scoped></style> -->

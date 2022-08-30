@@ -54,15 +54,15 @@
     (params) => {
       if (props.config?.remote) {
         return http.request({
-          method: props.config?.remoteMethod ?? 'get',
-          url: props.config.remoteUrl,
+          method: props.config?.remote?.method ?? 'get',
+          url: props.config?.remote?.url,
           params: params,
         });
       } else {
         return Promise.reject();
       }
     },
-    props.config?.remoteParams,
+    props.config?.remote?.params,
     { immediate: false },
   );
 
@@ -89,12 +89,12 @@
 
   watchEffect(async () => {
     if (isOptions.value && props.config?.remote) {
-      const result = await execute(props.config.remoteParams);
+      const result = await execute(props.config?.remote?.params);
       const tempOptions = (result as any[]).map((t) => {
         return {
-          label: t[props.config?.labelKey ?? 'label'],
-          value: t[props.config.valueKey ?? 'value'],
-          children: t[props.config.childerKey ?? 'children'],
+          label: t[props.config?.remote?.labelKey ?? 'label'],
+          value: t[props.config.remote?.valueKey ?? 'value'],
+          children: t[props.config.remote?.childerKey ?? 'children'],
         } as FormItemOption;
       });
       options.value = tempOptions;
@@ -115,11 +115,11 @@
     if (props.component === 'el-autocomplete') {
       attr.fetchSuggestions = async (queryString, callback) => {
         const params = {};
-        params[props.config?.searchKey ?? 'keywords'] = queryString;
+        params[props.config?.remote?.searchKey ?? 'keywords'] = queryString;
         const result = await execute(params);
         callback(result);
       };
-      attr.valueKey = props.config?.labelKey ?? 'label';
+      attr.valueKey = props.config?.remote?.labelKey ?? 'label';
     }
     return attr;
   });

@@ -1,10 +1,13 @@
 import _ from 'lodash';
-import { DEFAULT_DRAGGABLE_ITEM_CONFIG, DraggableItemConfig, FormItemConfig } from '../types';
-import { ConfigFormItemProps } from '/@/components/ConfigForm';
+import {
+  DefaultDraggableItemConfig,
+  DEFAULT_DRAGGABLE_ITEM_CONFIG,
+  DraggableItemConfig,
+} from '../types';
 
-function initDefaultValues(config: FormItemConfig): FormItemConfig {
+function initDefaultValues(config: DefaultDraggableItemConfig): DraggableItemConfig {
   _.defaultsDeep(config, DEFAULT_DRAGGABLE_ITEM_CONFIG);
-  return config as FormItemConfig;
+  return config as DraggableItemConfig;
 }
 
 export default [
@@ -23,9 +26,14 @@ export default [
         component: {
           component: 'el-autocomplete',
           config: {
-            remote: true,
-            remoteUrl: '/api/test/getOptions',
+            remote: {
+              url: '/api/test/getOptions',
+              method: 'get',
+            },
           },
+        },
+        design: {
+          dataMode: 'dynamic',
         },
       }),
       initDefaultValues({
@@ -39,9 +47,14 @@ export default [
         component: {
           component: 'el-cascader',
           config: {
-            remote: true,
-            remoteUrl: '/api/test/getCascadeData',
+            remote: {
+              url: '/api/test/getCascadeData',
+              method: 'get',
+            },
           },
+        },
+        design: {
+          dataMode: 'dynamic',
         },
       }),
       initDefaultValues({
@@ -55,9 +68,14 @@ export default [
         component: {
           component: 'el-checkbox-group',
           config: {
-            remote: true,
-            remoteUrl: '/api/test/getOptions',
+            remote: {
+              url: '/api/test/getOptions',
+              method: 'get',
+            },
           },
+        },
+        design: {
+          dataMode: 'all',
         },
       }),
       initDefaultValues({
@@ -139,6 +157,9 @@ export default [
             ],
           },
         },
+        design: {
+          dataMode: 'static',
+        },
       }),
       initDefaultValues({
         name: 'Rate 评分',
@@ -163,9 +184,14 @@ export default [
         component: {
           component: 'el-select',
           config: {
-            remote: true,
-            remoteUrl: '/api/test/getOptions',
+            remote: {
+              url: '/api/test/getOptions',
+              method: 'get',
+            },
           },
+        },
+        design: {
+          dataMode: 'all',
         },
       }),
       initDefaultValues({
@@ -249,17 +275,17 @@ export default [
           component: 'el-upload',
         },
       }),
-    ] as DraggableItemConfig[],
+    ] as DefaultDraggableItemConfig[],
   },
   {
     name: 'dynamic',
     title: '动态数据组件',
-    components: [] as ConfigFormItemProps[],
+    components: [] as DefaultDraggableItemConfig[],
   },
   {
     name: 'business',
 
     title: '业务组件',
-    components: [] as ConfigFormItemProps[],
+    components: [] as DefaultDraggableItemConfig[],
   },
 ];

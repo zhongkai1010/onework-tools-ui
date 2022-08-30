@@ -1,8 +1,7 @@
 import configTable from './src/index.vue';
 import dataTable from './src/DataTable.vue';
-
 import { PaginationProps } from 'element-plus';
-import { FormComponent } from '../FormItem';
+import { DynamicFormField, FormComponent } from '../DynamicForm';
 
 export declare type OperateType =
   | 'add'
@@ -38,12 +37,7 @@ export interface DataTableFieldProps {
   hide?: boolean;
   type: 'string' | 'number' | 'array';
   columnProps?: any;
-  search?: {
-    span?: number;
-    component: FormComponent;
-    props?: any;
-    defaultValue?: string | number | Array<string | number>;
-  };
+  search?: DynamicFormField;
   order?: number;
   editable?: {
     hide?: boolean;

@@ -1,7 +1,7 @@
 <template>
-  <el-form v-bind="props" :model="formValue" ref="formRef">
-    <el-row :gutter="props.config.gutter">
-      <el-col :span="item.span ?? 6" v-for="item in props.config.fields" :key="item.name">
+  <el-form v-bind="props.props" :model="formValue" ref="formRef">
+    <el-row v-bind="props.layout">
+      <el-col :span="item.span ?? 6" v-for="item in props.fields" :key="item.name">
         <el-form-item v-bind="item.props">
           <form-item
             v-model="formValue[item.name]"
@@ -18,24 +18,23 @@
 <script setup lang="ts">
   import { FormInstance } from 'element-plus';
   import { Ref } from 'vue';
-  import { ConfigFormItemProps } from '..';
-  import { getDefauleVlues } from '../helps';
+  import { DynamicFormField, DynamicFormLayout, DynamicFormProps } from '..';
+  import { getFormDefauleVlue } from '../helps';
   import { log } from '/@/utils/log';
 
   const props = defineProps<{
     model?: Record<string, any>;
-    config: {
-      fields: ConfigFormItemProps[];
-      gutter?: number;
-      name: string;
-    };
+    name: string;
+    fields: DynamicFormField[];
+    layout?: DynamicFormLayout;
+    props: DynamicFormProps;
   }>();
   const formRef = ref<FormInstance>();
 
-  const formValue = reactive(props.model ?? getDefauleVlues(props));
+  const formValue = reactive(props.model ?? getFormDefauleVlue(props));
 
   watch(formValue, () => {
-    log(`${props.config.name} config form value`, formValue);
+    log(`${props.name} config form value`, formValue);
   });
 
   defineExpose<{ formRef: Ref<FormInstance> }>({ formRef });

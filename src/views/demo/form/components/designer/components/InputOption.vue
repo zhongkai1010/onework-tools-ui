@@ -46,7 +46,7 @@
   import { FormItemOption } from '/@/components/FormItem';
 
   const props = defineProps<{
-    modelValue: FormItemOption[];
+    modelValue?: FormItemOption[];
   }>();
 
   const list = ref(props.modelValue ?? []);
