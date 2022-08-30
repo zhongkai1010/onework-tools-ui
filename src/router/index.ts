@@ -86,8 +86,7 @@ router.afterEach((to, from) => {
 
 router.onError((error: any) => {
   log(`route end error`, error);
-
-  router.push({ name: LOGIN_PAGE.name });
+  // router.push({ name: LOGIN_PAGE.name });
 });
 
 function setupRouter(app: App<Element>) {

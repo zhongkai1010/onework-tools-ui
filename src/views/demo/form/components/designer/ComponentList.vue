@@ -19,7 +19,7 @@
             <template #item="{ element }">
               <li>
                 <iconify-icon icon="ant-design:form-outlined" :size="16" />
-                <span>{{ element.label }}</span>
+                <span>{{ element.name }}</span>
               </li>
             </template>
           </draggable>

@@ -39,7 +39,7 @@ export default [
             name: 'demo_form_designer',
             path: 'designer',
             meta: { title: t('router.demo.form.designer'), icon: 'bi:layout-wtf' },
-            component: () => import('/@/views/demo/form/compo.vue'),
+            component: () => import('/@/views/demo/form/designer.vue'),
           },
           {
             name: 'demo_form_group',

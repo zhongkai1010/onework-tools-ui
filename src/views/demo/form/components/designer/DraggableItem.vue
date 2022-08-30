@@ -1,16 +1,11 @@
 <template>
   <el-col :span="props.config.span" class="item-container">
-    <el-form-item
-      :label="props.config.label"
-      :prop="props.config.name"
-      :required="props.config.required"
-      :rules="props.config.formRules"
-      :label-width="props.config.labelWidth"
-    >
+    <el-form-item v-bind="props.config.props">
       <form-item
-        :props="props.config.props"
-        :component="props.config.component"
+        :component="props.config.component.component"
+        :props="props.config.component.props"
         :model-value="props.modelValue"
+        :config="props.config.component.config"
         @update:model-value="(value) => $emit('update:modelValue', value)"
       />
     </el-form-item>
@@ -34,6 +29,7 @@
   }>();
   const emits = defineEmits<{
     (e: 'set', value: string);
+    (e: 'update:modelValue', value: any);
   }>();
 
   const formItems = inject<Ref<DraggableItemConfig[]>>('formItems');

@@ -57,7 +57,7 @@ export default [
         code: 0,
         message: 'Internal Server Error',
         result: mock({
-          'data|5-20': [
+          'data|2-3': [
             {
               label: '@ctitle()',
               value: '@guid()',

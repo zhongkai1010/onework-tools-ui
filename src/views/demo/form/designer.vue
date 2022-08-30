@@ -6,54 +6,47 @@
         <div class="card-header">
           <span>表单</span>
           <el-button type="primary" @click="formConfigDrawerRef.open()">表单配置</el-button>
-          <el-button type="primary" @click="log">查看配置</el-button>
+          <el-button type="primary" @click="log('form-item', formItems)">查看配置</el-button>
         </div>
       </template>
-      <el-form
-        :model="formConfigValue"
-        :label-width="formConfig.labelWidth"
-        :label-position="formConfig.labelPosition"
-        :size="formConfig.size"
-      >
+      <el-form v-bind="formConfig.form" :model="formValue">
         <draggable
           tag="el-row"
           group="component"
           :list="formItems"
           item-key="id"
           :component-data="{
-            gutter: formConfig.gutter,
-            align: formConfig.align,
-            justify: formConfig.justify,
+            gutter: formConfig.row.gutter,
           }"
         >
           <template #item="{ element }: { element: DraggableItemConfig, index: number }">
             <draggable-item
-              :model-value="formConfigValue[element.name]"
+              :model-value="formValue[element.name]"
               :config="element"
               @set="onSetItem"
-              @update:model-value="(value) => (formConfigValue[element.name] = value)"
+              @update:model-value="(value) => (formValue[element.name] = value)"
             />
           </template>
         </draggable>
       </el-form>
     </el-card>
-    <FormConfigDrawer ref="formConfigDrawerRef" />
+    <FormConfigDrawer :config="formConfig" ref="formConfigDrawerRef" />
     <FormItemConfigDrawer ref="formItemDrawerRef" @save="onSaveItem" />
   </page-view>
 </template>
 
 <script setup lang="ts">
   import draggable from 'vuedraggable';
-  import DraggableItem from './components/compo/DraggableItem.vue';
-  import ComponentList from './components/compo/ComponentList.vue';
-  import FormConfigDrawer from './components/compo/FormConfigDrawer.vue';
-  import FormItemConfigDrawer from './components/compo/FormItemConfigDrawer.vue';
+  import DraggableItem from './components/designer/DraggableItem.vue';
+  import ComponentList from './components/designer/ComponentList.vue';
+  import FormConfigDrawer from './components/designer/FormConfigDrawer.vue';
+  import FormItemConfigDrawer from './components/designer/FormItemConfigDrawer.vue';
 
   import {
     DEFAULT_DRAGGABLE_ITEM_CONFIG,
     DraggableItemConfig,
-    FormConfigDrawerInstance,
     FormConfigType,
+    FormConfigDrawerInstance,
     FormItemDrawerInstance,
     FORM_LIST_PROVIDE_KEY,
   } from './types';
@@ -61,26 +54,22 @@
 
   import { log } from '/@/utils/log';
 
+  const formValue = reactive({});
+  const formConfig = reactive<FormConfigType>({
+    row: {
+      gutter: 20,
+      justify: 'start',
+      align: 'middle',
+    },
+    form: {
+      labelWidth: 80,
+      labelPosition: 'top',
+      size: 'default',
+    },
+  });
+
   const formConfigDrawerRef = ref<FormConfigDrawerInstance>();
   const formItemDrawerRef = ref<FormItemDrawerInstance>();
-
-  const formConfig = computed<FormConfigType>(() => {
-    if (formConfigDrawerRef.value != null) {
-      return unref(formConfigDrawerRef.value.config);
-    } else {
-      return {
-        gutter: 20,
-        labelWidth: 80,
-        labelPosition: 'top',
-        size: 'default',
-        justify: 'start',
-        align: 'middle',
-      };
-    }
-  });
-  const formConfigValue = reactive({
-    name: 'test',
-  });
 
   const formItems = ref<DraggableItemConfig[]>([
     {

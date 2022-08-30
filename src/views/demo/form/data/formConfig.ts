@@ -1,13 +1,8 @@
 import _ from 'lodash';
-import {
-  DefaultFormItemComponentConfig,
-  DEFAULT_DRAGGABLE_ITEM_CONFIG,
-  DraggableItemConfig,
-  FormItemConfig,
-} from '../types';
+import { DEFAULT_DRAGGABLE_ITEM_CONFIG, DraggableItemConfig, FormItemConfig } from '../types';
 import { ConfigFormItemProps } from '/@/components/ConfigForm';
 
-function initDefaultValues(config: DefaultFormItemComponentConfig): FormItemConfig {
+function initDefaultValues(config: FormItemConfig): FormItemConfig {
   _.defaultsDeep(config, DEFAULT_DRAGGABLE_ITEM_CONFIG);
   return config as FormItemConfig;
 }
@@ -18,189 +13,248 @@ export default [
     title: '基础组件',
     components: [
       initDefaultValues({
-        name: 'input',
-        label: 'Input 输入框',
-        component: 'input',
-        dataType: 'none',
+        name: '自动补全输入框',
+        span: 6,
         props: {
-          options: [],
+          prop: 'autocomplete',
+          label: '自动补全输入框',
+          required: false,
         },
-        formRules: [],
-        componentConfig: [
-          {
-            label: '最大输入长度',
-            key: 'maxlength',
-            component: 'input',
-          },
-          {
-            label: '最小输入长度',
-            key: 'minlength',
-            component: 'input',
-          },
-          {
-            label: '是否可清空',
-            key: 'clearable',
-            component: 'input',
-          },
-          {
-            label: '密码图标',
-            key: 'show-password',
-            component: 'input',
-          },
-        ],
-      }),
-      initDefaultValues({
-        name: 'radio',
-        label: 'Radio 单选框',
-        component: 'radio',
-        dataType: 'static',
-        props: {
-          options: [
-            { label: 'A', value: 'a' },
-            { label: 'B', value: 'b' },
-          ],
-        },
-      }),
-      initDefaultValues({
-        name: 'select',
-        label: 'Select 选择器',
-        component: 'select',
-        dataType: 'dynamic',
-        props: {
-          options: [
-            { label: 'A', value: 'a' },
-            { label: 'B', value: 'b' },
-          ],
-        },
-      }),
-      initDefaultValues({
-        name: 'checkbox',
-        label: 'Checkbox 多选框',
-        component: 'checkbox',
-        dataType: 'all',
-        props: {
-          options: [
-            { label: 'A', value: 'a' },
-            { label: 'B', value: 'b' },
-          ],
-        },
-      }),
-
-      initDefaultValues({
-        name: 'input_number',
-        label: 'Input Number 数字输入框',
-        component: 'input_number',
-      }),
-      initDefaultValues({
-        name: 'slider',
-        label: 'Slider 滑块',
-        component: 'slider',
-        props: {
-          style: {
-            width: '50%',
+        component: {
+          component: 'el-autocomplete',
+          config: {
+            remote: true,
+            remoteUrl: '/api/test/getOptions',
           },
         },
       }),
       initDefaultValues({
-        name: 'date_picker',
-        label: 'DatePicker 日期选择器',
-        component: 'date_picker',
-      }),
-      initDefaultValues({
-        name: 'time_picker',
-        label: 'TimePicker 时间选择器',
-        component: 'time_picker',
-      }),
-      initDefaultValues({
-        name: 'time_select',
-        label: 'TimeSelect 时间选择',
-        component: 'time_select',
-      }),
-      initDefaultValues({
-        name: 'switch',
-        label: 'Switch 开关',
-        component: 'switch',
-      }),
-      initDefaultValues({
-        name: 'autodcomplete',
-        label: '自动补全输入框',
-        component: 'autodcomplete',
+        name: 'Cascader 级联选择器',
+        span: 6,
         props: {
-          options: [
-            { label: 'A', value: 'a' },
-            { label: 'B', value: 'b' },
-          ],
+          prop: 'cascader',
+          label: 'Cascader 级联选择器',
+          required: false,
+        },
+        component: {
+          component: 'el-cascader',
+          config: {
+            remote: true,
+            remoteUrl: '/api/test/getCascadeData',
+          },
         },
       }),
       initDefaultValues({
-        name: 'cascader',
-        label: 'Cascader 级联选择器',
-        component: 'cascader',
+        name: 'Checkbox 多选框',
+        span: 6,
         props: {
-          options: [
-            {
-              label: 'A',
-              value: 'a',
-              children: [
-                { label: 'A1', value: 'a1' },
-                { label: 'A2', value: 'a2' },
-              ],
-            },
-            { label: 'B', value: 'b' },
-          ],
+          prop: 'checkbox',
+          label: 'Checkbox 多选框',
+          required: false,
+        },
+        component: {
+          component: 'el-checkbox-group',
+          config: {
+            remote: true,
+            remoteUrl: '/api/test/getOptions',
+          },
         },
       }),
       initDefaultValues({
-        name: 'color_picker',
-        label: 'ColorPicker 颜色选择器',
-        component: 'color_picker',
+        name: 'ColorPicker 颜色选择器',
+        span: 6,
+        props: {
+          prop: 'color-picker',
+          label: 'ColorPicker 颜色选择器',
+          required: false,
+        },
+        component: {
+          component: 'el-color-picker',
+        },
       }),
       initDefaultValues({
-        name: 'date_time_picker',
-        label: 'DateTimePicker 日期时间选择器',
-        component: 'date_time_picker',
+        name: 'DateTimePicker 日期时间选择器',
+        span: 6,
+        props: {
+          prop: 'date-picker',
+          label: 'DateTimePicker 日期时间选择器',
+          required: false,
+        },
+        component: {
+          component: 'el-date-picker',
+        },
       }),
       initDefaultValues({
-        name: 'rate',
-        label: 'Rate 评分',
-        component: 'rate',
+        name: 'Input 输入框',
+        span: 6,
+        props: {
+          prop: 'input',
+          label: 'Input 输入框',
+          required: false,
+        },
+        component: {
+          component: 'el-input',
+        },
       }),
       initDefaultValues({
-        name: 'transfer',
-        label: 'Transfer 穿梭框',
-        component: 'transfer',
+        name: 'Input Number 数字输入框',
+        span: 6,
+        props: {
+          prop: 'input-number',
+          label: 'Input Number 数字输入框',
+          required: false,
+        },
+        component: {
+          component: 'el-input-number',
+        },
       }),
       initDefaultValues({
-        name: 'upload',
-        label: 'Upload 上传',
-        component: 'upload',
+        name: 'Radio 单选框',
+        span: 6,
+        props: {
+          prop: 'radio',
+          label: 'Radio 单选框',
+          required: false,
+        },
+        component: {
+          component: 'el-radio-group',
+          config: {
+            options: [
+              {
+                label: '选项1',
+                value: 'value1',
+              },
+              {
+                label: '选项2',
+                value: 'value2',
+              },
+              {
+                label: '选项3',
+                value: 'value3',
+              },
+              {
+                label: '选项4',
+                value: 'value4',
+              },
+            ],
+          },
+        },
+      }),
+      initDefaultValues({
+        name: 'Rate 评分',
+        span: 6,
+        props: {
+          prop: 'rate',
+          label: 'Rate 评分',
+          required: false,
+        },
+        component: {
+          component: 'el-rate',
+        },
+      }),
+      initDefaultValues({
+        name: 'Select 选择器',
+        span: 6,
+        props: {
+          prop: 'select',
+          label: 'Select 选择器',
+          required: false,
+        },
+        component: {
+          component: 'el-select',
+          config: {
+            remote: true,
+            remoteUrl: '/api/test/getOptions',
+          },
+        },
+      }),
+      initDefaultValues({
+        name: 'Slider 滑块',
+        span: 6,
+        props: {
+          prop: 'slider',
+          label: 'Slider 滑块',
+          required: false,
+        },
+        component: {
+          component: 'el-slider',
+        },
+      }),
+      initDefaultValues({
+        name: 'Switch 开关',
+        span: 6,
+        props: {
+          prop: 'switch',
+          label: 'Switch 开关',
+          required: false,
+        },
+        component: {
+          component: 'el-switch',
+        },
+      }),
+      initDefaultValues({
+        name: 'TimePicker 时间选择器',
+        span: 6,
+        props: {
+          prop: 'time-picker',
+          label: 'TimePicker 时间选择器',
+          required: false,
+        },
+        component: {
+          component: 'el-time-picker',
+        },
+      }),
+      initDefaultValues({
+        name: 'TimeSelect 时间选择',
+        span: 6,
+        props: {
+          prop: 'time-select',
+          label: 'TimeSelect 时间选择',
+          required: false,
+        },
+        component: {
+          component: 'el-time-select',
+        },
+      }),
+      initDefaultValues({
+        name: 'Transfer 穿梭框',
+        span: 6,
+        props: {
+          prop: 'transfer',
+          label: 'Transfer 穿梭框',
+          required: false,
+        },
+        component: {
+          component: 'el-transfer',
+          props: {
+            titles: ['列表1', '列表2'],
+            data: [
+              {
+                key: 'value1',
+                label: '选项1',
+              },
+            ],
+          },
+        },
+      }),
+      initDefaultValues({
+        name: 'Upload 上传',
+        span: 6,
+        props: {
+          prop: 'upload',
+          label: 'Upload 上传',
+          required: false,
+        },
+        component: {
+          component: 'el-upload',
+        },
       }),
     ] as DraggableItemConfig[],
   },
   {
     name: 'dynamic',
     title: '动态数据组件',
-    components: [
-      initDefaultValues({
-        name: 'asyn_autodcomplete',
-        label: '动态自动补全输入框',
-        component: 'asyn_autodcomplete',
-      }),
-      initDefaultValues({
-        name: 'asyn_cascader',
-        label: '动态级联选择器',
-        component: 'asyn_cascader',
-      }),
-      initDefaultValues({ name: 'asyn_checkbox', label: '动态多选框', component: 'asyn_checkbox' }),
-      initDefaultValues({ name: 'asyn_radio', label: '动态单选框', component: 'asyn_radio' }),
-      initDefaultValues({ name: 'asyn_select', label: '动态下拉选项器', component: 'asyn_select' }),
-      initDefaultValues({ name: 'asyn_table', label: '动态数据表格器', component: 'asyn_table' }),
-      initDefaultValues({
-        name: 'asyn_treeSelect',
-        label: '动态数据树形器',
-        component: 'asyn_treeSelect',
-      }),
-    ] as ConfigFormItemProps[],
+    components: [] as ConfigFormItemProps[],
   },
   {
     name: 'business',

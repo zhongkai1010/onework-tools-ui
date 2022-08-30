@@ -3,10 +3,10 @@
     <el-drawer :model-value="dialogShow" @closed="onClose" title="表单项配置">
       <el-form :model="formValue" label-width="120px" label-position="left" ref="formRef">
         <InputBase v-model="formValue" />
-        <InputConfig v-model="formValue" />
+        <!-- <InputConfig v-model="formValue" />
         <InputData v-model="formValue" />
         <InputRule v-model="formValue" />
-        <InputState v-model="formValue" />
+        <InputState v-model="formValue" /> -->
       </el-form>
       <template #footer>
         <div style="flex: auto">
@@ -28,10 +28,10 @@
   } from '/@/views/demo/form/types';
   import { log } from '/@/utils/log';
   import InputBase from './components/InputBase.vue';
-  import InputConfig from './components/InputConfig.vue';
-  import InputData from './components/InputData.vue';
-  import InputRule from './components/InputRule.vue';
-  import InputState from './components/InputState.vue';
+  // import InputConfig from './components/InputConfig.vue';
+  // import InputData from './components/InputData.vue';
+  // import InputRule from './components/InputRule.vue';
+  // import InputState from './components/InputState.vue';
   import { useMessage } from '/@/hooks/web/useMessage';
   const { message } = useMessage();
 
