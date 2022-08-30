@@ -49,15 +49,15 @@ export default [
     },
   },
   {
-    url: '/api/test/getDictionaries',
+    url: '/api/test/getOptions',
     method: 'get',
-    timeout: '2000',
+    // timeout: '5000',
     response: () => {
       return {
         code: 0,
         message: 'Internal Server Error',
         result: mock({
-          'data|10': [
+          'data|5-20': [
             {
               label: '@ctitle()',
               value: '@guid()',
@@ -67,25 +67,7 @@ export default [
       };
     },
   },
-  {
-    url: '/api/test/getPageConfig',
-    method: 'get',
-    timeout: '2000',
-    response: () => {
-      return {
-        code: 0,
-        message: 'Internal Server Error',
-        result: mock({
-          'data|10': [
-            {
-              label: '@ctitle()',
-              value: '@guid()',
-            },
-          ],
-        }).data,
-      };
-    },
-  },
+
   {
     url: '/api/test/getTableData',
     method: 'get',

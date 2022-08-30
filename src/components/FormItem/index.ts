@@ -27,30 +27,23 @@ export interface FormItemOption {
   children?: FormItemOption[];
 }
 
-export interface FormItemRemote {
-  url: string;
-  method: 'post' | 'get';
-  labelKey: string;
-  valueKey: string;
-  childerKey?: string;
-}
-
-export interface FormItemProps extends Recordable<any> {
+export interface FormItemProps {
   modelValue?: any;
   component: FormComponent;
-  config?: Recordable<any>;
+  props?: Recordable<any>;
+  config?: FormItemConfig;
 }
 
-export interface FormItemSelectProps extends FormItemProps {
-  config: {
-    options: FormItemOption[];
-  } & Recordable<any>;
-}
-export interface FormItemRemoteProps {
-  config: Recordable<any> & {
-    options: FormItemOption[];
-    remote: FormItemRemote;
-  };
+export interface FormItemConfig extends Recordable<any> {
+  options?: FormItemOption[];
+  remote?: boolean;
+  remoteUrl?: string;
+  remoteMethod?: 'post' | 'get';
+  remoteParams?: Recordable<any>;
+  labelKey?: string;
+  valueKey?: string;
+  childerKey?: string;
+  searchKey?: string;
 }
 
 export const FormItem = formItem;

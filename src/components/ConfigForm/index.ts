@@ -31,7 +31,7 @@ export interface ConfigFormItemProps {
     size?: 'large' | 'default' | 'small';
     trigger?: 'blur' | 'change';
   };
-  component: { props?: Recordable<any> } & FormItemProps;
+  component: FormItemProps;
 }
 
 const ConfigForm = configForm;

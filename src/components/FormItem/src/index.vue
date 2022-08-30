@@ -1,19 +1,20 @@
 <template>
   <component
     :is="props.component"
+    v-bind="fixedProps"
     :config="props.config"
     :model-value="inputValue"
-    :loading="loading"
     @update:model-value="onUpdateModelValue"
+    v-if="isSlot"
   >
-    <IconifyIcon icon="line-md:loading-twotone-loop" :size="16" v-if="loading" class="icon" />
-    <template v-if="props.component === 'el-checkbox-group' && !loading">
+    <IconifyIcon icon="line-md:loading-twotone-loop" :size="16" v-if="isFetching" class="icon" />
+    <template v-if="props.component === 'el-checkbox-group' && !isFetching">
       <el-checkbox :label="item.label" v-for="item in options" :key="item.value" />
     </template>
-    <template v-else-if="props.component === 'el-radio-group' && !loading">
+    <template v-else-if="props.component === 'el-radio-group' && !isFetching">
       <el-radio :label="item.label" v-for="item in options" :key="item.value" />
     </template>
-    <template v-else-if="props.component === 'el-select' && !loading">
+    <template v-else-if="props.component === 'el-select' && !isFetching">
       <el-option
         v-for="item in options"
         :key="item.value"
@@ -21,25 +22,111 @@
         :value="item.value"
       />
     </template>
-    <slot v-else> </slot>
+    <template v-else-if="props.component === 'el-upload'">
+      <el-button type="primary">Click to upload</el-button>
+    </template>
+    <slot v-else></slot>
   </component>
+  <component
+    :is="props.component"
+    v-bind="fixedProps"
+    :config="props.config"
+    :model-value="inputValue"
+    @update:model-value="onUpdateModelValue"
+    v-else
+  />
 </template>
 <script setup lang="ts">
   import _ from 'lodash';
-  import { FormComponent, FormItemOption, FormItemRemote } from '..';
+  import { FormComponent, FormItemConfig, FormItemOption } from '..';
+  import { useHttpFetch } from '/@/hooks/fetch';
   import { http } from '/@/plugins/axios';
   import { log } from '/@/utils/log';
 
   const props = defineProps<{
     modelValue?: any;
     component: FormComponent;
-    config?: Recordable<any>;
+    props?: Recordable<any>;
+    config?: FormItemConfig;
   }>();
+
+  const { isFetching, execute } = useHttpFetch<Recordable<any>, any>(
+    (params) => {
+      if (props.config?.remote) {
+        return http.request({
+          method: props.config?.remoteMethod ?? 'get',
+          url: props.config.remoteUrl,
+          params: params,
+        });
+      } else {
+        return Promise.reject();
+      }
+    },
+    props.config?.remoteParams,
+    { immediate: false },
+  );
 
   const emits = defineEmits<{ (e: 'update:modelValue', value: any) }>();
   const options = ref<any[]>(props.config?.options || []);
-  const loading = ref(false);
 
+  const isSlot = computed(() => {
+    return (
+      props.component === 'el-checkbox-group' ||
+      props.component === 'el-radio-group' ||
+      props.component === 'el-select' ||
+      props.component === 'el-upload'
+    );
+  });
+
+  const isOptions = computed(() => {
+    return (
+      props.component === 'el-select' ||
+      props.component === 'el-radio-group' ||
+      props.component === 'el-checkbox-group' ||
+      props.component === 'el-cascader'
+    );
+  });
+
+  watchEffect(async () => {
+    if (isOptions.value && props.config?.remote) {
+      const result = await execute(props.config.remoteParams);
+      const tempOptions = (result as any[]).map((t) => {
+        return {
+          label: t[props.config?.labelKey ?? 'label'],
+          value: t[props.config.valueKey ?? 'value'],
+          children: t[props.config.childerKey ?? 'children'],
+        } as FormItemOption;
+      });
+      options.value = tempOptions;
+    }
+  });
+
+  /**
+   * 根据不同组件，处理特定属性
+   */
+  const fixedProps = computed(() => {
+    let attr = { ...props.props };
+    if (props.component === 'el-select') {
+      attr.loading = isFetching.value;
+    }
+    if (props.component === 'el-cascader') {
+      attr.options = options.value;
+    }
+    if (props.component === 'el-autocomplete') {
+      attr.fetchSuggestions = async (queryString, callback) => {
+        const params = {};
+        params[props.config?.searchKey ?? 'keywords'] = queryString;
+        const result = await execute(params);
+        callback(result);
+      };
+      attr.valueKey = props.config?.labelKey ?? 'label';
+    }
+    return attr;
+  });
+
+  /**
+   * 解决 el-checkbox-group 、el-radio-group 将label赋值转换value值
+   */
   const inputValue = computed(() => {
     if (!props.modelValue) return props.modelValue;
     const items = unref(options);
@@ -58,7 +145,9 @@
     }
     return props.modelValue;
   });
-
+  /**
+   * 解决 el-checkbox-group 、el-radio-group 将label值转换value值
+   */
   const onUpdateModelValue = (value) => {
     const items = unref(options) as FormItemOption[];
     if (props.component === 'el-checkbox-group') {
@@ -74,34 +163,7 @@
       emits('update:modelValue', value);
     }
   };
-  const handleRemote = (remote: FormItemRemote) => {
-    loading.value = true;
-    http
-      .get<any[]>({
-        url: remote.url,
-      })
-      .then((result) => {
-        handleRemoteReulst(result, remote);
-      })
-      .finally(() => {
-        loading.value = false;
-      });
-  };
-  const handleRemoteReulst = (result: any, config: FormItemRemote) => {
-    const tempOps = result.map((t) => {
-      return {
-        label: t[config.labelKey],
-        value: t[config.valueKey],
-        children: t[config.childerKey],
-      } as FormItemOption;
-    });
-    options.value = tempOps;
-  };
-  watchEffect(() => {
-    if (props.config?.remote) {
-      handleRemote(props.config?.remote);
-    }
-  });
+
   const attrs = useAttrs();
   log('form-item props', attrs, props);
 </script>

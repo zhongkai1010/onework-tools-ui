@@ -4,15 +4,11 @@
       <el-col :span="item.span ?? 6" v-for="item in props.config.fields" :key="item.name">
         <el-form-item v-bind="item.props">
           <form-item
-            v-bind="item.component.props"
             v-model="formValue[item.name]"
             :component="item.component.component"
+            :props="item.component.props"
             :config="item.component.config"
-          >
-            <el-button type="primary" v-if="item.component.component === 'el-upload'"
-              >Click to upload</el-button
-            >
-          </form-item>
+          />
         </el-form-item>
       </el-col>
     </el-row>

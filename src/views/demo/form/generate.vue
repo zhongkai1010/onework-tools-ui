@@ -33,12 +33,13 @@
 </template>
 
 <script setup lang="ts">
+  import { FormInstance } from 'element-plus';
   import { json, jsonParseLinter } from '@codemirror/lang-json';
   import { linter } from '@codemirror/lint';
+  import { log } from '/@/utils/log';
   import { useMessage } from '/@/hooks/web/useMessage';
   import formConfig from './data/generateConfig';
-  import { FormInstance } from 'element-plus';
-  import { log } from '/@/utils/log';
+
   const { message, alert } = useMessage();
 
   const code = ref(JSON.stringify(formConfig, null, '\t'));
