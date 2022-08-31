@@ -4,11 +4,12 @@ import type { CreateAxiosOptions } from './axiosTransform';
 import axios from 'axios';
 import qs from 'qs';
 import { AxiosCanceler } from './axiosCancel';
-import { isFunction } from '/@/utils/is';
+
 import { cloneDeep } from 'lodash-es';
 import { ContentTypeEnum } from '/@/enums/httpEnum';
 import { RequestEnum } from '/@/enums/httpEnum';
 import { log } from '/@/utils/log';
+import _ from 'lodash';
 
 export * from './axiosTransform';
 
@@ -92,7 +93,7 @@ export class Axios {
           : this.options.requestOptions?.ignoreCancelToken;
 
       !ignoreCancel && axiosCanceler.addPending(config);
-      if (requestInterceptors && isFunction(requestInterceptors)) {
+      if (requestInterceptors && _.isFunction(requestInterceptors)) {
         config = requestInterceptors(config, this.options);
       }
       return config;
@@ -100,13 +101,13 @@ export class Axios {
 
     // Request interceptor error capture
     requestInterceptorsCatch &&
-      isFunction(requestInterceptorsCatch) &&
+      _.isFunction(requestInterceptorsCatch) &&
       this.axiosInstance.interceptors.request.use(undefined, requestInterceptorsCatch);
 
     // Response result interceptor processing
     this.axiosInstance.interceptors.response.use((res: AxiosResponse<any>) => {
       res && axiosCanceler.removePending(res.config);
-      if (responseInterceptors && isFunction(responseInterceptors)) {
+      if (responseInterceptors && _.isFunction(responseInterceptors)) {
         res = responseInterceptors(res);
       }
       return res;
@@ -114,7 +115,7 @@ export class Axios {
 
     // Response result interceptor error capture
     responseInterceptorsCatch &&
-      isFunction(responseInterceptorsCatch) &&
+      _.isFunction(responseInterceptorsCatch) &&
       this.axiosInstance.interceptors.response.use(undefined, responseInterceptorsCatch);
   }
 
@@ -203,7 +204,7 @@ export class Axios {
     const opt: RequestOptions = Object.assign({}, requestOptions, options);
 
     const { beforeRequestHook, requestCatchHook, transformRequestHook } = transform || {};
-    if (beforeRequestHook && isFunction(beforeRequestHook)) {
+    if (beforeRequestHook && _.isFunction(beforeRequestHook)) {
       conf = beforeRequestHook(conf, opt);
     }
     conf.requestOptions = opt;
@@ -215,7 +216,7 @@ export class Axios {
         .request<any, AxiosResponse<Result>>(conf)
         .then((res: AxiosResponse<Result>) => {
           log('end axios', res);
-          if (transformRequestHook && isFunction(transformRequestHook)) {
+          if (transformRequestHook && _.isFunction(transformRequestHook)) {
             try {
               const ret = transformRequestHook(res, opt);
               resolve(ret);
@@ -228,7 +229,7 @@ export class Axios {
         })
         .catch((e: Error | AxiosError) => {
           console.log('error axios', e);
-          if (requestCatchHook && isFunction(requestCatchHook)) {
+          if (requestCatchHook && _.isFunction(requestCatchHook)) {
             reject(requestCatchHook(e, opt));
             return;
           }

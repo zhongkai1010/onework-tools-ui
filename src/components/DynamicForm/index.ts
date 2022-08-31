@@ -1,4 +1,4 @@
-import dynamicForm from './src/dynamicForm.vue';
+import dynamicForm from './src/DynamicForm.vue';
 import formItem from './src/FormItem.vue';
 
 export const DynamicForm = dynamicForm;
@@ -12,6 +12,21 @@ export interface DynamicFormConfig {
   fields: DynamicFormField[];
   layout?: DynamicFormLayout;
   props?: DynamicFormProps;
+}
+
+export interface DynamicFormField {
+  name: string;
+  span?: number;
+  defaultValue?: any;
+  showLabel?: boolean;
+  props: DynamicFormFieldProps;
+  component: FormItemProps;
+}
+
+export interface DynamicFormLayout {
+  gutter?: number;
+  justify?: 'start' | 'end' | 'center' | 'space-around' | 'space-between' | 'space-evenly';
+  align?: 'top' | 'middle' | 'bottom';
 }
 
 export interface DynamicFormProps {
@@ -29,22 +44,15 @@ export interface DynamicFormProps {
   scrollToError?: boolean;
 }
 
-export interface DynamicFormLayout {
-  gutter?: number;
-  justify?: 'start' | 'end' | 'center' | 'space-around' | 'space-between' | 'space-evenly';
-  align?: 'top' | 'middle' | 'bottom';
-}
-
-export interface DynamicFormField {
-  name: string;
-  span?: number;
-  defaultValue?: any;
-  props: DynamicFormFieldProps;
-  component: FormItemProps;
+export interface FormItemProps {
+  modelValue?: any;
+  component: FormComponent;
+  props?: Recordable<any>;
+  config?: FormItemConfig;
 }
 
 export interface DynamicFormFieldProps {
-  prop: string | string[];
+  prop: string;
   label: string;
   labelWidth?: string | number;
   required: boolean;
@@ -82,14 +90,10 @@ export declare type FormComponent =
   | 'el-transfer'
   | 'el-upload';
 
-export interface FormItemProps {
-  modelValue?: any;
-  component: FormComponent;
-  props?: Recordable<any>;
-  config?: FormItemConfig;
-}
+export type DataMode = 'static' | 'dynamic' | 'none';
 
 export interface FormItemConfig {
+  dataMode?: DataMode;
   options?: FormItemOption[];
   remote?: FormItemRemote;
 }

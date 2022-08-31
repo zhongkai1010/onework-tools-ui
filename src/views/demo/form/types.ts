@@ -3,10 +3,11 @@ import {
   DynamicFormField,
   DynamicFormLayout,
   DynamicFormProps,
-  FormComponent,
+  FormItemProps,
 } from '/@/components/DynamicForm';
 
 export interface FormConfigDrawerProps {
+  name: string;
   layout?: DynamicFormLayout;
   props?: DynamicFormProps;
 }
@@ -30,12 +31,11 @@ export interface DefaultDraggableItemConfig extends Omit<DraggableItemConfig, 'i
 }
 
 export interface DraggableItemDesign {
-  dataMode?: 'all' | 'static' | 'dynamic' | 'none';
-  dataType?: 'string' | 'boolean' | 'number';
-  props?: {
-    name: string;
-    component: FormComponent;
-    props?: Recordable<any>;
+  isRule?: boolean;
+  items?: {
+    label: string;
+    component: FormItemProps;
+    path: string;
   }[];
 }
 
@@ -46,15 +46,33 @@ export const DEFAULT_DRAGGABLE_ITEM_CONFIG: DefaultDraggableItemConfig = {
   span: 6,
   defaultValue: undefined,
   props: {
-    prop: 'default',
-    label: '表单组件',
+    prop: '',
+    label: '示例组件',
     labelWidth: undefined,
     required: false,
+    error: undefined,
+    rules: [],
+    showMessage: undefined,
+    inlineMessage: undefined,
+    size: undefined,
+    trigger: undefined,
   },
   component: {
     component: 'el-input',
+    props: {},
+    config: {
+      dataMode: 'none',
+      options: [],
+      remote: {
+        url: '',
+        method: 'get',
+        params: undefined,
+        labelKey: 'label',
+        valueKey: 'value',
+        childerKey: 'childer',
+        searchKey: 'search',
+      },
+    },
   },
-  design: {
-    dataMode: 'none',
-  },
+  design: {},
 };

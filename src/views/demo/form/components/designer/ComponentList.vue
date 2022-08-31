@@ -45,8 +45,6 @@
       id: buildUUID(),
       name: buildUUID(),
     } as DraggableItemConfig;
-
-    log('newItem', newItem);
     return newItem;
   };
 </script>

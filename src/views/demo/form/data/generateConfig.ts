@@ -26,8 +26,8 @@ export default {
       component: {
         component: 'el-autocomplete',
         config: {
-          remote: true,
-          remoteConfig: {
+          dataMode: 'dynamic',
+          remote: {
             url: '/api/test/getOptions',
           },
         },
@@ -44,8 +44,8 @@ export default {
       component: {
         component: 'el-cascader',
         config: {
-          remote: true,
-          remoteConfig: {
+          dataMode: 'dynamic',
+          remote: {
             url: '/api/test/getCascadeData',
           },
         },
@@ -62,8 +62,8 @@ export default {
       component: {
         component: 'el-checkbox-group',
         config: {
-          remote: true,
-          remoteConfig: {
+          dataMode: 'dynamic',
+          remote: {
             url: '/api/test/getOptions',
           },
         },
@@ -80,6 +80,7 @@ export default {
       component: {
         component: 'el-color-picker',
         config: {
+          dataMode: 'static',
           options: [
             {
               label: '选项1',
@@ -136,6 +137,7 @@ export default {
       component: {
         component: 'el-radio-group',
         config: {
+          dataMode: 'static',
           options: [
             {
               label: '选项1',
@@ -180,8 +182,8 @@ export default {
       component: {
         component: 'el-select',
         config: {
-          remote: true,
-          remoteConfig: {
+          dataMode: 'dynamic',
+          remote: {
             url: '/api/test/getOptions',
           },
         },

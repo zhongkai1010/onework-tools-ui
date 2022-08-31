@@ -50,9 +50,16 @@
     config?: FormItemConfig;
   }>();
 
+  const isRemote = computed(() => {
+    if (props.config?.dataMode == 'dynamic') {
+      return props.config?.remote != undefined;
+    }
+    return false;
+  });
+
   const { isFetching, execute } = useHttpFetch<Recordable<any>, any>(
     (params) => {
-      if (props.config?.remote) {
+      if (isRemote.value) {
         return http.request({
           method: props.config?.remote?.method ?? 'get',
           url: props.config?.remote?.url,
@@ -88,7 +95,7 @@
   });
 
   watchEffect(async () => {
-    if (isOptions.value && props.config?.remote) {
+    if (isOptions.value && isRemote.value) {
       const result = await execute(props.config?.remote?.params);
       const tempOptions = (result as any[]).map((t) => {
         return {
@@ -99,6 +106,13 @@
       });
       options.value = tempOptions;
     }
+  });
+
+  watch([props], () => {
+    if (props.config?.dataMode === 'static') {
+      options.value = props.config.options ?? [];
+    }
+    log('form item watch', props.config);
   });
 
   /**
@@ -165,5 +179,5 @@
   };
 
   const attrs = useAttrs();
-  log('form-item props', attrs, props);
+  log('dynamic form item props', attrs, props);
 </script>

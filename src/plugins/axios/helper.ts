@@ -1,4 +1,4 @@
-import { isObject, isString } from '/@/utils/is';
+import _ from 'lodash';
 
 const DATE_TIME_FORMAT = 'YYYY-MM-DD HH:mm:ss';
 
@@ -31,17 +31,17 @@ export function formatRequestDate(params: Recordable) {
     if (format && typeof format === 'function') {
       params[key] = params[key].format(DATE_TIME_FORMAT);
     }
-    if (isString(key)) {
+    if (_.isString(key)) {
       const value = params[key];
       if (value) {
         try {
-          params[key] = isString(value) ? value.trim() : value;
+          params[key] = _.isString(value) ? value.trim() : value;
         } catch (error: any) {
           throw new Error(error);
         }
       }
     }
-    if (isObject(params[key])) {
+    if (_.isObject(params[key])) {
       formatRequestDate(params[key]);
     }
   }

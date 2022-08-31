@@ -26,14 +26,12 @@ export default [
         component: {
           component: 'el-autocomplete',
           config: {
+            dataMode: 'dynamic',
             remote: {
               url: '/api/test/getOptions',
               method: 'get',
             },
           },
-        },
-        design: {
-          dataMode: 'dynamic',
         },
       }),
       initDefaultValues({
@@ -47,14 +45,12 @@ export default [
         component: {
           component: 'el-cascader',
           config: {
+            dataMode: 'dynamic',
             remote: {
               url: '/api/test/getCascadeData',
               method: 'get',
             },
           },
-        },
-        design: {
-          dataMode: 'dynamic',
         },
       }),
       initDefaultValues({
@@ -68,14 +64,12 @@ export default [
         component: {
           component: 'el-checkbox-group',
           config: {
+            dataMode: 'dynamic',
             remote: {
               url: '/api/test/getOptions',
               method: 'get',
             },
           },
-        },
-        design: {
-          dataMode: 'all',
         },
       }),
       initDefaultValues({
@@ -137,6 +131,7 @@ export default [
         component: {
           component: 'el-radio-group',
           config: {
+            dataMode: 'static',
             options: [
               {
                 label: '选项1',
@@ -156,9 +151,6 @@ export default [
               },
             ],
           },
-        },
-        design: {
-          dataMode: 'static',
         },
       }),
       initDefaultValues({
@@ -184,15 +176,14 @@ export default [
         component: {
           component: 'el-select',
           config: {
+            dataMode: 'dynamic',
             remote: {
               url: '/api/test/getOptions',
               method: 'get',
             },
           },
         },
-        design: {
-          dataMode: 'all',
-        },
+        design: {},
       }),
       initDefaultValues({
         name: 'Slider 滑块',

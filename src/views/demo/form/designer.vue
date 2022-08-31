@@ -5,8 +5,8 @@
       <template #header>
         <div class="card-header">
           <span>表单</span>
-          <el-button type="primary" @click="formConfigDrawerRef.open()">表单配置</el-button>
-          <el-button type="primary" @click="log('form-item', formItems)">查看配置</el-button>
+          <el-button @click="formConfigDrawerRef.open()">表单配置</el-button>
+          <el-button type="primary" @click="showConfig">查看效果</el-button>
         </div>
       </template>
       <el-form v-bind="formConfig.props" :model="formValue">
@@ -21,7 +21,7 @@
             <draggable-item
               :model-value="formValue[element.name]"
               :config="element"
-              @set="onSetItem"
+              @set="onOpenItemConfig"
               @update:model-value="(value) => (formValue[element.name] = value)"
             />
           </template>
@@ -30,6 +30,7 @@
     </el-card>
     <FormConfigDrawer :config="formConfig" ref="formConfigDrawerRef" />
     <FormItemConfigDrawer ref="formItemDrawerRef" @save="onSaveItem" />
+    <PreviewFrom ref="previewFromRef" />
   </page-view>
 </template>
 
@@ -39,7 +40,7 @@
   import ComponentList from './components/designer/ComponentList.vue';
   import FormConfigDrawer from './components/designer/FormConfigDrawer.vue';
   import FormItemConfigDrawer from './components/designer/FormItemConfigDrawer.vue';
-
+  import PreviewFrom from './components/designer/PreviewFrom.vue';
   import {
     DEFAULT_DRAGGABLE_ITEM_CONFIG,
     DraggableItemConfig,
@@ -51,9 +52,11 @@
   import _ from 'lodash';
 
   import { log } from '/@/utils/log';
+  import { DynamicFormConfig } from '/@/components/DynamicForm';
 
   const formValue = reactive({});
   const formConfig = reactive<FormConfigDrawerProps>({
+    name: '',
     layout: {
       gutter: 20,
       justify: 'start',
@@ -65,10 +68,6 @@
       size: 'default',
     },
   });
-
-  const formConfigDrawerRef = ref<FormConfigDrawerInstance>();
-  const formItemDrawerRef = ref<FormItemDrawerInstance>();
-
   const formItems = ref<DraggableItemConfig[]>([
     {
       id: 'default',
@@ -76,11 +75,15 @@
     },
   ]);
 
-  const onSetItem = (id) => {
+  const formConfigDrawerRef = ref<FormConfigDrawerInstance>();
+  const formItemDrawerRef = ref<FormItemDrawerInstance>();
+  const previewFromRef = ref<{ open: (config: DynamicFormConfig) => void }>();
+
+  const onOpenItemConfig = (id) => {
     const config = formItems.value.find((t) => t.id == id);
     if (config) {
-      log('onSetItem', config);
-      formItemDrawerRef.value.open(config);
+      const item = _.cloneDeep(config); // 消除代理和响应
+      formItemDrawerRef.value.open(item);
     } else {
       throw new Error(`not fond item by id ${id}`);
     }
@@ -88,6 +91,13 @@
   const onSaveItem = (value: DraggableItemConfig) => {
     const index = formItems.value.findIndex((t) => t.id == value.id);
     formItems.value.splice(index, 1, value);
+  };
+
+  const showConfig = () => {
+    const fields = _.cloneDeep(unref(formItems.value));
+    let config: DynamicFormConfig = { ..._.cloneDeep(formConfig), fields };
+    previewFromRef.value.open(config);
+    log('form-item', config);
   };
 
   provide(FORM_LIST_PROVIDE_KEY, formItems);
