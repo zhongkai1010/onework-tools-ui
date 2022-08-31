@@ -1,20 +1,13 @@
 import { Ref } from 'vue';
-import {
-  DynamicFormField,
-  DynamicFormLayout,
-  DynamicFormProps,
-  FormItemProps,
-} from '/@/components/DynamicForm';
-
-export interface FormConfigDrawerProps {
-  name: string;
-  layout?: DynamicFormLayout;
-  props?: DynamicFormProps;
-}
+import { DynamicFormConfig, DynamicFormField, FormItemProps } from '/@/components/DynamicForm';
 
 export interface FormConfigDrawerInstance {
   open: () => void;
-  config: Ref<FormConfigDrawerProps>;
+  config: Ref<DynamicFormConfig>;
+}
+
+export interface DynamicFormDesignConfig extends Omit<DynamicFormConfig, 'fields'> {
+  fields: DraggableItemConfig[];
 }
 
 export interface FormItemDrawerInstance {

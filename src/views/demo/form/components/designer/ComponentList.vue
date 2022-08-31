@@ -1,6 +1,11 @@
 <template>
   <el-card class="component-container">
-    <template #header> 组件 </template>
+    <template #header>
+      <div class="header">
+        <iconify-icon icon="gg:components" :size="25" />
+        <span>组件库</span>
+      </div>
+    </template>
     <el-collapse v-model="activeNames" accordion>
       <el-collapse-item
         :title="group.title"
@@ -36,6 +41,7 @@
 
   import { buildUUID } from '/@/utils/uuid';
   import { log } from '/@/utils/log';
+  import IconifyIcon from '/@/components/IconifyIcon/src/iconifyIcon.vue';
 
   const activeNames = ref(formConfig[0].name);
 
@@ -54,11 +60,29 @@
     width: 280px;
     height: $main-no-margin-height;
     position: fixed;
+
+    .header {
+      font-size: 16px;
+      vertical-align: middle;
+      i {
+        margin-right: 5px;
+        vertical-align: bottom;
+      }
+    }
+
+    :deep(.el-collapse-item__header:last-of-type) {
+      border-bottom: 0px;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+
     &:deep(.el-card__body) {
+      padding: 10px;
       height: calc($main-no-margin-height - 65px);
       overflow: auto;
       @include scrollBar;
     }
+
     .form-list {
       li {
         display: flex;
@@ -72,10 +96,6 @@
 
     .el-collapse {
       border-top: 0px;
-    }
-
-    :deep(.el-collapse-item__header:last-of-type) {
-      border-bottom: 0px;
     }
 
     .el-collapse-item__content {

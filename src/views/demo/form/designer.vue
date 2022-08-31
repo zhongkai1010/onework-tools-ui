@@ -3,7 +3,8 @@
     <component-list />
     <el-card shadow="always" class="form-container">
       <template #header>
-        <div class="card-header">
+        <div class="header">
+          <iconify-icon icon="ant-design:form-outlined" :size="25" />
           <span>表单</span>
           <el-button @click="formConfigDrawerRef.open()">表单配置</el-button>
           <el-button type="primary" @click="showConfig">查看效果</el-button>
@@ -13,7 +14,7 @@
         <draggable
           tag="el-row"
           group="component"
-          :list="formItems"
+          :list="formConfig.fields"
           item-key="id"
           :component-data="formConfig.layout"
         >
@@ -21,14 +22,16 @@
             <draggable-item
               :model-value="formValue[element.name]"
               :config="element"
-              @set="onOpenItemConfig"
+              @set="onSetItem"
+              @copy="onCopyItem"
+              @remove="onRemoveItem"
               @update:model-value="(value) => (formValue[element.name] = value)"
             />
           </template>
         </draggable>
       </el-form>
     </el-card>
-    <FormConfigDrawer :config="formConfig" ref="formConfigDrawerRef" />
+    <FormConfigDrawer v-model="formConfig" ref="formConfigDrawerRef" />
     <FormItemConfigDrawer ref="formItemDrawerRef" @save="onSaveItem" />
     <PreviewFrom ref="previewFromRef" />
   </page-view>
@@ -44,8 +47,8 @@
   import {
     DEFAULT_DRAGGABLE_ITEM_CONFIG,
     DraggableItemConfig,
+    DynamicFormDesignConfig,
     FormConfigDrawerInstance,
-    FormConfigDrawerProps,
     FormItemDrawerInstance,
     FORM_LIST_PROVIDE_KEY,
   } from './types';
@@ -53,34 +56,40 @@
 
   import { log } from '/@/utils/log';
   import { DynamicFormConfig } from '/@/components/DynamicForm';
+  import { buildUUID } from '/@/utils/uuid';
 
   const formValue = reactive({});
-  const formConfig = reactive<FormConfigDrawerProps>({
-    name: '',
+  const formConfig = reactive<DynamicFormDesignConfig>({
+    name: 'form',
     layout: {
       gutter: 20,
       justify: 'start',
-      align: 'middle',
+      align: 'top',
     },
     props: {
       labelWidth: 80,
       labelPosition: 'top',
       size: 'default',
     },
+    fields: [
+      {
+        id: 'default',
+        ...DEFAULT_DRAGGABLE_ITEM_CONFIG,
+      },
+    ],
   });
-  const formItems = ref<DraggableItemConfig[]>([
-    {
-      id: 'default',
-      ...DEFAULT_DRAGGABLE_ITEM_CONFIG,
-    },
-  ]);
 
   const formConfigDrawerRef = ref<FormConfigDrawerInstance>();
   const formItemDrawerRef = ref<FormItemDrawerInstance>();
   const previewFromRef = ref<{ open: (config: DynamicFormConfig) => void }>();
 
-  const onOpenItemConfig = (id) => {
-    const config = formItems.value.find((t) => t.id == id);
+  const onSaveItem = (value: DraggableItemConfig) => {
+    const index = formConfig.fields.findIndex((t) => t.id == value.id);
+    formConfig.fields.splice(index, 1, value);
+  };
+
+  const onSetItem = (id) => {
+    const config = formConfig.fields.find((t) => t.id == id);
     if (config) {
       const item = _.cloneDeep(config); // 消除代理和响应
       formItemDrawerRef.value.open(item);
@@ -88,19 +97,27 @@
       throw new Error(`not fond item by id ${id}`);
     }
   };
-  const onSaveItem = (value: DraggableItemConfig) => {
-    const index = formItems.value.findIndex((t) => t.id == value.id);
-    formItems.value.splice(index, 1, value);
+
+  const onCopyItem = (id: string) => {
+    const index = formConfig.fields.findIndex((t) => t.id == id);
+    const copyItem = _.cloneDeep(formConfig.fields[index]);
+    copyItem.id = buildUUID();
+    copyItem.name = buildUUID();
+    formConfig.fields.push({ ...copyItem });
+  };
+
+  const onRemoveItem = (id: string) => {
+    const index = formConfig.fields.findIndex((t) => t.id == id);
+    formConfig.fields.splice(index, 1);
   };
 
   const showConfig = () => {
-    const fields = _.cloneDeep(unref(formItems.value));
-    let config: DynamicFormConfig = { ..._.cloneDeep(formConfig), fields };
+    let config: DynamicFormConfig = _.cloneDeep(formConfig);
     previewFromRef.value.open(config);
     log('form-item', config);
   };
 
-  provide(FORM_LIST_PROVIDE_KEY, formItems);
+  provide(FORM_LIST_PROVIDE_KEY, formConfig.fields);
 </script>
 
 <style lang="scss" scoped>
@@ -113,13 +130,21 @@
       min-height: $main-no-margin-height;
       margin-left: 300px;
       user-select: none;
-
-      .el-row {
-        border: 1px dashed var(--header-font-color);
+      :deep(.el-card__body) {
+        padding: 0px;
       }
-      .card-header {
+      .el-row {
+        padding: 10px;
+        margin: 0 !important;
+        min-height: calc($main-no-margin-height - 70px);
+        align-content: flex-start;
+      }
+      .header {
         display: flex;
         align-items: center;
+        i {
+          margin-right: 5px;
+        }
         span {
           margin-right: auto;
         }

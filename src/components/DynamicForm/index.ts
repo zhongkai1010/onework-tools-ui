@@ -1,3 +1,4 @@
+import { FormRules } from 'element-plus';
 import dynamicForm from './src/DynamicForm.vue';
 import formItem from './src/FormItem.vue';
 
@@ -9,6 +10,7 @@ export default DynamicForm;
 export interface DynamicFormConfig {
   model?: Record<string, any>;
   name: string;
+  url?: string;
   fields: DynamicFormField[];
   layout?: DynamicFormLayout;
   props?: DynamicFormProps;
@@ -30,6 +32,7 @@ export interface DynamicFormLayout {
 }
 
 export interface DynamicFormProps {
+  rules?: FormRules;
   labelWidth?: number | string;
   labelPosition?: 'left' | 'right' | 'top';
   labelSuffix?: string;

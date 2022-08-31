@@ -50,7 +50,7 @@ export default [
           {
             name: 'demo_form_step',
             path: 'step',
-            meta: { title: t('router.demo.form.deploy'), icon: 'bi:layout-wtf' },
+            meta: { title: t('router.demo.form.step'), icon: 'bi:layout-wtf' },
             component: () => import('/@/views/demo/form/step.vue'),
           },
           {
