@@ -1,5 +1,5 @@
 import { Ref } from 'vue';
-import { DynamicFormConfig, DynamicFormField, FormItemProps } from '/@/components/DynamicForm';
+import { DynamicFormConfig, DynamicFormField, FormItemConfig } from '/@/components/DynamicForm';
 
 export interface FormConfigDrawerInstance {
   open: () => void;
@@ -27,7 +27,7 @@ export interface DraggableItemDesign {
   isRule?: boolean;
   items?: {
     label: string;
-    component: FormItemProps;
+    component: FormItemConfig;
     path: string;
   }[];
 }
@@ -38,12 +38,13 @@ export const DEFAULT_DRAGGABLE_ITEM_CONFIG: DefaultDraggableItemConfig = {
   name: 'default',
   span: 6,
   defaultValue: undefined,
+  showLabel: true,
   props: {
     prop: '',
     label: '示例组件',
     labelWidth: undefined,
     required: false,
-    error: undefined,
+
     rules: [],
     showMessage: undefined,
     inlineMessage: undefined,

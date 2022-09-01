@@ -9,5 +9,5 @@ export function error(message: string) {
 }
 
 export function log(key, ...params) {
-  console.log(`----------------- ${key} ---------------------`, params);
+  console.log(`----------------- ${key} ---------------------`, ...params);
 }

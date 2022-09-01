@@ -2,6 +2,7 @@ import { DynamicFormConfig } from '/@/components/DynamicForm';
 
 export default {
   name: 'defalut',
+  url: '',
   fields: [
     {
       name: 'input',
@@ -38,7 +39,7 @@ export default {
       span: 12,
       props: {
         prop: 'cascader',
-        label: '级联选择器1',
+        label: '级联选择器',
         required: true,
       },
       component: {

@@ -4,10 +4,10 @@
       <el-form :model="formValue" :label-width="180" label-position="left">
         <el-divider content-position="left">基本配置</el-divider>
         <el-form-item label="表单名称" prop="name">
-          <el-input v-model="formValue.name" />
+          <el-input v-model="formValue.name" clearable />
         </el-form-item>
         <el-form-item label="提交地址" prop="url">
-          <el-input v-model="formValue.url" />
+          <el-input v-model="formValue.url" clearable />
         </el-form-item>
         <el-divider content-position="left">表单配置</el-divider>
         <el-form-item label="标签长度">
@@ -38,7 +38,7 @@
           </el-radio-group>
         </el-form-item>
         <el-form-item label="标签的后缀" prop="props.labelSuffix">
-          <el-input v-model="formValue.props.labelSuffix" />
+          <el-input v-model="formValue.props.labelSuffix" clearable />
         </el-form-item>
         <el-form-item label="红色星号" prop="props.hideRequiredAsterisk">
           <el-switch v-model="formValue.props.hideRequiredAsterisk" />

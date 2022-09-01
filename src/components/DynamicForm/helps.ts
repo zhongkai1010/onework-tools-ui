@@ -1,8 +1,8 @@
-import { DynamicFormConfig } from '.';
+import { DynamicFormField } from '.';
 
-export const getFormDefauleVlue = (props: DynamicFormConfig) => {
+export const getFormDefauleVlue = (fields: DynamicFormField[]) => {
   const values = {};
-  (props.fields || []).forEach((value) => {
+  fields.forEach((value) => {
     values[value.name] = value.defaultValue;
   });
 

@@ -61,6 +61,7 @@
   const formValue = reactive({});
   const formConfig = reactive<DynamicFormDesignConfig>({
     name: 'form',
+    url: '',
     layout: {
       gutter: 20,
       justify: 'start',
@@ -91,8 +92,7 @@
   const onSetItem = (id) => {
     const config = formConfig.fields.find((t) => t.id == id);
     if (config) {
-      const item = _.cloneDeep(config); // 消除代理和响应
-      formItemDrawerRef.value.open(item);
+      formItemDrawerRef.value.open(config);
     } else {
       throw new Error(`not fond item by id ${id}`);
     }
@@ -112,9 +112,8 @@
   };
 
   const showConfig = () => {
-    let config: DynamicFormConfig = _.cloneDeep(formConfig);
-    previewFromRef.value.open(config);
-    log('form-item', config);
+    previewFromRef.value.open(formConfig);
+    log('form-item', formConfig);
   };
 
   provide(FORM_LIST_PROVIDE_KEY, formConfig.fields);

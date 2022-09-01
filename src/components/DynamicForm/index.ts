@@ -7,71 +7,6 @@ export const FormItem = formItem;
 
 export default DynamicForm;
 
-export interface DynamicFormConfig {
-  model?: Record<string, any>;
-  name: string;
-  url?: string;
-  fields: DynamicFormField[];
-  layout?: DynamicFormLayout;
-  props?: DynamicFormProps;
-}
-
-export interface DynamicFormField {
-  name: string;
-  span?: number;
-  defaultValue?: any;
-  showLabel?: boolean;
-  props: DynamicFormFieldProps;
-  component: FormItemProps;
-}
-
-export interface DynamicFormLayout {
-  gutter?: number;
-  justify?: 'start' | 'end' | 'center' | 'space-around' | 'space-between' | 'space-evenly';
-  align?: 'top' | 'middle' | 'bottom';
-}
-
-export interface DynamicFormProps {
-  rules?: FormRules;
-  labelWidth?: number | string;
-  labelPosition?: 'left' | 'right' | 'top';
-  labelSuffix?: string;
-  hideRequiredAsterisk?: boolean;
-  requireAsteriskPosition?: 'left' | 'right';
-  showMessage?: boolean;
-  inlineMessage?: boolean;
-  statusIcon?: boolean;
-  validateOnRuleChange?: boolean;
-  size?: 'large' | 'default' | 'small';
-  disabled?: boolean;
-  scrollToError?: boolean;
-}
-
-export interface FormItemProps {
-  modelValue?: any;
-  component: FormComponent;
-  props?: Recordable<any>;
-  config?: FormItemConfig;
-}
-
-export interface DynamicFormFieldProps {
-  prop: string;
-  label: string;
-  labelWidth?: string | number;
-  required: boolean;
-  error?: string;
-  rules?: FormItemRule[];
-  showMessage?: boolean;
-  inlineMessage?: boolean;
-  size?: 'large' | 'default' | 'small';
-  trigger?: 'blur' | 'change';
-}
-
-export interface FormItemRule {
-  pattern: string;
-  message: string;
-}
-
 export declare type FormComponent =
   | 'el-autocomplete'
   | 'el-cascader'
@@ -91,14 +26,78 @@ export declare type FormComponent =
   | 'el-time-picker'
   | 'el-time-select'
   | 'el-transfer'
-  | 'el-upload';
+  | 'el-upload'
+  | 'ow-form-set-data'
+  | 'ow-form-set-rule';
+export interface DynamicFormConfig {
+  model?: Recordable<any>;
+  name: string;
+  url?: string;
+  fields: DynamicFormField[];
+  layout?: Partial<DynamicFormLayout>;
+  props?: Partial<DynamicFormProps>;
+}
 
-export type DataMode = 'static' | 'dynamic' | 'none';
+export interface DynamicFormField {
+  name: string;
+  span?: number;
+  defaultValue?: any;
+  showLabel?: boolean;
+  props?: Partial<DynamicFormFieldProps>;
+  component: FormItemConfig;
+}
+
+export interface DynamicFormLayout {
+  gutter: number;
+  justify: 'start' | 'end' | 'center' | 'space-around' | 'space-between' | 'space-evenly';
+  align: 'top' | 'middle' | 'bottom';
+}
+
+export interface DynamicFormProps {
+  rules: FormRules;
+  labelWidth: number | string;
+  labelPosition: 'left' | 'right' | 'top';
+  labelSuffix: string;
+  hideRequiredAsterisk: boolean;
+  requireAsteriskPosition: 'left' | 'right';
+  showMessage: boolean;
+  inlineMessage: boolean;
+  statusIcon: boolean;
+  validateOnRuleChange: boolean;
+  size: 'large' | 'default' | 'small';
+  disabled: boolean;
+  scrollToError: boolean;
+}
+
+export interface DynamicFormFieldProps {
+  prop: string;
+  label: string;
+  labelWidth: string | number;
+  required: boolean;
+  rules: FormItemRule[];
+  showMessage: boolean;
+  inlineMessage: boolean;
+  size: 'large' | 'default' | 'small';
+  trigger: 'blur' | 'change';
+}
 
 export interface FormItemConfig {
-  dataMode?: DataMode;
-  options?: FormItemOption[];
-  remote?: FormItemRemote;
+  modelValue?: any;
+  component: FormComponent;
+  props?: Recordable<any>;
+  config?: Partial<FormItemComponentConfig>;
+}
+export interface FormItemRule {
+  pattern: string;
+  message: string;
+}
+
+export type DataMode = 'all' | 'static' | 'dynamic' | 'none';
+
+export interface FormItemComponentConfig {
+  dataMode: DataMode;
+  options: FormItemOption[];
+  remote: FormItemRemote;
 }
 
 export interface FormItemRemote {

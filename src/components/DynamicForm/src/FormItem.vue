@@ -43,12 +43,11 @@
   import { http } from '/@/plugins/axios';
   import { log } from '/@/utils/log';
 
-  const props = defineProps<{
-    modelValue?: any;
+  interface FormItemProps extends Partial<FormItemConfig> {
     component: FormComponent;
-    props?: Recordable<any>;
-    config?: FormItemConfig;
-  }>();
+  }
+
+  const props = defineProps<FormItemProps>();
 
   const isRemote = computed(() => {
     if (props.config?.dataMode == 'dynamic') {
@@ -112,7 +111,6 @@
     if (props.config?.dataMode === 'static') {
       options.value = props.config.options ?? [];
     }
-    log('form item watch', props.config);
   });
 
   /**

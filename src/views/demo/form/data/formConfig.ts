@@ -27,6 +27,7 @@ export default [
           component: 'el-autocomplete',
           config: {
             dataMode: 'dynamic',
+            options: [],
             remote: {
               url: '/api/test/getOptions',
               method: 'get',
