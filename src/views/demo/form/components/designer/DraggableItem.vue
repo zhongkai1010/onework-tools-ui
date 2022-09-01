@@ -21,11 +21,12 @@
   import _ from 'lodash';
 
   import { DraggableItemConfig } from '/@/views/demo/form/types';
-
+  import { log } from '/@/utils/log';
   const props = defineProps<{
     modelValue: any;
     config: DraggableItemConfig;
   }>();
+  log('draggable form item props', props.config);
   const emits = defineEmits<{
     (e: 'set', id: string);
     (e: 'copy', id: string);

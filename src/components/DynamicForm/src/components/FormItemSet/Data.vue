@@ -19,10 +19,12 @@
           <div class="option">
             <iconify-icon icon="mi:drag" :size="32" class="drag" />
             <el-input
+              placeholder="显示文本"
               :model-value="modelValue.options[index].label"
               @update:model-value="(value) => (modelValue.options[index].label = value)"
             />
             <el-input
+              placeholder="选项值"
               :model-value="modelValue.options[index].value"
               @update:model-value="(value) => (modelValue.options[index].value = value)"
             />
@@ -77,21 +79,15 @@
   interface Props {
     modelValue: Partial<FormItemComponentConfig>;
   }
-
   const props = defineProps<Props>();
+  const emit = defineEmits(['update:modelValue']);
 
-  const emits = defineEmits<{ (e: 'update:modelValue', value: FormItemComponentConfig) }>();
-  const modelValue = ref<FormItemComponentConfig>({
-    dataMode: 'static',
-    options: [],
-    remote: {
-      url: '',
-      method: 'get',
-      params: undefined,
-      labelKey: 'label',
-      valueKey: 'value',
-      childerKey: 'childer',
-      searchKey: 'search',
+  const modelValue = computed({
+    get: () => {
+      return props.modelValue;
+    },
+    set: (value) => {
+      emit('update:modelValue', value);
     },
   });
 
@@ -110,19 +106,12 @@
       value: '',
     });
   };
-
-  watch([props.modelValue], () => {
-    modelValue.value = { ...props.modelValue };
-  });
-
-  watch([modelValue], () => {
-    emits('update:modelValue', modelValue.value);
-  });
 </script>
 
 <style scoped lang="scss">
   .container {
     .remote-container {
+      margin-top: 10px;
       .el-form-item {
         margin-bottom: 10px;
         :deep(.el-form-item__label) {
@@ -131,6 +120,7 @@
       }
     }
     .options-container {
+      margin-top: 10px;
       .option {
         margin-bottom: 10px;
         display: flex;
@@ -151,7 +141,7 @@
         }
       }
       .button {
-        margin: 10px;
+        margin-top: 10px;
       }
     }
   }

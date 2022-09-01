@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-divider content-position="left">属性配置</el-divider>
+    <el-divider content-position="left">表单项配置</el-divider>
     <el-form-item label="数据路径" prop="props.prop">
       <el-input v-model="modelValue.prop" />
     </el-form-item>
@@ -47,18 +47,13 @@
   }
 
   const props = defineProps<Props>();
-
-  const modelValue = reactive<ModelValue>({});
-
-  const emits = defineEmits<{ (e: 'update:modelValue', value: ModelValue) }>();
-
-  watchEffect(() => {
-    Object.keys(props.modelValue).forEach((t) => {
-      modelValue[t] = props.modelValue[t];
-    });
-  });
-
-  watch([modelValue], () => {
-    emits('update:modelValue', modelValue);
+  const emit = defineEmits(['update:modelValue']);
+  const modelValue = computed({
+    get: () => {
+      return props.modelValue;
+    },
+    set: (value) => {
+      emit('update:modelValue', value);
+    },
   });
 </script>

@@ -28,7 +28,7 @@ export interface DraggableItemDesign {
   items?: {
     label: string;
     component: FormItemConfig;
-    path: string;
+    prop: string;
   }[];
 }
 
@@ -68,5 +68,7 @@ export const DEFAULT_DRAGGABLE_ITEM_CONFIG: DefaultDraggableItemConfig = {
       },
     },
   },
-  design: {},
+  design: {
+    isRule: false,
+  },
 };

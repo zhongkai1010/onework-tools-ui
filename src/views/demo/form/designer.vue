@@ -6,8 +6,10 @@
         <div class="header">
           <iconify-icon icon="ant-design:form-outlined" :size="25" />
           <span>表单</span>
-          <el-button @click="formConfigDrawerRef.open()">表单配置</el-button>
-          <el-button type="primary" @click="showConfig">查看效果</el-button>
+
+          <el-button type="primary" @click="formConfigDrawerRef.open()">配置表单</el-button>
+          <el-button @click="onPreview">查看效果</el-button>
+          <el-button @click="showConfig">查看配置</el-button>
         </div>
       </template>
       <el-form v-bind="formConfig.props" :model="formValue">
@@ -33,7 +35,7 @@
     </el-card>
     <FormConfigDrawer v-model="formConfig" ref="formConfigDrawerRef" />
     <FormItemConfigDrawer ref="formItemDrawerRef" @save="onSaveItem" />
-    <PreviewFrom ref="previewFromRef" />
+    <PreviewFrom :config="formConfig" ref="previewFromRef" />
   </page-view>
 </template>
 
@@ -92,7 +94,7 @@
   const onSetItem = (id) => {
     const config = formConfig.fields.find((t) => t.id == id);
     if (config) {
-      formItemDrawerRef.value.open(config);
+      formItemDrawerRef.value.open(_.cloneDeep(config));
     } else {
       throw new Error(`not fond item by id ${id}`);
     }
@@ -111,8 +113,11 @@
     formConfig.fields.splice(index, 1);
   };
 
-  const showConfig = () => {
+  const onPreview = () => {
     previewFromRef.value.open(formConfig);
+  };
+
+  const showConfig = () => {
     log('form-item', formConfig);
   };
 

@@ -18,15 +18,18 @@
 <script setup lang="ts">
   import { FormInstance } from 'element-plus';
   import { Ref } from 'vue';
-  import { DynamicFormConfig, DynamicFormField } from '..';
+  import { DynamicFormField, DynamicFormLayout, DynamicFormProps } from '..';
   import { getFormDefauleVlue } from '../helps';
   import { log } from '/@/utils/log';
 
-  interface DynamicFormConfigProp extends Partial<DynamicFormConfig> {
-    fields: Required<DynamicFormField[]>;
-  }
-
-  const props = defineProps<DynamicFormConfigProp>();
+  const props = defineProps<{
+    model?: Recordable<any>;
+    name: string;
+    url?: string;
+    fields: DynamicFormField[];
+    layout?: Partial<DynamicFormLayout>;
+    props?: Partial<DynamicFormProps>;
+  }>();
   const formRef = ref<FormInstance>();
 
   const formValue = reactive(props.model ?? getFormDefauleVlue(props.fields));

@@ -90,6 +90,7 @@ export interface FormItemConfig {
 export interface FormItemRule {
   pattern: string;
   message: string;
+  required?: boolean;
 }
 
 export type DataMode = 'all' | 'static' | 'dynamic' | 'none';

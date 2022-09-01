@@ -38,17 +38,20 @@
 </template>
 <script setup lang="ts">
   import _ from 'lodash';
-  import { FormComponent, FormItemConfig, FormItemOption } from '..';
+  import { FormComponent, FormItemComponentConfig, FormItemOption } from '..';
   import { useHttpFetch } from '/@/hooks/fetch';
   import { http } from '/@/plugins/axios';
   import { log } from '/@/utils/log';
 
-  interface FormItemProps extends Partial<FormItemConfig> {
+  interface Props {
+    modelValue?: any;
     component: FormComponent;
+    props?: Recordable<any>;
+    config?: FormItemComponentConfig;
   }
 
-  const props = defineProps<FormItemProps>();
-
+  const props = defineProps<Props>();
+  log('form item props', props.config);
   const isRemote = computed(() => {
     if (props.config?.dataMode == 'dynamic') {
       return props.config?.remote != undefined;
@@ -176,6 +179,6 @@
     }
   };
 
-  const attrs = useAttrs();
-  log('dynamic form item props', attrs, props);
+  // const attrs = useAttrs();
+  // log('dynamic form item props', attrs, props);
 </script>

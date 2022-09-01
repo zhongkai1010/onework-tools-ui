@@ -108,6 +108,53 @@ export default [
         component: {
           component: 'el-input',
         },
+        design: {
+          isRule: true,
+          items: [
+            {
+              label: '最大输入长度',
+              component: {
+                component: 'el-input-number',
+              },
+              prop: 'maxlength',
+            },
+            {
+              label: '最小输入长度',
+              component: {
+                component: 'el-input-number',
+              },
+              prop: 'showWordLimit',
+            },
+            {
+              label: '占位文本',
+              component: {
+                component: 'el-input',
+              },
+              prop: 'placeholder',
+            },
+            {
+              label: '是否可清空',
+              component: {
+                component: 'el-switch',
+              },
+              prop: 'clearable',
+            },
+            {
+              label: '是否可清空',
+              component: {
+                component: 'el-select',
+                config: {
+                  dataMode: 'static',
+                  options: [
+                    { label: '数字', value: 'number' },
+                    { label: '邮箱', value: 'email' },
+                  ],
+                },
+              },
+              prop: 'clearable',
+            },
+          ],
+        },
       }),
       initDefaultValues({
         name: 'Input Number 数字输入框',

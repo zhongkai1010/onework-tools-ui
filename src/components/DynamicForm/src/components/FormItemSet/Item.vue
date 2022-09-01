@@ -1,7 +1,6 @@
 <template>
   <div>
-    <!---基础配置--->
-    <el-divider content-position="left">表单项配置</el-divider>
+    <el-divider content-position="left">基础配置</el-divider>
     <el-form-item label="表单名称" :required="true" prop="name">
       <el-input v-model="modelValue.name" />
     </el-form-item>
@@ -35,21 +34,14 @@
   }
 
   const props = defineProps<Props>();
+  const emit = defineEmits(['update:modelValue']);
 
-  const modelValue = ref<ModelValue>({
-    name: '',
-    span: 6,
-    defaultValue: undefined,
-    showLabel: true,
-  });
-
-  const emits = defineEmits<{ (e: 'update:modelValue', value: ModelValue) }>();
-
-  watch([props.modelValue], () => {
-    modelValue.value = { ...props.modelValue };
-  });
-
-  watch([modelValue], () => {
-    emits('update:modelValue', modelValue.value);
+  const modelValue = computed({
+    get: () => {
+      return props.modelValue;
+    },
+    set: (value) => {
+      emit('update:modelValue', value);
+    },
   });
 </script>

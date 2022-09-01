@@ -1,14 +1,14 @@
 <template>
   <div class="config-container">
     <el-drawer :model-value="dialogShow" @closed="dialogShow = false" title="表单项配置">
-      <el-form :model="formValue" label-width="120px" label-position="left" ref="formRef">
-        <FormItemSet.Item v-model="formValue" />
-        <FormItemSet.Props v-model="formValue.props" />
+      <el-form :model="itemConfig" label-width="120px" label-position="left" ref="formRef">
+        <FormItemSet.Item v-model="itemConfig" />
+        <FormItemSet.Props v-model="itemConfig.props" />
         <FormItemSet.Data
-          v-model="formValue.component.config"
-          v-if="formValue.component.config.dataMode !== 'none'"
+          v-model="itemConfig.component.config"
+          v-if="itemConfig.component.config.dataMode !== 'none'"
         />
-        <FormItemSet.Rule v-model="formValue.props.rules" v-if="formValue.design.isRule" />
+        <FormItemSet.Rule v-model="itemConfig.props.rules" v-if="itemConfig.design.isRule" />
       </el-form>
       <template #footer>
         <div style="flex: auto">
@@ -36,26 +36,25 @@
   const { message } = useMessage();
 
   const dialogShow = ref(false);
-  const formValue = ref<DraggableItemConfig>({ id: '', ...DEFAULT_DRAGGABLE_ITEM_CONFIG });
+  const itemConfig = reactive<DraggableItemConfig>({ id: '', ...DEFAULT_DRAGGABLE_ITEM_CONFIG });
   const formRef = ref<FormInstance>();
   const emits = defineEmits<{ (e: 'save', value: DraggableItemConfig) }>();
 
   const onOpen = (config: DraggableItemConfig) => {
-    log('onOpen', config);
-    formValue.value = { ...config };
-    // formValue.name = config.name;
-    // Object.keys(DEFAULT_DRAGGABLE_ITEM_CONFIG).forEach((t) => {
-    //   formValue. [t] = config[t];
-    // });
+    log('open set', config);
+    itemConfig.id = config.id;
+    Object.keys(DEFAULT_DRAGGABLE_ITEM_CONFIG).forEach((t) => {
+      itemConfig[t] = config[t];
+    });
     dialogShow.value = true;
   };
 
   const onSave = (form: FormInstance) => {
-    const data = _.cloneDeep(formValue);
+    const data = _.cloneDeep(itemConfig);
     log('form item config save', data);
     form.validate((valid, fields) => {
       if (valid) {
-        emits('save', data.value);
+        emits('save', data);
         dialogShow.value = false;
       } else {
         console.log('save error', fields);
@@ -65,6 +64,10 @@
   };
 
   defineExpose<FormItemDrawerInstance>({ open: onOpen });
+
+  watch([itemConfig], () => {
+    log('itemConfig', itemConfig);
+  });
 </script>
 <style scoped lang="scss">
   .config-container {
