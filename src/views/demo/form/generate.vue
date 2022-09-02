@@ -1,5 +1,5 @@
 <template>
-  <page-view class="container">
+  <page-view class="container" :gutter="0">
     <el-card class="box-card" :title="`自定义表单`">
       <template #header>
         <div class="card-header">

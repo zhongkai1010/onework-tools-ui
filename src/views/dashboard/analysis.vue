@@ -1,5 +1,5 @@
 <template>
-  <page-view class="container">
+  <page-view class="container" :gutter="0">
     <el-row :gutter="20">
       <el-col :span="6">
         <el-card class="mini-card">
@@ -89,8 +89,6 @@
 
 <style lang="scss" scoped>
   .container {
-    background-color: transparent;
-
     .el-col {
       margin-bottom: 20px;
     }

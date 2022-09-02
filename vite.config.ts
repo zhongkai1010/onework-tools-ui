@@ -10,6 +10,7 @@ import eslint from 'vite-plugin-eslint';
 import VueSetupExtend from 'vite-plugin-vue-setup-extend';
 import vueI18n from '@intlify/vite-plugin-vue-i18n';
 import { viteMockServe } from 'vite-plugin-mock';
+import topLevelAwait from 'vite-plugin-top-level-await';
 
 // import { viteMockServe } from "vite-plugin-mock";
 
@@ -19,7 +20,7 @@ const pathResolve = (dir: string): string => {
 };
 
 // https://vitejs.dev/config/
-export default ({ command }): UserConfigExport => {
+export default ({ _command }): UserConfigExport => {
   return {
     resolve: {
       alias: [
@@ -73,8 +74,14 @@ export default ({ command }): UserConfigExport => {
         // default
         mockPath: 'mock',
         supportTs: true,
-        localEnabled: command === 'serve',
+        localEnabled: true,
         watchFiles: true,
+      }),
+      topLevelAwait({
+        // The export name of top-level await promise for each chunk module
+        promiseExportName: '__tla',
+        // The function to generate import names of top-level await promise in each chunk module
+        promiseImportName: (i) => `__tla_${i}`,
       }),
     ],
     server: {

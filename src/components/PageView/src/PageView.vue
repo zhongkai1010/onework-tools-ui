@@ -1,5 +1,5 @@
 <template>
-  <div class="body_container">
+  <div class="body_container" :style="styleProps">
     <slot></slot>
     <div class="copyright">
       Copyright <IconifyIcon icon="ant-design:copyright-circle-outlined" /> 2022 OneWork Tools UI
@@ -7,14 +7,31 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+  import { CSSProperties } from 'vue';
+
+  interface Props {
+    gutter?: number;
+    bgColor?: boolean;
+  }
+
+  const props = withDefaults(defineProps<Props>(), {
+    gutter: 20,
+    bgColor: true,
+  });
+
+  const styleProps = computed<CSSProperties>(() => {
+    return {
+      padding: `${props.gutter}px`,
+      backgroundColor: props.bgColor ? '#fff' : 'transparent',
+    };
+  });
+</script>
 
 <style lang="scss" scoped>
   .body_container {
-    padding: 20px;
-    min-height: calc(100vh - $layout-header-height - var(--layout-header-tab-height));
-    background-color: #fff;
-
+    margin: $layout-body-margin;
+    min-height: $main-no-margin-height;
     .copyright {
       margin-left: $layout-sidebar-width;
       position: fixed;

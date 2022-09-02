@@ -84,22 +84,23 @@
     }
   }
 
-  .el-menu--popup {
-    padding: 0px;
-    border-radius: 0px;
+  // .el-menu--popup {
+  //   padding: 0px;
+  //   border-radius: 0px;
 
-    .el-sub-menu {
-      &.is-active {
-        background-color: var(--el-color-primary);
-        color: var(--el-color-white);
-      }
-      &:hover {
-        background-color: var(--el-color-primary);
-        color: var(--el-color-white);
-      }
-      .el-sub-menu__title {
-        height: $layout-menu-height;
-      }
-    }
-  }
+  //   .el-sub-menu {
+  //     .el-sub-menu__title {
+  //       height: $layout-menu-height;
+  //     }
+  //     &:hover {
+  //       background-color: var(--el-color-primary);
+  //       color: var(--el-color-white);
+  //     }
+  //   }
+
+  //   .el-sub-menu ~ .is-active {
+  //     background-color: var(--el-color-primary);
+  //     color: var(--el-color-white);
+  //   }
+  // }
 </style>

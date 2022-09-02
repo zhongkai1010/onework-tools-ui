@@ -1,6 +1,6 @@
 import { App } from 'vue';
 import IconifyIcon from './IconifyIcon/index';
-import ConfigTable, { DataTable } from './ConfigTable/index';
+import DynamicTable, { DataTable } from './DynamicTable/index';
 
 import ResizeChart from './ResizeChart/index';
 
@@ -31,7 +31,7 @@ const setupComponents = (app: App<Element>) => {
   /**
    *  表格
    */
-  app.component('ConfigTable', ConfigTable);
+  app.component('DynamicTable', DynamicTable);
   app.component('DataTable', DataTable);
   /**
    *  表单

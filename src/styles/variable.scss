@@ -9,6 +9,8 @@ $z-layers: (
 $layout-header-height: 60px; // 头部header高度
 $layout-sidebar-fold-width: 64px;
 $layout-menu-height: 50px;
+$layout-tab-height: var(--layout-header-tab-height);
+
 $layout-body-margin: 20px;
 $layout-sidebar-nav-width: var(--layout-sidebar-nav-width);
 $layout-sidebar-menu-width: var(--layout-sidebar-menu-width);

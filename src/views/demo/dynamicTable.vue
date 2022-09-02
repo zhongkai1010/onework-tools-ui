@@ -5,11 +5,12 @@
 </template>
 
 <script setup lang="ts">
-  import { DataTableProps } from '/@/components/ConfigTable';
+  import { DataTableConfig } from '/@/components/DynamicTable';
+  import { log } from '/@/utils/log';
 
   let tableRef = ref<{ selectRows: any[] }>();
 
-  const config = {
+  const config: DataTableConfig = {
     title: '表格示例',
     rowKey: 'uid',
     serialNumber: true,
@@ -18,7 +19,10 @@
 
     operate: ['remove', 'show', 'edit'],
     toolbar: ['add', 'column', 'edit', 'remove', 'search', 'refresh'],
-    url: '/api/test/getPageTableData',
+    remote: {
+      url: '/api/test/getPageTableData',
+      method: 'get',
+    },
     fields: [
       {
         label: 'ID',
@@ -34,8 +38,8 @@
         name: 'fieldName',
         type: 'string',
         order: 2,
-        width: 120,
-        columnProps: {
+
+        props: {
           sortable: true,
         },
       },
@@ -45,14 +49,16 @@
         type: 'string',
         order: 1,
         editable: {
-          component: 'radio',
-          props: {
-            options: [
-              {
-                label: 'radio',
-                value: 'radio',
-              },
-            ],
+          component: {
+            component: 'el-radio',
+            config: {
+              options: [
+                {
+                  label: 'radio',
+                  value: 'radio',
+                },
+              ],
+            },
           },
         },
       },
@@ -82,7 +88,7 @@
         type: 'string',
       },
     ],
-  } as DataTableProps;
+  };
   const selectRows = computed(() => {
     if (tableRef.value) {
       return tableRef.value.selectRows;
@@ -90,9 +96,8 @@
     return [];
   });
 
-  console.log(tableRef.value);
   watch([selectRows], () => {
-    console.log('`````````watch selectRows```````````', selectRows.value);
+    log('select row watch', selectRows.value);
   });
 </script>
 

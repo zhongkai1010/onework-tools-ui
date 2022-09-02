@@ -36,6 +36,11 @@ export interface DynamicFormConfig {
   fields: DynamicFormField[];
   layout?: Partial<DynamicFormLayout>;
   props?: Partial<DynamicFormProps>;
+  group?: boolean;
+  step?: boolean;
+  button?: boolean;
+  submitText?: string;
+  submitIcon?: string;
 }
 
 export interface DynamicFormField {
@@ -45,6 +50,8 @@ export interface DynamicFormField {
   showLabel?: boolean;
   props?: Partial<DynamicFormFieldProps>;
   component: FormItemConfig;
+  group?: string;
+  step?: number;
 }
 
 export interface DynamicFormLayout {

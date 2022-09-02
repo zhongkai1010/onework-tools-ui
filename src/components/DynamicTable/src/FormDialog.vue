@@ -1,11 +1,4 @@
 <template>
-  <div> </div>
-</template>
-
-<script setup></script>
-
-<style lang="scss" scoped></style>
-<!-- <template>
   <el-dialog
     :model-value="dialogShow"
     :title="`${dialogTitle ? dialogTitle + ' - ' : ''}${$t(
@@ -131,4 +124,4 @@
   defineExpose<FormDialogInstance>({ open: onClickOpen, close: onClickClose });
 </script>
 
-<style scoped></style> -->
+<style scoped></style>

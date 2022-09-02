@@ -1,5 +1,5 @@
 <template>
-  <page-view class="container">
+  <page-view class="container" :gutter="0" :bg-color="false">
     <component-list />
     <el-card shadow="always" class="form-container">
       <template #header>
@@ -127,7 +127,6 @@
 <style lang="scss" scoped>
   .container {
     display: flex;
-    background-color: transparent !important;
 
     .form-container {
       width: calc(100vw - $layout-sidebar-width);

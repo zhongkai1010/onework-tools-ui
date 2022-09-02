@@ -2,6 +2,8 @@
   import { ElConfigProvider } from 'element-plus';
   import { useLocale } from '/@/locales/useLocale';
   const { elementPlusLocale } = useLocale();
+
+  console.log('init');
 </script>
 
 <template>
