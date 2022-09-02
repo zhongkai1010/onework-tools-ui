@@ -17,45 +17,49 @@ import './styles/reset.scss';
 // element-plus
 import 'element-plus/dist/index.css';
 
-const app = createApp(App);
+async function bootstrap() {
+  const app = createApp(App);
 
-/**
- * 国际化
- */
-await setupI18n(app);
+  /**
+   * 国际化
+   */
+  await setupI18n(app);
 
-/**
- * 路由
- */
-// app.use(router);
-setupRouter(app);
+  /**
+   * 路由
+   */
+  // app.use(router);
+  setupRouter(app);
 
-/**
- * element-plus
- */
-setupElementPlus(app);
+  /**
+   * element-plus
+   */
+  setupElementPlus(app);
 
-/**
- * 全局组件
- */
-setupComponents(app);
+  /**
+   * 全局组件
+   */
+  setupComponents(app);
 
-/**
- * store
- */
-setupStore(app);
+  /**
+   * store
+   */
+  setupStore(app);
 
-/**
- * echarts
- */
-setupECharts(app);
+  /**
+   * echarts
+   */
+  setupECharts(app);
 
-/**
- * vue-codemirror
- */
-setupVueCodemirror(app);
+  /**
+   * vue-codemirror
+   */
+  setupVueCodemirror(app);
 
-/**
- *  入口
- */
-app.mount('#app');
+  /**
+   *  入口
+   */
+  app.mount('#app');
+}
+
+bootstrap();

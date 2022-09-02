@@ -1,0 +1,1 @@
+import{_ as n,r as o,o as s,f as _,__tla as l}from"./index.09b64082.js";let t,c=Promise.all([(()=>{try{return l}catch{}})()]).then(async()=>{const r={};function a(u,f){const e=o("router-view");return s(),_(e)}t=n(r,[["render",a]])});export{c as __tla,t as default};
