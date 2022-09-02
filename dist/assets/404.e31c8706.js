@@ -1,1 +1,0 @@
-import{_ as e,__tla as _}from"./index.09b64082.js";let t,l=Promise.all([(()=>{try{return _}catch{}})()]).then(async()=>{const r={};function a(n,c){return"404"}t=e(r,[["render",a]])});export{l as __tla,t as default};
