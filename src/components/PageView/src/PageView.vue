@@ -20,7 +20,7 @@
       position: fixed;
       z-index: 0;
       bottom: 0px;
-      right: 0px;
+      left: 0px;
       width: calc(100vw - $layout-sidebar-width);
       display: flex;
       align-items: center;

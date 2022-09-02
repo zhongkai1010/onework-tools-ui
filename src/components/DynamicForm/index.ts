@@ -74,7 +74,8 @@ export interface DynamicFormFieldProps {
   label: string;
   labelWidth: string | number;
   required: boolean;
-  rules: FormItemRule[];
+  verifies: FormItemRule[];
+  rules?: FormItemRule[];
   showMessage: boolean;
   inlineMessage: boolean;
   size: 'large' | 'default' | 'small';

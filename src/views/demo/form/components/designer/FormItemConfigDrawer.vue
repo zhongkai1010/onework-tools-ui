@@ -8,7 +8,23 @@
           v-model="itemConfig.component.config"
           v-if="itemConfig.component.config.dataMode !== 'none'"
         />
-        <FormItemSet.Rule v-model="itemConfig.props.rules" v-if="itemConfig.design.isRule" />
+        <FormItemSet.Rule v-model="itemConfig.props.verifies" v-if="itemConfig.design.isRule" />
+        <div v-if="itemConfig.design?.items">
+          <el-divider content-position="left">组件配置</el-divider>
+          <el-form-item
+            v-for="(item, index) in itemConfig.design?.items"
+            :key="item.key"
+            :label="item.label"
+          >
+            <form-item
+              :model-value="itemConfig.design?.items[index].value"
+              :component="item.component.component"
+              :props="item.component.props"
+              :config="item.component.config"
+              @update:model-value="(value) => (itemConfig.design.items[index].value = value)"
+            />
+          </el-form-item>
+        </div>
       </el-form>
       <template #footer>
         <div style="flex: auto">
@@ -51,10 +67,18 @@
 
   const onSave = (form: FormInstance) => {
     const data = _.cloneDeep(itemConfig);
-    log('form item config save', data);
     form.validate((valid, fields) => {
       if (valid) {
+        if (data.design?.items) {
+          data.design?.items.forEach((t) => {
+            if (!_.isUndefined(t.value)) {
+              data.component.props[t.key] = t.value;
+            }
+          });
+        }
         emits('save', data);
+        log('form item config save', data);
+
         dialogShow.value = false;
       } else {
         console.log('save error', fields);
@@ -73,6 +97,15 @@
   .config-container {
     :deep(.el-drawer__header) {
       margin-bottom: 0px;
+    }
+    :deep(.el-form-item__label) {
+      font-weight: 500;
+    }
+    :deep(.el-divider__text) {
+      font-size: 14px;
+      font-weight: 700;
+      padding: 0 20px 0 0;
+      left: 0;
     }
     .footer {
       text-align: center;

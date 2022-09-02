@@ -70,7 +70,7 @@
     }
 
     .button {
-      margin: 10px;
+      margin-top: 10px;
     }
   }
 </style>

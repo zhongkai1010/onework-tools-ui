@@ -121,6 +121,7 @@
    */
   const fixedProps = computed(() => {
     let attr = { ...props.props };
+
     if (props.component === 'el-select') {
       attr.loading = isFetching.value;
     }
