@@ -24,7 +24,7 @@ const data: Property[] = [
     title: '表格名称',
     type: 'array',
     required: true,
-    arrayType: 'object',
+    array: 'object',
     fields: [
       {
         name: 'label',
@@ -138,7 +138,7 @@ const data: Property[] = [
                     name: 'children',
                     title: '表格名称',
                     type: 'array',
-                    arrayType: 'object',
+                    array: 'object',
                     required: true,
                   },
                 ],

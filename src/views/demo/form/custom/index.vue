@@ -1,16 +1,51 @@
 <template>
-  <page-view>
-    <el-form>
-      <Field v-for="(field, index) in config" :key="index" :model-value="field" />
-    </el-form>
+  <page-view class="container" :gutter="0" :bg-color="false">
+    <el-card shadow="always">
+      <template #header>
+        <div class="header">
+          <iconify-icon icon="ant-design:form-outlined" :size="25" />
+          <span>动态表格</span>
+
+          <el-button type="primary">配置表格</el-button>
+          <el-button>查看效果</el-button>
+          <el-button @click="onShowConfig">查看配置</el-button>
+        </div>
+      </template>
+      <el-form>
+        <Field
+          v-for="(field, index) in config"
+          :key="index"
+          :model-value="field"
+          @update:model-value="config[index]"
+          @add="onAddField"
+          @remove="onRemoveField"
+        />
+      </el-form>
+    </el-card>
   </page-view>
 </template>
 
 <script setup lang="ts">
   import data from './data';
   import Field from './components/Field.vue';
-
+  import { log } from '/@/utils/log';
   const config = reactive(data);
+  const onShowConfig = () => log('config', config);
+  const onAddField = () => {};
+  const onRemoveField = () => {};
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped>
+  .container {
+    .header {
+      display: flex;
+      align-items: center;
+      i {
+        margin-right: 5px;
+      }
+      span {
+        margin-right: auto;
+      }
+    }
+  }
+</style>

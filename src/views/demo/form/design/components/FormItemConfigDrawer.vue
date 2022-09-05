@@ -47,7 +47,7 @@
     DEFAULT_DRAGGABLE_ITEM_CONFIG,
     DraggableItemConfig,
     FormItemDrawerInstance,
-  } from '/@/views/demo/form/types';
+  } from '../types';
 
   const { message } = useMessage();
 

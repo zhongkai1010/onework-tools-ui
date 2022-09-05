@@ -104,7 +104,7 @@
 
 <script setup lang="ts">
   import _ from 'lodash';
-  import { DynamicFormDesignConfig } from '../../types';
+  import { DynamicFormDesignConfig } from '../types';
 
   const props = defineProps<{
     modelValue: DynamicFormDesignConfig;
