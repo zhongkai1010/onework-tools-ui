@@ -1,6 +1,17 @@
 <template>
-  <page-view class="container">
-    <data-table v-bind="config" ref="tableRef" />
+  <page-view class="container" :gutter="0" :bg-color="false">
+    <el-card class="card-container">
+      <template #header>
+        <div class="header">
+          <iconify-icon icon="ant-design:table-outlined" :size="18" />
+          <span>动态表格</span>
+          <div class="tool">
+            <el-button type="primary">查看配置</el-button>
+          </div>
+        </div>
+      </template>
+      <data-table v-bind="config" ref="tableRef" />
+    </el-card>
   </page-view>
 </template>
 
@@ -16,7 +27,7 @@
     serialNumber: true,
     multiple: true,
     pagination: true,
-
+    props: {},
     operate: ['remove', 'show', 'edit'],
     toolbar: ['add', 'column', 'edit', 'remove', 'search', 'refresh'],
     remote: {
@@ -38,7 +49,6 @@
         name: 'fieldName',
         type: 'string',
         order: 2,
-
         props: {
           sortable: true,
         },
@@ -101,4 +111,22 @@
   });
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+  .container {
+    .card-container {
+      .header {
+        display: flex;
+        align-items: center;
+        i {
+          margin-right: 5px;
+        }
+        .tool {
+          margin-left: auto;
+        }
+      }
+      :deep(.el-card__body) {
+        padding: 20px;
+      }
+    }
+  }
+</style>

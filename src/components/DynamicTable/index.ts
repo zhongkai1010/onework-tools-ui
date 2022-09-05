@@ -41,14 +41,14 @@ export interface DataTableFieldConfig {
   type: 'string' | 'number' | 'array';
   props?: any;
   order?: number;
-  editable?: DataTableFieldEditableConfig;
+  editable?: Partial<DataTableFieldEditableConfig>;
 }
 
 export interface DataTableFieldEditableConfig {
-  hide?: boolean;
-  span?: number;
-  defaultValue?: any;
-  component?: FormItemConfig;
+  hide: boolean;
+  span: number;
+  defaultValue: any;
+  component: FormItemConfig;
 }
 
 export interface FormDialogInstance {

@@ -3,7 +3,7 @@ import {
   DefaultDraggableItemConfig,
   DEFAULT_DRAGGABLE_ITEM_CONFIG,
   DraggableItemConfig,
-} from '../types';
+} from './types';
 
 function initDefaultValues(config: DefaultDraggableItemConfig): DraggableItemConfig {
   _.defaultsDeep(config, DEFAULT_DRAGGABLE_ITEM_CONFIG);

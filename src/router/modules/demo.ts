@@ -33,13 +33,13 @@ export default [
             name: 'demo_form_generate',
             path: 'generate',
             meta: { title: t('router.demo.form.generate'), icon: 'bi:layout-wtf' },
-            component: () => import('/@/views/demo/form/generate.vue'),
+            component: () => import('/@/views/demo/form/generate/index.vue'),
           },
           {
             name: 'demo_form_designer',
             path: 'designer',
             meta: { title: t('router.demo.form.designer'), icon: 'bi:layout-wtf' },
-            component: () => import('/@/views/demo/form/designer.vue'),
+            component: () => import('/@/views/demo/form/design/index.vue'),
           },
           {
             name: 'demo_form_group',
@@ -57,7 +57,7 @@ export default [
             name: 'demo_form_custom',
             path: 'custom',
             meta: { title: t('router.demo.form.custom'), icon: 'bi:layout-wtf' },
-            component: () => import('/@/views/demo/form/custom.vue'),
+            component: () => import('/@/views/demo/form/custom/index.vue'),
           },
           {
             name: 'demo_form_description',

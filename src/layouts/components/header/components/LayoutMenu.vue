@@ -81,6 +81,17 @@
       .el-menu-item {
         height: $layout-menu-height;
       }
+      .el-sub-menu {
+        .el-sub-menu__title {
+          height: $layout-menu-height;
+        }
+      }
+      .is-active {
+        .el-sub-menu__title {
+          background-color: var(--el-color-primary);
+          color: var(--el-color-white) !important;
+        }
+      }
     }
   }
 

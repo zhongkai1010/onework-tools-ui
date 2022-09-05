@@ -38,7 +38,7 @@
   import { linter } from '@codemirror/lint';
   import { log } from '/@/utils/log';
   import { useMessage } from '/@/hooks/web/useMessage';
-  import formConfig from './data/generateConfig';
+  import formConfig from './data';
 
   const { message, alert } = useMessage();
 

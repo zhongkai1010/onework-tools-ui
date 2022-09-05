@@ -36,7 +36,7 @@
 
 <script setup lang="ts">
   import draggable from 'vuedraggable';
-  import formConfig from '/@/views/demo/form/data/formConfig';
+  import formConfig from '../data';
   import { DraggableItemConfig } from '/@/views/demo/form/types';
 
   import { buildUUID } from '/@/utils/uuid';

@@ -41,11 +41,11 @@
 
 <script setup lang="ts">
   import draggable from 'vuedraggable';
-  import DraggableItem from './components/designer/DraggableItem.vue';
-  import ComponentList from './components/designer/ComponentList.vue';
-  import FormConfigDrawer from './components/designer/FormConfigDrawer.vue';
-  import FormItemConfigDrawer from './components/designer/FormItemConfigDrawer.vue';
-  import PreviewFrom from './components/designer/PreviewFrom.vue';
+  import DraggableItem from './components/DraggableItem.vue';
+  import ComponentList from './components/ComponentList.vue';
+  import FormConfigDrawer from './components/FormConfigDrawer.vue';
+  import FormItemConfigDrawer from './components/FormItemConfigDrawer.vue';
+  import PreviewFrom from './components/PreviewFrom.vue';
   import {
     DEFAULT_DRAGGABLE_ITEM_CONFIG,
     DraggableItemConfig,
