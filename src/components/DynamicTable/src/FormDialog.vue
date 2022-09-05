@@ -1,4 +1,11 @@
 <template>
+  <div> </div>
+</template>
+
+<script setup lang="ts"></script>
+
+<style scoped></style>
+<!-- <template>
   <el-dialog
     :model-value="dialogShow"
     :title="`${dialogTitle ? dialogTitle + ' - ' : ''}${$t(
@@ -45,7 +52,7 @@
   import _ from 'lodash';
   import { FormInstance } from 'element-plus';
   import { reactive, ref } from 'vue';
-  import { DataTableFieldProps, FormDialogInstance } from '..';
+  import { FormDialogInstance } from '..';
 
   import { CREATE_ITEM_TITLE_TEXT, EDITABLE_ITEM_TITLE_TEXT } from '/@/settings/constant';
   import { DynamicFormField } from '../../DynamicForm';
@@ -124,4 +131,4 @@
   defineExpose<FormDialogInstance>({ open: onClickOpen, close: onClickClose });
 </script>
 
-<style scoped></style>
+<style scoped></style> -->

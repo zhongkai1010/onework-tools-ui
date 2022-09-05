@@ -20,7 +20,7 @@
 <script setup lang="ts">
   import _ from 'lodash';
 
-  import { DraggableItemConfig } from '/@/views/demo/form/types';
+  import { DraggableItemConfig } from '../types';
   import { log } from '/@/utils/log';
   const props = defineProps<{
     modelValue: any;

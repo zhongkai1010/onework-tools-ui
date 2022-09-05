@@ -4,7 +4,7 @@
       <iconify-icon
         :icon="expand ? 'ic:baseline-expand-more' : 'ic:baseline-expand-less'"
         v-if="field.fields"
-        @click="expand = !expand"
+        @click="unfold = !unfold"
       />
       <el-col :span="4">
         <el-input v-model="field.name" placeholder="name" />
@@ -41,7 +41,7 @@
         </el-dropdown>
       </div>
     </div>
-    <div v-if="expand">
+    <div v-if="unfold">
       <field-item v-for="(item, index) in field.fields" :model-value="item" :key="index" />
     </div>
   </ul>
@@ -71,7 +71,7 @@
     (e: 'add', parent: string, type: 'same' | 'child');
   }>();
 
-  const expand = ref(true);
+  const unfold = ref(true);
 
   const field = computed({
     get() {

@@ -106,7 +106,7 @@
   };
   const onClickCommand = (command) => {
     if (command === 'refresh') {
-      pageState.reloadPage();
+      pageState.refresh();
     } else {
       tabState.operateTab(command, selectTab.value);
     }

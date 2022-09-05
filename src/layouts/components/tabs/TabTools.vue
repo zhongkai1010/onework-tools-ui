@@ -39,7 +39,7 @@
       rightTool: { ...state.value, show: false },
     });
     if (command === 'refresh') {
-      pageState.reloadPage();
+      pageState.refresh();
     } else {
       tabState.operateTab(command, state.value.name);
     }

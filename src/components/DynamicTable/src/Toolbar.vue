@@ -55,12 +55,12 @@
 
 <script setup lang="ts">
   import _, { isEmpty } from 'lodash';
-  import { DataTableFieldProps, OperateType } from '..';
+  import { DataTableFieldConfig, OperateType } from '..';
 
   const props = defineProps<{
     selectRow?: Recordable<any> | undefined;
     title?: string;
-    fields: DataTableFieldProps[]; // 字段
+    fields: DataTableFieldConfig[]; // 字段
     toolbar?: OperateType[]; // 工具栏选项
   }>();
 
