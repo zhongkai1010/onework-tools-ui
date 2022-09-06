@@ -1,50 +1,63 @@
 <template>
   <page-view class="container">
-    <el-form :model="formValue">
-      <el-form-item label="数据配置">
-        <form-item component="OwFormSetRule" v-model="formValue.rules" :toggle="true" />
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary" @click="onSubmit">立即创建</el-button>
-        <el-button>取消</el-button>
-      </el-form-item>
-    </el-form>
+    <div class="form-container">
+      <FormItemConfig.Form v-model="formValue" />
+    </div>
+    <div class="button">
+      <el-button type="primary" @click="onPrintLog">Primary</el-button>
+      <el-button type="success">Success</el-button>
+    </div>
   </page-view>
 </template>
 
 <script setup lang="ts">
-  import { FormItemRule } from '/@/components/DynamicForm';
+  import { DynamicFormField } from '/@/components/DynamicForm';
+  import * as FormItemConfig from '/@/components/DynamicForm/src/FormItemConfig';
+  const formValue = reactive<DynamicFormField>({
+    name: 'test',
+    span: 6,
+    defaultValue: undefined,
+    showLabel: true,
+    props: {
+      prop: 'name',
+      label: '标签',
+      verifies: [],
+    },
+    component: {
+      component: 'el-input',
+      props: {},
+      config: {
+        dataMode: 'all',
+        options: [],
+        remote: {
+          url: '',
+          method: 'get',
+          params: {},
+          labelKey: 'label',
+          valueKey: 'value',
+          childerKey: 'childer',
+          searchKey: 'search',
+        },
+      },
+    },
+    group: '基本信息',
+    step: 1,
+  });
 
-  const formValue = reactive<{ rules: FormItemRule[] }>({
-    rules: [],
-  });
-  const onSubmit = () => {
-    formValue.rules = [];
+  const onPrintLog = () => {
+    console.log(formValue);
   };
-  watch([formValue], () => {
-    console.log('--test watch--', formValue);
-  });
 </script>
 
 <style lang="scss" scoped>
   .container {
-    .box-card {
-      min-height: $main-no-margin-height;
-      .card-header {
-        display: flex;
-        align-items: center;
-        span {
-          margin-right: auto;
-        }
-      }
+    .form-container {
+      width: 600px;
+      margin: auto;
     }
 
-    &:deep(.el-drawer__header) {
-      margin-bottom: 20px;
-    }
-
-    &:deep(.el-drawer__body) {
-      @include scrollBar;
+    .button {
+      text-align: right;
     }
   }
 </style>

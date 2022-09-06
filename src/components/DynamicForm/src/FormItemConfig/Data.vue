@@ -13,6 +13,7 @@
         >动态数据</el-button
       >
     </el-button-group>
+
     <div class="options-container" v-if="modelValue.dataMode === 'static'">
       <draggable group="options" :list="modelValue.options" item-key="id">
         <template #item="{ element, index }">
@@ -74,12 +75,14 @@
 <script setup lang="ts">
   import _ from 'lodash';
   import draggable from 'vuedraggable';
-  import { DataMode, FormItemComponentConfig } from '/@/components/DynamicForm';
+  import { FormComponentDataConfig, FormComponentDataMode } from '../..';
 
   interface Props {
-    modelValue: Partial<FormItemComponentConfig>;
+    modelValue: FormComponentDataConfig;
   }
+
   const props = defineProps<Props>();
+
   const emit = defineEmits(['update:modelValue']);
 
   const modelValue = computed({
@@ -91,8 +94,9 @@
     },
   });
 
-  const onChangeDataMode = (mode: DataMode) => {
+  const onChangeDataMode = (mode: FormComponentDataMode) => {
     modelValue.value.dataMode = mode;
+    console.log(modelValue.value);
   };
 
   const onCloseOption = (option) => {

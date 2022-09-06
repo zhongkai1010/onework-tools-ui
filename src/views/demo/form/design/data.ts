@@ -4,11 +4,20 @@ import {
   DEFAULT_DRAGGABLE_ITEM_CONFIG,
   DraggableItemConfig,
 } from './types';
+import ComponentData from '/@/components/DynamicForm/component';
 
 function initDefaultValues(config: DefaultDraggableItemConfig): DraggableItemConfig {
   _.defaultsDeep(config, DEFAULT_DRAGGABLE_ITEM_CONFIG);
   return config as DraggableItemConfig;
 }
+
+// function getGroupComponent = ()=>{
+//   Object.keys(ComponentData).filter(t=>t.startsWith('el-')).forEach(t=>{
+//     return {
+
+//     }
+//   })
+// }
 
 export default [
   {

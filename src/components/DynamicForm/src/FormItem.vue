@@ -38,16 +38,17 @@
 </template>
 <script setup lang="ts">
   import _ from 'lodash';
-  import { FormComponent, FormItemComponentConfig, FormItemOption } from '..';
+  import { FormComponentDataConfig, FormComponentType, FormComponentOption } from '..';
+
   import { useHttpFetch } from '/@/hooks/fetch';
   import { http } from '/@/plugins/axios';
   import { log } from '/@/utils/log';
 
   interface Props {
     modelValue?: any;
-    component: FormComponent;
+    component: FormComponentType;
     props?: Recordable<any>;
-    config?: FormItemComponentConfig;
+    config?: FormComponentDataConfig;
   }
 
   const props = defineProps<Props>();
@@ -104,7 +105,7 @@
           label: t[props.config?.remote?.labelKey ?? 'label'],
           value: t[props.config.remote?.valueKey ?? 'value'],
           children: t[props.config.remote?.childerKey ?? 'children'],
-        } as FormItemOption;
+        } as FormComponentOption;
       });
       options.value = tempOptions;
     }
@@ -165,7 +166,7 @@
    * 解决 el-checkbox-group 、el-radio-group 将label值转换value值
    */
   const onUpdateModelValue = (value) => {
-    const items = unref(options) as FormItemOption[];
+    const items = unref(options) as FormComponentOption[];
     if (props.component === 'el-checkbox-group') {
       const values = (value as string[]).map((v) => {
         const option = items.find((t) => t.label === v);
