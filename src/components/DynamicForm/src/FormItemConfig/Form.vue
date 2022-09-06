@@ -1,7 +1,7 @@
 <template>
   <el-form :model="modelValue" :label-width="120" label-position="left">
     <Basic v-model="modelValue" />
-    <Item v-model="modelValue" />
+    <Item v-model="modelValue.props" />
     <Data v-model="modelValue.component.config" v-if="config.isData" />
     <Rule v-model="modelValue.props.verifies" v-if="config.isRule" />
     <ItemComponent v-model="modelValue.component" />

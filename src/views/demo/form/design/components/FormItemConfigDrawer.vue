@@ -39,14 +39,15 @@
   const onSave = () => {
     const data = _.cloneDeep(itemConfig);
     emits('save', data);
+    dialogShow.value = false;
     log('form item config save', data);
   };
 
   defineExpose<FormItemDrawerInstance>({ open: onOpen });
 
-  watch([itemConfig], () => {
-    log('itemConfig', itemConfig);
-  });
+  // watch([itemConfig], () => {
+  //   log('itemConfig', itemConfig);
+  // });
 </script>
 <style scoped lang="scss">
   .config-container {

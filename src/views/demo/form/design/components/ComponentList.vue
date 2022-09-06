@@ -6,12 +6,12 @@
         <span>组件库</span>
       </div>
     </template>
-    <el-collapse v-model="activeNames" accordion>
+    <el-collapse v-model="active" accordion>
       <el-collapse-item
         :title="group.title"
         :name="group.name"
         :key="group.name"
-        v-for="group in formConfig"
+        v-for="group in list"
       >
         <ul class="form-list">
           <draggable
@@ -24,7 +24,7 @@
             <template #item="{ element }">
               <li>
                 <iconify-icon icon="ant-design:form-outlined" :size="16" />
-                <span>{{ element.name }}</span>
+                <span>{{ element.displayName }}</span>
               </li>
             </template>
           </draggable>
@@ -36,21 +36,36 @@
 
 <script setup lang="ts">
   import draggable from 'vuedraggable';
-  import formConfig from '../data';
-  import { DraggableItemConfig } from '../types';
-
+  import { ComponentListType, DEFAULT_DRAGGABLE_ITEM_CONFIG, DraggableItemConfig } from '../types';
   import { buildUUID } from '/@/utils/uuid';
   import { log } from '/@/utils/log';
   import IconifyIcon from '/@/components/IconifyIcon/src/iconifyIcon.vue';
+  import { getGroupComponent } from '../helps';
+  import { FormComponentConfig } from '/@/components/DynamicForm';
+  import _ from 'lodash';
 
-  const activeNames = ref(formConfig[0].name);
+  const list: ComponentListType[] = [
+    {
+      name: 'base',
+      title: '基础组件',
+      components: getGroupComponent('el-'),
+    },
+    {
+      name: 'business',
+      title: '业务组件',
+      components: getGroupComponent('bl-'),
+    },
+  ];
 
-  const cloneDog = (item: DraggableItemConfig) => {
-    const newItem = {
-      ...item,
-      id: buildUUID(),
-      name: buildUUID(),
-    } as DraggableItemConfig;
+  const active = ref(list[0].name);
+
+  const cloneDog = (item: FormComponentConfig) => {
+    const newItem: DraggableItemConfig = _.cloneDeep(DEFAULT_DRAGGABLE_ITEM_CONFIG);
+    newItem.id = buildUUID();
+    newItem.name = buildUUID();
+    newItem.props.label = item.displayName;
+    newItem.component.component = item.name;
+    log('draggable', newItem);
     return newItem;
   };
 </script>

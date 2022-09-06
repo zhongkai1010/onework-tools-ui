@@ -118,7 +118,7 @@
   };
 
   const showConfig = () => {
-    log('form-item', formConfig);
+    log('dynamic form config', formConfig);
   };
 
   provide(FORM_LIST_PROVIDE_KEY, formConfig.fields);
@@ -139,7 +139,7 @@
       .el-row {
         padding: 10px;
         margin: 0 !important;
-        min-height: calc($main-no-margin-height - 70px);
+        min-height: calc($main-no-margin-height - 80px);
         align-content: flex-start;
       }
       .header {

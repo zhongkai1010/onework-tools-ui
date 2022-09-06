@@ -2,6 +2,7 @@ import { FormComponentConfig } from '.';
 
 const data: Recordable<FormComponentConfig> = {
   'el-autocomplete': {
+    name: 'el-autocomplete',
     displayName: '自动补全输入框',
     isRule: true,
     isData: true,
@@ -65,12 +66,13 @@ const data: Recordable<FormComponentConfig> = {
       },
     ],
   },
-  'el-cascader': { displayName: 'Cascader 级联选择器', isData: true },
-  'el-checkbox-group': { displayName: 'Checkbox 多选框', isData: true },
-  'el-color-picker': { displayName: 'ColorPicker 颜色选择器' },
-  'el-date-picker': { displayName: 'DateTimePicker 日期时间选择器' },
-  'el-input-number': { displayName: 'Input Number 数字输入框' },
+  'el-cascader': { name: 'el-cascader', displayName: 'Cascader 级联选择器', isData: true },
+  'el-checkbox-group': { name: 'el-checkbox-group', displayName: 'Checkbox 多选框', isData: true },
+  'el-color-picker': { name: 'el-color-picker', displayName: 'ColorPicker 颜色选择器' },
+  'el-date-picker': { name: 'el-date-picker', displayName: 'DateTimePicker 日期时间选择器' },
+  'el-input-number': { name: 'el-input-number', displayName: 'Input Number 数字输入框' },
   'el-input': {
+    name: 'el-input',
     isRule: true,
     displayName: 'Input 输入框',
     props: [
@@ -161,15 +163,15 @@ const data: Recordable<FormComponentConfig> = {
       },
     ],
   },
-  'el-radio-group': { displayName: 'Radio 单选框', isData: true },
-  'el-rate': { displayName: 'Rate 评分' },
-  'el-select': { displayName: 'Select 选择器', isData: true },
-  'el-slider': { displayName: 'Slider 滑块' },
-  'el-switch': { displayName: 'Switch 开关' },
-  'el-time-picker': { displayName: 'TimePicker 时间选择器' },
-  'el-time-select': { displayName: 'TimeSelect 时间选择' },
-  'el-transfer': { displayName: 'Transfer 穿梭框', isData: true },
-  'el-upload': { displayName: 'Upload 上传' },
+  'el-radio-group': { name: 'el-radio-group', displayName: 'Radio 单选框', isData: true },
+  'el-rate': { name: 'el-rate', displayName: 'Rate 评分' },
+  'el-select': { name: 'el-select', displayName: 'Select 选择器', isData: true },
+  'el-slider': { name: 'el-slider', displayName: 'Slider 滑块' },
+  'el-switch': { name: 'el-switch', displayName: 'Switch 开关' },
+  'el-time-picker': { name: 'el-time-picker', displayName: 'TimePicker 时间选择器' },
+  'el-time-select': { name: 'el-time-select', displayName: 'TimeSelect 时间选择' },
+  'el-transfer': { name: 'el-transfer', displayName: 'Transfer 穿梭框', isData: true },
+  'el-upload': { name: 'el-upload', displayName: 'Upload 上传' },
 };
 
 export default data;

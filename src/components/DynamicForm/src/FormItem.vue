@@ -42,7 +42,7 @@
 
   import { useHttpFetch } from '/@/hooks/fetch';
   import { http } from '/@/plugins/axios';
-  import { log } from '/@/utils/log';
+  // import { log } from '/@/utils/log';
 
   interface Props {
     modelValue?: any;
@@ -52,7 +52,7 @@
   }
 
   const props = defineProps<Props>();
-  log('form item props', props.config);
+
   const isRemote = computed(() => {
     if (props.config?.dataMode == 'dynamic') {
       return props.config?.remote != undefined;

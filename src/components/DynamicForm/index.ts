@@ -35,6 +35,7 @@ export type FormComponentType =
 export type FormComponentDataMode = 'all' | 'static' | 'dynamic' | 'none';
 
 export interface FormComponentConfig {
+  name: FormComponentType;
   displayName: string;
   isRule?: boolean;
   isData?: boolean;
