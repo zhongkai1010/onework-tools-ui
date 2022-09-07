@@ -5,19 +5,19 @@ const data: Property[] = [
     name: 'title',
     title: '表格名称',
     type: 'string',
-    required: true,
+    required: true
   },
   {
     name: 'rowKey',
     title: '表格名称',
     type: 'string',
-    required: true,
+    required: true
   },
   {
     name: 'serialNumber',
     title: '表格名称',
     type: 'string',
-    required: true,
+    required: true
   },
   {
     name: 'fields',
@@ -30,37 +30,37 @@ const data: Property[] = [
         name: 'label',
         title: '表格名称',
         type: 'string',
-        required: true,
+        required: true
       },
       {
         name: 'name',
         title: '表格名称',
         type: 'string',
-        required: true,
+        required: true
       },
       {
         name: 'hide',
         title: '表格名称',
         type: 'string',
-        required: true,
+        required: true
       },
       {
         name: 'type',
         title: '表格名称',
         type: 'string',
-        required: true,
+        required: true
       },
       {
         name: 'props',
         title: '表格名称',
         type: 'string',
-        required: true,
+        required: true
       },
       {
         name: 'order',
         title: '表格名称',
         type: 'string',
-        required: true,
+        required: true
       },
       {
         name: 'editable',
@@ -72,19 +72,19 @@ const data: Property[] = [
             name: 'hide',
             title: '表格名称',
             type: 'string',
-            required: true,
+            required: true
           },
           {
             name: 'span',
             title: '表格名称',
             type: 'string',
-            required: true,
+            required: true
           },
           {
             name: 'defaultValue',
             title: '表格名称',
             type: 'string',
-            required: true,
+            required: true
           },
           {
             name: 'component',
@@ -96,25 +96,25 @@ const data: Property[] = [
                 name: 'component',
                 title: '表格名称',
                 type: 'string',
-                required: true,
+                required: true
               },
               {
                 name: 'props',
                 title: '表格名称',
                 type: 'string',
-                required: true,
+                required: true
               },
               {
                 name: 'config',
                 title: '表格名称',
                 type: 'string',
-                required: true,
+                required: true
               },
               {
                 name: 'dataMode',
                 title: '表格名称',
                 type: 'string',
-                required: true,
+                required: true
               },
               {
                 name: 'options',
@@ -126,22 +126,22 @@ const data: Property[] = [
                     name: 'label',
                     title: '表格名称',
                     type: 'string',
-                    required: true,
+                    required: true
                   },
                   {
                     name: 'value',
                     title: '表格名称',
                     type: 'string',
-                    required: true,
+                    required: true
                   },
                   {
                     name: 'children',
                     title: '表格名称',
                     type: 'array',
                     array: 'object',
-                    required: true,
-                  },
-                ],
+                    required: true
+                  }
+                ]
               },
               {
                 name: 'remote',
@@ -153,105 +153,105 @@ const data: Property[] = [
                     name: 'url',
                     title: '表格名称',
                     type: 'string',
-                    required: true,
+                    required: true
                   },
                   {
                     name: 'method',
                     title: '表格名称',
                     type: 'string',
-                    required: true,
+                    required: true
                   },
                   {
                     name: 'params',
                     title: '表格名称',
                     type: 'string',
-                    required: true,
+                    required: true
                   },
                   {
                     name: 'labelKey',
                     title: '表格名称',
                     type: 'string',
-                    required: true,
+                    required: true
                   },
                   {
                     name: 'valueKey',
                     title: '表格名称',
                     type: 'string',
-                    required: true,
+                    required: true
                   },
                   {
                     name: 'childerKey',
                     title: '表格名称',
                     type: 'string',
-                    required: true,
+                    required: true
                   },
                   {
                     name: 'searchKey',
                     title: '表格名称',
                     type: 'string',
-                    required: true,
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
-    ],
+                    required: true
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
     name: 'multiple',
     title: '表格名称',
     type: 'string',
-    required: true,
+    required: true
   },
   {
     name: 'data',
     title: '表格名称',
     type: 'string',
-    required: true,
+    required: true
   },
   {
     name: 'pagination',
     title: '表格名称',
     type: 'string',
-    required: true,
+    required: true
   },
   {
     name: 'toolbar',
     title: '表格名称',
     type: 'string',
-    required: true,
+    required: true
   },
   {
     name: 'operate',
     title: '表格名称',
     type: 'string',
-    required: true,
+    required: true
   },
   {
     name: 'remote',
     title: '表格名称',
     type: 'string',
-    required: true,
+    required: true
   },
   {
     name: 'save',
     title: '表格名称',
     type: 'string',
-    required: true,
+    required: true
   },
   {
     name: 'remove',
     title: '表格名称',
     type: 'string',
-    required: true,
+    required: true
   },
   {
     name: 'props',
     title: '表格名称',
     type: 'string',
-    required: true,
-  },
+    required: true
+  }
 ];
 export default data;

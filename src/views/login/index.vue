@@ -46,7 +46,7 @@
     const userState = userStateStoreHook();
     await userState.pwdLogin({ username: '', password: '', vcode: '' });
     await userState.getUserInfo();
-    const menus = getNavRecordRaw();
+    const menus = getNavRecordRaw().filter((t) => t.name.includes('demo'));
     const menuMap = getNavRecordRawMap(menus);
     const permissionState = permissionStateStoreHook();
     permissionState.$patch({ menus, menuMap });

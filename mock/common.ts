@@ -3,6 +3,7 @@ import { Random } from 'mockjs';
 
 import { GetConfigResult, GetUserInfoResult, LoginPwdResult } from '/@/api/model/common';
 import { Result } from '/#/axios';
+import { DEFAULT_TITLE } from '/@/settings/constant';
 
 export default [
   {
@@ -14,12 +15,12 @@ export default [
         code: 0,
         message: Random.string(5, 10),
         result: {
-          title: 'OneWork Tools UI',
+          title: DEFAULT_TITLE,
           version: '0.0.0.1',
-          sid: Random.guid(),
-        },
+          sid: Random.guid()
+        }
       };
-    },
+    }
   },
   {
     url: '/api/login/pwd',
@@ -31,10 +32,10 @@ export default [
         code: 0,
         // message: Random.ctitle(8, 10),
         result: {
-          token: Random.guid(),
-        },
+          token: Random.guid()
+        }
       };
-    },
+    }
   },
   {
     url: '/api/user/logout',
@@ -43,9 +44,9 @@ export default [
     response: (): Result<any> => {
       return {
         code: 0,
-        message: Random.string(5, 10),
+        message: Random.string(5, 10)
       };
-    },
+    }
   },
   {
     url: '/api/user/getUserInfo',
@@ -139,7 +140,7 @@ export default [
             'page_link_index',
             'page_link_vite',
             'page_link_mdn',
-            'page_test',
+            'page_test'
           ],
           menus: [
             {
@@ -157,7 +158,7 @@ export default [
                   path: '/dashboard/analysis',
                   paths: ['/dashboard', '/dashboard/analysis'],
                   parentPath: '/dashboard',
-                  icon: 'ep:platform',
+                  icon: 'ep:platform'
                 },
                 {
                   name: 'dashboard_monitor',
@@ -165,7 +166,7 @@ export default [
                   path: '/dashboard/monitor',
                   paths: ['/dashboard', '/dashboard/monitor'],
                   parentPath: '/dashboard',
-                  icon: 'ep:platform',
+                  icon: 'ep:platform'
                 },
                 {
                   name: 'dashboard_workplace',
@@ -173,9 +174,9 @@ export default [
                   path: '/dashboard/workplace',
                   paths: ['/dashboard', '/dashboard/workplace'],
                   parentPath: '/dashboard',
-                  icon: 'ep:platform',
-                },
-              ],
+                  icon: 'ep:platform'
+                }
+              ]
             },
             {
               name: 'dashboard_analysis',
@@ -183,7 +184,7 @@ export default [
               path: '/dashboard/analysis',
               paths: ['/dashboard', '/dashboard/analysis'],
               parentPath: '/dashboard',
-              icon: 'ep:platform',
+              icon: 'ep:platform'
             },
             {
               name: 'dashboard_monitor',
@@ -191,7 +192,7 @@ export default [
               path: '/dashboard/monitor',
               paths: ['/dashboard', '/dashboard/monitor'],
               parentPath: '/dashboard',
-              icon: 'ep:platform',
+              icon: 'ep:platform'
             },
             {
               name: 'dashboard_workplace',
@@ -199,7 +200,7 @@ export default [
               path: '/dashboard/workplace',
               paths: ['/dashboard', '/dashboard/workplace'],
               parentPath: '/dashboard',
-              icon: 'ep:platform',
+              icon: 'ep:platform'
             },
             {
               order: 2,
@@ -216,7 +217,7 @@ export default [
                   path: '/demo/layout',
                   paths: ['/demo', '/demo/layout'],
                   parentPath: '/demo',
-                  icon: 'bi:layout-wtf',
+                  icon: 'bi:layout-wtf'
                 },
                 {
                   name: 'demo_null',
@@ -224,7 +225,7 @@ export default [
                   path: '/demo/null',
                   paths: ['/demo', '/demo/null'],
                   parentPath: '/demo',
-                  icon: 'fluent:border-none-24-filled',
+                  icon: 'fluent:border-none-24-filled'
                 },
                 {
                   name: 'demo_blank',
@@ -232,7 +233,7 @@ export default [
                   path: '/demo/blank',
                   paths: ['/demo', '/demo/blank'],
                   parentPath: '/demo',
-                  icon: 'bx:file-blank',
+                  icon: 'bx:file-blank'
                 },
                 {
                   name: 'demo_error',
@@ -240,7 +241,7 @@ export default [
                   path: '/demo/error',
                   paths: ['/demo', '/demo/error'],
                   parentPath: '/demo',
-                  icon: 'akar-icons:chat-error',
+                  icon: 'akar-icons:chat-error'
                 },
                 {
                   name: 'demo_table',
@@ -257,7 +258,7 @@ export default [
                       path: '/demo/page/standard',
                       paths: ['/demo', '/demo/page', '/demo/page/standard'],
                       parentPath: '/demo/page',
-                      icon: 'codicon:layout-centered',
+                      icon: 'codicon:layout-centered'
                     },
                     {
                       name: 'demo_page_left_right',
@@ -265,7 +266,7 @@ export default [
                       path: '/demo/page/left-right',
                       paths: ['/demo', '/demo/page', '/demo/page/left-right'],
                       parentPath: '/demo/page',
-                      icon: 'icon-park-solid:horizontally-centered',
+                      icon: 'icon-park-solid:horizontally-centered'
                     },
                     {
                       name: 'demo_page_up_down',
@@ -273,9 +274,9 @@ export default [
                       path: '/demo/page/up-down',
                       paths: ['/demo', '/demo/page', '/demo/page/up-down'],
                       parentPath: '/demo/page',
-                      icon: 'icon-park-solid:vertically-centered',
-                    },
-                  ],
+                      icon: 'icon-park-solid:vertically-centered'
+                    }
+                  ]
                 },
                 {
                   name: 'demo_list',
@@ -291,7 +292,7 @@ export default [
                       path: '/demo/list/dynamic',
                       paths: ['/demo', '/demo/list', '/demo/list/dynamic'],
                       parentPath: '/demo/list',
-                      icon: 'carbon:data-table-reference',
+                      icon: 'carbon:data-table-reference'
                     },
                     {
                       name: 'demo_list_card',
@@ -299,9 +300,9 @@ export default [
                       path: '/demo/list/card',
                       paths: ['/demo', '/demo/list', '/demo/list/card'],
                       parentPath: '/demo/list',
-                      icon: 'dashicons:table-row-after',
-                    },
-                  ],
+                      icon: 'dashicons:table-row-after'
+                    }
+                  ]
                 },
                 {
                   name: 'demo_message',
@@ -309,7 +310,7 @@ export default [
                   path: '/demo/message',
                   paths: ['/demo', '/demo/message'],
                   parentPath: '/demo',
-                  icon: 'bi:credit-card',
+                  icon: 'bi:credit-card'
                 },
                 {
                   name: 'demo_axios',
@@ -317,7 +318,7 @@ export default [
                   path: '/demo/axios',
                   paths: ['/demo', '/demo/axios'],
                   parentPath: '/demo',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'demo_edit',
@@ -325,7 +326,7 @@ export default [
                   path: '/demo/edit',
                   paths: ['/demo', '/demo/edit'],
                   parentPath: '/demo',
-                  icon: 'akar-icons:edit',
+                  icon: 'akar-icons:edit'
                 },
                 {
                   name: 'demo_form',
@@ -342,7 +343,7 @@ export default [
                       path: '/demo/form/complex',
                       paths: ['/demo', '/demo/form', '/demo/form/complex'],
                       parentPath: '/demo/form',
-                      icon: 'ant-design:form-outlined',
+                      icon: 'ant-design:form-outlined'
                     },
                     {
                       name: 'demo_form_step',
@@ -350,11 +351,11 @@ export default [
                       path: '/demo/form/step',
                       paths: ['/demo', '/demo/form', '/demo/form/step'],
                       parentPath: '/demo/form',
-                      icon: 'fluent:form-20-regular',
-                    },
-                  ],
-                },
-              ],
+                      icon: 'fluent:form-20-regular'
+                    }
+                  ]
+                }
+              ]
             },
             {
               name: 'demo_layout',
@@ -362,7 +363,7 @@ export default [
               path: '/demo/layout',
               paths: ['/demo', '/demo/layout'],
               parentPath: '/demo',
-              icon: 'bi:layout-wtf',
+              icon: 'bi:layout-wtf'
             },
             {
               name: 'demo_null',
@@ -370,7 +371,7 @@ export default [
               path: '/demo/null',
               paths: ['/demo', '/demo/null'],
               parentPath: '/demo',
-              icon: 'fluent:border-none-24-filled',
+              icon: 'fluent:border-none-24-filled'
             },
             {
               name: 'demo_blank',
@@ -378,7 +379,7 @@ export default [
               path: '/demo/blank',
               paths: ['/demo', '/demo/blank'],
               parentPath: '/demo',
-              icon: 'bx:file-blank',
+              icon: 'bx:file-blank'
             },
             {
               name: 'demo_error',
@@ -386,7 +387,7 @@ export default [
               path: '/demo/error',
               paths: ['/demo', '/demo/error'],
               parentPath: '/demo',
-              icon: 'akar-icons:chat-error',
+              icon: 'akar-icons:chat-error'
             },
             {
               name: 'demo_table',
@@ -403,7 +404,7 @@ export default [
                   path: '/demo/page/standard',
                   paths: ['/demo', '/demo/page', '/demo/page/standard'],
                   parentPath: '/demo/page',
-                  icon: 'codicon:layout-centered',
+                  icon: 'codicon:layout-centered'
                 },
                 {
                   name: 'demo_page_left_right',
@@ -411,7 +412,7 @@ export default [
                   path: '/demo/page/left-right',
                   paths: ['/demo', '/demo/page', '/demo/page/left-right'],
                   parentPath: '/demo/page',
-                  icon: 'icon-park-solid:horizontally-centered',
+                  icon: 'icon-park-solid:horizontally-centered'
                 },
                 {
                   name: 'demo_page_up_down',
@@ -419,9 +420,9 @@ export default [
                   path: '/demo/page/up-down',
                   paths: ['/demo', '/demo/page', '/demo/page/up-down'],
                   parentPath: '/demo/page',
-                  icon: 'icon-park-solid:vertically-centered',
-                },
-              ],
+                  icon: 'icon-park-solid:vertically-centered'
+                }
+              ]
             },
             {
               name: 'demo_page_standard',
@@ -429,7 +430,7 @@ export default [
               path: '/demo/page/standard',
               paths: ['/demo', '/demo/page', '/demo/page/standard'],
               parentPath: '/demo/page',
-              icon: 'codicon:layout-centered',
+              icon: 'codicon:layout-centered'
             },
             {
               name: 'demo_page_left_right',
@@ -437,7 +438,7 @@ export default [
               path: '/demo/page/left-right',
               paths: ['/demo', '/demo/page', '/demo/page/left-right'],
               parentPath: '/demo/page',
-              icon: 'icon-park-solid:horizontally-centered',
+              icon: 'icon-park-solid:horizontally-centered'
             },
             {
               name: 'demo_page_up_down',
@@ -445,7 +446,7 @@ export default [
               path: '/demo/page/up-down',
               paths: ['/demo', '/demo/page', '/demo/page/up-down'],
               parentPath: '/demo/page',
-              icon: 'icon-park-solid:vertically-centered',
+              icon: 'icon-park-solid:vertically-centered'
             },
             {
               name: 'demo_list',
@@ -461,7 +462,7 @@ export default [
                   path: '/demo/list/dynamic',
                   paths: ['/demo', '/demo/list', '/demo/list/dynamic'],
                   parentPath: '/demo/list',
-                  icon: 'carbon:data-table-reference',
+                  icon: 'carbon:data-table-reference'
                 },
                 {
                   name: 'demo_list_card',
@@ -469,9 +470,9 @@ export default [
                   path: '/demo/list/card',
                   paths: ['/demo', '/demo/list', '/demo/list/card'],
                   parentPath: '/demo/list',
-                  icon: 'dashicons:table-row-after',
-                },
-              ],
+                  icon: 'dashicons:table-row-after'
+                }
+              ]
             },
             {
               name: 'demo_list_dynamic',
@@ -479,7 +480,7 @@ export default [
               path: '/demo/list/dynamic',
               paths: ['/demo', '/demo/list', '/demo/list/dynamic'],
               parentPath: '/demo/list',
-              icon: 'carbon:data-table-reference',
+              icon: 'carbon:data-table-reference'
             },
             {
               name: 'demo_list_card',
@@ -487,7 +488,7 @@ export default [
               path: '/demo/list/card',
               paths: ['/demo', '/demo/list', '/demo/list/card'],
               parentPath: '/demo/list',
-              icon: 'dashicons:table-row-after',
+              icon: 'dashicons:table-row-after'
             },
             {
               name: 'demo_message',
@@ -495,7 +496,7 @@ export default [
               path: '/demo/message',
               paths: ['/demo', '/demo/message'],
               parentPath: '/demo',
-              icon: 'bi:credit-card',
+              icon: 'bi:credit-card'
             },
             {
               name: 'demo_axios',
@@ -503,7 +504,7 @@ export default [
               path: '/demo/axios',
               paths: ['/demo', '/demo/axios'],
               parentPath: '/demo',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'demo_edit',
@@ -511,7 +512,7 @@ export default [
               path: '/demo/edit',
               paths: ['/demo', '/demo/edit'],
               parentPath: '/demo',
-              icon: 'akar-icons:edit',
+              icon: 'akar-icons:edit'
             },
             {
               name: 'demo_form',
@@ -528,7 +529,7 @@ export default [
                   path: '/demo/form/complex',
                   paths: ['/demo', '/demo/form', '/demo/form/complex'],
                   parentPath: '/demo/form',
-                  icon: 'ant-design:form-outlined',
+                  icon: 'ant-design:form-outlined'
                 },
                 {
                   name: 'demo_form_step',
@@ -536,9 +537,9 @@ export default [
                   path: '/demo/form/step',
                   paths: ['/demo', '/demo/form', '/demo/form/step'],
                   parentPath: '/demo/form',
-                  icon: 'fluent:form-20-regular',
-                },
-              ],
+                  icon: 'fluent:form-20-regular'
+                }
+              ]
             },
             {
               name: 'demo_form_complex',
@@ -546,7 +547,7 @@ export default [
               path: '/demo/form/complex',
               paths: ['/demo', '/demo/form', '/demo/form/complex'],
               parentPath: '/demo/form',
-              icon: 'ant-design:form-outlined',
+              icon: 'ant-design:form-outlined'
             },
             {
               name: 'demo_form_step',
@@ -554,7 +555,7 @@ export default [
               path: '/demo/form/step',
               paths: ['/demo', '/demo/form', '/demo/form/step'],
               parentPath: '/demo/form',
-              icon: 'fluent:form-20-regular',
+              icon: 'fluent:form-20-regular'
             },
             {
               order: 2,
@@ -571,7 +572,7 @@ export default [
                   path: '/system/page',
                   paths: ['/system', '/system/page'],
                   parentPath: '/system',
-                  icon: 'iconoir:journal-page',
+                  icon: 'iconoir:journal-page'
                 },
                 {
                   name: 'system_user',
@@ -580,7 +581,7 @@ export default [
                   paths: ['/system', '/system/user'],
                   parentPath: '/system',
                   icon: 'ant-design:user-outlined',
-                  cache: true,
+                  cache: true
                 },
                 {
                   name: 'system_role',
@@ -588,7 +589,7 @@ export default [
                   path: '/system/role',
                   paths: ['/system', '/system/role'],
                   parentPath: '/system',
-                  icon: 'carbon:user-role',
+                  icon: 'carbon:user-role'
                 },
                 {
                   name: 'system_menu',
@@ -596,7 +597,7 @@ export default [
                   path: '/system/menu',
                   paths: ['/system', '/system/menu'],
                   parentPath: '/system',
-                  icon: 'ant-design:menu-outlined',
+                  icon: 'ant-design:menu-outlined'
                 },
                 {
                   name: 'system_department',
@@ -604,7 +605,7 @@ export default [
                   path: '/system/department',
                   paths: ['/system', '/system/department'],
                   parentPath: '/system',
-                  icon: 'bi:postcard',
+                  icon: 'bi:postcard'
                 },
                 {
                   name: 'system_post',
@@ -612,7 +613,7 @@ export default [
                   path: '/system/post',
                   paths: ['/system', '/system/post'],
                   parentPath: '/system',
-                  icon: 'eos-icons:job',
+                  icon: 'eos-icons:job'
                 },
                 {
                   name: 'system_dictionary',
@@ -629,7 +630,7 @@ export default [
                       path: '/system/dictionary/single',
                       paths: ['/system', '/system/dictionary', '/system/dictionary/single'],
                       parentPath: '/system/dictionary',
-                      icon: 'arcticons:dictionary',
+                      icon: 'arcticons:dictionary'
                     },
                     {
                       name: 'system_dictionary_multiple',
@@ -637,9 +638,9 @@ export default [
                       path: '/system/dictionary/multiple',
                       paths: ['/system', '/system/dictionary', '/system/dictionary/multiple'],
                       parentPath: '/system/dictionary',
-                      icon: 'arcticons:dictionary',
-                    },
-                  ],
+                      icon: 'arcticons:dictionary'
+                    }
+                  ]
                 },
                 {
                   name: 'system_config',
@@ -647,7 +648,7 @@ export default [
                   path: '/system/config',
                   paths: ['/system', '/system/config'],
                   parentPath: '/system',
-                  icon: 'codicon:symbol-parameter',
+                  icon: 'codicon:symbol-parameter'
                 },
                 {
                   name: 'system_notice',
@@ -655,7 +656,7 @@ export default [
                   path: '/system/notice',
                   paths: ['/system', '/system/notice'],
                   parentPath: '/system',
-                  icon: 'fe:notice-active',
+                  icon: 'fe:notice-active'
                 },
                 {
                   name: 'system_log',
@@ -672,7 +673,7 @@ export default [
                       path: '/system/log/operate',
                       paths: ['/system', '/system/log', '/system/log/operate'],
                       parentPath: '/system/log',
-                      icon: 'radix-icons:activity-log',
+                      icon: 'radix-icons:activity-log'
                     },
                     {
                       name: 'system_log_login',
@@ -680,11 +681,11 @@ export default [
                       path: '/system/log/login',
                       paths: ['/system', '/system/log', '/system/log/login'],
                       parentPath: '/system/log',
-                      icon: 'ant-design:login-outlined',
-                    },
-                  ],
-                },
-              ],
+                      icon: 'ant-design:login-outlined'
+                    }
+                  ]
+                }
+              ]
             },
             {
               name: 'system_page',
@@ -692,7 +693,7 @@ export default [
               path: '/system/page',
               paths: ['/system', '/system/page'],
               parentPath: '/system',
-              icon: 'iconoir:journal-page',
+              icon: 'iconoir:journal-page'
             },
             {
               name: 'system_user',
@@ -701,7 +702,7 @@ export default [
               paths: ['/system', '/system/user'],
               parentPath: '/system',
               icon: 'ant-design:user-outlined',
-              cache: true,
+              cache: true
             },
             {
               name: 'system_role',
@@ -709,7 +710,7 @@ export default [
               path: '/system/role',
               paths: ['/system', '/system/role'],
               parentPath: '/system',
-              icon: 'carbon:user-role',
+              icon: 'carbon:user-role'
             },
             {
               name: 'system_menu',
@@ -717,7 +718,7 @@ export default [
               path: '/system/menu',
               paths: ['/system', '/system/menu'],
               parentPath: '/system',
-              icon: 'ant-design:menu-outlined',
+              icon: 'ant-design:menu-outlined'
             },
             {
               name: 'system_department',
@@ -725,7 +726,7 @@ export default [
               path: '/system/department',
               paths: ['/system', '/system/department'],
               parentPath: '/system',
-              icon: 'bi:postcard',
+              icon: 'bi:postcard'
             },
             {
               name: 'system_post',
@@ -733,7 +734,7 @@ export default [
               path: '/system/post',
               paths: ['/system', '/system/post'],
               parentPath: '/system',
-              icon: 'eos-icons:job',
+              icon: 'eos-icons:job'
             },
             {
               name: 'system_dictionary',
@@ -750,7 +751,7 @@ export default [
                   path: '/system/dictionary/single',
                   paths: ['/system', '/system/dictionary', '/system/dictionary/single'],
                   parentPath: '/system/dictionary',
-                  icon: 'arcticons:dictionary',
+                  icon: 'arcticons:dictionary'
                 },
                 {
                   name: 'system_dictionary_multiple',
@@ -758,9 +759,9 @@ export default [
                   path: '/system/dictionary/multiple',
                   paths: ['/system', '/system/dictionary', '/system/dictionary/multiple'],
                   parentPath: '/system/dictionary',
-                  icon: 'arcticons:dictionary',
-                },
-              ],
+                  icon: 'arcticons:dictionary'
+                }
+              ]
             },
             {
               name: 'system_dictionary_single',
@@ -768,7 +769,7 @@ export default [
               path: '/system/dictionary/single',
               paths: ['/system', '/system/dictionary', '/system/dictionary/single'],
               parentPath: '/system/dictionary',
-              icon: 'arcticons:dictionary',
+              icon: 'arcticons:dictionary'
             },
             {
               name: 'system_dictionary_multiple',
@@ -776,7 +777,7 @@ export default [
               path: '/system/dictionary/multiple',
               paths: ['/system', '/system/dictionary', '/system/dictionary/multiple'],
               parentPath: '/system/dictionary',
-              icon: 'arcticons:dictionary',
+              icon: 'arcticons:dictionary'
             },
             {
               name: 'system_config',
@@ -784,7 +785,7 @@ export default [
               path: '/system/config',
               paths: ['/system', '/system/config'],
               parentPath: '/system',
-              icon: 'codicon:symbol-parameter',
+              icon: 'codicon:symbol-parameter'
             },
             {
               name: 'system_notice',
@@ -792,7 +793,7 @@ export default [
               path: '/system/notice',
               paths: ['/system', '/system/notice'],
               parentPath: '/system',
-              icon: 'fe:notice-active',
+              icon: 'fe:notice-active'
             },
             {
               name: 'system_log',
@@ -809,7 +810,7 @@ export default [
                   path: '/system/log/operate',
                   paths: ['/system', '/system/log', '/system/log/operate'],
                   parentPath: '/system/log',
-                  icon: 'radix-icons:activity-log',
+                  icon: 'radix-icons:activity-log'
                 },
                 {
                   name: 'system_log_login',
@@ -817,9 +818,9 @@ export default [
                   path: '/system/log/login',
                   paths: ['/system', '/system/log', '/system/log/login'],
                   parentPath: '/system/log',
-                  icon: 'ant-design:login-outlined',
-                },
-              ],
+                  icon: 'ant-design:login-outlined'
+                }
+              ]
             },
             {
               name: 'system_log_operate',
@@ -827,7 +828,7 @@ export default [
               path: '/system/log/operate',
               paths: ['/system', '/system/log', '/system/log/operate'],
               parentPath: '/system/log',
-              icon: 'radix-icons:activity-log',
+              icon: 'radix-icons:activity-log'
             },
             {
               name: 'system_log_login',
@@ -835,7 +836,7 @@ export default [
               path: '/system/log/login',
               paths: ['/system', '/system/log', '/system/log/login'],
               parentPath: '/system/log',
-              icon: 'ant-design:login-outlined',
+              icon: 'ant-design:login-outlined'
             },
             {
               order: 3,
@@ -852,7 +853,7 @@ export default [
                   path: '/process/management',
                   paths: ['/process', '/process/management'],
                   parentPath: '/process',
-                  icon: 'ant-design:ant-design-outlined',
+                  icon: 'ant-design:ant-design-outlined'
                 },
                 {
                   name: 'flow_design',
@@ -860,7 +861,7 @@ export default [
                   path: '/process/design',
                   paths: ['/process', '/process/design'],
                   parentPath: '/process',
-                  icon: 'ant-design:ant-design-outlined',
+                  icon: 'ant-design:ant-design-outlined'
                 },
                 {
                   name: 'process_monitor',
@@ -868,7 +869,7 @@ export default [
                   path: '/process/monitor',
                   paths: ['/process', '/process/monitor'],
                   parentPath: '/process',
-                  icon: 'ant-design:monitor-outlined',
+                  icon: 'ant-design:monitor-outlined'
                 },
                 {
                   name: 'flow_expression',
@@ -876,7 +877,7 @@ export default [
                   path: '/process/expression',
                   paths: ['/process', '/process/expression'],
                   parentPath: '/process',
-                  icon: 'ooui:search-regular-expression',
+                  icon: 'ooui:search-regular-expression'
                 },
                 {
                   name: 'flow_form',
@@ -884,9 +885,9 @@ export default [
                   path: '/process/form',
                   paths: ['/process', '/process/form'],
                   parentPath: '/process',
-                  icon: 'ant-design:form-outlined',
-                },
-              ],
+                  icon: 'ant-design:form-outlined'
+                }
+              ]
             },
             {
               name: 'flow_management',
@@ -894,7 +895,7 @@ export default [
               path: '/process/management',
               paths: ['/process', '/process/management'],
               parentPath: '/process',
-              icon: 'ant-design:ant-design-outlined',
+              icon: 'ant-design:ant-design-outlined'
             },
             {
               name: 'flow_design',
@@ -902,7 +903,7 @@ export default [
               path: '/process/design',
               paths: ['/process', '/process/design'],
               parentPath: '/process',
-              icon: 'ant-design:ant-design-outlined',
+              icon: 'ant-design:ant-design-outlined'
             },
             {
               name: 'process_monitor',
@@ -910,7 +911,7 @@ export default [
               path: '/process/monitor',
               paths: ['/process', '/process/monitor'],
               parentPath: '/process',
-              icon: 'ant-design:monitor-outlined',
+              icon: 'ant-design:monitor-outlined'
             },
             {
               name: 'flow_expression',
@@ -918,7 +919,7 @@ export default [
               path: '/process/expression',
               paths: ['/process', '/process/expression'],
               parentPath: '/process',
-              icon: 'ooui:search-regular-expression',
+              icon: 'ooui:search-regular-expression'
             },
             {
               name: 'flow_form',
@@ -926,7 +927,7 @@ export default [
               path: '/process/form',
               paths: ['/process', '/process/form'],
               parentPath: '/process',
-              icon: 'ant-design:form-outlined',
+              icon: 'ant-design:form-outlined'
             },
             {
               order: 4,
@@ -943,7 +944,7 @@ export default [
                   path: '/monitor/user',
                   paths: ['/monitor', '/monitor/user'],
                   parentPath: '/monitor',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'monitor_task',
@@ -951,7 +952,7 @@ export default [
                   path: '/monitor/task',
                   paths: ['/monitor', '/monitor/task'],
                   parentPath: '/monitor',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'monitor_data',
@@ -959,7 +960,7 @@ export default [
                   path: '/monitor/data',
                   paths: ['/monitor', '/monitor/data'],
                   parentPath: '/monitor',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'monitor_service',
@@ -967,7 +968,7 @@ export default [
                   path: '/monitor/service',
                   paths: ['/monitor', '/monitor/service'],
                   parentPath: '/monitor',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'monitor_cache',
@@ -975,7 +976,7 @@ export default [
                   path: '/monitor/cache',
                   paths: ['/monitor', '/monitor/cache'],
                   parentPath: '/monitor',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'monitor_list',
@@ -983,9 +984,9 @@ export default [
                   path: '/monitor/list',
                   paths: ['/monitor', '/monitor/list'],
                   parentPath: '/monitor',
-                  icon: 'akar-icons:file',
-                },
-              ],
+                  icon: 'akar-icons:file'
+                }
+              ]
             },
             {
               name: 'monitor_user',
@@ -993,7 +994,7 @@ export default [
               path: '/monitor/user',
               paths: ['/monitor', '/monitor/user'],
               parentPath: '/monitor',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'monitor_task',
@@ -1001,7 +1002,7 @@ export default [
               path: '/monitor/task',
               paths: ['/monitor', '/monitor/task'],
               parentPath: '/monitor',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'monitor_data',
@@ -1009,7 +1010,7 @@ export default [
               path: '/monitor/data',
               paths: ['/monitor', '/monitor/data'],
               parentPath: '/monitor',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'monitor_service',
@@ -1017,7 +1018,7 @@ export default [
               path: '/monitor/service',
               paths: ['/monitor', '/monitor/service'],
               parentPath: '/monitor',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'monitor_cache',
@@ -1025,7 +1026,7 @@ export default [
               path: '/monitor/cache',
               paths: ['/monitor', '/monitor/cache'],
               parentPath: '/monitor',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'monitor_list',
@@ -1033,7 +1034,7 @@ export default [
               path: '/monitor/list',
               paths: ['/monitor', '/monitor/list'],
               parentPath: '/monitor',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               order: 5,
@@ -1050,9 +1051,9 @@ export default [
                   path: '/platform/application',
                   paths: ['/platform', '/platform/application'],
                   parentPath: '/platform',
-                  icon: 'ep:platform',
-                },
-              ],
+                  icon: 'ep:platform'
+                }
+              ]
             },
             {
               name: 'platform_application',
@@ -1060,7 +1061,7 @@ export default [
               path: '/platform/application',
               paths: ['/platform', '/platform/application'],
               parentPath: '/platform',
-              icon: 'ep:platform',
+              icon: 'ep:platform'
             },
             {
               order: 6,
@@ -1077,7 +1078,7 @@ export default [
                   path: '/operation/database',
                   paths: ['/operation', '/operation/database'],
                   parentPath: '/operation',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'operation_file',
@@ -1085,7 +1086,7 @@ export default [
                   path: '/operation/file',
                   paths: ['/operation', '/operation/file'],
                   parentPath: '/operation',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'operation_interface',
@@ -1093,7 +1094,7 @@ export default [
                   path: '/operation/interface',
                   paths: ['/operation', '/operation/interface'],
                   parentPath: '/operation',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'operation_message',
@@ -1110,7 +1111,7 @@ export default [
                       path: '/operation/message/log',
                       paths: ['/operation', '/operation/message', '/operation/message/log'],
                       parentPath: '/operation/message',
-                      icon: 'akar-icons:file',
+                      icon: 'akar-icons:file'
                     },
                     {
                       name: 'operation_message_template',
@@ -1118,11 +1119,11 @@ export default [
                       path: '/operation/message/template',
                       paths: ['/operation', '/operation/message', '/operation/message/template'],
                       parentPath: '/operation/message',
-                      icon: 'akar-icons:file',
-                    },
-                  ],
-                },
-              ],
+                      icon: 'akar-icons:file'
+                    }
+                  ]
+                }
+              ]
             },
             {
               name: 'operation_database',
@@ -1130,7 +1131,7 @@ export default [
               path: '/operation/database',
               paths: ['/operation', '/operation/database'],
               parentPath: '/operation',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'operation_file',
@@ -1138,7 +1139,7 @@ export default [
               path: '/operation/file',
               paths: ['/operation', '/operation/file'],
               parentPath: '/operation',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'operation_interface',
@@ -1146,7 +1147,7 @@ export default [
               path: '/operation/interface',
               paths: ['/operation', '/operation/interface'],
               parentPath: '/operation',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'operation_message',
@@ -1163,7 +1164,7 @@ export default [
                   path: '/operation/message/log',
                   paths: ['/operation', '/operation/message', '/operation/message/log'],
                   parentPath: '/operation/message',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'operation_message_template',
@@ -1171,9 +1172,9 @@ export default [
                   path: '/operation/message/template',
                   paths: ['/operation', '/operation/message', '/operation/message/template'],
                   parentPath: '/operation/message',
-                  icon: 'akar-icons:file',
-                },
-              ],
+                  icon: 'akar-icons:file'
+                }
+              ]
             },
             {
               name: 'operation_message_log',
@@ -1181,7 +1182,7 @@ export default [
               path: '/operation/message/log',
               paths: ['/operation', '/operation/message', '/operation/message/log'],
               parentPath: '/operation/message',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'operation_message_template',
@@ -1189,7 +1190,7 @@ export default [
               path: '/operation/message/template',
               paths: ['/operation', '/operation/message', '/operation/message/template'],
               parentPath: '/operation/message',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               order: 7,
@@ -1206,7 +1207,7 @@ export default [
                   path: '/tool/model',
                   paths: ['/tool', '/tool/model'],
                   parentPath: '/tool',
-                  icon: 'material-symbols:3p',
+                  icon: 'material-symbols:3p'
                 },
                 {
                   name: 'tool_translate',
@@ -1214,7 +1215,7 @@ export default [
                   path: '/tool/translate',
                   paths: ['/tool', '/tool/translate'],
                   parentPath: '/tool',
-                  icon: 'material-symbols:3p',
+                  icon: 'material-symbols:3p'
                 },
                 {
                   name: 'tool_generator',
@@ -1222,7 +1223,7 @@ export default [
                   path: '/tool/generator',
                   paths: ['/tool', '/tool/generator'],
                   parentPath: '/tool',
-                  icon: 'material-symbols:3p',
+                  icon: 'material-symbols:3p'
                 },
                 {
                   name: 'tool_page',
@@ -1230,9 +1231,9 @@ export default [
                   path: '/tool/page',
                   paths: ['/tool', '/tool/page'],
                   parentPath: '/tool',
-                  icon: 'material-symbols:3p',
-                },
-              ],
+                  icon: 'material-symbols:3p'
+                }
+              ]
             },
             {
               name: 'tool_model',
@@ -1240,7 +1241,7 @@ export default [
               path: '/tool/model',
               paths: ['/tool', '/tool/model'],
               parentPath: '/tool',
-              icon: 'material-symbols:3p',
+              icon: 'material-symbols:3p'
             },
             {
               name: 'tool_translate',
@@ -1248,7 +1249,7 @@ export default [
               path: '/tool/translate',
               paths: ['/tool', '/tool/translate'],
               parentPath: '/tool',
-              icon: 'material-symbols:3p',
+              icon: 'material-symbols:3p'
             },
             {
               name: 'tool_generator',
@@ -1256,7 +1257,7 @@ export default [
               path: '/tool/generator',
               paths: ['/tool', '/tool/generator'],
               parentPath: '/tool',
-              icon: 'material-symbols:3p',
+              icon: 'material-symbols:3p'
             },
             {
               name: 'tool_page',
@@ -1264,7 +1265,7 @@ export default [
               path: '/tool/page',
               paths: ['/tool', '/tool/page'],
               parentPath: '/tool',
-              icon: 'material-symbols:3p',
+              icon: 'material-symbols:3p'
             },
             {
               order: 9,
@@ -1281,7 +1282,7 @@ export default [
                   path: '/other/flow',
                   paths: ['/other', '/other/flow'],
                   parentPath: '/other',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'other_icon',
@@ -1289,7 +1290,7 @@ export default [
                   path: '/other/icon',
                   paths: ['/other', '/other/icon'],
                   parentPath: '/other',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'other_print',
@@ -1297,7 +1298,7 @@ export default [
                   path: '/other/print',
                   paths: ['/other', '/other/print'],
                   parentPath: '/other',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'other_time',
@@ -1305,7 +1306,7 @@ export default [
                   path: '/other/time',
                   paths: ['/other', '/other/time'],
                   parentPath: '/other',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'other_trace',
@@ -1313,7 +1314,7 @@ export default [
                   path: '/other/trace',
                   paths: ['/other', '/other/trace'],
                   parentPath: '/other',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'other_drag',
@@ -1321,7 +1322,7 @@ export default [
                   path: '/other/drag',
                   paths: ['/other', '/other/drag'],
                   parentPath: '/other',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'other_video',
@@ -1329,7 +1330,7 @@ export default [
                   path: '/other/video',
                   paths: ['/other', '/other/video'],
                   parentPath: '/other',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'other_css',
@@ -1337,7 +1338,7 @@ export default [
                   path: '/other/css',
                   paths: ['/other', '/other/css'],
                   parentPath: '/other',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'other_flex',
@@ -1346,7 +1347,7 @@ export default [
                   paths: ['/other', '/other/flex'],
                   parentPath: '/other',
                   icon: 'akar-icons:file',
-                  cache: true,
+                  cache: true
                 },
                 {
                   name: 'other_login',
@@ -1354,7 +1355,7 @@ export default [
                   path: '/other/login',
                   paths: ['/other', '/other/login'],
                   parentPath: '/other',
-                  icon: 'akar-icons:file',
+                  icon: 'akar-icons:file'
                 },
                 {
                   name: 'other_execl',
@@ -1362,9 +1363,9 @@ export default [
                   path: '/other/execl',
                   paths: ['/other', '/other/execl'],
                   parentPath: '/other',
-                  icon: 'akar-icons:file',
-                },
-              ],
+                  icon: 'akar-icons:file'
+                }
+              ]
             },
             {
               name: 'other_flow',
@@ -1372,7 +1373,7 @@ export default [
               path: '/other/flow',
               paths: ['/other', '/other/flow'],
               parentPath: '/other',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'other_icon',
@@ -1380,7 +1381,7 @@ export default [
               path: '/other/icon',
               paths: ['/other', '/other/icon'],
               parentPath: '/other',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'other_print',
@@ -1388,7 +1389,7 @@ export default [
               path: '/other/print',
               paths: ['/other', '/other/print'],
               parentPath: '/other',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'other_time',
@@ -1396,7 +1397,7 @@ export default [
               path: '/other/time',
               paths: ['/other', '/other/time'],
               parentPath: '/other',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'other_trace',
@@ -1404,7 +1405,7 @@ export default [
               path: '/other/trace',
               paths: ['/other', '/other/trace'],
               parentPath: '/other',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'other_drag',
@@ -1412,7 +1413,7 @@ export default [
               path: '/other/drag',
               paths: ['/other', '/other/drag'],
               parentPath: '/other',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'other_video',
@@ -1420,7 +1421,7 @@ export default [
               path: '/other/video',
               paths: ['/other', '/other/video'],
               parentPath: '/other',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'other_css',
@@ -1428,7 +1429,7 @@ export default [
               path: '/other/css',
               paths: ['/other', '/other/css'],
               parentPath: '/other',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'other_flex',
@@ -1437,7 +1438,7 @@ export default [
               paths: ['/other', '/other/flex'],
               parentPath: '/other',
               icon: 'akar-icons:file',
-              cache: true,
+              cache: true
             },
             {
               name: 'other_login',
@@ -1445,7 +1446,7 @@ export default [
               path: '/other/login',
               paths: ['/other', '/other/login'],
               parentPath: '/other',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               name: 'other_execl',
@@ -1453,7 +1454,7 @@ export default [
               path: '/other/execl',
               paths: ['/other', '/other/execl'],
               parentPath: '/other',
-              icon: 'akar-icons:file',
+              icon: 'akar-icons:file'
             },
             {
               order: 10,
@@ -1470,7 +1471,7 @@ export default [
                   path: '/link/index',
                   paths: ['/link', '/link/index'],
                   parentPath: '/link',
-                  icon: 'carbon:application-web',
+                  icon: 'carbon:application-web'
                 },
                 {
                   name: 'link_vite',
@@ -1479,7 +1480,7 @@ export default [
                   paths: ['/link', '/link/vite'],
                   parentPath: '/link',
                   icon: 'file-icons:vite',
-                  link: 'https://www.vitejs.net/',
+                  link: 'https://www.vitejs.net/'
                 },
                 {
                   name: 'link_mdn',
@@ -1488,9 +1489,9 @@ export default [
                   paths: ['/link', '/link/mdn'],
                   parentPath: '/link',
                   icon: 'cib:mozilla-firefox',
-                  link: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide',
-                },
-              ],
+                  link: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide'
+                }
+              ]
             },
             {
               name: 'link_index',
@@ -1498,7 +1499,7 @@ export default [
               path: '/link/index',
               paths: ['/link', '/link/index'],
               parentPath: '/link',
-              icon: 'carbon:application-web',
+              icon: 'carbon:application-web'
             },
             {
               name: 'link_vite',
@@ -1507,7 +1508,7 @@ export default [
               paths: ['/link', '/link/vite'],
               parentPath: '/link',
               icon: 'file-icons:vite',
-              link: 'https://www.vitejs.net/',
+              link: 'https://www.vitejs.net/'
             },
             {
               name: 'link_mdn',
@@ -1516,18 +1517,18 @@ export default [
               paths: ['/link', '/link/mdn'],
               parentPath: '/link',
               icon: 'cib:mozilla-firefox',
-              link: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide',
+              link: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide'
             },
             {
               name: 'test',
               title: '测试',
               path: '/test',
               paths: ['/test'],
-              icon: 'carbon:page-break',
-            },
-          ],
-        },
+              icon: 'carbon:page-break'
+            }
+          ]
+        }
       };
-    },
-  },
+    }
+  }
 ] as MockMethod[];
