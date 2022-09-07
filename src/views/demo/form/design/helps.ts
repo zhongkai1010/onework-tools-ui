@@ -1,4 +1,3 @@
-
 import { ComponentListType } from './types';
 import { FormComponentConfig } from '/@/components/DynamicForm';
 import ComponentData from '/@/components/DynamicForm/component';
@@ -16,12 +15,12 @@ export const getComponentList: () => ComponentListType[] = () => {
     {
       name: 'base',
       title: '基础组件',
-      components: getGroupComponent('el-'),
+      components: getGroupComponent('el-')
     },
     {
       name: 'business',
       title: '业务组件',
-      components: getGroupComponent('bl-'),
-    },
+      components: getGroupComponent('bl-')
+    }
   ];
 };

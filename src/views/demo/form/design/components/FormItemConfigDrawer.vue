@@ -19,7 +19,6 @@
   import {
     DEFAULT_DRAGGABLE_ITEM_CONFIG,
     DraggableItemConfig,
-    FormItemDrawerInstance,
     FormItemDrawerInstance
   } from '../types';
 
@@ -49,10 +48,6 @@
   watch([itemConfig], () => {
     log('itemConfig', itemConfig);
   });
-
-
-
-
 </script>
 <style scoped lang="scss">
   .config-container {
