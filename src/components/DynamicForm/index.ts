@@ -30,7 +30,8 @@ export type FormComponentType =
   | 'el-transfer'
   | 'el-upload'
   | 'ow-form-set-data'
-  | 'ow-form-set-rule';
+  | 'ow-form-set-rule'
+  | 'bl-form-type-select';
 
 export type FormComponentDataMode = 'all' | 'static' | 'dynamic' | 'none';
 
