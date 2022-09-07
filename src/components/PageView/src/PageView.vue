@@ -17,13 +17,13 @@
 
   const props = withDefaults(defineProps<Props>(), {
     gutter: 20,
-    bgColor: true,
+    bgColor: true
   });
 
   const styleProps = computed<CSSProperties>(() => {
     return {
       padding: `${props.gutter}px`,
-      backgroundColor: props.bgColor ? '#fff' : 'transparent',
+      backgroundColor: props.bgColor ? '#fff' : 'transparent'
     };
   });
 </script>

@@ -84,7 +84,7 @@
       edit: props.toolbar?.includes('edit'),
       remove: props.toolbar?.includes('remove'),
       search: props.toolbar?.includes('search'),
-      column: props.toolbar?.includes('column'),
+      column: props.toolbar?.includes('column')
     };
   });
 

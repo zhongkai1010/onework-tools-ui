@@ -104,17 +104,17 @@
 
 <script setup lang="ts">
   import _ from 'lodash';
-  import { DynamicFormDesignConfig } from '../types';
+  import { DynamicFormConfig } from '/@/components/DynamicForm';
 
   const props = defineProps<{
-    modelValue: DynamicFormDesignConfig;
+    modelValue: DynamicFormConfig;
   }>();
-  const emits = defineEmits<{ (e: 'update-model', value: DynamicFormDesignConfig) }>();
+  const emits = defineEmits<{ (e: 'update-model', value: DynamicFormConfig) }>();
 
   const labelWidthUnit = ref('px');
   const labelWidth = ref<string | number>(80);
   const dialogShow = ref(false);
-  const formValue = reactive<DynamicFormDesignConfig>(props.modelValue);
+  const formValue = reactive<DynamicFormConfig>(props.modelValue);
 
   const onClickOpen = () => {
     dialogShow.value = true;

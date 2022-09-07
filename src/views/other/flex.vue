@@ -23,9 +23,9 @@
   }>({
     boxStyle: {
       width: '40%',
-      height: '40vh',
+      height: '40vh'
     },
-    boxNum: 10,
+    boxNum: 10
   });
 
   const onFormChange = (value) => {

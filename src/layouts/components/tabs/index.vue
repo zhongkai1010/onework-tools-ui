@@ -99,8 +99,8 @@
           x: e.x,
           y: e.y,
           show: true,
-          name: id.replace('tab-', ''),
-        },
+          name: id.replace('tab-', '')
+        }
       });
     }
   };

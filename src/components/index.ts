@@ -38,7 +38,7 @@ const setupComponents = (app: App<Element>) => {
    */
   app.component('DynamicForm', DynamicForm);
   app.component('FormItem', FormItem);
-  app.component('FormTypeSelect', FormTypeSelect);
+  app.component('BlFormTypeSelect', FormTypeSelect);
 };
 
 export { setupComponents };

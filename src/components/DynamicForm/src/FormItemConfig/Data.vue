@@ -91,7 +91,7 @@
     },
     set: (value) => {
       emit('update:modelValue', value);
-    },
+    }
   });
 
   const onChangeDataMode = (mode: FormComponentDataMode) => {
@@ -107,7 +107,7 @@
   const onAddOption = () => {
     modelValue.value.options.push({
       label: '',
-      value: '',
+      value: ''
     });
   };
 </script>

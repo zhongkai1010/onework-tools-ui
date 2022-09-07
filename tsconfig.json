@@ -36,7 +36,8 @@
     "vite.config.ts",
     "types/config.ts",
     "types/axios.ts",
-    "types/store.ts"
-, "mock/data/area.ts"  ],
+    "types/store.ts",
+    "mock/data/area.ts"
+  ],
   "exclude": ["node_modules", "dist", "**/*.js"]
 }

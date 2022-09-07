@@ -4,7 +4,7 @@
     :style="{
       display: state.show ? 'block' : 'none',
       top: `${state.y + 5}px`,
-      left: `${state.x}px`,
+      left: `${state.x}px`
     }"
     @mouseleave="onMouseleave"
   >
@@ -31,12 +31,12 @@
 
   const onMouseleave = () => {
     tabState.$patch({
-      rightTool: { ...state.value, show: false },
+      rightTool: { ...state.value, show: false }
     });
   };
   const onClick = (command: 'other' | 'left' | 'right' | 'all' | 'refresh') => {
     tabState.$patch({
-      rightTool: { ...state.value, show: false },
+      rightTool: { ...state.value, show: false }
     });
     if (command === 'refresh') {
       pageState.refresh();

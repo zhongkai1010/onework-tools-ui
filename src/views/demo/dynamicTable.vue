@@ -32,7 +32,7 @@
     toolbar: ['add', 'column', 'edit', 'remove', 'search', 'refresh'],
     remote: {
       url: '/api/test/getPageTableData',
-      method: 'get',
+      method: 'get'
     },
     fields: [
       {
@@ -41,8 +41,8 @@
         type: 'string',
         hide: true,
         editable: {
-          hide: true,
-        },
+          hide: true
+        }
       },
       {
         label: '字段名称',
@@ -50,8 +50,8 @@
         type: 'string',
         order: 2,
         props: {
-          sortable: true,
-        },
+          sortable: true
+        }
       },
       {
         label: '组件类型',
@@ -65,39 +65,39 @@
               options: [
                 {
                   label: 'radio',
-                  value: 'radio',
-                },
-              ],
-            },
-          },
-        },
+                  value: 'radio'
+                }
+              ]
+            }
+          }
+        }
       },
       {
         label: '标题',
         name: 'title',
-        type: 'string',
+        type: 'string'
       },
       {
         label: '占位符提示',
         name: 'placeholderTips',
-        type: 'string',
+        type: 'string'
       },
       {
         label: '表单栅格',
         name: 'formGrid',
-        type: 'string',
+        type: 'string'
       },
       {
         label: '最小行数',
         name: 'minimum',
-        type: 'string',
+        type: 'string'
       },
       {
         label: '最大行数',
         name: 'maximum',
-        type: 'string',
-      },
-    ],
+        type: 'string'
+      }
+    ]
   };
   const selectRows = computed(() => {
     if (tableRef.value) {

@@ -48,11 +48,11 @@
   import PreviewFrom from './components/PreviewFrom.vue';
   import {
     DEFAULT_DRAGGABLE_ITEM_CONFIG,
+    DraggableFormConfig,
     DraggableItemConfig,
-    DynamicFormDesignConfig,
     FormConfigDrawerInstance,
     FormItemDrawerInstance,
-    FORM_LIST_PROVIDE_KEY,
+    FORM_LIST_PROVIDE_KEY
   } from './types';
   import _ from 'lodash';
 
@@ -61,25 +61,25 @@
   import { buildUUID } from '/@/utils/uuid';
 
   const formValue = reactive({});
-  const formConfig = reactive<DynamicFormDesignConfig>({
+  const formConfig = reactive<DraggableFormConfig>({
     name: 'form',
     url: '',
     layout: {
       gutter: 20,
       justify: 'start',
-      align: 'top',
+      align: 'top'
     },
     props: {
       labelWidth: 80,
       labelPosition: 'top',
-      size: 'default',
+      size: 'default'
     },
     fields: [
       {
         id: 'default',
-        ...DEFAULT_DRAGGABLE_ITEM_CONFIG,
-      },
-    ],
+        ...DEFAULT_DRAGGABLE_ITEM_CONFIG
+      }
+    ]
   });
 
   const formConfigDrawerRef = ref<FormConfigDrawerInstance>();

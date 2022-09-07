@@ -5,7 +5,7 @@
       'is-fixed': props.fixed,
       'is-card': !props.left && !props.top,
       'is-left': props.left,
-      'is-top': props.top,
+      'is-top': props.top
     }"
   >
     <el-card class="top" v-if="props.top" v-bind="props.topProps">

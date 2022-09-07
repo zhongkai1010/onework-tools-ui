@@ -168,9 +168,9 @@
       {
         pattern: '^[A-Za-z0-9]{4,40}$',
         message: '请输入正确用户名！',
-        trigger: 'blur',
-      },
-    ],
+        trigger: 'blur'
+      }
+    ]
   });
   const onSubmit = (form: FormInstance | undefined) => {
     if (!form) return;

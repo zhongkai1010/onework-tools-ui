@@ -40,15 +40,15 @@
     set: (value) => {
       emit(
         'update:modelValue',
-        value.filter((t) => _.has(t, 'pattern')),
+        value.filter((t) => _.has(t, 'pattern'))
       );
-    },
+    }
   });
 
   const onAddRule = () => {
     modelValue.value.push({
       pattern: '',
-      message: '',
+      message: ''
     });
   };
 

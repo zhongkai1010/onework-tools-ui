@@ -20,6 +20,7 @@
     DEFAULT_DRAGGABLE_ITEM_CONFIG,
     DraggableItemConfig,
     FormItemDrawerInstance,
+    FormItemDrawerInstance
   } from '../types';
 
   const dialogShow = ref(false);
@@ -45,9 +46,13 @@
 
   defineExpose<FormItemDrawerInstance>({ open: onOpen });
 
-  // watch([itemConfig], () => {
-  //   log('itemConfig', itemConfig);
-  // });
+  watch([itemConfig], () => {
+    log('itemConfig', itemConfig);
+  });
+
+
+
+
 </script>
 <style scoped lang="scss">
   .config-container {

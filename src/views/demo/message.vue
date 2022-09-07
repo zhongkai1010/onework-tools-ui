@@ -55,7 +55,7 @@
     }
     if (model === 'prompt') {
       prompt('this is a prompt.', {
-        type,
+        type
       })
         .then((value) => {
           message({ message: value, type: 'info' });
@@ -66,7 +66,7 @@
     }
     if (model === 'confirm') {
       confirm('this is a confirm.', {
-        type,
+        type
       })
         .then(() => {
           message({ message: 'ok', type: 'info' });
@@ -80,7 +80,7 @@
     notice({
       title: '通知',
       type,
-      message: 'this is a Notification.',
+      message: 'this is a Notification.'
     });
   };
 </script>

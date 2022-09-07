@@ -20,170 +20,170 @@
       links: [
         {
           text: 'Element Plus',
-          link: 'https://element-plus.org/zh-CN/',
+          link: 'https://element-plus.org/zh-CN/'
         },
         {
           text: 'Element Plus主题切换',
-          link: 'https://element-plus.github.io/theme-chalk-preview/#/zh-CN',
+          link: 'https://element-plus.github.io/theme-chalk-preview/#/zh-CN'
         },
         {
           text: 'Vue3',
-          link: 'https://staging-cn.vuejs.org/guide/introduction.html',
+          link: 'https://staging-cn.vuejs.org/guide/introduction.html'
         },
         {
           text: 'Vue Router',
-          link: 'https://router.vuejs.org/zh/installation.html',
+          link: 'https://router.vuejs.org/zh/installation.html'
         },
         {
           text: 'Vite',
-          link: 'https://cn.vitejs.dev/guide/',
+          link: 'https://cn.vitejs.dev/guide/'
         },
         {
           text: 'vue-admin-beautiful',
-          link: 'https://vue-admin-beautiful.com/',
+          link: 'https://vue-admin-beautiful.com/'
         },
         {
           text: '色卡',
-          link: 'https://www.colorhunt.co/',
+          link: 'https://www.colorhunt.co/'
         },
         {
           text: 'CSS3速查表',
-          link: 'http://www.w3chtml.com/css3/',
-        },
-      ],
+          link: 'http://www.w3chtml.com/css3/'
+        }
+      ]
     },
     {
       text: '辅助组件',
       links: [
         {
           text: 'css-color-function',
-          link: 'https://element-plus.org/zh-CN/',
+          link: 'https://element-plus.org/zh-CN/'
         },
         {
           text: 'rgb-hex',
-          link: 'https://element-plus.org/zh-CN/',
-        },
-      ],
+          link: 'https://element-plus.org/zh-CN/'
+        }
+      ]
     },
     {
       text: '开源项目',
       links: [
         {
           text: 'vue-pure-admin',
-          link: 'https://github.com/xiaoxian521/vue-pure-admin',
+          link: 'https://github.com/xiaoxian521/vue-pure-admin'
         },
         {
           text: 'vue-vben-admin',
-          link: 'https://github.com/vbenjs/vue-vben-admin',
+          link: 'https://github.com/vbenjs/vue-vben-admin'
         },
         {
           text: 'vue-element-admin',
-          link: 'https://panjiachen.github.io/vue-element-admin-site/zh/',
+          link: 'https://panjiachen.github.io/vue-element-admin-site/zh/'
         },
         {
           text: 'vue3-composition-admin',
-          link: 'https://github.com/RainManGO/vue3-composition-admin',
-        },
-      ],
+          link: 'https://github.com/RainManGO/vue3-composition-admin'
+        }
+      ]
     },
     {
       text: '博客推荐',
       links: [
         {
           text: '体验vite + vue3 + ts搭建项目的全过程',
-          link: 'https://element-plus.org/zh-CN/',
+          link: 'https://element-plus.org/zh-CN/'
         },
         {
           text: 'Vite + Vue3 的 ESlint 和 Prettier 基礎配置',
-          link: 'https://element-plus.org/zh-CN/',
+          link: 'https://element-plus.org/zh-CN/'
         },
         {
           text: '配置使用vite 脚手架创建的项目的eslint',
-          link: 'https://juejin.cn/post/7097565293995622414',
+          link: 'https://juejin.cn/post/7097565293995622414'
         },
         {
           text: 'Vite推荐插件',
-          link: 'https://juejin.cn/post/6998059092497399845',
+          link: 'https://juejin.cn/post/6998059092497399845'
         },
         {
           text: 'Vue3 Element-Plus 动态更换主题简单实现',
-          link: 'https://juejin.cn/post/7024025899813044232',
-        },
-      ],
+          link: 'https://juejin.cn/post/7024025899813044232'
+        }
+      ]
     },
     {
       text: '官方资料',
       links: [
         {
           text: 'MDN',
-          link: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide',
+          link: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide'
         },
         {
           text: '内置对象（Array）',
-          link: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array',
+          link: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array'
         },
         {
           text: '内置对象（Object）',
-          link: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object',
+          link: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object'
         },
         {
           text: '内置对象（Promise）',
-          link: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise',
+          link: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise'
         },
         {
           text: 'CSS（盒模型）',
-          link: 'https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/The_box_model',
+          link: 'https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/The_box_model'
         },
         {
           text: 'CSS （选择器）',
-          link: 'https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Selectors',
+          link: 'https://developer.mozilla.org/zh-CN/docs/Learn/CSS/Building_blocks/Selectors'
         },
         {
           text: 'CSS （布局）',
-          link: 'https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout',
+          link: 'https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout'
         },
         {
           text: 'Sass',
-          link: 'https://www.sass.hk/docs/',
+          link: 'https://www.sass.hk/docs/'
         },
         {
           text: 'Vue Awesome',
-          link: 'https://github.com/vitejs/awesome-',
+          link: 'https://github.com/vitejs/awesome-'
         },
         {
           text: 'Pinia',
-          link: 'https://pinia.web3doc.top/introduction.html',
+          link: 'https://pinia.web3doc.top/introduction.html'
         },
         {
           text: 'Eslint',
-          link: 'http://eslint.cn/docs/user-guide/getting-started',
+          link: 'http://eslint.cn/docs/user-guide/getting-started'
         },
         {
           text: 'Prettier',
-          link: 'https://www.prettier.cn/docs/install.html',
+          link: 'https://www.prettier.cn/docs/install.html'
         },
         {
           text: '页面线性进度条',
-          link: 'https://github.com/rstacruz/nprogress',
+          link: 'https://github.com/rstacruz/nprogress'
         },
         {
           text: 'Vue CLI',
-          link: 'https://cli.vuejs.org/zh/guide/',
+          link: 'https://cli.vuejs.org/zh/guide/'
         },
         {
           text: 'Vue Loader',
-          link: 'https://vue-loader.vuejs.org/zh/',
+          link: 'https://vue-loader.vuejs.org/zh/'
         },
         {
           text: 'Ant Design Vue',
-          link: 'https://next.antdv.com/docs/vue/introduce-cn',
+          link: 'https://next.antdv.com/docs/vue/introduce-cn'
         },
         {
           text: 'Vuex',
-          link: 'https://next.vuex.vuejs.org/zh/index.html',
-        },
-      ],
-    },
+          link: 'https://next.vuex.vuejs.org/zh/index.html'
+        }
+      ]
+    }
   ];
 </script>
 

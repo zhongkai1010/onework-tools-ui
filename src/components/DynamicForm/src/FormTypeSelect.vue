@@ -20,7 +20,7 @@
   const options = Object.keys(ComponentData).map((t) => {
     return {
       label: ComponentData[t].displayName,
-      value: t,
+      value: t
     };
   });
 </script>

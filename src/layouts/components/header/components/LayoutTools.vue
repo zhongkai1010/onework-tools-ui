@@ -90,7 +90,7 @@
       showSearch: siteConfig.showSearch,
       showNotice: siteConfig.showNotice,
       showFull: siteConfig.showFull,
-      showLang: siteConfig.showLang,
+      showLang: siteConfig.showLang
     };
   });
   const onClickSetting = () => {

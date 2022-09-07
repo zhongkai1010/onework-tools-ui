@@ -66,14 +66,14 @@
         return http.request({
           method: props.config?.remote?.method ?? 'get',
           url: props.config?.remote?.url,
-          params: params,
+          params: params
         });
       } else {
         return Promise.reject();
       }
     },
     props.config?.remote?.params,
-    { immediate: false },
+    { immediate: false }
   );
 
   const emits = defineEmits<{ (e: 'update:modelValue', value: any) }>();
@@ -104,7 +104,7 @@
         return {
           label: t[props.config?.remote?.labelKey ?? 'label'],
           value: t[props.config.remote?.valueKey ?? 'value'],
-          children: t[props.config.remote?.childerKey ?? 'children'],
+          children: t[props.config.remote?.childerKey ?? 'children']
         } as FormComponentOption;
       });
       options.value = tempOptions;

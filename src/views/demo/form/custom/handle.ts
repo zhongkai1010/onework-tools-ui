@@ -26,7 +26,7 @@ export default function (data: Property[]) {
   // const remove = (node: T) => {};
 
   return {
-    data,
+    data
     // result,
 
     // remove,

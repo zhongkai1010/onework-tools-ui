@@ -56,7 +56,7 @@
       breadcrumb:
         layout.value === 'column' || layout.value === 'float' || layout.value === 'portrait',
       nav: layout.value == 'complex',
-      menu: layout.value == 'horizontal',
+      menu: layout.value == 'horizontal'
     };
   });
 

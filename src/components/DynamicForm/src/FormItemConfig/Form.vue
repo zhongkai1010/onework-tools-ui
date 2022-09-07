@@ -30,11 +30,11 @@
     },
     set: (value) => {
       emit('update:modelValue', value);
-    },
+    }
   });
 
   const config = computed<FormComponentConfig>(
-    () => ComponentData[props.modelValue.component.component],
+    () => ComponentData[props.modelValue.component.component]
   );
 </script>
 

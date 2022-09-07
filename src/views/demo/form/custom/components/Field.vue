@@ -2,7 +2,7 @@
   <ul class="container">
     <div class="config">
       <iconify-icon
-        :icon="expand ? 'ic:baseline-expand-more' : 'ic:baseline-expand-less'"
+        :icon="unfold ? 'ic:baseline-expand-more' : 'ic:baseline-expand-less'"
         v-if="field.fields"
         @click="unfold = !unfold"
       />
@@ -79,7 +79,7 @@
     },
     set(value) {
       emit('update:modelValue', value);
-    },
+    }
   });
 
   const onAddProperty = (name: string, command: 'same' | 'child') => emit('add', name, command);
