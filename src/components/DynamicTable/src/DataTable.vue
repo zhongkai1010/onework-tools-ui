@@ -145,7 +145,7 @@
       operate: {
         edit: props.operate?.includes('edit'),
         remove: props.operate?.includes('remove'),
-        show: props.operate?.includes('show'),
+        show: props.operate?.includes('show')
       },
       toolbar: {
         refresh: props.toolbar?.includes('refresh'),
@@ -153,8 +153,8 @@
         edit: props.toolbar?.includes('edit'),
         remove: props.toolbar?.includes('remove'),
         search: props.toolbar?.includes('search'),
-        column: props.toolbar?.includes('column'),
-      },
+        column: props.toolbar?.includes('column')
+      }
     };
   });
 
@@ -165,7 +165,7 @@
       : TABLE_DEFAULT_PAGE_SIZE,
     order: undefined,
     sort: undefined,
-    keywords: undefined,
+    keywords: undefined
   });
 
   /**
@@ -196,7 +196,7 @@
     http
       .get({
         url: props.remote?.url,
-        params,
+        params
       })
       .then((result) => {
         if (!checkResult(result)) return;

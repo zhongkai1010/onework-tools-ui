@@ -5,16 +5,16 @@
       <form-type-select v-model="modelValue.component" />
     </el-form-item>
     <el-form-item
-      v-for="(item, index) in comptProps"
-      :key="index"
+      v-for="item in componentProps"
+      :key="item.key"
       :label="item.label"
       :prop="`component.props.${item.key}`"
     >
       <form-item
         :model-value="modelValue.props[item.key]"
-        :component="getComponent(item.component)"
-        :props="item.component.props"
-        :config="item.component.config"
+        :component="typeof item.component === 'string' ? item.component : item.component.component"
+        :config="typeof item.component === 'string' ? [] : item.component.config"
+        :props="typeof item.component === 'string' ? [] : item.component.props"
         @update:model-value="(val) => (modelValue.props[item.key] = val)"
       />
     </el-form-item>
@@ -24,7 +24,7 @@
 <script setup lang="ts">
   import _ from 'lodash';
 
-  import { FormItemConfig } from '/@/components/DynamicForm';
+  import { FormComponentProps, FormItemConfig } from '/@/components/DynamicForm';
   import ComponentData from '/@/components/DynamicForm/component';
 
   interface Props {
@@ -39,19 +39,12 @@
     },
     set: (value) => {
       emit('update:modelValue', value);
-    },
+    }
   });
 
-  const comptProps = computed(() => {
+  const componentProps = computed<FormComponentProps[]>(() => {
     return ComponentData[props.modelValue.component].props ?? [];
   });
-
-  const getComponent = (component) => {
-    if (typeof component === 'object') {
-      return component.type;
-    }
-    return component;
-  };
 </script>
 
 <style scoped lang="scss">

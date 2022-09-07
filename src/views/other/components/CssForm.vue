@@ -47,7 +47,7 @@
     flexWrap: ['nowrap', 'wrap', 'wrap-reverse'],
     justifyContent: ['flex-start', 'flex-end', 'center', 'space-between', 'space-around'],
     alignItems: ['flex-start ', 'flex-end', 'center', 'baseline', 'stretch'],
-    alignContent: ['flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'stretch'],
+    alignContent: ['flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'stretch']
   };
 
   const formValue = reactive({
@@ -58,7 +58,7 @@
     justifyContent: 'flex-start',
     alignItems: 'stretch',
     alignContent: 'stretch',
-    numBox: 10,
+    numBox: 10
   });
 
   const emit = defineEmits(['onChange']);

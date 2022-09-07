@@ -94,7 +94,7 @@
   const { width, height } = useWindowSize();
   const el = ref(null);
   const { style } = useDraggable(el, {
-    initialValue: { x: width.value - 100, y: height.value - 100 },
+    initialValue: { x: width.value - 100, y: height.value - 100 }
   });
 
   watch(login, () => {
@@ -111,7 +111,7 @@
     const themeVariables = themeStateStoreHook().themeVariables;
     return {
       ...cssVariables,
-      ...themeVariables,
+      ...themeVariables
     };
   });
   const setCssVariable = (values: Recordable<string>) => {

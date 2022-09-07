@@ -6,16 +6,16 @@
   const option = ref({
     title: {
       text: 'Traffic Sources',
-      left: 'center',
+      left: 'center'
     },
     tooltip: {
       trigger: 'item',
-      formatter: '{a} <br/>{b} : {c} ({d}%)',
+      formatter: '{a} <br/>{b} : {c} ({d}%)'
     },
     legend: {
       orient: 'vertical',
       left: 'left',
-      data: ['Direct', 'Email', 'Ad Networks', 'Video Ads', 'Search Engines'],
+      data: ['Direct', 'Email', 'Ad Networks', 'Video Ads', 'Search Engines']
     },
     series: [
       {
@@ -28,17 +28,17 @@
           { value: 310, name: 'Email' },
           { value: 234, name: 'Ad Networks' },
           { value: 135, name: 'Video Ads' },
-          { value: 1548, name: 'Search Engines' },
+          { value: 1548, name: 'Search Engines' }
         ],
         emphasis: {
           itemStyle: {
             shadowBlur: 10,
             shadowOffsetX: 0,
-            shadowColor: 'rgba(0, 0, 0, 0.5)',
-          },
-        },
-      },
-    ],
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
+          }
+        }
+      }
+    ]
   });
 </script>
 

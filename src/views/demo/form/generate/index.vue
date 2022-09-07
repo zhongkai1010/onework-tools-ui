@@ -55,7 +55,7 @@
         alert(JSON.stringify(formValue, null, '\t\r\n'), {
           title: '表单值',
           type: 'info',
-          dangerouslyUseHTMLString: true,
+          dangerouslyUseHTMLString: true
         });
       } else {
         console.log(fields);

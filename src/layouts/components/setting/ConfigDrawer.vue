@@ -123,7 +123,7 @@
       showNotice: siteConfig.showNotice,
       showFull: siteConfig.showFull,
       showLang: siteConfig.showLang,
-      showProgress: siteConfig.showProgress,
+      showProgress: siteConfig.showProgress
     };
   });
 

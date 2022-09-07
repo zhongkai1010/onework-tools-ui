@@ -35,6 +35,7 @@ export type FormComponentType =
 export type FormComponentDataMode = 'all' | 'static' | 'dynamic' | 'none';
 
 export interface FormComponentConfig {
+  name: FormComponentType;
   displayName: string;
   isRule?: boolean;
   isData?: boolean;
@@ -45,12 +46,7 @@ export interface FormComponentProps {
   label: string;
   key: string;
   dataType: 'string' | 'number' | 'array' | 'boolean';
-  component:
-    | FormComponentType
-    | {
-        type: FormComponentType;
-        config?: FormComponentDataConfig;
-      };
+  component: FormComponentType | FormItemConfig;
 }
 
 export interface FormComponentDataConfig {

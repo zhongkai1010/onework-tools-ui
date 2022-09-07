@@ -19,7 +19,7 @@
   import {
     DEFAULT_DRAGGABLE_ITEM_CONFIG,
     DraggableItemConfig,
-    FormItemDrawerInstance,
+    FormItemDrawerInstance
   } from '../types';
 
   const dialogShow = ref(false);
@@ -39,14 +39,11 @@
   const onSave = () => {
     const data = _.cloneDeep(itemConfig);
     emits('save', data);
+    dialogShow.value = false;
     log('form item config save', data);
   };
 
   defineExpose<FormItemDrawerInstance>({ open: onOpen });
-
-  watch([itemConfig], () => {
-    log('itemConfig', itemConfig);
-  });
 </script>
 <style scoped lang="scss">
   .config-container {

@@ -13,6 +13,7 @@
 <script setup lang="ts">
   import { DynamicFormField } from '/@/components/DynamicForm';
   import * as FormItemConfig from '/@/components/DynamicForm/src/FormItemConfig';
+
   const formValue = reactive<DynamicFormField>({
     name: 'test',
     span: 6,
@@ -21,7 +22,7 @@
     props: {
       prop: 'name',
       label: '标签',
-      verifies: [],
+      verifies: []
     },
     component: {
       component: 'el-input',
@@ -36,12 +37,12 @@
           labelKey: 'label',
           valueKey: 'value',
           childerKey: 'childer',
-          searchKey: 'search',
-        },
-      },
+          searchKey: 'search'
+        }
+      }
     },
     group: '基本信息',
-    step: 1,
+    step: 1
   });
 
   const onPrintLog = () => {
