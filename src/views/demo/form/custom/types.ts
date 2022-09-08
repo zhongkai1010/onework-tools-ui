@@ -1,19 +1,17 @@
 export type PropertyType = 'string' | 'number' | 'array' | 'boolean' | 'intger' | 'object';
 
-export interface Property extends Omit<Field, 'parent' | 'uid'> {
+export interface Property extends Omit<Field, 'uid'> {
   uid?: string;
   children?: Property[];
-  disabled?: boolean;
-  root?: boolean;
 }
 
 export interface Field {
   uid: string;
-  name: string;
-  displayName: string;
+  name?: string;
+  displayName?: string;
   type: PropertyType;
   array?: PropertyType;
-  required: boolean;
+  required?: boolean;
   remark?: string;
   defalutValue?: any;
   enum?: string[];

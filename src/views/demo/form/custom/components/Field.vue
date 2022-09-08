@@ -1,5 +1,17 @@
 <template>
-  <PropertyView v-model="root" @add="onAdd" @remove="onRemove" @add-child="onAddChild" />
+  <el-button type="primary" @click="show">Primary</el-button>
+  <PropertyView
+    v-model="root"
+    @add="onAdd"
+    @remove="onRemove"
+    @add-child="onAddChild"
+    :root="true"
+    :add="true"
+    :dropdown="false"
+    :disabled="true"
+    :unfold="true"
+    :close="false"
+  />
 </template>
 
 <script setup lang="ts">
@@ -16,22 +28,19 @@
   const props = defineProps<Props>();
   const emit = defineEmits(['update:modelValue']);
 
-  const root = reactive<Property>({
-    uid: 'root',
-    name: '',
-    displayName: '',
-    type: 'object',
-    required: false,
-    children: [],
-    disabled: true,
-    root: true
-  });
+  const { getProperties, fields, add, remove } = useHandle(props.modelValue);
 
-  const { getProperties, fields, add } = useHandle(props.modelValue);
+  const show = () => {
+    console.log('show', root.value);
+  };
 
   const root = computed({
     get() {
-      const data = _.cloneDeep(rootProperty);
+      const data: Property = {
+        uid: 'root',
+        type: 'object',
+        children: getProperties(fields.value)
+      };
       data.children = getProperties(fields.value);
       return data;
     },
@@ -41,17 +50,19 @@
   });
 
   const onAdd = (property: Property) => {
-    log('add', property);
-    if (property.root) {
+    log('field add', property);
+    if (property.uid == 'root') {
       add();
     } else {
-      add(property.order);
+      add(property.order, property.parent);
     }
   };
 
   const onAddChild = (property: Property) => {
-    log('add', property);
+    add(property.order, property.uid);
   };
 
-  const onRemove = () => {};
+  const onRemove = (property: Property) => {
+    remove(property.uid);
+  };
 </script>
