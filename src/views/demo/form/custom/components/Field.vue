@@ -1,112 +1,57 @@
 <template>
-  <ul class="container">
-    <div class="config">
-      <iconify-icon
-        :icon="unfold ? 'ic:baseline-expand-more' : 'ic:baseline-expand-less'"
-        v-if="field.fields"
-        @click="unfold = !unfold"
-      />
-      <el-col :span="4">
-        <el-input v-model="field.name" placeholder="name" />
-      </el-col>
-      <el-col :span="4">
-        <el-input v-model="field.title" placeholder="title" />
-      </el-col>
-      <el-col :span="4">
-        <el-input v-model="field.type" placeholder="type" />
-      </el-col>
-      <el-col :span="4">
-        <el-input v-model="field.remark" placeholder="remark" />
-      </el-col>
-      <div class="operate">
-        <iconify-icon icon="ant-design:setting-outlined" class="icon" />
-        <iconify-icon
-          icon="ant-design:close-outlined"
-          style="color: var(--el-color-danger)"
-          @click="emit('remove', field.name)"
-          class="icon"
-        />
-        <el-dropdown @command="onAddProperty">
-          <iconify-icon
-            icon="ant-design:plus-outlined"
-            style="color: var(--el-color-primary)"
-            class="icon"
-          />
-          <template #dropdown>
-            <el-dropdown-menu>
-              <el-dropdown-item command="same">添加兄弟节点</el-dropdown-item>
-              <el-dropdown-item command="child">添加子节点</el-dropdown-item>
-            </el-dropdown-menu>
-          </template>
-        </el-dropdown>
-      </div>
-    </div>
-    <div v-if="unfold">
-      <field-item v-for="(item, index) in field.fields" :model-value="item" :key="index" />
-    </div>
-  </ul>
+  <PropertyView v-model="root" @add="onAdd" @remove="onRemove" @add-child="onAddChild" />
 </template>
 
 <script setup lang="ts">
-  import { Property, PropertyType } from '../types';
-  import FieldItem from './Field.vue';
+  import { Field, Property } from '../types';
+  import useHandle from '../handle';
+  import { log } from '/@/utils/log';
+  import _ from 'lodash';
+  import PropertyView from './Property.vue';
 
-  const props = defineProps<{
-    modelValue: {
-      name: string;
-      title: string;
-      type: PropertyType;
-      arrayType?: PropertyType;
-      required: boolean;
-      remark?: string;
-      fields?: Property[];
-      enum?: string[];
-      defalutValue?: any;
-      mock?: string;
-    };
-  }>();
-  const emit = defineEmits<{
-    (e: 'update:modelValue', value: Property);
-    (e: 'remove', value);
-    (e: 'add', parent: string, type: 'same' | 'child');
-  }>();
+  interface Props {
+    modelValue: Field[];
+  }
 
-  const unfold = ref(true);
+  const props = defineProps<Props>();
+  const emit = defineEmits(['update:modelValue']);
 
-  const field = computed({
+  const root = reactive<Property>({
+    uid: 'root',
+    name: '',
+    displayName: '',
+    type: 'object',
+    required: false,
+    children: [],
+    disabled: true,
+    root: true
+  });
+
+  const { getProperties, fields, add } = useHandle(props.modelValue);
+
+  const root = computed({
     get() {
-      return props.modelValue;
+      const data = _.cloneDeep(rootProperty);
+      data.children = getProperties(fields.value);
+      return data;
     },
-    set(value) {
-      emit('update:modelValue', value);
+    set() {
+      emit('update:modelValue', fields.value);
     }
   });
 
-  const onAddProperty = (name: string, command: 'same' | 'child') => emit('add', name, command);
-</script>
-
-<style scoped lang="scss">
-  .container {
-    margin-left: 20px;
-    .config {
-      display: flex;
-      margin-bottom: 10px;
-      align-items: center;
-      i {
-        margin-right: 5px;
-        margin-left: -20px;
-        cursor: pointer;
-      }
-      .el-col {
-        margin-right: 10px;
-      }
-      .operate {
-        display: flex;
-        align-items: center;
-        .icon {
-          margin-left: 5px;
-        }
-      }
+  const onAdd = (property: Property) => {
+    log('add', property);
+    if (property.root) {
+      add();
+    } else {
+      add(property.order);
     }
-  }
-</style>
+  };
+
+  const onAddChild = (property: Property) => {
+    log('add', property);
+  };
+
+  const onRemove = () => {};
+</script>

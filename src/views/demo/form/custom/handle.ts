@@ -1,34 +1,73 @@
-// import _ from 'lodash';
-import { Property } from './types';
+import _ from 'lodash';
+import { Field, Property } from './types';
 
-export default function (data: Property[]) {
-  // const properties = ref<Property[]>(data);
+import { buildUUID } from '/@/utils/uuid';
 
-  // const result = computed(() => {
-  //   return _convert(list.value, undefined);
-  // });
+export default function (data: Field[]) {
+  const fields = ref<Field[]>(data);
 
-  // const _convert = (value: Property[], id: string) => {
-  //   const result = [];
-  //   const childs = values.filter((t) => t. == parent);
-  //   childs.forEach((t) => {
-  //     const node = t;
-  //     node[childKey] = _convert(value, t);
-  //     result.push(node);
-  //   });
-  //   return result;
-  // };
+  const add = (order?: number, parent?: string) => {
+    const newField: Field = {
+      uid: buildUUID(),
+      name: '',
+      displayName: '',
+      type: 'string',
+      required: false,
+      order: order ?? 1
+    };
+    // 计算父级uid
+    if (parent) {
+      const field = fields.value.find((t) => t.uid == parent);
+      if (!field) return;
+      newField.parent = field.uid;
+      newField.parentPath = `${(field.parentPath ?? '').concat(field.uid, ',')}`;
+    }
+    // 计算顺序
+    if (_.isNumber(order)) {
+      const laterFields = fields.value.filter(
+        (t) => t.parent == parent && t.order >= newField.order
+      );
+      laterFields.forEach((t) => {
+        const replaceField = t;
+        const index = fields.value.findIndex((t) => t.uid === t.uid);
+        replaceField.order += 1;
+        fields.value.splice(index, 1, replaceField);
+      });
+    } else {
+      const laterFields = fields.value.filter((t) => t.parent == parent);
+      newField.order = laterFields.length + 1;
+    }
+    newField.name = `field${newField.order}`;
+    newField.displayName = `字段名称${newField.order}`;
+    fields.value.push(newField);
+  };
 
-  // const addSameNode = (node: T) => {};
+  const get = (uid) => fields.value.find((t) => t.uid === uid);
 
-  // const addChildNode = (node: T) => {};
+  const remove = (uid: string) => {
+    const deleteFields = fields.value.filter((t) => t.parentPath?.includes(uid)).map((t) => t.uid);
+    deleteFields.push(uid);
+    const indexs = deleteFields.map((t) => fields.value.findIndex((o) => o.uid == t));
+    indexs.forEach((t) => fields.value.slice(t, 1));
+  };
 
-  // const remove = (node: T) => {};
+  const getProperties = (fields: Field[], parent?: string) => {
+    if (!fields || !_.isArray(fields)) return [];
+    const result: Property[] = [];
+    const parents = fields.filter((t) => t.parent == parent).sort((a, b) => a.order - b.order);
+    parents.forEach((t) => {
+      const property: Property = t;
+      property.children = getProperties(fields, property.uid);
+      result.push(property);
+    });
+    return result;
+  };
 
   return {
-    data
-    // result,
-
-    // remove,
+    fields,
+    getProperties,
+    get,
+    remove,
+    add
   };
 }

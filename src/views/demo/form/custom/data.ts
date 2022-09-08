@@ -2,194 +2,225 @@ import { Property } from './types';
 
 const data: Property[] = [
   {
-    name: 'title',
-    title: '表格名称',
+    name: 'displayName',
+    displayName: '表格名称',
     type: 'string',
-    required: true
+    required: true,
+    uid: ''
   },
   {
     name: 'rowKey',
-    title: '表格名称',
+    displayName: '表格名称',
     type: 'string',
-    required: true
+    required: true,
+    uid: ''
   },
   {
     name: 'serialNumber',
-    title: '表格名称',
+    displayName: '表格名称',
     type: 'string',
-    required: true
+    required: true,
+    uid: ''
   },
   {
-    name: 'fields',
-    title: '表格名称',
+    name: 'children',
+    displayName: '表格名称',
     type: 'array',
     required: true,
+    uid: '',
     array: 'object',
-    fields: [
+    children: [
       {
         name: 'label',
-        title: '表格名称',
+        displayName: '表格名称',
         type: 'string',
-        required: true
+        required: true,
+        uid: ''
       },
       {
         name: 'name',
-        title: '表格名称',
+        displayName: '表格名称',
         type: 'string',
-        required: true
+        required: true,
+        uid: ''
       },
       {
         name: 'hide',
-        title: '表格名称',
+        displayName: '表格名称',
         type: 'string',
-        required: true
+        required: true,
+        uid: ''
       },
       {
         name: 'type',
-        title: '表格名称',
+        displayName: '表格名称',
         type: 'string',
-        required: true
+        required: true,
+        uid: ''
       },
       {
         name: 'props',
-        title: '表格名称',
+        displayName: '表格名称',
         type: 'string',
-        required: true
+        required: true,
+        uid: ''
       },
       {
         name: 'order',
-        title: '表格名称',
+        displayName: '表格名称',
         type: 'string',
-        required: true
+        required: true,
+        uid: ''
       },
       {
         name: 'editable',
-        title: '表格名称',
+        displayName: '表格名称',
         type: 'object',
         required: true,
-        fields: [
+        uid: '',
+        children: [
           {
             name: 'hide',
-            title: '表格名称',
+            displayName: '表格名称',
             type: 'string',
-            required: true
+            required: true,
+            uid: ''
           },
           {
             name: 'span',
-            title: '表格名称',
+            displayName: '表格名称',
             type: 'string',
-            required: true
+            required: true,
+            uid: ''
           },
           {
             name: 'defaultValue',
-            title: '表格名称',
+            displayName: '表格名称',
             type: 'string',
-            required: true
+            required: true,
+            uid: ''
           },
           {
             name: 'component',
-            title: '表格名称',
+            displayName: '表格名称',
             type: 'object',
             required: true,
-            fields: [
+            uid: '',
+            children: [
               {
                 name: 'component',
-                title: '表格名称',
+                displayName: '表格名称',
                 type: 'string',
-                required: true
+                required: true,
+                uid: ''
               },
               {
                 name: 'props',
-                title: '表格名称',
+                displayName: '表格名称',
                 type: 'string',
-                required: true
+                required: true,
+                uid: ''
               },
               {
                 name: 'config',
-                title: '表格名称',
+                displayName: '表格名称',
                 type: 'string',
-                required: true
+                required: true,
+                uid: ''
               },
               {
                 name: 'dataMode',
-                title: '表格名称',
+                displayName: '表格名称',
                 type: 'string',
-                required: true
+                required: true,
+                uid: ''
               },
               {
                 name: 'options',
-                title: '表格名称',
+                displayName: '表格名称',
                 type: 'object',
                 required: true,
-                fields: [
+                uid: '',
+                children: [
                   {
                     name: 'label',
-                    title: '表格名称',
+                    displayName: '表格名称',
                     type: 'string',
-                    required: true
+                    required: true,
+                    uid: ''
                   },
                   {
                     name: 'value',
-                    title: '表格名称',
+                    displayName: '表格名称',
                     type: 'string',
-                    required: true
+                    required: true,
+                    uid: ''
                   },
                   {
                     name: 'children',
-                    title: '表格名称',
+                    displayName: '表格名称',
                     type: 'array',
                     array: 'object',
-                    required: true
+                    required: true,
+                    uid: ''
                   }
                 ]
               },
               {
                 name: 'remote',
-                title: '表格名称',
+                displayName: '表格名称',
                 type: 'string',
                 required: true,
-                fields: [
+                uid: '',
+                children: [
                   {
                     name: 'url',
-                    title: '表格名称',
+                    displayName: '表格名称',
                     type: 'string',
-                    required: true
+                    required: true,
+                    uid: ''
                   },
                   {
                     name: 'method',
-                    title: '表格名称',
+                    displayName: '表格名称',
                     type: 'string',
-                    required: true
+                    required: true,
+                    uid: ''
                   },
                   {
                     name: 'params',
-                    title: '表格名称',
+                    displayName: '表格名称',
                     type: 'string',
-                    required: true
+                    required: true,
+                    uid: ''
                   },
                   {
                     name: 'labelKey',
-                    title: '表格名称',
+                    displayName: '表格名称',
                     type: 'string',
-                    required: true
+                    required: true,
+                    uid: ''
                   },
                   {
                     name: 'valueKey',
-                    title: '表格名称',
+                    displayName: '表格名称',
                     type: 'string',
-                    required: true
+                    required: true,
+                    uid: ''
                   },
                   {
                     name: 'childerKey',
-                    title: '表格名称',
+                    displayName: '表格名称',
                     type: 'string',
-                    required: true
+                    required: true,
+                    uid: ''
                   },
                   {
                     name: 'searchKey',
-                    title: '表格名称',
+                    displayName: '表格名称',
                     type: 'string',
-                    required: true
+                    required: true,
+                    uid: ''
                   }
                 ]
               }
@@ -201,57 +232,66 @@ const data: Property[] = [
   },
   {
     name: 'multiple',
-    title: '表格名称',
+    displayName: '表格名称',
     type: 'string',
-    required: true
+    required: true,
+    uid: ''
   },
   {
     name: 'data',
-    title: '表格名称',
+    displayName: '表格名称',
     type: 'string',
-    required: true
+    required: true,
+    uid: ''
   },
   {
     name: 'pagination',
-    title: '表格名称',
+    displayName: '表格名称',
     type: 'string',
-    required: true
+    required: true,
+    uid: ''
   },
   {
     name: 'toolbar',
-    title: '表格名称',
+    displayName: '表格名称',
     type: 'string',
-    required: true
+    required: true,
+    uid: ''
   },
   {
     name: 'operate',
-    title: '表格名称',
+    displayName: '表格名称',
     type: 'string',
-    required: true
+    required: true,
+    uid: ''
   },
   {
     name: 'remote',
-    title: '表格名称',
+    displayName: '表格名称',
     type: 'string',
-    required: true
+    required: true,
+    uid: ''
   },
   {
     name: 'save',
-    title: '表格名称',
+    displayName: '表格名称',
     type: 'string',
-    required: true
+    required: true,
+    uid: ''
   },
   {
     name: 'remove',
-    title: '表格名称',
+    displayName: '表格名称',
     type: 'string',
-    required: true
+    required: true,
+    uid: ''
   },
   {
     name: 'props',
-    title: '表格名称',
+    displayName: '表格名称',
     type: 'string',
-    required: true
+    required: true,
+    uid: ''
   }
 ];
 export default data;

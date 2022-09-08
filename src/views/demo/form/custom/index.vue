@@ -12,27 +12,23 @@
         </div>
       </template>
       <el-form>
-        <Field
-          v-for="(field, index) in config"
-          :key="index"
-          :model-value="field"
-          @update:model-value="config[index]"
-          @add="onAddField"
-          @remove="onRemoveField"
-        />
+        <FieldView v-model="fileds" />
       </el-form>
     </el-card>
   </page-view>
 </template>
 
 <script setup lang="ts">
-  import data from './data';
-  import Field from './components/Field.vue';
+  import FieldView from './components/Field.vue';
+  import { Field } from './types';
   import { log } from '/@/utils/log';
-  const config = reactive(data);
-  const onShowConfig = () => log('config', config);
-  const onAddField = () => {};
-  const onRemoveField = () => {};
+
+  const fileds = ref<Field[]>([]);
+
+  const onShowConfig = () => log('config', fileds.value);
+
+  // const onAddField = () => {};
+  // const onRemoveField = () => {};
 </script>
 
 <style lang="scss" scoped>
