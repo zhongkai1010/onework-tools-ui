@@ -6,6 +6,7 @@
         v-if="props.unfold"
         @click="unfold = !unfold"
       />
+
       <el-checkbox
         v-model="property.required"
         :disabled="props.disabled"
@@ -42,20 +43,13 @@
       </el-col>
       <div class="operate">
         <iconify-icon
-          v-if="props.close"
-          class="icon"
-          icon="ant-design:close-outlined"
-          style="color: var(--el-color-danger)"
-          @click="emit('remove', property)"
-        />
-        <iconify-icon
           v-if="props.add"
           @click="emit('add', property)"
           icon="ant-design:plus-outlined"
           style="color: var(--el-color-primary)"
           class="icon"
         />
-        <el-dropdown @command="onAdd" v-if="props.dropdown">
+        <el-dropdown @command="onClickCommand" v-if="props.dropdown">
           <iconify-icon
             icon="ant-design:plus-outlined"
             style="color: var(--el-color-primary)"
@@ -68,9 +62,22 @@
             </el-dropdown-menu>
           </template>
         </el-dropdown>
+        <iconify-icon
+          v-if="props.close"
+          class="icon"
+          icon="ant-design:close-outlined"
+          style="color: var(--el-color-danger)"
+          @click="emit('remove', property)"
+        />
+        <iconify-icon
+          class="icon"
+          icon="ant-design:setting-outlined"
+          style="color: var(--el-color-success)"
+          @click="onShow"
+        />
       </div>
     </div>
-    <div v-if="property.type === 'object'">
+    <div v-if="property.type === 'object' && unfold">
       <PropertyView
         v-for="(child, index) in props.modelValue.children"
         :key="index"
@@ -78,14 +85,14 @@
         :array="false"
         :add="child.type !== 'object'"
         :dropdown="child.type === 'object'"
-        :disabled="props.array"
+        :disabled="false"
         :property="child"
         :root="false"
         :unfold="child.type == 'object'"
         :close="true"
-        @add="(value) => emit('add', value)"
-        @remove="(value) => emit('remove', value)"
-        @add-child="(value) => emit('addChild', value)"
+        @add="onAdd"
+        @remove="onRemove"
+        @add-child="onAddChild"
       />
     </div>
     <div v-if="property.type === 'array'">
@@ -97,9 +104,12 @@
         :add="props.property.array === 'object'"
         :dropdown="false"
         :disabled="true"
-        :unfold="false"
+        :unfold="props.property.array === 'object'"
         :close="false"
+        @add="onAdd"
         @change-type="onChangeArrayType"
+        @remove="onRemove"
+        @add-child="onAddChild"
       />
     </div>
   </ul>
@@ -111,6 +121,7 @@
   import PropertyView from './Property.vue';
   import _ from 'lodash';
   import { log } from '/@/utils/log';
+  import { useMessage } from '/@/hooks/web/useMessage';
 
   interface Props {
     modelValue: Property;
@@ -123,8 +134,8 @@
     unfold?: boolean;
     close?: boolean;
   }
+  const { message } = useMessage();
   const props = defineProps<Props>();
-
   const emit = defineEmits<{
     (e: 'update:modelValue', value: Property);
     (e: 'changeType', type: PropertyType);
@@ -132,9 +143,7 @@
     (e: 'add', value: Property);
     (e: 'addChild', value: Property);
   }>();
-
   const unfold = ref(true);
-
   const property = computed({
     get() {
       return props.modelValue;
@@ -143,34 +152,62 @@
       emit('update:modelValue', value);
     }
   });
-
-  const arrayProperty = reactive<Property>({
-    type: 'string',
-    array: 'string'
+  const arrayProperty = computed<Property>({
+    get() {
+      return {
+        type: props.property?.array ?? 'string',
+        children: props.property?.children ?? [],
+        order: 1
+      };
+    },
+    set(value) {
+      emit('update:modelValue', value);
+    }
   });
-
-  watch([arrayProperty], () => {
-    log('watch array property', arrayProperty);
-    log('watch props property', props);
-  });
-
-  const onAdd = (command) => {
+  const onClickCommand = (command) => {
     if (command === 'same') {
       emit('add', property.value);
     } else {
       emit('addChild', property.value);
     }
   };
-  const onChangeType = (value) => {
-    if (props.array) {
-      emit('changeType', value);
+  const onChangeType = (value: PropertyType) => {
+    if (props.array && value === 'array') {
+      message('暂不支持二维数组！', 'warning');
+    } else {
+      if (props.array) {
+        emit('changeType', value);
+      }
+      property.value.type = value;
+      // 移除多余字段信息
+      if (value !== 'object') {
+        property.value.children?.forEach((t) => {
+          emit('remove', t);
+        });
+      }
+      emit('update:modelValue', property.value);
     }
-    property.value.type = value;
-    emit('update:modelValue', property.value);
   };
   const onChangeArrayType = (value) => {
-    property.value.array = value;
+    if (!props.array) {
+      property.value.array = value;
+    } else {
+      property.value.type = value;
+    }
     emit('update:modelValue', property.value);
+  };
+  const onAdd = (value: Property) => {
+    if (props.property?.array == 'object' && props.property?.type == 'array') {
+      emit('addChild', props.property);
+    } else {
+      emit('add', value);
+    }
+  };
+  const onRemove = (value) => emit('remove', value);
+  const onAddChild = (value) => emit('addChild', value);
+  const onShow = () => {
+    log('show property', property.value);
+    log('show prorps', props);
   };
 </script>
 

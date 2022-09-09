@@ -56,7 +56,9 @@ export default function (data: Field[]) {
     const deleteFields = fields.value.filter((t) => t.parentPath?.includes(uid)).map((t) => t.uid);
     deleteFields.push(uid);
     const indexs = deleteFields.map(getIndex);
-    indexs.forEach((t) => fields.value.splice(t, 1));
+    indexs.forEach((t) => {
+      fields.value.splice(t, 1);
+    });
   };
 
   const getProperties = (fields: Field[], parent?: string) => {

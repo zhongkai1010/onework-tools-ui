@@ -1,5 +1,4 @@
 <template>
-  <el-button type="primary" @click="show">Primary</el-button>
   <PropertyView
     v-model="root"
     @add="onAdd"
@@ -17,7 +16,7 @@
 <script setup lang="ts">
   import { Field, Property } from '../types';
   import useHandle from '../handle';
-  import { log } from '/@/utils/log';
+
   import _ from 'lodash';
   import PropertyView from './Property.vue';
 
@@ -29,10 +28,6 @@
   const emit = defineEmits(['update:modelValue']);
 
   const { getProperties, fields, add, remove } = useHandle(props.modelValue);
-
-  const show = () => {
-    console.log('show', root.value);
-  };
 
   const root = computed({
     get() {
@@ -50,7 +45,6 @@
   });
 
   const onAdd = (property: Property) => {
-    log('field add', property);
     if (property.uid == 'root') {
       add();
     } else {
@@ -65,4 +59,8 @@
   const onRemove = (property: Property) => {
     remove(property.uid);
   };
+
+  watch([fields.value], () => {
+    emit('update:modelValue', fields.value);
+  });
 </script>
