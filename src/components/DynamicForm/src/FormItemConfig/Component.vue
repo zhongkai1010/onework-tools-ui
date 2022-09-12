@@ -2,7 +2,7 @@
   <div class="container">
     <el-divider content-position="left">组件配置</el-divider>
     <el-form-item label="组件类型" prop="component.component">
-      <BlFormTypeSelect v-model="modelValue.component" />
+      <BlTypeFormItem v-model="modelValue.component" />
     </el-form-item>
     <el-form-item
       v-for="item in componentProps"

@@ -1,11 +1,15 @@
 import { FormRules } from 'element-plus';
 import dynamicForm from './src/DynamicForm.vue';
 import formItem from './src/FormItem.vue';
-import formTypeSelect from './src/FormTypeSelect.vue';
+import typeFormItem from './src/TypeFormItem.vue';
+import modelFormItem from './src/ModelFormItem/Field.vue';
+import jsonFormItem from './src/JsonFormItem.vue';
 
 export const DynamicForm = dynamicForm;
 export const FormItem = formItem;
-export const FormTypeSelect = formTypeSelect;
+export const TypeFormItem = typeFormItem;
+export const ModelFormItem = modelFormItem;
+export const JsonFormItem = jsonFormItem;
 
 export default DynamicForm;
 
@@ -31,7 +35,9 @@ export type FormComponentType =
   | 'el-upload'
   | 'ow-form-set-data'
   | 'ow-form-set-rule'
-  | 'bl-form-type-select';
+  | 'bl-type-form-item'
+  | 'bl-model-form-item'
+  | 'bl-json-form-item';
 
 export type FormComponentDataMode = 'all' | 'static' | 'dynamic' | 'none';
 

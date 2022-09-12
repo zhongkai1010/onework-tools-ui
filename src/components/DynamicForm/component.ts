@@ -172,7 +172,9 @@ const data: Recordable<FormComponentConfig> = {
   'el-time-select': { name: 'el-time-select', displayName: 'TimeSelect 时间选择' },
   'el-transfer': { name: 'el-transfer', displayName: 'Transfer 穿梭框', isData: true },
   'el-upload': { name: 'el-upload', displayName: 'Upload 上传' },
-  'bl-form-type-select': { name: 'bl-form-type-select', displayName: '组件类型选择器' }
+  'bl-type-form-item': { name: 'bl-type-form-item', displayName: '组件类型选择器' },
+  'bl-model-form-item': { name: 'bl-model-form-item', displayName: '数据模型表单' },
+  'bl-json-form-item': { name: 'bl-json-form-item', displayName: 'JSON编辑器' }
 };
 
 export default data;

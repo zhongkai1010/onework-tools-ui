@@ -1,14 +1,7 @@
 <template>
-  <div v-for="property in properties" :key="property">
-    <span>{{ property }} : {{ route.meta[property] }}</span>
-  </div>
+  <BlJsonFormItem />
 </template>
 
-<script setup lang="ts">
-  import { useRoute } from 'vue-router';
-
-  const route = useRoute();
-  const properties = Object.keys(route.meta);
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped></style>

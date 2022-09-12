@@ -10,7 +10,7 @@ const setupVueCodemirror = (app: App<Element>) => {
     indentWithTab: true,
     tabSize: 2,
     placeholder: 'Code goes here...',
-    extensions: [basicSetup],
+    extensions: [basicSetup]
     // ...
   });
 };

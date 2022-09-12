@@ -4,7 +4,12 @@ import DynamicTable, { DataTable } from './DynamicTable/index';
 
 import ResizeChart from './ResizeChart/index';
 
-import DynamicForm, { FormItem, FormTypeSelect } from './DynamicForm/index';
+import DynamicForm, {
+  FormItem,
+  TypeFormItem,
+  ModelFormItem,
+  JsonFormItem
+} from './DynamicForm/index';
 
 import SubMenu from './Menu/index';
 
@@ -38,7 +43,9 @@ const setupComponents = (app: App<Element>) => {
    */
   app.component('DynamicForm', DynamicForm);
   app.component('FormItem', FormItem);
-  app.component('BlFormTypeSelect', FormTypeSelect);
+  app.component('BlTypeFormItem', TypeFormItem);
+  app.component('BlModelFormItem', ModelFormItem);
+  app.component('BlJsonFormItem', JsonFormItem);
 };
 
 export { setupComponents };

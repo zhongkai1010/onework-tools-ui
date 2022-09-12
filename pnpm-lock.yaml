@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@codemirror/commands': ^6.1.0
   '@codemirror/lang-json': ^6.0.0
   '@codemirror/lint': ^6.0.0
   '@codemirror/view': ^6.2.0
@@ -83,6 +84,7 @@ specifiers:
   vuedraggable: ^4.1.0
 
 dependencies:
+  '@codemirror/commands': registry.npmmirror.com/@codemirror/commands/6.1.0
   '@codemirror/lang-json': registry.npmmirror.com/@codemirror/lang-json/6.0.0
   '@codemirror/lint': registry.npmmirror.com/@codemirror/lint/6.0.0
   '@codemirror/view': registry.npmmirror.com/@codemirror/view/6.2.0
@@ -219,10 +221,10 @@ packages:
       '@lezer/common': registry.npmmirror.com/@lezer/common/1.0.0
     dev: false
 
-  registry.npmmirror.com/@codemirror/commands/6.0.1:
-    resolution: {integrity: sha512-iNHDByicYqQjs0Wo1MKGfqNbMYMyhS9WV6EwMVwsHXImlFemgEUC+c5X22bXKBStN3qnwg4fArNZM+gkv22baQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@codemirror/commands/-/commands-6.0.1.tgz}
+  registry.npmmirror.com/@codemirror/commands/6.1.0:
+    resolution: {integrity: sha512-qCj2YqmbBjj0P1iumnlL5lBqZvJPzT+t2UvgjcaXErp5ZvMqFRVgQyrEfdXX6SX5UcvcHKBjXqno+MkUp0aYvQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@codemirror/commands/-/commands-6.1.0.tgz}
     name: '@codemirror/commands'
-    version: 6.0.1
+    version: 6.1.0
     dependencies:
       '@codemirror/language': registry.npmmirror.com/@codemirror/language/6.2.1
       '@codemirror/state': registry.npmmirror.com/@codemirror/state/6.1.1
@@ -1761,7 +1763,7 @@ packages:
     version: 6.0.1
     dependencies:
       '@codemirror/autocomplete': registry.npmmirror.com/@codemirror/autocomplete/6.1.0
-      '@codemirror/commands': registry.npmmirror.com/@codemirror/commands/6.0.1
+      '@codemirror/commands': registry.npmmirror.com/@codemirror/commands/6.1.0
       '@codemirror/language': registry.npmmirror.com/@codemirror/language/6.2.1
       '@codemirror/lint': registry.npmmirror.com/@codemirror/lint/6.0.0
       '@codemirror/search': registry.npmmirror.com/@codemirror/search/6.0.1
@@ -5071,7 +5073,7 @@ packages:
       codemirror: 6.x
       vue: 3.x
     dependencies:
-      '@codemirror/commands': registry.npmmirror.com/@codemirror/commands/6.0.1
+      '@codemirror/commands': registry.npmmirror.com/@codemirror/commands/6.1.0
       '@codemirror/language': registry.npmmirror.com/@codemirror/language/6.2.1
       '@codemirror/state': registry.npmmirror.com/@codemirror/state/6.1.1
       '@codemirror/view': registry.npmmirror.com/@codemirror/view/6.2.0
