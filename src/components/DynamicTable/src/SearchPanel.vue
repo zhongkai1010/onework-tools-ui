@@ -77,7 +77,8 @@
 <script setup lang="ts">
   import { FormInstance } from 'element-plus';
   import { reactive, ref } from 'vue';
-  import { TablePageField } from '/@/api/model/page';
+  import { TablePageField } from '/@/api/system/page';
+
   import { initFieldsValue } from '/@/components/utils';
 
   const formRef = ref<FormInstance>();

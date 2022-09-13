@@ -7,7 +7,7 @@ interface FetchConfig extends Recordable<any> {
 export function useHttpFetch<P, T>(
   fun: (params: P) => Promise<T>,
   params?: P,
-  config?: FetchConfig,
+  config?: FetchConfig
 ) {
   // 是否结束
   const isFinished = ref(false);
@@ -46,6 +46,6 @@ export function useHttpFetch<P, T>(
     statusCode,
     data,
     isFetching,
-    execute,
+    execute
   };
 }

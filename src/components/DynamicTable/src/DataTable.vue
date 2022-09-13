@@ -118,7 +118,15 @@
   }
 
   const props = defineProps<Props>();
-  const data = ref(props.data ?? []);
+  const _data = ref<Recordable<any>[] | undefined>(props.data);
+  const data = computed({
+    get() {
+      return _data.value ?? props.data ?? [];
+    },
+    set(value) {
+      _data.value = value;
+    }
+  });
 
   const dialogRef = ref<FormDialogInstance | undefined>();
 

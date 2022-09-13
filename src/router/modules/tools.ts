@@ -13,27 +13,27 @@ export default [
       {
         name: 'tool_model',
         path: 'model',
-        component: () => import('/@/views/tool/model.vue'),
-        meta: { title: t('router.tool.model'), icon: 'material-symbols:3p' },
+        component: () => import('/@/views/tool/model/index.vue'),
+        meta: { title: t('router.tool.model'), icon: 'material-symbols:3p' }
       },
       {
         name: 'tool_translate',
         path: 'translate',
         component: () => import('/@/views/tool/translate.vue'),
-        meta: { title: t('router.tool.translate'), icon: 'material-symbols:3p' },
+        meta: { title: t('router.tool.translate'), icon: 'material-symbols:3p' }
       },
       {
         name: 'tool_generator',
         path: 'generator',
         component: () => import('/@/views/tool/generator.vue'),
-        meta: { title: t('router.tool.generator'), icon: 'material-symbols:3p' },
+        meta: { title: t('router.tool.generator'), icon: 'material-symbols:3p' }
       },
       {
         name: 'tool_page',
         path: 'page',
         component: () => import('/@/views/tool/page.vue'),
-        meta: { title: t('router.tool.page'), icon: 'material-symbols:3p' },
-      },
-    ],
-  },
+        meta: { title: t('router.tool.page'), icon: 'material-symbols:3p' }
+      }
+    ]
+  }
 ] as AppRouteRecordRaw[];

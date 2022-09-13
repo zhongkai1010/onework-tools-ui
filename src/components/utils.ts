@@ -1,4 +1,4 @@
-import { TablePageField } from '/@/api/model/page';
+import { TablePageField } from '../api/system/page';
 
 export const initFieldsValue = (fields: TablePageField[]): Recordable<any> => {
   const value = {};
