@@ -26,7 +26,10 @@ export interface QueryModelParams {
   gourp?: string;
 }
 
-export type AddModelParams = Omit<Model, 'id'>;
+export interface AddModelParams extends Omit<Model, 'id' | 'properties'> {
+  id?:string;
+  properties: <ModelProperty, 'modelId'>[];
+}
 
 export default {
   /**
