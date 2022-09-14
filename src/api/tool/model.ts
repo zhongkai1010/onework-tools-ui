@@ -27,8 +27,8 @@ export interface QueryModelParams {
 }
 
 export interface AddModelParams extends Omit<Model, 'id' | 'properties'> {
-  id?:string;
-  properties: <ModelProperty, 'modelId'>[];
+  id?: string;
+  properties: Omit<ModelProperty, 'id'>[];
 }
 
 export default {

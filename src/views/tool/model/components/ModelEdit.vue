@@ -87,22 +87,22 @@
     };
     return field;
   };
-  const getProperty = (field: ModelField): ModelProperty => {
-    const property: ModelProperty = {
-      id: field.id,
+  // const getProperty = (field: ModelField): ModelProperty => {
+  //   const property: ModelProperty = {
+  //     id: field.id,
 
-      name: field.name,
-      displayName: field.displayName,
-      propertyType: field.type,
-      arrayType: field.array,
-      required: field.required,
-      parentId: field.parent,
-      parentIds: field.parentPath,
-      order: field.order,
-      remark: field.remark
-    };
-    return property;
-  };
+  //     name: field.name,
+  //     displayName: field.displayName,
+  //     propertyType: field.type,
+  //     arrayType: field.array,
+  //     required: field.required,
+  //     parentId: field.parent,
+  //     parentIds: field.parentPath,
+  //     order: field.order,
+  //     remark: field.remark
+  //   };
+  //   return property;
+  // };
 
   defineExpose<ModelEditInstance>({
     open: onOpen
