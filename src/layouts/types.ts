@@ -29,7 +29,7 @@ export enum FieldComponent {
   Checkbox = 'checkbox',
   Datetimerange = 'datetimerange',
   Datepicker = 'datepicker',
-  Timepicker = 'timepicker',
+  Timepicker = 'timepicker'
 }
 
 export type DynamicCssVariablesType = Recordable<string>;

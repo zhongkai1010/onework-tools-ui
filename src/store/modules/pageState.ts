@@ -8,7 +8,7 @@ import { tabStateStoreHook } from '/@/store/modules/tabState';
 import { permissionStateStoreHook } from '/@/store/modules/permissionState';
 import { router } from '/@/router';
 
-import { DynamicCssVariablesType, MenuRecordRaw } from '/#/layouts';
+import { DynamicCssVariablesType, MenuRecordRaw } from '/@/layouts/types';
 
 export interface PageStateType {
   selectNav?: string;

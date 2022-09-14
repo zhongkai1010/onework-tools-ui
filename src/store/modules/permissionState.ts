@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { store } from '../index';
-import { MenuRecordRaw } from '/#/layouts';
+import { MenuRecordRaw } from '/@/layouts/types';
 
 export interface PermissionStateType {
   menus: MenuRecordRaw[];

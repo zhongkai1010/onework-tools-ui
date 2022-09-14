@@ -5,7 +5,6 @@ import { buildUUID } from '/@/utils/uuid';
 
 export default function (data?: Field[]) {
   const fields = ref<Field[]>(data || []);
-
   const get = (uid?) => fields.value.find((t) => t.uid === uid);
   const getChildren = (uid?) => fields.value.filter((t) => t.parent == uid);
   const getFollowingFields = (parent, order) =>

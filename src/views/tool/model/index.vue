@@ -8,11 +8,17 @@
               <iconify-icon icon="carbon:model-alt" />
               <span>数据模型</span>
               <div class="button">
-                <el-button type="primary">创建</el-button>
+                <el-button type="primary" @click="onClickAddModel">创建</el-button>
               </div>
             </div>
           </template>
-          <ModelView @select="onSelectModel" />
+          <ModelView
+            :data="models"
+            v-loading="getModelFetch.isFetching.value || deleteModelFetch.isFetching.value"
+            @select="onSelectModel"
+            @edit="onClickEditModel"
+            @remove="onClickRemoveModel"
+          />
         </el-card>
       </el-col>
       <el-col :span="20">
@@ -20,29 +26,85 @@
           <template #header>
             <div class="header">
               <iconify-icon icon="ant-design:unordered-list-outlined" />
-              <span>模型属性</span>
+              <span>{{ title }}</span>
               <div class="button">
                 <el-button type="primary">表单配置</el-button>
-                <el-button>表格配置</el-button>
               </div>
             </div>
           </template>
-          <PropertyView :data="properties" />
+          <PropertyView :data="currentModel.properties" @edit="onClickEditProperty" />
         </el-card>
       </el-col>
     </el-row>
+    <ModelEdit ref="modelEditRef" />
   </page-view>
 </template>
 
 <script setup lang="ts">
-  import { Model, ModelProperty } from '/@/api/tool/model';
+  import _ from 'lodash';
+  import modelApi, { Model, ModelProperty } from '/@/api/tool/model';
+  import { useMessage } from '/@/hooks/web/useMessage';
+  import { useHttpFetch } from '/@/hooks/fetch';
+  import { ModelEditInstance } from './types';
+  import { log } from '/@/utils/log';
   import ModelView from './components/Model.vue';
   import PropertyView from './components/Property.vue';
+  import ModelEdit from './components/ModelEdit.vue';
 
-  const properties = ref<ModelProperty[]>([]);
+  const { message } = useMessage();
+  const getModelFetch = useHttpFetch<any, Model[]>(modelApi.getAllModel, null, {
+    immediate: true
+  });
 
-  const onSelectModel = (model: Model) => {
-    properties.value = model.properties;
+  const deleteModelFetch = useHttpFetch<any, Model[]>(modelApi.deleteModel);
+
+  const modelEditRef = ref<ModelEditInstance>();
+  const currentModel = ref<Model>({
+    id: 'root',
+    name: '',
+    displayName: '',
+    properties: []
+  });
+
+  const models = computed({
+    get: () => {
+      return getModelFetch.data.value ?? [];
+    },
+    set: (value) => {
+      getModelFetch.data.value = value;
+    }
+  });
+  const title = computed(() => {
+    if (currentModel.value.displayName.length > 0) {
+      return `${currentModel.value.displayName} - 模型属性`;
+    }
+    return '模型属性';
+  });
+
+  const onSelectModel = (model: Model) => (currentModel.value = model);
+  const onClickAddModel = () => modelEditRef.value.open();
+  const onClickEditModel = (value) => modelEditRef.value.open(value);
+  const onClickRemoveModel = (value: Model) => {
+    deleteModelFetch
+      .execute(value.id)
+      .then(() => {
+        const index = models.value.findIndex((t) => t.id == value.id);
+        models.value.splice(index, 1);
+        // 重置显示表格和标题
+        currentModel.value = {
+          id: 'root',
+          name: '',
+          displayName: '',
+          properties: []
+        };
+      })
+      .catch((error) => {
+        message('删除数据模型失败！', 'error');
+        log('remove model error', error);
+      });
+  };
+  const onClickEditProperty = (value: ModelProperty) => {
+    log('edit property', value);
   };
 </script>
 

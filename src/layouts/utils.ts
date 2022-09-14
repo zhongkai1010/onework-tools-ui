@@ -1,6 +1,6 @@
 import { getModuleRoutes } from '../router/utils';
 import { useI18n } from '/@/hooks/web/useI18n';
-import { MenuRecordRaw } from '/#/layouts';
+import { MenuRecordRaw } from '/@/layouts/types';
 import { AppRouteRecordRaw } from '/#/route';
 
 const { t } = useI18n();

@@ -6,23 +6,22 @@
         v-if="props.unfold"
         @click="unfold = !unfold"
       />
-
       <el-checkbox
         v-model="property.required"
         :disabled="props.disabled"
         style="margin-right: 5px"
       />
-      <el-col :span="6">
+      <el-col :span="5">
         <el-input v-model="property.name" placeholder="API名称" :disabled="props.disabled" />
       </el-col>
-      <el-col :span="6">
+      <el-col :span="5">
         <el-input
           v-model="property.displayName"
           placeholder="字段名称"
           :disabled="props.disabled"
         />
       </el-col>
-      <el-col :span="4">
+      <el-col :span="5">
         <el-select
           :model-value="props.array ? props.property.array : property.type"
           placeholder="字段类型"
@@ -31,14 +30,14 @@
           @change="onChangeType"
         >
           <el-option
-            v-for="item in PropertyTypeOptions"
+            v-for="item in ModelPropertyTypeOptions"
             :key="item.value"
             :label="item.label"
             :value="item.value"
           />
         </el-select>
       </el-col>
-      <el-col :span="4">
+      <el-col :span="5">
         <el-input v-model="property.remark" placeholder="remark" :disabled="props.disabled" />
       </el-col>
       <div class="operate">
@@ -69,12 +68,12 @@
           style="color: var(--el-color-danger)"
           @click="emit('remove', property)"
         />
-        <iconify-icon
+        <!-- <iconify-icon
           class="icon"
           icon="ant-design:setting-outlined"
           style="color: var(--el-color-success)"
           @click="onShow"
-        />
+        /> -->
       </div>
     </div>
     <div v-if="property.type === 'object' && unfold">
@@ -116,17 +115,18 @@
 </template>
 
 <script setup lang="ts">
-  import { Property, PropertyType, PropertyTypeOptions } from './types';
+  import { ModelProperty, ModelPropertyType, ModelPropertyTypeOptions } from '../types';
 
-  import PropertyView from './Property.vue';
+  import PropertyView from './FormModelProperty.vue';
   import _ from 'lodash';
-  import { log } from '/@/utils/log';
+  // import { log } from '/@/utils/log';
   import { useMessage } from '/@/hooks/web/useMessage';
+  import { buildUUID } from '/@/utils/uuid';
 
   interface Props {
-    modelValue: Property;
+    modelValue: ModelProperty;
     array?: boolean;
-    property?: Property;
+    property?: ModelProperty;
     add?: boolean;
     dropdown?: boolean;
     disabled?: boolean;
@@ -137,11 +137,11 @@
   const { message } = useMessage();
   const props = defineProps<Props>();
   const emit = defineEmits<{
-    (e: 'update:modelValue', value: Property);
-    (e: 'changeType', type: PropertyType);
-    (e: 'remove', value: Property);
-    (e: 'add', value: Property);
-    (e: 'addChild', value: Property);
+    (e: 'update:modelValue', value: ModelProperty);
+    (e: 'changeType', type: ModelPropertyType);
+    (e: 'remove', value: ModelProperty);
+    (e: 'add', value: ModelProperty);
+    (e: 'addChild', value: ModelProperty);
   }>();
   const unfold = ref(true);
   const property = computed({
@@ -152,9 +152,10 @@
       emit('update:modelValue', value);
     }
   });
-  const arrayProperty = computed<Property>({
+  const arrayProperty = computed<ModelProperty>({
     get() {
       return {
+        id: buildUUID(),
         type: props.property?.array ?? 'string',
         children: props.property?.children ?? [],
         order: 1
@@ -171,7 +172,7 @@
       emit('addChild', property.value);
     }
   };
-  const onChangeType = (value: PropertyType) => {
+  const onChangeType = (value: ModelPropertyType) => {
     if (props.array && value === 'array') {
       message('暂不支持二维数组！', 'warning');
     } else {
@@ -196,7 +197,7 @@
     }
     emit('update:modelValue', property.value);
   };
-  const onAdd = (value: Property) => {
+  const onAdd = (value: ModelProperty) => {
     if (props.property?.array == 'object' && props.property?.type == 'array') {
       emit('addChild', props.property);
     } else {
@@ -205,10 +206,10 @@
   };
   const onRemove = (value) => emit('remove', value);
   const onAddChild = (value) => emit('addChild', value);
-  const onShow = () => {
-    log('show property', property.value);
-    log('show prorps', props);
-  };
+  // const onShow = () => {
+  //   log('show property', property.value);
+  //   log('show prorps', props);
+  // };
 </script>
 
 <style scoped lang="scss">

@@ -1,4 +1,4 @@
-import { FieldComponent } from '/#/layouts';
+import { FieldComponent } from '/@/layouts/types';
 import { http } from '/@/plugins/axios';
 
 export default {

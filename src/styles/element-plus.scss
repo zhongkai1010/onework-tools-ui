@@ -5,3 +5,7 @@
 .el-card {
   --el-card-border-radius: 0px;
 }
+
+.el-overlay-dialog {
+  @include scrollBar;
+}

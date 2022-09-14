@@ -1,9 +1,7 @@
 import { App } from 'vue';
 import IconifyIcon from './IconifyIcon/index';
 import DynamicTable, { DataTable } from './DynamicTable/index';
-
 import ResizeChart from './ResizeChart/index';
-
 import DynamicForm, {
   FormItem,
   TypeFormItem,
@@ -11,12 +9,11 @@ import DynamicForm, {
   JsonFormItem
 } from './DynamicForm/index';
 
-import SubMenu from './Menu/index';
+import { FormModelProperty, FormModel } from './Form';
 
 import PageView, { ErrorView, FrameView, BlankView, CardView } from './PageView/index';
 
 const setupComponents = (app: App<Element>) => {
-  app.component('SubMenu', SubMenu);
   app.component('ErrorView', ErrorView);
   app.component('BlankView', BlankView);
   app.component('CardView', CardView);
@@ -45,7 +42,11 @@ const setupComponents = (app: App<Element>) => {
   app.component('FormItem', FormItem);
   app.component('BlTypeFormItem', TypeFormItem);
   app.component('BlModelFormItem', ModelFormItem);
+  app.component('ModelFormItem', ModelFormItem);
   app.component('BlJsonFormItem', JsonFormItem);
+
+  app.component('FormModelProperty', FormModelProperty);
+  app.component('FormModel', FormModel);
 };
 
 export { setupComponents };

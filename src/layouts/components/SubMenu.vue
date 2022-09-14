@@ -6,7 +6,7 @@
         <span>{{ menu.title }}</span>
       </template>
       <template v-for="item in props.menu.children" :key="item.name">
-        <sub-menu :menu="item" />
+        <SubMenu :menu="item" />
       </template>
     </el-sub-menu>
   </template>
@@ -19,7 +19,8 @@
 </template>
 
 <script setup lang="ts">
-  import { MenuRecordRaw } from '/#/layouts';
+  import { MenuRecordRaw } from '/@/layouts/types';
+  import SubMenu from './SubMenu.vue';
 
   const props = defineProps<{
     menu: MenuRecordRaw;

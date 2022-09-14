@@ -3,7 +3,7 @@ import { store } from '../index';
 
 import { permissionStateStoreHook } from '/@/store/modules/permissionState';
 import { pageStateStoreHook } from '/@/store/modules/pageState';
-import { MenuRecordRaw } from '/#/layouts';
+import { MenuRecordRaw } from '/@/layouts/types';
 import { HOME_PAGE } from '/@/router/constant';
 
 export interface TabStateType {

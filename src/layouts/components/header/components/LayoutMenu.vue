@@ -12,7 +12,8 @@
   </div>
 </template>
 <script setup lang="ts">
-  import { MenuRecordRaw } from '/#/layouts';
+  import { MenuRecordRaw } from '/@/layouts/types';
+  import SubMenu from '/@/layouts/components/SubMenu.vue';
 
   const props = defineProps<{
     menus: MenuRecordRaw[];

@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-  import { MenuRecordRaw } from '/#/layouts';
+  import { MenuRecordRaw } from '/@/layouts/types';
 
   const props = defineProps<{
     breadcrumb: MenuRecordRaw[];

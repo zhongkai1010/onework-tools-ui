@@ -80,32 +80,3 @@ export function setObjToUrlParams(baseUrl: string, obj: any): string {
   parameters = parameters.replace(/&$/, '');
   return /\?$/.test(baseUrl) ? baseUrl + parameters : baseUrl.replace(/\/?$/, '?') + parameters;
 }
-
-export function generateTreeNodes(
-  data: Recordable<any>[],
-  idKey: any,
-  parentKey: string,
-  defaultValue: any,
-  childrenKey = 'children'
-) {
-  const getChildren = (parents: Recordable<any>[]) => {
-    const result = [];
-
-    for (let i = 0; i < parents.length; i++) {
-      const node = parents[i];
-      const parentId = node[idKey];
-      const children = data.filter((t) => t[parentKey] === parentId);
-      console.log('parentId', parentId);
-      console.log('node', node);
-      console.log('children', children);
-      if (children.length > 0) {
-        node[childrenKey] = getChildren(children);
-      }
-      result.push(node);
-    }
-    return result;
-  };
-
-  const roots = data.filter((t) => t[parentKey] === defaultValue);
-  return getChildren(roots) ?? data;
-}

@@ -14,7 +14,8 @@
 </template>
 
 <script lang="ts" setup>
-  import { MenuRecordRaw } from '/#/layouts';
+  import { MenuRecordRaw } from '/@/layouts/types';
+  import SubMenu from '/@/layouts/components/SubMenu.vue';
 
   const props = defineProps<{
     menufold: boolean;

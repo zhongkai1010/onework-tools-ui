@@ -6,11 +6,7 @@
     <el-table-column label="属性类型" prop="propertyType" />
     <el-table-column label="数组类型" prop="arrayType" />
     <el-table-column label="默认值" prop="defaultValue" />
-    <el-table-column label="是否扩展" prop="extended">
-      <template #default="scope">
-        <el-switch v-model="scope.row.extended" @change="emit('update', scope)" />
-      </template>
-    </el-table-column>
+
     <el-table-column label="是否必填" prop="required">
       <template #default="scope">
         <el-switch v-model="scope.row.required" @change="emit('update', scope)" />
@@ -28,14 +24,14 @@
 
 <script setup lang="ts">
   import { ModelProperty } from '/@/api/tool/model';
-  import { generateTreeNodes } from '/@/utils';
+  import { generateTreeNodes } from '/@/utils/tree';
 
   const props = defineProps<{
     data: ModelProperty[];
   }>();
 
   const data = computed(() => {
-    return generateTreeNodes(props.data, 'id', 'parentId', null);
+    return generateTreeNodes(props.data, 'id', 'parentId', null, 'children', 'order');
   });
 
   const emit = defineEmits<{
