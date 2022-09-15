@@ -32,6 +32,16 @@ export default [
         code: 0
       };
     }
+  },
+  {
+    url: '/api/tool/model/saveModel',
+    method: 'post',
+    timeout: '5000',
+    response: () => {
+      return {
+        code: 0
+      };
+    }
   }
 ];
 

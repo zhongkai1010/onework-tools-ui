@@ -32,11 +32,18 @@
               </div>
             </div>
           </template>
-          <PropertyView :data="currentModel.properties" @edit="onClickEditProperty" />
+          <PropertyView
+            :data="currentModel.properties"
+            @edit="onClickEditProperty"
+            @update="onChangeProperty"
+            @remove="onClickRemovetProperty"
+          />
         </el-card>
       </el-col>
     </el-row>
-    <ModelEdit ref="modelEditRef" />
+    <ModelEdit ref="modelEditRef" @save="onSaveModel" />
+    <PropertyEdit ref="propertyEditRef" @save="onSaveProperty" />
+    <FormDesign />
   </page-view>
 </template>
 
@@ -45,27 +52,28 @@
   import modelApi, { Model, ModelProperty } from '/@/api/tool/model';
   import { useMessage } from '/@/hooks/web/useMessage';
   import { useHttpFetch } from '/@/hooks/fetch';
-  import { ModelEditInstance } from './types';
+  import { ModelEditInstance, PropertyEditInstance } from './types';
   import { log } from '/@/utils/log';
   import ModelView from './components/Model.vue';
   import PropertyView from './components/Property.vue';
   import ModelEdit from './components/ModelEdit.vue';
+  import PropertyEdit from './components/PropertyEdit.vue';
+  import FormDesign from './components/FormDesign.vue';
 
   const { message } = useMessage();
   const getModelFetch = useHttpFetch<any, Model[]>(modelApi.getAllModel, null, {
     immediate: true
   });
-
   const deleteModelFetch = useHttpFetch<any, Model[]>(modelApi.deleteModel);
-
+  // const savePropertyFetch = useHttpFetch<any, Model[]>(modelApi.saveProperty);
   const modelEditRef = ref<ModelEditInstance>();
+  const propertyEditRef = ref<PropertyEditInstance>();
   const currentModel = ref<Model>({
     id: 'root',
     name: '',
     displayName: '',
     properties: []
   });
-
   const models = computed({
     get: () => {
       return getModelFetch.data.value ?? [];
@@ -76,11 +84,10 @@
   });
   const title = computed(() => {
     if (currentModel.value.displayName.length > 0) {
-      return `${currentModel.value.displayName} - 模型属性`;
+      return `${currentModel.value.displayName}(${currentModel.value.name}) - 模型属性`;
     }
     return '模型属性';
   });
-
   const onSelectModel = (model: Model) => (currentModel.value = model);
   const onClickAddModel = () => modelEditRef.value.open();
   const onClickEditModel = (value) => modelEditRef.value.open(value);
@@ -103,9 +110,24 @@
         log('remove model error', error);
       });
   };
+  const onSaveModel = (value: Model) => {
+    const index = getModelFetch.data.value.findIndex((t) => t.id === value.id);
+    if (index > 0) {
+      models.value.splice(index, 1, value);
+    } else {
+      models.value.push(value);
+    }
+    currentModel.value = value;
+  };
   const onClickEditProperty = (value: ModelProperty) => {
     log('edit property', value);
+    propertyEditRef.value.open(value);
   };
+  const onChangeProperty = () => {};
+  const onClickRemovetProperty = (value: ModelProperty) => {
+    log('edit property', value);
+  };
+  const onSaveProperty = () => {};
 </script>
 
 <style lang="scss" scoped>

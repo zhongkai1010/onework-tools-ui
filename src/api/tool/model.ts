@@ -22,13 +22,9 @@ export interface ModelProperty {
   remark?: string;
 }
 
-export interface QueryModelParams {
-  gourp?: string;
-}
-
-export interface AddModelParams extends Omit<Model, 'id' | 'properties'> {
+export interface SaveModelParam extends Omit<Model, 'id' | 'properties'> {
   id?: string;
-  properties: Omit<ModelProperty, 'id'>[];
+  properties?: Omit<ModelProperty, 'id'>[];
 }
 
 export default {
@@ -37,12 +33,7 @@ export default {
    * @param params
    * @returns
    */
-  getAllModel: (params: QueryModelParams) =>
-    http.get<Model[]>({
-      url: '/api/tool/model/getAllModel',
-      data: params
-    }),
-
+  getAllModel: () => http.get<Model[]>({ url: '/api/tool/model/getAllModel' }),
   /**
    *  删除模块
    * @param params
@@ -50,9 +41,24 @@ export default {
    */
   deleteModel: (id: string) => http.post({ url: '/api/tool/model/deleteModel', data: { id } }),
   /**
-   *  添加模块
+   *  添加或修改模块
    * @param params
    * @returns
    */
-  addModel: (data: AddModelParams) => http.post({ url: '/api/tool/model/addModel', data })
+  saveModel: (data: SaveModelParam) => http.post({ url: '/api/tool/model/saveModel', data }),
+  /**
+   *  添加或修改模块属性
+   * @param params
+   * @returns
+   */
+  saveProperty: (data: ModelProperty) =>
+    http.post({ url: '/api/tool/modelProperty/saveProperty', data }),
+
+  /**
+   *  删除模块属性
+   * @param params
+   * @returns
+   */
+  deleteProperty: (id: string) =>
+    http.post({ url: '/api/tool/modelProperty/deleteProperty', data: { id } })
 };

@@ -9,7 +9,7 @@ import DynamicForm, {
   JsonFormItem
 } from './DynamicForm/index';
 
-import { FormModelProperty, FormModel } from './Form';
+import { FormModelProperty, FormModel, FormPropertyType } from './Form';
 
 import PageView, { ErrorView, FrameView, BlankView, CardView } from './PageView/index';
 
@@ -47,6 +47,7 @@ const setupComponents = (app: App<Element>) => {
 
   app.component('FormModelProperty', FormModelProperty);
   app.component('FormModel', FormModel);
+  app.component('FormPropertyType', FormPropertyType);
 };
 
 export { setupComponents };

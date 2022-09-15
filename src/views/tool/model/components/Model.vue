@@ -8,7 +8,7 @@
   >
     <template #default="{ node }">
       <div class="tree-node" :class="{ 'is-select': node.data.id == selectNodeKey }">
-        <span>{{ node.label }}</span>
+        <span :title="`${node.data.label}(${node.data.name})`">{{ node.label }}</span>
         <div class="button" v-if="node.data.id !== 'root'">
           <iconify-icon
             icon="ant-design:edit-outlined"
