@@ -1,60 +1,39 @@
 <template>
-  <card-view :top="true">
-    <template #top>
-      <el-form :inline="true" :model="formInline" class="demo-form-inline">
-        <el-form-item label="Approved by">
-          <el-input v-model="formInline.user" placeholder="Approved by" />
-        </el-form-item>
-        <el-form-item label="Activity zone">
-          <el-select v-model="formInline.region" placeholder="Activity zone">
-            <el-option label="Zone one" value="shanghai" />
-            <el-option label="Zone two" value="beijing" />
-          </el-select>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="onSubmit">Query</el-button>
-        </el-form-item>
-      </el-form>
-    </template>
-    <el-table :data="tableData" style="width: 100%">
-      <el-table-column prop="date" label="Date" width="180" />
-      <el-table-column prop="name" label="Name" width="180" />
-      <el-table-column prop="address" label="Address" />
+  <page-view>
+    <el-table
+      :data="tableData"
+      :tree-props="{ children: 'children' }"
+      row-key="name"
+      default-expand-all
+    >
+      <el-table-column prop="meta.title" label="显示名称">
+        <template #default="scope">
+          {{ $t(scope.row.meta?.title) }}
+        </template>
+      </el-table-column>
+      <el-table-column prop="name" label="名称" />
+
+      <el-table-column prop="path" label="路径">
+        <template #default="scope">
+          {{ scope.row.path }}
+        </template>
+      </el-table-column>
+      <el-table-column prop="meta.icon" label="图标">
+        <template #default="scope">
+          <iconify-icon :icon="scope.row.meta?.icon" />
+        </template>
+      </el-table-column>
+      <el-table-column prop="meta.orderNo" label="顺序" :sortable="true">
+        <template #default="scope">
+          {{ scope.row.meta?.orderNo }}
+        </template>
+      </el-table-column>
     </el-table>
-  </card-view>
+  </page-view>
 </template>
 
 <script lang="ts" setup>
-  import { reactive } from 'vue';
-
-  const formInline = reactive({
-    user: '',
-    region: ''
-  });
-
-  const onSubmit = () => {
-    console.log('submit!');
-  };
-  const tableData = [
-    {
-      date: '2016-05-03',
-      name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles'
-    },
-    {
-      date: '2016-05-02',
-      name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles'
-    },
-    {
-      date: '2016-05-04',
-      name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles'
-    },
-    {
-      date: '2016-05-01',
-      name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles'
-    }
-  ];
+  import { getModuleRoutes } from '/@/router/utils';
+  const tableData = getModuleRoutes();
+  console.log(tableData);
 </script>

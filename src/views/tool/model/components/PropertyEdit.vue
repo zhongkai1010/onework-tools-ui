@@ -6,7 +6,7 @@
         <span>{{ property.id ? '修改模型' : '创建模型' }}</span>
       </div>
     </template>
-    <el-form v-model="property" label-position="top">
+    <el-form v-model="property">
       <el-form-item label="属性名称">
         <el-input v-model="property.name" />
       </el-form-item>
@@ -31,7 +31,18 @@
       <el-form-item label="备注">
         <el-input v-model="property.remark" />
       </el-form-item>
+      <el-form-item label="组织编号">
+        <el-select>
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          />
+        </el-select>
+      </el-form-item>
     </el-form>
+
     <template #footer>
       <span>
         <el-button type="primary" @click="onClickSubmit">提交</el-button>
@@ -44,7 +55,28 @@
 <script setup lang="ts">
   import { PropertyEditInstance } from '../types';
   import { ModelProperty } from '/@/api/tool/model';
-
+  const options = [
+    {
+      value: 'Option1',
+      label: 'Option1'
+    },
+    {
+      value: 'Option2',
+      label: 'Option2'
+    },
+    {
+      value: 'Option3',
+      label: 'Option3'
+    },
+    {
+      value: 'Option4',
+      label: 'Option4'
+    },
+    {
+      value: 'Option5',
+      label: 'Option5'
+    }
+  ];
   // import { log } from '/@/utils/log';
   const emit = defineEmits<{
     (e: 'save', value: ModelProperty): void;

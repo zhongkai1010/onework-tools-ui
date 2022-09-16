@@ -106,7 +106,7 @@ const transform: AxiosTransform = {
         if (joinParamsToUrl) {
           config.url = setObjToUrlParams(
             config.url as string,
-            Object.assign({}, config.params, config.data),
+            Object.assign({}, config.params, config.data)
           );
         }
       } else {
@@ -169,7 +169,7 @@ const transform: AxiosTransform = {
           M.message({
             message: errMessage,
             key: `global_error_message_status_${status}`,
-            type: 'error',
+            type: 'error'
           });
         } else {
           console.log(errMessage);
@@ -182,7 +182,7 @@ const transform: AxiosTransform = {
 
     checkStatus(error?.response?.status, msg, errorMessageMode);
     return Promise.reject(error);
-  },
+  }
 };
 
 function createAxios(opt?: Partial<CreateAxiosOptions>) {
@@ -221,11 +221,11 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
           // 忽略重复请求
           ignoreCancelToken: true,
           // 是否携带token
-          withToken: true,
-        },
+          withToken: true
+        }
       },
-      opt || {},
-    ),
+      opt || {}
+    )
   );
 }
 export const http = createAxios();

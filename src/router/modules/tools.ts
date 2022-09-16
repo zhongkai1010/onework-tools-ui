@@ -17,6 +17,18 @@ export default [
         meta: { title: t('router.tool.model'), icon: 'material-symbols:3p' }
       },
       {
+        name: 'tool_form',
+        path: 'form',
+        component: () => import('/@/views/tool/form/index.vue'),
+        meta: { title: t('router.tool.form'), icon: 'material-symbols:3p' }
+      },
+      {
+        name: 'tool_component',
+        path: 'component',
+        component: () => import('/@/views/tool/component/index.vue'),
+        meta: { title: t('router.tool.component'), icon: 'material-symbols:3p' }
+      },
+      {
         name: 'tool_translate',
         path: 'translate',
         component: () => import('/@/views/tool/translate.vue'),

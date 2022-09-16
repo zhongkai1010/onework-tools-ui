@@ -1,5 +1,5 @@
 <template>
-  <el-icon :size="props.size || 14" :color="(props.color as string)">
+  <el-icon v-if="props.icon" :size="props.size || 14" :color="(props.color as string)">
     <Icon :icon="props.icon" />
   </el-icon>
 </template>
@@ -9,7 +9,7 @@
   import { CSSProperties } from 'vue';
 
   const props = defineProps<{
-    icon: string;
+    icon?: string;
     size?: number;
     color?: Pick<CSSProperties, 'color'>;
   }>();

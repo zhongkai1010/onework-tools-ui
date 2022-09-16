@@ -74,7 +74,7 @@ export class Axios {
       requestInterceptors,
       requestInterceptorsCatch,
       responseInterceptors,
-      responseInterceptorsCatch,
+      responseInterceptorsCatch
     } = transform;
 
     const axiosCanceler = new AxiosCanceler();
@@ -84,7 +84,7 @@ export class Axios {
       // If cancel repeat request is turned on, then cancel repeat request is prohibited
       const {
         // @ts-ignore
-        headers: { ignoreCancelToken },
+        headers: { ignoreCancelToken }
       } = config;
 
       const ignoreCancel =
@@ -153,8 +153,8 @@ export class Axios {
       headers: {
         'Content-type': ContentTypeEnum.FORM_DATA,
         // @ts-ignore
-        ignoreCancelToken: true,
-      },
+        ignoreCancelToken: true
+      }
     });
   }
 
@@ -173,7 +173,7 @@ export class Axios {
 
     return {
       ...config,
-      data: qs.stringify(config.data, { arrayFormat: 'brackets' }),
+      data: qs.stringify(config.data, { arrayFormat: 'brackets' })
     };
   }
 

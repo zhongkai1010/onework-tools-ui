@@ -8,7 +8,11 @@
               <iconify-icon icon="carbon:model-alt" />
               <span>数据模型</span>
               <div class="button">
-                <el-button type="primary" @click="onClickAddModel">创建</el-button>
+                <iconify-icon
+                  icon="ant-design:appstore-add-outlined"
+                  @click="onClickAddModel"
+                  :size="18"
+                />
               </div>
             </div>
           </template>
@@ -25,10 +29,27 @@
         <el-card>
           <template #header>
             <div class="header">
-              <iconify-icon icon="ant-design:unordered-list-outlined" />
+              <iconify-icon icon="carbon:property-relationship" />
               <span>{{ title }}</span>
               <div class="button">
-                <el-button type="primary">表单配置</el-button>
+                <el-select style="margin-right: 5px" placeholder="请选择组织" clearable>
+                  <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value"
+                  />
+                </el-select>
+                <el-dropdown>
+                  <el-button type="primary"> 生成代码 </el-button>
+                  <template #dropdown>
+                    <el-dropdown-menu>
+                      <el-dropdown-item>表单配置</el-dropdown-item>
+                      <el-dropdown-item>表格配置</el-dropdown-item>
+                      <el-dropdown-item>JSON</el-dropdown-item>
+                    </el-dropdown-menu>
+                  </template>
+                </el-dropdown>
               </div>
             </div>
           </template>
@@ -43,7 +64,6 @@
     </el-row>
     <ModelEdit ref="modelEditRef" @save="onSaveModel" />
     <PropertyEdit ref="propertyEditRef" @save="onSaveProperty" />
-    <FormDesign />
   </page-view>
 </template>
 
@@ -58,8 +78,28 @@
   import PropertyView from './components/Property.vue';
   import ModelEdit from './components/ModelEdit.vue';
   import PropertyEdit from './components/PropertyEdit.vue';
-  import FormDesign from './components/FormDesign.vue';
-
+  const options = [
+    {
+      value: 'Option1',
+      label: 'Option1'
+    },
+    {
+      value: 'Option2',
+      label: 'Option2'
+    },
+    {
+      value: 'Option3',
+      label: 'Option3'
+    },
+    {
+      value: 'Option4',
+      label: 'Option4'
+    },
+    {
+      value: 'Option5',
+      label: 'Option5'
+    }
+  ];
   const { message } = useMessage();
   const getModelFetch = useHttpFetch<any, Model[]>(modelApi.getAllModel, null, {
     immediate: true
@@ -142,6 +182,8 @@
           margin-right: 5px;
         }
         .button {
+          display: flex;
+          cursor: pointer;
           margin-left: auto;
         }
       }

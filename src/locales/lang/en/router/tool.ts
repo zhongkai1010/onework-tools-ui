@@ -1,7 +1,9 @@
 export default {
-  tool: 'Tool',
+  tool: 'tool',
   model: 'Data Model',
+  form: 'model form',
+  component: 'Component library',
   translate: 'Translation record',
-  generator: 'Code Generation',
-  page: 'Page Template',
+  generator: 'code generation',
+  page: 'page template'
 };

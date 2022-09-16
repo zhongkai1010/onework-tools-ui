@@ -7,8 +7,8 @@
   >
     <template #header>
       <div class="header">
-        <iconify-icon icon="carbon:model-alt" :size="32" />
-        <span>{{ model ? '修改模型' : '创建模型' }}</span>
+        <iconify-icon icon="akar-icons:edit" :size="32" />
+        <span>{{ model.id ? '修改模型' : '创建模型' }}</span>
       </div>
     </template>
     <el-form ref="formRef" :model="model" label-position="top">

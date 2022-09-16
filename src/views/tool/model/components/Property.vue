@@ -6,13 +6,13 @@
     <el-table-column label="属性类型" prop="propertyType" />
     <el-table-column label="数组类型" prop="arrayType" />
     <el-table-column label="默认值" prop="defaultValue" />
-
     <el-table-column label="是否必填" prop="required">
       <template #default="scope">
         <el-switch v-model="scope.row.required" @change="emit('update', scope)" />
       </template>
     </el-table-column>
     <el-table-column label="备注" prop="remark" />
+    <el-table-column label="组织编号" prop="objectId" />
     <el-table-column prop="operate" label="操作" align="center">
       <template #default="scope">
         <el-button link type="primary" @click="emit('edit', scope.row)"> 编辑 </el-button>

@@ -5,7 +5,7 @@ import { useMessage } from '/@/hooks/web/useMessage';
 export function checkStatus(
   status: number,
   msg: string,
-  errorMessageMode: ErrorMessageMode = 'message',
+  errorMessageMode: ErrorMessageMode = 'message'
 ): void {
   const { t } = useI18n();
   const { message, confirm } = useMessage();
@@ -60,7 +60,7 @@ export function checkStatus(
       message({
         message: errMessage,
         key: `global_error_message_status_${status}`,
-        type: 'error',
+        type: 'error'
       });
     } else {
       console.log(errMessage);
