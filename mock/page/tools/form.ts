@@ -1,11 +1,5 @@
-/*
- * @Author: zhongkai1010 zhongkai1010@163.com
- * @Date: 2022-09-19 15:52:54
- * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-19 15:53:19
- * @FilePath: \onework-tools-ui\mock\page\tools\form.ts
- * @Description:
- */
+import { mock } from 'mockjs';
+
 export default [
   {
     url: '/api/tools/form/getAllForm',
@@ -26,8 +20,8 @@ export default [
             remark: '@csentence()'
           }
         ]
-      }) as { data: Form[] };
-      const forms = [];
+      });
+      const forms: any[] = [];
       formMock.data.forEach((element) => {
         const form = { ...element };
         form.fields = mock({

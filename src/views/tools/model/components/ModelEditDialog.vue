@@ -1,9 +1,9 @@
 <template>
   <el-dialog
     v-model="show"
-    :show-close="!isFetching"
-    :close-on-click-modal="!isFetching"
-    :close-on-press-escape="!isFetching"
+    :show-close="!saveModelFetch.isFetching.value"
+    :close-on-click-modal="!saveModelFetch.isFetching.value"
+    :close-on-press-escape="!saveModelFetch.isFetching.value"
   >
     <template #header>
       <div class="header">
@@ -18,16 +18,24 @@
       <el-form-item label="显示名称" prop="displayName" :required="true">
         <el-input v-model="model.displayName" />
       </el-form-item>
+      <el-form-item label="分组" prop="displayName" :required="true">
+        <el-input v-model="model.group" />
+      </el-form-item>
       <el-form-item label="模型属性" prop="fields" :required="true">
-        <FormModel v-model="model.fields" />
+        <FormModel v-model="properties" />
       </el-form-item>
     </el-form>
     <template #footer>
       <span>
-        <el-button type="primary" @click="onClickSubmit(formRef)" :loading="isFetching"
+        <el-button
+          type="primary"
+          @click="onClickSubmit(formRef)"
+          :loading="saveModelFetch.isFetching.value"
           >提交</el-button
         >
-        <el-button @click="show = false" :disabled="isFetching">关闭</el-button>
+        <el-button @click="show = false" :disabled="saveModelFetch.isFetching.value"
+          >关闭</el-button
+        >
       </span>
     </template>
   </el-dialog>
@@ -36,23 +44,49 @@
 <script setup lang="ts">
   import { FormInstance } from 'element-plus';
   import { ModelEditInstance } from '../types';
-  import { SaveModelParam, Model, ModelProperty } from '/@/api/tools/model';
-  import { ModelField } from '/@/components/Form/types';
+
+  import modelApi, { Model, ModelProperty, EditModel } from '/@/api/tools/model';
+
   import { log } from '/@/utils/log';
-  import ModelApi from '/@/api/tools/model';
   import { useHttpFetch } from '/@/hooks/fetch';
   import { useMessage } from '/@/hooks/web/useMessage';
+  import { ModelField } from '/@/components/Form/types';
 
-  interface FormValue extends Partial<Model> {
+  interface FormModel extends Omit<EditModel, 'properties'> {
     fields: ModelField[];
   }
 
   const emit = defineEmits<{ (e: 'save', value: Model) }>();
+
   const { message } = useMessage();
+  const saveModelFetch = useHttpFetch(modelApi.saveModel);
+  const getModelFetch = useHttpFetch<string, Model>(modelApi.getModel);
+
   const formRef = ref<FormInstance>();
-  const model = ref<FormValue>();
   const show = ref(false);
-  const { execute, isFetching } = useHttpFetch(ModelApi.saveModel);
+  const model = computed<FormModel>({
+    get: () => {
+      let model: FormModel = {
+        name: '',
+        displayName: '',
+        fields: []
+      };
+      if (getModelFetch.data.value) {
+        const properties = getModelFetch.data.value.properties ?? [];
+        const fields = properties.map(getField);
+        return {
+          ...getModelFetch.data.value,
+          fields
+        } as FormModel;
+      }
+      return model;
+    },
+    set: (value) => {
+      const properties = value.fields.map(getProperty) as ModelProperty[];
+      getModelFetch.data.value = { ...value, properties } as Model;
+    }
+  });
+  const properties = ref<ModelField[]>([]);
 
   const onClickSubmit = async (formEl: FormInstance | undefined) => {
     await formEl.validate(async (valid, fields) => {
@@ -82,9 +116,10 @@
   const onOpen = (value?: Model) => {
     show.value = true;
     if (value) {
-      model.value = { ...value, fields: value.properties.map(getField) };
     } else {
       model.value = {
+        name: '',
+        displayName: '',
         fields: []
       };
     }

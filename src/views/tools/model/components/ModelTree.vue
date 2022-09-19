@@ -12,22 +12,23 @@
     :data="models"
     highlight-current
     @node-click="onSelect"
+    :default-expanded-keys="expandedKeys"
     node-key="id"
     :props="{ label: 'displayName' }"
   >
     <template #default="{ node }">
       <div class="tree-node" :class="{ 'is-select': node.data.id == selectNodeKey }">
         <span :title="`${node.data.label}(${node.data.name})`">{{ node.label }}</span>
-        <div class="button" v-if="node.data.id !== 'root'">
+        <div class="button" v-if="node.isLeaf">
           <iconify-icon
             icon="ant-design:edit-outlined"
             class="edit"
-            @click="onClickEdit(node.data)"
+            @click.stop="onClickEdit(node.data)"
           />
           <iconify-icon
             icon="ant-design:delete-outlined"
             class="del"
-            @click="onClickRemove(node.data)"
+            @click.stop="onClickRemove(node.data)"
           />
         </div>
       </div>
@@ -43,16 +44,18 @@
   import { useMessage } from '/@/hooks/web/useMessage';
 
   interface TreeNode extends Model {
+    isLeaf?: boolean;
     children?: TreeNode[];
   }
 
-  const modelFetch = useHttpFetch<any, Model[]>(modelApi.getModels, null, { immediate: true });
+  const modelFetch = useHttpFetch<any, Model[]>(modelApi.getAllModels, null, { immediate: true });
   const models = computed<TreeNode[]>({
     get: () => {
       const root: TreeNode = {
         id: 'root',
         name: 'root',
         displayName: '所有模型',
+        isLeaf: false,
         children: []
       };
       if (modelFetch.data.value) {
@@ -61,8 +64,11 @@
           const group: TreeNode = {
             id: `root_${t}`,
             name: `root_${t}`,
+            isLeaf: false,
             displayName: t,
-            children: data[t] as TreeNode[]
+            children: data[t].map((t) => {
+              return { ...t, isLeaf: true };
+            }) as TreeNode[]
           };
           root.children.push(group);
         });
@@ -73,6 +79,8 @@
       modelFetch.data.value = value as Model[];
     }
   });
+  const expandedKeys = ref<string[]>(['root']);
+  const selectId = ref<string>('root');
 
   const emit = defineEmits<{
     (e: 'select', value: Model): void;
@@ -84,16 +92,26 @@
 
   const { confirm } = useMessage();
 
-  const onSelect = (node) => {
-    if (node.id !== 'root') {
-      emit('select', node);
-      selectNodeKey.value = node.id;
+  const onSelect = (model: TreeNode) => {
+    console.log('onSelect');
+    if (model.isLeaf && model.id !== selectId.value) {
+      selectNodeKey.value = model.id;
+      emit('select', model);
     }
+    selectId.value = model.id;
+    expandedKeys.value = [model.id];
   };
-  const onClickEdit = (value) => emit('edit', value);
-  const onClickRemove = (value) => {
-    confirm('确认是否删除！').then(() => {
+  const onClickEdit = (value) => {
+    console.log('onClickEdit', event);
+    emit('edit', value);
+  };
+  const onClickRemove = (value: Model) => {
+    console.log(value);
+    confirm(`确认是否删除,"${value.displayName}"！`).then(() => {
+      const index = modelFetch.data.value.findIndex((t) => t.id == value.id);
+      modelFetch.data.value.splice(index, 1);
       emit('remove', value);
+      expandedKeys.value = [`root_${value.group}`];
     });
   };
 </script>

@@ -1,5 +1,5 @@
 import { MockMethod } from 'vite-plugin-mock';
-import { mock, Random } from 'mockjs';
+import { Random } from 'mockjs';
 
 import {
   DictionaryOption,
@@ -10,14 +10,24 @@ import {
 import { Result } from '/#/axios';
 import { DEFAULT_TITLE } from '/@/settings/constant';
 
-export const OrganizationOption: { data: DictionaryOption[] } = mock({
-  'data|1-20': [
+export const DATA_DICTIONARIES: {
+  organization: DictionaryOption[];
+} = {
+  organization: [
     {
-      text: '@ctitle()',
-      value: '@guid()'
+      text: '组织1',
+      value: '1'
+    },
+    {
+      text: '组织2',
+      value: '2'
+    },
+    {
+      text: '组织3',
+      value: '3'
     }
   ]
-});
+};
 
 export default [
   {
@@ -1554,10 +1564,10 @@ export default [
     url: '/api/getOptions',
     method: 'get',
     timeout: 2000,
-    response: (): Result<DictionaryOption[]> => {
+    response: ({ query }): Result<DictionaryOption[]> => {
       return {
         code: 0,
-        result: OrganizationOption.data
+        result: DATA_DICTIONARIES[query.name]
       };
     }
   }

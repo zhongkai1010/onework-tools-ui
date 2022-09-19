@@ -26,7 +26,10 @@ export function useHttpFetch<P, T>(
 
     return new Promise<T>((resolve, reject) => {
       fun(params)
-        .then(resolve)
+        .then((result) => {
+          data.value = result as UnwrapRef<T>;
+          resolve(result);
+        })
         .catch(reject)
         .finally(() => {
           isFinished.value = true;

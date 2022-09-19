@@ -5,6 +5,7 @@ export interface Model {
   name: string;
   displayName: string;
   group?: string;
+  properties?: ModelProperty[];
 }
 
 export interface ModelProperty {
@@ -21,9 +22,10 @@ export interface ModelProperty {
   order: number;
   remark?: string;
   objectId?: string;
+  objectName?: string;
 }
 
-export interface SaveModelParam extends Omit<Model, 'id' | 'properties'> {
+export interface EditModel extends Omit<Model, 'id' | 'properties'> {
   id?: string;
   properties?: Omit<ModelProperty, 'id'>[];
 }
@@ -34,7 +36,13 @@ export default {
    *
    * @returns
    */
-  getModels: () => http.get<Model[]>({ url: '/api/tools/model' }),
+  getAllModels: () => http.get<Model[]>({ url: '/api/tools/model/getAll' }),
+  /**
+   *  获取模块和模块属性
+   *
+   * @returns
+   */
+  getModel: (id: string) => http.get<Model>({ url: '/api/tools/model/get', params: { id } }),
   /**
    *  删除模块
    *
@@ -47,7 +55,7 @@ export default {
    * @param params
    * @returns
    */
-  saveModel: (model: SaveModelParam) => http.post({ url: '/api/tools/model/save', data: model }),
+  saveModel: (model: EditModel) => http.post({ url: '/api/tools/model/save', data: model }),
   /**
    *  获取模块属性集合
    * @param data

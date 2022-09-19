@@ -12,7 +12,8 @@
       </template>
     </el-table-column>
     <el-table-column label="备注" prop="remark" />
-    <el-table-column label="组织编号" prop="objectId" />
+    <el-table-column label="所属组织" prop="objectName" />
+
     <el-table-column prop="operate" label="操作" align="center">
       <template #default="scope">
         <el-button link type="primary" @click="emit('edit', scope.row)"> 编辑 </el-button>

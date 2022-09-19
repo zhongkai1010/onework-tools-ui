@@ -7,14 +7,18 @@
  * @Description:
 -->
 <template>
-  <page-view class="container" :gutter="0" :bgColor="false">
+  <page-view class="container" :gutter="0" :bgColor="false" v-loading="getFetch.isFetching.value">
     <el-row :gutter="20">
       <el-col :span="4">
         <CardTitle title="数据模型" icon="carbon:model-alt">
           <template #button>
-            <el-button type="primary">创建</el-button>
+            <el-button type="primary" @click="omEditModel()">创建</el-button>
           </template>
-          <ModelTree />
+          <ModelTree
+            @select="onSelectModel"
+            @edit="(value) => omEditModel(value)"
+            @remove="onRemoveModel"
+          />
         </CardTitle>
       </el-col>
       <el-col :span="20">
@@ -26,6 +30,7 @@
               style="margin-right: 5px"
               placeholder="请选择组织"
               clearable
+              @change="onChangeOrg"
             />
             <el-dropdown>
               <el-button type="primary"> 生成代码 </el-button>
@@ -38,27 +43,60 @@
               </template>
             </el-dropdown>
           </template>
+          <PropertyGrid :data="properties" />
         </CardTitle>
       </el-col>
     </el-row>
+    <ModelEditDialog ref="modelEditRef" />
   </page-view>
 </template>
 <script setup lang="ts">
   import _ from 'lodash';
-  import { Model } from '/@/api/tools/model';
+  import modelApi, { Model, ModelProperty } from '/@/api/tools/model';
   import { DictionarNameEnum } from '/@/enums/dictionarNameEnum';
+  import { useHttpFetch } from '/@/hooks/fetch';
   import { log } from '/@/utils/log';
   import ModelTree from './components/ModelTree.vue';
+  import PropertyGrid from './components/PropertyGrid.vue';
+  import ModelEditDialog from './components/ModelEditDialog.vue';
+  import { ModelEditInstance } from './types';
 
+  const getFetch = useHttpFetch<any, ModelProperty[]>(modelApi.getModelProperties);
+
+  const modelEditRef = ref<ModelEditInstance>();
+  const properties = computed<ModelProperty[]>({
+    get: () => {
+      return getFetch.data.value ?? [];
+    },
+    set: (value) => {
+      getFetch.data.value = value;
+    }
+  });
   const selectOrg = ref<string>();
   const currentModel = ref<Model>();
   const title = computed(() => {
-    log('title', currentModel.value);
     if (currentModel.value) {
       return `${currentModel.value.displayName}(${currentModel.value.name}) - 模型属性`;
     }
     return '模型属性';
   });
+  const onSelectModel = async (model: Model) => {
+    log('select model', model);
+    currentModel.value = model;
+    await getFetch.execute({ modelId: model.id, objectId: selectOrg.value });
+  };
+  const omEditModel = (model?: Model) => {
+    modelEditRef.value.open(model);
+  };
+  const onRemoveModel = () => {
+    properties.value = [];
+  };
+
+  const onChangeOrg = async (value) => {
+    if (currentModel.value) {
+      await getFetch.execute({ modelId: currentModel.value.id, objectId: value });
+    }
+  };
 </script>
 
 <style lang="scss" scoped>

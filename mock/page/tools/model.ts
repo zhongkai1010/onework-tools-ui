@@ -8,18 +8,18 @@
  */
 import { mock, Random } from 'mockjs';
 import { buildUUID } from '../../../src/utils/uuid';
-import { OrganizationOption } from '../../common';
+import { DATA_DICTIONARIES } from '../../../mock/common';
 
 export default [
   {
-    url: '/api/tools/model',
+    url: '/api/tools/model/getAll',
     method: 'get',
     timeout: '2000',
     response: () => {
       return {
         code: 0,
         result: mock({
-          'data|6-200': [
+          'data|6-30': [
             {
               id: '@guid()',
               name: '@word(4,12)',
@@ -58,9 +58,14 @@ export default [
     timeout: '2000',
     response: ({ query }) => {
       const modelId = query.modelId;
+      const objectId = query.objectId;
+      let data = generateProperties(modelId, Random.integer(4, 20));
+      if (objectId) {
+        data = data.filter((t) => t.objectId == objectId || !t.objectId);
+      }
       return {
         code: 0,
-        result: generateProperties(modelId, Random.integer(4, 20))
+        result: data
       };
     }
   },
@@ -87,13 +92,19 @@ export default [
   }
 ];
 
-const OrganizationValues = Object.keys(OrganizationOption).map((t) => {
-  return OrganizationOption[t].value;
+const OrganizationValues = DATA_DICTIONARIES.organization.map((t) => {
+  return t.value;
 });
 
 function generatePropertyChilds(modelId, parent?): any[] {
-  const result = [];
+  const result: any[] = [];
   const random = Random.pick([1, 3, 4, 7, 9]); //随机组织
+  const objectId = random % 2 == 0 ? Random.pick(OrganizationValues) : null;
+
+  let objectName = '';
+  if (objectId) {
+    objectName = DATA_DICTIONARIES.organization.filter((t) => t.value == objectId)[0].text;
+  }
   const property = {
     id: Random.guid(),
     modelId: modelId,
@@ -106,7 +117,9 @@ function generatePropertyChilds(modelId, parent?): any[] {
     parentId: null,
     parentIds: null,
     order: Random.integer(1, 100),
-    objectId: random % 2 == 0 ? Random.pick(OrganizationValues) : null
+    // objectId: Random.pick(OrganizationValues)
+    objectId,
+    objectName
   };
   if (parent) {
     property.parentId = parent.id;
@@ -132,9 +145,10 @@ function generatePropertyChilds(modelId, parent?): any[] {
 }
 
 function generateProperties(modelId, count) {
-  const result = [];
+  const result: any[] = [];
   for (let i = 0; i < count; i++) {
-    result.push(...generatePropertyChilds(modelId));
+    const roots = generatePropertyChilds(modelId);
+    result.push(...roots);
   }
   return result;
 }
