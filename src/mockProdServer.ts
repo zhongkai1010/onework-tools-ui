@@ -7,8 +7,9 @@ import { createProdMockServer } from 'vite-plugin-mock/es/createProdMockServer';
 import common from '../mock/common';
 
 import region from '../mock/region';
-import system from '../mock/system';
+import pageSystem from '../mock/page/system';
+import pageTools from '../mock/page/tools';
 import test from '../mock/test';
 export function setupProdMockServer() {
-  createProdMockServer([...common, ...region, ...system, ...test]);
+  createProdMockServer([...common, ...region, ...pageSystem, ...pageTools, ...test]);
 }

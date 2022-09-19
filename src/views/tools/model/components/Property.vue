@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-  import { ModelProperty } from '/@/api/tool/model';
+  import { ModelProperty } from '/@/api/tools/model';
   import { generateTreeNodes } from '/@/utils/tree';
 
   const props = defineProps<{

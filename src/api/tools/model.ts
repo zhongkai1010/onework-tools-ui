@@ -33,26 +33,26 @@ export default {
    * @param params
    * @returns
    */
-  getAllModel: () => http.get<Model[]>({ url: '/api/tool/model/getAllModel' }),
+  getAllModel: () => http.get<Model[]>({ url: '/api/tools/model/getAllModel' }),
   /**
    *  删除模块
    * @param params
    * @returns
    */
-  deleteModel: (id: string) => http.post({ url: '/api/tool/model/deleteModel', data: { id } }),
+  deleteModel: (id: string) => http.post({ url: '/api/tools/model/deleteModel', data: { id } }),
   /**
    *  添加或修改模块
    * @param params
    * @returns
    */
-  saveModel: (data: SaveModelParam) => http.post({ url: '/api/tool/model/saveModel', data }),
+  saveModel: (data: SaveModelParam) => http.post({ url: '/api/tools/model/saveModel', data }),
   /**
    *  添加或修改模块属性
    * @param params
    * @returns
    */
   saveProperty: (data: ModelProperty) =>
-    http.post({ url: '/api/tool/modelProperty/saveProperty', data }),
+    http.post({ url: '/api/tools/modelProperty/saveProperty', data }),
 
   /**
    *  删除模块属性
@@ -60,5 +60,5 @@ export default {
    * @returns
    */
   deleteProperty: (id: string) =>
-    http.post({ url: '/api/tool/modelProperty/deleteProperty', data: { id } })
+    http.post({ url: '/api/tools/modelProperty/deleteProperty', data: { id } })
 };

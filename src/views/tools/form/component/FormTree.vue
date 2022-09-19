@@ -27,14 +27,14 @@
 </template>
 
 <script setup lang="ts">
-  import { Model } from '/@/api/tool/model';
+  import { Form } from '/@/api/tools/form';
   // import { log } from '/@/utils/log';
   import { useMessage } from '/@/hooks/web/useMessage';
   interface Props {
-    data: Model[];
+    data: Form[];
   }
 
-  interface TreeNode extends Partial<Model> {
+  interface TreeNode extends Partial<Form> {
     label: string;
     children: TreeNode[];
   }
@@ -42,9 +42,9 @@
   const props = defineProps<Props>();
 
   const emit = defineEmits<{
-    (e: 'select', value: Model): void;
-    (e: 'edit', value: Model): void;
-    (e: 'remove', value: Model): string;
+    (e: 'select', value: Form): void;
+    (e: 'edit', value: Form): void;
+    (e: 'remove', value: Form): string;
   }>();
 
   const selectNodeKey = ref('');
@@ -53,7 +53,7 @@
   const treeData = computed<TreeNode[]>(() => {
     const root: TreeNode = {
       id: 'root',
-      label: '所有模型',
+      label: '所有表单',
       children: props.data.map((t) => {
         return { ...t, label: t.displayName } as TreeNode;
       })

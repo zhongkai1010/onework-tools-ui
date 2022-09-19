@@ -54,7 +54,7 @@
 
 <script setup lang="ts">
   import { PropertyEditInstance } from '../types';
-  import { ModelProperty } from '/@/api/tool/model';
+  import { ModelProperty } from '/@/api/tools/model';
   const options = [
     {
       value: 'Option1',

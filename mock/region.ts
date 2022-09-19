@@ -17,71 +17,71 @@ export default [
                 children: [
                   {
                     label: '东城',
-                    value: '110101',
+                    value: '110101'
                   },
                   {
                     label: '西城',
-                    value: '110102',
+                    value: '110102'
                   },
                   {
                     label: '朝阳',
-                    value: '110105',
+                    value: '110105'
                   },
                   {
                     label: '丰台',
-                    value: '110106',
+                    value: '110106'
                   },
                   {
                     label: '石景山',
-                    value: '110107',
+                    value: '110107'
                   },
                   {
                     label: '海淀',
-                    value: '110108',
+                    value: '110108'
                   },
                   {
                     label: '门头沟',
-                    value: '110109',
+                    value: '110109'
                   },
                   {
                     label: '房山',
-                    value: '110111',
+                    value: '110111'
                   },
                   {
                     label: '通州',
-                    value: '110112',
+                    value: '110112'
                   },
                   {
                     label: '顺义',
-                    value: '110113',
+                    value: '110113'
                   },
                   {
                     label: '昌平',
-                    value: '110114',
+                    value: '110114'
                   },
                   {
                     label: '大兴',
-                    value: '110115',
+                    value: '110115'
                   },
                   {
                     label: '怀柔',
-                    value: '110116',
+                    value: '110116'
                   },
                   {
                     label: '平谷',
-                    value: '110117',
+                    value: '110117'
                   },
                   {
                     label: '密云',
-                    value: '110118',
+                    value: '110118'
                   },
                   {
                     label: '延庆',
-                    value: '110119',
-                  },
-                ],
-              },
-            ],
+                    value: '110119'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '天津',
@@ -93,71 +93,71 @@ export default [
                 children: [
                   {
                     label: '和平',
-                    value: '120101',
+                    value: '120101'
                   },
                   {
                     label: '河东',
-                    value: '120102',
+                    value: '120102'
                   },
                   {
                     label: '河西',
-                    value: '120103',
+                    value: '120103'
                   },
                   {
                     label: '南开',
-                    value: '120104',
+                    value: '120104'
                   },
                   {
                     label: '河北',
-                    value: '120105',
+                    value: '120105'
                   },
                   {
                     label: '红桥',
-                    value: '120106',
+                    value: '120106'
                   },
                   {
                     label: '东丽',
-                    value: '120110',
+                    value: '120110'
                   },
                   {
                     label: '西青',
-                    value: '120111',
+                    value: '120111'
                   },
                   {
                     label: '津南',
-                    value: '120112',
+                    value: '120112'
                   },
                   {
                     label: '北辰',
-                    value: '120113',
+                    value: '120113'
                   },
                   {
                     label: '武清',
-                    value: '120114',
+                    value: '120114'
                   },
                   {
                     label: '宝坻',
-                    value: '120115',
+                    value: '120115'
                   },
                   {
                     label: '滨海新区',
-                    value: '120116',
+                    value: '120116'
                   },
                   {
                     label: '宁河',
-                    value: '120117',
+                    value: '120117'
                   },
                   {
                     label: '静海',
-                    value: '120118',
+                    value: '120118'
                   },
                   {
                     label: '蓟州',
-                    value: '120119',
-                  },
-                ],
-              },
-            ],
+                    value: '120119'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '河北',
@@ -169,93 +169,93 @@ export default [
                 children: [
                   {
                     label: '长安',
-                    value: '130102',
+                    value: '130102'
                   },
                   {
                     label: '桥西',
-                    value: '130104',
+                    value: '130104'
                   },
                   {
                     label: '新华',
-                    value: '130105',
+                    value: '130105'
                   },
                   {
                     label: '井陉矿区',
-                    value: '130107',
+                    value: '130107'
                   },
                   {
                     label: '裕华',
-                    value: '130108',
+                    value: '130108'
                   },
                   {
                     label: '藁城',
-                    value: '130109',
+                    value: '130109'
                   },
                   {
                     label: '鹿泉',
-                    value: '130110',
+                    value: '130110'
                   },
                   {
                     label: '栾城',
-                    value: '130111',
+                    value: '130111'
                   },
                   {
                     label: '井陉',
-                    value: '130121',
+                    value: '130121'
                   },
                   {
                     label: '正定',
-                    value: '130123',
+                    value: '130123'
                   },
                   {
                     label: '行唐',
-                    value: '130125',
+                    value: '130125'
                   },
                   {
                     label: '灵寿',
-                    value: '130126',
+                    value: '130126'
                   },
                   {
                     label: '高邑',
-                    value: '130127',
+                    value: '130127'
                   },
                   {
                     label: '深泽',
-                    value: '130128',
+                    value: '130128'
                   },
                   {
                     label: '赞皇',
-                    value: '130129',
+                    value: '130129'
                   },
                   {
                     label: '无极',
-                    value: '130130',
+                    value: '130130'
                   },
                   {
                     label: '平山',
-                    value: '130131',
+                    value: '130131'
                   },
                   {
                     label: '元氏',
-                    value: '130132',
+                    value: '130132'
                   },
                   {
                     label: '赵县',
-                    value: '130133',
+                    value: '130133'
                   },
                   {
                     label: '辛集',
-                    value: '130181',
+                    value: '130181'
                   },
                   {
                     label: '晋州',
-                    value: '130183',
+                    value: '130183'
                   },
                   {
                     label: '新乐',
-                    value: '130184',
-                  },
-                ],
+                    value: '130184'
+                  }
+                ]
               },
               {
                 label: '唐山',
@@ -263,61 +263,61 @@ export default [
                 children: [
                   {
                     label: '路南',
-                    value: '130202',
+                    value: '130202'
                   },
                   {
                     label: '路北',
-                    value: '130203',
+                    value: '130203'
                   },
                   {
                     label: '古冶',
-                    value: '130204',
+                    value: '130204'
                   },
                   {
                     label: '开平',
-                    value: '130205',
+                    value: '130205'
                   },
                   {
                     label: '丰南',
-                    value: '130207',
+                    value: '130207'
                   },
                   {
                     label: '丰润',
-                    value: '130208',
+                    value: '130208'
                   },
                   {
                     label: '曹妃甸',
-                    value: '130209',
+                    value: '130209'
                   },
                   {
                     label: '滦南',
-                    value: '130224',
+                    value: '130224'
                   },
                   {
                     label: '乐亭',
-                    value: '130225',
+                    value: '130225'
                   },
                   {
                     label: '迁西',
-                    value: '130227',
+                    value: '130227'
                   },
                   {
                     label: '玉田',
-                    value: '130229',
+                    value: '130229'
                   },
                   {
                     label: '遵化',
-                    value: '130281',
+                    value: '130281'
                   },
                   {
                     label: '迁安',
-                    value: '130283',
+                    value: '130283'
                   },
                   {
                     label: '滦州',
-                    value: '130284',
-                  },
-                ],
+                    value: '130284'
+                  }
+                ]
               },
               {
                 label: '秦皇岛',
@@ -325,33 +325,33 @@ export default [
                 children: [
                   {
                     label: '海港',
-                    value: '130302',
+                    value: '130302'
                   },
                   {
                     label: '山海关',
-                    value: '130303',
+                    value: '130303'
                   },
                   {
                     label: '北戴河',
-                    value: '130304',
+                    value: '130304'
                   },
                   {
                     label: '抚宁',
-                    value: '130306',
+                    value: '130306'
                   },
                   {
                     label: '青龙',
-                    value: '130321',
+                    value: '130321'
                   },
                   {
                     label: '昌黎',
-                    value: '130322',
+                    value: '130322'
                   },
                   {
                     label: '卢龙',
-                    value: '130324',
-                  },
-                ],
+                    value: '130324'
+                  }
+                ]
               },
               {
                 label: '邯郸',
@@ -359,77 +359,77 @@ export default [
                 children: [
                   {
                     label: '邯山',
-                    value: '130402',
+                    value: '130402'
                   },
                   {
                     label: '丛台',
-                    value: '130403',
+                    value: '130403'
                   },
                   {
                     label: '复兴',
-                    value: '130404',
+                    value: '130404'
                   },
                   {
                     label: '峰峰矿区',
-                    value: '130406',
+                    value: '130406'
                   },
                   {
                     label: '肥乡',
-                    value: '130407',
+                    value: '130407'
                   },
                   {
                     label: '永年',
-                    value: '130408',
+                    value: '130408'
                   },
                   {
                     label: '临漳',
-                    value: '130423',
+                    value: '130423'
                   },
                   {
                     label: '成安',
-                    value: '130424',
+                    value: '130424'
                   },
                   {
                     label: '大名',
-                    value: '130425',
+                    value: '130425'
                   },
                   {
                     label: '涉县',
-                    value: '130426',
+                    value: '130426'
                   },
                   {
                     label: '磁县',
-                    value: '130427',
+                    value: '130427'
                   },
                   {
                     label: '邱县',
-                    value: '130430',
+                    value: '130430'
                   },
                   {
                     label: '鸡泽',
-                    value: '130431',
+                    value: '130431'
                   },
                   {
                     label: '广平',
-                    value: '130432',
+                    value: '130432'
                   },
                   {
                     label: '馆陶',
-                    value: '130433',
+                    value: '130433'
                   },
                   {
                     label: '魏县',
-                    value: '130434',
+                    value: '130434'
                   },
                   {
                     label: '曲周',
-                    value: '130435',
+                    value: '130435'
                   },
                   {
                     label: '武安',
-                    value: '130481',
-                  },
-                ],
+                    value: '130481'
+                  }
+                ]
               },
               {
                 label: '邢台',
@@ -437,77 +437,77 @@ export default [
                 children: [
                   {
                     label: '襄都',
-                    value: '130502',
+                    value: '130502'
                   },
                   {
                     label: '信都',
-                    value: '130503',
+                    value: '130503'
                   },
                   {
                     label: '任泽',
-                    value: '130505',
+                    value: '130505'
                   },
                   {
                     label: '南和',
-                    value: '130506',
+                    value: '130506'
                   },
                   {
                     label: '临城',
-                    value: '130522',
+                    value: '130522'
                   },
                   {
                     label: '内丘',
-                    value: '130523',
+                    value: '130523'
                   },
                   {
                     label: '柏乡',
-                    value: '130524',
+                    value: '130524'
                   },
                   {
                     label: '隆尧',
-                    value: '130525',
+                    value: '130525'
                   },
                   {
                     label: '宁晋',
-                    value: '130528',
+                    value: '130528'
                   },
                   {
                     label: '巨鹿',
-                    value: '130529',
+                    value: '130529'
                   },
                   {
                     label: '新河',
-                    value: '130530',
+                    value: '130530'
                   },
                   {
                     label: '广宗',
-                    value: '130531',
+                    value: '130531'
                   },
                   {
                     label: '平乡',
-                    value: '130532',
+                    value: '130532'
                   },
                   {
                     label: '威县',
-                    value: '130533',
+                    value: '130533'
                   },
                   {
                     label: '清河',
-                    value: '130534',
+                    value: '130534'
                   },
                   {
                     label: '临西',
-                    value: '130535',
+                    value: '130535'
                   },
                   {
                     label: '南宫',
-                    value: '130581',
+                    value: '130581'
                   },
                   {
                     label: '沙河',
-                    value: '130582',
-                  },
-                ],
+                    value: '130582'
+                  }
+                ]
               },
               {
                 label: '保定',
@@ -515,101 +515,101 @@ export default [
                 children: [
                   {
                     label: '竞秀',
-                    value: '130602',
+                    value: '130602'
                   },
                   {
                     label: '莲池',
-                    value: '130606',
+                    value: '130606'
                   },
                   {
                     label: '满城',
-                    value: '130607',
+                    value: '130607'
                   },
                   {
                     label: '清苑',
-                    value: '130608',
+                    value: '130608'
                   },
                   {
                     label: '徐水',
-                    value: '130609',
+                    value: '130609'
                   },
                   {
                     label: '涞水',
-                    value: '130623',
+                    value: '130623'
                   },
                   {
                     label: '阜平',
-                    value: '130624',
+                    value: '130624'
                   },
                   {
                     label: '定兴',
-                    value: '130626',
+                    value: '130626'
                   },
                   {
                     label: '唐县',
-                    value: '130627',
+                    value: '130627'
                   },
                   {
                     label: '高阳',
-                    value: '130628',
+                    value: '130628'
                   },
                   {
                     label: '容城',
-                    value: '130629',
+                    value: '130629'
                   },
                   {
                     label: '涞源',
-                    value: '130630',
+                    value: '130630'
                   },
                   {
                     label: '望都',
-                    value: '130631',
+                    value: '130631'
                   },
                   {
                     label: '安新',
-                    value: '130632',
+                    value: '130632'
                   },
                   {
                     label: '易县',
-                    value: '130633',
+                    value: '130633'
                   },
                   {
                     label: '曲阳',
-                    value: '130634',
+                    value: '130634'
                   },
                   {
                     label: '蠡县',
-                    value: '130635',
+                    value: '130635'
                   },
                   {
                     label: '顺平',
-                    value: '130636',
+                    value: '130636'
                   },
                   {
                     label: '博野',
-                    value: '130637',
+                    value: '130637'
                   },
                   {
                     label: '雄县',
-                    value: '130638',
+                    value: '130638'
                   },
                   {
                     label: '涿州',
-                    value: '130681',
+                    value: '130681'
                   },
                   {
                     label: '定州',
-                    value: '130682',
+                    value: '130682'
                   },
                   {
                     label: '安国',
-                    value: '130683',
+                    value: '130683'
                   },
                   {
                     label: '高碑店',
-                    value: '130684',
-                  },
-                ],
+                    value: '130684'
+                  }
+                ]
               },
               {
                 label: '张家口',
@@ -617,69 +617,69 @@ export default [
                 children: [
                   {
                     label: '桥东',
-                    value: '130702',
+                    value: '130702'
                   },
                   {
                     label: '桥西',
-                    value: '130703',
+                    value: '130703'
                   },
                   {
                     label: '宣化',
-                    value: '130705',
+                    value: '130705'
                   },
                   {
                     label: '下花园',
-                    value: '130706',
+                    value: '130706'
                   },
                   {
                     label: '万全',
-                    value: '130708',
+                    value: '130708'
                   },
                   {
                     label: '崇礼',
-                    value: '130709',
+                    value: '130709'
                   },
                   {
                     label: '张北',
-                    value: '130722',
+                    value: '130722'
                   },
                   {
                     label: '康保',
-                    value: '130723',
+                    value: '130723'
                   },
                   {
                     label: '沽源',
-                    value: '130724',
+                    value: '130724'
                   },
                   {
                     label: '尚义',
-                    value: '130725',
+                    value: '130725'
                   },
                   {
                     label: '蔚县',
-                    value: '130726',
+                    value: '130726'
                   },
                   {
                     label: '阳原',
-                    value: '130727',
+                    value: '130727'
                   },
                   {
                     label: '怀安',
-                    value: '130728',
+                    value: '130728'
                   },
                   {
                     label: '怀来',
-                    value: '130730',
+                    value: '130730'
                   },
                   {
                     label: '涿鹿',
-                    value: '130731',
+                    value: '130731'
                   },
                   {
                     label: '赤城',
-                    value: '130732',
-                  },
-                ],
+                    value: '130732'
+                  }
+                ]
               },
               {
                 label: '承德',
@@ -687,49 +687,49 @@ export default [
                 children: [
                   {
                     label: '双桥',
-                    value: '130802',
+                    value: '130802'
                   },
                   {
                     label: '双滦',
-                    value: '130803',
+                    value: '130803'
                   },
                   {
                     label: '鹰手营子矿区',
-                    value: '130804',
+                    value: '130804'
                   },
                   {
                     label: '承德县',
-                    value: '130821',
+                    value: '130821'
                   },
                   {
                     label: '兴隆',
-                    value: '130822',
+                    value: '130822'
                   },
                   {
                     label: '滦平',
-                    value: '130824',
+                    value: '130824'
                   },
                   {
                     label: '隆化',
-                    value: '130825',
+                    value: '130825'
                   },
                   {
                     label: '丰宁',
-                    value: '130826',
+                    value: '130826'
                   },
                   {
                     label: '宽城',
-                    value: '130827',
+                    value: '130827'
                   },
                   {
                     label: '围场',
-                    value: '130828',
+                    value: '130828'
                   },
                   {
                     label: '平泉',
-                    value: '130881',
-                  },
-                ],
+                    value: '130881'
+                  }
+                ]
               },
               {
                 label: '沧州',
@@ -737,69 +737,69 @@ export default [
                 children: [
                   {
                     label: '新华',
-                    value: '130902',
+                    value: '130902'
                   },
                   {
                     label: '运河',
-                    value: '130903',
+                    value: '130903'
                   },
                   {
                     label: '沧县',
-                    value: '130921',
+                    value: '130921'
                   },
                   {
                     label: '青县',
-                    value: '130922',
+                    value: '130922'
                   },
                   {
                     label: '东光',
-                    value: '130923',
+                    value: '130923'
                   },
                   {
                     label: '海兴',
-                    value: '130924',
+                    value: '130924'
                   },
                   {
                     label: '盐山',
-                    value: '130925',
+                    value: '130925'
                   },
                   {
                     label: '肃宁',
-                    value: '130926',
+                    value: '130926'
                   },
                   {
                     label: '南皮',
-                    value: '130927',
+                    value: '130927'
                   },
                   {
                     label: '吴桥',
-                    value: '130928',
+                    value: '130928'
                   },
                   {
                     label: '献县',
-                    value: '130929',
+                    value: '130929'
                   },
                   {
                     label: '孟村',
-                    value: '130930',
+                    value: '130930'
                   },
                   {
                     label: '泊头',
-                    value: '130981',
+                    value: '130981'
                   },
                   {
                     label: '任丘',
-                    value: '130982',
+                    value: '130982'
                   },
                   {
                     label: '黄骅',
-                    value: '130983',
+                    value: '130983'
                   },
                   {
                     label: '河间',
-                    value: '130984',
-                  },
-                ],
+                    value: '130984'
+                  }
+                ]
               },
               {
                 label: '廊坊',
@@ -807,45 +807,45 @@ export default [
                 children: [
                   {
                     label: '安次',
-                    value: '131002',
+                    value: '131002'
                   },
                   {
                     label: '广阳',
-                    value: '131003',
+                    value: '131003'
                   },
                   {
                     label: '固安',
-                    value: '131022',
+                    value: '131022'
                   },
                   {
                     label: '永清',
-                    value: '131023',
+                    value: '131023'
                   },
                   {
                     label: '香河',
-                    value: '131024',
+                    value: '131024'
                   },
                   {
                     label: '大城',
-                    value: '131025',
+                    value: '131025'
                   },
                   {
                     label: '文安',
-                    value: '131026',
+                    value: '131026'
                   },
                   {
                     label: '大厂',
-                    value: '131028',
+                    value: '131028'
                   },
                   {
                     label: '霸州',
-                    value: '131081',
+                    value: '131081'
                   },
                   {
                     label: '三河',
-                    value: '131082',
-                  },
-                ],
+                    value: '131082'
+                  }
+                ]
               },
               {
                 label: '衡水',
@@ -853,51 +853,51 @@ export default [
                 children: [
                   {
                     label: '桃城',
-                    value: '131102',
+                    value: '131102'
                   },
                   {
                     label: '冀州',
-                    value: '131103',
+                    value: '131103'
                   },
                   {
                     label: '枣强',
-                    value: '131121',
+                    value: '131121'
                   },
                   {
                     label: '武邑',
-                    value: '131122',
+                    value: '131122'
                   },
                   {
                     label: '武强',
-                    value: '131123',
+                    value: '131123'
                   },
                   {
                     label: '饶阳',
-                    value: '131124',
+                    value: '131124'
                   },
                   {
                     label: '安平',
-                    value: '131125',
+                    value: '131125'
                   },
                   {
                     label: '故城',
-                    value: '131126',
+                    value: '131126'
                   },
                   {
                     label: '景县',
-                    value: '131127',
+                    value: '131127'
                   },
                   {
                     label: '阜城',
-                    value: '131128',
+                    value: '131128'
                   },
                   {
                     label: '深州',
-                    value: '131182',
-                  },
-                ],
-              },
-            ],
+                    value: '131182'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '山西',
@@ -909,45 +909,45 @@ export default [
                 children: [
                   {
                     label: '小店',
-                    value: '140105',
+                    value: '140105'
                   },
                   {
                     label: '迎泽',
-                    value: '140106',
+                    value: '140106'
                   },
                   {
                     label: '杏花岭',
-                    value: '140107',
+                    value: '140107'
                   },
                   {
                     label: '尖草坪',
-                    value: '140108',
+                    value: '140108'
                   },
                   {
                     label: '万柏林',
-                    value: '140109',
+                    value: '140109'
                   },
                   {
                     label: '晋源',
-                    value: '140110',
+                    value: '140110'
                   },
                   {
                     label: '清徐',
-                    value: '140121',
+                    value: '140121'
                   },
                   {
                     label: '阳曲',
-                    value: '140122',
+                    value: '140122'
                   },
                   {
                     label: '娄烦',
-                    value: '140123',
+                    value: '140123'
                   },
                   {
                     label: '古交',
-                    value: '140181',
-                  },
-                ],
+                    value: '140181'
+                  }
+                ]
               },
               {
                 label: '大同',
@@ -955,45 +955,45 @@ export default [
                 children: [
                   {
                     label: '新荣',
-                    value: '140212',
+                    value: '140212'
                   },
                   {
                     label: '平城',
-                    value: '140213',
+                    value: '140213'
                   },
                   {
                     label: '云冈',
-                    value: '140214',
+                    value: '140214'
                   },
                   {
                     label: '云州',
-                    value: '140215',
+                    value: '140215'
                   },
                   {
                     label: '阳高',
-                    value: '140221',
+                    value: '140221'
                   },
                   {
                     label: '天镇',
-                    value: '140222',
+                    value: '140222'
                   },
                   {
                     label: '广灵',
-                    value: '140223',
+                    value: '140223'
                   },
                   {
                     label: '灵丘',
-                    value: '140224',
+                    value: '140224'
                   },
                   {
                     label: '浑源',
-                    value: '140225',
+                    value: '140225'
                   },
                   {
                     label: '左云',
-                    value: '140226',
-                  },
-                ],
+                    value: '140226'
+                  }
+                ]
               },
               {
                 label: '阳泉',
@@ -1001,25 +1001,25 @@ export default [
                 children: [
                   {
                     label: '城区',
-                    value: '140302',
+                    value: '140302'
                   },
                   {
                     label: '矿区',
-                    value: '140303',
+                    value: '140303'
                   },
                   {
                     label: '郊区',
-                    value: '140311',
+                    value: '140311'
                   },
                   {
                     label: '平定',
-                    value: '140321',
+                    value: '140321'
                   },
                   {
                     label: '盂县',
-                    value: '140322',
-                  },
-                ],
+                    value: '140322'
+                  }
+                ]
               },
               {
                 label: '长治',
@@ -1027,53 +1027,53 @@ export default [
                 children: [
                   {
                     label: '潞州',
-                    value: '140403',
+                    value: '140403'
                   },
                   {
                     label: '上党',
-                    value: '140404',
+                    value: '140404'
                   },
                   {
                     label: '屯留',
-                    value: '140405',
+                    value: '140405'
                   },
                   {
                     label: '潞城',
-                    value: '140406',
+                    value: '140406'
                   },
                   {
                     label: '襄垣',
-                    value: '140423',
+                    value: '140423'
                   },
                   {
                     label: '平顺',
-                    value: '140425',
+                    value: '140425'
                   },
                   {
                     label: '黎城',
-                    value: '140426',
+                    value: '140426'
                   },
                   {
                     label: '壶关',
-                    value: '140427',
+                    value: '140427'
                   },
                   {
                     label: '长子',
-                    value: '140428',
+                    value: '140428'
                   },
                   {
                     label: '武乡',
-                    value: '140429',
+                    value: '140429'
                   },
                   {
                     label: '沁县',
-                    value: '140430',
+                    value: '140430'
                   },
                   {
                     label: '沁源',
-                    value: '140431',
-                  },
-                ],
+                    value: '140431'
+                  }
+                ]
               },
               {
                 label: '晋城',
@@ -1081,29 +1081,29 @@ export default [
                 children: [
                   {
                     label: '城区',
-                    value: '140502',
+                    value: '140502'
                   },
                   {
                     label: '沁水',
-                    value: '140521',
+                    value: '140521'
                   },
                   {
                     label: '阳城',
-                    value: '140522',
+                    value: '140522'
                   },
                   {
                     label: '陵川',
-                    value: '140524',
+                    value: '140524'
                   },
                   {
                     label: '泽州',
-                    value: '140525',
+                    value: '140525'
                   },
                   {
                     label: '高平',
-                    value: '140581',
-                  },
-                ],
+                    value: '140581'
+                  }
+                ]
               },
               {
                 label: '朔州',
@@ -1111,29 +1111,29 @@ export default [
                 children: [
                   {
                     label: '朔城',
-                    value: '140602',
+                    value: '140602'
                   },
                   {
                     label: '平鲁',
-                    value: '140603',
+                    value: '140603'
                   },
                   {
                     label: '山阴',
-                    value: '140621',
+                    value: '140621'
                   },
                   {
                     label: '应县',
-                    value: '140622',
+                    value: '140622'
                   },
                   {
                     label: '右玉',
-                    value: '140623',
+                    value: '140623'
                   },
                   {
                     label: '怀仁',
-                    value: '140681',
-                  },
-                ],
+                    value: '140681'
+                  }
+                ]
               },
               {
                 label: '晋中',
@@ -1141,49 +1141,49 @@ export default [
                 children: [
                   {
                     label: '榆次',
-                    value: '140702',
+                    value: '140702'
                   },
                   {
                     label: '太谷',
-                    value: '140703',
+                    value: '140703'
                   },
                   {
                     label: '榆社',
-                    value: '140721',
+                    value: '140721'
                   },
                   {
                     label: '左权',
-                    value: '140722',
+                    value: '140722'
                   },
                   {
                     label: '和顺',
-                    value: '140723',
+                    value: '140723'
                   },
                   {
                     label: '昔阳',
-                    value: '140724',
+                    value: '140724'
                   },
                   {
                     label: '寿阳',
-                    value: '140725',
+                    value: '140725'
                   },
                   {
                     label: '祁县',
-                    value: '140727',
+                    value: '140727'
                   },
                   {
                     label: '平遥',
-                    value: '140728',
+                    value: '140728'
                   },
                   {
                     label: '灵石',
-                    value: '140729',
+                    value: '140729'
                   },
                   {
                     label: '介休',
-                    value: '140781',
-                  },
-                ],
+                    value: '140781'
+                  }
+                ]
               },
               {
                 label: '运城',
@@ -1191,57 +1191,57 @@ export default [
                 children: [
                   {
                     label: '盐湖',
-                    value: '140802',
+                    value: '140802'
                   },
                   {
                     label: '临猗',
-                    value: '140821',
+                    value: '140821'
                   },
                   {
                     label: '万荣',
-                    value: '140822',
+                    value: '140822'
                   },
                   {
                     label: '闻喜',
-                    value: '140823',
+                    value: '140823'
                   },
                   {
                     label: '稷山',
-                    value: '140824',
+                    value: '140824'
                   },
                   {
                     label: '新绛',
-                    value: '140825',
+                    value: '140825'
                   },
                   {
                     label: '绛县',
-                    value: '140826',
+                    value: '140826'
                   },
                   {
                     label: '垣曲',
-                    value: '140827',
+                    value: '140827'
                   },
                   {
                     label: '夏县',
-                    value: '140828',
+                    value: '140828'
                   },
                   {
                     label: '平陆',
-                    value: '140829',
+                    value: '140829'
                   },
                   {
                     label: '芮城',
-                    value: '140830',
+                    value: '140830'
                   },
                   {
                     label: '永济',
-                    value: '140881',
+                    value: '140881'
                   },
                   {
                     label: '河津',
-                    value: '140882',
-                  },
-                ],
+                    value: '140882'
+                  }
+                ]
               },
               {
                 label: '忻州',
@@ -1249,61 +1249,61 @@ export default [
                 children: [
                   {
                     label: '忻府',
-                    value: '140902',
+                    value: '140902'
                   },
                   {
                     label: '定襄',
-                    value: '140921',
+                    value: '140921'
                   },
                   {
                     label: '五台',
-                    value: '140922',
+                    value: '140922'
                   },
                   {
                     label: '代县',
-                    value: '140923',
+                    value: '140923'
                   },
                   {
                     label: '繁峙',
-                    value: '140924',
+                    value: '140924'
                   },
                   {
                     label: '宁武',
-                    value: '140925',
+                    value: '140925'
                   },
                   {
                     label: '静乐',
-                    value: '140926',
+                    value: '140926'
                   },
                   {
                     label: '神池',
-                    value: '140927',
+                    value: '140927'
                   },
                   {
                     label: '五寨',
-                    value: '140928',
+                    value: '140928'
                   },
                   {
                     label: '岢岚',
-                    value: '140929',
+                    value: '140929'
                   },
                   {
                     label: '河曲',
-                    value: '140930',
+                    value: '140930'
                   },
                   {
                     label: '保德',
-                    value: '140931',
+                    value: '140931'
                   },
                   {
                     label: '偏关',
-                    value: '140932',
+                    value: '140932'
                   },
                   {
                     label: '原平',
-                    value: '140981',
-                  },
-                ],
+                    value: '140981'
+                  }
+                ]
               },
               {
                 label: '临汾',
@@ -1311,73 +1311,73 @@ export default [
                 children: [
                   {
                     label: '尧都',
-                    value: '141002',
+                    value: '141002'
                   },
                   {
                     label: '曲沃',
-                    value: '141021',
+                    value: '141021'
                   },
                   {
                     label: '翼城',
-                    value: '141022',
+                    value: '141022'
                   },
                   {
                     label: '襄汾',
-                    value: '141023',
+                    value: '141023'
                   },
                   {
                     label: '洪洞',
-                    value: '141024',
+                    value: '141024'
                   },
                   {
                     label: '古县',
-                    value: '141025',
+                    value: '141025'
                   },
                   {
                     label: '安泽',
-                    value: '141026',
+                    value: '141026'
                   },
                   {
                     label: '浮山',
-                    value: '141027',
+                    value: '141027'
                   },
                   {
                     label: '吉县',
-                    value: '141028',
+                    value: '141028'
                   },
                   {
                     label: '乡宁',
-                    value: '141029',
+                    value: '141029'
                   },
                   {
                     label: '大宁',
-                    value: '141030',
+                    value: '141030'
                   },
                   {
                     label: '隰县',
-                    value: '141031',
+                    value: '141031'
                   },
                   {
                     label: '永和',
-                    value: '141032',
+                    value: '141032'
                   },
                   {
                     label: '蒲县',
-                    value: '141033',
+                    value: '141033'
                   },
                   {
                     label: '汾西',
-                    value: '141034',
+                    value: '141034'
                   },
                   {
                     label: '侯马',
-                    value: '141081',
+                    value: '141081'
                   },
                   {
                     label: '霍州',
-                    value: '141082',
-                  },
-                ],
+                    value: '141082'
+                  }
+                ]
               },
               {
                 label: '吕梁',
@@ -1385,59 +1385,59 @@ export default [
                 children: [
                   {
                     label: '离石',
-                    value: '141102',
+                    value: '141102'
                   },
                   {
                     label: '文水',
-                    value: '141121',
+                    value: '141121'
                   },
                   {
                     label: '交城',
-                    value: '141122',
+                    value: '141122'
                   },
                   {
                     label: '兴县',
-                    value: '141123',
+                    value: '141123'
                   },
                   {
                     label: '临县',
-                    value: '141124',
+                    value: '141124'
                   },
                   {
                     label: '柳林',
-                    value: '141125',
+                    value: '141125'
                   },
                   {
                     label: '石楼',
-                    value: '141126',
+                    value: '141126'
                   },
                   {
                     label: '岚县',
-                    value: '141127',
+                    value: '141127'
                   },
                   {
                     label: '方山',
-                    value: '141128',
+                    value: '141128'
                   },
                   {
                     label: '中阳',
-                    value: '141129',
+                    value: '141129'
                   },
                   {
                     label: '交口',
-                    value: '141130',
+                    value: '141130'
                   },
                   {
                     label: '孝义',
-                    value: '141181',
+                    value: '141181'
                   },
                   {
                     label: '汾阳',
-                    value: '141182',
-                  },
-                ],
-              },
-            ],
+                    value: '141182'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '内蒙古',
@@ -1449,41 +1449,41 @@ export default [
                 children: [
                   {
                     label: '新城',
-                    value: '150102',
+                    value: '150102'
                   },
                   {
                     label: '回民',
-                    value: '150103',
+                    value: '150103'
                   },
                   {
                     label: '玉泉',
-                    value: '150104',
+                    value: '150104'
                   },
                   {
                     label: '赛罕',
-                    value: '150105',
+                    value: '150105'
                   },
                   {
                     label: '土默特左旗',
-                    value: '150121',
+                    value: '150121'
                   },
                   {
                     label: '托克托',
-                    value: '150122',
+                    value: '150122'
                   },
                   {
                     label: '和林格尔',
-                    value: '150123',
+                    value: '150123'
                   },
                   {
                     label: '清水河',
-                    value: '150124',
+                    value: '150124'
                   },
                   {
                     label: '武川',
-                    value: '150125',
-                  },
-                ],
+                    value: '150125'
+                  }
+                ]
               },
               {
                 label: '包头',
@@ -1491,41 +1491,41 @@ export default [
                 children: [
                   {
                     label: '东河',
-                    value: '150202',
+                    value: '150202'
                   },
                   {
                     label: '昆都仑',
-                    value: '150203',
+                    value: '150203'
                   },
                   {
                     label: '青山',
-                    value: '150204',
+                    value: '150204'
                   },
                   {
                     label: '石拐',
-                    value: '150205',
+                    value: '150205'
                   },
                   {
                     label: '白云鄂博矿区',
-                    value: '150206',
+                    value: '150206'
                   },
                   {
                     label: '九原',
-                    value: '150207',
+                    value: '150207'
                   },
                   {
                     label: '土默特右旗',
-                    value: '150221',
+                    value: '150221'
                   },
                   {
                     label: '固阳',
-                    value: '150222',
+                    value: '150222'
                   },
                   {
                     label: '达尔罕茂明安联合旗',
-                    value: '150223',
-                  },
-                ],
+                    value: '150223'
+                  }
+                ]
               },
               {
                 label: '乌海',
@@ -1533,17 +1533,17 @@ export default [
                 children: [
                   {
                     label: '海勃湾',
-                    value: '150302',
+                    value: '150302'
                   },
                   {
                     label: '海南',
-                    value: '150303',
+                    value: '150303'
                   },
                   {
                     label: '乌达',
-                    value: '150304',
-                  },
-                ],
+                    value: '150304'
+                  }
+                ]
               },
               {
                 label: '赤峰',
@@ -1551,53 +1551,53 @@ export default [
                 children: [
                   {
                     label: '红山',
-                    value: '150402',
+                    value: '150402'
                   },
                   {
                     label: '元宝山',
-                    value: '150403',
+                    value: '150403'
                   },
                   {
                     label: '松山',
-                    value: '150404',
+                    value: '150404'
                   },
                   {
                     label: '阿鲁科尔沁旗',
-                    value: '150421',
+                    value: '150421'
                   },
                   {
                     label: '巴林左旗',
-                    value: '150422',
+                    value: '150422'
                   },
                   {
                     label: '巴林右旗',
-                    value: '150423',
+                    value: '150423'
                   },
                   {
                     label: '林西',
-                    value: '150424',
+                    value: '150424'
                   },
                   {
                     label: '克什克腾旗',
-                    value: '150425',
+                    value: '150425'
                   },
                   {
                     label: '翁牛特旗',
-                    value: '150426',
+                    value: '150426'
                   },
                   {
                     label: '喀喇沁旗',
-                    value: '150428',
+                    value: '150428'
                   },
                   {
                     label: '宁城',
-                    value: '150429',
+                    value: '150429'
                   },
                   {
                     label: '敖汉旗',
-                    value: '150430',
-                  },
-                ],
+                    value: '150430'
+                  }
+                ]
               },
               {
                 label: '通辽',
@@ -1605,37 +1605,37 @@ export default [
                 children: [
                   {
                     label: '科尔沁',
-                    value: '150502',
+                    value: '150502'
                   },
                   {
                     label: '科尔沁左翼中旗',
-                    value: '150521',
+                    value: '150521'
                   },
                   {
                     label: '科尔沁左翼后旗',
-                    value: '150522',
+                    value: '150522'
                   },
                   {
                     label: '开鲁',
-                    value: '150523',
+                    value: '150523'
                   },
                   {
                     label: '库伦旗',
-                    value: '150524',
+                    value: '150524'
                   },
                   {
                     label: '奈曼旗',
-                    value: '150525',
+                    value: '150525'
                   },
                   {
                     label: '扎鲁特旗',
-                    value: '150526',
+                    value: '150526'
                   },
                   {
                     label: '霍林郭勒',
-                    value: '150581',
-                  },
-                ],
+                    value: '150581'
+                  }
+                ]
               },
               {
                 label: '鄂尔多斯',
@@ -1643,41 +1643,41 @@ export default [
                 children: [
                   {
                     label: '东胜',
-                    value: '150602',
+                    value: '150602'
                   },
                   {
                     label: '康巴什',
-                    value: '150603',
+                    value: '150603'
                   },
                   {
                     label: '达拉特旗',
-                    value: '150621',
+                    value: '150621'
                   },
                   {
                     label: '准格尔旗',
-                    value: '150622',
+                    value: '150622'
                   },
                   {
                     label: '鄂托克前旗',
-                    value: '150623',
+                    value: '150623'
                   },
                   {
                     label: '鄂托克旗',
-                    value: '150624',
+                    value: '150624'
                   },
                   {
                     label: '杭锦旗',
-                    value: '150625',
+                    value: '150625'
                   },
                   {
                     label: '乌审旗',
-                    value: '150626',
+                    value: '150626'
                   },
                   {
                     label: '伊金霍洛旗',
-                    value: '150627',
-                  },
-                ],
+                    value: '150627'
+                  }
+                ]
               },
               {
                 label: '呼伦贝尔',
@@ -1685,61 +1685,61 @@ export default [
                 children: [
                   {
                     label: '海拉尔',
-                    value: '150702',
+                    value: '150702'
                   },
                   {
                     label: '扎赉诺尔区',
-                    value: '150703',
+                    value: '150703'
                   },
                   {
                     label: '阿荣旗',
-                    value: '150721',
+                    value: '150721'
                   },
                   {
                     label: '莫力达瓦',
-                    value: '150722',
+                    value: '150722'
                   },
                   {
                     label: '鄂伦春自治旗',
-                    value: '150723',
+                    value: '150723'
                   },
                   {
                     label: '鄂温克族自治旗',
-                    value: '150724',
+                    value: '150724'
                   },
                   {
                     label: '陈巴尔虎旗',
-                    value: '150725',
+                    value: '150725'
                   },
                   {
                     label: '新巴尔虎左旗',
-                    value: '150726',
+                    value: '150726'
                   },
                   {
                     label: '新巴尔虎右旗',
-                    value: '150727',
+                    value: '150727'
                   },
                   {
                     label: '满洲里',
-                    value: '150781',
+                    value: '150781'
                   },
                   {
                     label: '牙克石',
-                    value: '150782',
+                    value: '150782'
                   },
                   {
                     label: '扎兰屯',
-                    value: '150783',
+                    value: '150783'
                   },
                   {
                     label: '额尔古纳',
-                    value: '150784',
+                    value: '150784'
                   },
                   {
                     label: '根河',
-                    value: '150785',
-                  },
-                ],
+                    value: '150785'
+                  }
+                ]
               },
               {
                 label: '巴彦淖尔',
@@ -1747,33 +1747,33 @@ export default [
                 children: [
                   {
                     label: '临河',
-                    value: '150802',
+                    value: '150802'
                   },
                   {
                     label: '五原',
-                    value: '150821',
+                    value: '150821'
                   },
                   {
                     label: '磴口',
-                    value: '150822',
+                    value: '150822'
                   },
                   {
                     label: '乌拉特前旗',
-                    value: '150823',
+                    value: '150823'
                   },
                   {
                     label: '乌拉特中旗',
-                    value: '150824',
+                    value: '150824'
                   },
                   {
                     label: '乌拉特后旗',
-                    value: '150825',
+                    value: '150825'
                   },
                   {
                     label: '杭锦后旗',
-                    value: '150826',
-                  },
-                ],
+                    value: '150826'
+                  }
+                ]
               },
               {
                 label: '乌兰察布',
@@ -1781,49 +1781,49 @@ export default [
                 children: [
                   {
                     label: '集宁',
-                    value: '150902',
+                    value: '150902'
                   },
                   {
                     label: '卓资',
-                    value: '150921',
+                    value: '150921'
                   },
                   {
                     label: '化德',
-                    value: '150922',
+                    value: '150922'
                   },
                   {
                     label: '商都',
-                    value: '150923',
+                    value: '150923'
                   },
                   {
                     label: '兴和',
-                    value: '150924',
+                    value: '150924'
                   },
                   {
                     label: '凉城',
-                    value: '150925',
+                    value: '150925'
                   },
                   {
                     label: '察哈尔右翼前旗',
-                    value: '150926',
+                    value: '150926'
                   },
                   {
                     label: '察哈尔右翼中旗',
-                    value: '150927',
+                    value: '150927'
                   },
                   {
                     label: '察哈尔右翼后旗',
-                    value: '150928',
+                    value: '150928'
                   },
                   {
                     label: '四子王旗',
-                    value: '150929',
+                    value: '150929'
                   },
                   {
                     label: '丰镇',
-                    value: '150981',
-                  },
-                ],
+                    value: '150981'
+                  }
+                ]
               },
               {
                 label: '兴安',
@@ -1831,29 +1831,29 @@ export default [
                 children: [
                   {
                     label: '乌兰浩特',
-                    value: '152201',
+                    value: '152201'
                   },
                   {
                     label: '阿尔山',
-                    value: '152202',
+                    value: '152202'
                   },
                   {
                     label: '科尔沁右翼前旗',
-                    value: '152221',
+                    value: '152221'
                   },
                   {
                     label: '科尔沁右翼中旗',
-                    value: '152222',
+                    value: '152222'
                   },
                   {
                     label: '扎赉特旗',
-                    value: '152223',
+                    value: '152223'
                   },
                   {
                     label: '突泉',
-                    value: '152224',
-                  },
-                ],
+                    value: '152224'
+                  }
+                ]
               },
               {
                 label: '锡林郭勒',
@@ -1861,53 +1861,53 @@ export default [
                 children: [
                   {
                     label: '二连浩特',
-                    value: '152501',
+                    value: '152501'
                   },
                   {
                     label: '锡林浩特',
-                    value: '152502',
+                    value: '152502'
                   },
                   {
                     label: '阿巴嘎旗',
-                    value: '152522',
+                    value: '152522'
                   },
                   {
                     label: '苏尼特左旗',
-                    value: '152523',
+                    value: '152523'
                   },
                   {
                     label: '苏尼特右旗',
-                    value: '152524',
+                    value: '152524'
                   },
                   {
                     label: '东乌珠穆沁旗',
-                    value: '152525',
+                    value: '152525'
                   },
                   {
                     label: '西乌珠穆沁旗',
-                    value: '152526',
+                    value: '152526'
                   },
                   {
                     label: '太仆寺旗',
-                    value: '152527',
+                    value: '152527'
                   },
                   {
                     label: '镶黄旗',
-                    value: '152528',
+                    value: '152528'
                   },
                   {
                     label: '正镶白旗',
-                    value: '152529',
+                    value: '152529'
                   },
                   {
                     label: '正蓝旗',
-                    value: '152530',
+                    value: '152530'
                   },
                   {
                     label: '多伦',
-                    value: '152531',
-                  },
-                ],
+                    value: '152531'
+                  }
+                ]
               },
               {
                 label: '阿拉善',
@@ -1915,19 +1915,19 @@ export default [
                 children: [
                   {
                     label: '阿拉善左旗',
-                    value: '152921',
+                    value: '152921'
                   },
                   {
                     label: '阿拉善右旗',
-                    value: '152922',
+                    value: '152922'
                   },
                   {
                     label: '额济纳旗',
-                    value: '152923',
-                  },
-                ],
-              },
-            ],
+                    value: '152923'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '辽宁',
@@ -1939,57 +1939,57 @@ export default [
                 children: [
                   {
                     label: '和平',
-                    value: '210102',
+                    value: '210102'
                   },
                   {
                     label: '沈河',
-                    value: '210103',
+                    value: '210103'
                   },
                   {
                     label: '大东',
-                    value: '210104',
+                    value: '210104'
                   },
                   {
                     label: '皇姑',
-                    value: '210105',
+                    value: '210105'
                   },
                   {
                     label: '铁西',
-                    value: '210106',
+                    value: '210106'
                   },
                   {
                     label: '苏家屯',
-                    value: '210111',
+                    value: '210111'
                   },
                   {
                     label: '浑南',
-                    value: '210112',
+                    value: '210112'
                   },
                   {
                     label: '沈北新区',
-                    value: '210113',
+                    value: '210113'
                   },
                   {
                     label: '于洪',
-                    value: '210114',
+                    value: '210114'
                   },
                   {
                     label: '辽中',
-                    value: '210115',
+                    value: '210115'
                   },
                   {
                     label: '康平',
-                    value: '210123',
+                    value: '210123'
                   },
                   {
                     label: '法库',
-                    value: '210124',
+                    value: '210124'
                   },
                   {
                     label: '新民',
-                    value: '210181',
-                  },
-                ],
+                    value: '210181'
+                  }
+                ]
               },
               {
                 label: '大连',
@@ -1997,45 +1997,45 @@ export default [
                 children: [
                   {
                     label: '中山',
-                    value: '210202',
+                    value: '210202'
                   },
                   {
                     label: '西岗',
-                    value: '210203',
+                    value: '210203'
                   },
                   {
                     label: '沙河口',
-                    value: '210204',
+                    value: '210204'
                   },
                   {
                     label: '甘井子',
-                    value: '210211',
+                    value: '210211'
                   },
                   {
                     label: '旅顺口',
-                    value: '210212',
+                    value: '210212'
                   },
                   {
                     label: '金州',
-                    value: '210213',
+                    value: '210213'
                   },
                   {
                     label: '普兰店',
-                    value: '210214',
+                    value: '210214'
                   },
                   {
                     label: '长海',
-                    value: '210224',
+                    value: '210224'
                   },
                   {
                     label: '瓦房店',
-                    value: '210281',
+                    value: '210281'
                   },
                   {
                     label: '庄河',
-                    value: '210283',
-                  },
-                ],
+                    value: '210283'
+                  }
+                ]
               },
               {
                 label: '鞍山',
@@ -2043,33 +2043,33 @@ export default [
                 children: [
                   {
                     label: '铁东',
-                    value: '210302',
+                    value: '210302'
                   },
                   {
                     label: '铁西',
-                    value: '210303',
+                    value: '210303'
                   },
                   {
                     label: '立山',
-                    value: '210304',
+                    value: '210304'
                   },
                   {
                     label: '千山',
-                    value: '210311',
+                    value: '210311'
                   },
                   {
                     label: '台安',
-                    value: '210321',
+                    value: '210321'
                   },
                   {
                     label: '岫岩',
-                    value: '210323',
+                    value: '210323'
                   },
                   {
                     label: '海城',
-                    value: '210381',
-                  },
-                ],
+                    value: '210381'
+                  }
+                ]
               },
               {
                 label: '抚顺',
@@ -2077,33 +2077,33 @@ export default [
                 children: [
                   {
                     label: '新抚',
-                    value: '210402',
+                    value: '210402'
                   },
                   {
                     label: '东洲',
-                    value: '210403',
+                    value: '210403'
                   },
                   {
                     label: '望花',
-                    value: '210404',
+                    value: '210404'
                   },
                   {
                     label: '顺城',
-                    value: '210411',
+                    value: '210411'
                   },
                   {
                     label: '抚顺县',
-                    value: '210421',
+                    value: '210421'
                   },
                   {
                     label: '新宾',
-                    value: '210422',
+                    value: '210422'
                   },
                   {
                     label: '清原',
-                    value: '210423',
-                  },
-                ],
+                    value: '210423'
+                  }
+                ]
               },
               {
                 label: '本溪',
@@ -2111,29 +2111,29 @@ export default [
                 children: [
                   {
                     label: '平山',
-                    value: '210502',
+                    value: '210502'
                   },
                   {
                     label: '溪湖',
-                    value: '210503',
+                    value: '210503'
                   },
                   {
                     label: '明山',
-                    value: '210504',
+                    value: '210504'
                   },
                   {
                     label: '南芬',
-                    value: '210505',
+                    value: '210505'
                   },
                   {
                     label: '本溪满族自治县',
-                    value: '210521',
+                    value: '210521'
                   },
                   {
                     label: '桓仁',
-                    value: '210522',
-                  },
-                ],
+                    value: '210522'
+                  }
+                ]
               },
               {
                 label: '丹东',
@@ -2141,29 +2141,29 @@ export default [
                 children: [
                   {
                     label: '元宝',
-                    value: '210602',
+                    value: '210602'
                   },
                   {
                     label: '振兴',
-                    value: '210603',
+                    value: '210603'
                   },
                   {
                     label: '振安',
-                    value: '210604',
+                    value: '210604'
                   },
                   {
                     label: '宽甸',
-                    value: '210624',
+                    value: '210624'
                   },
                   {
                     label: '东港',
-                    value: '210681',
+                    value: '210681'
                   },
                   {
                     label: '凤城',
-                    value: '210682',
-                  },
-                ],
+                    value: '210682'
+                  }
+                ]
               },
               {
                 label: '锦州',
@@ -2171,33 +2171,33 @@ export default [
                 children: [
                   {
                     label: '古塔',
-                    value: '210702',
+                    value: '210702'
                   },
                   {
                     label: '凌河',
-                    value: '210703',
+                    value: '210703'
                   },
                   {
                     label: '太和',
-                    value: '210711',
+                    value: '210711'
                   },
                   {
                     label: '黑山',
-                    value: '210726',
+                    value: '210726'
                   },
                   {
                     label: '义县',
-                    value: '210727',
+                    value: '210727'
                   },
                   {
                     label: '凌海',
-                    value: '210781',
+                    value: '210781'
                   },
                   {
                     label: '北镇',
-                    value: '210782',
-                  },
-                ],
+                    value: '210782'
+                  }
+                ]
               },
               {
                 label: '营口',
@@ -2205,29 +2205,29 @@ export default [
                 children: [
                   {
                     label: '站前',
-                    value: '210802',
+                    value: '210802'
                   },
                   {
                     label: '西市',
-                    value: '210803',
+                    value: '210803'
                   },
                   {
                     label: '鲅鱼圈',
-                    value: '210804',
+                    value: '210804'
                   },
                   {
                     label: '老边',
-                    value: '210811',
+                    value: '210811'
                   },
                   {
                     label: '盖州',
-                    value: '210881',
+                    value: '210881'
                   },
                   {
                     label: '大石桥',
-                    value: '210882',
-                  },
-                ],
+                    value: '210882'
+                  }
+                ]
               },
               {
                 label: '阜新',
@@ -2235,33 +2235,33 @@ export default [
                 children: [
                   {
                     label: '海州',
-                    value: '210902',
+                    value: '210902'
                   },
                   {
                     label: '新邱',
-                    value: '210903',
+                    value: '210903'
                   },
                   {
                     label: '太平',
-                    value: '210904',
+                    value: '210904'
                   },
                   {
                     label: '清河门',
-                    value: '210905',
+                    value: '210905'
                   },
                   {
                     label: '细河',
-                    value: '210911',
+                    value: '210911'
                   },
                   {
                     label: '阜新蒙古族自治县',
-                    value: '210921',
+                    value: '210921'
                   },
                   {
                     label: '彰武',
-                    value: '210922',
-                  },
-                ],
+                    value: '210922'
+                  }
+                ]
               },
               {
                 label: '辽阳',
@@ -2269,33 +2269,33 @@ export default [
                 children: [
                   {
                     label: '白塔',
-                    value: '211002',
+                    value: '211002'
                   },
                   {
                     label: '文圣',
-                    value: '211003',
+                    value: '211003'
                   },
                   {
                     label: '宏伟',
-                    value: '211004',
+                    value: '211004'
                   },
                   {
                     label: '弓长岭',
-                    value: '211005',
+                    value: '211005'
                   },
                   {
                     label: '太子河',
-                    value: '211011',
+                    value: '211011'
                   },
                   {
                     label: '辽阳县',
-                    value: '211021',
+                    value: '211021'
                   },
                   {
                     label: '灯塔',
-                    value: '211081',
-                  },
-                ],
+                    value: '211081'
+                  }
+                ]
               },
               {
                 label: '盘锦',
@@ -2303,21 +2303,21 @@ export default [
                 children: [
                   {
                     label: '双台子',
-                    value: '211102',
+                    value: '211102'
                   },
                   {
                     label: '兴隆台',
-                    value: '211103',
+                    value: '211103'
                   },
                   {
                     label: '大洼',
-                    value: '211104',
+                    value: '211104'
                   },
                   {
                     label: '盘山',
-                    value: '211122',
-                  },
-                ],
+                    value: '211122'
+                  }
+                ]
               },
               {
                 label: '铁岭',
@@ -2325,33 +2325,33 @@ export default [
                 children: [
                   {
                     label: '银州',
-                    value: '211202',
+                    value: '211202'
                   },
                   {
                     label: '清河',
-                    value: '211204',
+                    value: '211204'
                   },
                   {
                     label: '铁岭县',
-                    value: '211221',
+                    value: '211221'
                   },
                   {
                     label: '西丰',
-                    value: '211223',
+                    value: '211223'
                   },
                   {
                     label: '昌图',
-                    value: '211224',
+                    value: '211224'
                   },
                   {
                     label: '调兵山',
-                    value: '211281',
+                    value: '211281'
                   },
                   {
                     label: '开原',
-                    value: '211282',
-                  },
-                ],
+                    value: '211282'
+                  }
+                ]
               },
               {
                 label: '朝阳',
@@ -2359,33 +2359,33 @@ export default [
                 children: [
                   {
                     label: '双塔',
-                    value: '211302',
+                    value: '211302'
                   },
                   {
                     label: '龙城',
-                    value: '211303',
+                    value: '211303'
                   },
                   {
                     label: '朝阳县',
-                    value: '211321',
+                    value: '211321'
                   },
                   {
                     label: '建平',
-                    value: '211322',
+                    value: '211322'
                   },
                   {
                     label: '喀喇沁左翼',
-                    value: '211324',
+                    value: '211324'
                   },
                   {
                     label: '北票',
-                    value: '211381',
+                    value: '211381'
                   },
                   {
                     label: '凌源',
-                    value: '211382',
-                  },
-                ],
+                    value: '211382'
+                  }
+                ]
               },
               {
                 label: '葫芦岛',
@@ -2393,31 +2393,31 @@ export default [
                 children: [
                   {
                     label: '连山',
-                    value: '211402',
+                    value: '211402'
                   },
                   {
                     label: '龙港',
-                    value: '211403',
+                    value: '211403'
                   },
                   {
                     label: '南票',
-                    value: '211404',
+                    value: '211404'
                   },
                   {
                     label: '绥中',
-                    value: '211421',
+                    value: '211421'
                   },
                   {
                     label: '建昌',
-                    value: '211422',
+                    value: '211422'
                   },
                   {
                     label: '兴城',
-                    value: '211481',
-                  },
-                ],
-              },
-            ],
+                    value: '211481'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '吉林',
@@ -2429,49 +2429,49 @@ export default [
                 children: [
                   {
                     label: '南关',
-                    value: '220102',
+                    value: '220102'
                   },
                   {
                     label: '宽城',
-                    value: '220103',
+                    value: '220103'
                   },
                   {
                     label: '朝阳',
-                    value: '220104',
+                    value: '220104'
                   },
                   {
                     label: '二道',
-                    value: '220105',
+                    value: '220105'
                   },
                   {
                     label: '绿园',
-                    value: '220106',
+                    value: '220106'
                   },
                   {
                     label: '双阳',
-                    value: '220112',
+                    value: '220112'
                   },
                   {
                     label: '九台',
-                    value: '220113',
+                    value: '220113'
                   },
                   {
                     label: '农安',
-                    value: '220122',
+                    value: '220122'
                   },
                   {
                     label: '榆树',
-                    value: '220182',
+                    value: '220182'
                   },
                   {
                     label: '德惠',
-                    value: '220183',
+                    value: '220183'
                   },
                   {
                     label: '公主岭',
-                    value: '220184',
-                  },
-                ],
+                    value: '220184'
+                  }
+                ]
               },
               {
                 label: '吉林市',
@@ -2479,41 +2479,41 @@ export default [
                 children: [
                   {
                     label: '昌邑',
-                    value: '220202',
+                    value: '220202'
                   },
                   {
                     label: '龙潭',
-                    value: '220203',
+                    value: '220203'
                   },
                   {
                     label: '船营',
-                    value: '220204',
+                    value: '220204'
                   },
                   {
                     label: '丰满',
-                    value: '220211',
+                    value: '220211'
                   },
                   {
                     label: '永吉',
-                    value: '220221',
+                    value: '220221'
                   },
                   {
                     label: '蛟河',
-                    value: '220281',
+                    value: '220281'
                   },
                   {
                     label: '桦甸',
-                    value: '220282',
+                    value: '220282'
                   },
                   {
                     label: '舒兰',
-                    value: '220283',
+                    value: '220283'
                   },
                   {
                     label: '磐石',
-                    value: '220284',
-                  },
-                ],
+                    value: '220284'
+                  }
+                ]
               },
               {
                 label: '四平',
@@ -2521,25 +2521,25 @@ export default [
                 children: [
                   {
                     label: '铁西',
-                    value: '220302',
+                    value: '220302'
                   },
                   {
                     label: '铁东',
-                    value: '220303',
+                    value: '220303'
                   },
                   {
                     label: '梨树',
-                    value: '220322',
+                    value: '220322'
                   },
                   {
                     label: '伊通',
-                    value: '220323',
+                    value: '220323'
                   },
                   {
                     label: '双辽',
-                    value: '220382',
-                  },
-                ],
+                    value: '220382'
+                  }
+                ]
               },
               {
                 label: '辽源',
@@ -2547,21 +2547,21 @@ export default [
                 children: [
                   {
                     label: '龙山',
-                    value: '220402',
+                    value: '220402'
                   },
                   {
                     label: '西安',
-                    value: '220403',
+                    value: '220403'
                   },
                   {
                     label: '东丰',
-                    value: '220421',
+                    value: '220421'
                   },
                   {
                     label: '东辽',
-                    value: '220422',
-                  },
-                ],
+                    value: '220422'
+                  }
+                ]
               },
               {
                 label: '通化',
@@ -2569,33 +2569,33 @@ export default [
                 children: [
                   {
                     label: '东昌',
-                    value: '220502',
+                    value: '220502'
                   },
                   {
                     label: '二道江',
-                    value: '220503',
+                    value: '220503'
                   },
                   {
                     label: '通化县',
-                    value: '220521',
+                    value: '220521'
                   },
                   {
                     label: '辉南',
-                    value: '220523',
+                    value: '220523'
                   },
                   {
                     label: '柳河',
-                    value: '220524',
+                    value: '220524'
                   },
                   {
                     label: '梅河口',
-                    value: '220581',
+                    value: '220581'
                   },
                   {
                     label: '集安',
-                    value: '220582',
-                  },
-                ],
+                    value: '220582'
+                  }
+                ]
               },
               {
                 label: '白山',
@@ -2603,29 +2603,29 @@ export default [
                 children: [
                   {
                     label: '浑江',
-                    value: '220602',
+                    value: '220602'
                   },
                   {
                     label: '江源',
-                    value: '220605',
+                    value: '220605'
                   },
                   {
                     label: '抚松',
-                    value: '220621',
+                    value: '220621'
                   },
                   {
                     label: '靖宇',
-                    value: '220622',
+                    value: '220622'
                   },
                   {
                     label: '长白',
-                    value: '220623',
+                    value: '220623'
                   },
                   {
                     label: '临江',
-                    value: '220681',
-                  },
-                ],
+                    value: '220681'
+                  }
+                ]
               },
               {
                 label: '松原',
@@ -2633,25 +2633,25 @@ export default [
                 children: [
                   {
                     label: '宁江',
-                    value: '220702',
+                    value: '220702'
                   },
                   {
                     label: '前郭尔罗斯',
-                    value: '220721',
+                    value: '220721'
                   },
                   {
                     label: '长岭',
-                    value: '220722',
+                    value: '220722'
                   },
                   {
                     label: '乾安',
-                    value: '220723',
+                    value: '220723'
                   },
                   {
                     label: '扶余',
-                    value: '220781',
-                  },
-                ],
+                    value: '220781'
+                  }
+                ]
               },
               {
                 label: '白城',
@@ -2659,25 +2659,25 @@ export default [
                 children: [
                   {
                     label: '洮北',
-                    value: '220802',
+                    value: '220802'
                   },
                   {
                     label: '镇赉',
-                    value: '220821',
+                    value: '220821'
                   },
                   {
                     label: '通榆',
-                    value: '220822',
+                    value: '220822'
                   },
                   {
                     label: '洮南',
-                    value: '220881',
+                    value: '220881'
                   },
                   {
                     label: '大安',
-                    value: '220882',
-                  },
-                ],
+                    value: '220882'
+                  }
+                ]
               },
               {
                 label: '延边',
@@ -2685,39 +2685,39 @@ export default [
                 children: [
                   {
                     label: '延吉',
-                    value: '222401',
+                    value: '222401'
                   },
                   {
                     label: '图们',
-                    value: '222402',
+                    value: '222402'
                   },
                   {
                     label: '敦化',
-                    value: '222403',
+                    value: '222403'
                   },
                   {
                     label: '珲春',
-                    value: '222404',
+                    value: '222404'
                   },
                   {
                     label: '龙井',
-                    value: '222405',
+                    value: '222405'
                   },
                   {
                     label: '和龙',
-                    value: '222406',
+                    value: '222406'
                   },
                   {
                     label: '汪清',
-                    value: '222424',
+                    value: '222424'
                   },
                   {
                     label: '安图',
-                    value: '222426',
-                  },
-                ],
-              },
-            ],
+                    value: '222426'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '黑龙江',
@@ -2729,77 +2729,77 @@ export default [
                 children: [
                   {
                     label: '道里',
-                    value: '230102',
+                    value: '230102'
                   },
                   {
                     label: '南岗',
-                    value: '230103',
+                    value: '230103'
                   },
                   {
                     label: '道外',
-                    value: '230104',
+                    value: '230104'
                   },
                   {
                     label: '平房',
-                    value: '230108',
+                    value: '230108'
                   },
                   {
                     label: '松北',
-                    value: '230109',
+                    value: '230109'
                   },
                   {
                     label: '香坊',
-                    value: '230110',
+                    value: '230110'
                   },
                   {
                     label: '呼兰',
-                    value: '230111',
+                    value: '230111'
                   },
                   {
                     label: '阿城',
-                    value: '230112',
+                    value: '230112'
                   },
                   {
                     label: '双城',
-                    value: '230113',
+                    value: '230113'
                   },
                   {
                     label: '依兰',
-                    value: '230123',
+                    value: '230123'
                   },
                   {
                     label: '方正',
-                    value: '230124',
+                    value: '230124'
                   },
                   {
                     label: '宾县',
-                    value: '230125',
+                    value: '230125'
                   },
                   {
                     label: '巴彦',
-                    value: '230126',
+                    value: '230126'
                   },
                   {
                     label: '木兰',
-                    value: '230127',
+                    value: '230127'
                   },
                   {
                     label: '通河',
-                    value: '230128',
+                    value: '230128'
                   },
                   {
                     label: '延寿',
-                    value: '230129',
+                    value: '230129'
                   },
                   {
                     label: '尚志',
-                    value: '230183',
+                    value: '230183'
                   },
                   {
                     label: '五常',
-                    value: '230184',
-                  },
-                ],
+                    value: '230184'
+                  }
+                ]
               },
               {
                 label: '齐齐哈尔',
@@ -2807,69 +2807,69 @@ export default [
                 children: [
                   {
                     label: '龙沙',
-                    value: '230202',
+                    value: '230202'
                   },
                   {
                     label: '建华',
-                    value: '230203',
+                    value: '230203'
                   },
                   {
                     label: '铁锋',
-                    value: '230204',
+                    value: '230204'
                   },
                   {
                     label: '昂昂溪',
-                    value: '230205',
+                    value: '230205'
                   },
                   {
                     label: '富拉尔基区',
-                    value: '230206',
+                    value: '230206'
                   },
                   {
                     label: '碾子山',
-                    value: '230207',
+                    value: '230207'
                   },
                   {
                     label: '梅里斯',
-                    value: '230208',
+                    value: '230208'
                   },
                   {
                     label: '龙江',
-                    value: '230221',
+                    value: '230221'
                   },
                   {
                     label: '依安',
-                    value: '230223',
+                    value: '230223'
                   },
                   {
                     label: '泰来',
-                    value: '230224',
+                    value: '230224'
                   },
                   {
                     label: '甘南',
-                    value: '230225',
+                    value: '230225'
                   },
                   {
                     label: '富裕',
-                    value: '230227',
+                    value: '230227'
                   },
                   {
                     label: '克山',
-                    value: '230229',
+                    value: '230229'
                   },
                   {
                     label: '克东',
-                    value: '230230',
+                    value: '230230'
                   },
                   {
                     label: '拜泉',
-                    value: '230231',
+                    value: '230231'
                   },
                   {
                     label: '讷河',
-                    value: '230281',
-                  },
-                ],
+                    value: '230281'
+                  }
+                ]
               },
               {
                 label: '鸡西',
@@ -2877,41 +2877,41 @@ export default [
                 children: [
                   {
                     label: '鸡冠',
-                    value: '230302',
+                    value: '230302'
                   },
                   {
                     label: '恒山',
-                    value: '230303',
+                    value: '230303'
                   },
                   {
                     label: '滴道',
-                    value: '230304',
+                    value: '230304'
                   },
                   {
                     label: '梨树',
-                    value: '230305',
+                    value: '230305'
                   },
                   {
                     label: '城子河',
-                    value: '230306',
+                    value: '230306'
                   },
                   {
                     label: '麻山',
-                    value: '230307',
+                    value: '230307'
                   },
                   {
                     label: '鸡东',
-                    value: '230321',
+                    value: '230321'
                   },
                   {
                     label: '虎林',
-                    value: '230381',
+                    value: '230381'
                   },
                   {
                     label: '密山',
-                    value: '230382',
-                  },
-                ],
+                    value: '230382'
+                  }
+                ]
               },
               {
                 label: '鹤岗',
@@ -2919,37 +2919,37 @@ export default [
                 children: [
                   {
                     label: '向阳',
-                    value: '230402',
+                    value: '230402'
                   },
                   {
                     label: '工农',
-                    value: '230403',
+                    value: '230403'
                   },
                   {
                     label: '南山',
-                    value: '230404',
+                    value: '230404'
                   },
                   {
                     label: '兴安',
-                    value: '230405',
+                    value: '230405'
                   },
                   {
                     label: '东山',
-                    value: '230406',
+                    value: '230406'
                   },
                   {
                     label: '兴山',
-                    value: '230407',
+                    value: '230407'
                   },
                   {
                     label: '萝北',
-                    value: '230421',
+                    value: '230421'
                   },
                   {
                     label: '绥滨',
-                    value: '230422',
-                  },
-                ],
+                    value: '230422'
+                  }
+                ]
               },
               {
                 label: '双鸭山',
@@ -2957,37 +2957,37 @@ export default [
                 children: [
                   {
                     label: '尖山',
-                    value: '230502',
+                    value: '230502'
                   },
                   {
                     label: '岭东',
-                    value: '230503',
+                    value: '230503'
                   },
                   {
                     label: '四方台',
-                    value: '230505',
+                    value: '230505'
                   },
                   {
                     label: '宝山',
-                    value: '230506',
+                    value: '230506'
                   },
                   {
                     label: '集贤',
-                    value: '230521',
+                    value: '230521'
                   },
                   {
                     label: '友谊',
-                    value: '230522',
+                    value: '230522'
                   },
                   {
                     label: '宝清',
-                    value: '230523',
+                    value: '230523'
                   },
                   {
                     label: '饶河',
-                    value: '230524',
-                  },
-                ],
+                    value: '230524'
+                  }
+                ]
               },
               {
                 label: '大庆',
@@ -2995,41 +2995,41 @@ export default [
                 children: [
                   {
                     label: '萨尔图',
-                    value: '230602',
+                    value: '230602'
                   },
                   {
                     label: '龙凤',
-                    value: '230603',
+                    value: '230603'
                   },
                   {
                     label: '让胡路',
-                    value: '230604',
+                    value: '230604'
                   },
                   {
                     label: '红岗',
-                    value: '230605',
+                    value: '230605'
                   },
                   {
                     label: '大同',
-                    value: '230606',
+                    value: '230606'
                   },
                   {
                     label: '肇州',
-                    value: '230621',
+                    value: '230621'
                   },
                   {
                     label: '肇源',
-                    value: '230622',
+                    value: '230622'
                   },
                   {
                     label: '林甸',
-                    value: '230623',
+                    value: '230623'
                   },
                   {
                     label: '杜尔伯特',
-                    value: '230624',
-                  },
-                ],
+                    value: '230624'
+                  }
+                ]
               },
               {
                 label: '伊春',
@@ -3037,45 +3037,45 @@ export default [
                 children: [
                   {
                     label: '伊美',
-                    value: '230717',
+                    value: '230717'
                   },
                   {
                     label: '乌翠',
-                    value: '230718',
+                    value: '230718'
                   },
                   {
                     label: '友好',
-                    value: '230719',
+                    value: '230719'
                   },
                   {
                     label: '嘉荫',
-                    value: '230722',
+                    value: '230722'
                   },
                   {
                     label: '汤旺',
-                    value: '230723',
+                    value: '230723'
                   },
                   {
                     label: '丰林',
-                    value: '230724',
+                    value: '230724'
                   },
                   {
                     label: '大箐山',
-                    value: '230725',
+                    value: '230725'
                   },
                   {
                     label: '南岔',
-                    value: '230726',
+                    value: '230726'
                   },
                   {
                     label: '金林',
-                    value: '230751',
+                    value: '230751'
                   },
                   {
                     label: '铁力',
-                    value: '230781',
-                  },
-                ],
+                    value: '230781'
+                  }
+                ]
               },
               {
                 label: '佳木斯',
@@ -3083,45 +3083,45 @@ export default [
                 children: [
                   {
                     label: '向阳',
-                    value: '230803',
+                    value: '230803'
                   },
                   {
                     label: '前进',
-                    value: '230804',
+                    value: '230804'
                   },
                   {
                     label: '东风',
-                    value: '230805',
+                    value: '230805'
                   },
                   {
                     label: '郊区',
-                    value: '230811',
+                    value: '230811'
                   },
                   {
                     label: '桦南',
-                    value: '230822',
+                    value: '230822'
                   },
                   {
                     label: '桦川',
-                    value: '230826',
+                    value: '230826'
                   },
                   {
                     label: '汤原',
-                    value: '230828',
+                    value: '230828'
                   },
                   {
                     label: '同江',
-                    value: '230881',
+                    value: '230881'
                   },
                   {
                     label: '富锦',
-                    value: '230882',
+                    value: '230882'
                   },
                   {
                     label: '抚远',
-                    value: '230883',
-                  },
-                ],
+                    value: '230883'
+                  }
+                ]
               },
               {
                 label: '七台河',
@@ -3129,21 +3129,21 @@ export default [
                 children: [
                   {
                     label: '新兴',
-                    value: '230902',
+                    value: '230902'
                   },
                   {
                     label: '桃山',
-                    value: '230903',
+                    value: '230903'
                   },
                   {
                     label: '茄子河',
-                    value: '230904',
+                    value: '230904'
                   },
                   {
                     label: '勃利',
-                    value: '230921',
-                  },
-                ],
+                    value: '230921'
+                  }
+                ]
               },
               {
                 label: '牡丹江',
@@ -3151,45 +3151,45 @@ export default [
                 children: [
                   {
                     label: '东安',
-                    value: '231002',
+                    value: '231002'
                   },
                   {
                     label: '阳明',
-                    value: '231003',
+                    value: '231003'
                   },
                   {
                     label: '爱民',
-                    value: '231004',
+                    value: '231004'
                   },
                   {
                     label: '西安',
-                    value: '231005',
+                    value: '231005'
                   },
                   {
                     label: '林口',
-                    value: '231025',
+                    value: '231025'
                   },
                   {
                     label: '绥芬河',
-                    value: '231081',
+                    value: '231081'
                   },
                   {
                     label: '海林',
-                    value: '231083',
+                    value: '231083'
                   },
                   {
                     label: '宁安',
-                    value: '231084',
+                    value: '231084'
                   },
                   {
                     label: '穆棱',
-                    value: '231085',
+                    value: '231085'
                   },
                   {
                     label: '东宁',
-                    value: '231086',
-                  },
-                ],
+                    value: '231086'
+                  }
+                ]
               },
               {
                 label: '黑河',
@@ -3197,29 +3197,29 @@ export default [
                 children: [
                   {
                     label: '爱辉',
-                    value: '231102',
+                    value: '231102'
                   },
                   {
                     label: '逊克',
-                    value: '231123',
+                    value: '231123'
                   },
                   {
                     label: '孙吴',
-                    value: '231124',
+                    value: '231124'
                   },
                   {
                     label: '北安',
-                    value: '231181',
+                    value: '231181'
                   },
                   {
                     label: '五大连池',
-                    value: '231182',
+                    value: '231182'
                   },
                   {
                     label: '嫩江',
-                    value: '231183',
-                  },
-                ],
+                    value: '231183'
+                  }
+                ]
               },
               {
                 label: '绥化',
@@ -3227,45 +3227,45 @@ export default [
                 children: [
                   {
                     label: '北林',
-                    value: '231202',
+                    value: '231202'
                   },
                   {
                     label: '望奎',
-                    value: '231221',
+                    value: '231221'
                   },
                   {
                     label: '兰西',
-                    value: '231222',
+                    value: '231222'
                   },
                   {
                     label: '青冈',
-                    value: '231223',
+                    value: '231223'
                   },
                   {
                     label: '庆安',
-                    value: '231224',
+                    value: '231224'
                   },
                   {
                     label: '明水',
-                    value: '231225',
+                    value: '231225'
                   },
                   {
                     label: '绥棱',
-                    value: '231226',
+                    value: '231226'
                   },
                   {
                     label: '安达',
-                    value: '231281',
+                    value: '231281'
                   },
                   {
                     label: '肇东',
-                    value: '231282',
+                    value: '231282'
                   },
                   {
                     label: '海伦',
-                    value: '231283',
-                  },
-                ],
+                    value: '231283'
+                  }
+                ]
               },
               {
                 label: '大兴安岭',
@@ -3273,23 +3273,23 @@ export default [
                 children: [
                   {
                     label: '漠河',
-                    value: '232701',
+                    value: '232701'
                   },
                   {
                     label: '加格达奇区',
-                    value: '232718',
+                    value: '232718'
                   },
                   {
                     label: '呼玛',
-                    value: '232721',
+                    value: '232721'
                   },
                   {
                     label: '塔河',
-                    value: '232722',
-                  },
-                ],
-              },
-            ],
+                    value: '232722'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '上海',
@@ -3301,71 +3301,71 @@ export default [
                 children: [
                   {
                     label: '黄浦',
-                    value: '310101',
+                    value: '310101'
                   },
                   {
                     label: '徐汇',
-                    value: '310104',
+                    value: '310104'
                   },
                   {
                     label: '长宁',
-                    value: '310105',
+                    value: '310105'
                   },
                   {
                     label: '静安',
-                    value: '310106',
+                    value: '310106'
                   },
                   {
                     label: '普陀',
-                    value: '310107',
+                    value: '310107'
                   },
                   {
                     label: '虹口',
-                    value: '310109',
+                    value: '310109'
                   },
                   {
                     label: '杨浦',
-                    value: '310110',
+                    value: '310110'
                   },
                   {
                     label: '闵行',
-                    value: '310112',
+                    value: '310112'
                   },
                   {
                     label: '宝山',
-                    value: '310113',
+                    value: '310113'
                   },
                   {
                     label: '嘉定',
-                    value: '310114',
+                    value: '310114'
                   },
                   {
                     label: '浦东新区',
-                    value: '310115',
+                    value: '310115'
                   },
                   {
                     label: '金山',
-                    value: '310116',
+                    value: '310116'
                   },
                   {
                     label: '松江',
-                    value: '310117',
+                    value: '310117'
                   },
                   {
                     label: '青浦',
-                    value: '310118',
+                    value: '310118'
                   },
                   {
                     label: '奉贤',
-                    value: '310120',
+                    value: '310120'
                   },
                   {
                     label: '崇明',
-                    value: '310151',
-                  },
-                ],
-              },
-            ],
+                    value: '310151'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '江苏',
@@ -3377,49 +3377,49 @@ export default [
                 children: [
                   {
                     label: '玄武',
-                    value: '320102',
+                    value: '320102'
                   },
                   {
                     label: '秦淮',
-                    value: '320104',
+                    value: '320104'
                   },
                   {
                     label: '建邺',
-                    value: '320105',
+                    value: '320105'
                   },
                   {
                     label: '鼓楼',
-                    value: '320106',
+                    value: '320106'
                   },
                   {
                     label: '浦口',
-                    value: '320111',
+                    value: '320111'
                   },
                   {
                     label: '栖霞',
-                    value: '320113',
+                    value: '320113'
                   },
                   {
                     label: '雨花台',
-                    value: '320114',
+                    value: '320114'
                   },
                   {
                     label: '江宁',
-                    value: '320115',
+                    value: '320115'
                   },
                   {
                     label: '六合',
-                    value: '320116',
+                    value: '320116'
                   },
                   {
                     label: '溧水',
-                    value: '320117',
+                    value: '320117'
                   },
                   {
                     label: '高淳',
-                    value: '320118',
-                  },
-                ],
+                    value: '320118'
+                  }
+                ]
               },
               {
                 label: '无锡',
@@ -3427,33 +3427,33 @@ export default [
                 children: [
                   {
                     label: '锡山',
-                    value: '320205',
+                    value: '320205'
                   },
                   {
                     label: '惠山',
-                    value: '320206',
+                    value: '320206'
                   },
                   {
                     label: '滨湖',
-                    value: '320211',
+                    value: '320211'
                   },
                   {
                     label: '梁溪',
-                    value: '320213',
+                    value: '320213'
                   },
                   {
                     label: '新吴',
-                    value: '320214',
+                    value: '320214'
                   },
                   {
                     label: '江阴',
-                    value: '320281',
+                    value: '320281'
                   },
                   {
                     label: '宜兴',
-                    value: '320282',
-                  },
-                ],
+                    value: '320282'
+                  }
+                ]
               },
               {
                 label: '徐州',
@@ -3461,45 +3461,45 @@ export default [
                 children: [
                   {
                     label: '鼓楼',
-                    value: '320302',
+                    value: '320302'
                   },
                   {
                     label: '云龙',
-                    value: '320303',
+                    value: '320303'
                   },
                   {
                     label: '贾汪',
-                    value: '320305',
+                    value: '320305'
                   },
                   {
                     label: '泉山',
-                    value: '320311',
+                    value: '320311'
                   },
                   {
                     label: '铜山',
-                    value: '320312',
+                    value: '320312'
                   },
                   {
                     label: '丰县',
-                    value: '320321',
+                    value: '320321'
                   },
                   {
                     label: '沛县',
-                    value: '320322',
+                    value: '320322'
                   },
                   {
                     label: '睢宁',
-                    value: '320324',
+                    value: '320324'
                   },
                   {
                     label: '新沂',
-                    value: '320381',
+                    value: '320381'
                   },
                   {
                     label: '邳州',
-                    value: '320382',
-                  },
-                ],
+                    value: '320382'
+                  }
+                ]
               },
               {
                 label: '常州',
@@ -3507,29 +3507,29 @@ export default [
                 children: [
                   {
                     label: '天宁',
-                    value: '320402',
+                    value: '320402'
                   },
                   {
                     label: '钟楼',
-                    value: '320404',
+                    value: '320404'
                   },
                   {
                     label: '新北',
-                    value: '320411',
+                    value: '320411'
                   },
                   {
                     label: '武进',
-                    value: '320412',
+                    value: '320412'
                   },
                   {
                     label: '金坛',
-                    value: '320413',
+                    value: '320413'
                   },
                   {
                     label: '溧阳',
-                    value: '320481',
-                  },
-                ],
+                    value: '320481'
+                  }
+                ]
               },
               {
                 label: '苏州',
@@ -3537,41 +3537,41 @@ export default [
                 children: [
                   {
                     label: '虎丘',
-                    value: '320505',
+                    value: '320505'
                   },
                   {
                     label: '吴中',
-                    value: '320506',
+                    value: '320506'
                   },
                   {
                     label: '相城',
-                    value: '320507',
+                    value: '320507'
                   },
                   {
                     label: '姑苏',
-                    value: '320508',
+                    value: '320508'
                   },
                   {
                     label: '吴江',
-                    value: '320509',
+                    value: '320509'
                   },
                   {
                     label: '常熟',
-                    value: '320581',
+                    value: '320581'
                   },
                   {
                     label: '张家港',
-                    value: '320582',
+                    value: '320582'
                   },
                   {
                     label: '昆山',
-                    value: '320583',
+                    value: '320583'
                   },
                   {
                     label: '太仓',
-                    value: '320585',
-                  },
-                ],
+                    value: '320585'
+                  }
+                ]
               },
               {
                 label: '南通',
@@ -3579,33 +3579,33 @@ export default [
                 children: [
                   {
                     label: '通州',
-                    value: '320612',
+                    value: '320612'
                   },
                   {
                     label: '崇川',
-                    value: '320613',
+                    value: '320613'
                   },
                   {
                     label: '海门',
-                    value: '320614',
+                    value: '320614'
                   },
                   {
                     label: '如东',
-                    value: '320623',
+                    value: '320623'
                   },
                   {
                     label: '启东',
-                    value: '320681',
+                    value: '320681'
                   },
                   {
                     label: '如皋',
-                    value: '320682',
+                    value: '320682'
                   },
                   {
                     label: '海安',
-                    value: '320685',
-                  },
-                ],
+                    value: '320685'
+                  }
+                ]
               },
               {
                 label: '连云港',
@@ -3613,29 +3613,29 @@ export default [
                 children: [
                   {
                     label: '连云',
-                    value: '320703',
+                    value: '320703'
                   },
                   {
                     label: '海州',
-                    value: '320706',
+                    value: '320706'
                   },
                   {
                     label: '赣榆',
-                    value: '320707',
+                    value: '320707'
                   },
                   {
                     label: '东海',
-                    value: '320722',
+                    value: '320722'
                   },
                   {
                     label: '灌云',
-                    value: '320723',
+                    value: '320723'
                   },
                   {
                     label: '灌南',
-                    value: '320724',
-                  },
-                ],
+                    value: '320724'
+                  }
+                ]
               },
               {
                 label: '淮安',
@@ -3643,33 +3643,33 @@ export default [
                 children: [
                   {
                     label: '淮安区',
-                    value: '320803',
+                    value: '320803'
                   },
                   {
                     label: '淮阴',
-                    value: '320804',
+                    value: '320804'
                   },
                   {
                     label: '清江浦',
-                    value: '320812',
+                    value: '320812'
                   },
                   {
                     label: '洪泽',
-                    value: '320813',
+                    value: '320813'
                   },
                   {
                     label: '涟水',
-                    value: '320826',
+                    value: '320826'
                   },
                   {
                     label: '盱眙',
-                    value: '320830',
+                    value: '320830'
                   },
                   {
                     label: '金湖',
-                    value: '320831',
-                  },
-                ],
+                    value: '320831'
+                  }
+                ]
               },
               {
                 label: '盐城',
@@ -3677,41 +3677,41 @@ export default [
                 children: [
                   {
                     label: '亭湖',
-                    value: '320902',
+                    value: '320902'
                   },
                   {
                     label: '盐都',
-                    value: '320903',
+                    value: '320903'
                   },
                   {
                     label: '大丰',
-                    value: '320904',
+                    value: '320904'
                   },
                   {
                     label: '响水',
-                    value: '320921',
+                    value: '320921'
                   },
                   {
                     label: '滨海',
-                    value: '320922',
+                    value: '320922'
                   },
                   {
                     label: '阜宁',
-                    value: '320923',
+                    value: '320923'
                   },
                   {
                     label: '射阳',
-                    value: '320924',
+                    value: '320924'
                   },
                   {
                     label: '建湖',
-                    value: '320925',
+                    value: '320925'
                   },
                   {
                     label: '东台',
-                    value: '320981',
-                  },
-                ],
+                    value: '320981'
+                  }
+                ]
               },
               {
                 label: '扬州',
@@ -3719,29 +3719,29 @@ export default [
                 children: [
                   {
                     label: '广陵',
-                    value: '321002',
+                    value: '321002'
                   },
                   {
                     label: '邗江',
-                    value: '321003',
+                    value: '321003'
                   },
                   {
                     label: '江都',
-                    value: '321012',
+                    value: '321012'
                   },
                   {
                     label: '宝应',
-                    value: '321023',
+                    value: '321023'
                   },
                   {
                     label: '仪征',
-                    value: '321081',
+                    value: '321081'
                   },
                   {
                     label: '高邮',
-                    value: '321084',
-                  },
-                ],
+                    value: '321084'
+                  }
+                ]
               },
               {
                 label: '镇江',
@@ -3749,29 +3749,29 @@ export default [
                 children: [
                   {
                     label: '京口',
-                    value: '321102',
+                    value: '321102'
                   },
                   {
                     label: '润州',
-                    value: '321111',
+                    value: '321111'
                   },
                   {
                     label: '丹徒',
-                    value: '321112',
+                    value: '321112'
                   },
                   {
                     label: '丹阳',
-                    value: '321181',
+                    value: '321181'
                   },
                   {
                     label: '扬中',
-                    value: '321182',
+                    value: '321182'
                   },
                   {
                     label: '句容',
-                    value: '321183',
-                  },
-                ],
+                    value: '321183'
+                  }
+                ]
               },
               {
                 label: '泰州',
@@ -3779,29 +3779,29 @@ export default [
                 children: [
                   {
                     label: '海陵',
-                    value: '321202',
+                    value: '321202'
                   },
                   {
                     label: '高港',
-                    value: '321203',
+                    value: '321203'
                   },
                   {
                     label: '姜堰',
-                    value: '321204',
+                    value: '321204'
                   },
                   {
                     label: '兴化',
-                    value: '321281',
+                    value: '321281'
                   },
                   {
                     label: '靖江',
-                    value: '321282',
+                    value: '321282'
                   },
                   {
                     label: '泰兴',
-                    value: '321283',
-                  },
-                ],
+                    value: '321283'
+                  }
+                ]
               },
               {
                 label: '宿迁',
@@ -3809,27 +3809,27 @@ export default [
                 children: [
                   {
                     label: '宿城',
-                    value: '321302',
+                    value: '321302'
                   },
                   {
                     label: '宿豫',
-                    value: '321311',
+                    value: '321311'
                   },
                   {
                     label: '沭阳',
-                    value: '321322',
+                    value: '321322'
                   },
                   {
                     label: '泗阳',
-                    value: '321323',
+                    value: '321323'
                   },
                   {
                     label: '泗洪',
-                    value: '321324',
-                  },
-                ],
-              },
-            ],
+                    value: '321324'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '浙江',
@@ -3841,57 +3841,57 @@ export default [
                 children: [
                   {
                     label: '上城',
-                    value: '330102',
+                    value: '330102'
                   },
                   {
                     label: '拱墅',
-                    value: '330105',
+                    value: '330105'
                   },
                   {
                     label: '西湖',
-                    value: '330106',
+                    value: '330106'
                   },
                   {
                     label: '滨江',
-                    value: '330108',
+                    value: '330108'
                   },
                   {
                     label: '萧山',
-                    value: '330109',
+                    value: '330109'
                   },
                   {
                     label: '余杭',
-                    value: '330110',
+                    value: '330110'
                   },
                   {
                     label: '富阳',
-                    value: '330111',
+                    value: '330111'
                   },
                   {
                     label: '临安',
-                    value: '330112',
+                    value: '330112'
                   },
                   {
                     label: '临平',
-                    value: '330113',
+                    value: '330113'
                   },
                   {
                     label: '钱塘',
-                    value: '330114',
+                    value: '330114'
                   },
                   {
                     label: '桐庐',
-                    value: '330122',
+                    value: '330122'
                   },
                   {
                     label: '淳安',
-                    value: '330127',
+                    value: '330127'
                   },
                   {
                     label: '建德',
-                    value: '330182',
-                  },
-                ],
+                    value: '330182'
+                  }
+                ]
               },
               {
                 label: '宁波',
@@ -3899,45 +3899,45 @@ export default [
                 children: [
                   {
                     label: '海曙',
-                    value: '330203',
+                    value: '330203'
                   },
                   {
                     label: '江北',
-                    value: '330205',
+                    value: '330205'
                   },
                   {
                     label: '北仑',
-                    value: '330206',
+                    value: '330206'
                   },
                   {
                     label: '镇海',
-                    value: '330211',
+                    value: '330211'
                   },
                   {
                     label: '鄞州',
-                    value: '330212',
+                    value: '330212'
                   },
                   {
                     label: '奉化',
-                    value: '330213',
+                    value: '330213'
                   },
                   {
                     label: '象山',
-                    value: '330225',
+                    value: '330225'
                   },
                   {
                     label: '宁海',
-                    value: '330226',
+                    value: '330226'
                   },
                   {
                     label: '余姚',
-                    value: '330281',
+                    value: '330281'
                   },
                   {
                     label: '慈溪',
-                    value: '330282',
-                  },
-                ],
+                    value: '330282'
+                  }
+                ]
               },
               {
                 label: '温州',
@@ -3945,53 +3945,53 @@ export default [
                 children: [
                   {
                     label: '鹿城',
-                    value: '330302',
+                    value: '330302'
                   },
                   {
                     label: '龙湾',
-                    value: '330303',
+                    value: '330303'
                   },
                   {
                     label: '瓯海',
-                    value: '330304',
+                    value: '330304'
                   },
                   {
                     label: '洞头',
-                    value: '330305',
+                    value: '330305'
                   },
                   {
                     label: '永嘉',
-                    value: '330324',
+                    value: '330324'
                   },
                   {
                     label: '平阳',
-                    value: '330326',
+                    value: '330326'
                   },
                   {
                     label: '苍南',
-                    value: '330327',
+                    value: '330327'
                   },
                   {
                     label: '文成',
-                    value: '330328',
+                    value: '330328'
                   },
                   {
                     label: '泰顺',
-                    value: '330329',
+                    value: '330329'
                   },
                   {
                     label: '瑞安',
-                    value: '330381',
+                    value: '330381'
                   },
                   {
                     label: '乐清',
-                    value: '330382',
+                    value: '330382'
                   },
                   {
                     label: '龙港',
-                    value: '330383',
-                  },
-                ],
+                    value: '330383'
+                  }
+                ]
               },
               {
                 label: '嘉兴',
@@ -3999,33 +3999,33 @@ export default [
                 children: [
                   {
                     label: '南湖',
-                    value: '330402',
+                    value: '330402'
                   },
                   {
                     label: '秀洲',
-                    value: '330411',
+                    value: '330411'
                   },
                   {
                     label: '嘉善',
-                    value: '330421',
+                    value: '330421'
                   },
                   {
                     label: '海盐',
-                    value: '330424',
+                    value: '330424'
                   },
                   {
                     label: '海宁',
-                    value: '330481',
+                    value: '330481'
                   },
                   {
                     label: '平湖',
-                    value: '330482',
+                    value: '330482'
                   },
                   {
                     label: '桐乡',
-                    value: '330483',
-                  },
-                ],
+                    value: '330483'
+                  }
+                ]
               },
               {
                 label: '湖州',
@@ -4033,25 +4033,25 @@ export default [
                 children: [
                   {
                     label: '吴兴',
-                    value: '330502',
+                    value: '330502'
                   },
                   {
                     label: '南浔',
-                    value: '330503',
+                    value: '330503'
                   },
                   {
                     label: '德清',
-                    value: '330521',
+                    value: '330521'
                   },
                   {
                     label: '长兴',
-                    value: '330522',
+                    value: '330522'
                   },
                   {
                     label: '安吉',
-                    value: '330523',
-                  },
-                ],
+                    value: '330523'
+                  }
+                ]
               },
               {
                 label: '绍兴',
@@ -4059,29 +4059,29 @@ export default [
                 children: [
                   {
                     label: '越城',
-                    value: '330602',
+                    value: '330602'
                   },
                   {
                     label: '柯桥',
-                    value: '330603',
+                    value: '330603'
                   },
                   {
                     label: '上虞',
-                    value: '330604',
+                    value: '330604'
                   },
                   {
                     label: '新昌',
-                    value: '330624',
+                    value: '330624'
                   },
                   {
                     label: '诸暨',
-                    value: '330681',
+                    value: '330681'
                   },
                   {
                     label: '嵊州',
-                    value: '330683',
-                  },
-                ],
+                    value: '330683'
+                  }
+                ]
               },
               {
                 label: '金华',
@@ -4089,41 +4089,41 @@ export default [
                 children: [
                   {
                     label: '婺城',
-                    value: '330702',
+                    value: '330702'
                   },
                   {
                     label: '金东',
-                    value: '330703',
+                    value: '330703'
                   },
                   {
                     label: '武义',
-                    value: '330723',
+                    value: '330723'
                   },
                   {
                     label: '浦江',
-                    value: '330726',
+                    value: '330726'
                   },
                   {
                     label: '磐安',
-                    value: '330727',
+                    value: '330727'
                   },
                   {
                     label: '兰溪',
-                    value: '330781',
+                    value: '330781'
                   },
                   {
                     label: '义乌',
-                    value: '330782',
+                    value: '330782'
                   },
                   {
                     label: '东阳',
-                    value: '330783',
+                    value: '330783'
                   },
                   {
                     label: '永康',
-                    value: '330784',
-                  },
-                ],
+                    value: '330784'
+                  }
+                ]
               },
               {
                 label: '衢州',
@@ -4131,29 +4131,29 @@ export default [
                 children: [
                   {
                     label: '柯城',
-                    value: '330802',
+                    value: '330802'
                   },
                   {
                     label: '衢江',
-                    value: '330803',
+                    value: '330803'
                   },
                   {
                     label: '常山',
-                    value: '330822',
+                    value: '330822'
                   },
                   {
                     label: '开化',
-                    value: '330824',
+                    value: '330824'
                   },
                   {
                     label: '龙游',
-                    value: '330825',
+                    value: '330825'
                   },
                   {
                     label: '江山',
-                    value: '330881',
-                  },
-                ],
+                    value: '330881'
+                  }
+                ]
               },
               {
                 label: '舟山',
@@ -4161,21 +4161,21 @@ export default [
                 children: [
                   {
                     label: '定海',
-                    value: '330902',
+                    value: '330902'
                   },
                   {
                     label: '普陀',
-                    value: '330903',
+                    value: '330903'
                   },
                   {
                     label: '岱山',
-                    value: '330921',
+                    value: '330921'
                   },
                   {
                     label: '嵊泗',
-                    value: '330922',
-                  },
-                ],
+                    value: '330922'
+                  }
+                ]
               },
               {
                 label: '台州',
@@ -4183,41 +4183,41 @@ export default [
                 children: [
                   {
                     label: '椒江',
-                    value: '331002',
+                    value: '331002'
                   },
                   {
                     label: '黄岩',
-                    value: '331003',
+                    value: '331003'
                   },
                   {
                     label: '路桥',
-                    value: '331004',
+                    value: '331004'
                   },
                   {
                     label: '三门',
-                    value: '331022',
+                    value: '331022'
                   },
                   {
                     label: '天台',
-                    value: '331023',
+                    value: '331023'
                   },
                   {
                     label: '仙居',
-                    value: '331024',
+                    value: '331024'
                   },
                   {
                     label: '温岭',
-                    value: '331081',
+                    value: '331081'
                   },
                   {
                     label: '临海',
-                    value: '331082',
+                    value: '331082'
                   },
                   {
                     label: '玉环',
-                    value: '331083',
-                  },
-                ],
+                    value: '331083'
+                  }
+                ]
               },
               {
                 label: '丽水',
@@ -4225,43 +4225,43 @@ export default [
                 children: [
                   {
                     label: '莲都',
-                    value: '331102',
+                    value: '331102'
                   },
                   {
                     label: '青田',
-                    value: '331121',
+                    value: '331121'
                   },
                   {
                     label: '缙云',
-                    value: '331122',
+                    value: '331122'
                   },
                   {
                     label: '遂昌',
-                    value: '331123',
+                    value: '331123'
                   },
                   {
                     label: '松阳',
-                    value: '331124',
+                    value: '331124'
                   },
                   {
                     label: '云和',
-                    value: '331125',
+                    value: '331125'
                   },
                   {
                     label: '庆元',
-                    value: '331126',
+                    value: '331126'
                   },
                   {
                     label: '景宁',
-                    value: '331127',
+                    value: '331127'
                   },
                   {
                     label: '龙泉',
-                    value: '331181',
-                  },
-                ],
-              },
-            ],
+                    value: '331181'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '安徽',
@@ -4273,41 +4273,41 @@ export default [
                 children: [
                   {
                     label: '瑶海',
-                    value: '340102',
+                    value: '340102'
                   },
                   {
                     label: '庐阳',
-                    value: '340103',
+                    value: '340103'
                   },
                   {
                     label: '蜀山',
-                    value: '340104',
+                    value: '340104'
                   },
                   {
                     label: '包河',
-                    value: '340111',
+                    value: '340111'
                   },
                   {
                     label: '长丰',
-                    value: '340121',
+                    value: '340121'
                   },
                   {
                     label: '肥东',
-                    value: '340122',
+                    value: '340122'
                   },
                   {
                     label: '肥西',
-                    value: '340123',
+                    value: '340123'
                   },
                   {
                     label: '庐江',
-                    value: '340124',
+                    value: '340124'
                   },
                   {
                     label: '巢湖',
-                    value: '340181',
-                  },
-                ],
+                    value: '340181'
+                  }
+                ]
               },
               {
                 label: '芜湖',
@@ -4315,33 +4315,33 @@ export default [
                 children: [
                   {
                     label: '镜湖',
-                    value: '340202',
+                    value: '340202'
                   },
                   {
                     label: '鸠江',
-                    value: '340207',
+                    value: '340207'
                   },
                   {
                     label: '弋江',
-                    value: '340209',
+                    value: '340209'
                   },
                   {
                     label: '湾沚',
-                    value: '340210',
+                    value: '340210'
                   },
                   {
                     label: '繁昌',
-                    value: '340212',
+                    value: '340212'
                   },
                   {
                     label: '南陵',
-                    value: '340223',
+                    value: '340223'
                   },
                   {
                     label: '无为',
-                    value: '340281',
-                  },
-                ],
+                    value: '340281'
+                  }
+                ]
               },
               {
                 label: '蚌埠',
@@ -4349,33 +4349,33 @@ export default [
                 children: [
                   {
                     label: '龙子湖',
-                    value: '340302',
+                    value: '340302'
                   },
                   {
                     label: '蚌山',
-                    value: '340303',
+                    value: '340303'
                   },
                   {
                     label: '禹会',
-                    value: '340304',
+                    value: '340304'
                   },
                   {
                     label: '淮上',
-                    value: '340311',
+                    value: '340311'
                   },
                   {
                     label: '怀远',
-                    value: '340321',
+                    value: '340321'
                   },
                   {
                     label: '五河',
-                    value: '340322',
+                    value: '340322'
                   },
                   {
                     label: '固镇',
-                    value: '340323',
-                  },
-                ],
+                    value: '340323'
+                  }
+                ]
               },
               {
                 label: '淮南',
@@ -4383,33 +4383,33 @@ export default [
                 children: [
                   {
                     label: '大通',
-                    value: '340402',
+                    value: '340402'
                   },
                   {
                     label: '田家庵',
-                    value: '340403',
+                    value: '340403'
                   },
                   {
                     label: '谢家集',
-                    value: '340404',
+                    value: '340404'
                   },
                   {
                     label: '八公山',
-                    value: '340405',
+                    value: '340405'
                   },
                   {
                     label: '潘集',
-                    value: '340406',
+                    value: '340406'
                   },
                   {
                     label: '凤台',
-                    value: '340421',
+                    value: '340421'
                   },
                   {
                     label: '寿县',
-                    value: '340422',
-                  },
-                ],
+                    value: '340422'
+                  }
+                ]
               },
               {
                 label: '马鞍山',
@@ -4417,29 +4417,29 @@ export default [
                 children: [
                   {
                     label: '花山',
-                    value: '340503',
+                    value: '340503'
                   },
                   {
                     label: '雨山',
-                    value: '340504',
+                    value: '340504'
                   },
                   {
                     label: '博望',
-                    value: '340506',
+                    value: '340506'
                   },
                   {
                     label: '当涂',
-                    value: '340521',
+                    value: '340521'
                   },
                   {
                     label: '含山',
-                    value: '340522',
+                    value: '340522'
                   },
                   {
                     label: '和县',
-                    value: '340523',
-                  },
-                ],
+                    value: '340523'
+                  }
+                ]
               },
               {
                 label: '淮北',
@@ -4447,21 +4447,21 @@ export default [
                 children: [
                   {
                     label: '杜集',
-                    value: '340602',
+                    value: '340602'
                   },
                   {
                     label: '相山',
-                    value: '340603',
+                    value: '340603'
                   },
                   {
                     label: '烈山',
-                    value: '340604',
+                    value: '340604'
                   },
                   {
                     label: '濉溪',
-                    value: '340621',
-                  },
-                ],
+                    value: '340621'
+                  }
+                ]
               },
               {
                 label: '铜陵',
@@ -4469,21 +4469,21 @@ export default [
                 children: [
                   {
                     label: '铜官',
-                    value: '340705',
+                    value: '340705'
                   },
                   {
                     label: '义安',
-                    value: '340706',
+                    value: '340706'
                   },
                   {
                     label: '郊区',
-                    value: '340711',
+                    value: '340711'
                   },
                   {
                     label: '枞阳',
-                    value: '340722',
-                  },
-                ],
+                    value: '340722'
+                  }
+                ]
               },
               {
                 label: '安庆',
@@ -4491,45 +4491,45 @@ export default [
                 children: [
                   {
                     label: '迎江',
-                    value: '340802',
+                    value: '340802'
                   },
                   {
                     label: '大观',
-                    value: '340803',
+                    value: '340803'
                   },
                   {
                     label: '宜秀',
-                    value: '340811',
+                    value: '340811'
                   },
                   {
                     label: '怀宁',
-                    value: '340822',
+                    value: '340822'
                   },
                   {
                     label: '太湖',
-                    value: '340825',
+                    value: '340825'
                   },
                   {
                     label: '宿松',
-                    value: '340826',
+                    value: '340826'
                   },
                   {
                     label: '望江',
-                    value: '340827',
+                    value: '340827'
                   },
                   {
                     label: '岳西',
-                    value: '340828',
+                    value: '340828'
                   },
                   {
                     label: '桐城',
-                    value: '340881',
+                    value: '340881'
                   },
                   {
                     label: '潜山',
-                    value: '340882',
-                  },
-                ],
+                    value: '340882'
+                  }
+                ]
               },
               {
                 label: '黄山',
@@ -4537,33 +4537,33 @@ export default [
                 children: [
                   {
                     label: '屯溪',
-                    value: '341002',
+                    value: '341002'
                   },
                   {
                     label: '黄山区',
-                    value: '341003',
+                    value: '341003'
                   },
                   {
                     label: '徽州',
-                    value: '341004',
+                    value: '341004'
                   },
                   {
                     label: '歙县',
-                    value: '341021',
+                    value: '341021'
                   },
                   {
                     label: '休宁',
-                    value: '341022',
+                    value: '341022'
                   },
                   {
                     label: '黟县',
-                    value: '341023',
+                    value: '341023'
                   },
                   {
                     label: '祁门',
-                    value: '341024',
-                  },
-                ],
+                    value: '341024'
+                  }
+                ]
               },
               {
                 label: '滁州',
@@ -4571,37 +4571,37 @@ export default [
                 children: [
                   {
                     label: '琅琊',
-                    value: '341102',
+                    value: '341102'
                   },
                   {
                     label: '南谯',
-                    value: '341103',
+                    value: '341103'
                   },
                   {
                     label: '来安',
-                    value: '341122',
+                    value: '341122'
                   },
                   {
                     label: '全椒',
-                    value: '341124',
+                    value: '341124'
                   },
                   {
                     label: '定远',
-                    value: '341125',
+                    value: '341125'
                   },
                   {
                     label: '凤阳',
-                    value: '341126',
+                    value: '341126'
                   },
                   {
                     label: '天长',
-                    value: '341181',
+                    value: '341181'
                   },
                   {
                     label: '明光',
-                    value: '341182',
-                  },
-                ],
+                    value: '341182'
+                  }
+                ]
               },
               {
                 label: '阜阳',
@@ -4609,37 +4609,37 @@ export default [
                 children: [
                   {
                     label: '颍州',
-                    value: '341202',
+                    value: '341202'
                   },
                   {
                     label: '颍东',
-                    value: '341203',
+                    value: '341203'
                   },
                   {
                     label: '颍泉',
-                    value: '341204',
+                    value: '341204'
                   },
                   {
                     label: '临泉',
-                    value: '341221',
+                    value: '341221'
                   },
                   {
                     label: '太和',
-                    value: '341222',
+                    value: '341222'
                   },
                   {
                     label: '阜南',
-                    value: '341225',
+                    value: '341225'
                   },
                   {
                     label: '颍上',
-                    value: '341226',
+                    value: '341226'
                   },
                   {
                     label: '界首',
-                    value: '341282',
-                  },
-                ],
+                    value: '341282'
+                  }
+                ]
               },
               {
                 label: '宿州',
@@ -4647,25 +4647,25 @@ export default [
                 children: [
                   {
                     label: '埇桥',
-                    value: '341302',
+                    value: '341302'
                   },
                   {
                     label: '砀山',
-                    value: '341321',
+                    value: '341321'
                   },
                   {
                     label: '萧县',
-                    value: '341322',
+                    value: '341322'
                   },
                   {
                     label: '灵璧',
-                    value: '341323',
+                    value: '341323'
                   },
                   {
                     label: '泗县',
-                    value: '341324',
-                  },
-                ],
+                    value: '341324'
+                  }
+                ]
               },
               {
                 label: '六安',
@@ -4673,33 +4673,33 @@ export default [
                 children: [
                   {
                     label: '金安',
-                    value: '341502',
+                    value: '341502'
                   },
                   {
                     label: '裕安',
-                    value: '341503',
+                    value: '341503'
                   },
                   {
                     label: '叶集',
-                    value: '341504',
+                    value: '341504'
                   },
                   {
                     label: '霍邱',
-                    value: '341522',
+                    value: '341522'
                   },
                   {
                     label: '舒城',
-                    value: '341523',
+                    value: '341523'
                   },
                   {
                     label: '金寨',
-                    value: '341524',
+                    value: '341524'
                   },
                   {
                     label: '霍山',
-                    value: '341525',
-                  },
-                ],
+                    value: '341525'
+                  }
+                ]
               },
               {
                 label: '亳州',
@@ -4707,21 +4707,21 @@ export default [
                 children: [
                   {
                     label: '谯城',
-                    value: '341602',
+                    value: '341602'
                   },
                   {
                     label: '涡阳',
-                    value: '341621',
+                    value: '341621'
                   },
                   {
                     label: '蒙城',
-                    value: '341622',
+                    value: '341622'
                   },
                   {
                     label: '利辛',
-                    value: '341623',
-                  },
-                ],
+                    value: '341623'
+                  }
+                ]
               },
               {
                 label: '池州',
@@ -4729,21 +4729,21 @@ export default [
                 children: [
                   {
                     label: '贵池',
-                    value: '341702',
+                    value: '341702'
                   },
                   {
                     label: '东至',
-                    value: '341721',
+                    value: '341721'
                   },
                   {
                     label: '石台',
-                    value: '341722',
+                    value: '341722'
                   },
                   {
                     label: '青阳',
-                    value: '341723',
-                  },
-                ],
+                    value: '341723'
+                  }
+                ]
               },
               {
                 label: '宣城',
@@ -4751,35 +4751,35 @@ export default [
                 children: [
                   {
                     label: '宣州',
-                    value: '341802',
+                    value: '341802'
                   },
                   {
                     label: '郎溪',
-                    value: '341821',
+                    value: '341821'
                   },
                   {
                     label: '泾县',
-                    value: '341823',
+                    value: '341823'
                   },
                   {
                     label: '绩溪',
-                    value: '341824',
+                    value: '341824'
                   },
                   {
                     label: '旌德',
-                    value: '341825',
+                    value: '341825'
                   },
                   {
                     label: '宁国',
-                    value: '341881',
+                    value: '341881'
                   },
                   {
                     label: '广德',
-                    value: '341882',
-                  },
-                ],
-              },
-            ],
+                    value: '341882'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '福建',
@@ -4791,57 +4791,57 @@ export default [
                 children: [
                   {
                     label: '鼓楼',
-                    value: '350102',
+                    value: '350102'
                   },
                   {
                     label: '台江',
-                    value: '350103',
+                    value: '350103'
                   },
                   {
                     label: '仓山',
-                    value: '350104',
+                    value: '350104'
                   },
                   {
                     label: '马尾',
-                    value: '350105',
+                    value: '350105'
                   },
                   {
                     label: '晋安',
-                    value: '350111',
+                    value: '350111'
                   },
                   {
                     label: '长乐',
-                    value: '350112',
+                    value: '350112'
                   },
                   {
                     label: '闽侯',
-                    value: '350121',
+                    value: '350121'
                   },
                   {
                     label: '连江',
-                    value: '350122',
+                    value: '350122'
                   },
                   {
                     label: '罗源',
-                    value: '350123',
+                    value: '350123'
                   },
                   {
                     label: '闽清',
-                    value: '350124',
+                    value: '350124'
                   },
                   {
                     label: '永泰',
-                    value: '350125',
+                    value: '350125'
                   },
                   {
                     label: '平潭',
-                    value: '350128',
+                    value: '350128'
                   },
                   {
                     label: '福清',
-                    value: '350181',
-                  },
-                ],
+                    value: '350181'
+                  }
+                ]
               },
               {
                 label: '厦门',
@@ -4849,29 +4849,29 @@ export default [
                 children: [
                   {
                     label: '思明',
-                    value: '350203',
+                    value: '350203'
                   },
                   {
                     label: '海沧',
-                    value: '350205',
+                    value: '350205'
                   },
                   {
                     label: '湖里',
-                    value: '350206',
+                    value: '350206'
                   },
                   {
                     label: '集美',
-                    value: '350211',
+                    value: '350211'
                   },
                   {
                     label: '同安',
-                    value: '350212',
+                    value: '350212'
                   },
                   {
                     label: '翔安',
-                    value: '350213',
-                  },
-                ],
+                    value: '350213'
+                  }
+                ]
               },
               {
                 label: '莆田',
@@ -4879,25 +4879,25 @@ export default [
                 children: [
                   {
                     label: '城厢',
-                    value: '350302',
+                    value: '350302'
                   },
                   {
                     label: '涵江',
-                    value: '350303',
+                    value: '350303'
                   },
                   {
                     label: '荔城',
-                    value: '350304',
+                    value: '350304'
                   },
                   {
                     label: '秀屿',
-                    value: '350305',
+                    value: '350305'
                   },
                   {
                     label: '仙游',
-                    value: '350322',
-                  },
-                ],
+                    value: '350322'
+                  }
+                ]
               },
               {
                 label: '三明',
@@ -4905,49 +4905,49 @@ export default [
                 children: [
                   {
                     label: '三元',
-                    value: '350404',
+                    value: '350404'
                   },
                   {
                     label: '沙县',
-                    value: '350405',
+                    value: '350405'
                   },
                   {
                     label: '明溪',
-                    value: '350421',
+                    value: '350421'
                   },
                   {
                     label: '清流',
-                    value: '350423',
+                    value: '350423'
                   },
                   {
                     label: '宁化',
-                    value: '350424',
+                    value: '350424'
                   },
                   {
                     label: '大田',
-                    value: '350425',
+                    value: '350425'
                   },
                   {
                     label: '尤溪',
-                    value: '350426',
+                    value: '350426'
                   },
                   {
                     label: '将乐',
-                    value: '350428',
+                    value: '350428'
                   },
                   {
                     label: '泰宁',
-                    value: '350429',
+                    value: '350429'
                   },
                   {
                     label: '建宁',
-                    value: '350430',
+                    value: '350430'
                   },
                   {
                     label: '永安',
-                    value: '350481',
-                  },
-                ],
+                    value: '350481'
+                  }
+                ]
               },
               {
                 label: '泉州',
@@ -4955,53 +4955,53 @@ export default [
                 children: [
                   {
                     label: '鲤城',
-                    value: '350502',
+                    value: '350502'
                   },
                   {
                     label: '丰泽',
-                    value: '350503',
+                    value: '350503'
                   },
                   {
                     label: '洛江',
-                    value: '350504',
+                    value: '350504'
                   },
                   {
                     label: '泉港',
-                    value: '350505',
+                    value: '350505'
                   },
                   {
                     label: '惠安',
-                    value: '350521',
+                    value: '350521'
                   },
                   {
                     label: '安溪',
-                    value: '350524',
+                    value: '350524'
                   },
                   {
                     label: '永春',
-                    value: '350525',
+                    value: '350525'
                   },
                   {
                     label: '德化',
-                    value: '350526',
+                    value: '350526'
                   },
                   {
                     label: '金门',
-                    value: '350527',
+                    value: '350527'
                   },
                   {
                     label: '石狮',
-                    value: '350581',
+                    value: '350581'
                   },
                   {
                     label: '晋江',
-                    value: '350582',
+                    value: '350582'
                   },
                   {
                     label: '南安',
-                    value: '350583',
-                  },
-                ],
+                    value: '350583'
+                  }
+                ]
               },
               {
                 label: '漳州',
@@ -5009,49 +5009,49 @@ export default [
                 children: [
                   {
                     label: '芗城',
-                    value: '350602',
+                    value: '350602'
                   },
                   {
                     label: '龙文',
-                    value: '350603',
+                    value: '350603'
                   },
                   {
                     label: '龙海',
-                    value: '350604',
+                    value: '350604'
                   },
                   {
                     label: '长泰',
-                    value: '350605',
+                    value: '350605'
                   },
                   {
                     label: '云霄',
-                    value: '350622',
+                    value: '350622'
                   },
                   {
                     label: '漳浦',
-                    value: '350623',
+                    value: '350623'
                   },
                   {
                     label: '诏安',
-                    value: '350624',
+                    value: '350624'
                   },
                   {
                     label: '东山',
-                    value: '350626',
+                    value: '350626'
                   },
                   {
                     label: '南靖',
-                    value: '350627',
+                    value: '350627'
                   },
                   {
                     label: '平和',
-                    value: '350628',
+                    value: '350628'
                   },
                   {
                     label: '华安',
-                    value: '350629',
-                  },
-                ],
+                    value: '350629'
+                  }
+                ]
               },
               {
                 label: '南平',
@@ -5059,45 +5059,45 @@ export default [
                 children: [
                   {
                     label: '延平',
-                    value: '350702',
+                    value: '350702'
                   },
                   {
                     label: '建阳',
-                    value: '350703',
+                    value: '350703'
                   },
                   {
                     label: '顺昌',
-                    value: '350721',
+                    value: '350721'
                   },
                   {
                     label: '浦城',
-                    value: '350722',
+                    value: '350722'
                   },
                   {
                     label: '光泽',
-                    value: '350723',
+                    value: '350723'
                   },
                   {
                     label: '松溪',
-                    value: '350724',
+                    value: '350724'
                   },
                   {
                     label: '政和',
-                    value: '350725',
+                    value: '350725'
                   },
                   {
                     label: '邵武',
-                    value: '350781',
+                    value: '350781'
                   },
                   {
                     label: '武夷山',
-                    value: '350782',
+                    value: '350782'
                   },
                   {
                     label: '建瓯',
-                    value: '350783',
-                  },
-                ],
+                    value: '350783'
+                  }
+                ]
               },
               {
                 label: '龙岩',
@@ -5105,33 +5105,33 @@ export default [
                 children: [
                   {
                     label: '新罗',
-                    value: '350802',
+                    value: '350802'
                   },
                   {
                     label: '永定',
-                    value: '350803',
+                    value: '350803'
                   },
                   {
                     label: '长汀',
-                    value: '350821',
+                    value: '350821'
                   },
                   {
                     label: '上杭',
-                    value: '350823',
+                    value: '350823'
                   },
                   {
                     label: '武平',
-                    value: '350824',
+                    value: '350824'
                   },
                   {
                     label: '连城',
-                    value: '350825',
+                    value: '350825'
                   },
                   {
                     label: '漳平',
-                    value: '350881',
-                  },
-                ],
+                    value: '350881'
+                  }
+                ]
               },
               {
                 label: '宁德',
@@ -5139,43 +5139,43 @@ export default [
                 children: [
                   {
                     label: '蕉城',
-                    value: '350902',
+                    value: '350902'
                   },
                   {
                     label: '霞浦',
-                    value: '350921',
+                    value: '350921'
                   },
                   {
                     label: '古田',
-                    value: '350922',
+                    value: '350922'
                   },
                   {
                     label: '屏南',
-                    value: '350923',
+                    value: '350923'
                   },
                   {
                     label: '寿宁',
-                    value: '350924',
+                    value: '350924'
                   },
                   {
                     label: '周宁',
-                    value: '350925',
+                    value: '350925'
                   },
                   {
                     label: '柘荣',
-                    value: '350926',
+                    value: '350926'
                   },
                   {
                     label: '福安',
-                    value: '350981',
+                    value: '350981'
                   },
                   {
                     label: '福鼎',
-                    value: '350982',
-                  },
-                ],
-              },
-            ],
+                    value: '350982'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '江西',
@@ -5187,41 +5187,41 @@ export default [
                 children: [
                   {
                     label: '东湖',
-                    value: '360102',
+                    value: '360102'
                   },
                   {
                     label: '西湖',
-                    value: '360103',
+                    value: '360103'
                   },
                   {
                     label: '青云谱',
-                    value: '360104',
+                    value: '360104'
                   },
                   {
                     label: '青山湖',
-                    value: '360111',
+                    value: '360111'
                   },
                   {
                     label: '新建',
-                    value: '360112',
+                    value: '360112'
                   },
                   {
                     label: '红谷滩',
-                    value: '360113',
+                    value: '360113'
                   },
                   {
                     label: '南昌县',
-                    value: '360121',
+                    value: '360121'
                   },
                   {
                     label: '安义',
-                    value: '360123',
+                    value: '360123'
                   },
                   {
                     label: '进贤',
-                    value: '360124',
-                  },
-                ],
+                    value: '360124'
+                  }
+                ]
               },
               {
                 label: '景德镇',
@@ -5229,21 +5229,21 @@ export default [
                 children: [
                   {
                     label: '昌江',
-                    value: '360202',
+                    value: '360202'
                   },
                   {
                     label: '珠山',
-                    value: '360203',
+                    value: '360203'
                   },
                   {
                     label: '浮梁',
-                    value: '360222',
+                    value: '360222'
                   },
                   {
                     label: '乐平',
-                    value: '360281',
-                  },
-                ],
+                    value: '360281'
+                  }
+                ]
               },
               {
                 label: '萍乡',
@@ -5251,25 +5251,25 @@ export default [
                 children: [
                   {
                     label: '安源',
-                    value: '360302',
+                    value: '360302'
                   },
                   {
                     label: '湘东',
-                    value: '360313',
+                    value: '360313'
                   },
                   {
                     label: '莲花',
-                    value: '360321',
+                    value: '360321'
                   },
                   {
                     label: '上栗',
-                    value: '360322',
+                    value: '360322'
                   },
                   {
                     label: '芦溪',
-                    value: '360323',
-                  },
-                ],
+                    value: '360323'
+                  }
+                ]
               },
               {
                 label: '九江',
@@ -5277,57 +5277,57 @@ export default [
                 children: [
                   {
                     label: '濂溪',
-                    value: '360402',
+                    value: '360402'
                   },
                   {
                     label: '浔阳',
-                    value: '360403',
+                    value: '360403'
                   },
                   {
                     label: '柴桑',
-                    value: '360404',
+                    value: '360404'
                   },
                   {
                     label: '武宁',
-                    value: '360423',
+                    value: '360423'
                   },
                   {
                     label: '修水',
-                    value: '360424',
+                    value: '360424'
                   },
                   {
                     label: '永修',
-                    value: '360425',
+                    value: '360425'
                   },
                   {
                     label: '德安',
-                    value: '360426',
+                    value: '360426'
                   },
                   {
                     label: '都昌',
-                    value: '360428',
+                    value: '360428'
                   },
                   {
                     label: '湖口',
-                    value: '360429',
+                    value: '360429'
                   },
                   {
                     label: '彭泽',
-                    value: '360430',
+                    value: '360430'
                   },
                   {
                     label: '瑞昌',
-                    value: '360481',
+                    value: '360481'
                   },
                   {
                     label: '共青城',
-                    value: '360482',
+                    value: '360482'
                   },
                   {
                     label: '庐山',
-                    value: '360483',
-                  },
-                ],
+                    value: '360483'
+                  }
+                ]
               },
               {
                 label: '新余',
@@ -5335,13 +5335,13 @@ export default [
                 children: [
                   {
                     label: '渝水',
-                    value: '360502',
+                    value: '360502'
                   },
                   {
                     label: '分宜',
-                    value: '360521',
-                  },
-                ],
+                    value: '360521'
+                  }
+                ]
               },
               {
                 label: '鹰潭',
@@ -5349,17 +5349,17 @@ export default [
                 children: [
                   {
                     label: '月湖',
-                    value: '360602',
+                    value: '360602'
                   },
                   {
                     label: '余江',
-                    value: '360603',
+                    value: '360603'
                   },
                   {
                     label: '贵溪',
-                    value: '360681',
-                  },
-                ],
+                    value: '360681'
+                  }
+                ]
               },
               {
                 label: '赣州',
@@ -5367,77 +5367,77 @@ export default [
                 children: [
                   {
                     label: '章贡',
-                    value: '360702',
+                    value: '360702'
                   },
                   {
                     label: '南康',
-                    value: '360703',
+                    value: '360703'
                   },
                   {
                     label: '赣县',
-                    value: '360704',
+                    value: '360704'
                   },
                   {
                     label: '信丰',
-                    value: '360722',
+                    value: '360722'
                   },
                   {
                     label: '大余',
-                    value: '360723',
+                    value: '360723'
                   },
                   {
                     label: '上犹',
-                    value: '360724',
+                    value: '360724'
                   },
                   {
                     label: '崇义',
-                    value: '360725',
+                    value: '360725'
                   },
                   {
                     label: '安远',
-                    value: '360726',
+                    value: '360726'
                   },
                   {
                     label: '定南',
-                    value: '360728',
+                    value: '360728'
                   },
                   {
                     label: '全南',
-                    value: '360729',
+                    value: '360729'
                   },
                   {
                     label: '宁都',
-                    value: '360730',
+                    value: '360730'
                   },
                   {
                     label: '于都',
-                    value: '360731',
+                    value: '360731'
                   },
                   {
                     label: '兴国',
-                    value: '360732',
+                    value: '360732'
                   },
                   {
                     label: '会昌',
-                    value: '360733',
+                    value: '360733'
                   },
                   {
                     label: '寻乌',
-                    value: '360734',
+                    value: '360734'
                   },
                   {
                     label: '石城',
-                    value: '360735',
+                    value: '360735'
                   },
                   {
                     label: '瑞金',
-                    value: '360781',
+                    value: '360781'
                   },
                   {
                     label: '龙南',
-                    value: '360783',
-                  },
-                ],
+                    value: '360783'
+                  }
+                ]
               },
               {
                 label: '吉安',
@@ -5445,57 +5445,57 @@ export default [
                 children: [
                   {
                     label: '吉州',
-                    value: '360802',
+                    value: '360802'
                   },
                   {
                     label: '青原',
-                    value: '360803',
+                    value: '360803'
                   },
                   {
                     label: '吉安县',
-                    value: '360821',
+                    value: '360821'
                   },
                   {
                     label: '吉水',
-                    value: '360822',
+                    value: '360822'
                   },
                   {
                     label: '峡江',
-                    value: '360823',
+                    value: '360823'
                   },
                   {
                     label: '新干',
-                    value: '360824',
+                    value: '360824'
                   },
                   {
                     label: '永丰',
-                    value: '360825',
+                    value: '360825'
                   },
                   {
                     label: '泰和',
-                    value: '360826',
+                    value: '360826'
                   },
                   {
                     label: '遂川',
-                    value: '360827',
+                    value: '360827'
                   },
                   {
                     label: '万安',
-                    value: '360828',
+                    value: '360828'
                   },
                   {
                     label: '安福',
-                    value: '360829',
+                    value: '360829'
                   },
                   {
                     label: '永新',
-                    value: '360830',
+                    value: '360830'
                   },
                   {
                     label: '井冈山',
-                    value: '360881',
-                  },
-                ],
+                    value: '360881'
+                  }
+                ]
               },
               {
                 label: '宜春',
@@ -5503,45 +5503,45 @@ export default [
                 children: [
                   {
                     label: '袁州',
-                    value: '360902',
+                    value: '360902'
                   },
                   {
                     label: '奉新',
-                    value: '360921',
+                    value: '360921'
                   },
                   {
                     label: '万载',
-                    value: '360922',
+                    value: '360922'
                   },
                   {
                     label: '上高',
-                    value: '360923',
+                    value: '360923'
                   },
                   {
                     label: '宜丰',
-                    value: '360924',
+                    value: '360924'
                   },
                   {
                     label: '靖安',
-                    value: '360925',
+                    value: '360925'
                   },
                   {
                     label: '铜鼓',
-                    value: '360926',
+                    value: '360926'
                   },
                   {
                     label: '丰城',
-                    value: '360981',
+                    value: '360981'
                   },
                   {
                     label: '樟树',
-                    value: '360982',
+                    value: '360982'
                   },
                   {
                     label: '高安',
-                    value: '360983',
-                  },
-                ],
+                    value: '360983'
+                  }
+                ]
               },
               {
                 label: '抚州',
@@ -5549,49 +5549,49 @@ export default [
                 children: [
                   {
                     label: '临川',
-                    value: '361002',
+                    value: '361002'
                   },
                   {
                     label: '东乡',
-                    value: '361003',
+                    value: '361003'
                   },
                   {
                     label: '南城',
-                    value: '361021',
+                    value: '361021'
                   },
                   {
                     label: '黎川',
-                    value: '361022',
+                    value: '361022'
                   },
                   {
                     label: '南丰',
-                    value: '361023',
+                    value: '361023'
                   },
                   {
                     label: '崇仁',
-                    value: '361024',
+                    value: '361024'
                   },
                   {
                     label: '乐安',
-                    value: '361025',
+                    value: '361025'
                   },
                   {
                     label: '宜黄',
-                    value: '361026',
+                    value: '361026'
                   },
                   {
                     label: '金溪',
-                    value: '361027',
+                    value: '361027'
                   },
                   {
                     label: '资溪',
-                    value: '361028',
+                    value: '361028'
                   },
                   {
                     label: '广昌',
-                    value: '361030',
-                  },
-                ],
+                    value: '361030'
+                  }
+                ]
               },
               {
                 label: '上饶',
@@ -5599,55 +5599,55 @@ export default [
                 children: [
                   {
                     label: '信州',
-                    value: '361102',
+                    value: '361102'
                   },
                   {
                     label: '广丰',
-                    value: '361103',
+                    value: '361103'
                   },
                   {
                     label: '广信',
-                    value: '361104',
+                    value: '361104'
                   },
                   {
                     label: '玉山',
-                    value: '361123',
+                    value: '361123'
                   },
                   {
                     label: '铅山',
-                    value: '361124',
+                    value: '361124'
                   },
                   {
                     label: '横峰',
-                    value: '361125',
+                    value: '361125'
                   },
                   {
                     label: '弋阳',
-                    value: '361126',
+                    value: '361126'
                   },
                   {
                     label: '余干',
-                    value: '361127',
+                    value: '361127'
                   },
                   {
                     label: '鄱阳',
-                    value: '361128',
+                    value: '361128'
                   },
                   {
                     label: '万年',
-                    value: '361129',
+                    value: '361129'
                   },
                   {
                     label: '婺源',
-                    value: '361130',
+                    value: '361130'
                   },
                   {
                     label: '德兴',
-                    value: '361181',
-                  },
-                ],
-              },
-            ],
+                    value: '361181'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '山东',
@@ -5659,53 +5659,53 @@ export default [
                 children: [
                   {
                     label: '历下',
-                    value: '370102',
+                    value: '370102'
                   },
                   {
                     label: '市中',
-                    value: '370103',
+                    value: '370103'
                   },
                   {
                     label: '槐荫',
-                    value: '370104',
+                    value: '370104'
                   },
                   {
                     label: '天桥',
-                    value: '370105',
+                    value: '370105'
                   },
                   {
                     label: '历城',
-                    value: '370112',
+                    value: '370112'
                   },
                   {
                     label: '长清',
-                    value: '370113',
+                    value: '370113'
                   },
                   {
                     label: '章丘',
-                    value: '370114',
+                    value: '370114'
                   },
                   {
                     label: '济阳',
-                    value: '370115',
+                    value: '370115'
                   },
                   {
                     label: '莱芜',
-                    value: '370116',
+                    value: '370116'
                   },
                   {
                     label: '钢城',
-                    value: '370117',
+                    value: '370117'
                   },
                   {
                     label: '平阴',
-                    value: '370124',
+                    value: '370124'
                   },
                   {
                     label: '商河',
-                    value: '370126',
-                  },
-                ],
+                    value: '370126'
+                  }
+                ]
               },
               {
                 label: '青岛',
@@ -5713,45 +5713,45 @@ export default [
                 children: [
                   {
                     label: '市南',
-                    value: '370202',
+                    value: '370202'
                   },
                   {
                     label: '市北',
-                    value: '370203',
+                    value: '370203'
                   },
                   {
                     label: '黄岛',
-                    value: '370211',
+                    value: '370211'
                   },
                   {
                     label: '崂山',
-                    value: '370212',
+                    value: '370212'
                   },
                   {
                     label: '李沧',
-                    value: '370213',
+                    value: '370213'
                   },
                   {
                     label: '城阳',
-                    value: '370214',
+                    value: '370214'
                   },
                   {
                     label: '即墨',
-                    value: '370215',
+                    value: '370215'
                   },
                   {
                     label: '胶州',
-                    value: '370281',
+                    value: '370281'
                   },
                   {
                     label: '平度',
-                    value: '370283',
+                    value: '370283'
                   },
                   {
                     label: '莱西',
-                    value: '370285',
-                  },
-                ],
+                    value: '370285'
+                  }
+                ]
               },
               {
                 label: '淄博',
@@ -5759,37 +5759,37 @@ export default [
                 children: [
                   {
                     label: '淄川',
-                    value: '370302',
+                    value: '370302'
                   },
                   {
                     label: '张店',
-                    value: '370303',
+                    value: '370303'
                   },
                   {
                     label: '博山',
-                    value: '370304',
+                    value: '370304'
                   },
                   {
                     label: '临淄',
-                    value: '370305',
+                    value: '370305'
                   },
                   {
                     label: '周村',
-                    value: '370306',
+                    value: '370306'
                   },
                   {
                     label: '桓台',
-                    value: '370321',
+                    value: '370321'
                   },
                   {
                     label: '高青',
-                    value: '370322',
+                    value: '370322'
                   },
                   {
                     label: '沂源',
-                    value: '370323',
-                  },
-                ],
+                    value: '370323'
+                  }
+                ]
               },
               {
                 label: '枣庄',
@@ -5797,29 +5797,29 @@ export default [
                 children: [
                   {
                     label: '市中',
-                    value: '370402',
+                    value: '370402'
                   },
                   {
                     label: '薛城',
-                    value: '370403',
+                    value: '370403'
                   },
                   {
                     label: '峄城',
-                    value: '370404',
+                    value: '370404'
                   },
                   {
                     label: '台儿庄',
-                    value: '370405',
+                    value: '370405'
                   },
                   {
                     label: '山亭',
-                    value: '370406',
+                    value: '370406'
                   },
                   {
                     label: '滕州',
-                    value: '370481',
-                  },
-                ],
+                    value: '370481'
+                  }
+                ]
               },
               {
                 label: '东营',
@@ -5827,25 +5827,25 @@ export default [
                 children: [
                   {
                     label: '东营区',
-                    value: '370502',
+                    value: '370502'
                   },
                   {
                     label: '河口',
-                    value: '370503',
+                    value: '370503'
                   },
                   {
                     label: '垦利',
-                    value: '370505',
+                    value: '370505'
                   },
                   {
                     label: '利津',
-                    value: '370522',
+                    value: '370522'
                   },
                   {
                     label: '广饶',
-                    value: '370523',
-                  },
-                ],
+                    value: '370523'
+                  }
+                ]
               },
               {
                 label: '烟台',
@@ -5853,49 +5853,49 @@ export default [
                 children: [
                   {
                     label: '芝罘',
-                    value: '370602',
+                    value: '370602'
                   },
                   {
                     label: '福山',
-                    value: '370611',
+                    value: '370611'
                   },
                   {
                     label: '牟平',
-                    value: '370612',
+                    value: '370612'
                   },
                   {
                     label: '莱山',
-                    value: '370613',
+                    value: '370613'
                   },
                   {
                     label: '蓬莱',
-                    value: '370614',
+                    value: '370614'
                   },
                   {
                     label: '龙口',
-                    value: '370681',
+                    value: '370681'
                   },
                   {
                     label: '莱阳',
-                    value: '370682',
+                    value: '370682'
                   },
                   {
                     label: '莱州',
-                    value: '370683',
+                    value: '370683'
                   },
                   {
                     label: '招远',
-                    value: '370685',
+                    value: '370685'
                   },
                   {
                     label: '栖霞',
-                    value: '370686',
+                    value: '370686'
                   },
                   {
                     label: '海阳',
-                    value: '370687',
-                  },
-                ],
+                    value: '370687'
+                  }
+                ]
               },
               {
                 label: '潍坊',
@@ -5903,53 +5903,53 @@ export default [
                 children: [
                   {
                     label: '潍城',
-                    value: '370702',
+                    value: '370702'
                   },
                   {
                     label: '寒亭',
-                    value: '370703',
+                    value: '370703'
                   },
                   {
                     label: '坊子',
-                    value: '370704',
+                    value: '370704'
                   },
                   {
                     label: '奎文',
-                    value: '370705',
+                    value: '370705'
                   },
                   {
                     label: '临朐',
-                    value: '370724',
+                    value: '370724'
                   },
                   {
                     label: '昌乐',
-                    value: '370725',
+                    value: '370725'
                   },
                   {
                     label: '青州',
-                    value: '370781',
+                    value: '370781'
                   },
                   {
                     label: '诸城',
-                    value: '370782',
+                    value: '370782'
                   },
                   {
                     label: '寿光',
-                    value: '370783',
+                    value: '370783'
                   },
                   {
                     label: '安丘',
-                    value: '370784',
+                    value: '370784'
                   },
                   {
                     label: '高密',
-                    value: '370785',
+                    value: '370785'
                   },
                   {
                     label: '昌邑',
-                    value: '370786',
-                  },
-                ],
+                    value: '370786'
+                  }
+                ]
               },
               {
                 label: '济宁',
@@ -5957,49 +5957,49 @@ export default [
                 children: [
                   {
                     label: '任城',
-                    value: '370811',
+                    value: '370811'
                   },
                   {
                     label: '兖州',
-                    value: '370812',
+                    value: '370812'
                   },
                   {
                     label: '微山',
-                    value: '370826',
+                    value: '370826'
                   },
                   {
                     label: '鱼台',
-                    value: '370827',
+                    value: '370827'
                   },
                   {
                     label: '金乡',
-                    value: '370828',
+                    value: '370828'
                   },
                   {
                     label: '嘉祥',
-                    value: '370829',
+                    value: '370829'
                   },
                   {
                     label: '汶上',
-                    value: '370830',
+                    value: '370830'
                   },
                   {
                     label: '泗水',
-                    value: '370831',
+                    value: '370831'
                   },
                   {
                     label: '梁山',
-                    value: '370832',
+                    value: '370832'
                   },
                   {
                     label: '曲阜',
-                    value: '370881',
+                    value: '370881'
                   },
                   {
                     label: '邹城',
-                    value: '370883',
-                  },
-                ],
+                    value: '370883'
+                  }
+                ]
               },
               {
                 label: '泰安',
@@ -6007,29 +6007,29 @@ export default [
                 children: [
                   {
                     label: '泰山',
-                    value: '370902',
+                    value: '370902'
                   },
                   {
                     label: '岱岳',
-                    value: '370911',
+                    value: '370911'
                   },
                   {
                     label: '宁阳',
-                    value: '370921',
+                    value: '370921'
                   },
                   {
                     label: '东平',
-                    value: '370923',
+                    value: '370923'
                   },
                   {
                     label: '新泰',
-                    value: '370982',
+                    value: '370982'
                   },
                   {
                     label: '肥城',
-                    value: '370983',
-                  },
-                ],
+                    value: '370983'
+                  }
+                ]
               },
               {
                 label: '威海',
@@ -6037,21 +6037,21 @@ export default [
                 children: [
                   {
                     label: '环翠',
-                    value: '371002',
+                    value: '371002'
                   },
                   {
                     label: '文登',
-                    value: '371003',
+                    value: '371003'
                   },
                   {
                     label: '荣成',
-                    value: '371082',
+                    value: '371082'
                   },
                   {
                     label: '乳山',
-                    value: '371083',
-                  },
-                ],
+                    value: '371083'
+                  }
+                ]
               },
               {
                 label: '日照',
@@ -6059,21 +6059,21 @@ export default [
                 children: [
                   {
                     label: '东港',
-                    value: '371102',
+                    value: '371102'
                   },
                   {
                     label: '岚山',
-                    value: '371103',
+                    value: '371103'
                   },
                   {
                     label: '五莲',
-                    value: '371121',
+                    value: '371121'
                   },
                   {
                     label: '莒县',
-                    value: '371122',
-                  },
-                ],
+                    value: '371122'
+                  }
+                ]
               },
               {
                 label: '临沂',
@@ -6081,53 +6081,53 @@ export default [
                 children: [
                   {
                     label: '兰山',
-                    value: '371302',
+                    value: '371302'
                   },
                   {
                     label: '罗庄',
-                    value: '371311',
+                    value: '371311'
                   },
                   {
                     label: '河东',
-                    value: '371312',
+                    value: '371312'
                   },
                   {
                     label: '沂南',
-                    value: '371321',
+                    value: '371321'
                   },
                   {
                     label: '郯城',
-                    value: '371322',
+                    value: '371322'
                   },
                   {
                     label: '沂水',
-                    value: '371323',
+                    value: '371323'
                   },
                   {
                     label: '兰陵',
-                    value: '371324',
+                    value: '371324'
                   },
                   {
                     label: '费县',
-                    value: '371325',
+                    value: '371325'
                   },
                   {
                     label: '平邑',
-                    value: '371326',
+                    value: '371326'
                   },
                   {
                     label: '莒南',
-                    value: '371327',
+                    value: '371327'
                   },
                   {
                     label: '蒙阴',
-                    value: '371328',
+                    value: '371328'
                   },
                   {
                     label: '临沭',
-                    value: '371329',
-                  },
-                ],
+                    value: '371329'
+                  }
+                ]
               },
               {
                 label: '德州',
@@ -6135,49 +6135,49 @@ export default [
                 children: [
                   {
                     label: '德城',
-                    value: '371402',
+                    value: '371402'
                   },
                   {
                     label: '陵城',
-                    value: '371403',
+                    value: '371403'
                   },
                   {
                     label: '宁津',
-                    value: '371422',
+                    value: '371422'
                   },
                   {
                     label: '庆云',
-                    value: '371423',
+                    value: '371423'
                   },
                   {
                     label: '临邑',
-                    value: '371424',
+                    value: '371424'
                   },
                   {
                     label: '齐河',
-                    value: '371425',
+                    value: '371425'
                   },
                   {
                     label: '平原',
-                    value: '371426',
+                    value: '371426'
                   },
                   {
                     label: '夏津',
-                    value: '371427',
+                    value: '371427'
                   },
                   {
                     label: '武城',
-                    value: '371428',
+                    value: '371428'
                   },
                   {
                     label: '乐陵',
-                    value: '371481',
+                    value: '371481'
                   },
                   {
                     label: '禹城',
-                    value: '371482',
-                  },
-                ],
+                    value: '371482'
+                  }
+                ]
               },
               {
                 label: '聊城',
@@ -6185,37 +6185,37 @@ export default [
                 children: [
                   {
                     label: '东昌府',
-                    value: '371502',
+                    value: '371502'
                   },
                   {
                     label: '茌平',
-                    value: '371503',
+                    value: '371503'
                   },
                   {
                     label: '阳谷',
-                    value: '371521',
+                    value: '371521'
                   },
                   {
                     label: '莘县',
-                    value: '371522',
+                    value: '371522'
                   },
                   {
                     label: '东阿',
-                    value: '371524',
+                    value: '371524'
                   },
                   {
                     label: '冠县',
-                    value: '371525',
+                    value: '371525'
                   },
                   {
                     label: '高唐',
-                    value: '371526',
+                    value: '371526'
                   },
                   {
                     label: '临清',
-                    value: '371581',
-                  },
-                ],
+                    value: '371581'
+                  }
+                ]
               },
               {
                 label: '滨州',
@@ -6223,33 +6223,33 @@ export default [
                 children: [
                   {
                     label: '滨城',
-                    value: '371602',
+                    value: '371602'
                   },
                   {
                     label: '沾化',
-                    value: '371603',
+                    value: '371603'
                   },
                   {
                     label: '惠民',
-                    value: '371621',
+                    value: '371621'
                   },
                   {
                     label: '阳信',
-                    value: '371622',
+                    value: '371622'
                   },
                   {
                     label: '无棣',
-                    value: '371623',
+                    value: '371623'
                   },
                   {
                     label: '博兴',
-                    value: '371625',
+                    value: '371625'
                   },
                   {
                     label: '邹平',
-                    value: '371681',
-                  },
-                ],
+                    value: '371681'
+                  }
+                ]
               },
               {
                 label: '菏泽',
@@ -6257,43 +6257,43 @@ export default [
                 children: [
                   {
                     label: '牡丹',
-                    value: '371702',
+                    value: '371702'
                   },
                   {
                     label: '定陶',
-                    value: '371703',
+                    value: '371703'
                   },
                   {
                     label: '曹县',
-                    value: '371721',
+                    value: '371721'
                   },
                   {
                     label: '单县',
-                    value: '371722',
+                    value: '371722'
                   },
                   {
                     label: '成武',
-                    value: '371723',
+                    value: '371723'
                   },
                   {
                     label: '巨野',
-                    value: '371724',
+                    value: '371724'
                   },
                   {
                     label: '郓城',
-                    value: '371725',
+                    value: '371725'
                   },
                   {
                     label: '鄄城',
-                    value: '371726',
+                    value: '371726'
                   },
                   {
                     label: '东明',
-                    value: '371728',
-                  },
-                ],
-              },
-            ],
+                    value: '371728'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '河南',
@@ -6305,53 +6305,53 @@ export default [
                 children: [
                   {
                     label: '中原',
-                    value: '410102',
+                    value: '410102'
                   },
                   {
                     label: '二七',
-                    value: '410103',
+                    value: '410103'
                   },
                   {
                     label: '管城',
-                    value: '410104',
+                    value: '410104'
                   },
                   {
                     label: '金水',
-                    value: '410105',
+                    value: '410105'
                   },
                   {
                     label: '上街',
-                    value: '410106',
+                    value: '410106'
                   },
                   {
                     label: '惠济',
-                    value: '410108',
+                    value: '410108'
                   },
                   {
                     label: '中牟',
-                    value: '410122',
+                    value: '410122'
                   },
                   {
                     label: '巩义',
-                    value: '410181',
+                    value: '410181'
                   },
                   {
                     label: '荥阳',
-                    value: '410182',
+                    value: '410182'
                   },
                   {
                     label: '新密',
-                    value: '410183',
+                    value: '410183'
                   },
                   {
                     label: '新郑',
-                    value: '410184',
+                    value: '410184'
                   },
                   {
                     label: '登封',
-                    value: '410185',
-                  },
-                ],
+                    value: '410185'
+                  }
+                ]
               },
               {
                 label: '开封',
@@ -6359,41 +6359,41 @@ export default [
                 children: [
                   {
                     label: '龙亭',
-                    value: '410202',
+                    value: '410202'
                   },
                   {
                     label: '顺河',
-                    value: '410203',
+                    value: '410203'
                   },
                   {
                     label: '鼓楼',
-                    value: '410204',
+                    value: '410204'
                   },
                   {
                     label: '禹王台',
-                    value: '410205',
+                    value: '410205'
                   },
                   {
                     label: '祥符',
-                    value: '410212',
+                    value: '410212'
                   },
                   {
                     label: '杞县',
-                    value: '410221',
+                    value: '410221'
                   },
                   {
                     label: '通许',
-                    value: '410222',
+                    value: '410222'
                   },
                   {
                     label: '尉氏',
-                    value: '410223',
+                    value: '410223'
                   },
                   {
                     label: '兰考',
-                    value: '410225',
-                  },
-                ],
+                    value: '410225'
+                  }
+                ]
               },
               {
                 label: '洛阳',
@@ -6401,61 +6401,61 @@ export default [
                 children: [
                   {
                     label: '老城',
-                    value: '410302',
+                    value: '410302'
                   },
                   {
                     label: '西工',
-                    value: '410303',
+                    value: '410303'
                   },
                   {
                     label: '瀍河',
-                    value: '410304',
+                    value: '410304'
                   },
                   {
                     label: '涧西',
-                    value: '410305',
+                    value: '410305'
                   },
                   {
                     label: '偃师',
-                    value: '410307',
+                    value: '410307'
                   },
                   {
                     label: '孟津',
-                    value: '410308',
+                    value: '410308'
                   },
                   {
                     label: '洛龙',
-                    value: '410311',
+                    value: '410311'
                   },
                   {
                     label: '新安',
-                    value: '410323',
+                    value: '410323'
                   },
                   {
                     label: '栾川',
-                    value: '410324',
+                    value: '410324'
                   },
                   {
                     label: '嵩县',
-                    value: '410325',
+                    value: '410325'
                   },
                   {
                     label: '汝阳',
-                    value: '410326',
+                    value: '410326'
                   },
                   {
                     label: '宜阳',
-                    value: '410327',
+                    value: '410327'
                   },
                   {
                     label: '洛宁',
-                    value: '410328',
+                    value: '410328'
                   },
                   {
                     label: '伊川',
-                    value: '410329',
-                  },
-                ],
+                    value: '410329'
+                  }
+                ]
               },
               {
                 label: '平顶山',
@@ -6463,45 +6463,45 @@ export default [
                 children: [
                   {
                     label: '新华',
-                    value: '410402',
+                    value: '410402'
                   },
                   {
                     label: '卫东',
-                    value: '410403',
+                    value: '410403'
                   },
                   {
                     label: '石龙',
-                    value: '410404',
+                    value: '410404'
                   },
                   {
                     label: '湛河',
-                    value: '410411',
+                    value: '410411'
                   },
                   {
                     label: '宝丰',
-                    value: '410421',
+                    value: '410421'
                   },
                   {
                     label: '叶县',
-                    value: '410422',
+                    value: '410422'
                   },
                   {
                     label: '鲁山',
-                    value: '410423',
+                    value: '410423'
                   },
                   {
                     label: '郏县',
-                    value: '410425',
+                    value: '410425'
                   },
                   {
                     label: '舞钢',
-                    value: '410481',
+                    value: '410481'
                   },
                   {
                     label: '汝州',
-                    value: '410482',
-                  },
-                ],
+                    value: '410482'
+                  }
+                ]
               },
               {
                 label: '安阳',
@@ -6509,41 +6509,41 @@ export default [
                 children: [
                   {
                     label: '文峰',
-                    value: '410502',
+                    value: '410502'
                   },
                   {
                     label: '北关',
-                    value: '410503',
+                    value: '410503'
                   },
                   {
                     label: '殷都',
-                    value: '410505',
+                    value: '410505'
                   },
                   {
                     label: '龙安',
-                    value: '410506',
+                    value: '410506'
                   },
                   {
                     label: '安阳县',
-                    value: '410522',
+                    value: '410522'
                   },
                   {
                     label: '汤阴',
-                    value: '410523',
+                    value: '410523'
                   },
                   {
                     label: '滑县',
-                    value: '410526',
+                    value: '410526'
                   },
                   {
                     label: '内黄',
-                    value: '410527',
+                    value: '410527'
                   },
                   {
                     label: '林州',
-                    value: '410581',
-                  },
-                ],
+                    value: '410581'
+                  }
+                ]
               },
               {
                 label: '鹤壁',
@@ -6551,25 +6551,25 @@ export default [
                 children: [
                   {
                     label: '鹤山',
-                    value: '410602',
+                    value: '410602'
                   },
                   {
                     label: '山城',
-                    value: '410603',
+                    value: '410603'
                   },
                   {
                     label: '淇滨',
-                    value: '410611',
+                    value: '410611'
                   },
                   {
                     label: '浚县',
-                    value: '410621',
+                    value: '410621'
                   },
                   {
                     label: '淇县',
-                    value: '410622',
-                  },
-                ],
+                    value: '410622'
+                  }
+                ]
               },
               {
                 label: '新乡',
@@ -6577,53 +6577,53 @@ export default [
                 children: [
                   {
                     label: '红旗',
-                    value: '410702',
+                    value: '410702'
                   },
                   {
                     label: '卫滨',
-                    value: '410703',
+                    value: '410703'
                   },
                   {
                     label: '凤泉',
-                    value: '410704',
+                    value: '410704'
                   },
                   {
                     label: '牧野',
-                    value: '410711',
+                    value: '410711'
                   },
                   {
                     label: '新乡县',
-                    value: '410721',
+                    value: '410721'
                   },
                   {
                     label: '获嘉',
-                    value: '410724',
+                    value: '410724'
                   },
                   {
                     label: '原阳',
-                    value: '410725',
+                    value: '410725'
                   },
                   {
                     label: '延津',
-                    value: '410726',
+                    value: '410726'
                   },
                   {
                     label: '封丘',
-                    value: '410727',
+                    value: '410727'
                   },
                   {
                     label: '卫辉',
-                    value: '410781',
+                    value: '410781'
                   },
                   {
                     label: '辉县',
-                    value: '410782',
+                    value: '410782'
                   },
                   {
                     label: '长垣',
-                    value: '410783',
-                  },
-                ],
+                    value: '410783'
+                  }
+                ]
               },
               {
                 label: '焦作',
@@ -6631,45 +6631,45 @@ export default [
                 children: [
                   {
                     label: '解放',
-                    value: '410802',
+                    value: '410802'
                   },
                   {
                     label: '中站',
-                    value: '410803',
+                    value: '410803'
                   },
                   {
                     label: '马村',
-                    value: '410804',
+                    value: '410804'
                   },
                   {
                     label: '山阳',
-                    value: '410811',
+                    value: '410811'
                   },
                   {
                     label: '修武',
-                    value: '410821',
+                    value: '410821'
                   },
                   {
                     label: '博爱',
-                    value: '410822',
+                    value: '410822'
                   },
                   {
                     label: '武陟',
-                    value: '410823',
+                    value: '410823'
                   },
                   {
                     label: '温县',
-                    value: '410825',
+                    value: '410825'
                   },
                   {
                     label: '沁阳',
-                    value: '410882',
+                    value: '410882'
                   },
                   {
                     label: '孟州',
-                    value: '410883',
-                  },
-                ],
+                    value: '410883'
+                  }
+                ]
               },
               {
                 label: '濮阳',
@@ -6677,29 +6677,29 @@ export default [
                 children: [
                   {
                     label: '华龙',
-                    value: '410902',
+                    value: '410902'
                   },
                   {
                     label: '清丰',
-                    value: '410922',
+                    value: '410922'
                   },
                   {
                     label: '南乐',
-                    value: '410923',
+                    value: '410923'
                   },
                   {
                     label: '范县',
-                    value: '410926',
+                    value: '410926'
                   },
                   {
                     label: '台前',
-                    value: '410927',
+                    value: '410927'
                   },
                   {
                     label: '濮阳县',
-                    value: '410928',
-                  },
-                ],
+                    value: '410928'
+                  }
+                ]
               },
               {
                 label: '许昌',
@@ -6707,29 +6707,29 @@ export default [
                 children: [
                   {
                     label: '魏都',
-                    value: '411002',
+                    value: '411002'
                   },
                   {
                     label: '建安',
-                    value: '411003',
+                    value: '411003'
                   },
                   {
                     label: '鄢陵',
-                    value: '411024',
+                    value: '411024'
                   },
                   {
                     label: '襄城',
-                    value: '411025',
+                    value: '411025'
                   },
                   {
                     label: '禹州',
-                    value: '411081',
+                    value: '411081'
                   },
                   {
                     label: '长葛',
-                    value: '411082',
-                  },
-                ],
+                    value: '411082'
+                  }
+                ]
               },
               {
                 label: '漯河',
@@ -6737,25 +6737,25 @@ export default [
                 children: [
                   {
                     label: '源汇',
-                    value: '411102',
+                    value: '411102'
                   },
                   {
                     label: '郾城',
-                    value: '411103',
+                    value: '411103'
                   },
                   {
                     label: '召陵',
-                    value: '411104',
+                    value: '411104'
                   },
                   {
                     label: '舞阳',
-                    value: '411121',
+                    value: '411121'
                   },
                   {
                     label: '临颍',
-                    value: '411122',
-                  },
-                ],
+                    value: '411122'
+                  }
+                ]
               },
               {
                 label: '三门峡',
@@ -6763,29 +6763,29 @@ export default [
                 children: [
                   {
                     label: '湖滨',
-                    value: '411202',
+                    value: '411202'
                   },
                   {
                     label: '陕州',
-                    value: '411203',
+                    value: '411203'
                   },
                   {
                     label: '渑池',
-                    value: '411221',
+                    value: '411221'
                   },
                   {
                     label: '卢氏',
-                    value: '411224',
+                    value: '411224'
                   },
                   {
                     label: '义马',
-                    value: '411281',
+                    value: '411281'
                   },
                   {
                     label: '灵宝',
-                    value: '411282',
-                  },
-                ],
+                    value: '411282'
+                  }
+                ]
               },
               {
                 label: '南阳',
@@ -6793,57 +6793,57 @@ export default [
                 children: [
                   {
                     label: '宛城',
-                    value: '411302',
+                    value: '411302'
                   },
                   {
                     label: '卧龙',
-                    value: '411303',
+                    value: '411303'
                   },
                   {
                     label: '南召',
-                    value: '411321',
+                    value: '411321'
                   },
                   {
                     label: '方城',
-                    value: '411322',
+                    value: '411322'
                   },
                   {
                     label: '西峡',
-                    value: '411323',
+                    value: '411323'
                   },
                   {
                     label: '镇平',
-                    value: '411324',
+                    value: '411324'
                   },
                   {
                     label: '内乡',
-                    value: '411325',
+                    value: '411325'
                   },
                   {
                     label: '淅川',
-                    value: '411326',
+                    value: '411326'
                   },
                   {
                     label: '社旗',
-                    value: '411327',
+                    value: '411327'
                   },
                   {
                     label: '唐河',
-                    value: '411328',
+                    value: '411328'
                   },
                   {
                     label: '新野',
-                    value: '411329',
+                    value: '411329'
                   },
                   {
                     label: '桐柏',
-                    value: '411330',
+                    value: '411330'
                   },
                   {
                     label: '邓州',
-                    value: '411381',
-                  },
-                ],
+                    value: '411381'
+                  }
+                ]
               },
               {
                 label: '商丘',
@@ -6851,41 +6851,41 @@ export default [
                 children: [
                   {
                     label: '梁园',
-                    value: '411402',
+                    value: '411402'
                   },
                   {
                     label: '睢阳',
-                    value: '411403',
+                    value: '411403'
                   },
                   {
                     label: '民权',
-                    value: '411421',
+                    value: '411421'
                   },
                   {
                     label: '睢县',
-                    value: '411422',
+                    value: '411422'
                   },
                   {
                     label: '宁陵',
-                    value: '411423',
+                    value: '411423'
                   },
                   {
                     label: '柘城',
-                    value: '411424',
+                    value: '411424'
                   },
                   {
                     label: '虞城',
-                    value: '411425',
+                    value: '411425'
                   },
                   {
                     label: '夏邑',
-                    value: '411426',
+                    value: '411426'
                   },
                   {
                     label: '永城',
-                    value: '411481',
-                  },
-                ],
+                    value: '411481'
+                  }
+                ]
               },
               {
                 label: '信阳',
@@ -6893,45 +6893,45 @@ export default [
                 children: [
                   {
                     label: '浉河',
-                    value: '411502',
+                    value: '411502'
                   },
                   {
                     label: '平桥',
-                    value: '411503',
+                    value: '411503'
                   },
                   {
                     label: '罗山',
-                    value: '411521',
+                    value: '411521'
                   },
                   {
                     label: '光山',
-                    value: '411522',
+                    value: '411522'
                   },
                   {
                     label: '新县',
-                    value: '411523',
+                    value: '411523'
                   },
                   {
                     label: '商城',
-                    value: '411524',
+                    value: '411524'
                   },
                   {
                     label: '固始',
-                    value: '411525',
+                    value: '411525'
                   },
                   {
                     label: '潢川',
-                    value: '411526',
+                    value: '411526'
                   },
                   {
                     label: '淮滨',
-                    value: '411527',
+                    value: '411527'
                   },
                   {
                     label: '息县',
-                    value: '411528',
-                  },
-                ],
+                    value: '411528'
+                  }
+                ]
               },
               {
                 label: '周口',
@@ -6939,45 +6939,45 @@ export default [
                 children: [
                   {
                     label: '川汇',
-                    value: '411602',
+                    value: '411602'
                   },
                   {
                     label: '淮阳',
-                    value: '411603',
+                    value: '411603'
                   },
                   {
                     label: '扶沟',
-                    value: '411621',
+                    value: '411621'
                   },
                   {
                     label: '西华',
-                    value: '411622',
+                    value: '411622'
                   },
                   {
                     label: '商水',
-                    value: '411623',
+                    value: '411623'
                   },
                   {
                     label: '沈丘',
-                    value: '411624',
+                    value: '411624'
                   },
                   {
                     label: '郸城',
-                    value: '411625',
+                    value: '411625'
                   },
                   {
                     label: '太康',
-                    value: '411627',
+                    value: '411627'
                   },
                   {
                     label: '鹿邑',
-                    value: '411628',
+                    value: '411628'
                   },
                   {
                     label: '项城',
-                    value: '411681',
-                  },
-                ],
+                    value: '411681'
+                  }
+                ]
               },
               {
                 label: '驻马店',
@@ -6985,45 +6985,45 @@ export default [
                 children: [
                   {
                     label: '驿城',
-                    value: '411702',
+                    value: '411702'
                   },
                   {
                     label: '西平',
-                    value: '411721',
+                    value: '411721'
                   },
                   {
                     label: '上蔡',
-                    value: '411722',
+                    value: '411722'
                   },
                   {
                     label: '平舆',
-                    value: '411723',
+                    value: '411723'
                   },
                   {
                     label: '正阳',
-                    value: '411724',
+                    value: '411724'
                   },
                   {
                     label: '确山',
-                    value: '411725',
+                    value: '411725'
                   },
                   {
                     label: '泌阳',
-                    value: '411726',
+                    value: '411726'
                   },
                   {
                     label: '汝南',
-                    value: '411727',
+                    value: '411727'
                   },
                   {
                     label: '遂平',
-                    value: '411728',
+                    value: '411728'
                   },
                   {
                     label: '新蔡',
-                    value: '411729',
-                  },
-                ],
+                    value: '411729'
+                  }
+                ]
               },
               {
                 label: '济源',
@@ -7031,11 +7031,11 @@ export default [
                 children: [
                   {
                     label: '济源',
-                    value: '419001000',
-                  },
-                ],
-              },
-            ],
+                    value: '419001000'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '湖北',
@@ -7047,57 +7047,57 @@ export default [
                 children: [
                   {
                     label: '江岸',
-                    value: '420102',
+                    value: '420102'
                   },
                   {
                     label: '江汉',
-                    value: '420103',
+                    value: '420103'
                   },
                   {
                     label: '硚口',
-                    value: '420104',
+                    value: '420104'
                   },
                   {
                     label: '汉阳',
-                    value: '420105',
+                    value: '420105'
                   },
                   {
                     label: '武昌',
-                    value: '420106',
+                    value: '420106'
                   },
                   {
                     label: '青山',
-                    value: '420107',
+                    value: '420107'
                   },
                   {
                     label: '洪山',
-                    value: '420111',
+                    value: '420111'
                   },
                   {
                     label: '东西湖',
-                    value: '420112',
+                    value: '420112'
                   },
                   {
                     label: '汉南',
-                    value: '420113',
+                    value: '420113'
                   },
                   {
                     label: '蔡甸',
-                    value: '420114',
+                    value: '420114'
                   },
                   {
                     label: '江夏',
-                    value: '420115',
+                    value: '420115'
                   },
                   {
                     label: '黄陂',
-                    value: '420116',
+                    value: '420116'
                   },
                   {
                     label: '新洲',
-                    value: '420117',
-                  },
-                ],
+                    value: '420117'
+                  }
+                ]
               },
               {
                 label: '黄石',
@@ -7105,29 +7105,29 @@ export default [
                 children: [
                   {
                     label: '黄石港',
-                    value: '420202',
+                    value: '420202'
                   },
                   {
                     label: '西塞山',
-                    value: '420203',
+                    value: '420203'
                   },
                   {
                     label: '下陆',
-                    value: '420204',
+                    value: '420204'
                   },
                   {
                     label: '铁山',
-                    value: '420205',
+                    value: '420205'
                   },
                   {
                     label: '阳新',
-                    value: '420222',
+                    value: '420222'
                   },
                   {
                     label: '大冶',
-                    value: '420281',
-                  },
-                ],
+                    value: '420281'
+                  }
+                ]
               },
               {
                 label: '十堰',
@@ -7135,37 +7135,37 @@ export default [
                 children: [
                   {
                     label: '茅箭',
-                    value: '420302',
+                    value: '420302'
                   },
                   {
                     label: '张湾',
-                    value: '420303',
+                    value: '420303'
                   },
                   {
                     label: '郧阳',
-                    value: '420304',
+                    value: '420304'
                   },
                   {
                     label: '郧西',
-                    value: '420322',
+                    value: '420322'
                   },
                   {
                     label: '竹山',
-                    value: '420323',
+                    value: '420323'
                   },
                   {
                     label: '竹溪',
-                    value: '420324',
+                    value: '420324'
                   },
                   {
                     label: '房县',
-                    value: '420325',
+                    value: '420325'
                   },
                   {
                     label: '丹江口',
-                    value: '420381',
-                  },
-                ],
+                    value: '420381'
+                  }
+                ]
               },
               {
                 label: '宜昌',
@@ -7173,57 +7173,57 @@ export default [
                 children: [
                   {
                     label: '西陵',
-                    value: '420502',
+                    value: '420502'
                   },
                   {
                     label: '伍家岗',
-                    value: '420503',
+                    value: '420503'
                   },
                   {
                     label: '点军',
-                    value: '420504',
+                    value: '420504'
                   },
                   {
                     label: '猇亭',
-                    value: '420505',
+                    value: '420505'
                   },
                   {
                     label: '夷陵',
-                    value: '420506',
+                    value: '420506'
                   },
                   {
                     label: '远安',
-                    value: '420525',
+                    value: '420525'
                   },
                   {
                     label: '兴山',
-                    value: '420526',
+                    value: '420526'
                   },
                   {
                     label: '秭归',
-                    value: '420527',
+                    value: '420527'
                   },
                   {
                     label: '长阳',
-                    value: '420528',
+                    value: '420528'
                   },
                   {
                     label: '五峰',
-                    value: '420529',
+                    value: '420529'
                   },
                   {
                     label: '宜都',
-                    value: '420581',
+                    value: '420581'
                   },
                   {
                     label: '当阳',
-                    value: '420582',
+                    value: '420582'
                   },
                   {
                     label: '枝江',
-                    value: '420583',
-                  },
-                ],
+                    value: '420583'
+                  }
+                ]
               },
               {
                 label: '襄阳',
@@ -7231,41 +7231,41 @@ export default [
                 children: [
                   {
                     label: '襄城',
-                    value: '420602',
+                    value: '420602'
                   },
                   {
                     label: '樊城',
-                    value: '420606',
+                    value: '420606'
                   },
                   {
                     label: '襄州',
-                    value: '420607',
+                    value: '420607'
                   },
                   {
                     label: '南漳',
-                    value: '420624',
+                    value: '420624'
                   },
                   {
                     label: '谷城',
-                    value: '420625',
+                    value: '420625'
                   },
                   {
                     label: '保康',
-                    value: '420626',
+                    value: '420626'
                   },
                   {
                     label: '老河口',
-                    value: '420682',
+                    value: '420682'
                   },
                   {
                     label: '枣阳',
-                    value: '420683',
+                    value: '420683'
                   },
                   {
                     label: '宜城',
-                    value: '420684',
-                  },
-                ],
+                    value: '420684'
+                  }
+                ]
               },
               {
                 label: '鄂州',
@@ -7273,17 +7273,17 @@ export default [
                 children: [
                   {
                     label: '梁子湖',
-                    value: '420702',
+                    value: '420702'
                   },
                   {
                     label: '华容',
-                    value: '420703',
+                    value: '420703'
                   },
                   {
                     label: '鄂城',
-                    value: '420704',
-                  },
-                ],
+                    value: '420704'
+                  }
+                ]
               },
               {
                 label: '荆门',
@@ -7291,25 +7291,25 @@ export default [
                 children: [
                   {
                     label: '东宝',
-                    value: '420802',
+                    value: '420802'
                   },
                   {
                     label: '掇刀',
-                    value: '420804',
+                    value: '420804'
                   },
                   {
                     label: '沙洋',
-                    value: '420822',
+                    value: '420822'
                   },
                   {
                     label: '钟祥',
-                    value: '420881',
+                    value: '420881'
                   },
                   {
                     label: '京山',
-                    value: '420882',
-                  },
-                ],
+                    value: '420882'
+                  }
+                ]
               },
               {
                 label: '孝感',
@@ -7317,33 +7317,33 @@ export default [
                 children: [
                   {
                     label: '孝南',
-                    value: '420902',
+                    value: '420902'
                   },
                   {
                     label: '孝昌',
-                    value: '420921',
+                    value: '420921'
                   },
                   {
                     label: '大悟',
-                    value: '420922',
+                    value: '420922'
                   },
                   {
                     label: '云梦',
-                    value: '420923',
+                    value: '420923'
                   },
                   {
                     label: '应城',
-                    value: '420981',
+                    value: '420981'
                   },
                   {
                     label: '安陆',
-                    value: '420982',
+                    value: '420982'
                   },
                   {
                     label: '汉川',
-                    value: '420984',
-                  },
-                ],
+                    value: '420984'
+                  }
+                ]
               },
               {
                 label: '荆州',
@@ -7351,37 +7351,37 @@ export default [
                 children: [
                   {
                     label: '沙市',
-                    value: '421002',
+                    value: '421002'
                   },
                   {
                     label: '荆州区',
-                    value: '421003',
+                    value: '421003'
                   },
                   {
                     label: '公安',
-                    value: '421022',
+                    value: '421022'
                   },
                   {
                     label: '江陵',
-                    value: '421024',
+                    value: '421024'
                   },
                   {
                     label: '石首',
-                    value: '421081',
+                    value: '421081'
                   },
                   {
                     label: '洪湖',
-                    value: '421083',
+                    value: '421083'
                   },
                   {
                     label: '松滋',
-                    value: '421087',
+                    value: '421087'
                   },
                   {
                     label: '监利',
-                    value: '421088',
-                  },
-                ],
+                    value: '421088'
+                  }
+                ]
               },
               {
                 label: '黄冈',
@@ -7389,45 +7389,45 @@ export default [
                 children: [
                   {
                     label: '黄州',
-                    value: '421102',
+                    value: '421102'
                   },
                   {
                     label: '团风',
-                    value: '421121',
+                    value: '421121'
                   },
                   {
                     label: '红安',
-                    value: '421122',
+                    value: '421122'
                   },
                   {
                     label: '罗田',
-                    value: '421123',
+                    value: '421123'
                   },
                   {
                     label: '英山',
-                    value: '421124',
+                    value: '421124'
                   },
                   {
                     label: '浠水',
-                    value: '421125',
+                    value: '421125'
                   },
                   {
                     label: '蕲春',
-                    value: '421126',
+                    value: '421126'
                   },
                   {
                     label: '黄梅',
-                    value: '421127',
+                    value: '421127'
                   },
                   {
                     label: '麻城',
-                    value: '421181',
+                    value: '421181'
                   },
                   {
                     label: '武穴',
-                    value: '421182',
-                  },
-                ],
+                    value: '421182'
+                  }
+                ]
               },
               {
                 label: '咸宁',
@@ -7435,29 +7435,29 @@ export default [
                 children: [
                   {
                     label: '咸安',
-                    value: '421202',
+                    value: '421202'
                   },
                   {
                     label: '嘉鱼',
-                    value: '421221',
+                    value: '421221'
                   },
                   {
                     label: '通城',
-                    value: '421222',
+                    value: '421222'
                   },
                   {
                     label: '崇阳',
-                    value: '421223',
+                    value: '421223'
                   },
                   {
                     label: '通山',
-                    value: '421224',
+                    value: '421224'
                   },
                   {
                     label: '赤壁',
-                    value: '421281',
-                  },
-                ],
+                    value: '421281'
+                  }
+                ]
               },
               {
                 label: '随州',
@@ -7465,17 +7465,17 @@ export default [
                 children: [
                   {
                     label: '曾都',
-                    value: '421303',
+                    value: '421303'
                   },
                   {
                     label: '随县',
-                    value: '421321',
+                    value: '421321'
                   },
                   {
                     label: '广水',
-                    value: '421381',
-                  },
-                ],
+                    value: '421381'
+                  }
+                ]
               },
               {
                 label: '恩施',
@@ -7483,37 +7483,37 @@ export default [
                 children: [
                   {
                     label: '恩施市',
-                    value: '422801',
+                    value: '422801'
                   },
                   {
                     label: '利川',
-                    value: '422802',
+                    value: '422802'
                   },
                   {
                     label: '建始',
-                    value: '422822',
+                    value: '422822'
                   },
                   {
                     label: '巴东',
-                    value: '422823',
+                    value: '422823'
                   },
                   {
                     label: '宣恩',
-                    value: '422825',
+                    value: '422825'
                   },
                   {
                     label: '咸丰',
-                    value: '422826',
+                    value: '422826'
                   },
                   {
                     label: '来凤',
-                    value: '422827',
+                    value: '422827'
                   },
                   {
                     label: '鹤峰',
-                    value: '422828',
-                  },
-                ],
+                    value: '422828'
+                  }
+                ]
               },
               {
                 label: '仙桃',
@@ -7521,9 +7521,9 @@ export default [
                 children: [
                   {
                     label: '仙桃',
-                    value: '429004000',
-                  },
-                ],
+                    value: '429004000'
+                  }
+                ]
               },
               {
                 label: '潜江',
@@ -7531,9 +7531,9 @@ export default [
                 children: [
                   {
                     label: '潜江',
-                    value: '429005000',
-                  },
-                ],
+                    value: '429005000'
+                  }
+                ]
               },
               {
                 label: '天门',
@@ -7541,9 +7541,9 @@ export default [
                 children: [
                   {
                     label: '天门',
-                    value: '429006000',
-                  },
-                ],
+                    value: '429006000'
+                  }
+                ]
               },
               {
                 label: '神农架',
@@ -7551,11 +7551,11 @@ export default [
                 children: [
                   {
                     label: '神农架林区',
-                    value: '429021000',
-                  },
-                ],
-              },
-            ],
+                    value: '429021000'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '湖南',
@@ -7567,41 +7567,41 @@ export default [
                 children: [
                   {
                     label: '芙蓉',
-                    value: '430102',
+                    value: '430102'
                   },
                   {
                     label: '天心',
-                    value: '430103',
+                    value: '430103'
                   },
                   {
                     label: '岳麓',
-                    value: '430104',
+                    value: '430104'
                   },
                   {
                     label: '开福',
-                    value: '430105',
+                    value: '430105'
                   },
                   {
                     label: '雨花',
-                    value: '430111',
+                    value: '430111'
                   },
                   {
                     label: '望城',
-                    value: '430112',
+                    value: '430112'
                   },
                   {
                     label: '长沙县',
-                    value: '430121',
+                    value: '430121'
                   },
                   {
                     label: '浏阳',
-                    value: '430181',
+                    value: '430181'
                   },
                   {
                     label: '宁乡',
-                    value: '430182',
-                  },
-                ],
+                    value: '430182'
+                  }
+                ]
               },
               {
                 label: '株洲',
@@ -7609,41 +7609,41 @@ export default [
                 children: [
                   {
                     label: '荷塘',
-                    value: '430202',
+                    value: '430202'
                   },
                   {
                     label: '芦淞',
-                    value: '430203',
+                    value: '430203'
                   },
                   {
                     label: '石峰',
-                    value: '430204',
+                    value: '430204'
                   },
                   {
                     label: '天元',
-                    value: '430211',
+                    value: '430211'
                   },
                   {
                     label: '渌口',
-                    value: '430212',
+                    value: '430212'
                   },
                   {
                     label: '攸县',
-                    value: '430223',
+                    value: '430223'
                   },
                   {
                     label: '茶陵',
-                    value: '430224',
+                    value: '430224'
                   },
                   {
                     label: '炎陵',
-                    value: '430225',
+                    value: '430225'
                   },
                   {
                     label: '醴陵',
-                    value: '430281',
-                  },
-                ],
+                    value: '430281'
+                  }
+                ]
               },
               {
                 label: '湘潭',
@@ -7651,25 +7651,25 @@ export default [
                 children: [
                   {
                     label: '雨湖',
-                    value: '430302',
+                    value: '430302'
                   },
                   {
                     label: '岳塘',
-                    value: '430304',
+                    value: '430304'
                   },
                   {
                     label: '湘潭县',
-                    value: '430321',
+                    value: '430321'
                   },
                   {
                     label: '湘乡',
-                    value: '430381',
+                    value: '430381'
                   },
                   {
                     label: '韶山',
-                    value: '430382',
-                  },
-                ],
+                    value: '430382'
+                  }
+                ]
               },
               {
                 label: '衡阳',
@@ -7677,53 +7677,53 @@ export default [
                 children: [
                   {
                     label: '珠晖',
-                    value: '430405',
+                    value: '430405'
                   },
                   {
                     label: '雁峰',
-                    value: '430406',
+                    value: '430406'
                   },
                   {
                     label: '石鼓',
-                    value: '430407',
+                    value: '430407'
                   },
                   {
                     label: '蒸湘',
-                    value: '430408',
+                    value: '430408'
                   },
                   {
                     label: '南岳',
-                    value: '430412',
+                    value: '430412'
                   },
                   {
                     label: '衡阳县',
-                    value: '430421',
+                    value: '430421'
                   },
                   {
                     label: '衡南',
-                    value: '430422',
+                    value: '430422'
                   },
                   {
                     label: '衡山',
-                    value: '430423',
+                    value: '430423'
                   },
                   {
                     label: '衡东',
-                    value: '430424',
+                    value: '430424'
                   },
                   {
                     label: '祁东',
-                    value: '430426',
+                    value: '430426'
                   },
                   {
                     label: '耒阳',
-                    value: '430481',
+                    value: '430481'
                   },
                   {
                     label: '常宁',
-                    value: '430482',
-                  },
-                ],
+                    value: '430482'
+                  }
+                ]
               },
               {
                 label: '邵阳',
@@ -7731,53 +7731,53 @@ export default [
                 children: [
                   {
                     label: '双清',
-                    value: '430502',
+                    value: '430502'
                   },
                   {
                     label: '大祥',
-                    value: '430503',
+                    value: '430503'
                   },
                   {
                     label: '北塔',
-                    value: '430511',
+                    value: '430511'
                   },
                   {
                     label: '新邵',
-                    value: '430522',
+                    value: '430522'
                   },
                   {
                     label: '邵阳县',
-                    value: '430523',
+                    value: '430523'
                   },
                   {
                     label: '隆回',
-                    value: '430524',
+                    value: '430524'
                   },
                   {
                     label: '洞口',
-                    value: '430525',
+                    value: '430525'
                   },
                   {
                     label: '绥宁',
-                    value: '430527',
+                    value: '430527'
                   },
                   {
                     label: '新宁',
-                    value: '430528',
+                    value: '430528'
                   },
                   {
                     label: '城步',
-                    value: '430529',
+                    value: '430529'
                   },
                   {
                     label: '武冈',
-                    value: '430581',
+                    value: '430581'
                   },
                   {
                     label: '邵东',
-                    value: '430582',
-                  },
-                ],
+                    value: '430582'
+                  }
+                ]
               },
               {
                 label: '岳阳',
@@ -7785,41 +7785,41 @@ export default [
                 children: [
                   {
                     label: '岳阳楼',
-                    value: '430602',
+                    value: '430602'
                   },
                   {
                     label: '云溪',
-                    value: '430603',
+                    value: '430603'
                   },
                   {
                     label: '君山',
-                    value: '430611',
+                    value: '430611'
                   },
                   {
                     label: '岳阳县',
-                    value: '430621',
+                    value: '430621'
                   },
                   {
                     label: '华容',
-                    value: '430623',
+                    value: '430623'
                   },
                   {
                     label: '湘阴',
-                    value: '430624',
+                    value: '430624'
                   },
                   {
                     label: '平江',
-                    value: '430626',
+                    value: '430626'
                   },
                   {
                     label: '汨罗',
-                    value: '430681',
+                    value: '430681'
                   },
                   {
                     label: '临湘',
-                    value: '430682',
-                  },
-                ],
+                    value: '430682'
+                  }
+                ]
               },
               {
                 label: '常德',
@@ -7827,41 +7827,41 @@ export default [
                 children: [
                   {
                     label: '武陵',
-                    value: '430702',
+                    value: '430702'
                   },
                   {
                     label: '鼎城',
-                    value: '430703',
+                    value: '430703'
                   },
                   {
                     label: '安乡',
-                    value: '430721',
+                    value: '430721'
                   },
                   {
                     label: '汉寿',
-                    value: '430722',
+                    value: '430722'
                   },
                   {
                     label: '澧县',
-                    value: '430723',
+                    value: '430723'
                   },
                   {
                     label: '临澧',
-                    value: '430724',
+                    value: '430724'
                   },
                   {
                     label: '桃源',
-                    value: '430725',
+                    value: '430725'
                   },
                   {
                     label: '石门',
-                    value: '430726',
+                    value: '430726'
                   },
                   {
                     label: '津市',
-                    value: '430781',
-                  },
-                ],
+                    value: '430781'
+                  }
+                ]
               },
               {
                 label: '张家界',
@@ -7869,21 +7869,21 @@ export default [
                 children: [
                   {
                     label: '永定',
-                    value: '430802',
+                    value: '430802'
                   },
                   {
                     label: '武陵源',
-                    value: '430811',
+                    value: '430811'
                   },
                   {
                     label: '慈利',
-                    value: '430821',
+                    value: '430821'
                   },
                   {
                     label: '桑植',
-                    value: '430822',
-                  },
-                ],
+                    value: '430822'
+                  }
+                ]
               },
               {
                 label: '益阳',
@@ -7891,29 +7891,29 @@ export default [
                 children: [
                   {
                     label: '资阳',
-                    value: '430902',
+                    value: '430902'
                   },
                   {
                     label: '赫山',
-                    value: '430903',
+                    value: '430903'
                   },
                   {
                     label: '南县',
-                    value: '430921',
+                    value: '430921'
                   },
                   {
                     label: '桃江',
-                    value: '430922',
+                    value: '430922'
                   },
                   {
                     label: '安化',
-                    value: '430923',
+                    value: '430923'
                   },
                   {
                     label: '沅江',
-                    value: '430981',
-                  },
-                ],
+                    value: '430981'
+                  }
+                ]
               },
               {
                 label: '郴州',
@@ -7921,49 +7921,49 @@ export default [
                 children: [
                   {
                     label: '北湖',
-                    value: '431002',
+                    value: '431002'
                   },
                   {
                     label: '苏仙',
-                    value: '431003',
+                    value: '431003'
                   },
                   {
                     label: '桂阳',
-                    value: '431021',
+                    value: '431021'
                   },
                   {
                     label: '宜章',
-                    value: '431022',
+                    value: '431022'
                   },
                   {
                     label: '永兴',
-                    value: '431023',
+                    value: '431023'
                   },
                   {
                     label: '嘉禾',
-                    value: '431024',
+                    value: '431024'
                   },
                   {
                     label: '临武',
-                    value: '431025',
+                    value: '431025'
                   },
                   {
                     label: '汝城',
-                    value: '431026',
+                    value: '431026'
                   },
                   {
                     label: '桂东',
-                    value: '431027',
+                    value: '431027'
                   },
                   {
                     label: '安仁',
-                    value: '431028',
+                    value: '431028'
                   },
                   {
                     label: '资兴',
-                    value: '431081',
-                  },
-                ],
+                    value: '431081'
+                  }
+                ]
               },
               {
                 label: '永州',
@@ -7971,49 +7971,49 @@ export default [
                 children: [
                   {
                     label: '零陵',
-                    value: '431102',
+                    value: '431102'
                   },
                   {
                     label: '冷水滩',
-                    value: '431103',
+                    value: '431103'
                   },
                   {
                     label: '东安',
-                    value: '431122',
+                    value: '431122'
                   },
                   {
                     label: '双牌',
-                    value: '431123',
+                    value: '431123'
                   },
                   {
                     label: '道县',
-                    value: '431124',
+                    value: '431124'
                   },
                   {
                     label: '江永',
-                    value: '431125',
+                    value: '431125'
                   },
                   {
                     label: '宁远',
-                    value: '431126',
+                    value: '431126'
                   },
                   {
                     label: '蓝山',
-                    value: '431127',
+                    value: '431127'
                   },
                   {
                     label: '新田',
-                    value: '431128',
+                    value: '431128'
                   },
                   {
                     label: '江华',
-                    value: '431129',
+                    value: '431129'
                   },
                   {
                     label: '祁阳',
-                    value: '431181',
-                  },
-                ],
+                    value: '431181'
+                  }
+                ]
               },
               {
                 label: '怀化',
@@ -8021,53 +8021,53 @@ export default [
                 children: [
                   {
                     label: '鹤城',
-                    value: '431202',
+                    value: '431202'
                   },
                   {
                     label: '中方',
-                    value: '431221',
+                    value: '431221'
                   },
                   {
                     label: '沅陵',
-                    value: '431222',
+                    value: '431222'
                   },
                   {
                     label: '辰溪',
-                    value: '431223',
+                    value: '431223'
                   },
                   {
                     label: '溆浦',
-                    value: '431224',
+                    value: '431224'
                   },
                   {
                     label: '会同',
-                    value: '431225',
+                    value: '431225'
                   },
                   {
                     label: '麻阳',
-                    value: '431226',
+                    value: '431226'
                   },
                   {
                     label: '新晃',
-                    value: '431227',
+                    value: '431227'
                   },
                   {
                     label: '芷江',
-                    value: '431228',
+                    value: '431228'
                   },
                   {
                     label: '靖州',
-                    value: '431229',
+                    value: '431229'
                   },
                   {
                     label: '通道',
-                    value: '431230',
+                    value: '431230'
                   },
                   {
                     label: '洪江',
-                    value: '431281',
-                  },
-                ],
+                    value: '431281'
+                  }
+                ]
               },
               {
                 label: '娄底',
@@ -8075,25 +8075,25 @@ export default [
                 children: [
                   {
                     label: '娄星',
-                    value: '431302',
+                    value: '431302'
                   },
                   {
                     label: '双峰',
-                    value: '431321',
+                    value: '431321'
                   },
                   {
                     label: '新化',
-                    value: '431322',
+                    value: '431322'
                   },
                   {
                     label: '冷水江',
-                    value: '431381',
+                    value: '431381'
                   },
                   {
                     label: '涟源',
-                    value: '431382',
-                  },
-                ],
+                    value: '431382'
+                  }
+                ]
               },
               {
                 label: '湘西',
@@ -8101,39 +8101,39 @@ export default [
                 children: [
                   {
                     label: '吉首',
-                    value: '433101',
+                    value: '433101'
                   },
                   {
                     label: '泸溪',
-                    value: '433122',
+                    value: '433122'
                   },
                   {
                     label: '凤凰',
-                    value: '433123',
+                    value: '433123'
                   },
                   {
                     label: '花垣',
-                    value: '433124',
+                    value: '433124'
                   },
                   {
                     label: '保靖',
-                    value: '433125',
+                    value: '433125'
                   },
                   {
                     label: '古丈',
-                    value: '433126',
+                    value: '433126'
                   },
                   {
                     label: '永顺',
-                    value: '433127',
+                    value: '433127'
                   },
                   {
                     label: '龙山',
-                    value: '433130',
-                  },
-                ],
-              },
-            ],
+                    value: '433130'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '广东',
@@ -8145,49 +8145,49 @@ export default [
                 children: [
                   {
                     label: '荔湾',
-                    value: '440103',
+                    value: '440103'
                   },
                   {
                     label: '越秀',
-                    value: '440104',
+                    value: '440104'
                   },
                   {
                     label: '海珠',
-                    value: '440105',
+                    value: '440105'
                   },
                   {
                     label: '天河',
-                    value: '440106',
+                    value: '440106'
                   },
                   {
                     label: '白云',
-                    value: '440111',
+                    value: '440111'
                   },
                   {
                     label: '黄埔',
-                    value: '440112',
+                    value: '440112'
                   },
                   {
                     label: '番禺',
-                    value: '440113',
+                    value: '440113'
                   },
                   {
                     label: '花都',
-                    value: '440114',
+                    value: '440114'
                   },
                   {
                     label: '南沙',
-                    value: '440115',
+                    value: '440115'
                   },
                   {
                     label: '从化',
-                    value: '440117',
+                    value: '440117'
                   },
                   {
                     label: '增城',
-                    value: '440118',
-                  },
-                ],
+                    value: '440118'
+                  }
+                ]
               },
               {
                 label: '韶关',
@@ -8195,45 +8195,45 @@ export default [
                 children: [
                   {
                     label: '武江',
-                    value: '440203',
+                    value: '440203'
                   },
                   {
                     label: '浈江',
-                    value: '440204',
+                    value: '440204'
                   },
                   {
                     label: '曲江',
-                    value: '440205',
+                    value: '440205'
                   },
                   {
                     label: '始兴',
-                    value: '440222',
+                    value: '440222'
                   },
                   {
                     label: '仁化',
-                    value: '440224',
+                    value: '440224'
                   },
                   {
                     label: '翁源',
-                    value: '440229',
+                    value: '440229'
                   },
                   {
                     label: '乳源',
-                    value: '440232',
+                    value: '440232'
                   },
                   {
                     label: '新丰',
-                    value: '440233',
+                    value: '440233'
                   },
                   {
                     label: '乐昌',
-                    value: '440281',
+                    value: '440281'
                   },
                   {
                     label: '南雄',
-                    value: '440282',
-                  },
-                ],
+                    value: '440282'
+                  }
+                ]
               },
               {
                 label: '深圳',
@@ -8241,41 +8241,41 @@ export default [
                 children: [
                   {
                     label: '罗湖',
-                    value: '440303',
+                    value: '440303'
                   },
                   {
                     label: '福田',
-                    value: '440304',
+                    value: '440304'
                   },
                   {
                     label: '南山',
-                    value: '440305',
+                    value: '440305'
                   },
                   {
                     label: '宝安',
-                    value: '440306',
+                    value: '440306'
                   },
                   {
                     label: '龙岗',
-                    value: '440307',
+                    value: '440307'
                   },
                   {
                     label: '盐田',
-                    value: '440308',
+                    value: '440308'
                   },
                   {
                     label: '龙华',
-                    value: '440309',
+                    value: '440309'
                   },
                   {
                     label: '坪山',
-                    value: '440310',
+                    value: '440310'
                   },
                   {
                     label: '光明',
-                    value: '440311',
-                  },
-                ],
+                    value: '440311'
+                  }
+                ]
               },
               {
                 label: '珠海',
@@ -8283,17 +8283,17 @@ export default [
                 children: [
                   {
                     label: '香洲',
-                    value: '440402',
+                    value: '440402'
                   },
                   {
                     label: '斗门',
-                    value: '440403',
+                    value: '440403'
                   },
                   {
                     label: '金湾',
-                    value: '440404',
-                  },
-                ],
+                    value: '440404'
+                  }
+                ]
               },
               {
                 label: '汕头',
@@ -8301,33 +8301,33 @@ export default [
                 children: [
                   {
                     label: '龙湖',
-                    value: '440507',
+                    value: '440507'
                   },
                   {
                     label: '金平',
-                    value: '440511',
+                    value: '440511'
                   },
                   {
                     label: '濠江',
-                    value: '440512',
+                    value: '440512'
                   },
                   {
                     label: '潮阳',
-                    value: '440513',
+                    value: '440513'
                   },
                   {
                     label: '潮南',
-                    value: '440514',
+                    value: '440514'
                   },
                   {
                     label: '澄海',
-                    value: '440515',
+                    value: '440515'
                   },
                   {
                     label: '南澳',
-                    value: '440523',
-                  },
-                ],
+                    value: '440523'
+                  }
+                ]
               },
               {
                 label: '佛山',
@@ -8335,25 +8335,25 @@ export default [
                 children: [
                   {
                     label: '禅城',
-                    value: '440604',
+                    value: '440604'
                   },
                   {
                     label: '南海',
-                    value: '440605',
+                    value: '440605'
                   },
                   {
                     label: '顺德',
-                    value: '440606',
+                    value: '440606'
                   },
                   {
                     label: '三水',
-                    value: '440607',
+                    value: '440607'
                   },
                   {
                     label: '高明',
-                    value: '440608',
-                  },
-                ],
+                    value: '440608'
+                  }
+                ]
               },
               {
                 label: '江门',
@@ -8361,33 +8361,33 @@ export default [
                 children: [
                   {
                     label: '蓬江',
-                    value: '440703',
+                    value: '440703'
                   },
                   {
                     label: '江海',
-                    value: '440704',
+                    value: '440704'
                   },
                   {
                     label: '新会',
-                    value: '440705',
+                    value: '440705'
                   },
                   {
                     label: '台山',
-                    value: '440781',
+                    value: '440781'
                   },
                   {
                     label: '开平',
-                    value: '440783',
+                    value: '440783'
                   },
                   {
                     label: '鹤山',
-                    value: '440784',
+                    value: '440784'
                   },
                   {
                     label: '恩平',
-                    value: '440785',
-                  },
-                ],
+                    value: '440785'
+                  }
+                ]
               },
               {
                 label: '湛江',
@@ -8395,41 +8395,41 @@ export default [
                 children: [
                   {
                     label: '赤坎',
-                    value: '440802',
+                    value: '440802'
                   },
                   {
                     label: '霞山',
-                    value: '440803',
+                    value: '440803'
                   },
                   {
                     label: '坡头',
-                    value: '440804',
+                    value: '440804'
                   },
                   {
                     label: '麻章',
-                    value: '440811',
+                    value: '440811'
                   },
                   {
                     label: '遂溪',
-                    value: '440823',
+                    value: '440823'
                   },
                   {
                     label: '徐闻',
-                    value: '440825',
+                    value: '440825'
                   },
                   {
                     label: '廉江',
-                    value: '440881',
+                    value: '440881'
                   },
                   {
                     label: '雷州',
-                    value: '440882',
+                    value: '440882'
                   },
                   {
                     label: '吴川',
-                    value: '440883',
-                  },
-                ],
+                    value: '440883'
+                  }
+                ]
               },
               {
                 label: '茂名',
@@ -8437,25 +8437,25 @@ export default [
                 children: [
                   {
                     label: '茂南',
-                    value: '440902',
+                    value: '440902'
                   },
                   {
                     label: '电白',
-                    value: '440904',
+                    value: '440904'
                   },
                   {
                     label: '高州',
-                    value: '440981',
+                    value: '440981'
                   },
                   {
                     label: '化州',
-                    value: '440982',
+                    value: '440982'
                   },
                   {
                     label: '信宜',
-                    value: '440983',
-                  },
-                ],
+                    value: '440983'
+                  }
+                ]
               },
               {
                 label: '肇庆',
@@ -8463,37 +8463,37 @@ export default [
                 children: [
                   {
                     label: '端州',
-                    value: '441202',
+                    value: '441202'
                   },
                   {
                     label: '鼎湖',
-                    value: '441203',
+                    value: '441203'
                   },
                   {
                     label: '高要',
-                    value: '441204',
+                    value: '441204'
                   },
                   {
                     label: '广宁',
-                    value: '441223',
+                    value: '441223'
                   },
                   {
                     label: '怀集',
-                    value: '441224',
+                    value: '441224'
                   },
                   {
                     label: '封开',
-                    value: '441225',
+                    value: '441225'
                   },
                   {
                     label: '德庆',
-                    value: '441226',
+                    value: '441226'
                   },
                   {
                     label: '四会',
-                    value: '441284',
-                  },
-                ],
+                    value: '441284'
+                  }
+                ]
               },
               {
                 label: '惠州',
@@ -8501,25 +8501,25 @@ export default [
                 children: [
                   {
                     label: '惠城',
-                    value: '441302',
+                    value: '441302'
                   },
                   {
                     label: '惠阳',
-                    value: '441303',
+                    value: '441303'
                   },
                   {
                     label: '博罗',
-                    value: '441322',
+                    value: '441322'
                   },
                   {
                     label: '惠东',
-                    value: '441323',
+                    value: '441323'
                   },
                   {
                     label: '龙门',
-                    value: '441324',
-                  },
-                ],
+                    value: '441324'
+                  }
+                ]
               },
               {
                 label: '梅州',
@@ -8527,37 +8527,37 @@ export default [
                 children: [
                   {
                     label: '梅江',
-                    value: '441402',
+                    value: '441402'
                   },
                   {
                     label: '梅县',
-                    value: '441403',
+                    value: '441403'
                   },
                   {
                     label: '大埔',
-                    value: '441422',
+                    value: '441422'
                   },
                   {
                     label: '丰顺',
-                    value: '441423',
+                    value: '441423'
                   },
                   {
                     label: '五华',
-                    value: '441424',
+                    value: '441424'
                   },
                   {
                     label: '平远',
-                    value: '441426',
+                    value: '441426'
                   },
                   {
                     label: '蕉岭',
-                    value: '441427',
+                    value: '441427'
                   },
                   {
                     label: '兴宁',
-                    value: '441481',
-                  },
-                ],
+                    value: '441481'
+                  }
+                ]
               },
               {
                 label: '汕尾',
@@ -8565,21 +8565,21 @@ export default [
                 children: [
                   {
                     label: '城区',
-                    value: '441502',
+                    value: '441502'
                   },
                   {
                     label: '海丰',
-                    value: '441521',
+                    value: '441521'
                   },
                   {
                     label: '陆河',
-                    value: '441523',
+                    value: '441523'
                   },
                   {
                     label: '陆丰',
-                    value: '441581',
-                  },
-                ],
+                    value: '441581'
+                  }
+                ]
               },
               {
                 label: '河源',
@@ -8587,29 +8587,29 @@ export default [
                 children: [
                   {
                     label: '源城',
-                    value: '441602',
+                    value: '441602'
                   },
                   {
                     label: '紫金',
-                    value: '441621',
+                    value: '441621'
                   },
                   {
                     label: '龙川',
-                    value: '441622',
+                    value: '441622'
                   },
                   {
                     label: '连平',
-                    value: '441623',
+                    value: '441623'
                   },
                   {
                     label: '和平',
-                    value: '441624',
+                    value: '441624'
                   },
                   {
                     label: '东源',
-                    value: '441625',
-                  },
-                ],
+                    value: '441625'
+                  }
+                ]
               },
               {
                 label: '阳江',
@@ -8617,21 +8617,21 @@ export default [
                 children: [
                   {
                     label: '江城',
-                    value: '441702',
+                    value: '441702'
                   },
                   {
                     label: '阳东',
-                    value: '441704',
+                    value: '441704'
                   },
                   {
                     label: '阳西',
-                    value: '441721',
+                    value: '441721'
                   },
                   {
                     label: '阳春',
-                    value: '441781',
-                  },
-                ],
+                    value: '441781'
+                  }
+                ]
               },
               {
                 label: '清远',
@@ -8639,37 +8639,37 @@ export default [
                 children: [
                   {
                     label: '清城',
-                    value: '441802',
+                    value: '441802'
                   },
                   {
                     label: '清新区',
-                    value: '441803',
+                    value: '441803'
                   },
                   {
                     label: '佛冈',
-                    value: '441821',
+                    value: '441821'
                   },
                   {
                     label: '阳山',
-                    value: '441823',
+                    value: '441823'
                   },
                   {
                     label: '连山',
-                    value: '441825',
+                    value: '441825'
                   },
                   {
                     label: '连南',
-                    value: '441826',
+                    value: '441826'
                   },
                   {
                     label: '英德',
-                    value: '441881',
+                    value: '441881'
                   },
                   {
                     label: '连州',
-                    value: '441882',
-                  },
-                ],
+                    value: '441882'
+                  }
+                ]
               },
               {
                 label: '东莞',
@@ -8677,9 +8677,9 @@ export default [
                 children: [
                   {
                     label: '东莞',
-                    value: '441900',
-                  },
-                ],
+                    value: '441900'
+                  }
+                ]
               },
               {
                 label: '中山',
@@ -8687,9 +8687,9 @@ export default [
                 children: [
                   {
                     label: '中山',
-                    value: '442000',
-                  },
-                ],
+                    value: '442000'
+                  }
+                ]
               },
               {
                 label: '潮州',
@@ -8697,17 +8697,17 @@ export default [
                 children: [
                   {
                     label: '湘桥',
-                    value: '445102',
+                    value: '445102'
                   },
                   {
                     label: '潮安',
-                    value: '445103',
+                    value: '445103'
                   },
                   {
                     label: '饶平',
-                    value: '445122',
-                  },
-                ],
+                    value: '445122'
+                  }
+                ]
               },
               {
                 label: '揭阳',
@@ -8715,25 +8715,25 @@ export default [
                 children: [
                   {
                     label: '榕城',
-                    value: '445202',
+                    value: '445202'
                   },
                   {
                     label: '揭东',
-                    value: '445203',
+                    value: '445203'
                   },
                   {
                     label: '揭西',
-                    value: '445222',
+                    value: '445222'
                   },
                   {
                     label: '惠来',
-                    value: '445224',
+                    value: '445224'
                   },
                   {
                     label: '普宁',
-                    value: '445281',
-                  },
-                ],
+                    value: '445281'
+                  }
+                ]
               },
               {
                 label: '云浮',
@@ -8741,27 +8741,27 @@ export default [
                 children: [
                   {
                     label: '云城',
-                    value: '445302',
+                    value: '445302'
                   },
                   {
                     label: '云安',
-                    value: '445303',
+                    value: '445303'
                   },
                   {
                     label: '新兴',
-                    value: '445321',
+                    value: '445321'
                   },
                   {
                     label: '郁南',
-                    value: '445322',
+                    value: '445322'
                   },
                   {
                     label: '罗定',
-                    value: '445381',
-                  },
-                ],
-              },
-            ],
+                    value: '445381'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '广西',
@@ -8773,53 +8773,53 @@ export default [
                 children: [
                   {
                     label: '兴宁',
-                    value: '450102',
+                    value: '450102'
                   },
                   {
                     label: '青秀',
-                    value: '450103',
+                    value: '450103'
                   },
                   {
                     label: '江南',
-                    value: '450105',
+                    value: '450105'
                   },
                   {
                     label: '西乡塘',
-                    value: '450107',
+                    value: '450107'
                   },
                   {
                     label: '良庆',
-                    value: '450108',
+                    value: '450108'
                   },
                   {
                     label: '邕宁',
-                    value: '450109',
+                    value: '450109'
                   },
                   {
                     label: '武鸣',
-                    value: '450110',
+                    value: '450110'
                   },
                   {
                     label: '隆安',
-                    value: '450123',
+                    value: '450123'
                   },
                   {
                     label: '马山',
-                    value: '450124',
+                    value: '450124'
                   },
                   {
                     label: '上林',
-                    value: '450125',
+                    value: '450125'
                   },
                   {
                     label: '宾阳',
-                    value: '450126',
+                    value: '450126'
                   },
                   {
                     label: '横州',
-                    value: '450181',
-                  },
-                ],
+                    value: '450181'
+                  }
+                ]
               },
               {
                 label: '柳州',
@@ -8827,45 +8827,45 @@ export default [
                 children: [
                   {
                     label: '城中',
-                    value: '450202',
+                    value: '450202'
                   },
                   {
                     label: '鱼峰',
-                    value: '450203',
+                    value: '450203'
                   },
                   {
                     label: '柳南',
-                    value: '450204',
+                    value: '450204'
                   },
                   {
                     label: '柳北',
-                    value: '450205',
+                    value: '450205'
                   },
                   {
                     label: '柳江',
-                    value: '450206',
+                    value: '450206'
                   },
                   {
                     label: '柳城',
-                    value: '450222',
+                    value: '450222'
                   },
                   {
                     label: '鹿寨',
-                    value: '450223',
+                    value: '450223'
                   },
                   {
                     label: '融安',
-                    value: '450224',
+                    value: '450224'
                   },
                   {
                     label: '融水',
-                    value: '450225',
+                    value: '450225'
                   },
                   {
                     label: '三江',
-                    value: '450226',
-                  },
-                ],
+                    value: '450226'
+                  }
+                ]
               },
               {
                 label: '桂林',
@@ -8873,73 +8873,73 @@ export default [
                 children: [
                   {
                     label: '秀峰',
-                    value: '450302',
+                    value: '450302'
                   },
                   {
                     label: '叠彩',
-                    value: '450303',
+                    value: '450303'
                   },
                   {
                     label: '象山',
-                    value: '450304',
+                    value: '450304'
                   },
                   {
                     label: '七星',
-                    value: '450305',
+                    value: '450305'
                   },
                   {
                     label: '雁山',
-                    value: '450311',
+                    value: '450311'
                   },
                   {
                     label: '临桂',
-                    value: '450312',
+                    value: '450312'
                   },
                   {
                     label: '阳朔',
-                    value: '450321',
+                    value: '450321'
                   },
                   {
                     label: '灵川',
-                    value: '450323',
+                    value: '450323'
                   },
                   {
                     label: '全州',
-                    value: '450324',
+                    value: '450324'
                   },
                   {
                     label: '兴安',
-                    value: '450325',
+                    value: '450325'
                   },
                   {
                     label: '永福',
-                    value: '450326',
+                    value: '450326'
                   },
                   {
                     label: '灌阳',
-                    value: '450327',
+                    value: '450327'
                   },
                   {
                     label: '龙胜',
-                    value: '450328',
+                    value: '450328'
                   },
                   {
                     label: '资源',
-                    value: '450329',
+                    value: '450329'
                   },
                   {
                     label: '平乐',
-                    value: '450330',
+                    value: '450330'
                   },
                   {
                     label: '恭城',
-                    value: '450332',
+                    value: '450332'
                   },
                   {
                     label: '荔浦',
-                    value: '450381',
-                  },
-                ],
+                    value: '450381'
+                  }
+                ]
               },
               {
                 label: '梧州',
@@ -8947,33 +8947,33 @@ export default [
                 children: [
                   {
                     label: '万秀',
-                    value: '450403',
+                    value: '450403'
                   },
                   {
                     label: '长洲',
-                    value: '450405',
+                    value: '450405'
                   },
                   {
                     label: '龙圩',
-                    value: '450406',
+                    value: '450406'
                   },
                   {
                     label: '苍梧',
-                    value: '450421',
+                    value: '450421'
                   },
                   {
                     label: '藤县',
-                    value: '450422',
+                    value: '450422'
                   },
                   {
                     label: '蒙山',
-                    value: '450423',
+                    value: '450423'
                   },
                   {
                     label: '岑溪',
-                    value: '450481',
-                  },
-                ],
+                    value: '450481'
+                  }
+                ]
               },
               {
                 label: '北海',
@@ -8981,21 +8981,21 @@ export default [
                 children: [
                   {
                     label: '海城',
-                    value: '450502',
+                    value: '450502'
                   },
                   {
                     label: '银海',
-                    value: '450503',
+                    value: '450503'
                   },
                   {
                     label: '铁山港',
-                    value: '450512',
+                    value: '450512'
                   },
                   {
                     label: '合浦',
-                    value: '450521',
-                  },
-                ],
+                    value: '450521'
+                  }
+                ]
               },
               {
                 label: '防城港',
@@ -9003,21 +9003,21 @@ export default [
                 children: [
                   {
                     label: '港口',
-                    value: '450602',
+                    value: '450602'
                   },
                   {
                     label: '防城',
-                    value: '450603',
+                    value: '450603'
                   },
                   {
                     label: '上思',
-                    value: '450621',
+                    value: '450621'
                   },
                   {
                     label: '东兴',
-                    value: '450681',
-                  },
-                ],
+                    value: '450681'
+                  }
+                ]
               },
               {
                 label: '钦州',
@@ -9025,21 +9025,21 @@ export default [
                 children: [
                   {
                     label: '钦南',
-                    value: '450702',
+                    value: '450702'
                   },
                   {
                     label: '钦北',
-                    value: '450703',
+                    value: '450703'
                   },
                   {
                     label: '灵山',
-                    value: '450721',
+                    value: '450721'
                   },
                   {
                     label: '浦北',
-                    value: '450722',
-                  },
-                ],
+                    value: '450722'
+                  }
+                ]
               },
               {
                 label: '贵港',
@@ -9047,25 +9047,25 @@ export default [
                 children: [
                   {
                     label: '港北',
-                    value: '450802',
+                    value: '450802'
                   },
                   {
                     label: '港南',
-                    value: '450803',
+                    value: '450803'
                   },
                   {
                     label: '覃塘',
-                    value: '450804',
+                    value: '450804'
                   },
                   {
                     label: '平南',
-                    value: '450821',
+                    value: '450821'
                   },
                   {
                     label: '桂平',
-                    value: '450881',
-                  },
-                ],
+                    value: '450881'
+                  }
+                ]
               },
               {
                 label: '玉林',
@@ -9073,33 +9073,33 @@ export default [
                 children: [
                   {
                     label: '玉州',
-                    value: '450902',
+                    value: '450902'
                   },
                   {
                     label: '福绵',
-                    value: '450903',
+                    value: '450903'
                   },
                   {
                     label: '容县',
-                    value: '450921',
+                    value: '450921'
                   },
                   {
                     label: '陆川',
-                    value: '450922',
+                    value: '450922'
                   },
                   {
                     label: '博白',
-                    value: '450923',
+                    value: '450923'
                   },
                   {
                     label: '兴业',
-                    value: '450924',
+                    value: '450924'
                   },
                   {
                     label: '北流',
-                    value: '450981',
-                  },
-                ],
+                    value: '450981'
+                  }
+                ]
               },
               {
                 label: '百色',
@@ -9107,53 +9107,53 @@ export default [
                 children: [
                   {
                     label: '右江',
-                    value: '451002',
+                    value: '451002'
                   },
                   {
                     label: '田阳',
-                    value: '451003',
+                    value: '451003'
                   },
                   {
                     label: '田东',
-                    value: '451022',
+                    value: '451022'
                   },
                   {
                     label: '德保',
-                    value: '451024',
+                    value: '451024'
                   },
                   {
                     label: '那坡',
-                    value: '451026',
+                    value: '451026'
                   },
                   {
                     label: '凌云',
-                    value: '451027',
+                    value: '451027'
                   },
                   {
                     label: '乐业',
-                    value: '451028',
+                    value: '451028'
                   },
                   {
                     label: '田林',
-                    value: '451029',
+                    value: '451029'
                   },
                   {
                     label: '西林',
-                    value: '451030',
+                    value: '451030'
                   },
                   {
                     label: '隆林',
-                    value: '451031',
+                    value: '451031'
                   },
                   {
                     label: '靖西',
-                    value: '451081',
+                    value: '451081'
                   },
                   {
                     label: '平果',
-                    value: '451082',
-                  },
-                ],
+                    value: '451082'
+                  }
+                ]
               },
               {
                 label: '贺州',
@@ -9161,25 +9161,25 @@ export default [
                 children: [
                   {
                     label: '八步',
-                    value: '451102',
+                    value: '451102'
                   },
                   {
                     label: '平桂',
-                    value: '451103',
+                    value: '451103'
                   },
                   {
                     label: '昭平',
-                    value: '451121',
+                    value: '451121'
                   },
                   {
                     label: '钟山',
-                    value: '451122',
+                    value: '451122'
                   },
                   {
                     label: '富川',
-                    value: '451123',
-                  },
-                ],
+                    value: '451123'
+                  }
+                ]
               },
               {
                 label: '河池',
@@ -9187,49 +9187,49 @@ export default [
                 children: [
                   {
                     label: '金城江',
-                    value: '451202',
+                    value: '451202'
                   },
                   {
                     label: '宜州',
-                    value: '451203',
+                    value: '451203'
                   },
                   {
                     label: '南丹',
-                    value: '451221',
+                    value: '451221'
                   },
                   {
                     label: '天峨',
-                    value: '451222',
+                    value: '451222'
                   },
                   {
                     label: '凤山',
-                    value: '451223',
+                    value: '451223'
                   },
                   {
                     label: '东兰',
-                    value: '451224',
+                    value: '451224'
                   },
                   {
                     label: '罗城',
-                    value: '451225',
+                    value: '451225'
                   },
                   {
                     label: '环江',
-                    value: '451226',
+                    value: '451226'
                   },
                   {
                     label: '巴马',
-                    value: '451227',
+                    value: '451227'
                   },
                   {
                     label: '都安',
-                    value: '451228',
+                    value: '451228'
                   },
                   {
                     label: '大化',
-                    value: '451229',
-                  },
-                ],
+                    value: '451229'
+                  }
+                ]
               },
               {
                 label: '来宾',
@@ -9237,29 +9237,29 @@ export default [
                 children: [
                   {
                     label: '兴宾',
-                    value: '451302',
+                    value: '451302'
                   },
                   {
                     label: '忻城',
-                    value: '451321',
+                    value: '451321'
                   },
                   {
                     label: '象州',
-                    value: '451322',
+                    value: '451322'
                   },
                   {
                     label: '武宣',
-                    value: '451323',
+                    value: '451323'
                   },
                   {
                     label: '金秀',
-                    value: '451324',
+                    value: '451324'
                   },
                   {
                     label: '合山',
-                    value: '451381',
-                  },
-                ],
+                    value: '451381'
+                  }
+                ]
               },
               {
                 label: '崇左',
@@ -9267,35 +9267,35 @@ export default [
                 children: [
                   {
                     label: '江州',
-                    value: '451402',
+                    value: '451402'
                   },
                   {
                     label: '扶绥',
-                    value: '451421',
+                    value: '451421'
                   },
                   {
                     label: '宁明',
-                    value: '451422',
+                    value: '451422'
                   },
                   {
                     label: '龙州',
-                    value: '451423',
+                    value: '451423'
                   },
                   {
                     label: '大新',
-                    value: '451424',
+                    value: '451424'
                   },
                   {
                     label: '天等',
-                    value: '451425',
+                    value: '451425'
                   },
                   {
                     label: '凭祥',
-                    value: '451481',
-                  },
-                ],
-              },
-            ],
+                    value: '451481'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '海南',
@@ -9307,21 +9307,21 @@ export default [
                 children: [
                   {
                     label: '秀英',
-                    value: '460105',
+                    value: '460105'
                   },
                   {
                     label: '龙华',
-                    value: '460106',
+                    value: '460106'
                   },
                   {
                     label: '琼山',
-                    value: '460107',
+                    value: '460107'
                   },
                   {
                     label: '美兰',
-                    value: '460108',
-                  },
-                ],
+                    value: '460108'
+                  }
+                ]
               },
               {
                 label: '三亚',
@@ -9329,21 +9329,21 @@ export default [
                 children: [
                   {
                     label: '海棠',
-                    value: '460202',
+                    value: '460202'
                   },
                   {
                     label: '吉阳',
-                    value: '460203',
+                    value: '460203'
                   },
                   {
                     label: '天涯',
-                    value: '460204',
+                    value: '460204'
                   },
                   {
                     label: '崖州',
-                    value: '460205',
-                  },
-                ],
+                    value: '460205'
+                  }
+                ]
               },
               {
                 label: '三沙',
@@ -9351,13 +9351,13 @@ export default [
                 children: [
                   {
                     label: '西沙',
-                    value: '460301',
+                    value: '460301'
                   },
                   {
                     label: '南沙',
-                    value: '460302',
-                  },
-                ],
+                    value: '460302'
+                  }
+                ]
               },
               {
                 label: '儋州',
@@ -9365,9 +9365,9 @@ export default [
                 children: [
                   {
                     label: '儋州',
-                    value: '460400',
-                  },
-                ],
+                    value: '460400'
+                  }
+                ]
               },
               {
                 label: '五指山',
@@ -9375,9 +9375,9 @@ export default [
                 children: [
                   {
                     label: '五指山',
-                    value: '469001000',
-                  },
-                ],
+                    value: '469001000'
+                  }
+                ]
               },
               {
                 label: '琼海',
@@ -9385,9 +9385,9 @@ export default [
                 children: [
                   {
                     label: '琼海',
-                    value: '469002000',
-                  },
-                ],
+                    value: '469002000'
+                  }
+                ]
               },
               {
                 label: '文昌',
@@ -9395,9 +9395,9 @@ export default [
                 children: [
                   {
                     label: '文昌',
-                    value: '469005000',
-                  },
-                ],
+                    value: '469005000'
+                  }
+                ]
               },
               {
                 label: '万宁',
@@ -9405,9 +9405,9 @@ export default [
                 children: [
                   {
                     label: '万宁',
-                    value: '469006000',
-                  },
-                ],
+                    value: '469006000'
+                  }
+                ]
               },
               {
                 label: '东方',
@@ -9415,9 +9415,9 @@ export default [
                 children: [
                   {
                     label: '东方',
-                    value: '469007000',
-                  },
-                ],
+                    value: '469007000'
+                  }
+                ]
               },
               {
                 label: '定安',
@@ -9425,9 +9425,9 @@ export default [
                 children: [
                   {
                     label: '定安',
-                    value: '469021000',
-                  },
-                ],
+                    value: '469021000'
+                  }
+                ]
               },
               {
                 label: '屯昌',
@@ -9435,9 +9435,9 @@ export default [
                 children: [
                   {
                     label: '屯昌',
-                    value: '469022000',
-                  },
-                ],
+                    value: '469022000'
+                  }
+                ]
               },
               {
                 label: '澄迈',
@@ -9445,9 +9445,9 @@ export default [
                 children: [
                   {
                     label: '澄迈',
-                    value: '469023000',
-                  },
-                ],
+                    value: '469023000'
+                  }
+                ]
               },
               {
                 label: '临高',
@@ -9455,9 +9455,9 @@ export default [
                 children: [
                   {
                     label: '临高',
-                    value: '469024000',
-                  },
-                ],
+                    value: '469024000'
+                  }
+                ]
               },
               {
                 label: '白沙',
@@ -9465,9 +9465,9 @@ export default [
                 children: [
                   {
                     label: '白沙',
-                    value: '469025000',
-                  },
-                ],
+                    value: '469025000'
+                  }
+                ]
               },
               {
                 label: '昌江',
@@ -9475,9 +9475,9 @@ export default [
                 children: [
                   {
                     label: '昌江',
-                    value: '469026000',
-                  },
-                ],
+                    value: '469026000'
+                  }
+                ]
               },
               {
                 label: '乐东',
@@ -9485,9 +9485,9 @@ export default [
                 children: [
                   {
                     label: '乐东',
-                    value: '469027000',
-                  },
-                ],
+                    value: '469027000'
+                  }
+                ]
               },
               {
                 label: '陵水',
@@ -9495,9 +9495,9 @@ export default [
                 children: [
                   {
                     label: '陵水',
-                    value: '469028000',
-                  },
-                ],
+                    value: '469028000'
+                  }
+                ]
               },
               {
                 label: '保亭',
@@ -9505,9 +9505,9 @@ export default [
                 children: [
                   {
                     label: '保亭',
-                    value: '469029000',
-                  },
-                ],
+                    value: '469029000'
+                  }
+                ]
               },
               {
                 label: '琼中',
@@ -9515,11 +9515,11 @@ export default [
                 children: [
                   {
                     label: '琼中',
-                    value: '469030000',
-                  },
-                ],
-              },
-            ],
+                    value: '469030000'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '重庆',
@@ -9531,109 +9531,109 @@ export default [
                 children: [
                   {
                     label: '万州',
-                    value: '500101',
+                    value: '500101'
                   },
                   {
                     label: '涪陵',
-                    value: '500102',
+                    value: '500102'
                   },
                   {
                     label: '渝中',
-                    value: '500103',
+                    value: '500103'
                   },
                   {
                     label: '大渡口',
-                    value: '500104',
+                    value: '500104'
                   },
                   {
                     label: '江北',
-                    value: '500105',
+                    value: '500105'
                   },
                   {
                     label: '沙坪坝',
-                    value: '500106',
+                    value: '500106'
                   },
                   {
                     label: '九龙坡',
-                    value: '500107',
+                    value: '500107'
                   },
                   {
                     label: '南岸',
-                    value: '500108',
+                    value: '500108'
                   },
                   {
                     label: '北碚',
-                    value: '500109',
+                    value: '500109'
                   },
                   {
                     label: '綦江',
-                    value: '500110',
+                    value: '500110'
                   },
                   {
                     label: '大足',
-                    value: '500111',
+                    value: '500111'
                   },
                   {
                     label: '渝北',
-                    value: '500112',
+                    value: '500112'
                   },
                   {
                     label: '巴南',
-                    value: '500113',
+                    value: '500113'
                   },
                   {
                     label: '黔江',
-                    value: '500114',
+                    value: '500114'
                   },
                   {
                     label: '长寿',
-                    value: '500115',
+                    value: '500115'
                   },
                   {
                     label: '江津',
-                    value: '500116',
+                    value: '500116'
                   },
                   {
                     label: '合川',
-                    value: '500117',
+                    value: '500117'
                   },
                   {
                     label: '永川',
-                    value: '500118',
+                    value: '500118'
                   },
                   {
                     label: '南川',
-                    value: '500119',
+                    value: '500119'
                   },
                   {
                     label: '璧山',
-                    value: '500120',
+                    value: '500120'
                   },
                   {
                     label: '铜梁',
-                    value: '500151',
+                    value: '500151'
                   },
                   {
                     label: '潼南',
-                    value: '500152',
+                    value: '500152'
                   },
                   {
                     label: '荣昌',
-                    value: '500153',
+                    value: '500153'
                   },
                   {
                     label: '开州',
-                    value: '500154',
+                    value: '500154'
                   },
                   {
                     label: '梁平',
-                    value: '500155',
+                    value: '500155'
                   },
                   {
                     label: '武隆',
-                    value: '500156',
-                  },
-                ],
+                    value: '500156'
+                  }
+                ]
               },
               {
                 label: '重庆郊县',
@@ -9641,55 +9641,55 @@ export default [
                 children: [
                   {
                     label: '城口',
-                    value: '500229',
+                    value: '500229'
                   },
                   {
                     label: '丰都',
-                    value: '500230',
+                    value: '500230'
                   },
                   {
                     label: '垫江',
-                    value: '500231',
+                    value: '500231'
                   },
                   {
                     label: '忠县',
-                    value: '500233',
+                    value: '500233'
                   },
                   {
                     label: '云阳',
-                    value: '500235',
+                    value: '500235'
                   },
                   {
                     label: '奉节',
-                    value: '500236',
+                    value: '500236'
                   },
                   {
                     label: '巫山',
-                    value: '500237',
+                    value: '500237'
                   },
                   {
                     label: '巫溪',
-                    value: '500238',
+                    value: '500238'
                   },
                   {
                     label: '石柱',
-                    value: '500240',
+                    value: '500240'
                   },
                   {
                     label: '秀山',
-                    value: '500241',
+                    value: '500241'
                   },
                   {
                     label: '酉阳',
-                    value: '500242',
+                    value: '500242'
                   },
                   {
                     label: '彭水',
-                    value: '500243',
-                  },
-                ],
-              },
-            ],
+                    value: '500243'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '四川',
@@ -9701,85 +9701,85 @@ export default [
                 children: [
                   {
                     label: '锦江',
-                    value: '510104',
+                    value: '510104'
                   },
                   {
                     label: '青羊',
-                    value: '510105',
+                    value: '510105'
                   },
                   {
                     label: '金牛',
-                    value: '510106',
+                    value: '510106'
                   },
                   {
                     label: '武侯',
-                    value: '510107',
+                    value: '510107'
                   },
                   {
                     label: '成华',
-                    value: '510108',
+                    value: '510108'
                   },
                   {
                     label: '龙泉驿',
-                    value: '510112',
+                    value: '510112'
                   },
                   {
                     label: '青白江',
-                    value: '510113',
+                    value: '510113'
                   },
                   {
                     label: '新都',
-                    value: '510114',
+                    value: '510114'
                   },
                   {
                     label: '温江',
-                    value: '510115',
+                    value: '510115'
                   },
                   {
                     label: '双流',
-                    value: '510116',
+                    value: '510116'
                   },
                   {
                     label: '郫都',
-                    value: '510117',
+                    value: '510117'
                   },
                   {
                     label: '新津',
-                    value: '510118',
+                    value: '510118'
                   },
                   {
                     label: '金堂',
-                    value: '510121',
+                    value: '510121'
                   },
                   {
                     label: '大邑',
-                    value: '510129',
+                    value: '510129'
                   },
                   {
                     label: '蒲江',
-                    value: '510131',
+                    value: '510131'
                   },
                   {
                     label: '都江堰',
-                    value: '510181',
+                    value: '510181'
                   },
                   {
                     label: '彭州',
-                    value: '510182',
+                    value: '510182'
                   },
                   {
                     label: '邛崃',
-                    value: '510183',
+                    value: '510183'
                   },
                   {
                     label: '崇州',
-                    value: '510184',
+                    value: '510184'
                   },
                   {
                     label: '简阳',
-                    value: '510185',
-                  },
-                ],
+                    value: '510185'
+                  }
+                ]
               },
               {
                 label: '自贡',
@@ -9787,29 +9787,29 @@ export default [
                 children: [
                   {
                     label: '自流井',
-                    value: '510302',
+                    value: '510302'
                   },
                   {
                     label: '贡井',
-                    value: '510303',
+                    value: '510303'
                   },
                   {
                     label: '大安',
-                    value: '510304',
+                    value: '510304'
                   },
                   {
                     label: '沿滩',
-                    value: '510311',
+                    value: '510311'
                   },
                   {
                     label: '荣县',
-                    value: '510321',
+                    value: '510321'
                   },
                   {
                     label: '富顺',
-                    value: '510322',
-                  },
-                ],
+                    value: '510322'
+                  }
+                ]
               },
               {
                 label: '攀枝花',
@@ -9817,25 +9817,25 @@ export default [
                 children: [
                   {
                     label: '东区',
-                    value: '510402',
+                    value: '510402'
                   },
                   {
                     label: '西区',
-                    value: '510403',
+                    value: '510403'
                   },
                   {
                     label: '仁和',
-                    value: '510411',
+                    value: '510411'
                   },
                   {
                     label: '米易',
-                    value: '510421',
+                    value: '510421'
                   },
                   {
                     label: '盐边',
-                    value: '510422',
-                  },
-                ],
+                    value: '510422'
+                  }
+                ]
               },
               {
                 label: '泸州',
@@ -9843,33 +9843,33 @@ export default [
                 children: [
                   {
                     label: '江阳',
-                    value: '510502',
+                    value: '510502'
                   },
                   {
                     label: '纳溪',
-                    value: '510503',
+                    value: '510503'
                   },
                   {
                     label: '龙马潭',
-                    value: '510504',
+                    value: '510504'
                   },
                   {
                     label: '泸县',
-                    value: '510521',
+                    value: '510521'
                   },
                   {
                     label: '合江',
-                    value: '510522',
+                    value: '510522'
                   },
                   {
                     label: '叙永',
-                    value: '510524',
+                    value: '510524'
                   },
                   {
                     label: '古蔺',
-                    value: '510525',
-                  },
-                ],
+                    value: '510525'
+                  }
+                ]
               },
               {
                 label: '德阳',
@@ -9877,29 +9877,29 @@ export default [
                 children: [
                   {
                     label: '旌阳',
-                    value: '510603',
+                    value: '510603'
                   },
                   {
                     label: '罗江',
-                    value: '510604',
+                    value: '510604'
                   },
                   {
                     label: '中江',
-                    value: '510623',
+                    value: '510623'
                   },
                   {
                     label: '广汉',
-                    value: '510681',
+                    value: '510681'
                   },
                   {
                     label: '什邡',
-                    value: '510682',
+                    value: '510682'
                   },
                   {
                     label: '绵竹',
-                    value: '510683',
-                  },
-                ],
+                    value: '510683'
+                  }
+                ]
               },
               {
                 label: '绵阳',
@@ -9907,41 +9907,41 @@ export default [
                 children: [
                   {
                     label: '涪城',
-                    value: '510703',
+                    value: '510703'
                   },
                   {
                     label: '游仙',
-                    value: '510704',
+                    value: '510704'
                   },
                   {
                     label: '安州',
-                    value: '510705',
+                    value: '510705'
                   },
                   {
                     label: '三台',
-                    value: '510722',
+                    value: '510722'
                   },
                   {
                     label: '盐亭',
-                    value: '510723',
+                    value: '510723'
                   },
                   {
                     label: '梓潼',
-                    value: '510725',
+                    value: '510725'
                   },
                   {
                     label: '北川',
-                    value: '510726',
+                    value: '510726'
                   },
                   {
                     label: '平武',
-                    value: '510727',
+                    value: '510727'
                   },
                   {
                     label: '江油',
-                    value: '510781',
-                  },
-                ],
+                    value: '510781'
+                  }
+                ]
               },
               {
                 label: '广元',
@@ -9949,33 +9949,33 @@ export default [
                 children: [
                   {
                     label: '利州',
-                    value: '510802',
+                    value: '510802'
                   },
                   {
                     label: '昭化',
-                    value: '510811',
+                    value: '510811'
                   },
                   {
                     label: '朝天',
-                    value: '510812',
+                    value: '510812'
                   },
                   {
                     label: '旺苍',
-                    value: '510821',
+                    value: '510821'
                   },
                   {
                     label: '青川',
-                    value: '510822',
+                    value: '510822'
                   },
                   {
                     label: '剑阁',
-                    value: '510823',
+                    value: '510823'
                   },
                   {
                     label: '苍溪',
-                    value: '510824',
-                  },
-                ],
+                    value: '510824'
+                  }
+                ]
               },
               {
                 label: '遂宁',
@@ -9983,25 +9983,25 @@ export default [
                 children: [
                   {
                     label: '船山',
-                    value: '510903',
+                    value: '510903'
                   },
                   {
                     label: '安居',
-                    value: '510904',
+                    value: '510904'
                   },
                   {
                     label: '蓬溪',
-                    value: '510921',
+                    value: '510921'
                   },
                   {
                     label: '大英',
-                    value: '510923',
+                    value: '510923'
                   },
                   {
                     label: '射洪',
-                    value: '510981',
-                  },
-                ],
+                    value: '510981'
+                  }
+                ]
               },
               {
                 label: '内江',
@@ -10009,25 +10009,25 @@ export default [
                 children: [
                   {
                     label: '市中',
-                    value: '511002',
+                    value: '511002'
                   },
                   {
                     label: '东兴',
-                    value: '511011',
+                    value: '511011'
                   },
                   {
                     label: '威远',
-                    value: '511024',
+                    value: '511024'
                   },
                   {
                     label: '资中',
-                    value: '511025',
+                    value: '511025'
                   },
                   {
                     label: '隆昌',
-                    value: '511083',
-                  },
-                ],
+                    value: '511083'
+                  }
+                ]
               },
               {
                 label: '乐山',
@@ -10035,49 +10035,49 @@ export default [
                 children: [
                   {
                     label: '市中',
-                    value: '511102',
+                    value: '511102'
                   },
                   {
                     label: '沙湾',
-                    value: '511111',
+                    value: '511111'
                   },
                   {
                     label: '五通桥',
-                    value: '511112',
+                    value: '511112'
                   },
                   {
                     label: '金口河',
-                    value: '511113',
+                    value: '511113'
                   },
                   {
                     label: '犍为',
-                    value: '511123',
+                    value: '511123'
                   },
                   {
                     label: '井研',
-                    value: '511124',
+                    value: '511124'
                   },
                   {
                     label: '夹江',
-                    value: '511126',
+                    value: '511126'
                   },
                   {
                     label: '沐川',
-                    value: '511129',
+                    value: '511129'
                   },
                   {
                     label: '峨边',
-                    value: '511132',
+                    value: '511132'
                   },
                   {
                     label: '马边',
-                    value: '511133',
+                    value: '511133'
                   },
                   {
                     label: '峨眉山',
-                    value: '511181',
-                  },
-                ],
+                    value: '511181'
+                  }
+                ]
               },
               {
                 label: '南充',
@@ -10085,41 +10085,41 @@ export default [
                 children: [
                   {
                     label: '顺庆',
-                    value: '511302',
+                    value: '511302'
                   },
                   {
                     label: '高坪',
-                    value: '511303',
+                    value: '511303'
                   },
                   {
                     label: '嘉陵',
-                    value: '511304',
+                    value: '511304'
                   },
                   {
                     label: '南部',
-                    value: '511321',
+                    value: '511321'
                   },
                   {
                     label: '营山',
-                    value: '511322',
+                    value: '511322'
                   },
                   {
                     label: '蓬安',
-                    value: '511323',
+                    value: '511323'
                   },
                   {
                     label: '仪陇',
-                    value: '511324',
+                    value: '511324'
                   },
                   {
                     label: '西充',
-                    value: '511325',
+                    value: '511325'
                   },
                   {
                     label: '阆中',
-                    value: '511381',
-                  },
-                ],
+                    value: '511381'
+                  }
+                ]
               },
               {
                 label: '眉山',
@@ -10127,29 +10127,29 @@ export default [
                 children: [
                   {
                     label: '东坡',
-                    value: '511402',
+                    value: '511402'
                   },
                   {
                     label: '彭山',
-                    value: '511403',
+                    value: '511403'
                   },
                   {
                     label: '仁寿',
-                    value: '511421',
+                    value: '511421'
                   },
                   {
                     label: '洪雅',
-                    value: '511423',
+                    value: '511423'
                   },
                   {
                     label: '丹棱',
-                    value: '511424',
+                    value: '511424'
                   },
                   {
                     label: '青神',
-                    value: '511425',
-                  },
-                ],
+                    value: '511425'
+                  }
+                ]
               },
               {
                 label: '宜宾',
@@ -10157,45 +10157,45 @@ export default [
                 children: [
                   {
                     label: '翠屏',
-                    value: '511502',
+                    value: '511502'
                   },
                   {
                     label: '南溪',
-                    value: '511503',
+                    value: '511503'
                   },
                   {
                     label: '叙州',
-                    value: '511504',
+                    value: '511504'
                   },
                   {
                     label: '江安',
-                    value: '511523',
+                    value: '511523'
                   },
                   {
                     label: '长宁',
-                    value: '511524',
+                    value: '511524'
                   },
                   {
                     label: '高县',
-                    value: '511525',
+                    value: '511525'
                   },
                   {
                     label: '珙县',
-                    value: '511526',
+                    value: '511526'
                   },
                   {
                     label: '筠连',
-                    value: '511527',
+                    value: '511527'
                   },
                   {
                     label: '兴文',
-                    value: '511528',
+                    value: '511528'
                   },
                   {
                     label: '屏山',
-                    value: '511529',
-                  },
-                ],
+                    value: '511529'
+                  }
+                ]
               },
               {
                 label: '广安',
@@ -10203,29 +10203,29 @@ export default [
                 children: [
                   {
                     label: '广安区',
-                    value: '511602',
+                    value: '511602'
                   },
                   {
                     label: '前锋',
-                    value: '511603',
+                    value: '511603'
                   },
                   {
                     label: '岳池',
-                    value: '511621',
+                    value: '511621'
                   },
                   {
                     label: '武胜',
-                    value: '511622',
+                    value: '511622'
                   },
                   {
                     label: '邻水',
-                    value: '511623',
+                    value: '511623'
                   },
                   {
                     label: '华蓥',
-                    value: '511681',
-                  },
-                ],
+                    value: '511681'
+                  }
+                ]
               },
               {
                 label: '达州',
@@ -10233,33 +10233,33 @@ export default [
                 children: [
                   {
                     label: '通川',
-                    value: '511702',
+                    value: '511702'
                   },
                   {
                     label: '达川',
-                    value: '511703',
+                    value: '511703'
                   },
                   {
                     label: '宣汉',
-                    value: '511722',
+                    value: '511722'
                   },
                   {
                     label: '开江',
-                    value: '511723',
+                    value: '511723'
                   },
                   {
                     label: '大竹',
-                    value: '511724',
+                    value: '511724'
                   },
                   {
                     label: '渠县',
-                    value: '511725',
+                    value: '511725'
                   },
                   {
                     label: '万源',
-                    value: '511781',
-                  },
-                ],
+                    value: '511781'
+                  }
+                ]
               },
               {
                 label: '雅安',
@@ -10267,37 +10267,37 @@ export default [
                 children: [
                   {
                     label: '雨城',
-                    value: '511802',
+                    value: '511802'
                   },
                   {
                     label: '名山',
-                    value: '511803',
+                    value: '511803'
                   },
                   {
                     label: '荥经',
-                    value: '511822',
+                    value: '511822'
                   },
                   {
                     label: '汉源',
-                    value: '511823',
+                    value: '511823'
                   },
                   {
                     label: '石棉',
-                    value: '511824',
+                    value: '511824'
                   },
                   {
                     label: '天全',
-                    value: '511825',
+                    value: '511825'
                   },
                   {
                     label: '芦山',
-                    value: '511826',
+                    value: '511826'
                   },
                   {
                     label: '宝兴',
-                    value: '511827',
-                  },
-                ],
+                    value: '511827'
+                  }
+                ]
               },
               {
                 label: '巴中',
@@ -10305,25 +10305,25 @@ export default [
                 children: [
                   {
                     label: '巴州',
-                    value: '511902',
+                    value: '511902'
                   },
                   {
                     label: '恩阳',
-                    value: '511903',
+                    value: '511903'
                   },
                   {
                     label: '通江',
-                    value: '511921',
+                    value: '511921'
                   },
                   {
                     label: '南江',
-                    value: '511922',
+                    value: '511922'
                   },
                   {
                     label: '平昌',
-                    value: '511923',
-                  },
-                ],
+                    value: '511923'
+                  }
+                ]
               },
               {
                 label: '资阳',
@@ -10331,17 +10331,17 @@ export default [
                 children: [
                   {
                     label: '雁江',
-                    value: '512002',
+                    value: '512002'
                   },
                   {
                     label: '安岳',
-                    value: '512021',
+                    value: '512021'
                   },
                   {
                     label: '乐至',
-                    value: '512022',
-                  },
-                ],
+                    value: '512022'
+                  }
+                ]
               },
               {
                 label: '阿坝',
@@ -10349,57 +10349,57 @@ export default [
                 children: [
                   {
                     label: '马尔康',
-                    value: '513201',
+                    value: '513201'
                   },
                   {
                     label: '汶川',
-                    value: '513221',
+                    value: '513221'
                   },
                   {
                     label: '理县',
-                    value: '513222',
+                    value: '513222'
                   },
                   {
                     label: '茂县',
-                    value: '513223',
+                    value: '513223'
                   },
                   {
                     label: '松潘',
-                    value: '513224',
+                    value: '513224'
                   },
                   {
                     label: '九寨沟',
-                    value: '513225',
+                    value: '513225'
                   },
                   {
                     label: '金川',
-                    value: '513226',
+                    value: '513226'
                   },
                   {
                     label: '小金',
-                    value: '513227',
+                    value: '513227'
                   },
                   {
                     label: '黑水',
-                    value: '513228',
+                    value: '513228'
                   },
                   {
                     label: '壤塘',
-                    value: '513230',
+                    value: '513230'
                   },
                   {
                     label: '阿坝县',
-                    value: '513231',
+                    value: '513231'
                   },
                   {
                     label: '若尔盖',
-                    value: '513232',
+                    value: '513232'
                   },
                   {
                     label: '红原',
-                    value: '513233',
-                  },
-                ],
+                    value: '513233'
+                  }
+                ]
               },
               {
                 label: '甘孜',
@@ -10407,77 +10407,77 @@ export default [
                 children: [
                   {
                     label: '康定',
-                    value: '513301',
+                    value: '513301'
                   },
                   {
                     label: '泸定',
-                    value: '513322',
+                    value: '513322'
                   },
                   {
                     label: '丹巴',
-                    value: '513323',
+                    value: '513323'
                   },
                   {
                     label: '九龙',
-                    value: '513324',
+                    value: '513324'
                   },
                   {
                     label: '雅江',
-                    value: '513325',
+                    value: '513325'
                   },
                   {
                     label: '道孚',
-                    value: '513326',
+                    value: '513326'
                   },
                   {
                     label: '炉霍',
-                    value: '513327',
+                    value: '513327'
                   },
                   {
                     label: '甘孜县',
-                    value: '513328',
+                    value: '513328'
                   },
                   {
                     label: '新龙',
-                    value: '513329',
+                    value: '513329'
                   },
                   {
                     label: '德格',
-                    value: '513330',
+                    value: '513330'
                   },
                   {
                     label: '白玉',
-                    value: '513331',
+                    value: '513331'
                   },
                   {
                     label: '石渠',
-                    value: '513332',
+                    value: '513332'
                   },
                   {
                     label: '色达',
-                    value: '513333',
+                    value: '513333'
                   },
                   {
                     label: '理塘',
-                    value: '513334',
+                    value: '513334'
                   },
                   {
                     label: '巴塘',
-                    value: '513335',
+                    value: '513335'
                   },
                   {
                     label: '乡城',
-                    value: '513336',
+                    value: '513336'
                   },
                   {
                     label: '稻城',
-                    value: '513337',
+                    value: '513337'
                   },
                   {
                     label: '得荣',
-                    value: '513338',
-                  },
-                ],
+                    value: '513338'
+                  }
+                ]
               },
               {
                 label: '凉山',
@@ -10485,75 +10485,75 @@ export default [
                 children: [
                   {
                     label: '西昌',
-                    value: '513401',
+                    value: '513401'
                   },
                   {
                     label: '会理',
-                    value: '513402',
+                    value: '513402'
                   },
                   {
                     label: '木里',
-                    value: '513422',
+                    value: '513422'
                   },
                   {
                     label: '盐源',
-                    value: '513423',
+                    value: '513423'
                   },
                   {
                     label: '德昌',
-                    value: '513424',
+                    value: '513424'
                   },
                   {
                     label: '会东',
-                    value: '513426',
+                    value: '513426'
                   },
                   {
                     label: '宁南',
-                    value: '513427',
+                    value: '513427'
                   },
                   {
                     label: '普格',
-                    value: '513428',
+                    value: '513428'
                   },
                   {
                     label: '布拖',
-                    value: '513429',
+                    value: '513429'
                   },
                   {
                     label: '金阳',
-                    value: '513430',
+                    value: '513430'
                   },
                   {
                     label: '昭觉',
-                    value: '513431',
+                    value: '513431'
                   },
                   {
                     label: '喜德',
-                    value: '513432',
+                    value: '513432'
                   },
                   {
                     label: '冕宁',
-                    value: '513433',
+                    value: '513433'
                   },
                   {
                     label: '越西',
-                    value: '513434',
+                    value: '513434'
                   },
                   {
                     label: '甘洛',
-                    value: '513435',
+                    value: '513435'
                   },
                   {
                     label: '美姑',
-                    value: '513436',
+                    value: '513436'
                   },
                   {
                     label: '雷波',
-                    value: '513437',
-                  },
-                ],
-              },
-            ],
+                    value: '513437'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '贵州',
@@ -10565,45 +10565,45 @@ export default [
                 children: [
                   {
                     label: '南明',
-                    value: '520102',
+                    value: '520102'
                   },
                   {
                     label: '云岩',
-                    value: '520103',
+                    value: '520103'
                   },
                   {
                     label: '花溪',
-                    value: '520111',
+                    value: '520111'
                   },
                   {
                     label: '乌当',
-                    value: '520112',
+                    value: '520112'
                   },
                   {
                     label: '白云',
-                    value: '520113',
+                    value: '520113'
                   },
                   {
                     label: '观山湖',
-                    value: '520115',
+                    value: '520115'
                   },
                   {
                     label: '开阳',
-                    value: '520121',
+                    value: '520121'
                   },
                   {
                     label: '息烽',
-                    value: '520122',
+                    value: '520122'
                   },
                   {
                     label: '修文',
-                    value: '520123',
+                    value: '520123'
                   },
                   {
                     label: '清镇',
-                    value: '520181',
-                  },
-                ],
+                    value: '520181'
+                  }
+                ]
               },
               {
                 label: '六盘水',
@@ -10611,21 +10611,21 @@ export default [
                 children: [
                   {
                     label: '钟山',
-                    value: '520201',
+                    value: '520201'
                   },
                   {
                     label: '六枝特',
-                    value: '520203',
+                    value: '520203'
                   },
                   {
                     label: '水城',
-                    value: '520204',
+                    value: '520204'
                   },
                   {
                     label: '盘州',
-                    value: '520281',
-                  },
-                ],
+                    value: '520281'
+                  }
+                ]
               },
               {
                 label: '遵义',
@@ -10633,61 +10633,61 @@ export default [
                 children: [
                   {
                     label: '红花岗',
-                    value: '520302',
+                    value: '520302'
                   },
                   {
                     label: '汇川',
-                    value: '520303',
+                    value: '520303'
                   },
                   {
                     label: '播州',
-                    value: '520304',
+                    value: '520304'
                   },
                   {
                     label: '桐梓',
-                    value: '520322',
+                    value: '520322'
                   },
                   {
                     label: '绥阳',
-                    value: '520323',
+                    value: '520323'
                   },
                   {
                     label: '正安',
-                    value: '520324',
+                    value: '520324'
                   },
                   {
                     label: '道真',
-                    value: '520325',
+                    value: '520325'
                   },
                   {
                     label: '务川',
-                    value: '520326',
+                    value: '520326'
                   },
                   {
                     label: '凤冈',
-                    value: '520327',
+                    value: '520327'
                   },
                   {
                     label: '湄潭',
-                    value: '520328',
+                    value: '520328'
                   },
                   {
                     label: '余庆',
-                    value: '520329',
+                    value: '520329'
                   },
                   {
                     label: '习水',
-                    value: '520330',
+                    value: '520330'
                   },
                   {
                     label: '赤水',
-                    value: '520381',
+                    value: '520381'
                   },
                   {
                     label: '仁怀',
-                    value: '520382',
-                  },
-                ],
+                    value: '520382'
+                  }
+                ]
               },
               {
                 label: '安顺',
@@ -10695,29 +10695,29 @@ export default [
                 children: [
                   {
                     label: '西秀',
-                    value: '520402',
+                    value: '520402'
                   },
                   {
                     label: '平坝',
-                    value: '520403',
+                    value: '520403'
                   },
                   {
                     label: '普定',
-                    value: '520422',
+                    value: '520422'
                   },
                   {
                     label: '镇宁',
-                    value: '520423',
+                    value: '520423'
                   },
                   {
                     label: '关岭',
-                    value: '520424',
+                    value: '520424'
                   },
                   {
                     label: '紫云',
-                    value: '520425',
-                  },
-                ],
+                    value: '520425'
+                  }
+                ]
               },
               {
                 label: '毕节',
@@ -10725,37 +10725,37 @@ export default [
                 children: [
                   {
                     label: '七星关',
-                    value: '520502',
+                    value: '520502'
                   },
                   {
                     label: '大方',
-                    value: '520521',
+                    value: '520521'
                   },
                   {
                     label: '金沙',
-                    value: '520523',
+                    value: '520523'
                   },
                   {
                     label: '织金',
-                    value: '520524',
+                    value: '520524'
                   },
                   {
                     label: '纳雍',
-                    value: '520525',
+                    value: '520525'
                   },
                   {
                     label: '威宁',
-                    value: '520526',
+                    value: '520526'
                   },
                   {
                     label: '赫章',
-                    value: '520527',
+                    value: '520527'
                   },
                   {
                     label: '黔西',
-                    value: '520581',
-                  },
-                ],
+                    value: '520581'
+                  }
+                ]
               },
               {
                 label: '铜仁',
@@ -10763,45 +10763,45 @@ export default [
                 children: [
                   {
                     label: '碧江',
-                    value: '520602',
+                    value: '520602'
                   },
                   {
                     label: '万山',
-                    value: '520603',
+                    value: '520603'
                   },
                   {
                     label: '江口',
-                    value: '520621',
+                    value: '520621'
                   },
                   {
                     label: '玉屏',
-                    value: '520622',
+                    value: '520622'
                   },
                   {
                     label: '石阡',
-                    value: '520623',
+                    value: '520623'
                   },
                   {
                     label: '思南',
-                    value: '520624',
+                    value: '520624'
                   },
                   {
                     label: '印江',
-                    value: '520625',
+                    value: '520625'
                   },
                   {
                     label: '德江',
-                    value: '520626',
+                    value: '520626'
                   },
                   {
                     label: '沿河',
-                    value: '520627',
+                    value: '520627'
                   },
                   {
                     label: '松桃',
-                    value: '520628',
-                  },
-                ],
+                    value: '520628'
+                  }
+                ]
               },
               {
                 label: '黔西南',
@@ -10809,37 +10809,37 @@ export default [
                 children: [
                   {
                     label: '兴义',
-                    value: '522301',
+                    value: '522301'
                   },
                   {
                     label: '兴仁',
-                    value: '522302',
+                    value: '522302'
                   },
                   {
                     label: '普安',
-                    value: '522323',
+                    value: '522323'
                   },
                   {
                     label: '晴隆',
-                    value: '522324',
+                    value: '522324'
                   },
                   {
                     label: '贞丰',
-                    value: '522325',
+                    value: '522325'
                   },
                   {
                     label: '望谟',
-                    value: '522326',
+                    value: '522326'
                   },
                   {
                     label: '册亨',
-                    value: '522327',
+                    value: '522327'
                   },
                   {
                     label: '安龙',
-                    value: '522328',
-                  },
-                ],
+                    value: '522328'
+                  }
+                ]
               },
               {
                 label: '黔东南',
@@ -10847,69 +10847,69 @@ export default [
                 children: [
                   {
                     label: '凯里',
-                    value: '522601',
+                    value: '522601'
                   },
                   {
                     label: '黄平',
-                    value: '522622',
+                    value: '522622'
                   },
                   {
                     label: '施秉',
-                    value: '522623',
+                    value: '522623'
                   },
                   {
                     label: '三穗',
-                    value: '522624',
+                    value: '522624'
                   },
                   {
                     label: '镇远',
-                    value: '522625',
+                    value: '522625'
                   },
                   {
                     label: '岑巩',
-                    value: '522626',
+                    value: '522626'
                   },
                   {
                     label: '天柱',
-                    value: '522627',
+                    value: '522627'
                   },
                   {
                     label: '锦屏',
-                    value: '522628',
+                    value: '522628'
                   },
                   {
                     label: '剑河',
-                    value: '522629',
+                    value: '522629'
                   },
                   {
                     label: '台江',
-                    value: '522630',
+                    value: '522630'
                   },
                   {
                     label: '黎平',
-                    value: '522631',
+                    value: '522631'
                   },
                   {
                     label: '榕江',
-                    value: '522632',
+                    value: '522632'
                   },
                   {
                     label: '从江',
-                    value: '522633',
+                    value: '522633'
                   },
                   {
                     label: '雷山',
-                    value: '522634',
+                    value: '522634'
                   },
                   {
                     label: '麻江',
-                    value: '522635',
+                    value: '522635'
                   },
                   {
                     label: '丹寨',
-                    value: '522636',
-                  },
-                ],
+                    value: '522636'
+                  }
+                ]
               },
               {
                 label: '黔南',
@@ -10917,55 +10917,55 @@ export default [
                 children: [
                   {
                     label: '都匀',
-                    value: '522701',
+                    value: '522701'
                   },
                   {
                     label: '福泉',
-                    value: '522702',
+                    value: '522702'
                   },
                   {
                     label: '荔波',
-                    value: '522722',
+                    value: '522722'
                   },
                   {
                     label: '贵定',
-                    value: '522723',
+                    value: '522723'
                   },
                   {
                     label: '瓮安',
-                    value: '522725',
+                    value: '522725'
                   },
                   {
                     label: '独山',
-                    value: '522726',
+                    value: '522726'
                   },
                   {
                     label: '平塘',
-                    value: '522727',
+                    value: '522727'
                   },
                   {
                     label: '罗甸',
-                    value: '522728',
+                    value: '522728'
                   },
                   {
                     label: '长顺',
-                    value: '522729',
+                    value: '522729'
                   },
                   {
                     label: '龙里',
-                    value: '522730',
+                    value: '522730'
                   },
                   {
                     label: '惠水',
-                    value: '522731',
+                    value: '522731'
                   },
                   {
                     label: '三都',
-                    value: '522732',
-                  },
-                ],
-              },
-            ],
+                    value: '522732'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '云南',
@@ -10977,61 +10977,61 @@ export default [
                 children: [
                   {
                     label: '五华',
-                    value: '530102',
+                    value: '530102'
                   },
                   {
                     label: '盘龙',
-                    value: '530103',
+                    value: '530103'
                   },
                   {
                     label: '官渡',
-                    value: '530111',
+                    value: '530111'
                   },
                   {
                     label: '西山',
-                    value: '530112',
+                    value: '530112'
                   },
                   {
                     label: '东川',
-                    value: '530113',
+                    value: '530113'
                   },
                   {
                     label: '呈贡',
-                    value: '530114',
+                    value: '530114'
                   },
                   {
                     label: '晋宁',
-                    value: '530115',
+                    value: '530115'
                   },
                   {
                     label: '富民',
-                    value: '530124',
+                    value: '530124'
                   },
                   {
                     label: '宜良',
-                    value: '530125',
+                    value: '530125'
                   },
                   {
                     label: '石林',
-                    value: '530126',
+                    value: '530126'
                   },
                   {
                     label: '嵩明',
-                    value: '530127',
+                    value: '530127'
                   },
                   {
                     label: '禄劝',
-                    value: '530128',
+                    value: '530128'
                   },
                   {
                     label: '寻甸',
-                    value: '530129',
+                    value: '530129'
                   },
                   {
                     label: '安宁',
-                    value: '530181',
-                  },
-                ],
+                    value: '530181'
+                  }
+                ]
               },
               {
                 label: '曲靖',
@@ -11039,41 +11039,41 @@ export default [
                 children: [
                   {
                     label: '麒麟',
-                    value: '530302',
+                    value: '530302'
                   },
                   {
                     label: '沾益',
-                    value: '530303',
+                    value: '530303'
                   },
                   {
                     label: '马龙',
-                    value: '530304',
+                    value: '530304'
                   },
                   {
                     label: '陆良',
-                    value: '530322',
+                    value: '530322'
                   },
                   {
                     label: '师宗',
-                    value: '530323',
+                    value: '530323'
                   },
                   {
                     label: '罗平',
-                    value: '530324',
+                    value: '530324'
                   },
                   {
                     label: '富源',
-                    value: '530325',
+                    value: '530325'
                   },
                   {
                     label: '会泽',
-                    value: '530326',
+                    value: '530326'
                   },
                   {
                     label: '宣威',
-                    value: '530381',
-                  },
-                ],
+                    value: '530381'
+                  }
+                ]
               },
               {
                 label: '玉溪',
@@ -11081,41 +11081,41 @@ export default [
                 children: [
                   {
                     label: '红塔',
-                    value: '530402',
+                    value: '530402'
                   },
                   {
                     label: '江川',
-                    value: '530403',
+                    value: '530403'
                   },
                   {
                     label: '通海',
-                    value: '530423',
+                    value: '530423'
                   },
                   {
                     label: '华宁',
-                    value: '530424',
+                    value: '530424'
                   },
                   {
                     label: '易门',
-                    value: '530425',
+                    value: '530425'
                   },
                   {
                     label: '峨山',
-                    value: '530426',
+                    value: '530426'
                   },
                   {
                     label: '新平',
-                    value: '530427',
+                    value: '530427'
                   },
                   {
                     label: '元江',
-                    value: '530428',
+                    value: '530428'
                   },
                   {
                     label: '澄江',
-                    value: '530481',
-                  },
-                ],
+                    value: '530481'
+                  }
+                ]
               },
               {
                 label: '保山',
@@ -11123,25 +11123,25 @@ export default [
                 children: [
                   {
                     label: '隆阳',
-                    value: '530502',
+                    value: '530502'
                   },
                   {
                     label: '施甸',
-                    value: '530521',
+                    value: '530521'
                   },
                   {
                     label: '龙陵',
-                    value: '530523',
+                    value: '530523'
                   },
                   {
                     label: '昌宁',
-                    value: '530524',
+                    value: '530524'
                   },
                   {
                     label: '腾冲',
-                    value: '530581',
-                  },
-                ],
+                    value: '530581'
+                  }
+                ]
               },
               {
                 label: '昭通',
@@ -11149,49 +11149,49 @@ export default [
                 children: [
                   {
                     label: '昭阳',
-                    value: '530602',
+                    value: '530602'
                   },
                   {
                     label: '鲁甸',
-                    value: '530621',
+                    value: '530621'
                   },
                   {
                     label: '巧家',
-                    value: '530622',
+                    value: '530622'
                   },
                   {
                     label: '盐津',
-                    value: '530623',
+                    value: '530623'
                   },
                   {
                     label: '大关',
-                    value: '530624',
+                    value: '530624'
                   },
                   {
                     label: '永善',
-                    value: '530625',
+                    value: '530625'
                   },
                   {
                     label: '绥江',
-                    value: '530626',
+                    value: '530626'
                   },
                   {
                     label: '镇雄',
-                    value: '530627',
+                    value: '530627'
                   },
                   {
                     label: '彝良',
-                    value: '530628',
+                    value: '530628'
                   },
                   {
                     label: '威信',
-                    value: '530629',
+                    value: '530629'
                   },
                   {
                     label: '水富',
-                    value: '530681',
-                  },
-                ],
+                    value: '530681'
+                  }
+                ]
               },
               {
                 label: '丽江',
@@ -11199,25 +11199,25 @@ export default [
                 children: [
                   {
                     label: '古城',
-                    value: '530702',
+                    value: '530702'
                   },
                   {
                     label: '玉龙',
-                    value: '530721',
+                    value: '530721'
                   },
                   {
                     label: '永胜',
-                    value: '530722',
+                    value: '530722'
                   },
                   {
                     label: '华坪',
-                    value: '530723',
+                    value: '530723'
                   },
                   {
                     label: '宁蒗',
-                    value: '530724',
-                  },
-                ],
+                    value: '530724'
+                  }
+                ]
               },
               {
                 label: '普洱',
@@ -11225,45 +11225,45 @@ export default [
                 children: [
                   {
                     label: '思茅',
-                    value: '530802',
+                    value: '530802'
                   },
                   {
                     label: '宁洱',
-                    value: '530821',
+                    value: '530821'
                   },
                   {
                     label: '墨江',
-                    value: '530822',
+                    value: '530822'
                   },
                   {
                     label: '景东',
-                    value: '530823',
+                    value: '530823'
                   },
                   {
                     label: '景谷',
-                    value: '530824',
+                    value: '530824'
                   },
                   {
                     label: '镇沅',
-                    value: '530825',
+                    value: '530825'
                   },
                   {
                     label: '江城',
-                    value: '530826',
+                    value: '530826'
                   },
                   {
                     label: '孟连',
-                    value: '530827',
+                    value: '530827'
                   },
                   {
                     label: '澜沧',
-                    value: '530828',
+                    value: '530828'
                   },
                   {
                     label: '西盟',
-                    value: '530829',
-                  },
-                ],
+                    value: '530829'
+                  }
+                ]
               },
               {
                 label: '临沧',
@@ -11271,37 +11271,37 @@ export default [
                 children: [
                   {
                     label: '临翔',
-                    value: '530902',
+                    value: '530902'
                   },
                   {
                     label: '凤庆',
-                    value: '530921',
+                    value: '530921'
                   },
                   {
                     label: '云县',
-                    value: '530922',
+                    value: '530922'
                   },
                   {
                     label: '永德',
-                    value: '530923',
+                    value: '530923'
                   },
                   {
                     label: '镇康',
-                    value: '530924',
+                    value: '530924'
                   },
                   {
                     label: '双江',
-                    value: '530925',
+                    value: '530925'
                   },
                   {
                     label: '耿马',
-                    value: '530926',
+                    value: '530926'
                   },
                   {
                     label: '沧源',
-                    value: '530927',
-                  },
-                ],
+                    value: '530927'
+                  }
+                ]
               },
               {
                 label: '楚雄',
@@ -11309,45 +11309,45 @@ export default [
                 children: [
                   {
                     label: '楚雄市',
-                    value: '532301',
+                    value: '532301'
                   },
                   {
                     label: '禄丰',
-                    value: '532302',
+                    value: '532302'
                   },
                   {
                     label: '双柏',
-                    value: '532322',
+                    value: '532322'
                   },
                   {
                     label: '牟定',
-                    value: '532323',
+                    value: '532323'
                   },
                   {
                     label: '南华',
-                    value: '532324',
+                    value: '532324'
                   },
                   {
                     label: '姚安',
-                    value: '532325',
+                    value: '532325'
                   },
                   {
                     label: '大姚',
-                    value: '532326',
+                    value: '532326'
                   },
                   {
                     label: '永仁',
-                    value: '532327',
+                    value: '532327'
                   },
                   {
                     label: '元谋',
-                    value: '532328',
+                    value: '532328'
                   },
                   {
                     label: '武定',
-                    value: '532329',
-                  },
-                ],
+                    value: '532329'
+                  }
+                ]
               },
               {
                 label: '红河',
@@ -11355,57 +11355,57 @@ export default [
                 children: [
                   {
                     label: '个旧',
-                    value: '532501',
+                    value: '532501'
                   },
                   {
                     label: '开远',
-                    value: '532502',
+                    value: '532502'
                   },
                   {
                     label: '蒙自',
-                    value: '532503',
+                    value: '532503'
                   },
                   {
                     label: '弥勒',
-                    value: '532504',
+                    value: '532504'
                   },
                   {
                     label: '屏边',
-                    value: '532523',
+                    value: '532523'
                   },
                   {
                     label: '建水',
-                    value: '532524',
+                    value: '532524'
                   },
                   {
                     label: '石屏',
-                    value: '532525',
+                    value: '532525'
                   },
                   {
                     label: '泸西',
-                    value: '532527',
+                    value: '532527'
                   },
                   {
                     label: '元阳',
-                    value: '532528',
+                    value: '532528'
                   },
                   {
                     label: '红河县',
-                    value: '532529',
+                    value: '532529'
                   },
                   {
                     label: '金平',
-                    value: '532530',
+                    value: '532530'
                   },
                   {
                     label: '绿春',
-                    value: '532531',
+                    value: '532531'
                   },
                   {
                     label: '河口',
-                    value: '532532',
-                  },
-                ],
+                    value: '532532'
+                  }
+                ]
               },
               {
                 label: '文山',
@@ -11413,37 +11413,37 @@ export default [
                 children: [
                   {
                     label: '文山市',
-                    value: '532601',
+                    value: '532601'
                   },
                   {
                     label: '砚山',
-                    value: '532622',
+                    value: '532622'
                   },
                   {
                     label: '西畴',
-                    value: '532623',
+                    value: '532623'
                   },
                   {
                     label: '麻栗坡',
-                    value: '532624',
+                    value: '532624'
                   },
                   {
                     label: '马关',
-                    value: '532625',
+                    value: '532625'
                   },
                   {
                     label: '丘北',
-                    value: '532626',
+                    value: '532626'
                   },
                   {
                     label: '广南',
-                    value: '532627',
+                    value: '532627'
                   },
                   {
                     label: '富宁',
-                    value: '532628',
-                  },
-                ],
+                    value: '532628'
+                  }
+                ]
               },
               {
                 label: '西双版纳',
@@ -11451,17 +11451,17 @@ export default [
                 children: [
                   {
                     label: '景洪',
-                    value: '532801',
+                    value: '532801'
                   },
                   {
                     label: '勐海',
-                    value: '532822',
+                    value: '532822'
                   },
                   {
                     label: '勐腊',
-                    value: '532823',
-                  },
-                ],
+                    value: '532823'
+                  }
+                ]
               },
               {
                 label: '大理',
@@ -11469,53 +11469,53 @@ export default [
                 children: [
                   {
                     label: '大理市',
-                    value: '532901',
+                    value: '532901'
                   },
                   {
                     label: '漾濞',
-                    value: '532922',
+                    value: '532922'
                   },
                   {
                     label: '祥云',
-                    value: '532923',
+                    value: '532923'
                   },
                   {
                     label: '宾川',
-                    value: '532924',
+                    value: '532924'
                   },
                   {
                     label: '弥渡',
-                    value: '532925',
+                    value: '532925'
                   },
                   {
                     label: '南涧',
-                    value: '532926',
+                    value: '532926'
                   },
                   {
                     label: '巍山',
-                    value: '532927',
+                    value: '532927'
                   },
                   {
                     label: '永平',
-                    value: '532928',
+                    value: '532928'
                   },
                   {
                     label: '云龙',
-                    value: '532929',
+                    value: '532929'
                   },
                   {
                     label: '洱源',
-                    value: '532930',
+                    value: '532930'
                   },
                   {
                     label: '剑川',
-                    value: '532931',
+                    value: '532931'
                   },
                   {
                     label: '鹤庆',
-                    value: '532932',
-                  },
-                ],
+                    value: '532932'
+                  }
+                ]
               },
               {
                 label: '德宏',
@@ -11523,25 +11523,25 @@ export default [
                 children: [
                   {
                     label: '瑞丽',
-                    value: '533102',
+                    value: '533102'
                   },
                   {
                     label: '芒市',
-                    value: '533103',
+                    value: '533103'
                   },
                   {
                     label: '梁河',
-                    value: '533122',
+                    value: '533122'
                   },
                   {
                     label: '盈江',
-                    value: '533123',
+                    value: '533123'
                   },
                   {
                     label: '陇川',
-                    value: '533124',
-                  },
-                ],
+                    value: '533124'
+                  }
+                ]
               },
               {
                 label: '怒江',
@@ -11549,21 +11549,21 @@ export default [
                 children: [
                   {
                     label: '泸水',
-                    value: '533301',
+                    value: '533301'
                   },
                   {
                     label: '福贡',
-                    value: '533323',
+                    value: '533323'
                   },
                   {
                     label: '贡山',
-                    value: '533324',
+                    value: '533324'
                   },
                   {
                     label: '兰坪',
-                    value: '533325',
-                  },
-                ],
+                    value: '533325'
+                  }
+                ]
               },
               {
                 label: '迪庆',
@@ -11571,19 +11571,19 @@ export default [
                 children: [
                   {
                     label: '香格里拉',
-                    value: '533401',
+                    value: '533401'
                   },
                   {
                     label: '德钦',
-                    value: '533422',
+                    value: '533422'
                   },
                   {
                     label: '维西',
-                    value: '533423',
-                  },
-                ],
-              },
-            ],
+                    value: '533423'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '西藏',
@@ -11595,37 +11595,37 @@ export default [
                 children: [
                   {
                     label: '城关',
-                    value: '540102',
+                    value: '540102'
                   },
                   {
                     label: '堆龙德庆区',
-                    value: '540103',
+                    value: '540103'
                   },
                   {
                     label: '达孜',
-                    value: '540104',
+                    value: '540104'
                   },
                   {
                     label: '林周',
-                    value: '540121',
+                    value: '540121'
                   },
                   {
                     label: '当雄',
-                    value: '540122',
+                    value: '540122'
                   },
                   {
                     label: '尼木',
-                    value: '540123',
+                    value: '540123'
                   },
                   {
                     label: '曲水',
-                    value: '540124',
+                    value: '540124'
                   },
                   {
                     label: '墨竹工卡',
-                    value: '540127',
-                  },
-                ],
+                    value: '540127'
+                  }
+                ]
               },
               {
                 label: '日喀则',
@@ -11633,77 +11633,77 @@ export default [
                 children: [
                   {
                     label: '桑珠孜',
-                    value: '540202',
+                    value: '540202'
                   },
                   {
                     label: '南木林',
-                    value: '540221',
+                    value: '540221'
                   },
                   {
                     label: '江孜',
-                    value: '540222',
+                    value: '540222'
                   },
                   {
                     label: '定日',
-                    value: '540223',
+                    value: '540223'
                   },
                   {
                     label: '萨迦',
-                    value: '540224',
+                    value: '540224'
                   },
                   {
                     label: '拉孜',
-                    value: '540225',
+                    value: '540225'
                   },
                   {
                     label: '昂仁',
-                    value: '540226',
+                    value: '540226'
                   },
                   {
                     label: '谢通门',
-                    value: '540227',
+                    value: '540227'
                   },
                   {
                     label: '白朗',
-                    value: '540228',
+                    value: '540228'
                   },
                   {
                     label: '仁布',
-                    value: '540229',
+                    value: '540229'
                   },
                   {
                     label: '康马',
-                    value: '540230',
+                    value: '540230'
                   },
                   {
                     label: '定结',
-                    value: '540231',
+                    value: '540231'
                   },
                   {
                     label: '仲巴',
-                    value: '540232',
+                    value: '540232'
                   },
                   {
                     label: '亚东',
-                    value: '540233',
+                    value: '540233'
                   },
                   {
                     label: '吉隆',
-                    value: '540234',
+                    value: '540234'
                   },
                   {
                     label: '聂拉木',
-                    value: '540235',
+                    value: '540235'
                   },
                   {
                     label: '萨嘎',
-                    value: '540236',
+                    value: '540236'
                   },
                   {
                     label: '岗巴',
-                    value: '540237',
-                  },
-                ],
+                    value: '540237'
+                  }
+                ]
               },
               {
                 label: '昌都',
@@ -11711,49 +11711,49 @@ export default [
                 children: [
                   {
                     label: '卡若',
-                    value: '540302',
+                    value: '540302'
                   },
                   {
                     label: '江达',
-                    value: '540321',
+                    value: '540321'
                   },
                   {
                     label: '贡觉',
-                    value: '540322',
+                    value: '540322'
                   },
                   {
                     label: '类乌齐',
-                    value: '540323',
+                    value: '540323'
                   },
                   {
                     label: '丁青',
-                    value: '540324',
+                    value: '540324'
                   },
                   {
                     label: '察雅',
-                    value: '540325',
+                    value: '540325'
                   },
                   {
                     label: '八宿',
-                    value: '540326',
+                    value: '540326'
                   },
                   {
                     label: '左贡',
-                    value: '540327',
+                    value: '540327'
                   },
                   {
                     label: '芒康',
-                    value: '540328',
+                    value: '540328'
                   },
                   {
                     label: '洛隆',
-                    value: '540329',
+                    value: '540329'
                   },
                   {
                     label: '边坝',
-                    value: '540330',
-                  },
-                ],
+                    value: '540330'
+                  }
+                ]
               },
               {
                 label: '林芝',
@@ -11761,33 +11761,33 @@ export default [
                 children: [
                   {
                     label: '巴宜',
-                    value: '540402',
+                    value: '540402'
                   },
                   {
                     label: '工布江达',
-                    value: '540421',
+                    value: '540421'
                   },
                   {
                     label: '米林',
-                    value: '540422',
+                    value: '540422'
                   },
                   {
                     label: '墨脱',
-                    value: '540423',
+                    value: '540423'
                   },
                   {
                     label: '波密',
-                    value: '540424',
+                    value: '540424'
                   },
                   {
                     label: '察隅',
-                    value: '540425',
+                    value: '540425'
                   },
                   {
                     label: '朗县',
-                    value: '540426',
-                  },
-                ],
+                    value: '540426'
+                  }
+                ]
               },
               {
                 label: '山南',
@@ -11795,53 +11795,53 @@ export default [
                 children: [
                   {
                     label: '乃东',
-                    value: '540502',
+                    value: '540502'
                   },
                   {
                     label: '扎囊',
-                    value: '540521',
+                    value: '540521'
                   },
                   {
                     label: '贡嘎',
-                    value: '540522',
+                    value: '540522'
                   },
                   {
                     label: '桑日',
-                    value: '540523',
+                    value: '540523'
                   },
                   {
                     label: '琼结',
-                    value: '540524',
+                    value: '540524'
                   },
                   {
                     label: '曲松',
-                    value: '540525',
+                    value: '540525'
                   },
                   {
                     label: '措美',
-                    value: '540526',
+                    value: '540526'
                   },
                   {
                     label: '洛扎',
-                    value: '540527',
+                    value: '540527'
                   },
                   {
                     label: '加查',
-                    value: '540528',
+                    value: '540528'
                   },
                   {
                     label: '隆子',
-                    value: '540529',
+                    value: '540529'
                   },
                   {
                     label: '错那',
-                    value: '540530',
+                    value: '540530'
                   },
                   {
                     label: '浪卡子',
-                    value: '540531',
-                  },
-                ],
+                    value: '540531'
+                  }
+                ]
               },
               {
                 label: '那曲',
@@ -11849,49 +11849,49 @@ export default [
                 children: [
                   {
                     label: '色尼',
-                    value: '540602',
+                    value: '540602'
                   },
                   {
                     label: '嘉黎',
-                    value: '540621',
+                    value: '540621'
                   },
                   {
                     label: '比如',
-                    value: '540622',
+                    value: '540622'
                   },
                   {
                     label: '聂荣',
-                    value: '540623',
+                    value: '540623'
                   },
                   {
                     label: '安多',
-                    value: '540624',
+                    value: '540624'
                   },
                   {
                     label: '申扎',
-                    value: '540625',
+                    value: '540625'
                   },
                   {
                     label: '索县',
-                    value: '540626',
+                    value: '540626'
                   },
                   {
                     label: '班戈',
-                    value: '540627',
+                    value: '540627'
                   },
                   {
                     label: '巴青',
-                    value: '540628',
+                    value: '540628'
                   },
                   {
                     label: '尼玛',
-                    value: '540629',
+                    value: '540629'
                   },
                   {
                     label: '双湖',
-                    value: '540630',
-                  },
-                ],
+                    value: '540630'
+                  }
+                ]
               },
               {
                 label: '阿里',
@@ -11899,35 +11899,35 @@ export default [
                 children: [
                   {
                     label: '普兰',
-                    value: '542521',
+                    value: '542521'
                   },
                   {
                     label: '札达',
-                    value: '542522',
+                    value: '542522'
                   },
                   {
                     label: '噶尔',
-                    value: '542523',
+                    value: '542523'
                   },
                   {
                     label: '日土',
-                    value: '542524',
+                    value: '542524'
                   },
                   {
                     label: '革吉',
-                    value: '542525',
+                    value: '542525'
                   },
                   {
                     label: '改则',
-                    value: '542526',
+                    value: '542526'
                   },
                   {
                     label: '措勤',
-                    value: '542527',
-                  },
-                ],
-              },
-            ],
+                    value: '542527'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '陕西',
@@ -11939,57 +11939,57 @@ export default [
                 children: [
                   {
                     label: '新城',
-                    value: '610102',
+                    value: '610102'
                   },
                   {
                     label: '碑林',
-                    value: '610103',
+                    value: '610103'
                   },
                   {
                     label: '莲湖',
-                    value: '610104',
+                    value: '610104'
                   },
                   {
                     label: '灞桥',
-                    value: '610111',
+                    value: '610111'
                   },
                   {
                     label: '未央',
-                    value: '610112',
+                    value: '610112'
                   },
                   {
                     label: '雁塔',
-                    value: '610113',
+                    value: '610113'
                   },
                   {
                     label: '阎良',
-                    value: '610114',
+                    value: '610114'
                   },
                   {
                     label: '临潼',
-                    value: '610115',
+                    value: '610115'
                   },
                   {
                     label: '长安',
-                    value: '610116',
+                    value: '610116'
                   },
                   {
                     label: '高陵',
-                    value: '610117',
+                    value: '610117'
                   },
                   {
                     label: '鄠邑',
-                    value: '610118',
+                    value: '610118'
                   },
                   {
                     label: '蓝田',
-                    value: '610122',
+                    value: '610122'
                   },
                   {
                     label: '周至',
-                    value: '610124',
-                  },
-                ],
+                    value: '610124'
+                  }
+                ]
               },
               {
                 label: '铜川',
@@ -11997,21 +11997,21 @@ export default [
                 children: [
                   {
                     label: '王益',
-                    value: '610202',
+                    value: '610202'
                   },
                   {
                     label: '印台',
-                    value: '610203',
+                    value: '610203'
                   },
                   {
                     label: '耀州',
-                    value: '610204',
+                    value: '610204'
                   },
                   {
                     label: '宜君',
-                    value: '610222',
-                  },
-                ],
+                    value: '610222'
+                  }
+                ]
               },
               {
                 label: '宝鸡',
@@ -12019,53 +12019,53 @@ export default [
                 children: [
                   {
                     label: '渭滨',
-                    value: '610302',
+                    value: '610302'
                   },
                   {
                     label: '金台',
-                    value: '610303',
+                    value: '610303'
                   },
                   {
                     label: '陈仓',
-                    value: '610304',
+                    value: '610304'
                   },
                   {
                     label: '凤翔',
-                    value: '610305',
+                    value: '610305'
                   },
                   {
                     label: '岐山',
-                    value: '610323',
+                    value: '610323'
                   },
                   {
                     label: '扶风',
-                    value: '610324',
+                    value: '610324'
                   },
                   {
                     label: '眉县',
-                    value: '610326',
+                    value: '610326'
                   },
                   {
                     label: '陇县',
-                    value: '610327',
+                    value: '610327'
                   },
                   {
                     label: '千阳',
-                    value: '610328',
+                    value: '610328'
                   },
                   {
                     label: '麟游',
-                    value: '610329',
+                    value: '610329'
                   },
                   {
                     label: '凤县',
-                    value: '610330',
+                    value: '610330'
                   },
                   {
                     label: '太白',
-                    value: '610331',
-                  },
-                ],
+                    value: '610331'
+                  }
+                ]
               },
               {
                 label: '咸阳',
@@ -12073,61 +12073,61 @@ export default [
                 children: [
                   {
                     label: '秦都',
-                    value: '610402',
+                    value: '610402'
                   },
                   {
                     label: '杨陵',
-                    value: '610403',
+                    value: '610403'
                   },
                   {
                     label: '渭城',
-                    value: '610404',
+                    value: '610404'
                   },
                   {
                     label: '三原',
-                    value: '610422',
+                    value: '610422'
                   },
                   {
                     label: '泾阳',
-                    value: '610423',
+                    value: '610423'
                   },
                   {
                     label: '乾县',
-                    value: '610424',
+                    value: '610424'
                   },
                   {
                     label: '礼泉',
-                    value: '610425',
+                    value: '610425'
                   },
                   {
                     label: '永寿',
-                    value: '610426',
+                    value: '610426'
                   },
                   {
                     label: '长武',
-                    value: '610428',
+                    value: '610428'
                   },
                   {
                     label: '旬邑',
-                    value: '610429',
+                    value: '610429'
                   },
                   {
                     label: '淳化',
-                    value: '610430',
+                    value: '610430'
                   },
                   {
                     label: '武功',
-                    value: '610431',
+                    value: '610431'
                   },
                   {
                     label: '兴平',
-                    value: '610481',
+                    value: '610481'
                   },
                   {
                     label: '彬州',
-                    value: '610482',
-                  },
-                ],
+                    value: '610482'
+                  }
+                ]
               },
               {
                 label: '渭南',
@@ -12135,49 +12135,49 @@ export default [
                 children: [
                   {
                     label: '临渭',
-                    value: '610502',
+                    value: '610502'
                   },
                   {
                     label: '华州',
-                    value: '610503',
+                    value: '610503'
                   },
                   {
                     label: '潼关',
-                    value: '610522',
+                    value: '610522'
                   },
                   {
                     label: '大荔',
-                    value: '610523',
+                    value: '610523'
                   },
                   {
                     label: '合阳',
-                    value: '610524',
+                    value: '610524'
                   },
                   {
                     label: '澄城',
-                    value: '610525',
+                    value: '610525'
                   },
                   {
                     label: '蒲城',
-                    value: '610526',
+                    value: '610526'
                   },
                   {
                     label: '白水',
-                    value: '610527',
+                    value: '610527'
                   },
                   {
                     label: '富平',
-                    value: '610528',
+                    value: '610528'
                   },
                   {
                     label: '韩城',
-                    value: '610581',
+                    value: '610581'
                   },
                   {
                     label: '华阴',
-                    value: '610582',
-                  },
-                ],
+                    value: '610582'
+                  }
+                ]
               },
               {
                 label: '延安',
@@ -12185,57 +12185,57 @@ export default [
                 children: [
                   {
                     label: '宝塔',
-                    value: '610602',
+                    value: '610602'
                   },
                   {
                     label: '安塞',
-                    value: '610603',
+                    value: '610603'
                   },
                   {
                     label: '延长',
-                    value: '610621',
+                    value: '610621'
                   },
                   {
                     label: '延川',
-                    value: '610622',
+                    value: '610622'
                   },
                   {
                     label: '志丹',
-                    value: '610625',
+                    value: '610625'
                   },
                   {
                     label: '吴起',
-                    value: '610626',
+                    value: '610626'
                   },
                   {
                     label: '甘泉',
-                    value: '610627',
+                    value: '610627'
                   },
                   {
                     label: '富县',
-                    value: '610628',
+                    value: '610628'
                   },
                   {
                     label: '洛川',
-                    value: '610629',
+                    value: '610629'
                   },
                   {
                     label: '宜川',
-                    value: '610630',
+                    value: '610630'
                   },
                   {
                     label: '黄龙',
-                    value: '610631',
+                    value: '610631'
                   },
                   {
                     label: '黄陵',
-                    value: '610632',
+                    value: '610632'
                   },
                   {
                     label: '子长',
-                    value: '610681',
-                  },
-                ],
+                    value: '610681'
+                  }
+                ]
               },
               {
                 label: '汉中',
@@ -12243,49 +12243,49 @@ export default [
                 children: [
                   {
                     label: '汉台',
-                    value: '610702',
+                    value: '610702'
                   },
                   {
                     label: '南郑',
-                    value: '610703',
+                    value: '610703'
                   },
                   {
                     label: '城固',
-                    value: '610722',
+                    value: '610722'
                   },
                   {
                     label: '洋县',
-                    value: '610723',
+                    value: '610723'
                   },
                   {
                     label: '西乡',
-                    value: '610724',
+                    value: '610724'
                   },
                   {
                     label: '勉县',
-                    value: '610725',
+                    value: '610725'
                   },
                   {
                     label: '宁强',
-                    value: '610726',
+                    value: '610726'
                   },
                   {
                     label: '略阳',
-                    value: '610727',
+                    value: '610727'
                   },
                   {
                     label: '镇巴',
-                    value: '610728',
+                    value: '610728'
                   },
                   {
                     label: '留坝',
-                    value: '610729',
+                    value: '610729'
                   },
                   {
                     label: '佛坪',
-                    value: '610730',
-                  },
-                ],
+                    value: '610730'
+                  }
+                ]
               },
               {
                 label: '榆林',
@@ -12293,53 +12293,53 @@ export default [
                 children: [
                   {
                     label: '榆阳',
-                    value: '610802',
+                    value: '610802'
                   },
                   {
                     label: '横山',
-                    value: '610803',
+                    value: '610803'
                   },
                   {
                     label: '府谷',
-                    value: '610822',
+                    value: '610822'
                   },
                   {
                     label: '靖边',
-                    value: '610824',
+                    value: '610824'
                   },
                   {
                     label: '定边',
-                    value: '610825',
+                    value: '610825'
                   },
                   {
                     label: '绥德',
-                    value: '610826',
+                    value: '610826'
                   },
                   {
                     label: '米脂',
-                    value: '610827',
+                    value: '610827'
                   },
                   {
                     label: '佳县',
-                    value: '610828',
+                    value: '610828'
                   },
                   {
                     label: '吴堡',
-                    value: '610829',
+                    value: '610829'
                   },
                   {
                     label: '清涧',
-                    value: '610830',
+                    value: '610830'
                   },
                   {
                     label: '子洲',
-                    value: '610831',
+                    value: '610831'
                   },
                   {
                     label: '神木',
-                    value: '610881',
-                  },
-                ],
+                    value: '610881'
+                  }
+                ]
               },
               {
                 label: '安康',
@@ -12347,45 +12347,45 @@ export default [
                 children: [
                   {
                     label: '汉滨',
-                    value: '610902',
+                    value: '610902'
                   },
                   {
                     label: '汉阴',
-                    value: '610921',
+                    value: '610921'
                   },
                   {
                     label: '石泉',
-                    value: '610922',
+                    value: '610922'
                   },
                   {
                     label: '宁陕',
-                    value: '610923',
+                    value: '610923'
                   },
                   {
                     label: '紫阳',
-                    value: '610924',
+                    value: '610924'
                   },
                   {
                     label: '岚皋',
-                    value: '610925',
+                    value: '610925'
                   },
                   {
                     label: '平利',
-                    value: '610926',
+                    value: '610926'
                   },
                   {
                     label: '镇坪',
-                    value: '610927',
+                    value: '610927'
                   },
                   {
                     label: '白河',
-                    value: '610929',
+                    value: '610929'
                   },
                   {
                     label: '旬阳',
-                    value: '610981',
-                  },
-                ],
+                    value: '610981'
+                  }
+                ]
               },
               {
                 label: '商洛',
@@ -12393,35 +12393,35 @@ export default [
                 children: [
                   {
                     label: '商州',
-                    value: '611002',
+                    value: '611002'
                   },
                   {
                     label: '洛南',
-                    value: '611021',
+                    value: '611021'
                   },
                   {
                     label: '丹凤',
-                    value: '611022',
+                    value: '611022'
                   },
                   {
                     label: '商南',
-                    value: '611023',
+                    value: '611023'
                   },
                   {
                     label: '山阳',
-                    value: '611024',
+                    value: '611024'
                   },
                   {
                     label: '镇安',
-                    value: '611025',
+                    value: '611025'
                   },
                   {
                     label: '柞水',
-                    value: '611026',
-                  },
-                ],
-              },
-            ],
+                    value: '611026'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '甘肃',
@@ -12433,37 +12433,37 @@ export default [
                 children: [
                   {
                     label: '城关',
-                    value: '620102',
+                    value: '620102'
                   },
                   {
                     label: '七里河',
-                    value: '620103',
+                    value: '620103'
                   },
                   {
                     label: '西固',
-                    value: '620104',
+                    value: '620104'
                   },
                   {
                     label: '安宁',
-                    value: '620105',
+                    value: '620105'
                   },
                   {
                     label: '红古',
-                    value: '620111',
+                    value: '620111'
                   },
                   {
                     label: '永登',
-                    value: '620121',
+                    value: '620121'
                   },
                   {
                     label: '皋兰',
-                    value: '620122',
+                    value: '620122'
                   },
                   {
                     label: '榆中',
-                    value: '620123',
-                  },
-                ],
+                    value: '620123'
+                  }
+                ]
               },
               {
                 label: '嘉峪关',
@@ -12471,9 +12471,9 @@ export default [
                 children: [
                   {
                     label: '嘉峪关',
-                    value: '620201',
-                  },
-                ],
+                    value: '620201'
+                  }
+                ]
               },
               {
                 label: '金昌',
@@ -12481,13 +12481,13 @@ export default [
                 children: [
                   {
                     label: '金川',
-                    value: '620302',
+                    value: '620302'
                   },
                   {
                     label: '永昌',
-                    value: '620321',
-                  },
-                ],
+                    value: '620321'
+                  }
+                ]
               },
               {
                 label: '白银',
@@ -12495,25 +12495,25 @@ export default [
                 children: [
                   {
                     label: '白银区',
-                    value: '620402',
+                    value: '620402'
                   },
                   {
                     label: '平川',
-                    value: '620403',
+                    value: '620403'
                   },
                   {
                     label: '靖远',
-                    value: '620421',
+                    value: '620421'
                   },
                   {
                     label: '会宁',
-                    value: '620422',
+                    value: '620422'
                   },
                   {
                     label: '景泰',
-                    value: '620423',
-                  },
-                ],
+                    value: '620423'
+                  }
+                ]
               },
               {
                 label: '天水',
@@ -12521,33 +12521,33 @@ export default [
                 children: [
                   {
                     label: '秦州',
-                    value: '620502',
+                    value: '620502'
                   },
                   {
                     label: '麦积',
-                    value: '620503',
+                    value: '620503'
                   },
                   {
                     label: '清水',
-                    value: '620521',
+                    value: '620521'
                   },
                   {
                     label: '秦安',
-                    value: '620522',
+                    value: '620522'
                   },
                   {
                     label: '甘谷',
-                    value: '620523',
+                    value: '620523'
                   },
                   {
                     label: '武山',
-                    value: '620524',
+                    value: '620524'
                   },
                   {
                     label: '张家川',
-                    value: '620525',
-                  },
-                ],
+                    value: '620525'
+                  }
+                ]
               },
               {
                 label: '武威',
@@ -12555,21 +12555,21 @@ export default [
                 children: [
                   {
                     label: '凉州',
-                    value: '620602',
+                    value: '620602'
                   },
                   {
                     label: '民勤',
-                    value: '620621',
+                    value: '620621'
                   },
                   {
                     label: '古浪',
-                    value: '620622',
+                    value: '620622'
                   },
                   {
                     label: '天祝',
-                    value: '620623',
-                  },
-                ],
+                    value: '620623'
+                  }
+                ]
               },
               {
                 label: '张掖',
@@ -12577,29 +12577,29 @@ export default [
                 children: [
                   {
                     label: '甘州',
-                    value: '620702',
+                    value: '620702'
                   },
                   {
                     label: '肃南',
-                    value: '620721',
+                    value: '620721'
                   },
                   {
                     label: '民乐',
-                    value: '620722',
+                    value: '620722'
                   },
                   {
                     label: '临泽',
-                    value: '620723',
+                    value: '620723'
                   },
                   {
                     label: '高台',
-                    value: '620724',
+                    value: '620724'
                   },
                   {
                     label: '山丹',
-                    value: '620725',
-                  },
-                ],
+                    value: '620725'
+                  }
+                ]
               },
               {
                 label: '平凉',
@@ -12607,33 +12607,33 @@ export default [
                 children: [
                   {
                     label: '崆峒',
-                    value: '620802',
+                    value: '620802'
                   },
                   {
                     label: '泾川',
-                    value: '620821',
+                    value: '620821'
                   },
                   {
                     label: '灵台',
-                    value: '620822',
+                    value: '620822'
                   },
                   {
                     label: '崇信',
-                    value: '620823',
+                    value: '620823'
                   },
                   {
                     label: '庄浪',
-                    value: '620825',
+                    value: '620825'
                   },
                   {
                     label: '静宁',
-                    value: '620826',
+                    value: '620826'
                   },
                   {
                     label: '华亭',
-                    value: '620881',
-                  },
-                ],
+                    value: '620881'
+                  }
+                ]
               },
               {
                 label: '酒泉',
@@ -12641,33 +12641,33 @@ export default [
                 children: [
                   {
                     label: '肃州',
-                    value: '620902',
+                    value: '620902'
                   },
                   {
                     label: '金塔',
-                    value: '620921',
+                    value: '620921'
                   },
                   {
                     label: '瓜州',
-                    value: '620922',
+                    value: '620922'
                   },
                   {
                     label: '肃北',
-                    value: '620923',
+                    value: '620923'
                   },
                   {
                     label: '阿克塞',
-                    value: '620924',
+                    value: '620924'
                   },
                   {
                     label: '玉门',
-                    value: '620981',
+                    value: '620981'
                   },
                   {
                     label: '敦煌',
-                    value: '620982',
-                  },
-                ],
+                    value: '620982'
+                  }
+                ]
               },
               {
                 label: '庆阳',
@@ -12675,37 +12675,37 @@ export default [
                 children: [
                   {
                     label: '西峰',
-                    value: '621002',
+                    value: '621002'
                   },
                   {
                     label: '庆城',
-                    value: '621021',
+                    value: '621021'
                   },
                   {
                     label: '环县',
-                    value: '621022',
+                    value: '621022'
                   },
                   {
                     label: '华池',
-                    value: '621023',
+                    value: '621023'
                   },
                   {
                     label: '合水',
-                    value: '621024',
+                    value: '621024'
                   },
                   {
                     label: '正宁',
-                    value: '621025',
+                    value: '621025'
                   },
                   {
                     label: '宁县',
-                    value: '621026',
+                    value: '621026'
                   },
                   {
                     label: '镇原',
-                    value: '621027',
-                  },
-                ],
+                    value: '621027'
+                  }
+                ]
               },
               {
                 label: '定西',
@@ -12713,33 +12713,33 @@ export default [
                 children: [
                   {
                     label: '安定',
-                    value: '621102',
+                    value: '621102'
                   },
                   {
                     label: '通渭',
-                    value: '621121',
+                    value: '621121'
                   },
                   {
                     label: '陇西',
-                    value: '621122',
+                    value: '621122'
                   },
                   {
                     label: '渭源',
-                    value: '621123',
+                    value: '621123'
                   },
                   {
                     label: '临洮',
-                    value: '621124',
+                    value: '621124'
                   },
                   {
                     label: '漳县',
-                    value: '621125',
+                    value: '621125'
                   },
                   {
                     label: '岷县',
-                    value: '621126',
-                  },
-                ],
+                    value: '621126'
+                  }
+                ]
               },
               {
                 label: '陇南',
@@ -12747,41 +12747,41 @@ export default [
                 children: [
                   {
                     label: '武都',
-                    value: '621202',
+                    value: '621202'
                   },
                   {
                     label: '成县',
-                    value: '621221',
+                    value: '621221'
                   },
                   {
                     label: '文县',
-                    value: '621222',
+                    value: '621222'
                   },
                   {
                     label: '宕昌',
-                    value: '621223',
+                    value: '621223'
                   },
                   {
                     label: '康县',
-                    value: '621224',
+                    value: '621224'
                   },
                   {
                     label: '西和',
-                    value: '621225',
+                    value: '621225'
                   },
                   {
                     label: '礼县',
-                    value: '621226',
+                    value: '621226'
                   },
                   {
                     label: '徽县',
-                    value: '621227',
+                    value: '621227'
                   },
                   {
                     label: '两当',
-                    value: '621228',
-                  },
-                ],
+                    value: '621228'
+                  }
+                ]
               },
               {
                 label: '临夏',
@@ -12789,37 +12789,37 @@ export default [
                 children: [
                   {
                     label: '临夏市',
-                    value: '622901',
+                    value: '622901'
                   },
                   {
                     label: '临夏县',
-                    value: '622921',
+                    value: '622921'
                   },
                   {
                     label: '康乐',
-                    value: '622922',
+                    value: '622922'
                   },
                   {
                     label: '永靖',
-                    value: '622923',
+                    value: '622923'
                   },
                   {
                     label: '广河',
-                    value: '622924',
+                    value: '622924'
                   },
                   {
                     label: '和政',
-                    value: '622925',
+                    value: '622925'
                   },
                   {
                     label: '东乡族自治县',
-                    value: '622926',
+                    value: '622926'
                   },
                   {
                     label: '积石山',
-                    value: '622927',
-                  },
-                ],
+                    value: '622927'
+                  }
+                ]
               },
               {
                 label: '甘南',
@@ -12827,39 +12827,39 @@ export default [
                 children: [
                   {
                     label: '合作',
-                    value: '623001',
+                    value: '623001'
                   },
                   {
                     label: '临潭',
-                    value: '623021',
+                    value: '623021'
                   },
                   {
                     label: '卓尼',
-                    value: '623022',
+                    value: '623022'
                   },
                   {
                     label: '舟曲',
-                    value: '623023',
+                    value: '623023'
                   },
                   {
                     label: '迭部',
-                    value: '623024',
+                    value: '623024'
                   },
                   {
                     label: '玛曲',
-                    value: '623025',
+                    value: '623025'
                   },
                   {
                     label: '碌曲',
-                    value: '623026',
+                    value: '623026'
                   },
                   {
                     label: '夏河',
-                    value: '623027',
-                  },
-                ],
-              },
-            ],
+                    value: '623027'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '青海',
@@ -12871,33 +12871,33 @@ export default [
                 children: [
                   {
                     label: '城东',
-                    value: '630102',
+                    value: '630102'
                   },
                   {
                     label: '城中',
-                    value: '630103',
+                    value: '630103'
                   },
                   {
                     label: '城西',
-                    value: '630104',
+                    value: '630104'
                   },
                   {
                     label: '城北',
-                    value: '630105',
+                    value: '630105'
                   },
                   {
                     label: '湟中',
-                    value: '630106',
+                    value: '630106'
                   },
                   {
                     label: '大通',
-                    value: '630121',
+                    value: '630121'
                   },
                   {
                     label: '湟源',
-                    value: '630123',
-                  },
-                ],
+                    value: '630123'
+                  }
+                ]
               },
               {
                 label: '海东',
@@ -12905,29 +12905,29 @@ export default [
                 children: [
                   {
                     label: '乐都',
-                    value: '630202',
+                    value: '630202'
                   },
                   {
                     label: '平安',
-                    value: '630203',
+                    value: '630203'
                   },
                   {
                     label: '民和',
-                    value: '630222',
+                    value: '630222'
                   },
                   {
                     label: '互助',
-                    value: '630223',
+                    value: '630223'
                   },
                   {
                     label: '化隆',
-                    value: '630224',
+                    value: '630224'
                   },
                   {
                     label: '循化',
-                    value: '630225',
-                  },
-                ],
+                    value: '630225'
+                  }
+                ]
               },
               {
                 label: '海北',
@@ -12935,21 +12935,21 @@ export default [
                 children: [
                   {
                     label: '门源',
-                    value: '632221',
+                    value: '632221'
                   },
                   {
                     label: '祁连',
-                    value: '632222',
+                    value: '632222'
                   },
                   {
                     label: '海晏',
-                    value: '632223',
+                    value: '632223'
                   },
                   {
                     label: '刚察',
-                    value: '632224',
-                  },
-                ],
+                    value: '632224'
+                  }
+                ]
               },
               {
                 label: '黄南',
@@ -12957,21 +12957,21 @@ export default [
                 children: [
                   {
                     label: '同仁',
-                    value: '632301',
+                    value: '632301'
                   },
                   {
                     label: '尖扎',
-                    value: '632322',
+                    value: '632322'
                   },
                   {
                     label: '泽库',
-                    value: '632323',
+                    value: '632323'
                   },
                   {
                     label: '河南',
-                    value: '632324',
-                  },
-                ],
+                    value: '632324'
+                  }
+                ]
               },
               {
                 label: '海南',
@@ -12979,25 +12979,25 @@ export default [
                 children: [
                   {
                     label: '共和',
-                    value: '632521',
+                    value: '632521'
                   },
                   {
                     label: '同德',
-                    value: '632522',
+                    value: '632522'
                   },
                   {
                     label: '贵德',
-                    value: '632523',
+                    value: '632523'
                   },
                   {
                     label: '兴海',
-                    value: '632524',
+                    value: '632524'
                   },
                   {
                     label: '贵南',
-                    value: '632525',
-                  },
-                ],
+                    value: '632525'
+                  }
+                ]
               },
               {
                 label: '果洛',
@@ -13005,29 +13005,29 @@ export default [
                 children: [
                   {
                     label: '玛沁',
-                    value: '632621',
+                    value: '632621'
                   },
                   {
                     label: '班玛',
-                    value: '632622',
+                    value: '632622'
                   },
                   {
                     label: '甘德',
-                    value: '632623',
+                    value: '632623'
                   },
                   {
                     label: '达日',
-                    value: '632624',
+                    value: '632624'
                   },
                   {
                     label: '久治',
-                    value: '632625',
+                    value: '632625'
                   },
                   {
                     label: '玛多',
-                    value: '632626',
-                  },
-                ],
+                    value: '632626'
+                  }
+                ]
               },
               {
                 label: '玉树',
@@ -13035,29 +13035,29 @@ export default [
                 children: [
                   {
                     label: '玉树市',
-                    value: '632701',
+                    value: '632701'
                   },
                   {
                     label: '杂多',
-                    value: '632722',
+                    value: '632722'
                   },
                   {
                     label: '称多',
-                    value: '632723',
+                    value: '632723'
                   },
                   {
                     label: '治多',
-                    value: '632724',
+                    value: '632724'
                   },
                   {
                     label: '囊谦',
-                    value: '632725',
+                    value: '632725'
                   },
                   {
                     label: '曲麻莱',
-                    value: '632726',
-                  },
-                ],
+                    value: '632726'
+                  }
+                ]
               },
               {
                 label: '海西',
@@ -13065,35 +13065,35 @@ export default [
                 children: [
                   {
                     label: '格尔木',
-                    value: '632801',
+                    value: '632801'
                   },
                   {
                     label: '德令哈',
-                    value: '632802',
+                    value: '632802'
                   },
                   {
                     label: '茫崖',
-                    value: '632803',
+                    value: '632803'
                   },
                   {
                     label: '乌兰',
-                    value: '632821',
+                    value: '632821'
                   },
                   {
                     label: '都兰',
-                    value: '632822',
+                    value: '632822'
                   },
                   {
                     label: '天峻',
-                    value: '632823',
+                    value: '632823'
                   },
                   {
                     label: '大柴旦行政委员会',
-                    value: '632825',
-                  },
-                ],
-              },
-            ],
+                    value: '632825'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '宁夏',
@@ -13105,29 +13105,29 @@ export default [
                 children: [
                   {
                     label: '兴庆',
-                    value: '640104',
+                    value: '640104'
                   },
                   {
                     label: '西夏',
-                    value: '640105',
+                    value: '640105'
                   },
                   {
                     label: '金凤',
-                    value: '640106',
+                    value: '640106'
                   },
                   {
                     label: '永宁',
-                    value: '640121',
+                    value: '640121'
                   },
                   {
                     label: '贺兰',
-                    value: '640122',
+                    value: '640122'
                   },
                   {
                     label: '灵武',
-                    value: '640181',
-                  },
-                ],
+                    value: '640181'
+                  }
+                ]
               },
               {
                 label: '石嘴山',
@@ -13135,17 +13135,17 @@ export default [
                 children: [
                   {
                     label: '大武口',
-                    value: '640202',
+                    value: '640202'
                   },
                   {
                     label: '惠农',
-                    value: '640205',
+                    value: '640205'
                   },
                   {
                     label: '平罗',
-                    value: '640221',
-                  },
-                ],
+                    value: '640221'
+                  }
+                ]
               },
               {
                 label: '吴忠',
@@ -13153,25 +13153,25 @@ export default [
                 children: [
                   {
                     label: '利通',
-                    value: '640302',
+                    value: '640302'
                   },
                   {
                     label: '红寺堡',
-                    value: '640303',
+                    value: '640303'
                   },
                   {
                     label: '盐池',
-                    value: '640323',
+                    value: '640323'
                   },
                   {
                     label: '同心',
-                    value: '640324',
+                    value: '640324'
                   },
                   {
                     label: '青铜峡',
-                    value: '640381',
-                  },
-                ],
+                    value: '640381'
+                  }
+                ]
               },
               {
                 label: '固原',
@@ -13179,25 +13179,25 @@ export default [
                 children: [
                   {
                     label: '原州',
-                    value: '640402',
+                    value: '640402'
                   },
                   {
                     label: '西吉',
-                    value: '640422',
+                    value: '640422'
                   },
                   {
                     label: '隆德',
-                    value: '640423',
+                    value: '640423'
                   },
                   {
                     label: '泾源',
-                    value: '640424',
+                    value: '640424'
                   },
                   {
                     label: '彭阳',
-                    value: '640425',
-                  },
-                ],
+                    value: '640425'
+                  }
+                ]
               },
               {
                 label: '中卫',
@@ -13205,19 +13205,19 @@ export default [
                 children: [
                   {
                     label: '沙坡头',
-                    value: '640502',
+                    value: '640502'
                   },
                   {
                     label: '中宁',
-                    value: '640521',
+                    value: '640521'
                   },
                   {
                     label: '海原',
-                    value: '640522',
-                  },
-                ],
-              },
-            ],
+                    value: '640522'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '新疆',
@@ -13229,37 +13229,37 @@ export default [
                 children: [
                   {
                     label: '天山',
-                    value: '650102',
+                    value: '650102'
                   },
                   {
                     label: '沙依巴克区',
-                    value: '650103',
+                    value: '650103'
                   },
                   {
                     label: '新市',
-                    value: '650104',
+                    value: '650104'
                   },
                   {
                     label: '水磨沟',
-                    value: '650105',
+                    value: '650105'
                   },
                   {
                     label: '头屯河',
-                    value: '650106',
+                    value: '650106'
                   },
                   {
                     label: '达坂城',
-                    value: '650107',
+                    value: '650107'
                   },
                   {
                     label: '米东',
-                    value: '650109',
+                    value: '650109'
                   },
                   {
                     label: '乌鲁木齐县',
-                    value: '650121',
-                  },
-                ],
+                    value: '650121'
+                  }
+                ]
               },
               {
                 label: '克拉玛依',
@@ -13267,21 +13267,21 @@ export default [
                 children: [
                   {
                     label: '独山子',
-                    value: '650202',
+                    value: '650202'
                   },
                   {
                     label: '克拉玛依区',
-                    value: '650203',
+                    value: '650203'
                   },
                   {
                     label: '白碱滩',
-                    value: '650204',
+                    value: '650204'
                   },
                   {
                     label: '乌尔禾',
-                    value: '650205',
-                  },
-                ],
+                    value: '650205'
+                  }
+                ]
               },
               {
                 label: '吐鲁番',
@@ -13289,17 +13289,17 @@ export default [
                 children: [
                   {
                     label: '高昌',
-                    value: '650402',
+                    value: '650402'
                   },
                   {
                     label: '鄯善',
-                    value: '650421',
+                    value: '650421'
                   },
                   {
                     label: '托克逊',
-                    value: '650422',
-                  },
-                ],
+                    value: '650422'
+                  }
+                ]
               },
               {
                 label: '哈密',
@@ -13307,17 +13307,17 @@ export default [
                 children: [
                   {
                     label: '伊州',
-                    value: '650502',
+                    value: '650502'
                   },
                   {
                     label: '巴里坤',
-                    value: '650521',
+                    value: '650521'
                   },
                   {
                     label: '伊吾',
-                    value: '650522',
-                  },
-                ],
+                    value: '650522'
+                  }
+                ]
               },
               {
                 label: '昌吉',
@@ -13325,33 +13325,33 @@ export default [
                 children: [
                   {
                     label: '昌吉市',
-                    value: '652301',
+                    value: '652301'
                   },
                   {
                     label: '阜康',
-                    value: '652302',
+                    value: '652302'
                   },
                   {
                     label: '呼图壁',
-                    value: '652323',
+                    value: '652323'
                   },
                   {
                     label: '玛纳斯',
-                    value: '652324',
+                    value: '652324'
                   },
                   {
                     label: '奇台',
-                    value: '652325',
+                    value: '652325'
                   },
                   {
                     label: '吉木萨尔',
-                    value: '652327',
+                    value: '652327'
                   },
                   {
                     label: '木垒',
-                    value: '652328',
-                  },
-                ],
+                    value: '652328'
+                  }
+                ]
               },
               {
                 label: '博尔塔拉',
@@ -13359,21 +13359,21 @@ export default [
                 children: [
                   {
                     label: '博乐',
-                    value: '652701',
+                    value: '652701'
                   },
                   {
                     label: '阿拉山口',
-                    value: '652702',
+                    value: '652702'
                   },
                   {
                     label: '精河',
-                    value: '652722',
+                    value: '652722'
                   },
                   {
                     label: '温泉',
-                    value: '652723',
-                  },
-                ],
+                    value: '652723'
+                  }
+                ]
               },
               {
                 label: '巴音郭楞',
@@ -13381,41 +13381,41 @@ export default [
                 children: [
                   {
                     label: '库尔勒',
-                    value: '652801',
+                    value: '652801'
                   },
                   {
                     label: '轮台',
-                    value: '652822',
+                    value: '652822'
                   },
                   {
                     label: '尉犁',
-                    value: '652823',
+                    value: '652823'
                   },
                   {
                     label: '若羌',
-                    value: '652824',
+                    value: '652824'
                   },
                   {
                     label: '且末',
-                    value: '652825',
+                    value: '652825'
                   },
                   {
                     label: '焉耆',
-                    value: '652826',
+                    value: '652826'
                   },
                   {
                     label: '和静',
-                    value: '652827',
+                    value: '652827'
                   },
                   {
                     label: '和硕',
-                    value: '652828',
+                    value: '652828'
                   },
                   {
                     label: '博湖',
-                    value: '652829',
-                  },
-                ],
+                    value: '652829'
+                  }
+                ]
               },
               {
                 label: '阿克苏',
@@ -13423,41 +13423,41 @@ export default [
                 children: [
                   {
                     label: '阿克苏市',
-                    value: '652901',
+                    value: '652901'
                   },
                   {
                     label: '库车',
-                    value: '652902',
+                    value: '652902'
                   },
                   {
                     label: '温宿',
-                    value: '652922',
+                    value: '652922'
                   },
                   {
                     label: '沙雅',
-                    value: '652924',
+                    value: '652924'
                   },
                   {
                     label: '新和',
-                    value: '652925',
+                    value: '652925'
                   },
                   {
                     label: '拜城',
-                    value: '652926',
+                    value: '652926'
                   },
                   {
                     label: '乌什',
-                    value: '652927',
+                    value: '652927'
                   },
                   {
                     label: '阿瓦提',
-                    value: '652928',
+                    value: '652928'
                   },
                   {
                     label: '柯坪',
-                    value: '652929',
-                  },
-                ],
+                    value: '652929'
+                  }
+                ]
               },
               {
                 label: '克孜勒苏',
@@ -13465,21 +13465,21 @@ export default [
                 children: [
                   {
                     label: '阿图什',
-                    value: '653001',
+                    value: '653001'
                   },
                   {
                     label: '阿克陶',
-                    value: '653022',
+                    value: '653022'
                   },
                   {
                     label: '阿合奇',
-                    value: '653023',
+                    value: '653023'
                   },
                   {
                     label: '乌恰',
-                    value: '653024',
-                  },
-                ],
+                    value: '653024'
+                  }
+                ]
               },
               {
                 label: '喀什',
@@ -13487,53 +13487,53 @@ export default [
                 children: [
                   {
                     label: '喀什市',
-                    value: '653101',
+                    value: '653101'
                   },
                   {
                     label: '疏附',
-                    value: '653121',
+                    value: '653121'
                   },
                   {
                     label: '疏勒',
-                    value: '653122',
+                    value: '653122'
                   },
                   {
                     label: '英吉沙',
-                    value: '653123',
+                    value: '653123'
                   },
                   {
                     label: '泽普',
-                    value: '653124',
+                    value: '653124'
                   },
                   {
                     label: '莎车',
-                    value: '653125',
+                    value: '653125'
                   },
                   {
                     label: '叶城',
-                    value: '653126',
+                    value: '653126'
                   },
                   {
                     label: '麦盖提',
-                    value: '653127',
+                    value: '653127'
                   },
                   {
                     label: '岳普湖',
-                    value: '653128',
+                    value: '653128'
                   },
                   {
                     label: '伽师',
-                    value: '653129',
+                    value: '653129'
                   },
                   {
                     label: '巴楚',
-                    value: '653130',
+                    value: '653130'
                   },
                   {
                     label: '塔什库尔干',
-                    value: '653131',
-                  },
-                ],
+                    value: '653131'
+                  }
+                ]
               },
               {
                 label: '和田',
@@ -13541,37 +13541,37 @@ export default [
                 children: [
                   {
                     label: '和田市',
-                    value: '653201',
+                    value: '653201'
                   },
                   {
                     label: '和田县',
-                    value: '653221',
+                    value: '653221'
                   },
                   {
                     label: '墨玉',
-                    value: '653222',
+                    value: '653222'
                   },
                   {
                     label: '皮山',
-                    value: '653223',
+                    value: '653223'
                   },
                   {
                     label: '洛浦',
-                    value: '653224',
+                    value: '653224'
                   },
                   {
                     label: '策勒',
-                    value: '653225',
+                    value: '653225'
                   },
                   {
                     label: '于田',
-                    value: '653226',
+                    value: '653226'
                   },
                   {
                     label: '民丰',
-                    value: '653227',
-                  },
-                ],
+                    value: '653227'
+                  }
+                ]
               },
               {
                 label: '伊犁',
@@ -13579,49 +13579,49 @@ export default [
                 children: [
                   {
                     label: '伊宁市',
-                    value: '654002',
+                    value: '654002'
                   },
                   {
                     label: '奎屯',
-                    value: '654003',
+                    value: '654003'
                   },
                   {
                     label: '霍尔果斯',
-                    value: '654004',
+                    value: '654004'
                   },
                   {
                     label: '伊宁县',
-                    value: '654021',
+                    value: '654021'
                   },
                   {
                     label: '察布查尔',
-                    value: '654022',
+                    value: '654022'
                   },
                   {
                     label: '霍城',
-                    value: '654023',
+                    value: '654023'
                   },
                   {
                     label: '巩留',
-                    value: '654024',
+                    value: '654024'
                   },
                   {
                     label: '新源',
-                    value: '654025',
+                    value: '654025'
                   },
                   {
                     label: '昭苏',
-                    value: '654026',
+                    value: '654026'
                   },
                   {
                     label: '特克斯',
-                    value: '654027',
+                    value: '654027'
                   },
                   {
                     label: '尼勒克',
-                    value: '654028',
-                  },
-                ],
+                    value: '654028'
+                  }
+                ]
               },
               {
                 label: '塔城',
@@ -13629,33 +13629,33 @@ export default [
                 children: [
                   {
                     label: '塔城市',
-                    value: '654201',
+                    value: '654201'
                   },
                   {
                     label: '乌苏',
-                    value: '654202',
+                    value: '654202'
                   },
                   {
                     label: '沙湾',
-                    value: '654203',
+                    value: '654203'
                   },
                   {
                     label: '额敏',
-                    value: '654221',
+                    value: '654221'
                   },
                   {
                     label: '托里',
-                    value: '654224',
+                    value: '654224'
                   },
                   {
                     label: '裕民',
-                    value: '654225',
+                    value: '654225'
                   },
                   {
                     label: '和布克赛尔',
-                    value: '654226',
-                  },
-                ],
+                    value: '654226'
+                  }
+                ]
               },
               {
                 label: '阿勒泰',
@@ -13663,33 +13663,33 @@ export default [
                 children: [
                   {
                     label: '阿勒泰市',
-                    value: '654301',
+                    value: '654301'
                   },
                   {
                     label: '布尔津',
-                    value: '654321',
+                    value: '654321'
                   },
                   {
                     label: '富蕴',
-                    value: '654322',
+                    value: '654322'
                   },
                   {
                     label: '福海',
-                    value: '654323',
+                    value: '654323'
                   },
                   {
                     label: '哈巴河',
-                    value: '654324',
+                    value: '654324'
                   },
                   {
                     label: '青河',
-                    value: '654325',
+                    value: '654325'
                   },
                   {
                     label: '吉木乃',
-                    value: '654326',
-                  },
-                ],
+                    value: '654326'
+                  }
+                ]
               },
               {
                 label: '石河子',
@@ -13697,9 +13697,9 @@ export default [
                 children: [
                   {
                     label: '石河子',
-                    value: '659001000',
-                  },
-                ],
+                    value: '659001000'
+                  }
+                ]
               },
               {
                 label: '阿拉尔',
@@ -13707,9 +13707,9 @@ export default [
                 children: [
                   {
                     label: '阿拉尔',
-                    value: '659002000',
-                  },
-                ],
+                    value: '659002000'
+                  }
+                ]
               },
               {
                 label: '图木舒克',
@@ -13717,9 +13717,9 @@ export default [
                 children: [
                   {
                     label: '图木舒克',
-                    value: '659003000',
-                  },
-                ],
+                    value: '659003000'
+                  }
+                ]
               },
               {
                 label: '五家渠',
@@ -13727,9 +13727,9 @@ export default [
                 children: [
                   {
                     label: '五家渠',
-                    value: '659004000',
-                  },
-                ],
+                    value: '659004000'
+                  }
+                ]
               },
               {
                 label: '北屯',
@@ -13737,9 +13737,9 @@ export default [
                 children: [
                   {
                     label: '北屯',
-                    value: '659005000',
-                  },
-                ],
+                    value: '659005000'
+                  }
+                ]
               },
               {
                 label: '铁门关',
@@ -13747,9 +13747,9 @@ export default [
                 children: [
                   {
                     label: '铁门关',
-                    value: '659006000',
-                  },
-                ],
+                    value: '659006000'
+                  }
+                ]
               },
               {
                 label: '双河',
@@ -13757,9 +13757,9 @@ export default [
                 children: [
                   {
                     label: '双河',
-                    value: '659007000',
-                  },
-                ],
+                    value: '659007000'
+                  }
+                ]
               },
               {
                 label: '可克达拉',
@@ -13767,9 +13767,9 @@ export default [
                 children: [
                   {
                     label: '可克达拉',
-                    value: '659008000',
-                  },
-                ],
+                    value: '659008000'
+                  }
+                ]
               },
               {
                 label: '昆玉',
@@ -13777,9 +13777,9 @@ export default [
                 children: [
                   {
                     label: '昆玉',
-                    value: '659009000',
-                  },
-                ],
+                    value: '659009000'
+                  }
+                ]
               },
               {
                 label: '胡杨河',
@@ -13787,9 +13787,9 @@ export default [
                 children: [
                   {
                     label: '胡杨河',
-                    value: '659010000',
-                  },
-                ],
+                    value: '659010000'
+                  }
+                ]
               },
               {
                 label: '新星',
@@ -13797,11 +13797,11 @@ export default [
                 children: [
                   {
                     label: '新星',
-                    value: '659011000',
-                  },
-                ],
-              },
-            ],
+                    value: '659011000'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '台湾',
@@ -13813,53 +13813,53 @@ export default [
                 children: [
                   {
                     label: '中正',
-                    value: '710101',
+                    value: '710101'
                   },
                   {
                     label: '大同',
-                    value: '710102',
+                    value: '710102'
                   },
                   {
                     label: '中山',
-                    value: '710103',
+                    value: '710103'
                   },
                   {
                     label: '松山',
-                    value: '710104',
+                    value: '710104'
                   },
                   {
                     label: '大安',
-                    value: '710105',
+                    value: '710105'
                   },
                   {
                     label: '万华',
-                    value: '710106',
+                    value: '710106'
                   },
                   {
                     label: '信义',
-                    value: '710107',
+                    value: '710107'
                   },
                   {
                     label: '士林',
-                    value: '710108',
+                    value: '710108'
                   },
                   {
                     label: '北投',
-                    value: '710109',
+                    value: '710109'
                   },
                   {
                     label: '内湖',
-                    value: '710110',
+                    value: '710110'
                   },
                   {
                     label: '南港',
-                    value: '710111',
+                    value: '710111'
                   },
                   {
                     label: '文山',
-                    value: '710112',
-                  },
-                ],
+                    value: '710112'
+                  }
+                ]
               },
               {
                 label: '高雄',
@@ -13867,157 +13867,157 @@ export default [
                 children: [
                   {
                     label: '新兴',
-                    value: '710201',
+                    value: '710201'
                   },
                   {
                     label: '前金',
-                    value: '710202',
+                    value: '710202'
                   },
                   {
                     label: '苓雅',
-                    value: '710203',
+                    value: '710203'
                   },
                   {
                     label: '盐埕',
-                    value: '710204',
+                    value: '710204'
                   },
                   {
                     label: '鼓山',
-                    value: '710205',
+                    value: '710205'
                   },
                   {
                     label: '旗津',
-                    value: '710206',
+                    value: '710206'
                   },
                   {
                     label: '前镇',
-                    value: '710207',
+                    value: '710207'
                   },
                   {
                     label: '三民',
-                    value: '710208',
+                    value: '710208'
                   },
                   {
                     label: '左营',
-                    value: '710209',
+                    value: '710209'
                   },
                   {
                     label: '楠梓',
-                    value: '710210',
+                    value: '710210'
                   },
                   {
                     label: '小港',
-                    value: '710211',
+                    value: '710211'
                   },
                   {
                     label: '仁武',
-                    value: '710242',
+                    value: '710242'
                   },
                   {
                     label: '大社',
-                    value: '710243',
+                    value: '710243'
                   },
                   {
                     label: '冈山',
-                    value: '710244',
+                    value: '710244'
                   },
                   {
                     label: '路竹',
-                    value: '710245',
+                    value: '710245'
                   },
                   {
                     label: '阿莲',
-                    value: '710246',
+                    value: '710246'
                   },
                   {
                     label: '田寮',
-                    value: '710247',
+                    value: '710247'
                   },
                   {
                     label: '燕巢',
-                    value: '710248',
+                    value: '710248'
                   },
                   {
                     label: '桥头',
-                    value: '710249',
+                    value: '710249'
                   },
                   {
                     label: '梓官',
-                    value: '710250',
+                    value: '710250'
                   },
                   {
                     label: '弥陀',
-                    value: '710251',
+                    value: '710251'
                   },
                   {
                     label: '永安',
-                    value: '710252',
+                    value: '710252'
                   },
                   {
                     label: '湖内',
-                    value: '710253',
+                    value: '710253'
                   },
                   {
                     label: '凤山',
-                    value: '710254',
+                    value: '710254'
                   },
                   {
                     label: '大寮',
-                    value: '710255',
+                    value: '710255'
                   },
                   {
                     label: '林园',
-                    value: '710256',
+                    value: '710256'
                   },
                   {
                     label: '鸟松',
-                    value: '710257',
+                    value: '710257'
                   },
                   {
                     label: '大树',
-                    value: '710258',
+                    value: '710258'
                   },
                   {
                     label: '旗山',
-                    value: '710259',
+                    value: '710259'
                   },
                   {
                     label: '美浓',
-                    value: '710260',
+                    value: '710260'
                   },
                   {
                     label: '六龟',
-                    value: '710261',
+                    value: '710261'
                   },
                   {
                     label: '内门',
-                    value: '710262',
+                    value: '710262'
                   },
                   {
                     label: '杉林',
-                    value: '710263',
+                    value: '710263'
                   },
                   {
                     label: '甲仙',
-                    value: '710264',
+                    value: '710264'
                   },
                   {
                     label: '桃源',
-                    value: '710265',
+                    value: '710265'
                   },
                   {
                     label: '那玛夏',
-                    value: '710266',
+                    value: '710266'
                   },
                   {
                     label: '茂林',
-                    value: '710267',
+                    value: '710267'
                   },
                   {
                     label: '茄萣',
-                    value: '710268',
-                  },
-                ],
+                    value: '710268'
+                  }
+                ]
               },
               {
                 label: '台南',
@@ -14025,153 +14025,153 @@ export default [
                 children: [
                   {
                     label: '中西',
-                    value: '710301',
+                    value: '710301'
                   },
                   {
                     label: '东区',
-                    value: '710302',
+                    value: '710302'
                   },
                   {
                     label: '南区',
-                    value: '710303',
+                    value: '710303'
                   },
                   {
                     label: '北区',
-                    value: '710304',
+                    value: '710304'
                   },
                   {
                     label: '安平',
-                    value: '710305',
+                    value: '710305'
                   },
                   {
                     label: '安南',
-                    value: '710306',
+                    value: '710306'
                   },
                   {
                     label: '永康',
-                    value: '710339',
+                    value: '710339'
                   },
                   {
                     label: '归仁',
-                    value: '710340',
+                    value: '710340'
                   },
                   {
                     label: '新化',
-                    value: '710341',
+                    value: '710341'
                   },
                   {
                     label: '左镇',
-                    value: '710342',
+                    value: '710342'
                   },
                   {
                     label: '玉井',
-                    value: '710343',
+                    value: '710343'
                   },
                   {
                     label: '楠西',
-                    value: '710344',
+                    value: '710344'
                   },
                   {
                     label: '南化',
-                    value: '710345',
+                    value: '710345'
                   },
                   {
                     label: '仁德',
-                    value: '710346',
+                    value: '710346'
                   },
                   {
                     label: '关庙',
-                    value: '710347',
+                    value: '710347'
                   },
                   {
                     label: '龙崎',
-                    value: '710348',
+                    value: '710348'
                   },
                   {
                     label: '官田',
-                    value: '710349',
+                    value: '710349'
                   },
                   {
                     label: '麻豆',
-                    value: '710350',
+                    value: '710350'
                   },
                   {
                     label: '佳里',
-                    value: '710351',
+                    value: '710351'
                   },
                   {
                     label: '西港',
-                    value: '710352',
+                    value: '710352'
                   },
                   {
                     label: '七股',
-                    value: '710353',
+                    value: '710353'
                   },
                   {
                     label: '将军',
-                    value: '710354',
+                    value: '710354'
                   },
                   {
                     label: '学甲',
-                    value: '710355',
+                    value: '710355'
                   },
                   {
                     label: '北门',
-                    value: '710356',
+                    value: '710356'
                   },
                   {
                     label: '新营',
-                    value: '710357',
+                    value: '710357'
                   },
                   {
                     label: '后壁',
-                    value: '710358',
+                    value: '710358'
                   },
                   {
                     label: '白河',
-                    value: '710359',
+                    value: '710359'
                   },
                   {
                     label: '东山',
-                    value: '710360',
+                    value: '710360'
                   },
                   {
                     label: '六甲',
-                    value: '710361',
+                    value: '710361'
                   },
                   {
                     label: '下营',
-                    value: '710362',
+                    value: '710362'
                   },
                   {
                     label: '柳营',
-                    value: '710363',
+                    value: '710363'
                   },
                   {
                     label: '盐水',
-                    value: '710364',
+                    value: '710364'
                   },
                   {
                     label: '善化',
-                    value: '710365',
+                    value: '710365'
                   },
                   {
                     label: '大内',
-                    value: '710366',
+                    value: '710366'
                   },
                   {
                     label: '山上',
-                    value: '710367',
+                    value: '710367'
                   },
                   {
                     label: '新市',
-                    value: '710368',
+                    value: '710368'
                   },
                   {
                     label: '安定',
-                    value: '710369',
-                  },
-                ],
+                    value: '710369'
+                  }
+                ]
               },
               {
                 label: '台中',
@@ -14179,121 +14179,121 @@ export default [
                 children: [
                   {
                     label: '中区',
-                    value: '710401',
+                    value: '710401'
                   },
                   {
                     label: '东区',
-                    value: '710402',
+                    value: '710402'
                   },
                   {
                     label: '南区',
-                    value: '710403',
+                    value: '710403'
                   },
                   {
                     label: '西区',
-                    value: '710404',
+                    value: '710404'
                   },
                   {
                     label: '北区',
-                    value: '710405',
+                    value: '710405'
                   },
                   {
                     label: '北屯',
-                    value: '710406',
+                    value: '710406'
                   },
                   {
                     label: '西屯',
-                    value: '710407',
+                    value: '710407'
                   },
                   {
                     label: '南屯',
-                    value: '710408',
+                    value: '710408'
                   },
                   {
                     label: '太平',
-                    value: '710431',
+                    value: '710431'
                   },
                   {
                     label: '大里',
-                    value: '710432',
+                    value: '710432'
                   },
                   {
                     label: '雾峰',
-                    value: '710433',
+                    value: '710433'
                   },
                   {
                     label: '乌日',
-                    value: '710434',
+                    value: '710434'
                   },
                   {
                     label: '丰原',
-                    value: '710435',
+                    value: '710435'
                   },
                   {
                     label: '后里',
-                    value: '710436',
+                    value: '710436'
                   },
                   {
                     label: '石冈',
-                    value: '710437',
+                    value: '710437'
                   },
                   {
                     label: '东势',
-                    value: '710438',
+                    value: '710438'
                   },
                   {
                     label: '和平',
-                    value: '710439',
+                    value: '710439'
                   },
                   {
                     label: '新社',
-                    value: '710440',
+                    value: '710440'
                   },
                   {
                     label: '潭子',
-                    value: '710441',
+                    value: '710441'
                   },
                   {
                     label: '大雅',
-                    value: '710442',
+                    value: '710442'
                   },
                   {
                     label: '神冈',
-                    value: '710443',
+                    value: '710443'
                   },
                   {
                     label: '大肚',
-                    value: '710444',
+                    value: '710444'
                   },
                   {
                     label: '沙鹿',
-                    value: '710445',
+                    value: '710445'
                   },
                   {
                     label: '龙井',
-                    value: '710446',
+                    value: '710446'
                   },
                   {
                     label: '梧栖',
-                    value: '710447',
+                    value: '710447'
                   },
                   {
                     label: '清水',
-                    value: '710448',
+                    value: '710448'
                   },
                   {
                     label: '大甲',
-                    value: '710449',
+                    value: '710449'
                   },
                   {
                     label: '外埔',
-                    value: '710450',
+                    value: '710450'
                   },
                   {
                     label: '大安',
-                    value: '710451',
-                  },
-                ],
+                    value: '710451'
+                  }
+                ]
               },
               {
                 label: '南投',
@@ -14301,57 +14301,57 @@ export default [
                 children: [
                   {
                     label: '南投市',
-                    value: '710614',
+                    value: '710614'
                   },
                   {
                     label: '中寮',
-                    value: '710615',
+                    value: '710615'
                   },
                   {
                     label: '草屯',
-                    value: '710616',
+                    value: '710616'
                   },
                   {
                     label: '国姓',
-                    value: '710617',
+                    value: '710617'
                   },
                   {
                     label: '埔里',
-                    value: '710618',
+                    value: '710618'
                   },
                   {
                     label: '仁爱',
-                    value: '710619',
+                    value: '710619'
                   },
                   {
                     label: '名间',
-                    value: '710620',
+                    value: '710620'
                   },
                   {
                     label: '集集',
-                    value: '710621',
+                    value: '710621'
                   },
                   {
                     label: '水里',
-                    value: '710622',
+                    value: '710622'
                   },
                   {
                     label: '鱼池',
-                    value: '710623',
+                    value: '710623'
                   },
                   {
                     label: '信义',
-                    value: '710624',
+                    value: '710624'
                   },
                   {
                     label: '竹山',
-                    value: '710625',
+                    value: '710625'
                   },
                   {
                     label: '鹿谷',
-                    value: '710626',
-                  },
-                ],
+                    value: '710626'
+                  }
+                ]
               },
               {
                 label: '基隆',
@@ -14359,33 +14359,33 @@ export default [
                 children: [
                   {
                     label: '仁爱',
-                    value: '710701',
+                    value: '710701'
                   },
                   {
                     label: '信义',
-                    value: '710702',
+                    value: '710702'
                   },
                   {
                     label: '中正',
-                    value: '710703',
+                    value: '710703'
                   },
                   {
                     label: '中山',
-                    value: '710704',
+                    value: '710704'
                   },
                   {
                     label: '安乐',
-                    value: '710705',
+                    value: '710705'
                   },
                   {
                     label: '暖暖',
-                    value: '710706',
+                    value: '710706'
                   },
                   {
                     label: '七堵',
-                    value: '710707',
-                  },
-                ],
+                    value: '710707'
+                  }
+                ]
               },
               {
                 label: '新竹市',
@@ -14393,17 +14393,17 @@ export default [
                 children: [
                   {
                     label: '东区',
-                    value: '710801',
+                    value: '710801'
                   },
                   {
                     label: '北区',
-                    value: '710802',
+                    value: '710802'
                   },
                   {
                     label: '香山',
-                    value: '710803',
-                  },
-                ],
+                    value: '710803'
+                  }
+                ]
               },
               {
                 label: '嘉义市',
@@ -14411,13 +14411,13 @@ export default [
                 children: [
                   {
                     label: '东区',
-                    value: '710901',
+                    value: '710901'
                   },
                   {
                     label: '西区',
-                    value: '710902',
-                  },
-                ],
+                    value: '710902'
+                  }
+                ]
               },
               {
                 label: '新北',
@@ -14425,121 +14425,121 @@ export default [
                 children: [
                   {
                     label: '万里',
-                    value: '711130',
+                    value: '711130'
                   },
                   {
                     label: '金山',
-                    value: '711131',
+                    value: '711131'
                   },
                   {
                     label: '板桥',
-                    value: '711132',
+                    value: '711132'
                   },
                   {
                     label: '汐止',
-                    value: '711133',
+                    value: '711133'
                   },
                   {
                     label: '深坑',
-                    value: '711134',
+                    value: '711134'
                   },
                   {
                     label: '石碇',
-                    value: '711135',
+                    value: '711135'
                   },
                   {
                     label: '瑞芳',
-                    value: '711136',
+                    value: '711136'
                   },
                   {
                     label: '平溪',
-                    value: '711137',
+                    value: '711137'
                   },
                   {
                     label: '双溪',
-                    value: '711138',
+                    value: '711138'
                   },
                   {
                     label: '贡寮',
-                    value: '711139',
+                    value: '711139'
                   },
                   {
                     label: '新店',
-                    value: '711140',
+                    value: '711140'
                   },
                   {
                     label: '坪林',
-                    value: '711141',
+                    value: '711141'
                   },
                   {
                     label: '乌来',
-                    value: '711142',
+                    value: '711142'
                   },
                   {
                     label: '永和',
-                    value: '711143',
+                    value: '711143'
                   },
                   {
                     label: '中和',
-                    value: '711144',
+                    value: '711144'
                   },
                   {
                     label: '土城',
-                    value: '711145',
+                    value: '711145'
                   },
                   {
                     label: '三峡',
-                    value: '711146',
+                    value: '711146'
                   },
                   {
                     label: '树林',
-                    value: '711147',
+                    value: '711147'
                   },
                   {
                     label: '莺歌',
-                    value: '711148',
+                    value: '711148'
                   },
                   {
                     label: '三重',
-                    value: '711149',
+                    value: '711149'
                   },
                   {
                     label: '新庄',
-                    value: '711150',
+                    value: '711150'
                   },
                   {
                     label: '泰山',
-                    value: '711151',
+                    value: '711151'
                   },
                   {
                     label: '林口',
-                    value: '711152',
+                    value: '711152'
                   },
                   {
                     label: '芦洲',
-                    value: '711153',
+                    value: '711153'
                   },
                   {
                     label: '五股',
-                    value: '711154',
+                    value: '711154'
                   },
                   {
                     label: '八里',
-                    value: '711155',
+                    value: '711155'
                   },
                   {
                     label: '淡水',
-                    value: '711156',
+                    value: '711156'
                   },
                   {
                     label: '三芝',
-                    value: '711157',
+                    value: '711157'
                   },
                   {
                     label: '石门',
-                    value: '711158',
-                  },
-                ],
+                    value: '711158'
+                  }
+                ]
               },
               {
                 label: '宜兰',
@@ -14547,53 +14547,53 @@ export default [
                 children: [
                   {
                     label: '宜兰市',
-                    value: '711214',
+                    value: '711214'
                   },
                   {
                     label: '头城',
-                    value: '711215',
+                    value: '711215'
                   },
                   {
                     label: '礁溪',
-                    value: '711216',
+                    value: '711216'
                   },
                   {
                     label: '壮围',
-                    value: '711217',
+                    value: '711217'
                   },
                   {
                     label: '员山',
-                    value: '711218',
+                    value: '711218'
                   },
                   {
                     label: '罗东',
-                    value: '711219',
+                    value: '711219'
                   },
                   {
                     label: '三星',
-                    value: '711220',
+                    value: '711220'
                   },
                   {
                     label: '大同',
-                    value: '711221',
+                    value: '711221'
                   },
                   {
                     label: '五结',
-                    value: '711222',
+                    value: '711222'
                   },
                   {
                     label: '冬山',
-                    value: '711223',
+                    value: '711223'
                   },
                   {
                     label: '苏澳',
-                    value: '711224',
+                    value: '711224'
                   },
                   {
                     label: '南澳',
-                    value: '711225',
-                  },
-                ],
+                    value: '711225'
+                  }
+                ]
               },
               {
                 label: '新竹县',
@@ -14601,57 +14601,57 @@ export default [
                 children: [
                   {
                     label: '竹北',
-                    value: '711314',
+                    value: '711314'
                   },
                   {
                     label: '湖口',
-                    value: '711315',
+                    value: '711315'
                   },
                   {
                     label: '新丰',
-                    value: '711316',
+                    value: '711316'
                   },
                   {
                     label: '新埔',
-                    value: '711317',
+                    value: '711317'
                   },
                   {
                     label: '关西',
-                    value: '711318',
+                    value: '711318'
                   },
                   {
                     label: '芎林',
-                    value: '711319',
+                    value: '711319'
                   },
                   {
                     label: '宝山',
-                    value: '711320',
+                    value: '711320'
                   },
                   {
                     label: '竹东',
-                    value: '711321',
+                    value: '711321'
                   },
                   {
                     label: '五峰',
-                    value: '711322',
+                    value: '711322'
                   },
                   {
                     label: '横山',
-                    value: '711323',
+                    value: '711323'
                   },
                   {
                     label: '尖石',
-                    value: '711324',
+                    value: '711324'
                   },
                   {
                     label: '北埔',
-                    value: '711325',
+                    value: '711325'
                   },
                   {
                     label: '峨眉',
-                    value: '711326',
-                  },
-                ],
+                    value: '711326'
+                  }
+                ]
               },
               {
                 label: '桃园',
@@ -14659,57 +14659,57 @@ export default [
                 children: [
                   {
                     label: '中坜',
-                    value: '711414',
+                    value: '711414'
                   },
                   {
                     label: '平镇',
-                    value: '711415',
+                    value: '711415'
                   },
                   {
                     label: '龙潭',
-                    value: '711416',
+                    value: '711416'
                   },
                   {
                     label: '杨梅',
-                    value: '711417',
+                    value: '711417'
                   },
                   {
                     label: '新屋',
-                    value: '711418',
+                    value: '711418'
                   },
                   {
                     label: '观音',
-                    value: '711419',
+                    value: '711419'
                   },
                   {
                     label: '桃园区',
-                    value: '711420',
+                    value: '711420'
                   },
                   {
                     label: '龟山',
-                    value: '711421',
+                    value: '711421'
                   },
                   {
                     label: '八德',
-                    value: '711422',
+                    value: '711422'
                   },
                   {
                     label: '大溪',
-                    value: '711423',
+                    value: '711423'
                   },
                   {
                     label: '复兴',
-                    value: '711424',
+                    value: '711424'
                   },
                   {
                     label: '大园',
-                    value: '711425',
+                    value: '711425'
                   },
                   {
                     label: '芦竹',
-                    value: '711426',
-                  },
-                ],
+                    value: '711426'
+                  }
+                ]
               },
               {
                 label: '苗栗',
@@ -14717,77 +14717,77 @@ export default [
                 children: [
                   {
                     label: '竹南',
-                    value: '711519',
+                    value: '711519'
                   },
                   {
                     label: '头份',
-                    value: '711520',
+                    value: '711520'
                   },
                   {
                     label: '三湾',
-                    value: '711521',
+                    value: '711521'
                   },
                   {
                     label: '南庄',
-                    value: '711522',
+                    value: '711522'
                   },
                   {
                     label: '狮潭',
-                    value: '711523',
+                    value: '711523'
                   },
                   {
                     label: '后龙',
-                    value: '711524',
+                    value: '711524'
                   },
                   {
                     label: '通霄',
-                    value: '711525',
+                    value: '711525'
                   },
                   {
                     label: '苑里',
-                    value: '711526',
+                    value: '711526'
                   },
                   {
                     label: '苗栗市',
-                    value: '711527',
+                    value: '711527'
                   },
                   {
                     label: '造桥',
-                    value: '711528',
+                    value: '711528'
                   },
                   {
                     label: '头屋',
-                    value: '711529',
+                    value: '711529'
                   },
                   {
                     label: '公馆',
-                    value: '711530',
+                    value: '711530'
                   },
                   {
                     label: '大湖',
-                    value: '711531',
+                    value: '711531'
                   },
                   {
                     label: '泰安',
-                    value: '711532',
+                    value: '711532'
                   },
                   {
                     label: '铜锣',
-                    value: '711533',
+                    value: '711533'
                   },
                   {
                     label: '三义',
-                    value: '711534',
+                    value: '711534'
                   },
                   {
                     label: '西湖',
-                    value: '711535',
+                    value: '711535'
                   },
                   {
                     label: '卓兰',
-                    value: '711536',
-                  },
-                ],
+                    value: '711536'
+                  }
+                ]
               },
               {
                 label: '彰化',
@@ -14795,109 +14795,109 @@ export default [
                 children: [
                   {
                     label: '彰化市',
-                    value: '711727',
+                    value: '711727'
                   },
                   {
                     label: '芬园',
-                    value: '711728',
+                    value: '711728'
                   },
                   {
                     label: '花坛',
-                    value: '711729',
+                    value: '711729'
                   },
                   {
                     label: '秀水',
-                    value: '711730',
+                    value: '711730'
                   },
                   {
                     label: '鹿港',
-                    value: '711731',
+                    value: '711731'
                   },
                   {
                     label: '福兴',
-                    value: '711732',
+                    value: '711732'
                   },
                   {
                     label: '线西',
-                    value: '711733',
+                    value: '711733'
                   },
                   {
                     label: '和美',
-                    value: '711734',
+                    value: '711734'
                   },
                   {
                     label: '伸港',
-                    value: '711735',
+                    value: '711735'
                   },
                   {
                     label: '员林',
-                    value: '711736',
+                    value: '711736'
                   },
                   {
                     label: '社头',
-                    value: '711737',
+                    value: '711737'
                   },
                   {
                     label: '永靖',
-                    value: '711738',
+                    value: '711738'
                   },
                   {
                     label: '埔心',
-                    value: '711739',
+                    value: '711739'
                   },
                   {
                     label: '溪湖',
-                    value: '711740',
+                    value: '711740'
                   },
                   {
                     label: '大村',
-                    value: '711741',
+                    value: '711741'
                   },
                   {
                     label: '埔盐',
-                    value: '711742',
+                    value: '711742'
                   },
                   {
                     label: '田中',
-                    value: '711743',
+                    value: '711743'
                   },
                   {
                     label: '北斗',
-                    value: '711744',
+                    value: '711744'
                   },
                   {
                     label: '田尾',
-                    value: '711745',
+                    value: '711745'
                   },
                   {
                     label: '埤头',
-                    value: '711746',
+                    value: '711746'
                   },
                   {
                     label: '溪州',
-                    value: '711747',
+                    value: '711747'
                   },
                   {
                     label: '竹塘',
-                    value: '711748',
+                    value: '711748'
                   },
                   {
                     label: '二林',
-                    value: '711749',
+                    value: '711749'
                   },
                   {
                     label: '大城',
-                    value: '711750',
+                    value: '711750'
                   },
                   {
                     label: '芳苑',
-                    value: '711751',
+                    value: '711751'
                   },
                   {
                     label: '二水',
-                    value: '711752',
-                  },
-                ],
+                    value: '711752'
+                  }
+                ]
               },
               {
                 label: '嘉义县',
@@ -14905,77 +14905,77 @@ export default [
                 children: [
                   {
                     label: '番路',
-                    value: '711919',
+                    value: '711919'
                   },
                   {
                     label: '梅山',
-                    value: '711920',
+                    value: '711920'
                   },
                   {
                     label: '竹崎',
-                    value: '711921',
+                    value: '711921'
                   },
                   {
                     label: '阿里山',
-                    value: '711922',
+                    value: '711922'
                   },
                   {
                     label: '中埔',
-                    value: '711923',
+                    value: '711923'
                   },
                   {
                     label: '大埔',
-                    value: '711924',
+                    value: '711924'
                   },
                   {
                     label: '水上',
-                    value: '711925',
+                    value: '711925'
                   },
                   {
                     label: '鹿草',
-                    value: '711926',
+                    value: '711926'
                   },
                   {
                     label: '太保',
-                    value: '711927',
+                    value: '711927'
                   },
                   {
                     label: '朴子',
-                    value: '711928',
+                    value: '711928'
                   },
                   {
                     label: '东石',
-                    value: '711929',
+                    value: '711929'
                   },
                   {
                     label: '六脚',
-                    value: '711930',
+                    value: '711930'
                   },
                   {
                     label: '新港',
-                    value: '711931',
+                    value: '711931'
                   },
                   {
                     label: '民雄',
-                    value: '711932',
+                    value: '711932'
                   },
                   {
                     label: '大林',
-                    value: '711933',
+                    value: '711933'
                   },
                   {
                     label: '溪口',
-                    value: '711934',
+                    value: '711934'
                   },
                   {
                     label: '义竹',
-                    value: '711935',
+                    value: '711935'
                   },
                   {
                     label: '布袋',
-                    value: '711936',
-                  },
-                ],
+                    value: '711936'
+                  }
+                ]
               },
               {
                 label: '云林',
@@ -14983,85 +14983,85 @@ export default [
                 children: [
                   {
                     label: '斗南',
-                    value: '712121',
+                    value: '712121'
                   },
                   {
                     label: '大埤',
-                    value: '712122',
+                    value: '712122'
                   },
                   {
                     label: '虎尾',
-                    value: '712123',
+                    value: '712123'
                   },
                   {
                     label: '土库',
-                    value: '712124',
+                    value: '712124'
                   },
                   {
                     label: '褒忠',
-                    value: '712125',
+                    value: '712125'
                   },
                   {
                     label: '东势',
-                    value: '712126',
+                    value: '712126'
                   },
                   {
                     label: '台西',
-                    value: '712127',
+                    value: '712127'
                   },
                   {
                     label: '仑背',
-                    value: '712128',
+                    value: '712128'
                   },
                   {
                     label: '麦寮',
-                    value: '712129',
+                    value: '712129'
                   },
                   {
                     label: '斗六',
-                    value: '712130',
+                    value: '712130'
                   },
                   {
                     label: '林内',
-                    value: '712131',
+                    value: '712131'
                   },
                   {
                     label: '古坑',
-                    value: '712132',
+                    value: '712132'
                   },
                   {
                     label: '莿桐',
-                    value: '712133',
+                    value: '712133'
                   },
                   {
                     label: '西螺',
-                    value: '712134',
+                    value: '712134'
                   },
                   {
                     label: '二仑',
-                    value: '712135',
+                    value: '712135'
                   },
                   {
                     label: '北港',
-                    value: '712136',
+                    value: '712136'
                   },
                   {
                     label: '水林',
-                    value: '712137',
+                    value: '712137'
                   },
                   {
                     label: '口湖',
-                    value: '712138',
+                    value: '712138'
                   },
                   {
                     label: '四湖',
-                    value: '712139',
+                    value: '712139'
                   },
                   {
                     label: '元长',
-                    value: '712140',
-                  },
-                ],
+                    value: '712140'
+                  }
+                ]
               },
               {
                 label: '屏东',
@@ -15069,137 +15069,137 @@ export default [
                 children: [
                   {
                     label: '屏东市',
-                    value: '712434',
+                    value: '712434'
                   },
                   {
                     label: '三地门',
-                    value: '712435',
+                    value: '712435'
                   },
                   {
                     label: '雾台',
-                    value: '712436',
+                    value: '712436'
                   },
                   {
                     label: '玛家',
-                    value: '712437',
+                    value: '712437'
                   },
                   {
                     label: '九如',
-                    value: '712438',
+                    value: '712438'
                   },
                   {
                     label: '里港',
-                    value: '712439',
+                    value: '712439'
                   },
                   {
                     label: '高树',
-                    value: '712440',
+                    value: '712440'
                   },
                   {
                     label: '盐埔',
-                    value: '712441',
+                    value: '712441'
                   },
                   {
                     label: '长治',
-                    value: '712442',
+                    value: '712442'
                   },
                   {
                     label: '麟洛',
-                    value: '712443',
+                    value: '712443'
                   },
                   {
                     label: '竹田',
-                    value: '712444',
+                    value: '712444'
                   },
                   {
                     label: '内埔',
-                    value: '712445',
+                    value: '712445'
                   },
                   {
                     label: '万丹',
-                    value: '712446',
+                    value: '712446'
                   },
                   {
                     label: '潮州',
-                    value: '712447',
+                    value: '712447'
                   },
                   {
                     label: '泰武',
-                    value: '712448',
+                    value: '712448'
                   },
                   {
                     label: '来义',
-                    value: '712449',
+                    value: '712449'
                   },
                   {
                     label: '万峦',
-                    value: '712450',
+                    value: '712450'
                   },
                   {
                     label: '崁顶',
-                    value: '712451',
+                    value: '712451'
                   },
                   {
                     label: '新埤',
-                    value: '712452',
+                    value: '712452'
                   },
                   {
                     label: '南州',
-                    value: '712453',
+                    value: '712453'
                   },
                   {
                     label: '林边',
-                    value: '712454',
+                    value: '712454'
                   },
                   {
                     label: '东港',
-                    value: '712455',
+                    value: '712455'
                   },
                   {
                     label: '琉球',
-                    value: '712456',
+                    value: '712456'
                   },
                   {
                     label: '佳冬',
-                    value: '712457',
+                    value: '712457'
                   },
                   {
                     label: '新园',
-                    value: '712458',
+                    value: '712458'
                   },
                   {
                     label: '枋寮',
-                    value: '712459',
+                    value: '712459'
                   },
                   {
                     label: '枋山',
-                    value: '712460',
+                    value: '712460'
                   },
                   {
                     label: '春日',
-                    value: '712461',
+                    value: '712461'
                   },
                   {
                     label: '狮子',
-                    value: '712462',
+                    value: '712462'
                   },
                   {
                     label: '车城',
-                    value: '712463',
+                    value: '712463'
                   },
                   {
                     label: '牡丹',
-                    value: '712464',
+                    value: '712464'
                   },
                   {
                     label: '恒春',
-                    value: '712465',
+                    value: '712465'
                   },
                   {
                     label: '满州',
-                    value: '712466',
-                  },
-                ],
+                    value: '712466'
+                  }
+                ]
               },
               {
                 label: '台东',
@@ -15207,69 +15207,69 @@ export default [
                 children: [
                   {
                     label: '台东市',
-                    value: '712517',
+                    value: '712517'
                   },
                   {
                     label: '绿岛',
-                    value: '712518',
+                    value: '712518'
                   },
                   {
                     label: '兰屿',
-                    value: '712519',
+                    value: '712519'
                   },
                   {
                     label: '延平',
-                    value: '712520',
+                    value: '712520'
                   },
                   {
                     label: '卑南',
-                    value: '712521',
+                    value: '712521'
                   },
                   {
                     label: '鹿野',
-                    value: '712522',
+                    value: '712522'
                   },
                   {
                     label: '关山',
-                    value: '712523',
+                    value: '712523'
                   },
                   {
                     label: '海端',
-                    value: '712524',
+                    value: '712524'
                   },
                   {
                     label: '池上',
-                    value: '712525',
+                    value: '712525'
                   },
                   {
                     label: '东河',
-                    value: '712526',
+                    value: '712526'
                   },
                   {
                     label: '成功',
-                    value: '712527',
+                    value: '712527'
                   },
                   {
                     label: '长滨',
-                    value: '712528',
+                    value: '712528'
                   },
                   {
                     label: '金峰',
-                    value: '712529',
+                    value: '712529'
                   },
                   {
                     label: '大武',
-                    value: '712530',
+                    value: '712530'
                   },
                   {
                     label: '达仁',
-                    value: '712531',
+                    value: '712531'
                   },
                   {
                     label: '太麻里',
-                    value: '712532',
-                  },
-                ],
+                    value: '712532'
+                  }
+                ]
               },
               {
                 label: '花莲',
@@ -15277,57 +15277,57 @@ export default [
                 children: [
                   {
                     label: '花莲市',
-                    value: '712615',
+                    value: '712615'
                   },
                   {
                     label: '新城',
-                    value: '712616',
+                    value: '712616'
                   },
                   {
                     label: '秀林',
-                    value: '712618',
+                    value: '712618'
                   },
                   {
                     label: '吉安',
-                    value: '712619',
+                    value: '712619'
                   },
                   {
                     label: '寿丰',
-                    value: '712620',
+                    value: '712620'
                   },
                   {
                     label: '凤林',
-                    value: '712621',
+                    value: '712621'
                   },
                   {
                     label: '光复',
-                    value: '712622',
+                    value: '712622'
                   },
                   {
                     label: '丰滨',
-                    value: '712623',
+                    value: '712623'
                   },
                   {
                     label: '瑞穗',
-                    value: '712624',
+                    value: '712624'
                   },
                   {
                     label: '万荣',
-                    value: '712625',
+                    value: '712625'
                   },
                   {
                     label: '玉里',
-                    value: '712626',
+                    value: '712626'
                   },
                   {
                     label: '卓溪',
-                    value: '712627',
+                    value: '712627'
                   },
                   {
                     label: '富里',
-                    value: '712628',
-                  },
-                ],
+                    value: '712628'
+                  }
+                ]
               },
               {
                 label: '澎湖',
@@ -15335,31 +15335,31 @@ export default [
                 children: [
                   {
                     label: '马公',
-                    value: '712707',
+                    value: '712707'
                   },
                   {
                     label: '西屿',
-                    value: '712708',
+                    value: '712708'
                   },
                   {
                     label: '望安',
-                    value: '712709',
+                    value: '712709'
                   },
                   {
                     label: '七美',
-                    value: '712710',
+                    value: '712710'
                   },
                   {
                     label: '白沙',
-                    value: '712711',
+                    value: '712711'
                   },
                   {
                     label: '湖西',
-                    value: '712712',
-                  },
-                ],
-              },
-            ],
+                    value: '712712'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '香港',
@@ -15371,11 +15371,11 @@ export default [
                 children: [
                   {
                     label: '香港',
-                    value: '810000',
-                  },
-                ],
-              },
-            ],
+                    value: '810000'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '澳门',
@@ -15387,11 +15387,11 @@ export default [
                 children: [
                   {
                     label: '澳门',
-                    value: '820000',
-                  },
-                ],
-              },
-            ],
+                    value: '820000'
+                  }
+                ]
+              }
+            ]
           },
           {
             label: '国外',
@@ -15403,14 +15403,14 @@ export default [
                 children: [
                   {
                     label: '国外',
-                    value: '910000',
-                  },
-                ],
-              },
-            ],
-          },
-        ],
+                    value: '910000'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       };
-    },
-  },
+    }
+  }
 ];

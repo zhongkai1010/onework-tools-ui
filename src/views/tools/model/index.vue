@@ -69,7 +69,7 @@
 
 <script setup lang="ts">
   import _ from 'lodash';
-  import modelApi, { Model, ModelProperty } from '/@/api/tool/model';
+  import modelApi, { Model, ModelProperty } from '/@/api/tools/model';
   import { useMessage } from '/@/hooks/web/useMessage';
   import { useHttpFetch } from '/@/hooks/fetch';
   import { ModelEditInstance, PropertyEditInstance } from './types';

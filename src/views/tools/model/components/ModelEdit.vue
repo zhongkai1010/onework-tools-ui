@@ -36,10 +36,10 @@
 <script setup lang="ts">
   import { FormInstance } from 'element-plus';
   import { ModelEditInstance } from '../types';
-  import { SaveModelParam, Model, ModelProperty } from '/@/api/tool/model';
+  import { SaveModelParam, Model, ModelProperty } from '/@/api/tools/model';
   import { ModelField } from '/@/components/Form/types';
   import { log } from '/@/utils/log';
-  import ModelApi from '/@/api/tool/model';
+  import ModelApi from '/@/api/tools/model';
   import { useHttpFetch } from '/@/hooks/fetch';
   import { useMessage } from '/@/hooks/web/useMessage';
 

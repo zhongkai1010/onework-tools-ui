@@ -8,9 +8,9 @@ export default [
     response: () => {
       return {
         code: 0,
-        result: 'OK',
+        result: 'OK'
       };
-    },
+    }
   },
   {
     url: '/api/mock/get/400',
@@ -20,9 +20,9 @@ export default [
     response: () => {
       return {
         code: -1,
-        message: 'Internal Server Error',
+        message: 'Internal Server Error'
       };
-    },
+    }
   },
   {
     url: '/api/mock/get/500',
@@ -32,9 +32,9 @@ export default [
     response: () => {
       return {
         code: -1,
-        message: 'Internal Server Error',
+        message: 'Internal Server Error'
       };
-    },
+    }
   },
   {
     url: '/api/mock/get/timeout',
@@ -44,9 +44,9 @@ export default [
     response: () => {
       return {
         code: -1,
-        message: 'Internal Server Error',
+        message: 'Internal Server Error'
       };
-    },
+    }
   },
   {
     url: '/api/test/getOptions',
@@ -60,12 +60,12 @@ export default [
           'data|2-3': [
             {
               label: '@ctitle()',
-              value: '@guid()',
-            },
-          ],
-        }).data,
+              value: '@guid()'
+            }
+          ]
+        }).data
       };
-    },
+    }
   },
 
   {
@@ -98,7 +98,7 @@ export default [
                 'time_picker',
                 'time_select',
                 'transfer',
-                'upload',
+                'upload'
               ],
               title: '@ctitle()',
               placeholderTips: '@string',
@@ -107,12 +107,12 @@ export default [
               componentWidth: '@string',
               defaults: '@string',
               minimum: '@string',
-              maximum: '@string',
-            },
-          ],
-        }).data,
+              maximum: '@string'
+            }
+          ]
+        }).data
       };
-    },
+    }
   },
   {
     url: '/api/test/getPageTableData',
@@ -132,9 +132,9 @@ export default [
             componentWidth: '@string',
             defaults: '@string',
             minimum: '@string',
-            maximum: '@string',
-          },
-        ],
+            maximum: '@string'
+          }
+        ]
       }).data;
       const total = Random.integer(query.pageSize ?? 10, 200);
       if (query.pageSize) {
@@ -145,9 +145,9 @@ export default [
         message: 'Internal Server Error',
         result: mock({
           total: total,
-          data,
-        }),
+          data
+        })
       };
-    },
-  },
+    }
+  }
 ];
