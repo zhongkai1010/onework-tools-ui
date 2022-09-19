@@ -11,7 +11,7 @@
         <span>{{ model.id ? '修改模型' : '创建模型' }}</span>
       </div>
     </template>
-    <el-form ref="formRef" :model="model" label-position="top">
+    <el-form ref="formRef" :model="model" label-position="left">
       <el-form-item label="模型名称" prop="name" :required="true">
         <el-input v-model="model.name" />
       </el-form-item>

@@ -4,7 +4,7 @@ export interface Model {
   id: string;
   name: string;
   displayName: string;
-  properties: ModelProperty[];
+  group?: string;
 }
 
 export interface ModelProperty {
@@ -20,6 +20,7 @@ export interface ModelProperty {
   parentIds?: string;
   order: number;
   remark?: string;
+  objectId?: string;
 }
 
 export interface SaveModelParam extends Omit<Model, 'id' | 'properties'> {
@@ -30,29 +31,35 @@ export interface SaveModelParam extends Omit<Model, 'id' | 'properties'> {
 export default {
   /**
    *  获取所有模块
-   * @param params
+   *
    * @returns
    */
-  getAllModel: () => http.get<Model[]>({ url: '/api/tools/model/getAllModel' }),
+  getModels: () => http.get<Model[]>({ url: '/api/tools/model' }),
   /**
    *  删除模块
+   *
    * @param params
    * @returns
    */
-  deleteModel: (id: string) => http.post({ url: '/api/tools/model/deleteModel', data: { id } }),
+  deleteModel: (id: string) => http.post({ url: '/api/tools/model/delete', params: { id } }),
   /**
    *  添加或修改模块
    * @param params
    * @returns
    */
-  saveModel: (data: SaveModelParam) => http.post({ url: '/api/tools/model/saveModel', data }),
+  saveModel: (model: SaveModelParam) => http.post({ url: '/api/tools/model/save', data: model }),
+  /**
+   *  获取模块属性集合
+   * @param data
+   */
+  getModelProperties: (params: Recordable<any>) =>
+    http.get({ url: '/api/tools/modelProperty', params }),
   /**
    *  添加或修改模块属性
    * @param params
    * @returns
    */
-  saveProperty: (data: ModelProperty) =>
-    http.post({ url: '/api/tools/modelProperty/saveProperty', data }),
+  saveProperty: (data: ModelProperty) => http.post({ url: '/api/tools/modelProperty/save', data }),
 
   /**
    *  删除模块属性
@@ -60,5 +67,5 @@ export default {
    * @returns
    */
   deleteProperty: (id: string) =>
-    http.post({ url: '/api/tools/modelProperty/deleteProperty', data: { id } })
+    http.post({ url: '/api/tools/modelProperty/delete', data: { id } })
 };

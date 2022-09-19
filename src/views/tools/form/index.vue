@@ -12,7 +12,11 @@
               </div>
             </div>
           </template>
-          <FormTree :data="[]" />
+          <FormTree
+            :data="forms"
+            v-loading="getModelFetch.isFetching.value"
+            @select="onSelectForm"
+          />
         </el-card>
       </el-col>
       <el-col :span="20">
@@ -26,7 +30,7 @@
               </div>
             </div>
           </template>
-          <FormGrid :data="[]" />
+          <FormGrid :data="currentModel.fields" />
         </el-card>
       </el-col>
     </el-row>
@@ -34,8 +38,34 @@
 </template>
 
 <script setup lang="ts">
+  import formApi, { Form } from '/@/api/tools/form';
   import FormTree from './component/FormTree.vue';
   import FormGrid from './component/FormGrid.vue';
+  import { useHttpFetch } from '/@/hooks/fetch';
+  import { log } from '/@/utils/log';
+
+  const currentModel = ref<Form>({
+    id: 'root',
+    name: '',
+    displayName: '',
+    fields: []
+  });
+
+  const getModelFetch = useHttpFetch<any, Form[]>(formApi.getAllModel, null, {
+    immediate: true
+  });
+  const forms = computed({
+    get: () => {
+      return getModelFetch.data.value ?? [];
+    },
+    set: (value) => {
+      getModelFetch.data.value = value;
+    }
+  });
+  const onSelectForm = (form: Form) => {
+    log('select form', form);
+    currentModel.value = form;
+  };
 </script>
 
 <style lang="scss" scoped>

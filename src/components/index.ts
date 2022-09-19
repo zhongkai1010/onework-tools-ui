@@ -1,3 +1,11 @@
+/*
+ * @Author: zhongkai1010 zhongkai1010@163.com
+ * @Date: 2022-09-13 09:20:04
+ * @LastEditors: zhongkai1010 zhongkai1010@163.com
+ * @LastEditTime: 2022-09-19 15:22:13
+ * @FilePath: \onework-tools-ui\src\components\index.ts
+ * @Description:
+ */
 import { App } from 'vue';
 import IconifyIcon from './IconifyIcon/index';
 import DynamicTable, { DataTable } from './DynamicTable/index';
@@ -9,9 +17,17 @@ import DynamicForm, {
   JsonFormItem
 } from './DynamicForm/index';
 
-import { FormModelProperty, FormModel, FormPropertyType } from './Form';
+import {
+  FormModelProperty,
+  FormModel,
+  FormPropertyType,
+  FormSelectAsync,
+  FormSelectDictionary
+} from './Form';
 
 import PageView, { ErrorView, FrameView, BlankView, CardView } from './PageView/index';
+
+import { CardTitle } from './Card';
 
 const setupComponents = (app: App<Element>) => {
   app.component('ErrorView', ErrorView);
@@ -35,6 +51,12 @@ const setupComponents = (app: App<Element>) => {
    */
   app.component('DynamicTable', DynamicTable);
   app.component('DataTable', DataTable);
+
+  /**
+   *  卡片
+   */
+  app.component('CardTitle', CardTitle);
+
   /**
    *  表单
    */
@@ -48,6 +70,8 @@ const setupComponents = (app: App<Element>) => {
   app.component('FormModelProperty', FormModelProperty);
   app.component('FormModel', FormModel);
   app.component('FormPropertyType', FormPropertyType);
+  app.component('FormSelectAsync', FormSelectAsync);
+  app.component('FormSelectDictionary', FormSelectDictionary);
 };
 
 export { setupComponents };

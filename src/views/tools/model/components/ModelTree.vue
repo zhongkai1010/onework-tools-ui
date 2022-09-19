@@ -1,10 +1,19 @@
+<!--
+ * @Author: zhongkai1010 zhongkai1010@163.com
+ * @Date: 2022-09-13 17:43:27
+ * @LastEditors: zhongkai1010 zhongkai1010@163.com
+ * @LastEditTime: 2022-09-19 18:03:34
+ * @FilePath: \onework-tools-ui\src\views\tools\model\components\ModelTree.vue
+ * @Description:
+-->
 <template>
   <el-tree
-    :data="treeData"
-    default-expand-all
+    v-loading="modelFetch.isFetching.value"
+    :data="models"
     highlight-current
     @node-click="onSelect"
     node-key="id"
+    :props="{ label: 'displayName' }"
   >
     <template #default="{ node }">
       <div class="tree-node" :class="{ 'is-select': node.data.id == selectNodeKey }">
@@ -27,19 +36,43 @@
 </template>
 
 <script setup lang="ts">
-  import { Model } from '/@/api/tools/model';
-  // import { log } from '/@/utils/log';
+  import _ from 'lodash';
+  import modelApi, { Model } from '/@/api/tools/model';
+  import { useHttpFetch } from '/@/hooks/fetch';
+
   import { useMessage } from '/@/hooks/web/useMessage';
-  interface Props {
-    data: Model[];
+
+  interface TreeNode extends Model {
+    children?: TreeNode[];
   }
 
-  interface TreeNode extends Partial<Model> {
-    label: string;
-    children: TreeNode[];
-  }
-
-  const props = defineProps<Props>();
+  const modelFetch = useHttpFetch<any, Model[]>(modelApi.getModels, null, { immediate: true });
+  const models = computed<TreeNode[]>({
+    get: () => {
+      const root: TreeNode = {
+        id: 'root',
+        name: 'root',
+        displayName: '所有模型',
+        children: []
+      };
+      if (modelFetch.data.value) {
+        const data = _.groupBy(modelFetch.data.value, (t) => t.group ?? '其它');
+        Object.keys(data).forEach((t) => {
+          const group: TreeNode = {
+            id: `root_${t}`,
+            name: `root_${t}`,
+            displayName: t,
+            children: data[t] as TreeNode[]
+          };
+          root.children.push(group);
+        });
+      }
+      return [root];
+    },
+    set: (value) => {
+      modelFetch.data.value = value as Model[];
+    }
+  });
 
   const emit = defineEmits<{
     (e: 'select', value: Model): void;
@@ -50,16 +83,6 @@
   const selectNodeKey = ref('');
 
   const { confirm } = useMessage();
-  const treeData = computed<TreeNode[]>(() => {
-    const root: TreeNode = {
-      id: 'root',
-      label: '所有模型',
-      children: props.data.map((t) => {
-        return { ...t, label: t.displayName } as TreeNode;
-      })
-    };
-    return [root];
-  });
 
   const onSelect = (node) => {
     if (node.id !== 'root') {

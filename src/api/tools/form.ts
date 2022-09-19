@@ -1,3 +1,5 @@
+import { http } from '/@/plugins/axios';
+
 export interface Form {
   id: string;
   name: string;
@@ -14,14 +16,23 @@ export interface Form {
 export interface FormField {
   id: string;
   formId: string;
-  name: string;
-  defaultValue?: string;
   label?: string;
-  showLabel?: boolean;
+  name: string;
   component: string;
   props?: Recordable<any>;
+  span?: number;
+  defaultValue?: string;
+  showLabel?: boolean;
   setp?: number;
   group?: string;
+  remark?: string;
 }
 
-export default {};
+export default {
+  /**
+   *  获取所有模块
+   * @param params
+   * @returns
+   */
+  getAllModel: () => http.get<Form[]>({ url: '/api/tools/form/getAllForm' })
+};

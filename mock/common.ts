@@ -1,9 +1,23 @@
 import { MockMethod } from 'vite-plugin-mock';
-import { Random } from 'mockjs';
+import { mock, Random } from 'mockjs';
 
-import { GetConfigResult, GetUserInfoResult, LoginPwdResult } from '/@/api/model/common';
+import {
+  DictionaryOption,
+  GetConfigResult,
+  GetUserInfoResult,
+  LoginPwdResult
+} from '/@/api/common';
 import { Result } from '/#/axios';
 import { DEFAULT_TITLE } from '/@/settings/constant';
+
+export const OrganizationOption: { data: DictionaryOption[] } = mock({
+  'data|1-20': [
+    {
+      text: '@ctitle()',
+      value: '@guid()'
+    }
+  ]
+});
 
 export default [
   {
@@ -1528,6 +1542,22 @@ export default [
             }
           ]
         }
+      };
+    }
+  },
+  {
+    url: '/api/user/getUserInfo',
+    method: 'get',
+    timeout: 2000
+  },
+  {
+    url: '/api/getOptions',
+    method: 'get',
+    timeout: 2000,
+    response: (): Result<DictionaryOption[]> => {
+      return {
+        code: 0,
+        result: OrganizationOption.data
       };
     }
   }

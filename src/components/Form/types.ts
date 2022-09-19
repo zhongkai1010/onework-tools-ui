@@ -1,3 +1,11 @@
+/*
+ * @Author: zhongkai1010 zhongkai1010@163.com
+ * @Date: 2022-09-14 16:27:49
+ * @LastEditors: zhongkai1010 zhongkai1010@163.com
+ * @LastEditTime: 2022-09-19 15:40:41
+ * @FilePath: \onework-tools-ui\src\components\Form\types.ts
+ * @Description:
+ */
 export type ModelPropertyType = 'string' | 'number' | 'array' | 'boolean' | 'intger' | 'object';
 
 export interface ModelProperty extends ModelField {
@@ -17,29 +25,18 @@ export interface ModelField {
   order: number;
 }
 
-export const ModelPropertyTypeOptions = [
-  {
-    label: '字符串(string)',
-    value: 'string'
-  },
-  {
-    label: '数字(number)',
-    value: 'number'
-  },
-  {
-    label: '数组(array)',
-    value: 'array'
-  },
-  {
-    label: '布尔(boolean)',
-    value: 'boolean'
-  },
-  {
-    label: '整数(intger)',
-    value: 'intger'
-  },
-  {
-    label: '对象(object)',
-    value: 'object'
-  }
-];
+export const ModelPropertyTypeMaps = {
+  string: '字符串(string)',
+  number: '数字(number)',
+  array: '数组(array)',
+  boolean: '布尔(boolean)',
+  intger: '整数(intger)',
+  object: '对象(object)'
+};
+
+export const ModelPropertyTypeOptions = Object.keys(ModelPropertyTypeMaps).map((t) => {
+  return {
+    text: ModelPropertyTypeMaps[t],
+    value: t
+  };
+});
