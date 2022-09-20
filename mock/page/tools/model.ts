@@ -114,10 +114,10 @@ export default [
     url: '/api/tools/modelProperty/save',
     method: 'post',
     timeout: '2000',
-    response: ({ data }) => {
+    response: ({ body }) => {
       return {
         code: 0,
-        result: { ...data, id: buildUUID() }
+        result: { ...body, id: buildUUID() }
       };
     }
   },

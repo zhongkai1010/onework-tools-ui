@@ -32,7 +32,7 @@
           <el-option
             v-for="item in ModelPropertyTypeOptions"
             :key="item.value"
-            :label="item.label"
+            :label="item.text"
             :value="item.value"
           />
         </el-select>
@@ -158,7 +158,8 @@
         id: buildUUID(),
         type: props.property?.array ?? 'string',
         children: props.property?.children ?? [],
-        order: 1
+        order: 1,
+        parent: null
       };
     },
     set(value) {

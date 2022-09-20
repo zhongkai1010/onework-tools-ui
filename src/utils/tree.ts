@@ -1,8 +1,7 @@
 export function generateTreeNodes(
   data: Recordable<any>[],
-  idKey: any,
+  idKey: string,
   parentKey: string,
-  defaultValue: any,
   childrenKey = 'children',
   orderKey?
 ) {
@@ -23,7 +22,7 @@ export function generateTreeNodes(
     return result;
   };
 
-  let roots = data.filter((t) => t[parentKey] === defaultValue);
+  let roots = data.filter((t) => !t[parentKey]);
   if (orderKey) {
     roots = roots.sort((a, b) => a[orderKey] - b[orderKey]);
   }

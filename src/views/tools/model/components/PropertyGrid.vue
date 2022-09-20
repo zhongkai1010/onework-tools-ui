@@ -46,7 +46,7 @@
   }>();
 
   const data = computed(() => {
-    return generateTreeNodes(props.data, 'id', 'parentId', null, 'children', 'order');
+    return generateTreeNodes(props.data, 'id', 'parentId', 'children', 'order');
   });
 
   const emit = defineEmits<{

@@ -20,7 +20,7 @@ export interface ModelField {
   array?: ModelPropertyType;
   required?: boolean;
   remark?: string;
-  parent?: string;
+  parent: string | null;
   parentPath?: string;
   order: number;
 }

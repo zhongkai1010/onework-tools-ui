@@ -120,6 +120,9 @@
     } else {
       getModelFetch.data.value.push(model);
     }
+    if (currentModel.value.id === model.id) {
+      properties.value = model.properties;
+    }
   };
   const onRemoveProperty = (property: ModelProperty) => {
     deletePropertyFetch.execute(property.id).then(() => {

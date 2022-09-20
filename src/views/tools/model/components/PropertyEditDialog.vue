@@ -13,26 +13,39 @@
       <el-form-item label="显示名称">
         <el-input v-model="property.displayName" />
       </el-form-item>
-      <el-form-item label="属性类型">
-        <FormPropertyType v-model="property.propertyType" disabled />
-      </el-form-item>
-      <el-form-item label="数组类型">
-        <FormPropertyType v-model="property.arrayType" disabled />
-      </el-form-item>
-      <el-form-item label="是否必填">
-        <el-switch v-model="property.required" />
-      </el-form-item>
+      <el-row :gutter="20">
+        <el-col :span="12" :offset="0">
+          <el-form-item label="属性类型">
+            <FormPropertyType v-model="property.propertyType" disabled style="width: 100%" />
+          </el-form-item>
+        </el-col>
+        <el-col :span="12" :offset="0">
+          <el-form-item label="数组类型">
+            <FormPropertyType v-model="property.arrayType" disabled style="width: 100%" />
+          </el-form-item>
+        </el-col>
+      </el-row>
+      <el-row :gutter="20">
+        <el-col :span="12" :offset="0">
+          <el-form-item label="顺序">
+            <el-input-number v-model="property.order" />
+          </el-form-item>
+        </el-col>
+        <el-col :span="12" :offset="0">
+          <el-form-item label="是否必填">
+            <el-switch v-model="property.required" />
+          </el-form-item>
+        </el-col>
+      </el-row>
       <el-form-item label="默认值">
         <el-input v-model="property.defaultValue" />
       </el-form-item>
-      <el-form-item label="顺序">
-        <el-input-number v-model="property.order" />
-      </el-form-item>
+
       <el-form-item label="备注">
         <el-input v-model="property.remark" />
       </el-form-item>
       <el-form-item label="组织编号">
-        <el-select>
+        <el-select style="width: 100%">
           <el-option
             v-for="item in options"
             :key="item.value"
