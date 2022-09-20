@@ -6,7 +6,7 @@
         <span>{{ property.id ? '修改模型' : '创建模型' }}</span>
       </div>
     </template>
-    <el-form v-model="property">
+    <el-form v-model="property" label-position="top">
       <el-form-item label="属性名称">
         <el-input v-model="property.name" />
       </el-form-item>

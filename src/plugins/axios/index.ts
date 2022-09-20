@@ -100,8 +100,8 @@ const transform: AxiosTransform = {
           config.params = params;
         } else {
           // 非GET请求如果没有提供data，则将params视为data
-          config.data = params;
-          config.params = undefined;
+          // config.data = params;
+          // config.params = undefined;
         }
         if (joinParamsToUrl) {
           config.url = setObjToUrlParams(

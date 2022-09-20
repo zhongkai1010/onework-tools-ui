@@ -11,17 +11,31 @@
         <span>{{ model.id ? '修改模型' : '创建模型' }}</span>
       </div>
     </template>
-    <el-form ref="formRef" :model="model" label-position="left">
-      <el-form-item label="模型名称" prop="name" :required="true">
+    <el-form
+      ref="formRef"
+      :model="model"
+      label-position="top"
+      v-loading="getModelFetch.isFetching.value"
+    >
+      <el-form-item
+        label="模型名称"
+        prop="name"
+        :required="true"
+        :rules="{ required: true, message: '模型名称是必填项！' }"
+      >
         <el-input v-model="model.name" />
       </el-form-item>
-      <el-form-item label="显示名称" prop="displayName" :required="true">
+      <el-form-item
+        label="显示名称"
+        prop="displayName"
+        :rules="{ required: true, message: '显示名称是必填项！' }"
+      >
         <el-input v-model="model.displayName" />
       </el-form-item>
-      <el-form-item label="分组" prop="displayName" :required="true">
+      <el-form-item label="分组" prop="displayName">
         <el-input v-model="model.group" />
       </el-form-item>
-      <el-form-item label="模型属性" prop="fields" :required="true">
+      <el-form-item label="模型属性" prop="fields">
         <FormModel v-model="properties" />
       </el-form-item>
     </el-form>
@@ -29,8 +43,8 @@
       <span>
         <el-button
           type="primary"
-          @click="onClickSubmit(formRef)"
           :loading="saveModelFetch.isFetching.value"
+          @click="onClickSubmit(formRef)"
           >提交</el-button
         >
         <el-button @click="show = false" :disabled="saveModelFetch.isFetching.value"
@@ -47,68 +61,58 @@
 
   import modelApi, { Model, ModelProperty, EditModel } from '/@/api/tools/model';
 
-  import { log } from '/@/utils/log';
   import { useHttpFetch } from '/@/hooks/fetch';
   import { useMessage } from '/@/hooks/web/useMessage';
   import { ModelField } from '/@/components/Form/types';
 
-  interface FormModel extends Omit<EditModel, 'properties'> {
-    fields: ModelField[];
-  }
-
-  const emit = defineEmits<{ (e: 'save', value: Model) }>();
-
   const { message } = useMessage();
+  const emit = defineEmits<{ (e: 'save', value: Model) }>();
   const saveModelFetch = useHttpFetch(modelApi.saveModel);
-  const getModelFetch = useHttpFetch<string, Model>(modelApi.getModel);
+  const getModelFetch = useHttpFetch(modelApi.getModel);
 
   const formRef = ref<FormInstance>();
   const show = ref(false);
-  const model = computed<FormModel>({
+  const model = computed<EditModel>({
     get: () => {
-      let model: FormModel = {
+      let model: EditModel = {
         name: '',
         displayName: '',
-        fields: []
+        properties: []
       };
       if (getModelFetch.data.value) {
-        const properties = getModelFetch.data.value.properties ?? [];
-        const fields = properties.map(getField);
-        return {
-          ...getModelFetch.data.value,
-          fields
-        } as FormModel;
+        model = getModelFetch.data.value;
       }
       return model;
     },
     set: (value) => {
-      const properties = value.fields.map(getProperty) as ModelProperty[];
-      getModelFetch.data.value = { ...value, properties } as Model;
+      getModelFetch.data.value = value as Model;
     }
   });
   const properties = ref<ModelField[]>([]);
 
   const onClickSubmit = async (formEl: FormInstance | undefined) => {
-    await formEl.validate(async (valid, fields) => {
+    await formEl.validate(async (valid) => {
       if (valid) {
-        const data = { ...model.value };
-        data.properties = data.fields.map(getProperty) as ModelProperty[];
-        log('save', data);
-        execute(data as SaveModelParam)
-          .then(() => {
+        const data: EditModel = {
+          id: model.value.id,
+          name: model.value.name,
+          displayName: model.value.displayName,
+          group: model.value.group,
+          properties: properties.value.map(getProperty)
+        };
+
+        saveModelFetch
+          .execute(data as EditModel)
+          .then((result) => {
             message('提交成功！', 'success');
             show.value = false;
-            emit('save', data as Model);
+            emit('save', result as Model);
           })
-          .catch((error) => {
+          .catch(() => {
             message('提交异常！', 'error');
-            log('submit error !', error);
           });
-
-        log('submit!');
       } else {
         message('表单验证失败！', 'error');
-        log('submit fail !', fields);
       }
     });
   };
@@ -116,14 +120,18 @@
   const onOpen = (value?: Model) => {
     show.value = true;
     if (value) {
+      getModelFetch.execute(value.id).then((t) => {
+        model.value = t;
+        properties.value = (t.properties ?? []).map(getField);
+      });
     } else {
       model.value = {
         name: '',
         displayName: '',
-        fields: []
+        properties: []
       };
+      properties.value = [];
     }
-    log('open', model.value);
   };
 
   const getField = (property: ModelProperty): ModelField => {

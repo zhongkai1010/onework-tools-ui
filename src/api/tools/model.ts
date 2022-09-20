@@ -17,7 +17,7 @@ export interface ModelProperty {
   arrayType?: 'string' | 'number' | 'array' | 'boolean' | 'intger' | 'object';
   required: boolean;
   defaultValue?: string;
-  parentId?: string;
+  parentId: string | null;
   parentIds?: string;
   order: number;
   remark?: string;
@@ -25,9 +25,14 @@ export interface ModelProperty {
   objectName?: string;
 }
 
+export interface EditModelProperty extends Omit<ModelProperty, 'id' | 'modelId'> {
+  id?: string;
+  modelId?: string;
+}
+
 export interface EditModel extends Omit<Model, 'id' | 'properties'> {
   id?: string;
-  properties?: Omit<ModelProperty, 'id'>[];
+  properties?: EditModelProperty[];
 }
 
 export default {
@@ -61,7 +66,7 @@ export default {
    * @param data
    */
   getModelProperties: (params: Recordable<any>) =>
-    http.get({ url: '/api/tools/modelProperty', params }),
+    http.get<ModelProperty[]>({ url: '/api/tools/modelProperty/getAll', params }),
   /**
    *  添加或修改模块属性
    * @param params

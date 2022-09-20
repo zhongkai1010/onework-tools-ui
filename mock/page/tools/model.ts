@@ -1,14 +1,21 @@
-/*
- * @Author: zhongkai1010 zhongkai1010@163.com
- * @Date: 2022-09-19 15:49:43
- * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-19 17:43:12
- * @FilePath: \onework-tools-ui\mock\page\tools\model.ts
- * @Description:
- */
 import { mock, Random } from 'mockjs';
 import { buildUUID } from '../../../src/utils/uuid';
 import { DATA_DICTIONARIES } from '../../../mock/common';
+
+let models: any[] = mock({
+  'data|30-100': [
+    {
+      id: '@guid()',
+      name: '@word(4,12)',
+      displayName: '@ctitle(4,6)',
+      'group|1': [null, '系统', '工具', '平台', '流程', '运维']
+    }
+  ]
+}).data;
+
+models = models.map((t: any) => {
+  return { ...t, properties: generateProperties(t.id, Random.integer(4, 20)) };
+});
 
 export default [
   {
@@ -18,16 +25,22 @@ export default [
     response: () => {
       return {
         code: 0,
-        result: mock({
-          'data|6-30': [
-            {
-              id: '@guid()',
-              name: '@word(4,12)',
-              displayName: '@ctitle(4,6)',
-              'group|1': [null, '系统', '工具', '平台', '流程', '运维']
-            }
-          ]
-        }).data
+        result: models.map((t) => {
+          return { ...t, properties: undefined };
+        })
+      };
+    }
+  },
+  {
+    url: '/api/tools/model/get',
+    method: 'get',
+    timeout: '2000',
+    response: ({ query }) => {
+      const modelId = query.id;
+      const model = models.find((t) => t.id == modelId);
+      return {
+        code: 0,
+        result: model
       };
     }
   },
@@ -35,9 +48,13 @@ export default [
     url: '/api/tools/model/delete',
     method: 'post',
     timeout: '2000',
-    response: ({ _query }) => {
+    response: ({ query }) => {
+      const modelId = query.id;
+      const index = models.findIndex((t) => t.id == modelId);
+      models.splice(index, 1);
       return {
-        code: 0
+        code: index >= 0 ? 0 : -1,
+        result: models
       };
     }
   },
@@ -45,28 +62,52 @@ export default [
     url: '/api/tools/model/save',
     method: 'post',
     timeout: '2000',
-    response: ({ data }) => {
+    response: ({ body }) => {
+      const model = body;
+      if (model.id) {
+        const index = models.findIndex((t) => t.id == model.id);
+        models.splice(index, 1, model);
+      } else {
+        model.id = buildUUID();
+        model.properties = model.properties.map((t) => {
+          return {
+            ...t,
+            id: buildUUID(),
+            modelId: model.id,
+            parentId: t.parentId ? t.parentId : null
+          };
+        });
+        models.push(model);
+      }
       return {
         code: 0,
-        result: { ...data, id: buildUUID() }
+        result: body
       };
     }
   },
   {
-    url: '/api/tools/modelProperty',
+    url: '/api/tools/modelProperty/getAll',
     method: 'get',
     timeout: '2000',
     response: ({ query }) => {
       const modelId = query.modelId;
       const objectId = query.objectId;
-      let data = generateProperties(modelId, Random.integer(4, 20));
-      if (objectId) {
-        data = data.filter((t) => t.objectId == objectId || !t.objectId);
+      const model = models.find((t) => t.id === modelId);
+      if (!model) {
+        return {
+          code: 0,
+          result: []
+        };
+      } else {
+        let properties = model.properties;
+        if (objectId) {
+          properties = properties.filter((t) => t.objectId == objectId || !t.objectId);
+        }
+        return {
+          code: 0,
+          result: properties
+        };
       }
-      return {
-        code: 0,
-        result: data
-      };
     }
   },
   {
