@@ -30,8 +30,8 @@ export interface LoginPwdResult {
 export interface GetUserInfoResult {
   defaultName: string;
   avatar: string;
-  permission: string[];
-  menus: any[];
+  // permission: string[];
+  // menus: any[];
 }
 
 export interface RegisterRequestParam {

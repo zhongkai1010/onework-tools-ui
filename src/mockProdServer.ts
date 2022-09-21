@@ -8,8 +8,17 @@ import common from '../mock/common';
 
 import region from '../mock/region';
 import pageSystem from '../mock/page/system';
-import pageTools from '../mock/page/tools';
+import pageToolsForm from '../mock/page/tools/form';
+import pageToolsmodel from '../mock/page/tools/model';
 import test from '../mock/test';
+
 export function setupProdMockServer() {
-  createProdMockServer([...common, ...region, ...pageSystem, ...pageTools, ...test]);
+  createProdMockServer([
+    ...common,
+    ...region,
+    ...pageSystem,
+    ...pageToolsForm,
+    ...pageToolsmodel,
+    ...test
+  ]);
 }

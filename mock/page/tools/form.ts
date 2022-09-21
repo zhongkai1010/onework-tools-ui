@@ -1,6 +1,6 @@
 import { mock, Random } from 'mockjs';
 import { buildUUID } from '../../../src/utils/uuid';
-import { DATA_DICTIONARIES } from '../../../mock/common';
+
 import ComponentData from '../../../src/views/tools/component/data';
 
 let forms: any[] = mock({
@@ -153,17 +153,13 @@ export default [
   }
 ];
 
-const OrganizationValues = DATA_DICTIONARIES.organization.map((t) => {
-  return t.value;
-});
-
 function generateProperty(form) {
   const random = Random.pick([1, 3, 4, 7, 9]); //随机组织
-  const objectId = random % 2 == 0 ? Random.pick(OrganizationValues) : null;
+  const objectId = random % 2 == 0 ? Random.pick([1, 2, 3]) : null;
 
   let objectName = '';
   if (objectId) {
-    objectName = DATA_DICTIONARIES.organization.filter((t) => t.value == objectId)[0].text;
+    objectName = objectId;
   }
   const ComponentTypes = ComponentData.map((t) => t.name);
   const property = {

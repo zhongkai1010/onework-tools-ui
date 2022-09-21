@@ -2,7 +2,7 @@ import { mock, Random } from 'mockjs';
 
 export default [
   {
-    url: '/api/mock/get/200',
+    url: 'd',
     method: 'get',
     timeout: '2000',
     response: () => {

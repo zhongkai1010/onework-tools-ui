@@ -26,27 +26,27 @@ export default ({ _command }): UserConfigExport => {
       alias: [
         {
           find: 'vue-i18n',
-          replacement: 'vue-i18n/dist/vue-i18n.cjs.js',
+          replacement: 'vue-i18n/dist/vue-i18n.cjs.js'
         },
         // /@/xxxx => src/xxxx
         {
           find: /\/@\//,
-          replacement: pathResolve('src') + '/',
+          replacement: pathResolve('src') + '/'
         },
         // /#/xxxx => types/xxxx
         {
           find: /\/#\//,
-          replacement: pathResolve('types') + '/',
-        },
-      ],
+          replacement: pathResolve('types') + '/'
+        }
+      ]
     },
     plugins: [
       vue({
-        reactivityTransform: true,
+        reactivityTransform: true
       }),
       vueI18n({
         runtimeOnly: true,
-        include: path.resolve(__dirname, './**/locales/**'),
+        include: path.resolve(__dirname, './**/locales/**')
       }),
       VueSetupExtend(),
       /**
@@ -60,10 +60,10 @@ export default ({ _command }): UserConfigExport => {
           //   // 关键：自动引入修改主题色添加这一行，使用预处理样式，不添加将会导致使用ElMessage，ElNotification等组件时默认的主题色会覆盖自定义的主题色
           //   importStyle: "sass"
           // })
-        ],
+        ]
       }),
       Components({
-        directoryAsNamespace: true,
+        directoryAsNamespace: true
       }),
       /**
        *  eslint
@@ -71,24 +71,38 @@ export default ({ _command }): UserConfigExport => {
       eslint(),
       visualizer(),
       viteMockServe({
-        // default
         mockPath: 'mock',
         supportTs: true,
         localEnabled: true,
-        watchFiles: true,
-        // mockPath: './mock/', //mock文件地址
-        // localEnabled: false, // 开发打包开关
-        // prodEnabled: true, // 生产打包开关 // 这样可以控制关闭mock的时候不让mock打包到最终代码内
-        // injectCode: ` import { setupProdMockServer } from './mockProdServer'; setupProdMockServer(); `,
-        // logger: false, //是否在控制台显示请求日志
-        // supportTs: false, //打开后，可以读取 ts 文件模块。 请注意，打开后将无法监视.js 文件
+        watchFiles: true
+        // // 设置存储模拟 .ts 文件的文件夹
+        // mockPath: './mock/',
+        // // 打开后可以读取ts文件模块。请注意，您将无法在打开后监控 .js 文件。
+        // supportTs: true,
+        // // 自动读取模拟 .ts 文件时，忽略指定格式的文件
+        // ignore: undefined,
+        // // 设置是否监听 mock .ts 文件的变化
+        // watchFiles: true,
+        // // 设置是否开启本地mock .ts文件，不要在生产环境打开
+        // localEnabled: false,
+        // // 设置是否开启打包的mock功能
+        // prodEnabled: true,
+        // // 如果在生产环境中启用了mock功能，即prodEnabled=true，则代码会被注入到injectFile对应的文件底部。默认是 main.{ts,js}
+        // // 这样做的好处是可以动态控制生产环境中是否启用mock，不启用时mock.js不会被打包。
+        // // 如果代码直接写在main.ts中，不管是否开启，最终的包都会包含mock.js
+        // injectCode: `
+        //   import { setupProdMockServer } from './mockProdServer';
+        //   setupProdMockServer();
+        // `
+        // // 在main.ts注册后需要在此处注入，否则可能报找不到setupProdMockServer的错误
+        // // injectFile: resolve('src/main.{ts,js}')
       }),
       topLevelAwait({
         // The export name of top-level await promise for each chunk module
         promiseExportName: '__tla',
         // The function to generate import names of top-level await promise in each chunk module
-        promiseImportName: (i) => `__tla_${i}`,
-      }),
+        promiseImportName: (i) => `__tla_${i}`
+      })
     ],
     server: {
       hmr: true,
@@ -99,14 +113,14 @@ export default ({ _command }): UserConfigExport => {
         //   rewrite: path => path.replace(/^\/api/, "")
         // }
       },
-      watch: { usePolling: true },
+      watch: { usePolling: true }
     },
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "./src/styles/index.scss" as *;',
-        },
-      },
-    },
+          additionalData: '@use "./src/styles/index.scss" as *;'
+        }
+      }
+    }
   };
 };

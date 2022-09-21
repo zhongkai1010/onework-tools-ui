@@ -21,20 +21,20 @@ export default [
                 'checkbox',
                 'datetimerange',
                 'datepicker',
-                'timepicker',
+                'timepicker'
               ],
               span: 8,
               'fold|1': true,
               'options|1-5': [
                 {
                   label: '@ctitle',
-                  value: '@ctitle',
-                },
-              ],
-            },
-          ],
-        }),
+                  value: '@ctitle'
+                }
+              ]
+            }
+          ]
+        })
       };
-    },
-  },
+    }
+  }
 ] as MockMethod[];

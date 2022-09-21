@@ -9,7 +9,7 @@ export interface PermissionStateType {
 
 export const defaultPermissionState: PermissionStateType = {
   menus: [],
-  menuMap: {},
+  menuMap: {}
 };
 
 const permissionState = defineStore('permission-state', {
@@ -31,15 +31,15 @@ const permissionState = defineStore('permission-state', {
       const nav: MenuRecordRaw = this.menuMap[this.selectMenu];
       if (!nav) return [];
       return nav.paths.map((t) => this.menuMap[t]);
-    },
+    }
   },
   actions: {
     clearAll() {
       this.menus = [];
       this.menuMap = {};
-    },
+    }
   },
-  persist: true,
+  persist: true
 });
 export function permissionStateStoreHook() {
   return permissionState(store);

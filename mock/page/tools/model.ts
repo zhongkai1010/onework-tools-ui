@@ -1,6 +1,5 @@
 import { mock, Random } from 'mockjs';
 import { buildUUID } from '../../../src/utils/uuid';
-import { DATA_DICTIONARIES } from '../../../mock/common';
 
 let models: any[] = mock({
   'data|30-100': [
@@ -133,18 +132,14 @@ export default [
   }
 ];
 
-const OrganizationValues = DATA_DICTIONARIES.organization.map((t) => {
-  return t.value;
-});
-
 function generatePropertyChilds(modelId, parent?): any[] {
   const result: any[] = [];
   const random = Random.pick([1, 3, 4, 7, 9]); //随机组织
-  const objectId = random % 2 == 0 ? Random.pick(OrganizationValues) : null;
+  const objectId = random % 2 == 0 ? Random.pick([1, 2, 3]) : null;
 
-  let objectName = '';
+  let objectName = objectId;
   if (objectId) {
-    objectName = DATA_DICTIONARIES.organization.filter((t) => t.value == objectId)[0].text;
+    objectName = objectId;
   }
   const property = {
     id: Random.guid(),
