@@ -2,13 +2,14 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-21 10:57:25
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-21 11:27:54
- * @FilePath: \onework-tools-ui\src\views\tools\model\helps.ts
+ * @LastEditTime: 2022-09-21 14:34:40
+ * @FilePath: \onework-tools-ui\src\views\tools\helps.ts
  * @Description:
  */
 import _ from 'lodash';
-import { ModelTreeNode } from './types';
-import { EditModel, Model, ModelProperty } from '/@/api/tools/model';
+import { Random } from 'mockjs';
+import { ModelTreeNode } from './model/types';
+import { DataType, EditModel, Model, ModelProperty } from '/@/api/tools/model';
 import { ModelField } from '/@/components/Form/types';
 
 export const ROOT_NODE_KEY = 'root';
@@ -83,4 +84,39 @@ export const getProperty = (field: ModelField): Omit<ModelProperty, 'modelId'> =
     remark: field.remark
   };
   return property;
+};
+
+export const generateJson = (properties: ModelProperty[]) => {
+  const result = {};
+  const getValue = (type: DataType, property: ModelProperty) => {
+    switch (type) {
+      case 'string':
+        return Random.string('lower', 5, 10);
+      case 'boolean':
+        return Random.boolean();
+      case 'array':
+        const array = [];
+        const count = Random.integer(1, 5);
+        for (let i = 0; i < count; i++) {
+          array.push(getValue(property.arrayType ?? 'string', property));
+        }
+        return array;
+      case 'intger':
+        return Random.integer(1, 100);
+      case 'number':
+        return Random.float(1, 2);
+      case 'object':
+        const children = properties.filter((t) => t.parentId == property.id);
+        const value = {};
+        children.forEach((t) => {
+          value[t.name] = getValue(t.propertyType, t);
+        });
+        return value;
+    }
+  };
+  const roots = properties.filter((t) => t.parentId == null);
+  roots.forEach((t) => {
+    result[t.name] = getValue(t.propertyType, t);
+  });
+  return result;
 };

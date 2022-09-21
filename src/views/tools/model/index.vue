@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-13 09:34:46
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-21 11:08:52
+ * @LastEditTime: 2022-09-21 14:56:11
  * @FilePath: \onework-tools-ui\src\views\tools\model\index.vue
  * @Description:
 -->
@@ -40,13 +40,13 @@
               clearable
               @change="onChangeOrg"
             />
-            <el-dropdown>
+            <el-dropdown @command="onClickCommand">
               <el-button type="primary"> 生成代码 </el-button>
               <template #dropdown>
                 <el-dropdown-menu>
-                  <el-dropdown-item>表单配置</el-dropdown-item>
-                  <el-dropdown-item>表格配置</el-dropdown-item>
-                  <el-dropdown-item>JSON</el-dropdown-item>
+                  <el-dropdown-item command="form">表单配置</el-dropdown-item>
+                  <el-dropdown-item command="table">表格配置</el-dropdown-item>
+                  <el-dropdown-item command="json">JSON</el-dropdown-item>
                 </el-dropdown-menu>
               </template>
             </el-dropdown>
@@ -63,6 +63,7 @@
     </el-row>
     <ModelEditDialog ref="modelEditRef" @save="onSaveModel" />
     <PropertyEditDialog ref="propertyEditRef" @save="onSaveProperty" />
+    <JsonPreview ref="jsonPreviewRef" />
   </page-view>
 </template>
 <script setup lang="ts">
@@ -74,8 +75,15 @@
   import PropertyGrid from './components/PropertyGrid.vue';
   import ModelEditDialog from './components/ModelEditDialog.vue';
   import PropertyEditDialog from './components/PropertyEditDialog.vue';
-  import { ModelEditInstance, ModelTreeInstance, PropertyEditInstance } from './types';
+  import JsonPreview from './components/JsonPreview.vue';
+  import {
+    JsonPreviewInstance,
+    ModelEditInstance,
+    ModelTreeInstance,
+    PropertyEditInstance
+  } from './types';
   import { log } from '/@/utils/log';
+  import { generateJson } from '../helps';
 
   const getModelFetch = useHttpFetch(modelApi.getAllModels, null, {
     immediate: true
@@ -86,7 +94,7 @@
   const modelEditRef = ref<ModelEditInstance>();
   const propertyEditRef = ref<PropertyEditInstance>();
   const modelTreeRef = ref<ModelTreeInstance>();
-
+  const jsonPreviewRef = ref<JsonPreviewInstance>();
   const properties = computed<ModelProperty[]>({
     get: () => {
       return getPropertyFetch.data.value ?? [];
@@ -129,7 +137,8 @@
     }
     modelTreeRef.value.selectNode({ ...model, isLeaf: true });
     if (model.id == currentModel.value?.id) {
-      await onSelectModel(model);
+      currentModel.value = model;
+      getPropertyFetch.data.value = model.properties ?? [];
     }
     log('save model', model);
   };
@@ -152,6 +161,13 @@
   const onChangeOrg = async (value) => {
     if (currentModel.value) {
       await getPropertyFetch.execute({ modelId: currentModel.value.id, objectId: value });
+    }
+  };
+  const onClickCommand = (command) => {
+    if (command === 'json') {
+      const json = generateJson(getPropertyFetch.data.value ?? []);
+      const jsonStr = JSON.stringify(json, null, '\t');
+      jsonPreviewRef.value.open(jsonStr);
     }
   };
 </script>

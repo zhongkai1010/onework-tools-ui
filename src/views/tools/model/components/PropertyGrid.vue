@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-20 09:07:06
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-20 17:58:33
+ * @LastEditTime: 2022-09-21 11:39:37
  * @FilePath: \onework-tools-ui\src\views\tools\model\components\PropertyGrid.vue
  * @Description:
 -->
@@ -12,7 +12,11 @@
     <el-table-column label="属性名称" prop="name" :show-overflow-tooltip="true" />
     <el-table-column label="显示名称" prop="displayName" />
     <el-table-column label="属性类型" prop="propertyType" />
-    <el-table-column label="数组类型" prop="arrayType" />
+    <el-table-column label="数组类型" prop="arrayType">
+      <template #default="scope">
+        {{ scope.row.propertyType === 'array' ? scope.row.arrayType : '' }}
+      </template>
+    </el-table-column>
     <el-table-column label="默认值" prop="defaultValue" />
     <el-table-column label="是否必填" prop="required">
       <template #default="scope">

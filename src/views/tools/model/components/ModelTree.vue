@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-13 17:43:27
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-21 11:09:32
+ * @LastEditTime: 2022-09-21 11:49:30
  * @FilePath: \onework-tools-ui\src\views\tools\model\components\ModelTree.vue
  * @Description:
 -->
@@ -42,7 +42,7 @@
   import modelApi, { Model } from '/@/api/tools/model';
   import { useHttpFetch } from '/@/hooks/fetch';
   import { ModelTreeInstance, ModelTreeNode } from '../types';
-  import { getModelTreeData, ROOT_NODE_KEY } from '../helps';
+  import { getModelTreeData, ROOT_NODE_KEY } from '../../helps';
 
   interface Props {
     data: Model[];
@@ -63,6 +63,7 @@
   const selectId = ref<string>(ROOT_NODE_KEY);
 
   const onSelect = (model: ModelTreeNode) => {
+    if (!model.isLeaf) return;
     emit('select', model);
     selectId.value = model.id;
     setExpandedKeys(model);

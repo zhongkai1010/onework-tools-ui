@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-13 09:20:04
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-19 15:22:13
+ * @LastEditTime: 2022-09-21 14:48:47
  * @FilePath: \onework-tools-ui\src\components\index.ts
  * @Description:
  */
@@ -22,7 +22,8 @@ import {
   FormModel,
   FormPropertyType,
   FormSelectAsync,
-  FormSelectDictionary
+  FormSelectDictionary,
+  FormJson
 } from './Form';
 
 import PageView, { ErrorView, FrameView, BlankView, CardView } from './PageView/index';
@@ -72,6 +73,7 @@ const setupComponents = (app: App<Element>) => {
   app.component('FormPropertyType', FormPropertyType);
   app.component('FormSelectAsync', FormSelectAsync);
   app.component('FormSelectDictionary', FormSelectDictionary);
+  app.component('FormJson', FormJson);
 };
 
 export { setupComponents };

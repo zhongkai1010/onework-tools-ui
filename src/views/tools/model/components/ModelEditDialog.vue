@@ -62,12 +62,11 @@
   import { useMessage } from '/@/hooks/web/useMessage';
   import { ModelField } from '/@/components/Form/types';
   import { log } from '/@/utils/log';
-  import { DEFULT_MODEL, getField, getProperty } from '../helps';
+  import { DEFULT_MODEL, getField, getProperty } from '../../helps';
   import modelApi, { Model, EditModel } from '/@/api/tools/model';
 
   const { message } = useMessage();
   const emit = defineEmits<{ (e: 'save', value: Model) }>();
-
   const saveModelFetch = useHttpFetch(modelApi.saveModel);
   const getModelFetch = useHttpFetch(modelApi.getModel);
   const formRef = ref<FormInstance>();
@@ -79,7 +78,6 @@
     }
   });
   const properties = ref<ModelField[]>([]);
-
   const onClickSubmit = async (formEl: FormInstance | undefined) => {
     await formEl.validate(async (valid, fields) => {
       if (!valid) {
@@ -108,7 +106,6 @@
       properties.value = [];
     }
   };
-
   defineExpose<ModelEditInstance>({
     open: onOpen
   });

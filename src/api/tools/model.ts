@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-20 09:07:06
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-21 11:23:52
+ * @LastEditTime: 2022-09-21 14:13:45
  * @FilePath: \onework-tools-ui\src\api\tools\model.ts
  * @Description:
  */
@@ -21,8 +21,8 @@ export interface ModelProperty {
   modelId: string;
   name: string;
   displayName: string;
-  propertyType: 'string' | 'number' | 'array' | 'boolean' | 'intger' | 'object';
-  arrayType?: 'string' | 'number' | 'array' | 'boolean' | 'intger' | 'object';
+  propertyType: DataType;
+  arrayType?: DataType;
   required: boolean;
   defaultValue?: string;
   order: number;
@@ -32,6 +32,8 @@ export interface ModelProperty {
   objectId?: string;
   objectName?: string;
 }
+
+export type DataType = 'string' | 'number' | 'array' | 'boolean' | 'intger' | 'object';
 
 export interface EditModelProperty extends Omit<ModelProperty, 'id' | 'modelId'> {
   id?: string;
