@@ -1,93 +1,109 @@
+<!--
+ * @Author: zhongkai1010 zhongkai1010@163.com
+ * @Date: 2022-09-16 15:26:20
+ * @LastEditors: zhongkai1010 zhongkai1010@163.com
+ * @LastEditTime: 2022-09-21 17:37:15
+ * @FilePath: \onework-tools-ui\src\views\tools\form\index.vue
+ * @Description:
+-->
 <template>
-  <page-view class="container" :gutter="0" :bgColor="false">
+  <page-view
+    class="container"
+    :gutter="0"
+    :bgColor="false"
+    v-loading="getFieldsFetch.isFetching.value"
+  >
     <el-row :gutter="20">
       <el-col :span="4">
-        <el-card>
-          <template #header>
-            <div class="header">
-              <iconify-icon icon="carbon:model-alt" />
-              <span>表单</span>
-              <div class="button">
-                <iconify-icon icon="ant-design:appstore-add-outlined" :size="18" />
-              </div>
-            </div>
+        <CardTitle title="表单" icon="carbon:model-alt">
+          <template #button>
+            <el-button type="primary">创建</el-button>
           </template>
           <FormTree
-            :data="forms"
-            v-loading="getModelFetch.isFetching.value"
+            ref="formTreeRef"
+            v-loading="getFormFetch.isFetching.value"
+            :data="getFormFetch.data.value ?? []"
             @select="onSelectForm"
+            @edit="(value) => onEditForm(value)"
+            @remove="onRemoveForm"
           />
-        </el-card>
+        </CardTitle>
       </el-col>
       <el-col :span="20">
-        <el-card>
-          <template #header>
-            <div class="header">
-              <iconify-icon icon="carbon:model-alt" />
-              <span>表单项</span>
-              <div class="button">
-                <iconify-icon icon="ant-design:appstore-add-outlined" :size="18" />
-              </div>
-            </div>
+        <CardTitle :title="title" icon="carbon:property-relationship">
+          <template #button>
+            <FormSelectDictionary
+              :name="DictionarNameEnum.ORGANIZATION"
+              v-model="selectOrg"
+              style="margin-right: 5px"
+              placeholder="请选择组织"
+              clearable
+              @change="onChangeOrg"
+            />
+            <el-button type="primary"> 设计表单 </el-button>
           </template>
-          <FormGrid :data="currentModel.fields" />
-        </el-card>
+          <FormFieldGrid :data="fields" />
+        </CardTitle>
       </el-col>
     </el-row>
   </page-view>
 </template>
-
 <script setup lang="ts">
-  import formApi, { Form } from '/@/api/tools/form';
-  import FormTree from './component/FormTree.vue';
-  import FormGrid from './component/FormGrid.vue';
+  import _ from 'lodash';
+  import formApi, { Form, FormField } from '/@/api/tools/form';
+  import { DictionarNameEnum } from '/@/enums/dictionarNameEnum';
   import { useHttpFetch } from '/@/hooks/fetch';
+  import FormTree from './component/FormTree.vue';
+  import FormFieldGrid from './component/FormFieldGrid.vue';
   import { log } from '/@/utils/log';
-
-  const currentModel = ref<Form>({
-    id: 'root',
-    name: '',
-    displayName: '',
-    fields: []
-  });
-
-  const getModelFetch = useHttpFetch<any, Form[]>(formApi.getAllModel, null, {
-    immediate: true
-  });
-  const forms = computed({
+  const getFieldsFetch = useHttpFetch(formApi.getFormFields);
+  const fields = computed<FormField[]>({
     get: () => {
-      return getModelFetch.data.value ?? [];
+      return getFieldsFetch.data.value ?? [];
     },
     set: (value) => {
-      getModelFetch.data.value = value;
+      getFieldsFetch.data.value = value;
     }
   });
-  const onSelectForm = (form: Form) => {
+
+  const getFormFetch = useHttpFetch(formApi.getAllForms, null, {
+    immediate: true
+  });
+  const getFeildFetch = useHttpFetch(formApi.getFormFields);
+  const formTreeRef = ref();
+  const selectOrg = ref<string>();
+  const current = ref<Form | null>();
+  const title = computed(() => {
+    if (current.value) {
+      return `${current.value.displayName}(${current.value.name}) - 表单字段`;
+    }
+    return '表单字段';
+  });
+  const onSelectForm = async (form: Form) => {
     log('select form', form);
-    currentModel.value = form;
+    if (current.value?.id == form.id) return;
+    current.value = form;
+    await getFieldsFetch.execute({ formId: form.id, objectId: selectOrg.value });
+  };
+  const onEditForm = (form: Form) => {
+    log('edit form', form);
+  };
+  const onChangeOrg = async (value) => {
+    if (current.value) {
+      await getFeildFetch.execute({ formId: current.value.id, objectId: value });
+    }
+  };
+  const onRemoveForm = (form: Form) => {
+    const index = getFormFetch.data.value.findIndex((t) => t.id == form.id);
+    getFormFetch.data.value.splice(index, 1);
+    if (current?.value.id === form.id) {
+      fields.value = [];
+      current.value = null;
+    }
   };
 </script>
 
 <style lang="scss" scoped>
   .container {
-    .el-card__header {
-      .header {
-        display: flex;
-        align-items: center;
-        height: 25px;
-        i {
-          font-size: 14px;
-          margin-right: 5px;
-        }
-        .button {
-          display: flex;
-          cursor: pointer;
-          margin-left: auto;
-        }
-      }
-    }
-    :deep(.el-card__body) {
-      min-height: calc($main-no-margin-height - 70px);
-    }
   }
 </style>

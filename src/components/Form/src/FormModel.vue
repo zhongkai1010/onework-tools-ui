@@ -1,3 +1,11 @@
+<!--
+ * @Author: zhongkai1010 zhongkai1010@163.com
+ * @Date: 2022-09-14 16:41:47
+ * @LastEditors: zhongkai1010 zhongkai1010@163.com
+ * @LastEditTime: 2022-09-21 15:34:17
+ * @FilePath: \onework-tools-ui\src\components\Form\src\FormModel.vue
+ * @Description:
+-->
 <template>
   <PropertyView
     v-model="root"
@@ -33,6 +41,7 @@
       const root: ModelProperty = {
         id: 'root',
         type: 'object',
+        parent: null,
         order: 1,
         children: getProperties(props.modelValue)
       };

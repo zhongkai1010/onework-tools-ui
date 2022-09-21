@@ -2,13 +2,15 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-21 10:57:25
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-21 14:34:40
+ * @LastEditTime: 2022-09-21 17:46:01
  * @FilePath: \onework-tools-ui\src\views\tools\helps.ts
  * @Description:
  */
 import _ from 'lodash';
 import { Random } from 'mockjs';
+import { FormTreeNode } from './form/types';
 import { ModelTreeNode } from './model/types';
+import { Form } from '/@/api/tools/form';
 import { DataType, EditModel, Model, ModelProperty } from '/@/api/tools/model';
 import { ModelField } from '/@/components/Form/types';
 
@@ -40,6 +42,42 @@ export const getModelTreeData = (models: Model[]): ModelTreeNode => {
         children: data[group].map((t) => {
           return { ...t, isLeaf: true };
         }) as ModelTreeNode[]
+      };
+      root.children.push(groupNode);
+    } else {
+      const nodes = _.sortBy(data[group]);
+      for (let j = 0; j < nodes.length; j++) {
+        const node = nodes[j];
+        root.children.push({ ...node, isLeaf: true });
+      }
+    }
+  }
+  return root;
+};
+
+export const getFormTreeData = (forms: Form[]): FormTreeNode => {
+  const root: FormTreeNode = {
+    id: 'root',
+    modelId: null,
+    name: 'root',
+    displayName: '所有表单',
+    isLeaf: false,
+    children: []
+  };
+  const data = _.groupBy(forms, (t: Form) => t.group ?? '');
+  const keys = _.sortBy(Object.keys(data));
+  for (let i = 0; i < keys.length; i++) {
+    const group = keys[i];
+    if (group != '') {
+      const groupNode: FormTreeNode = {
+        id: `${ROOT_NODE_KEY}_${group}`,
+        modelId: null,
+        name: `${ROOT_NODE_KEY}_${group}`,
+        isLeaf: false,
+        displayName: group,
+        children: data[group].map((t) => {
+          return { ...t, isLeaf: true };
+        })
       };
       root.children.push(groupNode);
     } else {

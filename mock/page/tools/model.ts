@@ -19,7 +19,7 @@ models = models.map((t: any) => {
 
 export default [
   {
-    url: '/api/tools/model/getAll',
+    url: '/api/tools/model/getAllModels',
     method: 'get',
     timeout: '2000',
     response: () => {
@@ -32,7 +32,7 @@ export default [
     }
   },
   {
-    url: '/api/tools/model/get',
+    url: '/api/tools/model/getModel',
     method: 'get',
     timeout: '2000',
     response: ({ query }) => {
@@ -45,7 +45,7 @@ export default [
     }
   },
   {
-    url: '/api/tools/model/delete',
+    url: '/api/tools/model/deleteModel',
     method: 'post',
     timeout: '2000',
     response: ({ query }) => {
@@ -59,7 +59,7 @@ export default [
     }
   },
   {
-    url: '/api/tools/model/save',
+    url: '/api/tools/model/saveModel',
     method: 'post',
     timeout: '2000',
     response: ({ body }) => {
@@ -86,7 +86,7 @@ export default [
     }
   },
   {
-    url: '/api/tools/modelProperty/getAll',
+    url: '/api/tools/model/getAllModelProperties',
     method: 'get',
     timeout: '2000',
     response: ({ query }) => {
@@ -111,7 +111,7 @@ export default [
     }
   },
   {
-    url: '/api/tools/modelProperty/save',
+    url: '/api/tools/model/saveModelProperty',
     method: 'post',
     timeout: '2000',
     response: ({ body }) => {
@@ -122,7 +122,7 @@ export default [
     }
   },
   {
-    url: '/api/tools/modelProperty/delete',
+    url: '/api/tools/modelProperty/deleteModelProperty',
     method: 'post',
     timeout: '2000',
     response: ({ _query }) => {

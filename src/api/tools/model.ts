@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-20 09:07:06
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-21 14:13:45
+ * @LastEditTime: 2022-09-21 15:54:53
  * @FilePath: \onework-tools-ui\src\api\tools\model.ts
  * @Description:
  */
@@ -51,39 +51,40 @@ export default {
    *
    * @returns
    */
-  getAllModels: () => http.get<Model[]>({ url: '/api/tools/model/getAll' }),
+  getAllModels: () => http.get<Model[]>({ url: '/api/tools/model/getAllModels' }),
   /**
    *  获取模块和模块属性
    *
    * @returns
    */
-  getModel: (id: string) => http.get<Model>({ url: '/api/tools/model/get', params: { id } }),
+  getModel: (id: string) => http.get<Model>({ url: '/api/tools/model/getModel', params: { id } }),
   /**
    *  删除模块
    *
    * @param params
    * @returns
    */
-  deleteModel: (id: string) => http.post({ url: '/api/tools/model/delete', params: { id } }),
+  deleteModel: (id: string) => http.post({ url: '/api/tools/model/deleteModel', params: { id } }),
   /**
    *  添加或修改模块
    * @param params
    * @returns
    */
-  saveModel: (model: EditModel) => http.post<Model>({ url: '/api/tools/model/save', data: model }),
+  saveModel: (model: EditModel) =>
+    http.post<Model>({ url: '/api/tools/model/saveModel', data: model }),
   /**
    *  获取模块属性集合
    * @param data
    */
   getModelProperties: (params: Recordable<any>) =>
-    http.get<ModelProperty[]>({ url: '/api/tools/modelProperty/getAll', params }),
+    http.get<ModelProperty[]>({ url: '/api/tools/model/getAllModelProperties', params }),
   /**
    *  添加或修改模块属性
    * @param params
    * @returns
    */
   saveProperty: (data: ModelProperty) =>
-    http.post<ModelProperty>({ url: '/api/tools/modelProperty/save', data }),
+    http.post<ModelProperty>({ url: '/api/tools/model/saveModelProperty', data }),
 
   /**
    *  删除模块属性
@@ -91,5 +92,5 @@ export default {
    * @returns
    */
   deleteProperty: (id: string) =>
-    http.post({ url: '/api/tools/modelProperty/delete', data: { id } })
+    http.post({ url: '/api/tools/model/deleteModelProperty', data: { id } })
 };

@@ -370,7 +370,7 @@ const components: Component[] = [
     ]
   },
   {
-    name: 'l-radio',
+    name: 'e-radio',
     displayName: 'Radio 单选框',
     props: [
       { propertyName: 'label', description: '单选框对应的值', dataType: 'string' },

@@ -12,14 +12,10 @@
         style="margin-right: 5px"
       />
       <el-col :span="5">
-        <el-input v-model="property.name" placeholder="API名称" :disabled="props.disabled" />
+        <el-input v-model="property.name" placeholder="属性名" :disabled="props.disabled" />
       </el-col>
       <el-col :span="5">
-        <el-input
-          v-model="property.displayName"
-          placeholder="字段名称"
-          :disabled="props.disabled"
-        />
+        <el-input v-model="property.displayName" placeholder="中文名" :disabled="props.disabled" />
       </el-col>
       <el-col :span="5">
         <el-select
@@ -38,7 +34,7 @@
         </el-select>
       </el-col>
       <el-col :span="5">
-        <el-input v-model="property.remark" placeholder="remark" :disabled="props.disabled" />
+        <el-input v-model="property.remark" placeholder="描述" :disabled="props.disabled" />
       </el-col>
       <div class="operate">
         <iconify-icon

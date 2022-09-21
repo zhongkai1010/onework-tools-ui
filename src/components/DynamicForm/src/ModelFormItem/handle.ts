@@ -1,3 +1,11 @@
+/*
+ * @Author: zhongkai1010 zhongkai1010@163.com
+ * @Date: 2022-09-13 09:20:04
+ * @LastEditors: zhongkai1010 zhongkai1010@163.com
+ * @LastEditTime: 2022-09-21 15:37:05
+ * @FilePath: \onework-tools-ui\src\components\DynamicForm\src\ModelFormItem\handle.ts
+ * @Description:
+ */
 import _ from 'lodash';
 import { Field, Property } from './types';
 
@@ -45,8 +53,8 @@ export default function (data?: Field[]) {
       const lastOrder = children.length + 1;
       newField.order = lastOrder;
     }
-    newField.name = `field${max}`;
-    newField.displayName = `字段名称${max}`;
+    newField.name = `name${max}`;
+    newField.displayName = `属性名称${max}`;
     fields.value.push(newField);
     max += 1;
   };
