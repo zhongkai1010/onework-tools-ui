@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-13 09:34:46
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-20 18:05:36
+ * @LastEditTime: 2022-09-21 11:08:52
  * @FilePath: \onework-tools-ui\src\views\tools\model\index.vue
  * @Description:
 -->
@@ -20,6 +20,7 @@
             <el-button type="primary" @click="onEditModel()">创建</el-button>
           </template>
           <ModelTree
+            ref="modelTreeRef"
             v-loading="getModelFetch.isFetching.value"
             :data="getModelFetch.data.value ?? []"
             @select="onSelectModel"
@@ -73,7 +74,8 @@
   import PropertyGrid from './components/PropertyGrid.vue';
   import ModelEditDialog from './components/ModelEditDialog.vue';
   import PropertyEditDialog from './components/PropertyEditDialog.vue';
-  import { ModelEditInstance, PropertyEditInstance } from './types';
+  import { ModelEditInstance, ModelTreeInstance, PropertyEditInstance } from './types';
+  import { log } from '/@/utils/log';
 
   const getModelFetch = useHttpFetch(modelApi.getAllModels, null, {
     immediate: true
@@ -83,6 +85,8 @@
   const savePropertyFetch = useHttpFetch(modelApi.saveProperty);
   const modelEditRef = ref<ModelEditInstance>();
   const propertyEditRef = ref<PropertyEditInstance>();
+  const modelTreeRef = ref<ModelTreeInstance>();
+
   const properties = computed<ModelProperty[]>({
     get: () => {
       return getPropertyFetch.data.value ?? [];
@@ -92,7 +96,7 @@
     }
   });
   const selectOrg = ref<string>();
-  const currentModel = ref<Model>();
+  const currentModel = ref<Model | null>();
   const title = computed(() => {
     if (currentModel.value) {
       return `${currentModel.value.displayName}(${currentModel.value.name}) - 模型属性`;
@@ -100,6 +104,8 @@
     return '模型属性';
   });
   const onSelectModel = async (model: Model) => {
+    log('select model', model);
+    if (currentModel.value?.id == model.id) return;
     currentModel.value = model;
     await getPropertyFetch.execute({ modelId: model.id, objectId: selectOrg.value });
   };
@@ -111,32 +117,37 @@
     getModelFetch.data.value.splice(index, 1);
     if (currentModel?.value.id === model.id) {
       properties.value = [];
+      currentModel.value = null;
     }
   };
-  const onSaveModel = (model: Model) => {
+  const onSaveModel = async (model: Model) => {
     const index = getModelFetch.data.value.findIndex((t) => t.id == model.id);
     if (index >= 0) {
       getModelFetch.data.value.splice(index, 1, model);
     } else {
       getModelFetch.data.value.push(model);
     }
-    if (currentModel.value.id === model.id) {
-      properties.value = model.properties;
+    modelTreeRef.value.selectNode({ ...model, isLeaf: true });
+    if (model.id == currentModel.value?.id) {
+      await onSelectModel(model);
     }
+    log('save model', model);
   };
-  const onRemoveProperty = (property: ModelProperty) => {
-    deletePropertyFetch.execute(property.id).then(() => {
-      const index = getPropertyFetch.data.value.findIndex((t) => t.id == property.id);
-      getPropertyFetch.data.value.splice(index, 1);
-    });
+  const onRemoveProperty = async (property: ModelProperty) => {
+    await deletePropertyFetch.execute(property.id);
+    const index = getPropertyFetch.data.value.findIndex((t) => t.id == property.id);
+    getPropertyFetch.data.value.splice(index, 1);
   };
-  const onEditProperty = (property: ModelProperty) => propertyEditRef.value.open(property);
-
+  const onEditProperty = (property: ModelProperty) => {
+    log('start edit property', property);
+    propertyEditRef.value.open(property);
+  };
   const onUpdateProperty = async (property: ModelProperty) => {
     await savePropertyFetch.execute(property);
   };
   const onSaveProperty = (property: ModelProperty) => {
-    console.log(property);
+    const index = getPropertyFetch.data.value.findIndex((t) => t.id === property.id);
+    getPropertyFetch.data.value.splice(index, 1, property);
   };
   const onChangeOrg = async (value) => {
     if (currentModel.value) {

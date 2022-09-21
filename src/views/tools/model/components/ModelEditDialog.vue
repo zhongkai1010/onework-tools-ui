@@ -58,32 +58,22 @@
 <script setup lang="ts">
   import { FormInstance } from 'element-plus';
   import { ModelEditInstance } from '../types';
-
-  import modelApi, { Model, ModelProperty, EditModel } from '/@/api/tools/model';
-
   import { useHttpFetch } from '/@/hooks/fetch';
   import { useMessage } from '/@/hooks/web/useMessage';
   import { ModelField } from '/@/components/Form/types';
+  import { log } from '/@/utils/log';
+  import { DEFULT_MODEL, getField, getProperty } from '../helps';
+  import modelApi, { Model, EditModel } from '/@/api/tools/model';
 
   const { message } = useMessage();
   const emit = defineEmits<{ (e: 'save', value: Model) }>();
+
   const saveModelFetch = useHttpFetch(modelApi.saveModel);
   const getModelFetch = useHttpFetch(modelApi.getModel);
-
   const formRef = ref<FormInstance>();
   const show = ref(false);
   const model = computed<EditModel>({
-    get: () => {
-      let model: EditModel = {
-        name: '',
-        displayName: '',
-        properties: []
-      };
-      if (getModelFetch.data.value) {
-        model = getModelFetch.data.value;
-      }
-      return model;
-    },
+    get: () => getModelFetch.data.value ?? DEFULT_MODEL,
     set: (value) => {
       getModelFetch.data.value = value as Model;
     }
@@ -91,81 +81,32 @@
   const properties = ref<ModelField[]>([]);
 
   const onClickSubmit = async (formEl: FormInstance | undefined) => {
-    await formEl.validate(async (valid) => {
-      if (valid) {
-        const data: EditModel = {
-          id: model.value.id,
-          name: model.value.name,
-          displayName: model.value.displayName,
-          group: model.value.group,
-          properties: properties.value.map(getProperty)
-        };
-
-        saveModelFetch
-          .execute(data as EditModel)
-          .then((result) => {
-            message('提交成功！', 'success');
-            show.value = false;
-            emit('save', result as Model);
-          })
-          .catch(() => {
-            message('提交异常！', 'error');
-          });
-      } else {
+    await formEl.validate(async (valid, fields) => {
+      if (!valid) {
+        log('submit model verification failed', fields);
         message('表单验证失败！', 'error');
+        return;
       }
+      const data = {
+        ...model.value,
+        properties: properties.value.map(getProperty)
+      } as EditModel;
+      const result = await saveModelFetch.execute(data);
+      show.value = false;
+      message('提交成功！', 'success');
+      emit('save', result);
     });
   };
-
-  const onOpen = (value?: Model) => {
+  const onOpen = async (value?: Model) => {
     show.value = true;
     if (value) {
-      getModelFetch.execute(value.id).then((t) => {
-        model.value = t;
-        properties.value = (t.properties ?? []).map(getField);
-      });
+      const result = await getModelFetch.execute(value.id);
+      model.value = result;
+      properties.value = (result.properties ?? []).map(getField);
     } else {
-      model.value = {
-        name: '',
-        displayName: '',
-        properties: []
-      };
+      model.value = { ...DEFULT_MODEL };
       properties.value = [];
     }
-  };
-
-  const getField = (property: ModelProperty): ModelField => {
-    const field: ModelField = {
-      ...property,
-      id: property.id,
-      name: property.name,
-      displayName: property.displayName,
-      type: property.propertyType,
-      array: property.arrayType,
-      required: property.required,
-      parent: property.parentId,
-      parentPath: property.parentIds,
-      order: property.order,
-      remark: property.remark
-    };
-    return field;
-  };
-
-  const getProperty = (field: ModelField): Omit<ModelProperty, 'modelId'> => {
-    const property: Omit<ModelProperty, 'modelId'> = {
-      ...field,
-      id: field.id,
-      name: field.name,
-      displayName: field.displayName,
-      propertyType: field.type,
-      arrayType: field.array,
-      required: field.required,
-      parentId: field.parent,
-      parentIds: field.parentPath,
-      order: field.order,
-      remark: field.remark
-    };
-    return property;
   };
 
   defineExpose<ModelEditInstance>({

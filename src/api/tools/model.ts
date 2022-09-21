@@ -1,3 +1,11 @@
+/*
+ * @Author: zhongkai1010 zhongkai1010@163.com
+ * @Date: 2022-09-20 09:07:06
+ * @LastEditors: zhongkai1010 zhongkai1010@163.com
+ * @LastEditTime: 2022-09-21 11:23:52
+ * @FilePath: \onework-tools-ui\src\api\tools\model.ts
+ * @Description:
+ */
 import { http } from '/@/plugins/axios';
 
 export interface Model {
@@ -17,9 +25,9 @@ export interface ModelProperty {
   arrayType?: 'string' | 'number' | 'array' | 'boolean' | 'intger' | 'object';
   required: boolean;
   defaultValue?: string;
+  order: number;
   parentId: string | null;
   parentIds?: string;
-  order: number;
   remark?: string;
   objectId?: string;
   objectName?: string;
@@ -60,7 +68,7 @@ export default {
    * @param params
    * @returns
    */
-  saveModel: (model: EditModel) => http.post({ url: '/api/tools/model/save', data: model }),
+  saveModel: (model: EditModel) => http.post<Model>({ url: '/api/tools/model/save', data: model }),
   /**
    *  获取模块属性集合
    * @param data
@@ -72,7 +80,8 @@ export default {
    * @param params
    * @returns
    */
-  saveProperty: (data: ModelProperty) => http.post({ url: '/api/tools/modelProperty/save', data }),
+  saveProperty: (data: ModelProperty) =>
+    http.post<ModelProperty>({ url: '/api/tools/modelProperty/save', data }),
 
   /**
    *  删除模块属性

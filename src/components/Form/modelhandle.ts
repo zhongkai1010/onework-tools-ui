@@ -1,3 +1,11 @@
+/*
+ * @Author: zhongkai1010 zhongkai1010@163.com
+ * @Date: 2022-09-14 16:45:07
+ * @LastEditors: zhongkai1010 zhongkai1010@163.com
+ * @LastEditTime: 2022-09-21 09:31:09
+ * @FilePath: \onework-tools-ui\src\components\Form\modelhandle.ts
+ * @Description:
+ */
 import _ from 'lodash';
 import { ModelField, ModelProperty } from './types';
 
@@ -19,6 +27,7 @@ export default function (fields?: ModelField[]) {
       type: 'string',
       required: false,
       order: order ?? 1,
+      parent: null,
       array: 'string'
     };
 

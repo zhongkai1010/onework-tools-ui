@@ -157,8 +157,6 @@ function generatePropertyChilds(modelId, parent?): any[] {
     defaultValue: null,
     parentId: null,
     parentIds: null,
-    order: Random.integer(1, 100),
-    // objectId: Random.pick(OrganizationValues)
     objectId,
     objectName
   };
