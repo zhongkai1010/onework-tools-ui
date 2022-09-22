@@ -72,6 +72,7 @@ export default [
       const form = body;
       if (form.id) {
         const index = forms.findIndex((t) => t.id == form.id);
+        form.fields = forms[index].fields;
         forms.splice(index, 1, form);
       } else {
         form.id = buildUUID();

@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-19 09:17:41
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-21 17:58:01
+ * @LastEditTime: 2022-09-22 10:33:58
  * @FilePath: \onework-tools-ui\src\api\tools\form.ts
  * @Description:
  */
@@ -37,6 +37,7 @@ export interface FormField {
   showLabel?: boolean;
   setp: number | null;
   group: string | null;
+  order: number;
   remark?: string;
   objectId?: string;
   objectName?: string;

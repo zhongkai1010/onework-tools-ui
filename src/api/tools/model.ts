@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-20 09:07:06
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-21 15:54:53
+ * @LastEditTime: 2022-09-22 10:36:08
  * @FilePath: \onework-tools-ui\src\api\tools\model.ts
  * @Description:
  */
@@ -14,6 +14,7 @@ export interface Model {
   displayName: string;
   group?: string;
   properties?: ModelProperty[];
+  description?: string;
 }
 
 export interface ModelProperty {

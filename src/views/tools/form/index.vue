@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-16 15:26:20
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-21 17:37:15
+ * @LastEditTime: 2022-09-22 10:13:35
  * @FilePath: \onework-tools-ui\src\views\tools\form\index.vue
  * @Description:
 -->
@@ -17,7 +17,7 @@
       <el-col :span="4">
         <CardTitle title="表单" icon="carbon:model-alt">
           <template #button>
-            <el-button type="primary">创建</el-button>
+            <el-button type="primary" @click="formEditRef.open()">创建</el-button>
           </template>
           <FormTree
             ref="formTreeRef"
@@ -46,6 +46,7 @@
         </CardTitle>
       </el-col>
     </el-row>
+    <FormEditDialog ref="formEditRef" />
   </page-view>
 </template>
 <script setup lang="ts">
@@ -55,7 +56,9 @@
   import { useHttpFetch } from '/@/hooks/fetch';
   import FormTree from './component/FormTree.vue';
   import FormFieldGrid from './component/FormFieldGrid.vue';
+  import FormEditDialog from './component/FormEditDialog.vue';
   import { log } from '/@/utils/log';
+  import { FormEditInstance } from './types';
   const getFieldsFetch = useHttpFetch(formApi.getFormFields);
   const fields = computed<FormField[]>({
     get: () => {
@@ -71,6 +74,7 @@
   });
   const getFeildFetch = useHttpFetch(formApi.getFormFields);
   const formTreeRef = ref();
+  const formEditRef = ref<FormEditInstance>();
   const selectOrg = ref<string>();
   const current = ref<Form | null>();
   const title = computed(() => {
@@ -87,6 +91,7 @@
   };
   const onEditForm = (form: Form) => {
     log('edit form', form);
+    formEditRef.value.open(form);
   };
   const onChangeOrg = async (value) => {
     if (current.value) {
