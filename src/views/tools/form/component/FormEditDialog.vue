@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-22 09:09:06
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-22 10:14:38
+ * @LastEditTime: 2022-09-23 17:24:09
  * @FilePath: \onework-tools-ui\src\views\tools\form\component\FormEditDialog.vue
  * @Description:
 -->
@@ -223,7 +223,10 @@
 
 <script setup lang="ts">
   import { FormInstance } from 'element-plus';
+  import { DEFULT_FORM } from '../../helps';
+
   import { FormEditInstance } from '../types';
+
   import formApi, { EditForm, Form } from '/@/api/tools/form';
   import { useHttpFetch } from '/@/hooks/fetch';
   import { useMessage } from '/@/hooks/web/useMessage';
@@ -258,7 +261,7 @@
     if (value) {
       form.value = { ...value, props: value.props ?? {} };
     } else {
-      form.value = { modelId: null, name: '', displayName: '', props: {} };
+      form.value = { ...DEFULT_FORM };
     }
   };
   defineExpose<FormEditInstance>({

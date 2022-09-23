@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-21 09:06:11
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-21 10:50:59
+ * @LastEditTime: 2022-09-23 16:44:25
  * @FilePath: \onework-tools-ui\src\views\tools\model\components\PropertyEditDialog.vue
  * @Description:
 -->
@@ -51,7 +51,7 @@
       <el-form-item label="组织编号">
         <FormSelectDictionary
           :name="DictionarNameEnum.ORGANIZATION"
-          v-model="property.objectId"
+          v-model="property.orgId"
           style="margin-right: 5px; width: 100%"
           placeholder="请选择组织"
           clearable
@@ -77,7 +77,7 @@
 
 <script setup lang="ts">
   import { PropertyEditInstance } from '../types';
-  import modelApi, { ModelProperty } from '/@/api/tools/model';
+  import modelApi, { Model, ModelProperty } from '/@/api/tools/model';
   import { DictionarNameEnum } from '/@/enums/dictionarNameEnum';
   import { useHttpFetch } from '/@/hooks/fetch';
 
@@ -85,19 +85,24 @@
   const emit = defineEmits<{
     (e: 'save', value: ModelProperty): void;
   }>();
+  const model = ref<Model>();
   const property = ref<ModelProperty>();
   const show = ref(false);
 
   const savePropertyFetch = useHttpFetch(modelApi.saveProperty);
 
   const onClickSubmit = async () => {
-    const result = await savePropertyFetch.execute(property.value);
+    const result = await savePropertyFetch.execute({
+      modelId: model.value.id,
+      data: property.value
+    });
     show.value = false;
     emit('save', result);
   };
-  const onOpen = (value: ModelProperty) => {
+  const onOpen = (m: Model, p: ModelProperty) => {
     show.value = true;
-    property.value = value;
+    model.value = m;
+    property.value = p;
   };
 
   defineExpose<PropertyEditInstance>({

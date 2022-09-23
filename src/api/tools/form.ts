@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-19 09:17:41
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-22 10:33:58
+ * @LastEditTime: 2022-09-23 18:00:17
  * @FilePath: \onework-tools-ui\src\api\tools\form.ts
  * @Description:
  */
@@ -10,22 +10,20 @@ import { http } from '/@/plugins/axios';
 
 export interface Form {
   id: string;
-  modelId: string | null;
+  modelId?: string;
   name: string;
   displayName: string;
   group?: string;
-  url?: string;
-  isSetp?: boolean;
-  isGroup?: boolean;
-  isOperate?: boolean;
+  url: string;
+  steps?: number;
+  fieldGroups: Array<string>;
+  isOperate: boolean;
   props?: Recordable<any>;
-  fields?: FormField[];
+  fields: FormField[];
   remark?: string;
 }
 
 export interface FormField {
-  id: string;
-  formId: string;
   propertyId: string | null;
   label?: string;
   name: string;
@@ -35,22 +33,17 @@ export interface FormField {
   required?: boolean;
   defaultValue: string | null;
   showLabel?: boolean;
-  setp: number | null;
-  group: string | null;
+  setp?: number;
+  group?: string;
   order: number;
   remark?: string;
-  objectId?: string;
-  objectName?: string;
-}
-
-export interface EditFormField extends Omit<FormField, 'id' | 'formId'> {
-  id?: string;
-  formId?: string;
+  orgId?: string;
+  orgName?: string;
 }
 
 export interface EditForm extends Omit<Form, 'id' | 'fields'> {
   id?: string;
-  fields?: EditFormField[];
+  fields?: FormField[];
 }
 
 export default {

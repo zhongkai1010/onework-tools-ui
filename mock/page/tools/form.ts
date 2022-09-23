@@ -12,9 +12,9 @@ let forms: any[] = mock({
       displayName: '@ctitle(4,6)',
       'group|1': [null, '系统', '工具', '平台', '流程', '运维'],
       url: '@url()',
-      'isSetp|1': true,
-      'isGroup|1': true,
+      'fieldGroups|2': ['@ctitle(4,6)'],
       'isOperate|1': true,
+      props: {},
       remark: '@cparagraph()'
     }
   ]
@@ -32,9 +32,7 @@ export default [
     response: () => {
       return {
         code: 0,
-        result: forms.map((t) => {
-          return { ...t, fields: undefined };
-        })
+        result: forms
       };
     }
   },
@@ -76,13 +74,6 @@ export default [
         forms.splice(index, 1, form);
       } else {
         form.id = buildUUID();
-        form.fields = form.fields.map((t) => {
-          return {
-            ...t,
-            id: buildUUID(),
-            formId: form.id
-          };
-        });
         forms.push(form);
       }
       return {
@@ -97,12 +88,12 @@ export default [
     timeout: '2000',
     response: ({ query }) => {
       const formId = query.formId;
-      const objectId = query.objectId;
+      const orgId = query.orgId;
       const form = forms.find((t) => t.id === formId);
       let result = [];
       if (form) {
-        if (objectId) {
-          result = form.fields.filter((t) => t.objectId == objectId || !t.objectId);
+        if (orgId) {
+          result = form.fields.filter((t) => t.orgId == orgId || !t.orgId);
         } else {
           result = form.fields;
         }
@@ -114,7 +105,7 @@ export default [
     }
   },
   {
-    url: '/api/tools/model/saveModelProperty',
+    url: '/api/tools/form/saveModelProperty',
     method: 'post',
     timeout: '2000',
     response: ({ body }) => {
@@ -123,7 +114,7 @@ export default [
       const form = forms.find((t) => t.id === formId);
       const fields = form.fields as any[];
       const fieldIndex = fields.findIndex((t) => t.id == filedId);
-      const field = { ...body, id: buildUUID() };
+      const field = { ...body };
       fields.splice(fieldIndex, 1, field);
       form.fields = fields;
       const formIndex = forms.findIndex((t) => t.id == formId);
@@ -135,7 +126,7 @@ export default [
     }
   },
   {
-    url: '/api/tools/model/deleteField',
+    url: '/api/tools/form/deleteField',
     method: 'post',
     timeout: '2000',
     response: ({ query }) => {
@@ -156,11 +147,11 @@ export default [
 
 function generateProperty(form) {
   const random = Random.pick([1, 3, 4, 7, 9]); //随机组织
-  const objectId = random % 2 == 0 ? Random.pick([1, 2, 3]) : null;
-
-  let objectName = '';
-  if (objectId) {
-    objectName = objectId;
+  const orgId = random % 2 == 0 ? Random.pick([1, 2, 3]) : null;
+  const orgs = [null, '组织1', '组织2', '组织3'];
+  let orgName = null;
+  if (random) {
+    orgName = orgs[orgId];
   }
   const ComponentTypes = ComponentData.map((t) => t.name);
   const property = {
@@ -178,8 +169,8 @@ function generateProperty(form) {
     setp: form.isSetp ? Random.pick([1, 2, 3]) : null,
     group: form.isGroup ? Random.pick(['分组1', '分组2', '分组3']) : null,
     remark: Random.cparagraph(),
-    objectId: objectId,
-    objectName: objectName
+    orgId,
+    orgName
   };
   return property;
 }

@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-20 09:07:06
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-21 15:38:36
+ * @LastEditTime: 2022-09-23 17:18:56
  * @FilePath: \onework-tools-ui\src\views\tools\model\components\PropertyGrid.vue
  * @Description:
 -->
@@ -27,7 +27,11 @@
       </template>
     </el-table-column>
     <el-table-column label="描述" prop="remark" />
-    <el-table-column label="所属组织" prop="objectName" />
+    <el-table-column label="所属组织" prop="objectName">
+      <template #default="scope">
+        {{ isNumber(scope.row.orgId) ? orgs[scope.row.orgId] : '' }}
+      </template>
+    </el-table-column>
 
     <el-table-column prop="operate" label="操作" align="center">
       <template #default="scope">
@@ -42,9 +46,10 @@
   import { ModelProperty } from '/@/api/tools/model';
   import { generateTreeNodes } from '/@/utils/tree';
   import { useMessage } from '/@/hooks/web/useMessage';
+  import { isNumber } from 'lodash';
 
   const { confirm } = useMessage();
-
+  const orgs = [null, '组织1', '组织2', '组织3'];
   const props = defineProps<{
     data: ModelProperty[];
   }>();

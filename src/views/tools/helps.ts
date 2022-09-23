@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-21 10:57:25
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-21 17:46:01
+ * @LastEditTime: 2022-09-23 17:24:50
  * @FilePath: \onework-tools-ui\src\views\tools\helps.ts
  * @Description:
  */
@@ -10,7 +10,7 @@ import _ from 'lodash';
 import { Random } from 'mockjs';
 import { FormTreeNode } from './form/types';
 import { ModelTreeNode } from './model/types';
-import { Form } from '/@/api/tools/form';
+import { EditForm, Form } from '/@/api/tools/form';
 import { DataType, EditModel, Model, ModelProperty } from '/@/api/tools/model';
 import { ModelField } from '/@/components/Form/types';
 
@@ -21,13 +21,26 @@ export const DEFULT_MODEL: EditModel = {
   properties: []
 };
 
+export const DEFULT_FORM: EditForm = {
+  modelId: null,
+  name: '',
+  url: '',
+  isGroup: false,
+  isOperate: false,
+  isSetp: false,
+  displayName: '',
+  props: {},
+  fields: []
+};
+
 export const getModelTreeData = (models: Model[]): ModelTreeNode => {
   const root: ModelTreeNode = {
     id: 'root',
     name: 'root',
     displayName: '所有模型',
     isLeaf: false,
-    children: []
+    children: [],
+    properties: []
   };
   const data = _.groupBy(models, (t: Model) => t.group ?? '');
   const keys = _.sortBy(Object.keys(data));
@@ -39,6 +52,7 @@ export const getModelTreeData = (models: Model[]): ModelTreeNode => {
         name: `${ROOT_NODE_KEY}_${group}`,
         isLeaf: false,
         displayName: group,
+        properties: [],
         children: data[group].map((t) => {
           return { ...t, isLeaf: true };
         }) as ModelTreeNode[]
@@ -57,12 +71,17 @@ export const getModelTreeData = (models: Model[]): ModelTreeNode => {
 
 export const getFormTreeData = (forms: Form[]): FormTreeNode => {
   const root: FormTreeNode = {
-    id: 'root',
     modelId: null,
+    id: 'root',
     name: 'root',
     displayName: '所有表单',
     isLeaf: false,
-    children: []
+    children: [],
+    url: '',
+    isGroup: false,
+    isOperate: false,
+    isSetp: false,
+    fields: []
   };
   const data = _.groupBy(forms, (t: Form) => t.group ?? '');
   const keys = _.sortBy(Object.keys(data));
@@ -77,7 +96,12 @@ export const getFormTreeData = (forms: Form[]): FormTreeNode => {
         displayName: group,
         children: data[group].map((t) => {
           return { ...t, isLeaf: true };
-        })
+        }),
+        url: '',
+        isGroup: false,
+        isOperate: false,
+        isSetp: false,
+        fields: []
       };
       root.children.push(groupNode);
     } else {

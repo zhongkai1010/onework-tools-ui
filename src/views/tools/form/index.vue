@@ -2,17 +2,12 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-16 15:26:20
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-22 10:13:35
+ * @LastEditTime: 2022-09-23 17:14:23
  * @FilePath: \onework-tools-ui\src\views\tools\form\index.vue
  * @Description:
 -->
 <template>
-  <page-view
-    class="container"
-    :gutter="0"
-    :bgColor="false"
-    v-loading="getFieldsFetch.isFetching.value"
-  >
+  <page-view class="container" :gutter="0" :bgColor="false">
     <el-row :gutter="20">
       <el-col :span="4">
         <CardTitle title="表单" icon="carbon:model-alt">
@@ -21,11 +16,11 @@
           </template>
           <FormTree
             ref="formTreeRef"
-            v-loading="getFormFetch.isFetching.value"
-            :data="getFormFetch.data.value ?? []"
-            @select="onSelectForm"
-            @edit="(value) => onEditForm(value)"
-            @remove="onRemoveForm"
+            v-loading="formHook.isFetching.value"
+            :data="formHook.data.value ?? []"
+            @select="(form) => formHook.setCurrent(form)"
+            @edit="(form) => formEditRef.open(form)"
+            @remove="(form) => formHook.removeForm(form)"
           />
         </CardTitle>
       </el-col>
@@ -34,15 +29,14 @@
           <template #button>
             <FormSelectDictionary
               :name="DictionarNameEnum.ORGANIZATION"
-              v-model="selectOrg"
+              v-model="formHook.selectOrg.value"
               style="margin-right: 5px"
               placeholder="请选择组织"
               clearable
-              @change="onChangeOrg"
             />
             <el-button type="primary"> 设计表单 </el-button>
           </template>
-          <FormFieldGrid :data="fields" />
+          <FormFieldGrid :data="formHook.fields.value" />
         </CardTitle>
       </el-col>
     </el-row>
@@ -51,61 +45,26 @@
 </template>
 <script setup lang="ts">
   import _ from 'lodash';
-  import formApi, { Form, FormField } from '/@/api/tools/form';
+
   import { DictionarNameEnum } from '/@/enums/dictionarNameEnum';
-  import { useHttpFetch } from '/@/hooks/fetch';
+
   import FormTree from './component/FormTree.vue';
   import FormFieldGrid from './component/FormFieldGrid.vue';
   import FormEditDialog from './component/FormEditDialog.vue';
-  import { log } from '/@/utils/log';
   import { FormEditInstance } from './types';
-  const getFieldsFetch = useHttpFetch(formApi.getFormFields);
-  const fields = computed<FormField[]>({
-    get: () => {
-      return getFieldsFetch.data.value ?? [];
-    },
-    set: (value) => {
-      getFieldsFetch.data.value = value;
-    }
-  });
 
-  const getFormFetch = useHttpFetch(formApi.getAllForms, null, {
-    immediate: true
-  });
-  const getFeildFetch = useHttpFetch(formApi.getFormFields);
+  import useForm from './useForm';
+
+  const formHook = useForm();
   const formTreeRef = ref();
   const formEditRef = ref<FormEditInstance>();
-  const selectOrg = ref<string>();
-  const current = ref<Form | null>();
+
   const title = computed(() => {
-    if (current.value) {
-      return `${current.value.displayName}(${current.value.name}) - 表单字段`;
+    if (formHook.current.value) {
+      return `${formHook.current.value.displayName}(${formHook.current.value.name}) - 表单字段`;
     }
     return '表单字段';
   });
-  const onSelectForm = async (form: Form) => {
-    log('select form', form);
-    if (current.value?.id == form.id) return;
-    current.value = form;
-    await getFieldsFetch.execute({ formId: form.id, objectId: selectOrg.value });
-  };
-  const onEditForm = (form: Form) => {
-    log('edit form', form);
-    formEditRef.value.open(form);
-  };
-  const onChangeOrg = async (value) => {
-    if (current.value) {
-      await getFeildFetch.execute({ formId: current.value.id, objectId: value });
-    }
-  };
-  const onRemoveForm = (form: Form) => {
-    const index = getFormFetch.data.value.findIndex((t) => t.id == form.id);
-    getFormFetch.data.value.splice(index, 1);
-    if (current?.value.id === form.id) {
-      fields.value = [];
-      current.value = null;
-    }
-  };
 </script>
 
 <style lang="scss" scoped>

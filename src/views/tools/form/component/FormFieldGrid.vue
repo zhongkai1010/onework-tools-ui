@@ -21,10 +21,13 @@
         />
       </template>
     </el-table-column>
-    <el-table-column label="描述" prop="remark" show-overflow-tooltip />
     <el-table-column label="步骤" prop="setp" />
     <el-table-column label="分组" prop="group" />
-    <el-table-column label="所属组织" prop="objectName" />
+    <el-table-column label="所属组织" prop="orgId">
+      <template #default="scope">
+        {{ isNumber(scope.row.orgId) ? orgs[scope.row.orgId] : '' }}
+      </template>
+    </el-table-column>
     <el-table-column prop="operate" label="操作" align="center">
       <template #default="scope">
         <el-button link type="primary" @click="emit('edit', scope.row)"> 编辑 </el-button>
@@ -35,11 +38,14 @@
 </template>
 
 <script setup lang="ts">
+  import { isNumber } from 'lodash';
   import { FormField } from '/@/api/tools/form';
 
   import { useMessage } from '/@/hooks/web/useMessage';
 
   const { confirm } = useMessage();
+
+  const orgs = [null, '组织1', '组织2', '组织3'];
 
   const props = defineProps<{
     data: FormField[];

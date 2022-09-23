@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-20 09:07:06
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-22 10:36:08
+ * @LastEditTime: 2022-09-23 16:36:07
  * @FilePath: \onework-tools-ui\src\api\tools\model.ts
  * @Description:
  */
@@ -13,13 +13,12 @@ export interface Model {
   name: string;
   displayName: string;
   group?: string;
-  properties?: ModelProperty[];
+  properties: ModelProperty[];
   description?: string;
 }
 
 export interface ModelProperty {
   id: string;
-  modelId: string;
   name: string;
   displayName: string;
   propertyType: DataType;
@@ -30,8 +29,8 @@ export interface ModelProperty {
   parentId: string | null;
   parentIds?: string;
   remark?: string;
-  objectId?: string;
-  objectName?: string;
+  orgId?: string;
+  orgName?: string;
 }
 
 export type DataType = 'string' | 'number' | 'array' | 'boolean' | 'intger' | 'object';
@@ -84,14 +83,18 @@ export default {
    * @param params
    * @returns
    */
-  saveProperty: (data: ModelProperty) =>
-    http.post<ModelProperty>({ url: '/api/tools/model/saveModelProperty', data }),
+  saveProperty: (params: { modelId: string; data: ModelProperty }) =>
+    http.post<ModelProperty>({
+      url: '/api/tools/model/saveModelProperty',
+      params: { modelId: params.modelId },
+      data: params.data
+    }),
 
   /**
    *  删除模块属性
    * @param params
    * @returns
    */
-  deleteProperty: (id: string) =>
-    http.post({ url: '/api/tools/model/deleteModelProperty', data: { id } })
+  deleteProperty: (params: { modelId: string; name: string }) =>
+    http.post({ url: '/api/tools/model/deleteModelProperty', data: params })
 };

@@ -2,30 +2,25 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-13 09:34:46
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-21 14:56:11
+ * @LastEditTime: 2022-09-23 16:48:31
  * @FilePath: \onework-tools-ui\src\views\tools\model\index.vue
  * @Description:
 -->
 <template>
-  <page-view
-    class="container"
-    :gutter="0"
-    :bgColor="false"
-    v-loading="getPropertyFetch.isFetching.value"
-  >
+  <page-view class="container" :gutter="0" :bgColor="false">
     <el-row :gutter="20">
       <el-col :span="4">
         <CardTitle title="数据模型" icon="carbon:model-alt">
           <template #button>
-            <el-button type="primary" @click="onEditModel()">创建</el-button>
+            <el-button type="primary" @click="modelEditRef.open()">创建</el-button>
           </template>
           <ModelTree
             ref="modelTreeRef"
-            v-loading="getModelFetch.isFetching.value"
-            :data="getModelFetch.data.value ?? []"
-            @select="onSelectModel"
-            @edit="(value) => onEditModel(value)"
-            @remove="onRemoveModel"
+            v-loading="modelHook.isFetching.value"
+            :data="modelHook.data.value ?? []"
+            @select="(model) => modelHook.setCurrentModel(model)"
+            @edit="(model) => modelEditRef.open(model)"
+            @remove="(model) => modelHook.removeModel(model)"
           />
         </CardTitle>
       </el-col>
@@ -34,11 +29,10 @@
           <template #button>
             <FormSelectDictionary
               :name="DictionarNameEnum.ORGANIZATION"
-              v-model="selectOrg"
+              v-model="modelHook.selectOrg.value"
               style="margin-right: 5px"
               placeholder="请选择组织"
               clearable
-              @change="onChangeOrg"
             />
             <el-dropdown @command="onClickCommand">
               <el-button type="primary"> 生成代码 </el-button>
@@ -52,9 +46,9 @@
             </el-dropdown>
           </template>
           <PropertyGrid
-            :data="properties"
+            :data="modelHook.properties.value"
             @remove="onRemoveProperty"
-            @edit="onEditProperty"
+            @edit="(property) => propertyEditRef.open(modelHook.currentModel.value, property)"
             @update="onUpdateProperty"
             v-loading="deletePropertyFetch.isFetching.value"
           />
@@ -62,7 +56,7 @@
       </el-col>
     </el-row>
     <ModelEditDialog ref="modelEditRef" @save="onSaveModel" />
-    <PropertyEditDialog ref="propertyEditRef" @save="onSaveProperty" />
+    <PropertyEditDialog ref="propertyEditRef" @save="modelHook.saveProperty" />
     <JsonPreview ref="jsonPreviewRef" />
   </page-view>
 </template>
@@ -84,91 +78,51 @@
   } from './types';
   import { log } from '/@/utils/log';
   import { generateJson } from '../helps';
+  import useModel from './useModel';
 
-  const getModelFetch = useHttpFetch(modelApi.getAllModels, null, {
-    immediate: true
-  });
-  const getPropertyFetch = useHttpFetch(modelApi.getModelProperties);
+  const modelHook = useModel();
+
   const deletePropertyFetch = useHttpFetch(modelApi.deleteProperty);
   const savePropertyFetch = useHttpFetch(modelApi.saveProperty);
   const modelEditRef = ref<ModelEditInstance>();
   const propertyEditRef = ref<PropertyEditInstance>();
   const modelTreeRef = ref<ModelTreeInstance>();
   const jsonPreviewRef = ref<JsonPreviewInstance>();
-  const properties = computed<ModelProperty[]>({
-    get: () => {
-      return getPropertyFetch.data.value ?? [];
-    },
-    set: (value) => {
-      getPropertyFetch.data.value = value;
-    }
-  });
-  const selectOrg = ref<string>();
-  const currentModel = ref<Model | null>();
+
   const title = computed(() => {
-    if (currentModel.value) {
-      return `${currentModel.value.displayName}(${currentModel.value.name}) - 模型属性`;
+    if (modelHook.currentModel.value) {
+      return `${modelHook.currentModel.value.displayName}(${modelHook.currentModel.value.name}) - 模型属性`;
     }
     return '模型属性';
   });
-  const onSelectModel = async (model: Model) => {
-    log('select model', model);
-    if (currentModel.value?.id == model.id) return;
-    currentModel.value = model;
-    await getPropertyFetch.execute({ modelId: model.id, objectId: selectOrg.value });
-  };
-  const onEditModel = (model?: Model) => {
-    modelEditRef.value.open(model);
-  };
-  const onRemoveModel = (model: Model) => {
-    const index = getModelFetch.data.value.findIndex((t) => t.id == model.id);
-    getModelFetch.data.value.splice(index, 1);
-    if (currentModel?.value.id === model.id) {
-      properties.value = [];
-      currentModel.value = null;
-    }
-  };
+
   const onSaveModel = async (model: Model) => {
-    const index = getModelFetch.data.value.findIndex((t) => t.id == model.id);
-    if (index >= 0) {
-      getModelFetch.data.value.splice(index, 1, model);
-    } else {
-      getModelFetch.data.value.push(model);
-    }
+    modelHook.saveModel(model);
     modelTreeRef.value.selectNode({ ...model, isLeaf: true });
-    if (model.id == currentModel.value?.id) {
-      currentModel.value = model;
-      getPropertyFetch.data.value = model.properties ?? [];
-    }
     log('save model', model);
   };
-  const onRemoveProperty = async (property: ModelProperty) => {
-    await deletePropertyFetch.execute(property.id);
-    const index = getPropertyFetch.data.value.findIndex((t) => t.id == property.id);
-    getPropertyFetch.data.value.splice(index, 1);
-  };
-  const onEditProperty = (property: ModelProperty) => {
-    log('start edit property', property);
-    propertyEditRef.value.open(property);
-  };
+
   const onUpdateProperty = async (property: ModelProperty) => {
-    await savePropertyFetch.execute(property);
+    await savePropertyFetch.execute({
+      modelId: modelHook.currentModel.value.id,
+      data: property
+    });
+    modelHook.saveProperty(property);
   };
-  const onSaveProperty = (property: ModelProperty) => {
-    const index = getPropertyFetch.data.value.findIndex((t) => t.id === property.id);
-    getPropertyFetch.data.value.splice(index, 1, property);
-  };
-  const onChangeOrg = async (value) => {
-    if (currentModel.value) {
-      await getPropertyFetch.execute({ modelId: currentModel.value.id, objectId: value });
-    }
-  };
+
   const onClickCommand = (command) => {
     if (command === 'json') {
-      const json = generateJson(getPropertyFetch.data.value ?? []);
+      const json = generateJson(modelHook.properties.value);
       const jsonStr = JSON.stringify(json, null, '\t');
       jsonPreviewRef.value.open(jsonStr);
     }
+  };
+  const onRemoveProperty = async (property: ModelProperty) => {
+    await deletePropertyFetch.execute({
+      modelId: modelHook.currentModel.value.id,
+      name: property.name
+    });
+    modelHook.removeProperty(property);
   };
 </script>
 

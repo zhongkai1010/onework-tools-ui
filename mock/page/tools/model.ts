@@ -13,7 +13,7 @@ let models: any[] = mock({
 }).data;
 
 models = models.map((t: any) => {
-  return { ...t, properties: generateProperties(t.id, Random.integer(4, 20)) };
+  return { ...t, properties: generateProperties(Random.integer(4, 20)) };
 });
 
 export default [
@@ -24,9 +24,7 @@ export default [
     response: () => {
       return {
         code: 0,
-        result: models.map((t) => {
-          return { ...t, properties: undefined };
-        })
+        result: models
       };
     }
   },
@@ -72,7 +70,6 @@ export default [
           return {
             ...t,
             id: buildUUID(),
-            modelId: model.id,
             parentId: t.parentId ? t.parentId : null
           };
         });
@@ -90,7 +87,7 @@ export default [
     timeout: '2000',
     response: ({ query }) => {
       const modelId = query.modelId;
-      const objectId = query.objectId;
+      const orgId = query.orgId;
       const model = models.find((t) => t.id === modelId);
       if (!model) {
         return {
@@ -99,8 +96,8 @@ export default [
         };
       } else {
         let properties = model.properties;
-        if (objectId) {
-          properties = properties.filter((t) => t.objectId == objectId || !t.objectId);
+        if (orgId) {
+          properties = properties.filter((t) => t.orgId == orgId || !t.orgId);
         }
         return {
           code: 0,
@@ -113,18 +110,31 @@ export default [
     url: '/api/tools/model/saveModelProperty',
     method: 'post',
     timeout: '2000',
-    response: ({ body }) => {
+    response: ({ query, body }) => {
+      const modelId = query.modelId;
+      const index = models.findIndex((t) => t.id == modelId);
+      const model = models[index];
+      const proIndex = model.properties.findIndex((t) => t.name == body.name);
+      model.properties.splice(proIndex, 1, body);
+      models.splice(index, 1, model);
       return {
         code: 0,
-        result: { ...body, id: buildUUID() }
+        result: body
       };
     }
   },
   {
-    url: '/api/tools/modelProperty/deleteModelProperty',
+    url: '/api/tools/model/deleteModelProperty',
     method: 'post',
     timeout: '2000',
-    response: ({ _query }) => {
+    response: ({ body }) => {
+      const modelId = body.modelId;
+      const name = body.name;
+      const index = models.findIndex((t) => t.id == modelId);
+      const model = models[index];
+      const proIndex = model.properties.findIndex((t) => t.name == name);
+      model.properties.splice(proIndex, 1);
+      models.splice(index, 1, model);
       return {
         code: 0
       };
@@ -132,18 +142,17 @@ export default [
   }
 ];
 
-function generatePropertyChilds(modelId, parent?): any[] {
+function generatePropertyChilds(parent?): any[] {
   const result: any[] = [];
   const random = Random.pick([1, 3, 4, 7, 9]); //随机组织
-  const objectId = random % 2 == 0 ? Random.pick([1, 2, 3]) : null;
-
-  let objectName = objectId;
-  if (objectId) {
-    objectName = objectId;
+  const orgId = random % 2 == 0 ? Random.pick([1, 2, 3]) : null;
+  const orgs = [null, '组织1', '组织2', '组织3'];
+  let orgName = null;
+  if (random) {
+    orgName = orgs[orgId];
   }
   const property = {
     id: Random.guid(),
-    modelId: modelId,
     name: Random.word(4, 12),
     displayName: Random.ctitle(4, 6),
     propertyType: Random.pick(['string', 'number', 'array', 'boolean', 'intger', 'object']),
@@ -152,8 +161,8 @@ function generatePropertyChilds(modelId, parent?): any[] {
     defaultValue: null,
     parentId: null,
     parentIds: null,
-    objectId,
-    objectName
+    orgId,
+    orgName
   };
   if (parent) {
     property.parentId = parent.id;
@@ -165,7 +174,7 @@ function generatePropertyChilds(modelId, parent?): any[] {
   ) {
     const count = Random.integer(2, 4);
     for (let i = 0; i < count; i++) {
-      result.push(...generatePropertyChilds(modelId, property));
+      result.push(...generatePropertyChilds(property));
     }
   }
   if (property.propertyType == 'array' && property.arrayType == 'array') {
@@ -178,10 +187,10 @@ function generatePropertyChilds(modelId, parent?): any[] {
   return result;
 }
 
-function generateProperties(modelId, count) {
+function generateProperties(count) {
   const result: any[] = [];
   for (let i = 0; i < count; i++) {
-    const roots = generatePropertyChilds(modelId);
+    const roots = generatePropertyChilds();
     result.push(...roots);
   }
   return result;

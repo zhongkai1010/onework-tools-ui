@@ -2,7 +2,7 @@
  * @Author: zhongkai1010 zhongkai1010@163.com
  * @Date: 2022-09-14 09:31:53
  * @LastEditors: zhongkai1010 zhongkai1010@163.com
- * @LastEditTime: 2022-09-21 14:52:49
+ * @LastEditTime: 2022-09-23 16:41:45
  * @FilePath: \onework-tools-ui\src\views\tools\model\types.ts
  * @Description:
  */
@@ -13,7 +13,7 @@ export interface ModelEditInstance {
 }
 
 export interface PropertyEditInstance {
-  open: (value: ModelProperty) => void;
+  open: (model: Model, property: ModelProperty) => void;
 }
 
 export interface ModelTreeInstance {

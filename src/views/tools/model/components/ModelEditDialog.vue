@@ -11,12 +11,7 @@
         <span>{{ model.id ? '修改模型' : '创建模型' }}</span>
       </div>
     </template>
-    <el-form
-      ref="formRef"
-      :model="model"
-      label-position="top"
-      v-loading="getModelFetch.isFetching.value"
-    >
+    <el-form ref="formRef" :model="model" label-position="top">
       <el-form-item
         label="模型名称"
         prop="name"
@@ -68,15 +63,10 @@
   const { message } = useMessage();
   const emit = defineEmits<{ (e: 'save', value: Model) }>();
   const saveModelFetch = useHttpFetch(modelApi.saveModel);
-  const getModelFetch = useHttpFetch(modelApi.getModel);
+
   const formRef = ref<FormInstance>();
   const show = ref(false);
-  const model = computed<EditModel>({
-    get: () => getModelFetch.data.value ?? DEFULT_MODEL,
-    set: (value) => {
-      getModelFetch.data.value = value as Model;
-    }
-  });
+  const model = ref<EditModel>();
   const properties = ref<ModelField[]>([]);
   const onClickSubmit = async (formEl: FormInstance | undefined) => {
     await formEl.validate(async (valid, fields) => {
@@ -98,14 +88,17 @@
   const onOpen = async (value?: Model) => {
     show.value = true;
     if (value) {
-      const result = await getModelFetch.execute(value.id);
-      model.value = result;
-      properties.value = (result.properties ?? []).map(getField);
+      model.value = value;
+      properties.value = (model.value.properties ?? []).map(getField);
     } else {
       model.value = { ...DEFULT_MODEL };
       properties.value = [];
     }
   };
+  onMounted(() => {
+    model.value = { ...DEFULT_MODEL };
+    properties.value = [];
+  });
   defineExpose<ModelEditInstance>({
     open: onOpen
   });

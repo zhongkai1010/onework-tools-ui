@@ -1,3 +1,11 @@
+/*
+ * @Author: zhongkai1010 zhongkai1010@163.com
+ * @Date: 2022-09-22 09:03:54
+ * @LastEditors: zhongkai1010 zhongkai1010@163.com
+ * @LastEditTime: 2022-09-23 16:54:13
+ * @FilePath: \onework-tools-ui\mock\common.ts
+ * @Description:
+ */
 import { MockMethod } from 'vite-plugin-mock';
 import { Random } from 'mockjs';
 
