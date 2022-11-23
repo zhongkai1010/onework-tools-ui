@@ -12,7 +12,7 @@ export default {
       name: 'platform_application',
       path: 'application',
       component: () => import('/@/views/platform/application.vue'),
-      meta: { title: t('router.platform.application'), icon: 'ep:platform' },
-    },
-  ],
+      meta: { title: t('router.platform.application'), icon: 'ep:platform' }
+    }
+  ]
 };
