@@ -16,6 +16,8 @@ import 'remixicon/fonts/remixicon.css';
 import './styles/reset.scss';
 // element-plus
 import 'element-plus/dist/index.css';
+// tailwindcss
+import './styles/tailwind.css';
 
 async function bootstrap() {
   const app = createApp(App);
