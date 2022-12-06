@@ -1,3 +1,0 @@
-<template>
-  <dynamic-table />
-</template>

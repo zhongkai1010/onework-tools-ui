@@ -1,3 +1,0 @@
-<template>
-  <page-view />
-</template>
