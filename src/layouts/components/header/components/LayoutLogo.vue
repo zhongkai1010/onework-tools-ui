@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="logo-container">
     <a href="/">
       <img :src="props.logo" />
       <span>{{ props.title }}</span>
@@ -15,7 +15,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .container {
+  .logo-container {
     img {
       width: 32px;
       display: inline-block;

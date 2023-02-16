@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="tool-container">
     <i
       class="ri-lock-line button"
       :title="$t('comp.layout.toolbar.lock')"
@@ -130,7 +130,7 @@
     width: 40px;
   }
 
-  .container {
+  .tool-container {
     display: flex;
     align-items: center;
     justify-content: center;

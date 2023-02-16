@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="avatar-container">
     <el-dropdown @visible-change="onChange" @command="onClickCommand">
       <span class="avatar">
         <el-avatar :src="props.avatar" shape="circle" />
@@ -70,7 +70,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .container {
+  .avatar-container {
     .avatar {
       display: flex;
       align-content: center;
