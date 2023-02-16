@@ -9,13 +9,13 @@ export default {
   dictionary: {
     dictionary: 'Data Dictionary',
     single: 'Single item dictionary',
-    multiple: 'Multiple Dictionary',
+    multiple: 'Multiple Dictionary'
   },
   config: 'parameter settings',
   notice: 'Notice Notice',
   log: {
     log: 'Log Management',
     operate: 'Operation Log',
-    login: 'login log',
-  },
+    login: 'login log'
+  }
 };

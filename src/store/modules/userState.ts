@@ -14,7 +14,7 @@ export const defaultUserStateStore: UserStateType = {
   login: false,
   token: undefined,
   displayName: undefined,
-  avatar: undefined,
+  avatar: undefined
 };
 
 const userStateStore = defineStore('user-state', {
@@ -42,9 +42,9 @@ const userStateStore = defineStore('user-state', {
       this.avatar = userinfo.avatar;
 
       return userinfo;
-    },
+    }
   },
-  persist: true,
+  persist: true
 });
 
 export function userStateStoreHook() {

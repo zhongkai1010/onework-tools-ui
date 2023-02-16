@@ -10,5 +10,5 @@ export default {
   css: 'CSS动画',
   flex: 'Flex布局',
   login: '第三方登录',
-  execl: 'Execl',
+  execl: 'Execl'
 };

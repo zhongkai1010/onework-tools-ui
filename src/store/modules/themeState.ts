@@ -10,20 +10,20 @@ export interface ThemeStateType {
 const themeState = defineStore('theme-state', {
   state(): ThemeStateType {
     return {
-      theme: ColorThemeEnum.BLUE_BLACK,
+      theme: ColorThemeEnum.BLUE_BLACK
     };
   },
   getters: {
     themeVariables(): Recordable<string> {
       return THEME_COLOR[this.theme];
-    },
+    }
   },
   actions: {
     setTheme(theme: ColorThemeEnum) {
       this.theme = theme;
-    },
+    }
   },
-  persist: true,
+  persist: true
 });
 export function themeStateStoreHook() {
   return themeState(store);

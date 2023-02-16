@@ -17,5 +17,5 @@ export default {
   light: 'Light theme',
   dark: 'Dark theme',
   login: 'login',
-  home: 'Home',
+  home: 'Home'
 };

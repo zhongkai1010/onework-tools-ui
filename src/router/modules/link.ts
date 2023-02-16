@@ -11,7 +11,7 @@ export default [
     meta: {
       title: t('router.link.link'),
       icon: 'akar-icons:link-chain',
-      orderNo: 10,
+      orderNo: 10
     },
     children: [
       {
@@ -20,8 +20,8 @@ export default [
         component: () => import('/@/views/link/index.vue'),
         meta: {
           title: t('router.link.index'),
-          icon: 'carbon:application-web',
-        },
+          icon: 'carbon:application-web'
+        }
       },
       // {
       //   name: "link_element_plus",
@@ -61,8 +61,8 @@ export default [
           title: t('router.link.vite'),
           icon: 'file-icons:vite',
 
-          link: 'https://www.vitejs.net/',
-        },
+          link: 'https://www.vitejs.net/'
+        }
       },
       {
         name: 'link_mdn',
@@ -71,9 +71,9 @@ export default [
           title: t('router.link.mdn'),
           icon: 'cib:mozilla-firefox',
 
-          link: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide',
-        },
-      },
-    ],
-  },
+          link: 'https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide'
+        }
+      }
+    ]
+  }
 ] as AppRouteRecordRaw[];

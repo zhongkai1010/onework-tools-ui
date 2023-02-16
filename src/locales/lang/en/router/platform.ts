@@ -1,4 +1,4 @@
 export default {
   platform: 'Platform',
-  application: 'Application Management',
+  application: 'Application Management'
 };

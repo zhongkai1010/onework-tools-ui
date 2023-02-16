@@ -6,6 +6,6 @@ export default {
   message: {
     message: 'Message Management',
     log: 'Message log',
-    template: 'message template',
-  },
+    template: 'message template'
+  }
 };

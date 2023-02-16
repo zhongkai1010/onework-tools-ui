@@ -10,5 +10,5 @@ export default {
   css: 'CSS animation',
   flex: 'Flex Layout',
   login: 'Third-party login',
-  execl: 'Execl',
+  execl: 'Execl'
 };

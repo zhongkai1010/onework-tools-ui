@@ -42,7 +42,7 @@ export const getNavRecordRawMap = (nas: MenuRecordRaw[]): { [key: string]: MenuR
 
 export const routeToNavRecordRaw = (
   route: AppRouteRecordRaw,
-  parent?: MenuRecordRaw,
+  parent?: MenuRecordRaw
 ): MenuRecordRaw => {
   const nav: MenuRecordRaw = {
     order: route.meta?.orderNo,
@@ -56,7 +56,7 @@ export const routeToNavRecordRaw = (
     link: route.meta.link,
     cache: route.meta.keepAlive,
     redirect: route.redirect as string,
-    hideMenu: route.meta.hideMenu,
+    hideMenu: route.meta.hideMenu
   };
   return nav;
 };

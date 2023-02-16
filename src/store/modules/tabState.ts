@@ -21,8 +21,8 @@ export const defaultTabStateStore: TabStateType = {
   rightTool: {
     x: 0,
     y: 0,
-    show: false,
-  },
+    show: false
+  }
 };
 
 const tabStateStore = defineStore('tabs-state', {
@@ -121,9 +121,9 @@ const tabStateStore = defineStore('tabs-state', {
     },
     clearAll() {
       this.tabs = [];
-    },
+    }
   },
-  persist: true,
+  persist: true
 });
 
 export function tabStateStoreHook() {

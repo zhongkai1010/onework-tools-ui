@@ -30,7 +30,7 @@ const routes = [LOGIN_PAGE, ...moduleRoutes, HOME_PAGE, NOT_PAGE];
  */
 const router = createRouter({
   history: createWebHashHistory(),
-  routes: routes as RouteRecordRaw[],
+  routes: routes as RouteRecordRaw[]
 });
 /**
  * 页面头部加载进度条

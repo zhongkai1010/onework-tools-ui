@@ -19,5 +19,5 @@ export default {
   errMsg502: 'Network error!',
   errMsg503: 'Service unavailable, server temporarily overloaded or under maintenance!',
   errMsg504: 'Network timed out!',
-  errMsg505: 'The http version does not support this request!',
+  errMsg505: 'The http version does not support this request!'
 };

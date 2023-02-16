@@ -29,7 +29,7 @@ export class AesEncryption {
     return {
       mode: ECB,
       padding: pkcs7,
-      iv: this.iv,
+      iv: this.iv
     };
   }
 

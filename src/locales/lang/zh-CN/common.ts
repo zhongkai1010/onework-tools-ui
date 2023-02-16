@@ -17,5 +17,5 @@ export default {
   light: '亮色主题',
   dark: '黑暗主题',
   login: '登录',
-  home: '主页',
+  home: '主页'
 };

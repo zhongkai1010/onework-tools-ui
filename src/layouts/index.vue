@@ -7,7 +7,7 @@
           :logo="logo ?? logoImg"
           :avatar="avatar ?? defaultAvatar"
           :username="displayName"
-        /> 
+        />
       </el-header>
       <el-container>
         <el-aside v-if="layout !== 'horizontal'" class="wrapper_left">

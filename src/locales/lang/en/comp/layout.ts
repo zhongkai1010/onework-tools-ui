@@ -2,7 +2,7 @@ export default {
   header: {
     nologin: 'Not logged in',
     info: 'Personal Center',
-    quit: 'Quit the system',
+    quit: 'Quit the system'
   },
   toolbar: {
     lock: 'Lock screen',
@@ -10,7 +10,7 @@ export default {
     notice: 'Notice',
     full: 'full screen',
     lang: 'Switch between Chinese and English',
-    setting: 'Settings',
+    setting: 'Settings'
   },
   drawer: {
     title: 'Theme Settings',
@@ -24,14 +24,14 @@ export default {
     full: 'full screen',
     lang: 'Multilingual',
     progress: 'Progress Bar',
-    reset: 'Restore default',
+    reset: 'Restore default'
   },
   menu: {
     refresh: 'Refresh',
     other: 'Close other',
     right: 'Close the right side',
     left: 'Close left',
-    all: 'Close all',
+    all: 'Close all'
   },
   theme: {
     blueBlack: 'Blue Black',
@@ -41,7 +41,7 @@ export default {
     purpleBlack: 'Purple Black',
     purpleWhite: 'Purple White',
     redBlack: 'Red Black',
-    redWhite: 'red and white',
+    redWhite: 'red and white'
   },
   type: {
     column: 'column',
@@ -49,7 +49,7 @@ export default {
     portrait: 'portrait',
     horizontal: 'horizontal',
     standard: 'Standard',
-    float: 'float',
+    float: 'float'
   },
-  unlock: 'unlock',
+  unlock: 'unlock'
 };

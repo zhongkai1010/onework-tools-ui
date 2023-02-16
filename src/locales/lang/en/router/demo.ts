@@ -9,7 +9,7 @@ export default {
     group: 'Group form',
     step: 'Step-by-step form',
     custom: 'custom form',
-    description: 'Data display',
+    description: 'Data display'
   },
   table: 'Dynamic table',
   layout: 'Fence layout',
@@ -20,7 +20,7 @@ export default {
     page: 'Layout example',
     standard: 'Card layout',
     leftRight: 'Navigation layout',
-    upDown: 'Panel layout',
+    upDown: 'Panel layout'
   },
-  edit: 'Code Editor',
+  edit: 'Code Editor'
 };

@@ -38,7 +38,7 @@ export const defaultPageState: PageStateType = {
   showDrawer: false,
   cacheNames: [],
   routerLoading: false,
-  reloading: false,
+  reloading: false
 };
 
 const pageStateStore = defineStore('page-state', {
@@ -59,9 +59,9 @@ const pageStateStore = defineStore('page-state', {
       return {
         '--layout-sidebar-nav-width': layout === 'column' ? '64px' : '0px',
         '--layout-sidebar-menu-width': `${sidebarMenuWidth}px`,
-        '--layout-header-tab-height': `${hearderTabHeight}px`,
+        '--layout-header-tab-height': `${hearderTabHeight}px`
       };
-    },
+    }
   },
   actions: {
     /**
@@ -138,9 +138,9 @@ const pageStateStore = defineStore('page-state', {
       Object.keys(defaultPageState).forEach((t) => {
         this[t] = defaultPageState[t];
       });
-    },
+    }
   },
-  persist: true,
+  persist: true
 });
 
 export function pageStateStoreHook() {

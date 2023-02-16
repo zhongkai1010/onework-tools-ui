@@ -4,5 +4,5 @@ export default {
   design: '流程设计',
   monitor: '流程监听',
   expression: '表达式管理',
-  form: '表单管理',
+  form: '表单管理'
 };

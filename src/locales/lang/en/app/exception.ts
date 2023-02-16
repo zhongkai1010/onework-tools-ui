@@ -6,5 +6,5 @@ export default {
   subTitle500: 'Sorry, the server reported an error.',
   noDataTitle: 'The current page has no data',
   networkErrorTitle: 'Network Error',
-  networkErrorSubTitle: 'Sorry, your network connection is down, please check your network!',
+  networkErrorSubTitle: 'Sorry, your network connection is down, please check your network!'
 };

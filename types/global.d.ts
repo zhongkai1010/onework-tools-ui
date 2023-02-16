@@ -4,8 +4,10 @@ import type {
   VNodeChild,
   ComponentPublicInstance,
   FunctionalComponent,
-  PropType as VuePropType,
+  PropType as VuePropType
 } from 'vue';
+
+declare module 'element-plus';
 
 declare global {
   const __APP_INFO__: {

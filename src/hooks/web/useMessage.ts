@@ -5,7 +5,7 @@ import {
   ElNotification,
   MessageBoxData,
   MessageParams,
-  NotificationParams,
+  NotificationParams
 } from 'element-plus';
 import { isString } from 'lodash';
 import { AppContext, RendererElement, RendererNode, VNode } from 'vue';
@@ -41,7 +41,7 @@ function createConfirm(
         }
       >,
   options?: ElMessageBoxOptions | MessageType,
-  appContext?: AppContext,
+  appContext?: AppContext
 ) {
   if (isString(options)) {
     return new Promise((resolve) => {
@@ -69,7 +69,7 @@ function createPrompt(
         }
       >,
   options?: ElMessageBoxOptions,
-  appContext?: AppContext,
+  appContext?: AppContext
 ) {
   return ElMessageBox.prompt(message, options, appContext);
 }
@@ -83,6 +83,6 @@ export function useMessage() {
     notice: createNotice,
     confirm: createConfirm,
     alert: createAlert,
-    prompt: createPrompt,
+    prompt: createPrompt
   };
 }

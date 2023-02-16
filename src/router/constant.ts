@@ -13,14 +13,14 @@ export const LOGIN_PAGE = {
   path: '/login',
   component: () => import('/@/views/login/index.vue'),
   meta: {
-    title: t('common.login'),
-  },
+    title: t('common.login')
+  }
 };
 
 export const NOT_PAGE = {
   path: '/:pathMatch(.*)*',
   name: 'NotFound',
-  component: () => import('/@/views/404.vue'),
+  component: () => import('/@/views/404.vue')
 };
 
 export const HOME_PAGE = {
@@ -29,8 +29,8 @@ export const HOME_PAGE = {
   redirect: '/dashboard/analysis',
   meta: {
     title: t('common.home'),
-    icon: 'ant-design:home-outlined',
-  },
+    icon: 'ant-design:home-outlined'
+  }
 } as AppRouteRecordRaw;
 
 export const ROUTER_WHITE_LIST = ['/login', '/test'] as string[];

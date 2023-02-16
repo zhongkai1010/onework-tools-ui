@@ -55,7 +55,7 @@ export interface FormDialogInstance {
   open: (
     editable?: 'add' | 'edit' | 'show',
     defaultValue?: Recordable<any>,
-    title?: string,
+    title?: string
   ) => void;
   close: () => void;
 }

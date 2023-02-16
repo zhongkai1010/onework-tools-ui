@@ -10,16 +10,16 @@ export interface LocalStateType {
 const localeState = defineStore('locale-state', {
   state(): LocalStateType {
     return {
-      locale: Locale.ZH_CN,
+      locale: Locale.ZH_CN
     };
   },
   getters: {},
   actions: {
     setLocaleInfo(locale: Locale) {
       this.locale = locale;
-    },
+    }
   },
-  persist: true,
+  persist: true
 });
 export function localeStateStoreHook() {
   return localeState(store);

@@ -6,6 +6,6 @@ export default {
   message: {
     message: '消息管理',
     log: '消息记录',
-    template: '消息模板',
-  },
+    template: '消息模板'
+  }
 };

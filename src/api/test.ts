@@ -29,5 +29,5 @@ export default {
    * 获取分页数据
    * @returns
    */
-  getAllPageData: () => http.get<TestTableData>({ url: '/api/test/getAllPageData' }),
+  getAllPageData: () => http.get<TestTableData>({ url: '/api/test/getAllPageData' })
 };

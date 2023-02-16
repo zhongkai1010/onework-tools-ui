@@ -5,5 +5,5 @@ export default {
   data: 'Data monitoring',
   service: 'Service Monitoring',
   cache: 'Cache Monitoring',
-  list: 'cache list',
+  list: 'cache list'
 };

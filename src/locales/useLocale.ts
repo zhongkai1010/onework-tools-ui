@@ -56,6 +56,6 @@ export function useLocale() {
   return {
     getLocale,
     changeLocale,
-    elementPlusLocale,
+    elementPlusLocale
   };
 }

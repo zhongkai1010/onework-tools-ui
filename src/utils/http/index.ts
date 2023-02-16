@@ -8,10 +8,10 @@ const defaultConfig: AxiosRequestConfig = {
   headers: {
     Accept: 'application/json, text/plain, */*',
     'Content-Type': 'application/json',
-    'X-Requested-With': 'XMLHttpRequest',
+    'X-Requested-With': 'XMLHttpRequest'
   },
   // 数组格式参数序列化
-  paramsSerializer: (params) => qs.stringify(params, { indices: false }),
+  paramsSerializer: (params) => qs.stringify(params, { indices: false })
 };
 
 class Request {
@@ -35,7 +35,7 @@ class Request {
       },
       (error) => {
         return Promise.reject(error);
-      },
+      }
     );
   }
 
@@ -53,7 +53,7 @@ class Request {
         $error.isCancelRequest = Axios.isCancel($error);
 
         return Promise.reject($error);
-      },
+      }
     );
   }
 
@@ -62,13 +62,13 @@ class Request {
     method: RequestMethods,
     url: string,
     param?: AxiosRequestConfig,
-    axiosConfig?: HttpRequestConfig,
+    axiosConfig?: HttpRequestConfig
   ): Promise<T> {
     const config = {
       method,
       url,
       ...param,
-      ...axiosConfig,
+      ...axiosConfig
     } as HttpRequestConfig;
 
     // 单独处理自定义请求/响应回掉

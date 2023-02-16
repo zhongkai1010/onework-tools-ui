@@ -2,7 +2,7 @@ export default {
   header: {
     nologin: '未登录',
     info: '个人中心',
-    quit: '退出系统',
+    quit: '退出系统'
   },
   toolbar: {
     lock: '锁屏',
@@ -10,7 +10,7 @@ export default {
     notice: '通知',
     full: '全屏',
     lang: '中英切换',
-    setting: '设置',
+    setting: '设置'
   },
   drawer: {
     title: '主题设置',
@@ -24,14 +24,14 @@ export default {
     full: '全屏',
     lang: '多语言',
     progress: '进度条',
-    reset: '恢复默认',
+    reset: '恢复默认'
   },
   menu: {
     refresh: '刷新',
     other: '关闭其他',
     right: '关闭右侧',
     left: '关闭左侧',
-    all: '关闭全部',
+    all: '关闭全部'
   },
   theme: {
     blueBlack: '蓝黑',
@@ -41,7 +41,7 @@ export default {
     purpleBlack: '紫黑',
     purpleWhite: '紫白',
     redBlack: '红黑',
-    redWhite: '红白',
+    redWhite: '红白'
   },
   type: {
     column: '分栏',
@@ -49,11 +49,11 @@ export default {
     portrait: '纵向',
     horizontal: '横向',
     standard: '标准',
-    float: '浮动',
+    float: '浮动'
   },
   unlock: '解锁',
   message: {
     toggleLangError: '加载{lang}语言异常，请稍后重试！',
-    toggleLangSuccess: '完成切换{lang}语言。',
-  },
+    toggleLangSuccess: '完成切换{lang}语言。'
+  }
 };

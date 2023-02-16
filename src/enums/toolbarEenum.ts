@@ -4,5 +4,5 @@ export enum Toolbar {
   Add = 'add',
   Edit = 'edit',
   Delete = 'delete',
-  keywords = 'keywords',
+  keywords = 'keywords'
 }

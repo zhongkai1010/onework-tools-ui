@@ -5,5 +5,5 @@ export default {
   data: '数据监控',
   service: '服务监控',
   cache: '缓存监控',
-  list: '缓存列表',
+  list: '缓存列表'
 };

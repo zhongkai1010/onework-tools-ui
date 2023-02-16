@@ -4,5 +4,5 @@ export default {
   design: 'Process Design',
   monitor: 'Process Monitor',
   expression: 'Expression Management',
-  form: 'Form Management',
+  form: 'Form Management'
 };

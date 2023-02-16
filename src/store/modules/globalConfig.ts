@@ -34,15 +34,15 @@ const globalConfigStore = defineStore('global-configs', {
       version: undefined,
       title: undefined,
       sid: undefined,
-      logo: undefined,
+      logo: undefined
     };
   },
   actions: {
     setTitle(title: string) {
       this.title = title;
-    },
+    }
   },
-  persist: true,
+  persist: true
 });
 
 export function siteConfigStoreHook() {

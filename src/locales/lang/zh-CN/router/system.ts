@@ -9,13 +9,13 @@ export default {
   dictionary: {
     dictionary: '数据字典',
     single: '单项字典',
-    multiple: '多项字典',
+    multiple: '多项字典'
   },
   config: '参数设置',
   notice: '通知公告',
   log: {
     log: '日志管理',
     operate: '操作日志',
-    login: '登录日志',
-  },
+    login: '登录日志'
+  }
 };

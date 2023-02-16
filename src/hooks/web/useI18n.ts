@@ -27,7 +27,7 @@ export function useI18n(namespace?: string): {
   const normalFn = {
     t: (key: string) => {
       return getKey(namespace, key);
-    },
+    }
   };
 
   if (!i18n) {
@@ -43,7 +43,7 @@ export function useI18n(namespace?: string): {
   };
   return {
     ...methods,
-    t: tFn,
+    t: tFn
   };
 }
 

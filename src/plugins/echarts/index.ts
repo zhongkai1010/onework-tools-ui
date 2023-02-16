@@ -9,7 +9,7 @@ import {
   MapChart,
   PictorialBarChart,
   RadarChart,
-  ScatterChart,
+  ScatterChart
 } from 'echarts/charts';
 // 引入提示框，标题，直角坐标系，数据集，内置数据转换器组件，组件后缀都为 Component
 import {
@@ -26,7 +26,7 @@ import {
   VisualMapComponent,
   TimelineComponent,
   CalendarComponent,
-  GraphicComponent,
+  GraphicComponent
 } from 'echarts/components';
 // 标签自动布局，全局过渡动画等特性
 import { LabelLayout, UniversalTransition } from 'echarts/features';
@@ -61,7 +61,7 @@ use([
   VisualMapComponent,
   TimelineComponent,
   CalendarComponent,
-  GraphicComponent,
+  GraphicComponent
 ]);
 const setupECharts = (app: App<Element>) => {
   app.component('VChart', ECharts);

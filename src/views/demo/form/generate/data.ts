@@ -10,11 +10,11 @@ export default {
       props: {
         prop: 'input',
         label: '文本框',
-        required: true,
+        required: true
       },
       component: {
-        component: 'el-input',
-      },
+        component: 'el-input'
+      }
     },
     {
       name: 'autocomplete',
@@ -22,17 +22,17 @@ export default {
       props: {
         prop: 'autocomplete',
         label: '自动补全输入框',
-        required: true,
+        required: true
       },
       component: {
         component: 'el-autocomplete',
         config: {
           dataMode: 'dynamic',
           remote: {
-            url: '/api/test/getOptions',
-          },
-        },
-      },
+            url: '/api/test/getOptions'
+          }
+        }
+      }
     },
     {
       name: 'cascader',
@@ -40,17 +40,17 @@ export default {
       props: {
         prop: 'cascader',
         label: '级联选择器',
-        required: true,
+        required: true
       },
       component: {
         component: 'el-cascader',
         config: {
           dataMode: 'dynamic',
           remote: {
-            url: '/api/test/getCascadeData',
-          },
-        },
-      },
+            url: '/api/test/getCascadeData'
+          }
+        }
+      }
     },
     {
       name: 'checkbox',
@@ -58,17 +58,17 @@ export default {
       props: {
         prop: 'checkbox',
         label: '多选框',
-        required: true,
+        required: true
       },
       component: {
         component: 'el-checkbox-group',
         config: {
           dataMode: 'dynamic',
           remote: {
-            url: '/api/test/getOptions',
-          },
-        },
-      },
+            url: '/api/test/getOptions'
+          }
+        }
+      }
     },
     {
       name: 'color-picker',
@@ -76,7 +76,7 @@ export default {
       props: {
         prop: 'color-picker',
         label: '颜色选择器',
-        required: true,
+        required: true
       },
       component: {
         component: 'el-color-picker',
@@ -85,23 +85,23 @@ export default {
           options: [
             {
               label: '选项1',
-              value: 'value1',
+              value: 'value1'
             },
             {
               label: '选项2',
-              value: 'value2',
+              value: 'value2'
             },
             {
               label: '选项3',
-              value: 'value3',
+              value: 'value3'
             },
             {
               label: '选项4',
-              value: 'value4',
-            },
-          ],
-        },
-      },
+              value: 'value4'
+            }
+          ]
+        }
+      }
     },
     {
       name: 'date-picker',
@@ -109,11 +109,11 @@ export default {
       props: {
         prop: 'date-picker',
         label: '日期选择器',
-        required: true,
+        required: true
       },
       component: {
-        component: 'el-date-picker',
-      },
+        component: 'el-date-picker'
+      }
     },
     {
       name: 'input-number',
@@ -121,11 +121,11 @@ export default {
       props: {
         prop: 'input-number',
         label: '数字输入框',
-        required: true,
+        required: true
       },
       component: {
-        component: 'el-input-number',
-      },
+        component: 'el-input-number'
+      }
     },
     {
       name: 'radio',
@@ -133,7 +133,7 @@ export default {
       props: {
         prop: 'radio',
         label: '单选框',
-        required: true,
+        required: true
       },
       component: {
         component: 'el-radio-group',
@@ -142,23 +142,23 @@ export default {
           options: [
             {
               label: '选项1',
-              value: 'value1',
+              value: 'value1'
             },
             {
               label: '选项2',
-              value: 'value2',
+              value: 'value2'
             },
             {
               label: '选项3',
-              value: 'value3',
+              value: 'value3'
             },
             {
               label: '选项4',
-              value: 'value4',
-            },
-          ],
-        },
-      },
+              value: 'value4'
+            }
+          ]
+        }
+      }
     },
     {
       name: 'rate',
@@ -166,11 +166,11 @@ export default {
       props: {
         prop: 'rate',
         label: '评分',
-        required: true,
+        required: true
       },
       component: {
-        component: 'el-rate',
-      },
+        component: 'el-rate'
+      }
     },
     {
       name: 'select',
@@ -178,17 +178,17 @@ export default {
       props: {
         prop: 'select',
         label: '选择器',
-        required: true,
+        required: true
       },
       component: {
         component: 'el-select',
         config: {
           dataMode: 'dynamic',
           remote: {
-            url: '/api/test/getOptions',
-          },
-        },
-      },
+            url: '/api/test/getOptions'
+          }
+        }
+      }
     },
     {
       name: 'slider',
@@ -196,11 +196,11 @@ export default {
       props: {
         prop: 'slider',
         label: '滑块',
-        required: true,
+        required: true
       },
       component: {
-        component: 'el-slider',
-      },
+        component: 'el-slider'
+      }
     },
     {
       name: 'switch',
@@ -208,11 +208,11 @@ export default {
       props: {
         prop: 'switch',
         label: '开关',
-        required: true,
+        required: true
       },
       component: {
-        component: 'el-switch',
-      },
+        component: 'el-switch'
+      }
     },
 
     {
@@ -221,11 +221,11 @@ export default {
       props: {
         prop: 'time-picker',
         label: '时间选择器',
-        required: true,
+        required: true
       },
       component: {
-        component: 'el-time-picker',
-      },
+        component: 'el-time-picker'
+      }
     },
     {
       name: 'time-select',
@@ -233,11 +233,11 @@ export default {
       props: {
         prop: 'time-select',
         label: '时间选择',
-        required: true,
+        required: true
       },
       component: {
-        component: 'el-time-select',
-      },
+        component: 'el-time-select'
+      }
     },
     {
       name: 'transfer',
@@ -245,7 +245,7 @@ export default {
       props: {
         prop: 'transfer',
         label: '穿梭框',
-        required: false,
+        required: false
       },
       component: {
         props: {
@@ -253,12 +253,12 @@ export default {
           data: [
             {
               key: 'value1',
-              label: '选项1',
-            },
-          ],
+              label: '选项1'
+            }
+          ]
         },
-        component: 'el-transfer',
-      },
+        component: 'el-transfer'
+      }
     },
     {
       name: 'upload',
@@ -266,18 +266,18 @@ export default {
       props: {
         prop: 'upload',
         label: '上传',
-        required: false,
+        required: false
       },
       component: {
-        component: 'el-upload',
-      },
-    },
+        component: 'el-upload'
+      }
+    }
   ],
   layout: {
-    gutter: 20,
+    gutter: 20
   },
   props: {
     labelPosition: 'top',
-    labelWidth: '80px',
-  },
+    labelWidth: '80px'
+  }
 } as DynamicFormConfig;

@@ -9,7 +9,7 @@ export default {
     group: '分组表单',
     step: '分步表单',
     custom: '自定义表单',
-    description: '数据展示',
+    description: '数据展示'
   },
   table: '动态表格',
   layout: '栅栏布局',
@@ -20,7 +20,7 @@ export default {
     page: '布局示例',
     standard: '卡片布局',
     leftRight: '导航布局',
-    upDown: '面板布局',
+    upDown: '面板布局'
   },
-  edit: '代码编辑器',
+  edit: '代码编辑器'
 };

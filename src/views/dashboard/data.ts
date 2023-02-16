@@ -1,73 +1,73 @@
 export default {
   data1: {
     title: {
-      text: 'Stacked Line',
+      text: 'Stacked Line'
     },
     tooltip: {
-      trigger: 'axis',
+      trigger: 'axis'
     },
     legend: {
-      data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine'],
+      data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
     },
     grid: {
       left: '3%',
       right: '4%',
       bottom: '3%',
-      containLabel: true,
+      containLabel: true
     },
     toolbox: {
       feature: {
-        saveAsImage: {},
-      },
+        saveAsImage: {}
+      }
     },
     xAxis: {
       type: 'category',
       boundaryGap: false,
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     },
     yAxis: {
-      type: 'value',
+      type: 'value'
     },
     series: [
       {
         name: 'Email',
         type: 'line',
         stack: 'Total',
-        data: [120, 132, 101, 134, 90, 230, 210],
+        data: [120, 132, 101, 134, 90, 230, 210]
       },
       {
         name: 'Union Ads',
         type: 'line',
         stack: 'Total',
-        data: [220, 182, 191, 234, 290, 330, 310],
+        data: [220, 182, 191, 234, 290, 330, 310]
       },
       {
         name: 'Video Ads',
         type: 'line',
         stack: 'Total',
-        data: [150, 232, 201, 154, 190, 330, 410],
+        data: [150, 232, 201, 154, 190, 330, 410]
       },
       {
         name: 'Direct',
         type: 'line',
         stack: 'Total',
-        data: [320, 332, 301, 334, 390, 330, 320],
+        data: [320, 332, 301, 334, 390, 330, 320]
       },
       {
         name: 'Search Engine',
         type: 'line',
         stack: 'Total',
-        data: [820, 932, 901, 934, 1290, 1330, 1320],
-      },
-    ],
+        data: [820, 932, 901, 934, 1290, 1330, 1320]
+      }
+    ]
   },
   data2: {
     xAxis: {
       type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     },
     yAxis: {
-      type: 'value',
+      type: 'value'
     },
     series: [
       {
@@ -75,10 +75,10 @@ export default {
         type: 'bar',
         showBackground: true,
         backgroundStyle: {
-          color: 'rgba(180, 180, 180, 0.2)',
-        },
-      },
-    ],
+          color: 'rgba(180, 180, 180, 0.2)'
+        }
+      }
+    ]
   },
   data3: {
     xAxis: {},
@@ -108,22 +108,22 @@ export default {
           [12.0, 6.26],
           [12.0, 8.84],
           [7.08, 5.82],
-          [5.02, 5.68],
+          [5.02, 5.68]
         ],
-        type: 'scatter',
-      },
-    ],
+        type: 'scatter'
+      }
+    ]
   },
   data4: {
     title: {
       text: 'Rainfall vs Evaporation',
-      subtext: 'Fake Data',
+      subtext: 'Fake Data'
     },
     tooltip: {
-      trigger: 'axis',
+      trigger: 'axis'
     },
     legend: {
-      data: ['Rainfall', 'Evaporation'],
+      data: ['Rainfall', 'Evaporation']
     },
     toolbox: {
       show: true,
@@ -131,21 +131,21 @@ export default {
         dataView: { show: true, readOnly: false },
         magicType: { show: true, type: ['line', 'bar'] },
         restore: { show: true },
-        saveAsImage: { show: true },
-      },
+        saveAsImage: { show: true }
+      }
     },
     calculable: true,
     xAxis: [
       {
         type: 'category',
         // prettier-ignore
-        data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-      },
+        data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      }
     ],
     yAxis: [
       {
-        type: 'value',
-      },
+        type: 'value'
+      }
     ],
     series: [
       {
@@ -155,12 +155,12 @@ export default {
         markPoint: {
           data: [
             { type: 'max', name: 'Max' },
-            { type: 'min', name: 'Min' },
-          ],
+            { type: 'min', name: 'Min' }
+          ]
         },
         markLine: {
-          data: [{ type: 'average', name: 'Avg' }],
-        },
+          data: [{ type: 'average', name: 'Avg' }]
+        }
       },
       {
         name: 'Evaporation',
@@ -169,36 +169,36 @@ export default {
         markPoint: {
           data: [
             { name: 'Max', value: 182.2, xAxis: 7, yAxis: 183 },
-            { name: 'Min', value: 2.3, xAxis: 11, yAxis: 3 },
-          ],
+            { name: 'Min', value: 2.3, xAxis: 11, yAxis: 3 }
+          ]
         },
         markLine: {
-          data: [{ type: 'average', name: 'Avg' }],
-        },
-      },
-    ],
+          data: [{ type: 'average', name: 'Avg' }]
+        }
+      }
+    ]
   },
   data5: {
     tooltip: {
       trigger: 'axis',
       axisPointer: {
         // Use axis to trigger tooltip
-        type: 'shadow', // 'shadow' as default; can also be 'line' or 'shadow'
-      },
+        type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+      }
     },
     legend: {},
     grid: {
       left: '3%',
       right: '4%',
       bottom: '3%',
-      containLabel: true,
+      containLabel: true
     },
     xAxis: {
-      type: 'value',
+      type: 'value'
     },
     yAxis: {
       type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
     },
     series: [
       {
@@ -206,137 +206,137 @@ export default {
         type: 'bar',
         stack: 'total',
         label: {
-          show: true,
+          show: true
         },
         emphasis: {
-          focus: 'series',
+          focus: 'series'
         },
-        data: [320, 302, 301, 334, 390, 330, 320],
+        data: [320, 302, 301, 334, 390, 330, 320]
       },
       {
         name: 'Mail Ad',
         type: 'bar',
         stack: 'total',
         label: {
-          show: true,
+          show: true
         },
         emphasis: {
-          focus: 'series',
+          focus: 'series'
         },
-        data: [120, 132, 101, 134, 90, 230, 210],
+        data: [120, 132, 101, 134, 90, 230, 210]
       },
       {
         name: 'Affiliate Ad',
         type: 'bar',
         stack: 'total',
         label: {
-          show: true,
+          show: true
         },
         emphasis: {
-          focus: 'series',
+          focus: 'series'
         },
-        data: [220, 182, 191, 234, 290, 330, 310],
+        data: [220, 182, 191, 234, 290, 330, 310]
       },
       {
         name: 'Video Ad',
         type: 'bar',
         stack: 'total',
         label: {
-          show: true,
+          show: true
         },
         emphasis: {
-          focus: 'series',
+          focus: 'series'
         },
-        data: [150, 212, 201, 154, 190, 330, 410],
+        data: [150, 212, 201, 154, 190, 330, 410]
       },
       {
         name: 'Search Engine',
         type: 'bar',
         stack: 'total',
         label: {
-          show: true,
+          show: true
         },
         emphasis: {
-          focus: 'series',
+          focus: 'series'
         },
-        data: [820, 832, 901, 934, 1290, 1330, 1320],
-      },
-    ],
+        data: [820, 832, 901, 934, 1290, 1330, 1320]
+      }
+    ]
   },
   data6: {
     tooltip: {
       trigger: 'axis',
       axisPointer: {
-        type: 'shadow',
-      },
+        type: 'shadow'
+      }
     },
     legend: {},
     grid: {
       left: '3%',
       right: '4%',
       bottom: '3%',
-      containLabel: true,
+      containLabel: true
     },
     xAxis: [
       {
         type: 'category',
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-      },
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      }
     ],
     yAxis: [
       {
-        type: 'value',
-      },
+        type: 'value'
+      }
     ],
     series: [
       {
         name: 'Direct',
         type: 'bar',
         emphasis: {
-          focus: 'series',
+          focus: 'series'
         },
-        data: [320, 332, 301, 334, 390, 330, 320],
+        data: [320, 332, 301, 334, 390, 330, 320]
       },
       {
         name: 'Email',
         type: 'bar',
         stack: 'Ad',
         emphasis: {
-          focus: 'series',
+          focus: 'series'
         },
-        data: [120, 132, 101, 134, 90, 230, 210],
+        data: [120, 132, 101, 134, 90, 230, 210]
       },
       {
         name: 'Union Ads',
         type: 'bar',
         stack: 'Ad',
         emphasis: {
-          focus: 'series',
+          focus: 'series'
         },
-        data: [220, 182, 191, 234, 290, 330, 310],
+        data: [220, 182, 191, 234, 290, 330, 310]
       },
       {
         name: 'Video Ads',
         type: 'bar',
         stack: 'Ad',
         emphasis: {
-          focus: 'series',
+          focus: 'series'
         },
-        data: [150, 232, 201, 154, 190, 330, 410],
+        data: [150, 232, 201, 154, 190, 330, 410]
       },
       {
         name: 'Search Engine',
         type: 'bar',
         data: [862, 1018, 964, 1026, 1679, 1600, 1570],
         emphasis: {
-          focus: 'series',
+          focus: 'series'
         },
         markLine: {
           lineStyle: {
-            type: 'dashed',
+            type: 'dashed'
           },
-          data: [[{ type: 'min' }, { type: 'max' }]],
-        },
+          data: [[{ type: 'min' }, { type: 'max' }]]
+        }
       },
       {
         name: 'Baidu',
@@ -344,37 +344,37 @@ export default {
         barWidth: 5,
         stack: 'Search Engine',
         emphasis: {
-          focus: 'series',
+          focus: 'series'
         },
-        data: [620, 732, 701, 734, 1090, 1130, 1120],
+        data: [620, 732, 701, 734, 1090, 1130, 1120]
       },
       {
         name: 'Google',
         type: 'bar',
         stack: 'Search Engine',
         emphasis: {
-          focus: 'series',
+          focus: 'series'
         },
-        data: [120, 132, 101, 134, 290, 230, 220],
+        data: [120, 132, 101, 134, 290, 230, 220]
       },
       {
         name: 'Bing',
         type: 'bar',
         stack: 'Search Engine',
         emphasis: {
-          focus: 'series',
+          focus: 'series'
         },
-        data: [60, 72, 71, 74, 190, 130, 110],
+        data: [60, 72, 71, 74, 190, 130, 110]
       },
       {
         name: 'Others',
         type: 'bar',
         stack: 'Search Engine',
         emphasis: {
-          focus: 'series',
+          focus: 'series'
         },
-        data: [62, 82, 91, 84, 109, 110, 120],
-      },
-    ],
-  },
+        data: [62, 82, 91, 84, 109, 110, 120]
+      }
+    ]
+  }
 };
