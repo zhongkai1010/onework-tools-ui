@@ -14,6 +14,7 @@ const getModuleRoutes = (): AppRouteRecordRaw[] => {
     const modList = (Array.isArray(mod) ? [...mod] : [mod]) as AppRouteRecordRaw[];
     moduleRoutes.push(...modList);
   });
+
   return moduleRoutes;
 };
 

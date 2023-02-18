@@ -26,7 +26,7 @@ export const NOT_PAGE = {
 export const HOME_PAGE = {
   name: 'root',
   path: '/',
-  redirect: '/dashboard/analysis',
+  redirect: '/site/index',
   meta: {
     title: t('common.home'),
     icon: 'ant-design:home-outlined'

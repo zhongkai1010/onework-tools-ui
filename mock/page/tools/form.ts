@@ -1,7 +1,7 @@
 import { mock, Random } from 'mockjs';
 import { buildUUID } from '../../../src/utils/uuid';
 
-import ComponentData from '../../../src/views/tools/component/data';
+import ComponentData from '../../../src/views/_temp/tools/component/data';
 
 let forms: any[] = mock({
   'data|30-100': [
