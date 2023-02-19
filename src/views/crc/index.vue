@@ -1,14 +1,21 @@
 <template>
-  <div v-for="property in properties" :key="property">
-    <span>{{ property }} : {{ route.meta[property] }}</span>
+  <div>
+    <el-row :span="24">
+      <el-col :span="12">
+        <el-row :span="24">
+          <el-col :span="24">头像</el-col>
+          <el-col :span="24">入口</el-col>
+        </el-row>
+      </el-col>
+      <el-col :span="12">
+        <el-col :span="24">头像</el-col>
+        <el-col :span="24">头像</el-col>
+        <el-col :span="24">头像</el-col>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
-<script setup lang="ts">
-  import { useRoute } from 'vue-router';
-
-  const route = useRoute();
-  const properties = Object.keys(route.meta);
-</script>
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped></style>

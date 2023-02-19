@@ -122,7 +122,7 @@ export default [
           {
             name: 'manage_portal_site_video',
             path: 'video',
-            component: () => import('../../views/manage/portal/training_video.vuevideo.vue'),
+            component: () => import('../../views/manage/portal/training_video.vue'),
             meta: {
               title: t('router.manage.portal.video'),
               icon: 'ant-design:monitor-outlined'

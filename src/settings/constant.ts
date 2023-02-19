@@ -4,4 +4,4 @@ export const TABLE_DEFAULT_PAGE_SIZE = 10;
 export const CREATE_ITEM_TITLE_TEXT = t('common.createText');
 export const EDITABLE_ITEM_TITLE_TEXT = t('common.editText');
 export const prefixCls = 'ow';
-export const DEFAULT_TITLE = 'OneWrok Tool UI';
+export const DEFAULT_TITLE = '临床研究协调员（CRC）管理系统';

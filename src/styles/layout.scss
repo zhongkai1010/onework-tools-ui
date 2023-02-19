@@ -2,6 +2,8 @@
   width: 100vw;
   height: 100vh;
 
+
+
   .wrapper_header,
   .wrapper_left,
   .wrapper_nav,
@@ -11,7 +13,8 @@
   }
 
   .wrapper_body {
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     @include scrollBar;
   }
 
@@ -459,7 +462,7 @@
 
   .wrapper_body {
     width: calc(100vw - var(--layout-sidebar-menu-width));
-    height: calc(100vh - var(--layout-header-height));
+    height: calc(100vh - $layout-header-height - var(--layout-header-tab-height));
   }
 }
 
