@@ -406,11 +406,11 @@
   .wrapper_header {
     width: 100vw;
     height: $layout-header-height;
-    background-color: var(--sidebar-bg-color);
-    color: var(--sidebar-font-color);
+    background-color: var(--el-color-primary);
+    color: var(--header-bg-color);
 
     .header-container {
-      color: var(--sidebar-font-color);
+      color: var(--header-bg-color);
       padding: 0 40px;
 
       .logo {
@@ -422,16 +422,16 @@
         margin-right: 20px;
 
         .el-dropdown {
-          color: var(--sidebar-font-color);
+          color: var(--header-bg-color);
         }
       }
 
       .avatar {
         .el-avatar {
-          background-color: var(--sidebar-font-color);
+          background-color: var(--el-color-primary);
         }
 
-        color: var(--sidebar-font-color);
+        color: var(--header-bg-color);
       }
     }
   }

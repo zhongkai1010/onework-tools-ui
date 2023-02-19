@@ -382,6 +382,11 @@
         & :deep(.el-tabs__item) {
           height: 30px;
           line-height: 30px;
+
+          &.is-active {
+            background-color: var(--el-color-primary);
+            color: var(--header-bg-color);
+          }
         }
 
         & :deep(.el-tabs__content) {
