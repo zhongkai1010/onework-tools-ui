@@ -38,7 +38,7 @@
           <el-button>导出</el-button>
         </el-col>
         <el-col :span="24" class="table column_wrapper">
-          <el-table :data="tableData" :border="true" v-loading="table_loading">
+          <el-table key="name" :data="tableData" :border="true" v-loading="table_loading">
             <el-table-column prop="date" label="序号" width="60" />
             <el-table-column prop="name" label="姓名" width="200" />
             <el-table-column prop="address" label="角色类型" width="200" />
@@ -48,9 +48,8 @@
             <el-table-column prop="address" label="审核时间" />
             <el-table-column prop="address" label="驳回理由/备注" />
             <el-table-column prop="address" label="操作">
-              <template #default="scope">
-                <el-button size="small">${{ scope.row.name }}</el-button>
-                <el-button size="small" type="danger">Delete</el-button>
+              <template #default>
+                <el-button link>详情</el-button>
               </template>
             </el-table-column>
           </el-table>
@@ -82,27 +81,32 @@
     {
       date: '2016-05-01',
       name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles'
+      address: '12312'
     },
     {
       date: '2016-05-01',
       name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles'
+      address: '12312'
     },
     {
       date: '2016-05-01',
       name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles'
+      address: '12312'
     },
     {
       date: '2016-05-01',
       name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles'
+      address: '12312'
     },
     {
       date: '2016-05-01',
       name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles'
+      address: '12312'
+    },
+    {
+      date: '2016-05-01',
+      name: 'Tom',
+      address: '12312'
     }
   ];
 </script>

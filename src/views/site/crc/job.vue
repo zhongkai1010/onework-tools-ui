@@ -85,7 +85,7 @@
             </el-col>
 
             <el-col :span="24" class="column_container">
-              <el-button type="primary">创建项目</el-button>
+              <el-button type="primary">创建项目1</el-button>
               <el-button type="primary">发送通知</el-button>
               <el-button>导出</el-button>
             </el-col>
@@ -93,13 +93,13 @@
               <el-table :data="tableData" border>
                 <el-table-column prop="date" label="序号" width="30" />
                 <el-table-column prop="name" label="姓名" width="200" />
-                <el-table-column prop="address" label="角色类型" width="200" />
-                <el-table-column prop="address" label="SMO" />
-                <el-table-column prop="address" label="申请时间" />
-                <el-table-column prop="address" label="审核状态" />
-                <el-table-column prop="address" label="审核时间" />
-                <el-table-column prop="address" label="驳回理由/备注" />
-                <el-table-column prop="address" label="操作" />
+                <el-table-column prop="role_name" label="角色类型" width="200" />
+                <el-table-column prop="smo" label="SMO" />
+                <el-table-column prop="data1" label="申请时间" />
+                <el-table-column prop="status" label="审核状态" />
+                <el-table-column prop="data2" label="审核时间" />
+                <el-table-column prop="bearcm" label="驳回理由/备注" />
+                <el-table-column prop="opt" label="操作" />
               </el-table>
               <el-pagination background layout="prev, pager, next" :total="1000" />
             </el-col> </el-row
@@ -114,32 +114,32 @@
     {
       date: '2016-05-01',
       name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles'
+      address: '12312'
     },
     {
       date: '2016-05-01',
       name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles'
+      address: '12312'
     },
     {
       date: '2016-05-01',
       name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles'
+      address: '12312'
     },
     {
       date: '2016-05-01',
       name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles'
+      address: '12312'
     },
     {
       date: '2016-05-01',
       name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles'
+      address: '12312'
     },
     {
       date: '2016-05-01',
       name: 'Tom',
-      address: 'No. 189, Grove St, Los Angeles'
+      address: '12312'
     }
   ];
 </script>
