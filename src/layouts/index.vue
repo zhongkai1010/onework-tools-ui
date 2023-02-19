@@ -50,9 +50,13 @@
         </el-container>
       </el-container>
     </el-container>
+    <!--用户下拉菜单面板-->
     <tab-tools />
+    <!--配置面版-->
     <config-drawer />
+    <!--锁屏遮罩层-->
     <lock-screen v-if="siteConfig.lock" :avatar="logoImg" />
+    <!--拖拽小工具-->
     <div class="guild-container" ref="el" :style="style"></div>
   </div>
 </template>
@@ -91,6 +95,9 @@
   const { iframeNavs } = storeToRefs(permissionState);
   const { login, displayName, avatar } = storeToRefs(userState);
 
+  /**
+   *  拖拽小工具
+   */
   const { width, height } = useWindowSize();
   const el = ref(null);
   const { style } = useDraggable(el, {
@@ -114,6 +121,10 @@
       ...themeVariables
     };
   });
+
+  /**
+   * 生成主题样式变量
+   */
   const setCssVariable = (values: Recordable<string>) => {
     const rootStyle = window.document.documentElement.style;
     Object.keys(values).forEach((t) => {
@@ -121,14 +132,13 @@
     });
   };
   setCssVariable(unref(cassVariables));
+  /**
+   * 主题样式变量变化
+   */
   watch(cassVariables, () => {
     const values = unref(cassVariables);
     setCssVariable(values);
   });
-
-  // if (siteConfig.showTabs && pageState.selectTab) {
-  //   router.push(pageState.selectTab);
-  // }
 </script>
 
 <style lang="scss" scoped>
