@@ -289,10 +289,12 @@
           height: 70px;
           margin-right: 20px;
         }
+
         .text {
           margin-right: auto;
           font-weight: 600;
           font-size: 16px;
+
           p {
             line-height: 40px;
           }
@@ -317,9 +319,11 @@
             box-shadow: 0px 4px 12px 1px #e6e6e6;
             border-radius: 5px;
             margin: 5px;
+
             img {
               margin-left: 20px;
             }
+
             span {
               margin-left: 15px;
               font-size: 14px;
@@ -332,6 +336,7 @@
       .total-wrapper {
         display: flex;
         margin-bottom: $wrapper-margin-bottom;
+
         .total-card {
           width: 33%;
           display: flex;
@@ -341,27 +346,32 @@
           border-radius: 5px;
           box-shadow: 0px 4px 12px 1px #e6e6e6;
           margin-right: 1%;
+
           .title {
             display: flex;
             justify-content: flex-start;
             justify-items: center;
             font-size: 14px;
             word-break: keep-all;
+
             span:first-child {
               margin-right: auto;
             }
+
             img {
               width: 22px;
               height: 22px;
               margin-right: 5px;
             }
           }
+
           .text {
             font-size: 40px;
             font-weight: 600;
             text-align: center;
           }
         }
+
         .total-card:last-child {
           margin-right: 0px;
         }
@@ -403,10 +413,12 @@
             margin-bottom: 10px;
             border-radius: 5px;
             align-items: center;
+
             .content {
               width: 85%;
               display: flex;
               flex-direction: column;
+
               .text {
                 width: 90%;
                 text-overflow: ellipsis;
@@ -414,6 +426,7 @@
                 word-break: break-all;
                 white-space: nowrap;
               }
+
               .data {
                 color: #8ea9cf;
               }
@@ -432,6 +445,7 @@
         margin-bottom: 0px;
       }
     }
+
     .card-header {
       display: flex;
       align-items: center;
