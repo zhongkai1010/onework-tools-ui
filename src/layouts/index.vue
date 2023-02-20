@@ -5,8 +5,8 @@
         <layout-header
           :title="title ?? DEFAULT_TITLE"
           :logo="logo ?? logoImg"
-          :avatar="avatar ?? defaultAvatar"
-          :username="displayName"
+          :avatar="currentUser.avatar ?? defaultAvatar"
+          :username="currentUser.displayName"
         />
       </el-header>
       <el-container>
@@ -19,8 +19,8 @@
               v-if="!horizontal"
               :title="title ?? DEFAULT_TITLE"
               :logo="logo ?? logoImg"
-              :avatar="avatar ?? defaultAvatar"
-              :username="displayName"
+              :avatar="currentUser.avatar ?? defaultAvatar"
+              :username="currentUser.displayName"
             />
             <layout-tabs v-if="showTabs" />
           </el-header>
@@ -93,7 +93,7 @@
   const { layout, showTabs, title, logo } = storeToRefs(siteConfig);
   const { routerLoading, cacheNames, reloading } = storeToRefs(pageState);
   const { iframeNavs } = storeToRefs(permissionState);
-  const { login, displayName, avatar } = storeToRefs(userState);
+  const { login, currentUser } = storeToRefs(userState);
 
   /**
    *  拖拽小工具

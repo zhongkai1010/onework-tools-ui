@@ -1,6 +1,6 @@
 import { SiteAuditJoinCrcPageVo } from './types';
 import { PageResult } from '/@/api/common';
-import { http } from '/@/plugins/axios';
+import { http } from '/@/utils/http/axios';
 
 export default {
   getList: () => http.get<PageResult<SiteAuditJoinCrcPageVo>>({ url: '/site/crc/entry/getList' }),

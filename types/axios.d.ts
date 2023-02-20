@@ -12,6 +12,10 @@ export interface RequestOptions {
   isReturnNativeResponse?: boolean;
   // 是否加入url
   joinPrefix?: boolean;
+  // Interface address, use the default apiUrl if you leave it blank
+  apiUrl?: string;
+  // 请求拼接路径
+  urlPrefix?: string;
   // 错误信息提示类型
   errorMessageMode?: ErrorMessageMode;
   // 是否添加时间戳

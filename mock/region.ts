@@ -1,6 +1,6 @@
 export default [
   {
-    url: '/api/test/getCascadeData',
+    url: '/basic-api/test/getCascadeData',
     method: 'get',
     timeout: '2000',
     response: () => {

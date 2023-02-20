@@ -7,8 +7,6 @@ import type {
   PropType as VuePropType
 } from 'vue';
 
-declare module 'element-plus';
-
 declare global {
   const __APP_INFO__: {
     pkg: {

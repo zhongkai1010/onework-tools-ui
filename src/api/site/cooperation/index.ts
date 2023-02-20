@@ -1,5 +1,5 @@
 import { PageResult } from '/@/api/common';
-import { http } from '/@/plugins/axios';
+import { http } from '../../../utils/http/axios';
 
 export default {
   getSponsorList: () => http.get<PageResult<any>>({ url: '/site/cooperation/getSponsorList' }),

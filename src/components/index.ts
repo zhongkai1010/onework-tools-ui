@@ -8,23 +8,8 @@
  */
 import { App } from 'vue';
 import IconifyIcon from './IconifyIcon/index';
-import DynamicTable, { DataTable } from './DynamicTable/index';
-import ResizeChart from './ResizeChart/index';
-import DynamicForm, {
-  FormItem,
-  TypeFormItem,
-  ModelFormItem,
-  JsonFormItem
-} from './DynamicForm/index';
 
-import {
-  FormModelProperty,
-  FormModel,
-  FormPropertyType,
-  FormSelectAsync,
-  FormSelectDictionary,
-  FormJson
-} from './Form';
+import ResizeChart from './ResizeChart/index';
 
 import PageView, { ErrorView, FrameView, BlankView, CardView } from './PageView/index';
 
@@ -50,8 +35,6 @@ const setupComponents = (app: App<Element>) => {
   /**
    *  表格
    */
-  app.component('DynamicTable', DynamicTable);
-  app.component('DataTable', DataTable);
 
   /**
    *  卡片
@@ -61,19 +44,6 @@ const setupComponents = (app: App<Element>) => {
   /**
    *  表单
    */
-  app.component('DynamicForm', DynamicForm);
-  app.component('FormItem', FormItem);
-  app.component('BlTypeFormItem', TypeFormItem);
-  app.component('BlModelFormItem', ModelFormItem);
-  app.component('ModelFormItem', ModelFormItem);
-  app.component('BlJsonFormItem', JsonFormItem);
-
-  app.component('FormModelProperty', FormModelProperty);
-  app.component('FormModel', FormModel);
-  app.component('FormPropertyType', FormPropertyType);
-  app.component('FormSelectAsync', FormSelectAsync);
-  app.component('FormSelectDictionary', FormSelectDictionary);
-  app.component('FormJson', FormJson);
 };
 
 export { setupComponents };

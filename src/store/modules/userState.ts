@@ -1,20 +1,22 @@
 import _ from 'lodash';
 import { defineStore } from 'pinia';
 import { store } from '../index';
-import commonApi from '/@/api/common';
+import accountApi from '/@/api/account';
+import userApi, { CurrentUser } from '/@/api/user';
 
 export interface UserStateType {
   token?: string;
-  displayName?: string;
-  avatar?: string;
   login: boolean;
+  currentUser: CurrentUser;
 }
 
 export const defaultUserStateStore: UserStateType = {
   login: false,
-  token: undefined,
-  displayName: undefined,
-  avatar: undefined
+  token: null,
+  currentUser: {
+    displayName: '',
+    avatar: ''
+  }
 };
 
 const userStateStore = defineStore('user-state', {
@@ -27,19 +29,20 @@ const userStateStore = defineStore('user-state', {
       this.login = true;
     },
     async userLogout() {
-      await commonApi.logout();
+      await accountApi.logout();
       this.login = false;
       this.token = undefined;
     },
-    async pwdLogin(params: any) {
-      const result = await commonApi.login(params);
+    async userLogin(params: any) {
+      const result = await accountApi.login(params);
       this.token = result.token;
       this.login = true;
     },
     async getUserInfo() {
-      const userinfo = await commonApi.getUserInfo();
-      this.displayName = userinfo.defaultName;
-      this.avatar = userinfo.avatar;
+      const userinfo = await userApi.getUserInfo();
+
+      this.currentUser.displayName = userinfo.displayName;
+      this.currentUser.avatar = userinfo.avatar;
 
       return userinfo;
     }

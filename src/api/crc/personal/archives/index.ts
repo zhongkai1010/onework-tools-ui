@@ -1,5 +1,5 @@
 import { PageResult } from '/@/api/common';
-import { http } from '/@/plugins/axios';
+import { http } from '/@/utils/http/axios';
 
 export default {
   getInfo: () => http.get<PageResult<any>>({ url: '/crc/personal/archives/getInfo' }),

@@ -105,7 +105,7 @@
   const onClickLogin = async () => {
     loading.value = true;
     const userState = userStateStoreHook();
-    await userState.pwdLogin({ username: '', password: '', vcode: '' });
+    await userState.userLogin({ username: '', password: '', vcode: '' });
     await userState.getUserInfo();
     const menus = getNavRecordRaw();
     const menuMap = getNavRecordRawMap(menus);
