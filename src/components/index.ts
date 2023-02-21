@@ -11,7 +11,7 @@ import IconifyIcon from './IconifyIcon/index';
 
 import ResizeChart from './ResizeChart/index';
 
-import PageView, { ErrorView, FrameView, BlankView, CardView } from './PageView/index';
+import PageView, { ErrorView, FrameView, BlankView, CardView } from './Page/index';
 
 import { CardTitle } from './Card';
 
