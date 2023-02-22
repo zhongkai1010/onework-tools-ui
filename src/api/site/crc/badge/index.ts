@@ -1,9 +1,47 @@
-import { PageResult } from '/@/api/common';
+import {
+  BadgeBuildRuleResult,
+  GetListSearchParams,
+  HandleBadge,
+  SiteBadgeStatisticsResult,
+  SiteCRCBadge
+} from './types';
+import {} from '/@/api/common';
+import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
 import { http } from '/@/utils/http/axios';
 
 export default {
-  getList: () => http.get<PageResult<any>>({ url: '/site/crc/badge/getList' }),
-  distribute: () => http.get<PageResult<any>>({ url: '/site/crc/badge/distribute' }),
-  receive: () => http.get<PageResult<any>>({ url: '/site/crc/badge/receive' }),
-  back: () => http.get<PageResult<any>>({ url: '/site/crc/badge/back' })
+  /**
+   * 查看在职CRC所有工作证的列表
+   * @returns
+   */
+  getList: (params: GetListSearchParams) =>
+    http.get<RequestResult<ResponsePageData<SiteCRCBadge>>>({
+      url: '/site/crc/badge/getList',
+      params
+    }),
+
+  /**
+   * 发放或归还工作证
+   * @returns
+   */
+  handleBadge: (data: HandleBadge) =>
+    http.get<RequestResult<ResponseData<any>>>({ url: '/site/crc/badge/handleBadge', data }),
+
+  /**
+   *  获取机构工作证生成规则，如果系统自动生成，提前给一个编号
+   * @returns
+   */
+  getBadgeBuildRule: () =>
+    http.get<RequestResult<ResponseData<BadgeBuildRuleResult>>>({
+      url: '/site/crc/badge/getBadgeBuildRule'
+    }),
+
+  /**
+   * 获取机构工作证统计情况
+   */
+  getSiteBadgeStatistics: () => {
+    http.get<RequestResult<ResponseData<SiteBadgeStatisticsResult>>>({
+      url: '/site/crc/badge/getSiteBadgeStatistics'
+    });
+  }
 };

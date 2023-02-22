@@ -1,29 +1,34 @@
-export interface SiteAuditJoinCrcPageVo {
+export interface GetListSearchParams {
+  userName: string;
+  smoName: string;
+  roleType: string;
+}
+
+export interface ReviewApplyParams {
   /**
-   * 申请时间
+   * 申请id集合
    */
-  applyTime: string;
+  crcApprovalIds: string[];
   /**
-   *
-   * 审核人
+   * 驳回原因
    */
-  approveName: string;
+  rejectReason?: string;
   /**
-   * 审核时间
+   * 审核状态，1通过 2驳回
    */
-  approveTime: string;
+  status: number;
+}
+
+export interface SiteApplyJoinCRCRecord {
   /**
    * 申请记录id
    */
   crcApprovalId: string;
   /**
-   * 手机
+   * crc姓名
    */
-  phone: string;
-  /**
-   * 驳回理由
-   */
-  rejectReason: string;
+  userName: string;
+
   /**
    * 角色类型，1正式CRC 2实习CRC
    */
@@ -32,10 +37,16 @@ export interface SiteAuditJoinCrcPageVo {
    * 角色类型
    */
   roleTypeValue: string;
+
   /**
    * smo名称
    */
   smoName: string;
+
+  /**
+   * 申请时间
+   */
+  applyTime: string;
   /**
    * 审核状态， 0待审核 1已通过 2未通过
    */
@@ -44,12 +55,17 @@ export interface SiteAuditJoinCrcPageVo {
    * 审核状态
    */
   statusValue: string;
+
   /**
-   * crc人员id
+   * 审核人
    */
-  userId: string;
+  approveName: string;
   /**
-   * crc姓名
+   * 审核时间
    */
-  userName: string;
+  approveTime: string;
+  /**
+   * 驳回理由
+   */
+  rejectReason: string;
 }

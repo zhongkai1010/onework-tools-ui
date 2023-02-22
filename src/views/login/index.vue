@@ -81,7 +81,7 @@
         </div>
       </div>
     </div>
-    <div class="copyright-container">Copyright © 2020 北京中兴正远科技有限公司</div>
+    <div class="copyright-container">Copyright © 2023 北京中兴正远科技有限公司</div>
   </div>
 </template>
 
@@ -148,6 +148,7 @@
      */
     const globalConfig = siteConfigStoreHook();
     const config = await commonApi.getConfig();
+
     globalConfig.setTitle(config.title);
     /**
      *  用户登录，直接跳转首页

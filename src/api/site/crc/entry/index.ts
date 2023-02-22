@@ -1,22 +1,36 @@
-import { SiteAuditJoinCrcPageVo } from './types';
-import { PageResult } from '/@/api/common';
+import { GetListSearchParams, ReviewApplyParams, SiteApplyJoinCRCRecord } from './types';
+import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
+
 import { http } from '/@/utils/http/axios';
 
 export default {
-  getList: () => http.get<PageResult<SiteAuditJoinCrcPageVo>>({ url: '/site/crc/entry/getList' }),
-
   /**
-   * 获取CRC发起加入机构审计记录详情
+   * 获取机构查看CRC申请加入机构审核记录
+   * @param params
    * @returns
    */
-  getDetails: () =>
-    http.get<PageResult<SiteAuditJoinCrcPageVo>>({ url: '/site/crc/entry/getDetails' }),
+  getList: (params: Partial<GetListSearchParams>) =>
+    http.get<RequestResult<ResponsePageData<SiteApplyJoinCRCRecord>>>({
+      url: '/site/crc/entry/getList',
+      params
+    }),
 
   /**
-   * 审核申请
+   * 获取机构审核CRC加入机构时候，提醒存在跨院信息和跨院有多少项目信息
+   * @param params
+   * @returns
+   */
+  getCRCWarning: (uid: string) =>
+    http.get<RequestResult<ResponseData<SiteApplyJoinCRCRecord>>>({
+      url: '/site/crc/entry/getCRCWarning',
+      params: { uid }
+    }),
+
+  /**
+   * 审核CRC申请加入机构记录
    * @param data
    * @returns
    */
-  approvalApplication: (data: any) =>
-    http.post<PageResult<Boolean>>({ url: '/site/crc/entry/approvalApplication', data })
+  reviewApply: (data: ReviewApplyParams) =>
+    http.post<RequestResult<any>>({ url: '/site/crc/entry/reviewApply', data })
 };
