@@ -91,7 +91,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "./src/styles/index.scss" as *;'
+          additionalData: '@use "./src/style/index.scss" as *;'
         }
       }
     }

@@ -13,11 +13,11 @@ import 'animate.css';
 // remixicon icon
 import 'remixicon/fonts/remixicon.css';
 // 重置浏览器样式
-import './styles/reset.scss';
+import './style/reset.scss';
 // element-plus
 import 'element-plus/dist/index.css';
 // tailwindcss
-import './styles/tailwind.css';
+import './style/tailwind.css';
 
 async function bootstrap() {
   const app = createApp(App);

@@ -83,7 +83,7 @@
   import { HOME_PAGE } from '/@/router/constant';
   import logoImg from '/@/assets/logo.png';
   import defaultAvatar from '/@/assets/logo.png';
-  import '/@/styles/layout.scss';
+  import '/@/style/layout.scss';
 
   const pageState = pageStateStoreHook();
   const siteConfig = siteConfigStoreHook();
