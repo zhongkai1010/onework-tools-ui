@@ -1,14 +1,7 @@
-import errorView from './src/ErrorView.vue';
-import frameView from './src/FrameView.vue';
-import blankView from './src/BlankView.vue';
-import cardView from './src/CardView.vue';
-import pageView from './src/PageView.vue';
+import pageError from './src/PageError.vue';
+import pageFrame from './src/PageFrame.vue';
+import pageWrapper from './src/PageWrapper.vue';
 
-export const ErrorView = errorView;
-export const FrameView = frameView;
-export const BlankView = blankView;
-
-export const CardView = cardView;
-
-const PageView = pageView;
-export default PageView;
+export const PageError = pageError;
+export const PageFrame = pageFrame;
+export const PageWrapper = pageWrapper;

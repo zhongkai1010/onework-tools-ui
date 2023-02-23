@@ -66,6 +66,7 @@
 </template>
 
 <script setup lang="ts">
+  import { IconifyIcon } from '/@/components/Icon';
   const show = ref(false);
   const table_loading = ref(false);
   const onShow = () => {

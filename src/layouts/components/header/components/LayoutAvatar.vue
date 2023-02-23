@@ -37,7 +37,7 @@
   const visibleState = ref(true);
 
   const props = defineProps<{
-    avatar: string;
+    avatar?: string;
     username?: string;
   }>();
 

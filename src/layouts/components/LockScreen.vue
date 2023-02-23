@@ -14,6 +14,7 @@
 <script setup lang="ts">
   import { siteConfigStoreHook } from '/@/store/modules/globalConfig';
   import { t } from '/@/hooks/web/useI18n';
+  import { IconifyIcon } from '/@/components/Icon';
 
   const siteConfig = siteConfigStoreHook();
 

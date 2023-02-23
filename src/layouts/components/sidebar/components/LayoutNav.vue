@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
   import { MenuRecordRaw } from '/@/layouts/types';
-
+  import { IconifyIcon } from '/@/components/Icon';
   const props = defineProps<{
     selectNav?: string;
     navs: MenuRecordRaw[];

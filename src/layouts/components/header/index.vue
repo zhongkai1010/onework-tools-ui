@@ -1,30 +1,30 @@
 <template>
   <div class="header-container">
-    <layout-logo class="logo" v-if="showState.logo" :title="props.title" :logo="props.logo" />
-    <flod-button class="fold" v-if="showState.i" :fold="menufold" @click="onClickFold" />
-    <layout-nav
+    <LayoutLogo class="logo" v-if="showState.logo" :title="props.title" :logo="props.logo" />
+    <FlodButton class="fold" v-if="showState.i" :fold="menufold" @click="onClickFold" />
+    <LayoutNav
       class="nav"
       v-if="showState.nav"
       :select-nav="selectNav"
       :navs="rootNavs"
       @select-nav="onSelectNav"
     />
-    <layout-menu
+    <LayoutMenu
       class="nav"
       v-if="showState.menu"
       :select-menu="selectMenu"
       :menus="menus"
       @select-menu="onSelectMenu"
     />
-    <layout-breadcrumb
+    <LayoutBreadcrumb
       class="breadcrumb"
       v-if="showState.breadcrumb"
       :breadcrumb="breadcrumbNavs"
       :select-menu="selectMenu"
       @select-menu="onSelectMenu"
     />
-    <layout-tools class="tool" />
-    <layout-avatar class="avatar" :avatar="props.avatar" :username="props.username" />
+    <LayoutTools class="tool" />
+    <LayoutAvatar class="avatar" :avatar="props.avatar" :username="props.username" />
   </div>
 </template>
 

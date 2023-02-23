@@ -110,6 +110,7 @@
 </template>
 
 <script setup lang="ts">
+  import { IconifyIcon } from '/@/components/Icon';
   const tableData = [
     {
       date: '2016-05-01',

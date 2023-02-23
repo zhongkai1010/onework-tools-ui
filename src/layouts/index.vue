@@ -2,7 +2,7 @@
   <div class="wrapper" :data-layout="layout" v-loading="reloading">
     <el-container>
       <el-header v-if="horizontal" class="wrapper_header">
-        <layout-header
+        <LayoutHeader
           :title="title ?? DEFAULT_TITLE"
           :logo="logo ?? logoImg"
           :avatar="currentUser.avatar ?? defaultAvatar"
@@ -11,34 +11,34 @@
       </el-header>
       <el-container>
         <el-aside v-if="layout !== 'horizontal'" class="wrapper_left">
-          <layout-sidebar :title="title ?? DEFAULT_TITLE" :logo="logo ?? logoImg" />
+          <LayoutSidebar :title="title ?? DEFAULT_TITLE" :logo="logo ?? logoImg" />
         </el-aside>
         <el-container>
           <el-header class="wrapper_nav">
-            <layout-header
+            <LayoutHeader
               v-if="!horizontal"
               :title="title ?? DEFAULT_TITLE"
               :logo="logo ?? logoImg"
               :avatar="currentUser.avatar ?? defaultAvatar"
               :username="currentUser.displayName"
             />
-            <layout-tabs v-if="showTabs" />
+            <LayoutTabs v-if="showTabs" />
           </el-header>
           <el-main class="wrapper_body">
             <router-view v-slot="{ Component, route }">
-              <frame-view
+              <PageFrame
                 :src="nav.frameSrc"
                 v-for="(nav, index) in iframeNavs"
                 :key="index"
                 v-show="nav.path === route.path"
               />
-              <keep-alive :include="cacheNames">
+              <KeepAlive :include="cacheNames">
                 <component
                   :is="Component"
                   :key="$route.name"
                   v-if="$route.meta.keepAlive && !$route.meta.frameSrc && !routerLoading"
                 />
-              </keep-alive>
+              </KeepAlive>
 
               <component
                 :is="Component"
@@ -51,38 +51,38 @@
       </el-container>
     </el-container>
     <!--用户下拉菜单面板-->
-    <tab-tools />
+    <TabTools />
     <!--配置面版-->
-    <config-drawer />
+    <ConfigDrawer />
     <!--锁屏遮罩层-->
-    <lock-screen v-if="siteConfig.lock" :avatar="logoImg" />
+    <LockScreen v-if="siteConfig.lock" :avatar="logoImg" />
     <!--拖拽小工具-->
     <div class="guild-container" ref="el" :style="style"></div>
   </div>
 </template>
 
 <script lang="ts" setup>
-  import { computed } from 'vue';
-  import { storeToRefs } from 'pinia';
   import { useDraggable, useWindowSize } from '@vueuse/core';
+  import { storeToRefs } from 'pinia';
+  import { computed } from 'vue';
   import LayoutHeader from '/@/layouts/components/header/index.vue';
+  import LockScreen from '/@/layouts/components/LockScreen.vue';
+  import ConfigDrawer from '/@/layouts/components/setting/ConfigDrawer.vue';
   import LayoutSidebar from '/@/layouts/components/sidebar/index.vue';
   import LayoutTabs from '/@/layouts/components/tabs/index.vue';
-  import ConfigDrawer from '/@/layouts/components/setting/ConfigDrawer.vue';
   import TabTools from '/@/layouts/components/tabs/TabTools.vue';
-  import LockScreen from '/@/layouts/components/LockScreen.vue';
+  import { PageFrame } from '/@/components/Page';
 
   import { siteConfigStoreHook } from '/@/store/modules/globalConfig';
   import { pageStateStoreHook } from '/@/store/modules/pageState';
   import { permissionStateStoreHook } from '/@/store/modules/permissionState';
-  import { userStateStoreHook } from '/@/store/modules/userState';
   import { themeStateStoreHook } from '/@/store/modules/themeState';
+  import { userStateStoreHook } from '/@/store/modules/userState';
 
-  import { DEFAULT_TITLE } from '/@/settings/constant';
+  import { default as defaultAvatar, default as logoImg } from '/@/assets/logo.png';
   import { router } from '/@/router';
   import { HOME_PAGE } from '/@/router/constant';
-  import logoImg from '/@/assets/logo.png';
-  import defaultAvatar from '/@/assets/logo.png';
+  import { DEFAULT_TITLE } from '/@/settings/constant';
   import '/@/style/layout.scss';
 
   const pageState = pageStateStoreHook();

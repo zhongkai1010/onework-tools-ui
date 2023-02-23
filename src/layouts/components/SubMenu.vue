@@ -20,6 +20,7 @@
 
 <script setup lang="ts">
   import { MenuRecordRaw } from '/@/layouts/types';
+  import { IconifyIcon } from '/@/components/Icon';
   import SubMenu from './SubMenu.vue';
 
   const props = defineProps<{

@@ -4,7 +4,7 @@ export const LAYOUT = () => import('/@/layouts/index.vue');
 
 export const EMPTY_LAYOUT = () => import('/@/layouts/EmptyLayout.vue');
 
-export const FRAME_VIEW = () => import('/@/components/Page/src/FrameView.vue');
+export const FRAME_VIEW = () => import('../components/Page/src/PageFrame.vue');
 
 import { t } from '/@/hooks/web/useI18n';
 

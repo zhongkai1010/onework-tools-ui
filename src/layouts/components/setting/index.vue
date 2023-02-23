@@ -31,6 +31,7 @@
 
 <script setup lang="ts">
   import { pageStateStoreHook } from '/@/store/modules/pageState';
+  import { IconifyIcon } from '/@/components/Icon';
   const pageState = pageStateStoreHook();
 
   const onClickConfig = () => {

@@ -63,6 +63,7 @@
   import { tabStateStoreHook } from '/@/store/modules/tabState';
   import { TAB_OPERATE_ITEM } from '/@/settings/layout';
   import { findElementParentId } from '/@/utils';
+  import { IconifyIcon } from '/@/components/Icon';
   import { HOME_PAGE } from '/@/router/constant';
 
   const pageState = pageStateStoreHook();

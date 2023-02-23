@@ -7,40 +7,23 @@
  * @Description:
  */
 import { App } from 'vue';
-import IconifyIcon from './IconifyIcon/index';
 
-import ResizeChart from './ResizeChart/index';
-
-import PageView, { ErrorView, FrameView, BlankView, CardView } from './Page/index';
-
-import { CardTitle } from './Card';
-
-const setupComponents = (app: App<Element>) => {
-  app.component('ErrorView', ErrorView);
-  app.component('BlankView', BlankView);
-  app.component('CardView', CardView);
+const setupComponents = (_app: App<Element>) => {
   /**
    *  辅助
    */
-  app.component('IconifyIcon', IconifyIcon);
-  app.component('FrameView', FrameView);
   /**
    *  图形与图标
    */
-  app.component('ResizeChart', ResizeChart);
   /**
    *  页面布局
    */
-  app.component('PageView', PageView);
   /**
    *  表格
    */
-
   /**
    *  卡片
    */
-  app.component('CardTitle', CardTitle);
-
   /**
    *  表单
    */

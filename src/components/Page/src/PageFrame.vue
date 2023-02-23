@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
   const props = defineProps<{
-    src: string;
+    src?: string;
   }>();
 </script>
 

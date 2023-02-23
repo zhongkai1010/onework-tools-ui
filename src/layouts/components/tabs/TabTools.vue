@@ -25,6 +25,8 @@
   import { pageStateStoreHook } from '/@/store/modules/pageState';
   import { TAB_OPERATE_ITEM } from '/@/settings/layout';
   import { tabStateStoreHook } from '/@/store/modules/tabState';
+  import { IconifyIcon } from '/@/components/Icon';
+
   const pageState = pageStateStoreHook();
   const tabState = tabStateStoreHook();
   const state = computed(() => tabState.rightTool);

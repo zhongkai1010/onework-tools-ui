@@ -1,16 +1,17 @@
 <template>
-  <PageView class="page-container">
+  <PageWrapper class="page-container">
     <el-tabs :modelValue="pageConfig.defalutTab" type="card">
       <el-tab-pane v-for="tab in tabs" :label="tab.text" :name="tab.name" :key="tab.name">
         <component :is="tab.component" />
       </el-tab-pane>
     </el-tabs>
-  </PageView>
+  </PageWrapper>
 </template>
 
 <script setup lang="ts">
   import ReviewedTab from './components/job/ReviewedTab.vue';
   import AuditedTab from './components/job/AuditedTab.vue';
+  import { PageWrapper } from '/@/components/Page';
   const pageConfig = {
     defalutTab: 'reviewed'
   };
