@@ -1,7 +1,8 @@
-import { PageResult } from '/@/api/common';
+import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
 import { http } from '../../../utils/http/axios';
 
 export default {
-  getList: () => http.get<PageResult<any>>({ url: '/manage/project/getList' }),
-  createProject: () => http.get<PageResult<any>>({ url: '/manag/project/createProject' })
+  getList: () => http.get<RequestResult<ResponseData<any>>>({ url: '/manage/project/getList' }),
+  createProject: () =>
+    http.get<RequestResult<ResponseData<any>>>({ url: '/manag/project/createProject' })
 };

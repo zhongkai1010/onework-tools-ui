@@ -1,4 +1,4 @@
-import { PageResult } from '/@/api/common';
+import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
 import { http } from '../../../utils/http/axios';
 
 export interface CustomMenu {
@@ -31,9 +31,10 @@ export interface SiteStatistics {
 }
 
 export default {
-  getCustomMenus: () => http.get<PageResult<CustomMenu>>({ url: '/user/home/getCustomMenu' }),
+  getCustomMenus: () =>
+    http.get<RequestResult<ResponseData<CustomMenu>>>({ url: '/user/home/getCustomMenu' }),
 
-  getMenus: () => http.get<PageResult<CustomMenu>>({ url: '/user/home/getMenus' }),
+  getMenus: () => http.getRequestResult<ResponseData<<CustomMenu>>>({ url: '/user/home/getMenus' }),
 
   getTodos: () => http.get<PageResult<TodoItem>>({ url: '/user/home/getTodos' }),
 

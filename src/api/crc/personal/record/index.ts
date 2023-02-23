@@ -1,14 +1,16 @@
-import { PageResult } from '/@/api/common';
+import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
 import { http } from '/@/utils/http/axios';
 
 export default {
-  getCompanyList: () => http.get<PageResult<any>>({ url: '/crc/personal/record/getCompanyList' }),
+  getCompanyList: () =>
+    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/personal/record/getCompanyList' }),
 
   uploadCompanyProof: () =>
-    http.get<PageResult<any>>({ url: '/crc/personal/record/uploadCompanyProof' }),
+    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/personal/record/uploadCompanyProof' }),
 
-  getProjectList: () => http.get<PageResult<any>>({ url: '/crc/personal/record/getProjectList' }),
+  getProjectList: () =>
+    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/personal/record/getProjectList' }),
 
   uploadProjectProof: () =>
-    http.get<PageResult<any>>({ url: '/crc/personal/record/uploadProjectProof' })
+    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/personal/record/uploadProjectProof' })
 };

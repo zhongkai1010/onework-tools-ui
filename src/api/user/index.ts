@@ -1,4 +1,4 @@
-import { PageResult } from '/@/api/common';
+import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
 import { http } from '../../utils/http/axios';
 
 export interface CurrentUser {
@@ -7,8 +7,8 @@ export interface CurrentUser {
 }
 
 export default {
-  resetPassword: () => http.get<PageResult<any>>({ url: '/user/resetPassword' }),
-  changePhone: () => http.get<PageResult<any>>({ url: '/user/changePhone' }),
-  getMessages: () => http.get<PageResult<any>>({ url: '/user/getMessages' }),
+  resetPassword: () => http.get<RequestResult<ResponseData<any>>>({ url: '/user/resetPassword' }),
+  changePhone: () => http.get<RequestResult<ResponseData<any>>>({ url: '/user/changePhone' }),
+  getMessages: () => http.get<RequestResult<ResponseData<any>>>({ url: '/user/getMessages' }),
   getUserInfo: () => http.get<CurrentUser>({ url: '/user/getUserInfo' })
 };

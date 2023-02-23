@@ -1,31 +1,39 @@
-import { PageResult } from '/@/api/common';
+import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
 import { http } from '/@/utils/http/axios';
 
 export default {
-  getList: () => http.get<PageResult<any>>({ url: '/crc/work/project/getList' }),
+  getList: () => http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/getList' }),
 
-  searchProject: () => http.get<PageResult<any>>({ url: '/crc/work/project/searchProject' }),
+  searchProject: () =>
+    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/searchProject' }),
 
-  saveProject: () => http.get<PageResult<any>>({ url: '/crc/work/project/searchProject' }),
+  saveProject: () =>
+    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/searchProject' }),
 
-  shubmitProject: () => http.get<PageResult<any>>({ url: '/crc/work/project/shubmitProject' }),
+  shubmitProject: () =>
+    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/shubmitProject' }),
 
-  projectHandover: () => http.get<PageResult<any>>({ url: '/crc/work/project/projectHandover' }),
+  projectHandover: () =>
+    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/projectHandover' }),
 
-  setProjectStatus: () => http.get<PageResult<any>>({ url: '/crc/work/project/setProjectStatus' }),
+  setProjectStatus: () =>
+    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/setProjectStatus' }),
 
-  updateProject: () => http.get<PageResult<any>>({ url: '/crc/work/project/updateProject' }),
+  updateProject: () =>
+    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/updateProject' }),
 
-  setProjectRole: () => http.get<PageResult<any>>({ url: '/crc/work/project/setProjectRole' }),
+  setProjectRole: () =>
+    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/setProjectRole' }),
 
   getAuditProjectList: () =>
-    http.get<PageResult<any>>({ url: '/crc/work/entry/getAuditJoinProjectList' }),
+    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/entry/getAuditJoinProjectList' }),
 
   removeAuditProject: () =>
-    http.get<PageResult<any>>({ url: '/crc/work/entry/removeAuditProject' }),
+    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/entry/removeAuditProject' }),
 
-  editAuditProject: () => http.get<PageResult<any>>({ url: '/crc/work/project/editAuditProject' }),
+  editAuditProject: () =>
+    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/editAuditProject' }),
 
   applyProjectJoinSite: () =>
-    http.get<PageResult<any>>({ url: '/crc/work/project/applyProjectJoinSite' })
+    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/applyProjectJoinSite' })
 };
