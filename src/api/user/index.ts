@@ -1,4 +1,4 @@
-import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
+import { RequestResult, ResponseData } from '/@/api/types';
 import { http } from '../../utils/http/axios';
 
 export interface CurrentUser {
