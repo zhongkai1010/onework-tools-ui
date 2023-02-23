@@ -15,6 +15,7 @@ import { isString } from 'lodash';
 import { formatRequestDate, joinTimestamp } from './helper';
 import { userStateStoreHook } from '/@/store/modules/userState';
 import { useGlobSetting } from '/@/hooks/setting';
+import { useUserStoreWithOut } from '/@/store/modules/user';
 
 const globSetting = useGlobSetting();
 const urlPrefix = globSetting.urlPrefix;
@@ -61,6 +62,9 @@ const transform: AxiosTransform = {
     switch (code) {
       case ResultEnum.TIMEOUT:
         timeoutMsg = t('app.api.timeoutMessage');
+        const userStore = useUserStoreWithOut();
+        userStore.setToken(undefined);
+        userStore.logout(true);
         break;
       default:
         if (message) {

@@ -1,36 +1,24 @@
-import { AppRouteRecordRaw } from '/#/route';
+export const REDIRECT_NAME = 'Redirect';
 
-export const LAYOUT = () => import('/@/layouts/index.vue');
+export const PARENT_LAYOUT_NAME = 'ParentLayout';
 
-export const EMPTY_LAYOUT = () => import('/@/layouts/EmptyLayout.vue');
+export const PAGE_NOT_FOUND_NAME = 'PageNotFound';
 
-export const FRAME_VIEW = () => import('../components/Page/src/PageFrame.vue');
+export const EXCEPTION_COMPONENT = () => import('/@/views/sys/exception/Exception.vue');
 
-import { t } from '/@/hooks/web/useI18n';
+/**
+ * @description: default layout
+ */
+export const LAYOUT = () => import('/@/layouts/default/index.vue');
 
-export const LOGIN_PAGE = {
-  name: 'login',
-  path: '/login',
-  component: () => import('/@/views/login/index.vue'),
-  meta: {
-    title: t('common.login')
-  }
+/**
+ * @description: parent-layout
+ */
+export const getParentLayout = (_name?: string) => {
+  return () =>
+    new Promise((resolve) => {
+      resolve({
+        name: _name || PARENT_LAYOUT_NAME
+      });
+    });
 };
-
-export const NOT_PAGE = {
-  path: '/:pathMatch(.*)*',
-  name: 'NotFound',
-  component: () => import('/@/views/404.vue')
-};
-
-export const HOME_PAGE = {
-  name: 'root',
-  path: '/',
-  redirect: '/site/index',
-  meta: {
-    title: t('common.home'),
-    icon: 'ant-design:home-outlined'
-  }
-} as AppRouteRecordRaw;
-
-export const ROUTER_WHITE_LIST = ['/login', '/test'] as string[];

@@ -1,96 +1,42 @@
-import dayjs from 'dayjs';
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
-import { LOGIN_PAGE, NOT_PAGE, HOME_PAGE, ROUTER_WHITE_LIST } from '../router/constant';
+import type { RouteRecordRaw } from 'vue-router';
+import type { App } from 'vue';
 
-import { getModuleRoutes } from './utils';
+import { createRouter, createWebHashHistory } from 'vue-router';
+import { basicRoutes } from './routes';
 
-import { useI18n } from '/@/hooks/web/useI18n';
+// 白名单应该包含基本静态路由
+const WHITE_NAME_LIST: string[] = [];
+const getRouteNames = (array: any[]) =>
+  array.forEach((item) => {
+    WHITE_NAME_LIST.push(item.name);
+    getRouteNames(item.children || []);
+  });
+getRouteNames(basicRoutes);
 
-import { pageStateStoreHook } from '/@/store/modules/pageState';
-import { userStateStoreHook } from '/@/store/modules/userState';
-import { siteConfigStoreHook } from '/@/store/modules/globalConfig';
-import { log } from '/@/utils/log';
-// nprogress
-import NProgress from 'nprogress';
-import 'nprogress/nprogress.css';
-import { DEFAULT_TITLE } from '../settings/constant';
-import { App } from 'vue';
-
-/**
- * 遍历modules目录，获取RouteRecordRaw集合
- */
-const moduleRoutes = getModuleRoutes();
-
-/**
- * routes 集合
- */
-const routes = [LOGIN_PAGE, ...moduleRoutes, HOME_PAGE, NOT_PAGE];
-/**
- * router
- */
-const router = createRouter({
-  history: createWebHashHistory(),
-  routes: routes as RouteRecordRaw[]
+// app router
+// 创建一个可以被 Vue 应用程序使用的路由实例
+export const router = createRouter({
+  // 创建一个 hash 历史记录。
+  history: createWebHashHistory(import.meta.env.VITE_PUBLIC_PATH),
+  // 应该添加到路由的初始路由列表。
+  routes: basicRoutes as unknown as RouteRecordRaw[],
+  // 是否应该禁止尾部斜杠。默认为假
+  strict: true,
+  scrollBehavior: () => ({ left: 0, top: 0 })
 });
-/**
- * 页面头部加载进度条
- */
-router.beforeEach((to, from, next) => {
-  const info = `start load route  ${dayjs().format('YYYY-MM-DD HH:mm:ss')} from:"${
-    from.fullPath
-  }" to:"${to.fullPath}"`;
-  log(info);
 
-  const { login } = userStateStoreHook();
-  const { showProgress } = siteConfigStoreHook();
-  const pageState = pageStateStoreHook();
-
-  //layout 加载状态
-  pageState.setLoading('router', true);
-  // 白名单
-  if (ROUTER_WHITE_LIST.includes(to.fullPath)) {
-    if (showProgress) {
-      NProgress.start();
+// reset router
+export function resetRouter() {
+  router.getRoutes().forEach((route) => {
+    const { name } = route;
+    if (name && !WHITE_NAME_LIST.includes(name as string)) {
+      router.hasRoute(name) && router.removeRoute(name);
     }
-    next();
-  } else {
-    if (showProgress) {
-      NProgress.start();
-    }
-    // 验证登录状态
-    if (!login && to.path != LOGIN_PAGE.path) {
-      next({ name: LOGIN_PAGE.name });
-    } else {
-      next();
-    }
-  }
-});
-router.afterEach((to, from) => {
-  const info = `end load route ${dayjs().format('YYYY-MM-DD HH:mm:ss')} from:"${
-    from.fullPath
-  }" to:"${to.fullPath}"`;
-  log(info);
-
-  const { t } = useI18n();
-  const pageState = pageStateStoreHook();
-
-  // layout 加载状态
-  pageState.setLoading('router', false);
-  // 进度条
-  const { showProgress } = siteConfigStoreHook();
-  if (showProgress) {
-    NProgress.done();
-  }
-  document.title = `${DEFAULT_TITLE} - ${t(to.meta.title)}`;
-});
-
-router.onError((error: any) => {
-  log(`route end error`, error);
-  // router.push({ name: LOGIN_PAGE.name });
-});
-
-function setupRouter(app: App<Element>) {
-  app.use(router);
+  });
 }
 
-export { routes, router, setupRouter };
+// config router
+// 配置路由器
+export function setupRouter(app: App<Element>) {
+  app.use(router);
+}
