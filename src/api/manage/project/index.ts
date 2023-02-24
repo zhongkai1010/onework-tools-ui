@@ -1,8 +1,8 @@
-import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
-import { http } from '../../../utils/http/axios';
+import { RequestResult, ResponseData } from '/@/api/types';
+import { defHttp } from '/@/utils/http/axios';
 
 export default {
-  getList: () => http.get<RequestResult<ResponseData<any>>>({ url: '/manage/project/getList' }),
+  getList: () => defHttp.get<RequestResult<ResponseData<any>>>({ url: '/manage/project/getList' }),
   createProject: () =>
-    http.get<RequestResult<ResponseData<any>>>({ url: '/manag/project/createProject' })
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/manag/project/createProject' })
 };

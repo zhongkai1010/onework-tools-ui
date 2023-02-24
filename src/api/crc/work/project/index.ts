@@ -1,39 +1,42 @@
-import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
-import { http } from '/@/utils/http/axios';
+import { RequestResult, ResponseData } from '/@/api/types';
+import { defHttp } from '/@/utils/http/axios';
 
 export default {
-  getList: () => http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/getList' }),
+  getList: () =>
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/getList' }),
 
   searchProject: () =>
-    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/searchProject' }),
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/searchProject' }),
 
   saveProject: () =>
-    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/searchProject' }),
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/searchProject' }),
 
   shubmitProject: () =>
-    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/shubmitProject' }),
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/shubmitProject' }),
 
   projectHandover: () =>
-    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/projectHandover' }),
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/projectHandover' }),
 
   setProjectStatus: () =>
-    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/setProjectStatus' }),
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/setProjectStatus' }),
 
   updateProject: () =>
-    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/updateProject' }),
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/updateProject' }),
 
   setProjectRole: () =>
-    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/setProjectRole' }),
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/setProjectRole' }),
 
   getAuditProjectList: () =>
-    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/entry/getAuditJoinProjectList' }),
+    defHttp.get<RequestResult<ResponseData<any>>>({
+      url: '/crc/work/entry/getAuditJoinProjectList'
+    }),
 
   removeAuditProject: () =>
-    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/entry/removeAuditProject' }),
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/entry/removeAuditProject' }),
 
   editAuditProject: () =>
-    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/editAuditProject' }),
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/editAuditProject' }),
 
   applyProjectJoinSite: () =>
-    http.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/applyProjectJoinSite' })
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/crc/work/project/applyProjectJoinSite' })
 };

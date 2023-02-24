@@ -12,7 +12,7 @@ import {
   UpdateProjectStateData
 } from './types';
 import { RequestResult, ResponseData } from '/@/api/types';
-import { http } from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 
 export default {
   /**
@@ -21,7 +21,7 @@ export default {
    * @returns
    */
   createSiteProject: (data: Omit<SiteProject, 'projectId'>) =>
-    http.post<RequestResult<ResponseData<SiteProject>>>({
+    defHttp.post<RequestResult<ResponseData<SiteProject>>>({
       url: '/site/project/manage/createSiteProject',
       data
     }),
@@ -32,7 +32,7 @@ export default {
    * @returns
    */
   editSiteProject: (data: Omit<SiteProject, 'projectId'>) =>
-    http.post<RequestResult<ResponseData<SiteProject>>>({
+    defHttp.post<RequestResult<ResponseData<SiteProject>>>({
       url: '/site/project/manage/editSiteProject',
       data
     }),
@@ -43,7 +43,7 @@ export default {
    * @returns
    */
   getProjectList: (params: Partial<GetProjectListSearchParams>) =>
-    http.get<RequestResult<ResponseData<SiteProject>>>({
+    defHttp.get<RequestResult<ResponseData<SiteProject>>>({
       url: '/site/project/manage/getProjectList',
       params
     }),
@@ -53,7 +53,7 @@ export default {
    * @returns
    */
   getProjectReport: (uid: string) =>
-    http.get<RequestResult<ResponseData<any>>>({
+    defHttp.get<RequestResult<ResponseData<any>>>({
       url: '/site/project/manage/getProjectReport',
       params: { uid }
     }),
@@ -63,7 +63,7 @@ export default {
    * @returns
    */
   getProjectDetails: (uid: string) =>
-    http.get<RequestResult<ResponseData<SiteProject>>>({
+    defHttp.get<RequestResult<ResponseData<SiteProject>>>({
       url: '/site/project/manage/getProjectDetails',
       params: { uid }
     }),
@@ -73,7 +73,7 @@ export default {
    * @returns
    */
   associatedProjectCRC: (data: AssociatedProjectCRCData) =>
-    http.post<RequestResult<ResponseData<any>>>({
+    defHttp.post<RequestResult<ResponseData<any>>>({
       url: '/site/project/manage/associatedProjectCRC',
       data
     }),
@@ -83,7 +83,7 @@ export default {
    * @returns
    */
   removeProjectCRC: (data: RemoveProjectCRCData) =>
-    http.post<RequestResult<ResponseData<any>>>({
+    defHttp.post<RequestResult<ResponseData<any>>>({
       url: '/site/project/manage/removeProjectCRC',
       data
     }),
@@ -93,7 +93,7 @@ export default {
    * @returns
    */
   updateProjectState: (data: UpdateProjectStateData) =>
-    http.post<RequestResult<ResponseData<any>>>({
+    defHttp.post<RequestResult<ResponseData<any>>>({
       url: '/site/project/manage/updateProjectState',
       data
     }),
@@ -103,7 +103,7 @@ export default {
    * @returns
    */
   getProjectAuditRecordList: (params: GetProjectAuditRecordListSearchParams) =>
-    http.get<RequestResult<ResponseData<ProjectAuditRecord>>>({
+    defHttp.get<RequestResult<ResponseData<ProjectAuditRecord>>>({
       url: '/site/project/manage/getProjectAuditRecordList',
       params
     }),
@@ -114,7 +114,7 @@ export default {
    * @returns
    */
   reviewProject: (data: ReviewProjectData) =>
-    http.get<RequestResult<ResponseData<ProjectAuditRecord>>>({
+    defHttp.get<RequestResult<ResponseData<ProjectAuditRecord>>>({
       url: '/site/project/manage/reviewProject',
       data
     }),
@@ -125,7 +125,7 @@ export default {
    * @returns
    */
   getHandoverProjectRecords: (params: GettHandoverProjectRecordsSearchParams) =>
-    http.get<RequestResult<ResponseData<HandoverProjectRecord>>>({
+    defHttp.get<RequestResult<ResponseData<HandoverProjectRecord>>>({
       url: '/site/project/manage/getHandoverProjectRecords',
       params
     }),
@@ -136,7 +136,7 @@ export default {
    * @returns
    */
   confirmProjectHandover: (data: ConfirmProjectHandoverData) =>
-    http.post<RequestResult<ResponseData<HandoverProjectRecord>>>({
+    defHttp.post<RequestResult<ResponseData<HandoverProjectRecord>>>({
       url: '/site/project/manage/getHandoverProjectRecords',
       data
     })

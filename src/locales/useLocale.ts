@@ -1,5 +1,5 @@
 import { i18n } from '/@/locales';
-import { localeStateStoreHook } from '../store/modules/localeState';
+import { localeStateStoreHook } from '../store/modules/locale';
 import { unref, computed } from 'vue';
 import { loadLocalePool, setHtmlPageLang } from './helper';
 import { Locale } from '/@/settings/locale';

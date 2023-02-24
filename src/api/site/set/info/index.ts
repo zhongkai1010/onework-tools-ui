@@ -1,13 +1,14 @@
 import { SiteInfo } from './types';
 import { RequestResult, ResponseData } from '/@/api/types';
-import { http } from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 
 export default {
   /**
    *  获取机构基本信息
    * @returns
    */
-  getInfo: () => http.get<RequestResult<ResponseData<SiteInfo>>>({ url: '/site/set/info/getInfo' }),
+  getInfo: () =>
+    defHttp.get<RequestResult<ResponseData<SiteInfo>>>({ url: '/site/set/info/getInfo' }),
 
   /**
    *  修改机构基本信息
@@ -15,5 +16,5 @@ export default {
    */
 
   updateInfo: (data: SiteInfo) =>
-    http.post<RequestResult<ResponseData<any>>>({ url: '/site/set/info/updateInfo', data })
+    defHttp.post<RequestResult<ResponseData<any>>>({ url: '/site/set/info/updateInfo', data })
 };

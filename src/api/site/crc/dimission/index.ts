@@ -1,6 +1,6 @@
 import { GetListSearchParams, SiteCRC, SiteCRCProject } from './types';
 import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
-import { http } from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 
 export default {
   /**
@@ -8,7 +8,7 @@ export default {
    * @returns
    */
   getList: (params: GetListSearchParams) =>
-    http.get<RequestResult<ResponsePageData<SiteCRC>>>({
+    defHttp.get<RequestResult<ResponsePageData<SiteCRC>>>({
       url: '/site/crc/dimission/getList',
       params
     }),
@@ -18,7 +18,7 @@ export default {
    * @returns
    */
   getCRCProjectList: (uid: string) =>
-    http.get<RequestResult<ResponseData<SiteCRCProject>>>({
+    defHttp.get<RequestResult<ResponseData<SiteCRCProject>>>({
       url: '/site/crc/dimission/getCRCProjectList',
       params: { uid }
     })

@@ -1,6 +1,6 @@
 import { GetCRCListSearchParams, ProfessionalListResult, SiteCRC, SiteSMO } from './types';
 import { RequestResult, ResponseData } from '/@/api/types';
-import { http } from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 
 export default {
   /**
@@ -8,7 +8,7 @@ export default {
    * @returns
    */
   getProfessionalList: () =>
-    http.get<RequestResult<ResponseData<ProfessionalListResult>>>({
+    defHttp.get<RequestResult<ResponseData<ProfessionalListResult>>>({
       url: '/site/crc/distribution/getProfessionalList'
     }),
 
@@ -17,7 +17,7 @@ export default {
    * @returns
    */
   getSMOList: () =>
-    http.get<RequestResult<ResponseData<SiteSMO>>>({
+    defHttp.get<RequestResult<ResponseData<SiteSMO>>>({
       url: '/site/crc/distribution/getProfessionalList'
     }),
 
@@ -26,7 +26,7 @@ export default {
    * @returns
    */
   getCRCList: (params: GetCRCListSearchParams) =>
-    http.get<RequestResult<ResponseData<SiteCRC>>>({
+    defHttp.get<RequestResult<ResponseData<SiteCRC>>>({
       url: '/site/crc/distribution/getCRCList',
       params
     })

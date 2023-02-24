@@ -1,4 +1,4 @@
-import { LAYOUT, EMPTY_LAYOUT } from '../constant';
+import { getParentLayout, LAYOUT } from '/@/router/constant';
 import { AppRouteRecordRaw } from '/#/route';
 import { t } from '/@/hooks/web/useI18n';
 
@@ -36,7 +36,7 @@ export default [
           icon: 'ooui:search-regular-expression',
           redirect: '/manage/statistics/project'
         },
-        component: EMPTY_LAYOUT,
+        component: getParentLayout('manage_statistics'),
         children: [
           {
             name: 'manage_statistics_project',
@@ -90,7 +90,7 @@ export default [
           icon: 'ooui:search-regular-expression',
           redirect: '/manage/portal/index'
         },
-        component: EMPTY_LAYOUT,
+        component: getParentLayout('manage_portal'),
         children: [
           {
             name: 'manage_portal_notice',

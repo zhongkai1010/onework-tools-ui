@@ -1,4 +1,4 @@
-import { http } from '../utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 
 export interface PaginatedRequest extends Recordable<any> {
   page: number;
@@ -22,11 +22,11 @@ export default {
    * 获取平台基础信息
    * @returns
    */
-  getConfig: () => http.get<GetConfigResult>({ url: '/getConfig' }),
+  getConfig: () => defHttp.get<GetConfigResult>({ url: '/getConfig' }),
 
   /**
    * 获取选项
    */
   getOptions: (name: string) =>
-    http.get<DictionaryOption[]>({ url: '/getOptions', params: { name } })
+    defHttp.get<DictionaryOption[]>({ url: '/getOptions', params: { name } })
 };

@@ -1,4 +1,4 @@
-import { http } from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
 import {
   SearchSiteCompanyProjectParams,
@@ -18,7 +18,7 @@ export default {
    * @returns
    */
   getSponsorList: (params: SearchSiteSponsorParams) =>
-    http.get<RequestResult<ResponsePageData<SiteSponsor>>>({
+    defHttp.get<RequestResult<ResponsePageData<SiteSponsor>>>({
       url: '/site/cooperation/getSponsorList',
       params
     }),
@@ -29,7 +29,7 @@ export default {
    * @returns
    */
   getCompanyProjectList: (params: SearchSiteCompanyProjectParams) =>
-    http.get<RequestResult<ResponsePageData<SiteCompanyProject>>>({
+    defHttp.get<RequestResult<ResponsePageData<SiteCompanyProject>>>({
       url: '/site/cooperation/getSponsorProjectList',
       params
     }),
@@ -40,7 +40,7 @@ export default {
    * @returns
    */
   getSMOList: (params: SearchSiteSMOParams) =>
-    http.get<RequestResult<ResponsePageData<SiteSMO>>>({
+    defHttp.get<RequestResult<ResponsePageData<SiteSMO>>>({
       url: '/site/cooperation/getSMOList',
       params
     }),
@@ -50,7 +50,7 @@ export default {
    * @returns
    */
   setSMOPreferred: (data: SetSMOPreferredData) =>
-    http.get<RequestResult<ResponsePageData<SetSMOPreferredData>>>({
+    defHttp.get<RequestResult<ResponsePageData<SetSMOPreferredData>>>({
       url: '/site/cooperation/setSMOPreferred',
       data
     }),
@@ -61,7 +61,7 @@ export default {
    * @returns
    */
   getSMODetails: (uid: string) =>
-    http.get<RequestResult<ResponseData<SMODetails>>>({
+    defHttp.get<RequestResult<ResponseData<SMODetails>>>({
       url: '/site/cooperation/getSMOdetails',
       params: { uid }
     })

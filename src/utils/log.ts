@@ -4,6 +4,10 @@ export function warn(message: string) {
   console.warn(`[${projectName} warn]:${message}`);
 }
 
+export function log(message: string) {
+  console.log(`[${projectName} log]:${message}`);
+}
+
 export function error(message: string) {
   throw new Error(`[${projectName} error]:${message}`);
 }

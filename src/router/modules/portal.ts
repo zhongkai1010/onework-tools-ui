@@ -1,4 +1,4 @@
-import { EMPTY_LAYOUT } from '../constant';
+import { getParentLayout } from '/@/router/constant';
 import { AppRouteRecordRaw } from '/#/route';
 import { t } from '/@/hooks/web/useI18n';
 
@@ -6,7 +6,7 @@ export default [
   {
     name: 'portal',
     path: '/portal',
-    component: EMPTY_LAYOUT,
+    component: getParentLayout('portal'),
     redirect: '/portal/index',
     meta: { title: t('router.portal.portal'), orderNo: 1, hideMenu: true },
     children: [

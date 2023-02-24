@@ -1,10 +1,12 @@
-import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
-import { http } from '/@/utils/http/axios';
+import { RequestResult, ResponseData } from '/@/api/types';
+import { defHttp } from '/@/utils/http/axios';
 
 export default {
   getList: () =>
-    http.get<RequestResult<ResponseData<any>>>({ url: '/manage/portal/expert/getList' }),
-  add: () => http.get<RequestResult<ResponseData<any>>>({ url: '/manage/portal/expert/add' }),
-  update: () => http.get<RequestResult<ResponseData<any>>>({ url: '/manage/portal/expert/update' }),
-  remove: () => http.get<RequestResult<ResponseData<any>>>({ url: '/manage/portal/expert/remove' })
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/manage/portal/expert/getList' }),
+  add: () => defHttp.get<RequestResult<ResponseData<any>>>({ url: '/manage/portal/expert/add' }),
+  update: () =>
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/manage/portal/expert/update' }),
+  remove: () =>
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/manage/portal/expert/remove' })
 };

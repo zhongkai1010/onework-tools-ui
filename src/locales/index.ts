@@ -2,7 +2,7 @@ import type { App } from 'vue';
 import { createI18n, I18n, I18nOptions } from 'vue-i18n';
 import { AVAILABLE_LOCALES, Locale } from '/@/settings/locale';
 import { setHtmlPageLang, setLoadLocalePool } from './helper';
-import { localeStateStoreHook } from '../store/modules/localeState';
+import { localeStateStoreHook } from '../store/modules/locale';
 
 export let i18n: ReturnType<typeof createI18n>;
 

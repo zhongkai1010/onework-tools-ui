@@ -1,7 +1,7 @@
 import { GetListSearchParams, ReviewApplyParams, SiteApplyJoinCRCRecord } from './types';
 import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
 
-import { http } from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 
 export default {
   /**
@@ -10,7 +10,7 @@ export default {
    * @returns
    */
   getList: (params: Partial<GetListSearchParams>) =>
-    http.get<RequestResult<ResponsePageData<SiteApplyJoinCRCRecord>>>({
+    defHttp.get<RequestResult<ResponsePageData<SiteApplyJoinCRCRecord>>>({
       url: '/site/crc/entry/getList',
       params
     }),
@@ -21,7 +21,7 @@ export default {
    * @returns
    */
   getCRCWarning: (uid: string) =>
-    http.get<RequestResult<ResponseData<SiteApplyJoinCRCRecord>>>({
+    defHttp.get<RequestResult<ResponseData<SiteApplyJoinCRCRecord>>>({
       url: '/site/crc/entry/getCRCWarning',
       params: { uid }
     }),
@@ -32,5 +32,5 @@ export default {
    * @returns
    */
   reviewApply: (data: ReviewApplyParams) =>
-    http.post<RequestResult<any>>({ url: '/site/crc/entry/reviewApply', data })
+    defHttp.post<RequestResult<any>>({ url: '/site/crc/entry/reviewApply', data })
 };

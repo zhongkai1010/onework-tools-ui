@@ -1,22 +1,20 @@
-import type { AxiosRequestConfig, AxiosInstance, AxiosResponse, AxiosError } from 'axios';
-import type { RequestOptions, Result, UploadFileParams } from '/#/axios';
+import type { AxiosRequestConfig, AxiosInstance, AxiosResponse } from 'axios';
+import type { RequestOptions, Result, UploadFileParams } from '../../../../types/axios';
 import type { CreateAxiosOptions } from './axiosTransform';
 import axios from 'axios';
 import qs from 'qs';
 import { AxiosCanceler } from './axiosCancel';
-
-import { cloneDeep } from 'lodash-es';
+import { isFunction } from '/@/utils/is';
+import { cloneDeep, omit } from 'lodash-es';
 import { ContentTypeEnum } from '/@/enums/httpEnum';
 import { RequestEnum } from '/@/enums/httpEnum';
-import { log } from '/@/utils/log';
-import _ from 'lodash';
 
 export * from './axiosTransform';
 
 /**
  * @description:  axios module
  */
-export class Axios {
+export class VAxios {
   private axiosInstance: AxiosInstance;
   private readonly options: CreateAxiosOptions;
 
@@ -82,18 +80,15 @@ export class Axios {
     // Request interceptor configuration processing
     this.axiosInstance.interceptors.request.use((config: AxiosRequestConfig) => {
       // If cancel repeat request is turned on, then cancel repeat request is prohibited
-      const {
-        // @ts-ignore
-        headers: { ignoreCancelToken }
-      } = config;
-
+      // @ts-ignore
+      const { ignoreCancelToken } = config.requestOptions;
       const ignoreCancel =
         ignoreCancelToken !== undefined
           ? ignoreCancelToken
           : this.options.requestOptions?.ignoreCancelToken;
 
       !ignoreCancel && axiosCanceler.addPending(config);
-      if (requestInterceptors && _.isFunction(requestInterceptors)) {
+      if (requestInterceptors && isFunction(requestInterceptors)) {
         config = requestInterceptors(config, this.options);
       }
       return config;
@@ -101,13 +96,13 @@ export class Axios {
 
     // Request interceptor error capture
     requestInterceptorsCatch &&
-      _.isFunction(requestInterceptorsCatch) &&
+      isFunction(requestInterceptorsCatch) &&
       this.axiosInstance.interceptors.request.use(undefined, requestInterceptorsCatch);
 
     // Response result interceptor processing
     this.axiosInstance.interceptors.response.use((res: AxiosResponse<any>) => {
       res && axiosCanceler.removePending(res.config);
-      if (responseInterceptors && _.isFunction(responseInterceptors)) {
+      if (responseInterceptors && isFunction(responseInterceptors)) {
         res = responseInterceptors(res);
       }
       return res;
@@ -115,7 +110,7 @@ export class Axios {
 
     // Response result interceptor error capture
     responseInterceptorsCatch &&
-      _.isFunction(responseInterceptorsCatch) &&
+      isFunction(responseInterceptorsCatch) &&
       this.axiosInstance.interceptors.response.use(undefined, responseInterceptorsCatch);
   }
 
@@ -124,17 +119,11 @@ export class Axios {
    */
   uploadFile<T = any>(config: AxiosRequestConfig, params: UploadFileParams) {
     const formData = new window.FormData();
-    const customFilename = params.name || 'file';
-
-    if (params.filename) {
-      formData.append(customFilename, params.file, params.filename);
-    } else {
-      formData.append(customFilename, params.file);
-    }
 
     if (params.data) {
       Object.keys(params.data).forEach((key) => {
-        const value = params.data![key];
+        if (!params.data) return;
+        const value = params.data[key];
         if (Array.isArray(value)) {
           value.forEach((item) => {
             formData.append(`${key}[]`, item);
@@ -142,9 +131,15 @@ export class Axios {
           return;
         }
 
-        formData.append(key, params.data![key]);
+        formData.append(key, params.data[key]);
       });
     }
+    formData.append(params.name || 'file', params.file, params.filename);
+    const customParams = omit(params, 'file', 'filename', 'file');
+
+    Object.keys(customParams).forEach((key) => {
+      formData.append(key, customParams[key]);
+    });
 
     return this.axiosInstance.request<T>({
       ...config,
@@ -152,7 +147,6 @@ export class Axios {
       data: formData,
       headers: {
         'Content-type': ContentTypeEnum.FORM_DATA,
-        // @ts-ignore
         ignoreCancelToken: true
       }
     });
@@ -194,8 +188,6 @@ export class Axios {
   }
 
   request<T = any>(config: AxiosRequestConfig, options?: RequestOptions): Promise<T> {
-    log('start axios', config);
-
     let conf: CreateAxiosOptions = cloneDeep(config);
     const transform = this.getTransform();
 
@@ -204,7 +196,7 @@ export class Axios {
     const opt: RequestOptions = Object.assign({}, requestOptions, options);
 
     const { beforeRequestHook, requestCatchHook, transformRequestHook } = transform || {};
-    if (beforeRequestHook && _.isFunction(beforeRequestHook)) {
+    if (beforeRequestHook && isFunction(beforeRequestHook)) {
       conf = beforeRequestHook(conf, opt);
     }
     conf.requestOptions = opt;
@@ -215,8 +207,7 @@ export class Axios {
       this.axiosInstance
         .request<any, AxiosResponse<Result>>(conf)
         .then((res: AxiosResponse<Result>) => {
-          log('end axios', res);
-          if (transformRequestHook && _.isFunction(transformRequestHook)) {
+          if (transformRequestHook && isFunction(transformRequestHook)) {
             try {
               const ret = transformRequestHook(res, opt);
               resolve(ret);
@@ -227,14 +218,10 @@ export class Axios {
           }
           resolve(res as unknown as Promise<T>);
         })
-        .catch((e: Error | AxiosError) => {
-          console.log('error axios', e);
-          if (requestCatchHook && _.isFunction(requestCatchHook)) {
+        .catch((e: Error) => {
+          if (requestCatchHook && isFunction(requestCatchHook)) {
             reject(requestCatchHook(e, opt));
             return;
-          }
-          if (axios.isAxiosError(e)) {
-            // rewrite error message from axios in here
           }
           reject(e);
         });

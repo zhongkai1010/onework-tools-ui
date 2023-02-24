@@ -1,4 +1,4 @@
-import { http } from '../utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 
 export interface LoginParams {
   username: string;
@@ -17,7 +17,7 @@ export default {
    * @returns
    */
   login: (params: LoginParams) =>
-    http.post<LoginResult>({
+    defHttp.post<LoginResult>({
       url: '/login',
       data: params
     }),
@@ -26,5 +26,5 @@ export default {
    * 退出
    * @returns
    */
-  logout: () => http.post<any>({ url: '/logout' })
+  logout: () => defHttp.post<any>({ url: '/logout' })
 };

@@ -9,7 +9,7 @@ import {
   ReminderCRCData
 } from './types';
 import { RequestResult, ResponsePageData, ResponseData } from '/@/api/types';
-import { http } from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 
 export default {
   /**
@@ -17,7 +17,7 @@ export default {
    * @returns
    */
   getProjectReportList: (params: GetProjectReportListSearchParams) =>
-    http.get<RequestResult<ResponsePageData<ProjectReportReport>>>({
+    defHttp.get<RequestResult<ResponsePageData<ProjectReportReport>>>({
       url: '/site/project/report/getProjectReportList',
       params
     }),
@@ -27,7 +27,7 @@ export default {
    * @returns
    */
   getProjectReport: (params: GetProjectReportSearchParams) =>
-    http.get<RequestResult<ResponseData<ProjectReportDetail>>>({
+    defHttp.get<RequestResult<ResponseData<ProjectReportDetail>>>({
       url: '/site/project/report/getProjectReport',
       params
     }),
@@ -37,7 +37,7 @@ export default {
    * @returns
    */
   reminderCRC: () => (data: ReminderCRCData) =>
-    http.get<RequestResult<ResponseData<any>>>({
+    defHttp.get<RequestResult<ResponseData<any>>>({
       url: '/site/project/report/getProjectReport',
       data
     }),
@@ -47,7 +47,7 @@ export default {
    * @returns
    */
   getPracticeCRCReportList: (params: GetPracticeCRCReportListSearchParams) =>
-    http.get<RequestResult<ResponseData<any>>>({
+    defHttp.get<RequestResult<ResponseData<any>>>({
       url: '/site/project/report/getPracticeCRCReportList',
       params
     }),
@@ -57,7 +57,7 @@ export default {
    * @returns
    */
   getPracticeCRCReport: (params: GetPracticeCRCReportSearchParams) =>
-    http.get<RequestResult<ResponseData<PracticeCRCReport>>>({
+    defHttp.get<RequestResult<ResponseData<PracticeCRCReport>>>({
       url: '/site/project/report/getPracticeCRCReport',
       params
     })

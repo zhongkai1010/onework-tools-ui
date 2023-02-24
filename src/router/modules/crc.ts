@@ -1,4 +1,4 @@
-import { LAYOUT, EMPTY_LAYOUT } from '../constant';
+import { getParentLayout, LAYOUT } from '/@/router/constant';
 import { AppRouteRecordRaw } from '/#/route';
 import { t } from '/@/hooks/web/useI18n';
 
@@ -21,7 +21,7 @@ export default [
         path: 'work',
         meta: { title: t('router.crc.work.index'), icon: 'ant-design:ant-design-outlined' },
         redirect: '/crc/entry',
-        component: EMPTY_LAYOUT,
+        component: getParentLayout('crc_work'),
         children: [
           {
             name: 'crc_work_entry',
@@ -84,7 +84,7 @@ export default [
         path: 'personal',
         meta: { title: t('router.crc.personal.index'), icon: 'ant-design:ant-design-outlined' },
         redirect: '/crc/personal/archives',
-        component: EMPTY_LAYOUT,
+        component: getParentLayout('crc_personal'),
         children: [
           {
             name: 'crc_personal_archives',

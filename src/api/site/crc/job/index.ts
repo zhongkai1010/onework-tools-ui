@@ -9,7 +9,7 @@ import {
   CRCTransferProjectPromptData
 } from './types';
 import { ResponseData, ResponsePageData, RequestResult } from '/@/api/types';
-import { http } from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 
 export default {
   /**
@@ -17,14 +17,14 @@ export default {
    * @returns
    */
   getList: (params: GetListSearchParams) =>
-    http.get<RequestResult<ResponsePageData<SiteCRC>>>({ url: '/site/crc/job/getList', params }),
+    defHttp.get<RequestResult<ResponsePageData<SiteCRC>>>({ url: '/site/crc/job/getList', params }),
 
   /**
    * 获取CRC在机构参加项目的派遣函列表
    * @returns
    */
   getSiteProjectDispatchLetter: (uid: string) =>
-    http.get<RequestResult<ResponseData<SiteCRCProjectDispatchLetter>>>({
+    defHttp.get<RequestResult<ResponseData<SiteCRCProjectDispatchLetter>>>({
       url: '/site/crc/job/getSiteProjectDispatchLetter',
       params: { uid }
     }),
@@ -35,7 +35,7 @@ export default {
    * @returns
    */
   getSiteCRCStatistics: () =>
-    http.get<RequestResult<ResponseData<SiteCRCStatistics>>>({
+    defHttp.get<RequestResult<ResponseData<SiteCRCStatistics>>>({
       url: '/site/crc/job/getSiteCRCStatistics'
     }),
 
@@ -45,7 +45,7 @@ export default {
    * @returns
    */
   getCRCBadge: (uid: any) =>
-    http.get<RequestResult<SiteCRCBadge>>({ url: '/site/crc/job/getSiteData', params: { uid } }),
+    defHttp.get<RequestResult<SiteCRCBadge>>({ url: '/site/crc/job/getSiteData', params: { uid } }),
 
   /**
    *  获取CRC在本院的当前项目
@@ -53,7 +53,7 @@ export default {
    * @returns
    */
   getCRCCurrentProjects: (uid: any) =>
-    http.get<RequestResult<ResponsePageData<SiteCRCProject>>>({
+    defHttp.get<RequestResult<ResponsePageData<SiteCRCProject>>>({
       url: '/site/crc/job/getSiteData',
       params: { uid }
     }),
@@ -64,7 +64,7 @@ export default {
    * @returns
    */
   getCRCHistoryProjects: (params: getCRCHistoryProjectsSearchParams) =>
-    http.get<RequestResult<ResponseData<SiteCRCProject>>>({
+    defHttp.get<RequestResult<ResponseData<SiteCRCProject>>>({
       url: '/site/crc/job/getSiteData',
       params
     }),
@@ -74,7 +74,7 @@ export default {
    * @param uid
    */
   getCRCTransferProjectPrompt: (uid: string) =>
-    http.get<RequestResult<ResponsePageData<CRCTransferProjectPromptData>>>({
+    defHttp.get<RequestResult<ResponsePageData<CRCTransferProjectPromptData>>>({
       url: '/site/crc/job/getCRCTransferProjectPrompt',
       params: { uid }
     }),
@@ -85,7 +85,7 @@ export default {
    * @returns
    */
   transferProject: (data: any) =>
-    http.post<RequestResult<any>>({ url: '/site/crc/job/transferProject', data }),
+    defHttp.post<RequestResult<any>>({ url: '/site/crc/job/transferProject', data }),
 
   /**
    * 标记离职
@@ -93,5 +93,5 @@ export default {
    * @returns
    */
   markResignation: (data: any) =>
-    http.post<RequestResult<any>>({ url: '/site/crc/job/markResignation', data })
+    defHttp.post<RequestResult<any>>({ url: '/site/crc/job/markResignation', data })
 };

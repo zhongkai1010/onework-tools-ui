@@ -1,5 +1,5 @@
 import { RequestResult, ResponseData } from '/@/api/types';
-import { http } from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 
 export interface SiteAdmin {
   userName: string;
@@ -31,21 +31,24 @@ export default {
    * @returns
    */
   getSiteAdmin: () =>
-    http.get<RequestResult<ResponseData<SiteAdmin>>>({ url: '/site/set/admin/getSiteAdmin' }),
+    defHttp.get<RequestResult<ResponseData<SiteAdmin>>>({ url: '/site/set/admin/getSiteAdmin' }),
 
   /**
    * 转让管理员
    * @returns
    */
   transferSiteAdmin: (data: TransferSiteAdminData) =>
-    http.post<RequestResult<ResponseData<any>>>({ url: '/site/set/admin/transferSiteAdmin', data }),
+    defHttp.post<RequestResult<ResponseData<any>>>({
+      url: '/site/set/admin/transferSiteAdmin',
+      data
+    }),
 
   /**
    * 获取机构子管理员
    * @returns
    */
   getSiteSubAdmin: (params: SearchSiteSubAdminParams) =>
-    http.get<RequestResult<ResponseData<SiteAdmin>>>({
+    defHttp.get<RequestResult<ResponseData<SiteAdmin>>>({
       url: '/site/set/admin/getSiteSubAdmin',
       params
     }),
@@ -55,11 +58,11 @@ export default {
    * @returns
    */
   addSubAdmin: (data: AddSubAdminData) =>
-    http.get<RequestResult<ResponseData<any>>>({ url: '/site/set/admin/addSubAdmin', data }),
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/site/set/admin/addSubAdmin', data }),
 
   /**
    * 取消机构子管理员
    */
   cancelSubAdmin: (data: CancelSubAdminData) =>
-    http.get<RequestResult<ResponseData<any>>>({ url: '/site/set/admin/cancelSubAdmin', data })
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/site/set/admin/cancelSubAdmin', data })
 };

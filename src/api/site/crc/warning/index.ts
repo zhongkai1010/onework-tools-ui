@@ -5,7 +5,7 @@ import {
   GetProjectWarningListSearcParams
 } from './types';
 import { ResponsePageData, RequestResult } from '/@/api/types';
-import { http } from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 
 export default {
   /**
@@ -14,7 +14,7 @@ export default {
    * @returns
    */
   getProjectWarningList: (params: Partial<GetProjectWarningListSearcParams>) =>
-    http.get<RequestResult<ResponsePageData<CRCProjectWarning>>>({
+    defHttp.get<RequestResult<ResponsePageData<CRCProjectWarning>>>({
       url: '/site/crc/warning/getProjectWarningList',
       params
     }),
@@ -24,7 +24,7 @@ export default {
    * @returns
    */
   getExpiredCertificateList: (params: Partial<GetExpiredCertificateListSearchParams>) =>
-    http.get<RequestResult<ResponsePageData<CRCCertificateWarning>>>({
+    defHttp.get<RequestResult<ResponsePageData<CRCCertificateWarning>>>({
       url: '/site/crc/warning/getExpiredCertificateList',
       params
     })

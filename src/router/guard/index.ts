@@ -3,7 +3,6 @@ import { useAppStoreWithOut } from '/@/store/modules/app';
 import { useUserStoreWithOut } from '/@/store/modules/user';
 import { useTransitionSetting } from '/@/hooks/setting/useTransitionSetting';
 import { AxiosCanceler } from '/@/utils/http/axios/axiosCancel';
-import { Modal, notification } from 'ant-design-vue';
 import { warn } from '/@/utils/log';
 import { unref } from 'vue';
 import { setRouteChange } from '/@/logics/mitt/routeChange';
@@ -120,8 +119,6 @@ export function createMessageGuard(router: Router) {
   router.beforeEach(async () => {
     try {
       if (closeMessageOnSwitch) {
-        Modal.destroyAll();
-        notification.destroy();
       }
     } catch (error) {
       warn('message guard error:' + error);

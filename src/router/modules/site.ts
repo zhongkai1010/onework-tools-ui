@@ -1,4 +1,4 @@
-import { LAYOUT, EMPTY_LAYOUT } from '../constant';
+import { getParentLayout, LAYOUT } from '/@/router/constant';
 import { AppRouteRecordRaw } from '/#/route';
 import { t } from '/@/hooks/web/useI18n';
 
@@ -20,7 +20,7 @@ export default [
         name: 'site_crc',
         path: 'crc',
         meta: { title: t('router.site.crc.index'), icon: 'ant-design:ant-design-outlined' },
-        component: EMPTY_LAYOUT,
+        component: getParentLayout('site_crc'),
         redirect: '/site/crc/entry',
         children: [
           {
@@ -101,7 +101,8 @@ export default [
         name: 'site_project',
         path: 'project',
         redirect: '/site/project/manage',
-        component: EMPTY_LAYOUT,
+        component: getParentLayout('site_project'),
+
         meta: { title: t('router.site.project.index'), icon: 'ant-design:ant-design-outlined' },
         children: [
           {
@@ -137,7 +138,7 @@ export default [
         name: 'site_cooperation',
         path: 'cooperation',
         redirect: '/site/cooperation/sponsor',
-        component: EMPTY_LAYOUT,
+        component: getParentLayout('site_cooperation'),
         meta: {
           title: t('router.site.cooperation.sponsor'),
           icon: 'ant-design:ant-design-outlined'
@@ -166,7 +167,7 @@ export default [
       {
         name: 'site_training',
         path: 'training',
-        component: EMPTY_LAYOUT,
+        component: getParentLayout('site_training'),
         meta: {
           title: t('router.site.training.information'),
           icon: 'ant-design:ant-design-outlined'
@@ -214,7 +215,7 @@ export default [
         name: 'site_emergency',
         path: 'emergency',
         redirect: '/site/emergency/leave',
-        component: EMPTY_LAYOUT,
+        component: getParentLayout('site_emergency'),
         meta: { title: t('router.site.emergency.index'), icon: 'ant-design:ant-design-outlined' },
         children: [
           {
@@ -249,7 +250,7 @@ export default [
       {
         name: 'site_statistics',
         path: 'statistics',
-        component: EMPTY_LAYOUT,
+        component: getParentLayout('site_statistics'),
         redirect: '/site/statistics/crc',
         meta: {
           title: t('router.site.statistics.index'),
@@ -306,7 +307,7 @@ export default [
       {
         name: 'site_message',
         path: 'message',
-        component: EMPTY_LAYOUT,
+        component: getParentLayout('site_message'),
         meta: {
           title: t('router.site.message.index'),
           icon: 'ant-design:ant-design-outlined'
@@ -340,7 +341,7 @@ export default [
           title: t('router.site.set.index'),
           icon: 'ant-design:ant-design-outlined'
         },
-        component: EMPTY_LAYOUT,
+        component: getParentLayout('site_set'),
         redirect: '/site/set/info',
         children: [
           {

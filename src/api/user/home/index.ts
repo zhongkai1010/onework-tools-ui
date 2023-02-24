@@ -1,5 +1,5 @@
 import { RequestResult, ResponseData } from '/@/api/types';
-import { http } from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 
 export interface CustomMenu {
   uid: string;
@@ -32,15 +32,19 @@ export interface SiteStatistics {
 
 export default {
   getCustomMenus: () =>
-    http.get<RequestResult<ResponseData<CustomMenu>>>({ url: '/user/home/getCustomMenu' }),
+    defHttp.get<RequestResult<ResponseData<CustomMenu>>>({ url: '/user/home/getCustomMenu' }),
 
-  getMenus: () => http.get<RequestResult<ResponseData<CustomMenu>>>({ url: '/user/home/getMenus' }),
+  getMenus: () =>
+    defHttp.get<RequestResult<ResponseData<CustomMenu>>>({ url: '/user/home/getMenus' }),
 
-  getTodos: () => http.get<RequestResult<ResponseData<TodoItem>>>({ url: '/user/home/getTodos' }),
+  getTodos: () =>
+    defHttp.get<RequestResult<ResponseData<TodoItem>>>({ url: '/user/home/getTodos' }),
 
   getNotices: () =>
-    http.get<RequestResult<ResponseData<NoticeItem>>>({ url: '/user/home/getNotices' }),
+    defHttp.get<RequestResult<ResponseData<NoticeItem>>>({ url: '/user/home/getNotices' }),
 
   getSiteStatistics: () =>
-    http.get<RequestResult<ResponseData<SiteStatistics>>>({ url: '/user/home/getSiteStatistics' })
+    defHttp.get<RequestResult<ResponseData<SiteStatistics>>>({
+      url: '/user/home/getSiteStatistics'
+    })
 };

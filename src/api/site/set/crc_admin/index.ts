@@ -19,7 +19,7 @@ import {
   SiteCRCAdmin
 } from './types';
 import { RequestResult, ResponseData } from '/@/api/types';
-import { http } from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 
 export default {
   /**
@@ -27,7 +27,7 @@ export default {
    * @returns
    */
   getSiteCRCAdminList: (params: SearchSiteCRCAdminParams) =>
-    http.get<RequestResult<ResponseData<SiteCRCAdmin>>>({
+    defHttp.get<RequestResult<ResponseData<SiteCRCAdmin>>>({
       url: '/site/set/crc_admin/getSiteCRCAdminList',
       params
     }),
@@ -37,7 +37,7 @@ export default {
    * @returns
    */
   addSiteCRCAdmin: (data: AddSiteCRCAdminData) =>
-    http.post<RequestResult<ResponseData<any>>>({
+    defHttp.post<RequestResult<ResponseData<any>>>({
       url: '/site/set/crc_admin/addSiteCRCAdmin',
       data
     }),
@@ -48,7 +48,7 @@ export default {
    * @returns
    */
   removeSiteCRCAdmin: (data: RemoveSiteCRCAdmin) =>
-    http.post<RequestResult<ResponseData<any>>>({
+    defHttp.post<RequestResult<ResponseData<any>>>({
       url: '/site/set/crc_admin/removeCRCAdmin',
       data
     }),
@@ -58,7 +58,7 @@ export default {
    * @returns
    */
   getProfessionalCRCAdminList: (params: SearchProfessionalCRCAdminParams) =>
-    http.get<RequestResult<ResponseData<ProfessionalCRCAdmin>>>({
+    defHttp.get<RequestResult<ResponseData<ProfessionalCRCAdmin>>>({
       url: '/site/set/crc_admin/getProfessionalAdminList',
       params
     }),
@@ -68,7 +68,7 @@ export default {
    * @returns
    */
   addProfessionalCRCAdmin: (data: AddProfessionalCRCAdminData) =>
-    http.post<RequestResult<ResponseData<any>>>({
+    defHttp.post<RequestResult<ResponseData<any>>>({
       url: '/site/set/crc_admin/addProfessionalCRCAdmin',
       data
     }),
@@ -78,7 +78,7 @@ export default {
    * @returns
    */
   cancelProfessionalCRCAdmin: (data: CancelProfessionalCRCAdminData) =>
-    http.get<RequestResult<ResponseData<any>>>({
+    defHttp.get<RequestResult<ResponseData<any>>>({
       url: '/site/set/crc_admin/cancelProfessionalCRCAdmin',
       data
     }),
@@ -89,7 +89,7 @@ export default {
    * @returns
    */
   getPersonnelManageProfessionalList: (params: SearchPersonnelManageProfessionalParams) =>
-    http.get<RequestResult<ResponseData<PersonnelManageProfessional[]>>>({
+    defHttp.get<RequestResult<ResponseData<PersonnelManageProfessional[]>>>({
       url: '/site/set/crc_admin/getPersonnelManageProfessionalList',
       params
     }),
@@ -100,7 +100,7 @@ export default {
    * @returns
    */
   setPersonnelManageProfessional: (data: SetPersonnelManageProfessionalData) =>
-    http.get<RequestResult<ResponseData<any>>>({
+    defHttp.get<RequestResult<ResponseData<any>>>({
       url: '/site/set/crc_admin/getProfessionalAdminList',
       data
     }),
@@ -111,7 +111,7 @@ export default {
    * @returns
    */
   cancelPersonnelManageProfessional: (data: CancelPersonnelManageProfessionalData) =>
-    http.get<RequestResult<ResponseData<any>>>({
+    defHttp.get<RequestResult<ResponseData<any>>>({
       url: '/site/set/crc_admin/cancelPersonnelManageProfessional',
       data
     }),
@@ -122,7 +122,7 @@ export default {
    * @returns
    */
   getSMOCRCAdminList: (params: SearchSMOCRCAdminParams) =>
-    http.get<RequestResult<ResponseData<any>>>({
+    defHttp.get<RequestResult<ResponseData<any>>>({
       url: '/site/set/crc_admin/getSMOCRCAdminList',
       params
     }),
@@ -133,7 +133,7 @@ export default {
    * @returns
    */
   addSMOCRCAdmin: (data: AddSMOCRCAdmin) =>
-    http.get<RequestResult<ResponseData<any>>>({
+    defHttp.get<RequestResult<ResponseData<any>>>({
       url: '/site/set/crc_admin/getSMOCRCAdminList',
       data
     }),
@@ -144,7 +144,7 @@ export default {
    * @returns
    */
   cancelSMOCRCAdmin: (data: CancelSMOCRCAdminData) =>
-    http.get<RequestResult<ResponseData<any>>>({
+    defHttp.get<RequestResult<ResponseData<any>>>({
       url: '/site/set/crc_admin/getSMOCRCAdminList',
       data
     }),
@@ -154,7 +154,7 @@ export default {
    * @returns
    */
   getPersonnelManageSMOList: (params: SearchPersonnelManageSMOParams) =>
-    http.get<RequestResult<ResponseData<any>>>({
+    defHttp.get<RequestResult<ResponseData<any>>>({
       url: '/site/set/crc_admin/getSMOCRCAdminList',
       params
     }),
@@ -165,7 +165,7 @@ export default {
    * @returns
    */
   addPersonnelManageSMO: (params: AddPersonnelManageSMOData) =>
-    http.get<RequestResult<ResponseData<any>>>({
+    defHttp.get<RequestResult<ResponseData<any>>>({
       url: '/site/set/crc_admin/addPersonnelManageSMO',
       params
     }),
@@ -176,7 +176,7 @@ export default {
    * @returns
    */
   cancelPersonnelManageSMO: (data: CancelPersonnelManageSMOData) =>
-    http.post<RequestResult<ResponseData<any>>>({
+    defHttp.post<RequestResult<ResponseData<any>>>({
       url: '/site/set/crc_admin/cancelPersonnelManageSMO',
       data
     })

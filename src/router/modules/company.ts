@@ -1,6 +1,6 @@
-import { LAYOUT, EMPTY_LAYOUT } from '../constant';
 import { AppRouteRecordRaw } from '/#/route';
 import { t } from '/@/hooks/web/useI18n';
+import { getParentLayout, LAYOUT } from '/@/router/constant';
 
 export default [
   {
@@ -21,7 +21,7 @@ export default [
         path: 'crc',
         meta: { title: t('router.company.crc.index'), icon: 'ant-design:ant-design-outlined' },
         redirect: '/company/crc/personnel',
-        component: EMPTY_LAYOUT,
+        component: getParentLayout('company_crc'),
         children: [
           {
             name: 'company_crc_personnel',
@@ -56,7 +56,7 @@ export default [
           title: t('router.company.cooperation.index'),
           icon: 'ant-design:ant-design-outlined'
         },
-        component: EMPTY_LAYOUT,
+        component: getParentLayout('company_cooperation'),
         redirect: '/company/cooperation/sponsor',
         children: [
           {
@@ -91,7 +91,7 @@ export default [
       {
         name: 'company_statistics',
         path: 'statistics',
-        component: EMPTY_LAYOUT,
+        component: getParentLayout('company_statistics'),
         meta: {
           title: t('router.company.statistics.index'),
           icon: 'ant-design:ant-design-outlined'

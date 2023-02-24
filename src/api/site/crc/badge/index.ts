@@ -7,7 +7,7 @@ import {
 } from './types';
 import {} from '/@/api/common';
 import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
-import { http } from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 
 export default {
   /**
@@ -15,7 +15,7 @@ export default {
    * @returns
    */
   getList: (params: GetListSearchParams) =>
-    http.get<RequestResult<ResponsePageData<SiteCRCBadge>>>({
+    defHttp.get<RequestResult<ResponsePageData<SiteCRCBadge>>>({
       url: '/site/crc/badge/getList',
       params
     }),
@@ -25,14 +25,14 @@ export default {
    * @returns
    */
   handleBadge: (data: HandleBadge) =>
-    http.get<RequestResult<ResponseData<any>>>({ url: '/site/crc/badge/handleBadge', data }),
+    defHttp.get<RequestResult<ResponseData<any>>>({ url: '/site/crc/badge/handleBadge', data }),
 
   /**
    *  获取机构工作证生成规则，如果系统自动生成，提前给一个编号
    * @returns
    */
   getBadgeBuildRule: () =>
-    http.get<RequestResult<ResponseData<BadgeBuildRuleResult>>>({
+    defHttp.get<RequestResult<ResponseData<BadgeBuildRuleResult>>>({
       url: '/site/crc/badge/getBadgeBuildRule'
     }),
 
@@ -40,7 +40,7 @@ export default {
    * 获取机构工作证统计情况
    */
   getSiteBadgeStatistics: () => {
-    http.get<RequestResult<ResponseData<SiteBadgeStatisticsResult>>>({
+    defHttp.get<RequestResult<ResponseData<SiteBadgeStatisticsResult>>>({
       url: '/site/crc/badge/getSiteBadgeStatistics'
     });
   }

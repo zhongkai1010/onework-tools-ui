@@ -5,7 +5,7 @@ import type { AxiosResponse } from 'axios';
 import type { RequestOptions, Result } from '/#/axios';
 import type { AxiosTransform, CreateAxiosOptions } from './axiosTransform';
 import { clone } from 'lodash-es';
-import { Axios } from './Axios';
+import { VAxios } from './Axios';
 import { checkStatus } from './checkStatus';
 import { useI18n } from '/@/hooks/web/useI18n';
 import { ContentTypeEnum, RequestEnum, ResultEnum } from '/@/enums/httpEnum';
@@ -13,9 +13,9 @@ import { deepMerge, setObjToUrlParams } from '/@/utils';
 import { useMessage } from '/@/hooks/web/useMessage';
 import { isString } from 'lodash';
 import { formatRequestDate, joinTimestamp } from './helper';
-import { userStateStoreHook } from '/@/store/modules/userState';
 import { useGlobSetting } from '/@/hooks/setting';
 import { useUserStoreWithOut } from '/@/store/modules/user';
+import { getToken } from '/@/utils/auth';
 
 const globSetting = useGlobSetting();
 const urlPrefix = globSetting.urlPrefix;
@@ -140,8 +140,7 @@ const transform: AxiosTransform = {
    */
   requestInterceptors: (config, options) => {
     // 请求之前处理config
-    const userStateStore = userStateStoreHook();
-    const token = userStateStore.token;
+    const token = getToken();
     if (token && (config as Recordable)?.requestOptions?.withToken !== false) {
       // jwt token
       (config as Recordable).headers.Authorization = options.authenticationScheme
@@ -203,7 +202,7 @@ const transform: AxiosTransform = {
 };
 
 function createAxios(opt?: Partial<CreateAxiosOptions>) {
-  return new Axios(
+  return new VAxios(
     deepMerge(
       {
         // See https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#authentication_schemes
@@ -254,4 +253,4 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
     )
   );
 }
-export const http = createAxios();
+export const defHttp = createAxios();

@@ -1,4 +1,4 @@
-import { http } from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
 import {
   CancelPIData,
@@ -16,7 +16,7 @@ export default {
    * @returns
    */
   getList: (params: GetListSearchParams) =>
-    http.get<RequestResult<ResponsePageData<SiteTeamPersonnel>>>({
+    defHttp.get<RequestResult<ResponsePageData<SiteTeamPersonnel>>>({
       url: '/site/team/getList',
       params
     }),
@@ -26,7 +26,7 @@ export default {
    * @returns
    */
   getProfessionalList: () =>
-    http.get<RequestResult<ResponseData<SiteProfessional>>>({
+    defHttp.get<RequestResult<ResponseData<SiteProfessional>>>({
       url: '/site/team/getProfessionalList'
     }),
 
@@ -36,7 +36,7 @@ export default {
    * @returns
    */
   setProfessional: (data: SetProfessionalData) =>
-    http.post<RequestResult<ResponseData<any>>>({
+    defHttp.post<RequestResult<ResponseData<any>>>({
       url: '/site/team/setProfessional',
       data
     }),
@@ -47,7 +47,7 @@ export default {
    * @returns
    */
   setPI: (data: SetProfessionalData) =>
-    http.post<RequestResult<ResponseData<any>>>({
+    defHttp.post<RequestResult<ResponseData<any>>>({
       url: '/site/team/setPI',
       data
     }),
@@ -58,7 +58,7 @@ export default {
    * @returns
    */
   cancelPI: (data: CancelPIData) =>
-    http.post<RequestResult<ResponseData<any>>>({
+    defHttp.post<RequestResult<ResponseData<any>>>({
       url: '/site/team/cancelPI',
       data
     }),
@@ -68,7 +68,7 @@ export default {
    * @returns
    */
   getApplyJoinRecordList: (params: SearchApplyJoinRecordParams) =>
-    http.get<RequestResult<ResponsePageData<SiteTeamPersonnel>>>({
+    defHttp.get<RequestResult<ResponsePageData<SiteTeamPersonnel>>>({
       url: '/site/team/getApplyJoinRecordList',
       params
     }),
@@ -79,7 +79,7 @@ export default {
    * @returns
    */
   reviewApply: (data: ReviewApplyData) =>
-    http.get<RequestResult<ResponsePageData<any>>>({
+    defHttp.get<RequestResult<ResponsePageData<any>>>({
       url: '/site/team/reviewApply',
       data
     })

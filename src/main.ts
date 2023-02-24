@@ -1,13 +1,13 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import { setupRouter } from './router/index';
+
 import { setupStore } from '/@/store/index';
 import { setupECharts } from '/@/plugins/echarts/index';
 import { setupElementPlus } from '/@/plugins/element-plus/index';
 import { setupComponents } from './components/index';
 import { setupI18n } from './locales';
 import { setupVueCodemirror } from '/@/plugins/vue-codemirror/index';
-
+import { router, setupRouter } from '/@/router';
 // 动画
 import 'animate.css';
 // remixicon icon
@@ -18,6 +18,7 @@ import './style/reset.scss';
 import 'element-plus/dist/index.css';
 // tailwindcss
 import './style/tailwind.css';
+import { setupRouterGuard } from './router/guard';
 
 async function bootstrap() {
   const app = createApp(App);
@@ -32,6 +33,10 @@ async function bootstrap() {
    */
   // app.use(router);
   setupRouter(app);
+
+  // router-guard
+  // 路由守卫
+  setupRouterGuard(router);
 
   /**
    * element-plus

@@ -1,6 +1,6 @@
 import { GetListSearchParams, SiteInterSiteCRC, SiteInterSiteDetails } from './types';
 import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
-import { http } from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 
 export default {
   /**
@@ -8,7 +8,7 @@ export default {
    * @returns
    */
   getList: (params: GetListSearchParams) =>
-    http.get<RequestResult<ResponsePageData<SiteInterSiteCRC>>>({
+    defHttp.get<RequestResult<ResponsePageData<SiteInterSiteCRC>>>({
       url: '/site/crc/inter_site/getList',
       params
     }),
@@ -18,7 +18,7 @@ export default {
    * @returns
    */
   getDetails: (uid: string) =>
-    http.get<RequestResult<ResponseData<SiteInterSiteDetails>>>({
+    defHttp.get<RequestResult<ResponseData<SiteInterSiteDetails>>>({
       url: '/site/crc/inter_site/getDetails',
       params: { uid }
     })

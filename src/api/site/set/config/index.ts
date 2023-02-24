@@ -1,6 +1,6 @@
 import { SiteConfig } from './types';
 import { RequestResult, ResponseData } from '/@/api/types';
-import { http } from '/@/utils/http/axios';
+import { defHttp } from '/@/utils/http/axios';
 
 export default {
   /**
@@ -9,7 +9,7 @@ export default {
    * @returns
    */
   getAllSiteConfig: () =>
-    http.get<RequestResult<ResponseData<SiteConfig[]>>>({
+    defHttp.get<RequestResult<ResponseData<SiteConfig[]>>>({
       url: '/site/set/config/getSiteConfig'
     }),
 
@@ -19,7 +19,7 @@ export default {
    * @returns
    */
   getSiteConfig: (type: string) =>
-    http.get<RequestResult<ResponseData<SiteConfig>>>({
+    defHttp.get<RequestResult<ResponseData<SiteConfig>>>({
       url: '/site/set/config/getSiteConfig',
       params: { type }
     }),
@@ -30,5 +30,5 @@ export default {
    * @returns
    */
   setSiteConfig: (data: SiteConfig) =>
-    http.post<RequestResult<ResponseData<any>>>({ url: '/site/set/config/setSiteConfig', data })
+    defHttp.post<RequestResult<ResponseData<any>>>({ url: '/site/set/config/setSiteConfig', data })
 };
