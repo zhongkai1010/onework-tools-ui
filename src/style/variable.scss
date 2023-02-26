@@ -1,23 +1,9 @@
-$z-layers: (
-  'level_one': 1,
+$z-layers: ('level_one': 1,
   'level_two': 10,
   'level_three': 100,
   'level_four': 1000,
-  'level_zero': -1
-);
+  'level_zero': -1);
 
-$layout-header-height: 60px; // 头部header高度
-$layout-sidebar-fold-width: 64px;
-$layout-menu-height: 50px;
-$layout-tab-height: var(--layout-header-tab-height);
-
-$layout-body-margin: 20px;
-$layout-body-padding: 20px;
-$layout-sidebar-nav-width: var(--layout-sidebar-nav-width);
-$layout-sidebar-menu-width: var(--layout-sidebar-menu-width);
-$layout-sidebar-width: calc(var(--layout-sidebar-nav-width) + var(--layout-sidebar-menu-width));
-
-$main-height: calc(100vh - $layout-header-height - var(--layout-header-tab-height));
-$main-no-margin-height: calc(
-  100vh - $layout-header-height - var(--layout-header-tab-height) - ($layout-body-margin * 2)
-);
+$layout-hearder-height: 60px;
+$layout-tabs-height: 50px;
+$layout-sider-width: 277px;

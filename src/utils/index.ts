@@ -1,58 +1,5 @@
-import { convert } from 'css-color-function';
 import { isObject } from 'lodash';
-import rgbHex from 'rgb-hex';
-
-/**
- * 根据Element向上查找有id的Element
- * @param el
- * @returns
- */
-export function findElementParentId(el: Element) {
-  if (el.id) {
-    return el.id;
-  } else {
-    return findElementParentId(el.parentElement);
-  }
-}
-
-/**
- * 获取数组元素中根元素
- * @param menus
- * @returns
- */
-export function getFirstNavMenu<T extends { children?: Array<T> }>(items: Array<T>): T {
-  if (items.length == 0) return null;
-  const root = items[0];
-  if (root.children && root.children.length > 0) {
-    return getFirstNavMenu(root.children);
-  } else {
-    return root;
-  }
-}
-
-// 色值表
-const formula = {
-  'shade-1': 'color(primary shade(10%))',
-  'light-1': 'color(primary tint(10%))',
-  'light-2': 'color(primary tint(20%))',
-  'light-3': 'color(primary tint(30%))',
-  'light-4': 'color(primary tint(40%))',
-  'light-5': 'color(primary tint(50%))',
-  'light-6': 'color(primary tint(60%))',
-  'light-7': 'color(primary tint(70%))',
-  'light-8': 'color(primary tint(80%))',
-  'light-9': 'color(primary tint(90%))'
-};
-
-export const colorGradient = (color: string, prefix: string): Record<string, string> => {
-  const result = {};
-  for (const item in formula) {
-    const value = formula[item].replace(/primary/, color);
-    const key = `${prefix}-${item}`;
-    result[key] = `#${rgbHex(convert(value))}`;
-  }
-  return result;
-};
+import { RouteLocationNormalized, RouteRecordNormalized } from 'vue-router';
 
 export function deepMerge<T = any>(src: any = {}, target: any = {}): T {
   let key: string;

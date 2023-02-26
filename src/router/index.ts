@@ -11,6 +11,7 @@ const getRouteNames = (array: any[]) =>
     WHITE_NAME_LIST.push(item.name);
     getRouteNames(item.children || []);
   });
+
 getRouteNames(basicRoutes);
 
 // app router

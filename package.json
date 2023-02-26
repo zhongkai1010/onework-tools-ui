@@ -7,16 +7,29 @@
     "url": "http://www.one-work.net/"
   },
   "scripts": {
+    "commit": "czg",
     "bootstrap": "pnpm install",
-    "dev": "vite --host",
-    "build": "vite build",
     "serve": "npm run dev",
+    "dev": "vite",
+    "build": "cross-env NODE_ENV=production vite build && esno ./build/script/postBuild.ts",
+    "build:test": "cross-env vite build --mode test && esno ./build/script/postBuild.ts",
+    "build:no-cache": "pnpm clean:cache && npm run build",
+    "report": "cross-env REPORT=true npm run build",
+    "type:check": "vue-tsc --noEmit --skipLibCheck",
     "preview": "npm run build && vite preview",
     "preview:dist": "vite preview",
-    "type:check": "vue-tsc --noEmit --skipLibCheck",
+    "log": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
+    "clean:lib": "rimraf node_modules",
     "lint:eslint": "eslint --cache --max-warnings 0  \"{src,mock}/**/*.{vue,ts,tsx}\" --fix",
     "lint:prettier": "prettier --write  \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
-    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/"
+    "lint:stylelint": "stylelint --cache --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+    "lint:lint-staged": "lint-staged",
+    "test:unit": "jest",
+    "test:gzip": "npx http-server dist --cors --gzip -c-1",
+    "test:br": "npx http-server dist --cors --brotli -c-1",
+    "reinstall": "rimraf pnpm-lock.yaml && rimraf package.lock.json && rimraf node_modules && npm run bootstrap",
+    "gen:icon": "esno ./build/generate/icon/index.ts"
   },
   "dependencies": {
     "@codemirror/commands": "^6.1.0",
@@ -53,6 +66,7 @@
     "vuedraggable": "^4.1.0"
   },
   "devDependencies": {
+    "@iconify-json/ep": "^1.1.9",
     "@iconify/vue": "^3.2.1",
     "@intlify/vite-plugin-vue-i18n": "^6.0.0",
     "@types/crypto-js": "^4.1.1",
@@ -68,6 +82,7 @@
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",
     "autoprefixer": "^10.4.7",
+    "cross-env": "^7.0.3",
     "cssnano": "^5.1.15",
     "dotenv": "^16.0.3",
     "eslint": "^8.18.0",
@@ -95,14 +110,14 @@
     "tailwindcss": "^3.2.4",
     "typescript": "^4.5.4",
     "unplugin-auto-import": "^0.8.6",
+    "unplugin-icons": "^0.15.3",
     "unplugin-vue-components": "^0.19.6",
     "vite": "^2.9.9",
     "vite-plugin-eslint": "^1.6.1",
     "vite-plugin-mock": "^2.9.6",
     "vite-plugin-remove-console": "^1.0.3",
     "vite-plugin-top-level-await": "^1.1.1",
-    "vite-plugin-vue-setup-extend": "^0.4.0",
-    "vite-svg-loader": "^3.4.0",
+    "vite-svg-loader": "^4.0.0",
     "vue-eslint-parser": "^9.0.3",
     "vue-tsc": "^0.40.1"
   }

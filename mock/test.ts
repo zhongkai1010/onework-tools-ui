@@ -2,7 +2,7 @@ import { mock } from 'mockjs';
 
 export default [
   {
-    url: '/basic-api/mock/get/200',
+    url: '/api/mock/get/200',
     method: 'get',
     timeout: '2000',
     response: () => {
@@ -13,7 +13,7 @@ export default [
     }
   },
   {
-    url: '/basic-api/mock/get/400',
+    url: '/api/mock/get/400',
     method: 'get',
     statusCode: 400,
     timeout: '2000',
@@ -25,7 +25,7 @@ export default [
     }
   },
   {
-    url: '/basic-api/mock/get/500',
+    url: '/api/mock/get/500',
     method: 'get',
     timeout: '2000',
     statusCode: 500,
@@ -37,7 +37,7 @@ export default [
     }
   },
   {
-    url: '/basic-api/mock/get/timeout',
+    url: '/api/mock/get/timeout',
     method: 'get',
     timeout: '1000000',
 
@@ -49,7 +49,7 @@ export default [
     }
   },
   {
-    url: '/basic-api/test/getOptions',
+    url: '/api/test/getOptions',
     method: 'get',
     // timeout: '5000',
     response: () => {

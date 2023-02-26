@@ -8,7 +8,7 @@ export function checkStatus(
   errorMessageMode: ErrorMessageMode = 'message'
 ): void {
   const { t } = useI18n();
-  const { message, confirm } = useMessage();
+  const { createMessage, createConfirm } = useMessage();
 
   let errMessage = '';
 
@@ -55,9 +55,9 @@ export function checkStatus(
 
   if (errMessage) {
     if (errorMessageMode === 'modal') {
-      confirm(errMessage, { title: t('app.api.errorTip') });
+      createConfirm(errMessage, t('app.api.errorTip'));
     } else if (errorMessageMode === 'message') {
-      message({
+      createMessage({
         message: errMessage,
         key: `global_error_message_status_${status}`,
         type: 'error'

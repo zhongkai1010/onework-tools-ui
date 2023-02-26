@@ -8,4 +8,5 @@
   "i18n-ally.sourceLanguage": "en",
   "i18n-ally.displayLanguage": "zh-CN",
   "i18n-ally.enabledFrameworks": ["vue", "react"],
+  "compile-hero.disable-compile-files-on-did-save-code": true
 }

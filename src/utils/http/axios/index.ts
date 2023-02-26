@@ -75,9 +75,9 @@ const transform: AxiosTransform = {
     // errorMessageMode=‘modal’的时候会显示modal错误弹窗，而不是消息提示，用于一些比较重要的错误
     // errorMessageMode='none' 一般是调用时明确表示不希望自动弹出错误提示
     if (options.errorMessageMode === 'modal') {
-      M.confirm(timeoutMsg, { title: t('app.api.errorTip') });
+      M.createConfirm(timeoutMsg, { title: t('app.api.errorTip') });
     } else if (options.errorMessageMode === 'message') {
-      M.message({ message: timeoutMsg, type: 'error' });
+      M.createMessage({ message: timeoutMsg, type: 'error' });
     } else {
       console.log(timeoutMsg);
     }
@@ -180,9 +180,9 @@ const transform: AxiosTransform = {
 
       if (errMessage) {
         if (errorMessageMode === 'modal') {
-          M.confirm(errMessage, { title: t('app.api.errorTip') });
+          M.createConfirm(errMessage, { title: t('app.api.errorTip') });
         } else if (errorMessageMode === 'message') {
-          M.message({
+          M.createMessage({
             message: errMessage,
             key: `global_error_message_status_${status}`,
             type: 'error'

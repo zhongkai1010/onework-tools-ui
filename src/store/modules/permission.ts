@@ -18,8 +18,8 @@ import { ERROR_LOG_ROUTE, PAGE_NOT_FOUND_ROUTE } from '/@/router/routes/basic';
 
 import { filter } from '/@/utils/helper/treeHelper';
 
-import { getMenuList } from '/@/api/sys/menu';
-import { getPermCode } from '/@/api/sys/user';
+import { getMenuList } from '../../api/system/menu';
+import { getPermCode } from '../../api/system/user';
 
 import { useMessage } from '/@/hooks/web/useMessage';
 import { PageEnum } from '/@/enums/pageEnum';
@@ -210,10 +210,7 @@ export const usePermissionStore = defineStore({
         case PermissionModeEnum.BACK:
           const { createMessage } = useMessage();
 
-          createMessage.loading({
-            content: t('sys.app.menuLoading'),
-            duration: 1
-          });
+          createMessage({ message: t('sys.app.menuLoading'), icon: 'Loading' });
 
           // !Simulate to obtain permission codes from the background,
           // 模拟从后台获取权限码，
