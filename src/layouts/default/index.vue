@@ -28,14 +28,13 @@
   import LayoutTabs from './tabs/index.vue';
   import LayoutSider from './sider/index.vue';
   import LayoutHeader from './header/index.vue';
-  import { useUserStoreWithOut } from '/@/store/modules/user';
-
+  import { useUserStore } from '/@/store/modules/user';
   import { getMenus } from '/@/router/menus';
   import { Icon } from '@iconify/vue';
-  const userStore = useUserStoreWithOut();
+
+  const userStore = useUserStore();
 
   const menus = await getMenus();
-
   console.log('menus', menus);
 </script>
 

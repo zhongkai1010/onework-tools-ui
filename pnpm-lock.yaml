@@ -52,7 +52,6 @@ specifiers:
   postcss-less: ^6.0.0
   prettier: ^2.7.1
   qs: ^6.11.0
-  remixicon: ^2.5.0
   resize-observer-polyfill: ^1.5.1
   rollup: ^2.75.7
   rollup-plugin-visualizer: ^5.6.0
@@ -110,7 +109,6 @@ dependencies:
   path-to-regexp: registry.npmmirror.com/path-to-regexp/6.2.1
   pinia: registry.npmmirror.com/pinia/2.0.14_qhv4oyzxhhzeba5rd2zztmcg2y
   qs: registry.npmmirror.com/qs/6.11.0
-  remixicon: registry.npmmirror.com/remixicon/2.5.0
   resize-observer-polyfill: registry.npmmirror.com/resize-observer-polyfill/1.5.1
   screenfull: registry.npmmirror.com/screenfull/6.0.2
   vue: registry.npmmirror.com/vue/3.2.36
@@ -5324,12 +5322,6 @@ packages:
     version: 0.2.7
     engines: {node: '>= 0.10'}
     dev: true
-
-  registry.npmmirror.com/remixicon/2.5.0:
-    resolution: {integrity: sha512-q54ra2QutYDZpuSnFjmeagmEiN9IMo56/zz5dDNitzKD23oFRw77cWo4TsrAdmdkPiEn8mxlrTqxnkujDbEGww==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/remixicon/-/remixicon-2.5.0.tgz}
-    name: remixicon
-    version: 2.5.0
-    dev: false
 
   registry.npmmirror.com/require-directory/2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/require-directory/-/require-directory-2.1.1.tgz}

@@ -21,7 +21,7 @@ export function setupRouterGuard(router: Router) {
   createMessageGuard(router);
   createProgressGuard(router);
   createPermissionGuard(router);
-  createParamMenuGuard(router); // must after createPermissionGuard (menu has been built.)
+  createParamMenuGuard(router); // 必须在 createPermissionGuard 之后（菜单已构建。）
   createStateGuard(router);
 }
 
@@ -46,6 +46,7 @@ function createPageGuard(router: Router) {
 }
 
 // Used to handle page loading status
+// 用于处理页面加载状态
 function createPageLoadingGuard(router: Router) {
   const userStore = useUserStoreWithOut();
   const appStore = useAppStoreWithOut();
@@ -79,6 +80,7 @@ function createPageLoadingGuard(router: Router) {
 
 /**
  * The interface used to close the current page to complete the request when the route is switched
+ * 路由切换时关闭当前页面完成请求的接口
  * @param router
  */
 function createHttpGuard(router: Router) {
@@ -95,6 +97,7 @@ function createHttpGuard(router: Router) {
 }
 
 // Routing switch back to the top
+// 路由切换回顶部
 function createScrollGuard(router: Router) {
   const isHash = (href: string) => {
     return /^#/.test(href);
@@ -111,6 +114,7 @@ function createScrollGuard(router: Router) {
 
 /**
  * Used to close the message instance when the route is switched
+ * 用于路由切换时关闭消息实例
  * @param router
  */
 export function createMessageGuard(router: Router) {
@@ -127,6 +131,10 @@ export function createMessageGuard(router: Router) {
   });
 }
 
+/**
+ * 是否开启顶部进度条
+ * @param router
+ */
 export function createProgressGuard(router: Router) {
   const { getOpenNProgress } = useTransitionSetting();
   router.beforeEach(async (to) => {

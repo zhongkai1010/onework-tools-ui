@@ -157,7 +157,7 @@
   const captchaLoading = ref(false);
   const winXinLoading = ref(false);
   const smsLoading = ref(false);
-  const protocol = ref(false);
+  const protocol = ref(true);
   const smsCount = ref<number>(60);
   const smsText = ref<string>('获取验证码');
   const isSendSMS = ref(false);
@@ -174,9 +174,9 @@
   const isPwdLogin = computed(() => loginMethod.value == LoginMethod.Password);
 
   const formValue = reactive({
-    username: '',
-    password: '',
-    captcha: '',
+    username: 'admin',
+    password: '123456',
+    captcha: '12',
     phone: '',
     phoneCode: ''
   });

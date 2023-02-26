@@ -82,6 +82,7 @@ export function transformRouteToMenu(routeModList: AppRouteModule[], routerMappi
 
 /**
  * config menu with given params
+ * 具有给定参数的配置菜单
  */
 const menuParamRegex = /(?::)([\s\S]+?)((?=\/)|$)/g;
 

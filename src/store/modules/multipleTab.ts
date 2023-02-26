@@ -61,6 +61,7 @@ export const useMultipleTabStore = defineStore({
   actions: {
     /**
      * Update the cache according to the currently opened tabs
+     * 根据当前打开的标签更新缓存
      */
     async updateCacheTab() {
       const cacheMap: Set<string> = new Set();
@@ -80,6 +81,7 @@ export const useMultipleTabStore = defineStore({
 
     /**
      * Refresh tabs
+     * 刷新标签
      */
     async refreshPage(router: Router) {
       const { currentRoute } = router;
@@ -115,6 +117,7 @@ export const useMultipleTabStore = defineStore({
         }
       }
       // Jump to the current page and report an error
+      // 跳转到当前页面并报错
       path !== toPath && go(toPath as PageEnum, true);
     },
 

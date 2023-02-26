@@ -15,6 +15,7 @@ function handleError(e: Error) {
 
 /**
  * page switch
+ * 页面切换
  */
 export function useGo(_router?: Router) {
   const { push, replace } = _router || useRouter();
@@ -28,6 +29,7 @@ export function useGo(_router?: Router) {
 }
 
 /**
+ * 重做当前页面
  * @description: redo current page
  */
 export const useRedo = (_router?: Router) => {
