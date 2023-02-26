@@ -1,28 +1,14 @@
 import type { ProjectConfig } from '/#/config';
-import { MenuTypeEnum, MenuModeEnum, TriggerEnum, MixSidebarTriggerEnum } from '/@/enums/menuEnum';
 import { CacheTypeEnum } from '/@/enums/cacheEnum';
 import {
   ContentEnum,
   PermissionModeEnum,
-  ThemeEnum,
   RouterTransitionEnum,
-  SettingButtonPositionEnum,
   SessionTimeoutProcessingEnum
 } from '/@/enums/appEnum';
-import { SIDE_BAR_BG_COLOR_LIST, HEADER_PRESET_BG_COLOR_LIST } from './designSetting';
-import { primaryColor } from '../../build/config/themeConfig';
 
 // ! You need to clear the browser cache after the change
 const setting: ProjectConfig = {
-  // Whether to show the configuration button
-  showSettingButton: true,
-
-  // Whether to show the theme switch button
-  showDarkModeToggle: true,
-
-  // `Settings` button position
-  settingButtonPosition: SettingButtonPositionEnum.AUTO,
-
   // Permission mode
   permissionMode: PermissionModeEnum.ROUTE_MAPPING,
 
@@ -32,14 +18,8 @@ const setting: ProjectConfig = {
   // Session timeout processing
   sessionTimeoutProcessing: SessionTimeoutProcessingEnum.ROUTE_JUMP,
 
-  // color
-  themeColor: primaryColor,
-
   // Website gray mode, open for possible mourning dates
   grayMode: false,
-
-  // Color Weakness Mode
-  colorWeak: false,
 
   // Whether to cancel the menu, the top, the multi-tab page display, for possible embedded in other systems
   fullContent: false,
@@ -52,71 +32,6 @@ const setting: ProjectConfig = {
 
   // Whether to show footer
   showFooter: false,
-
-  // Header configuration
-  headerSetting: {
-    // header bg color
-    bgColor: HEADER_PRESET_BG_COLOR_LIST[0],
-    // Fixed at the top
-    fixed: true,
-    // Whether to show top
-    show: true,
-    // theme
-    theme: ThemeEnum.LIGHT,
-    // Whether to enable the lock screen function
-    useLockPage: true,
-    // Whether to show the full screen button
-    showFullScreen: true,
-    // Whether to show the document button
-    showDoc: true,
-    // Whether to show the notification button
-    showNotice: true,
-    // Whether to display the menu search
-    showSearch: true
-  },
-
-  // Menu configuration
-  menuSetting: {
-    // sidebar menu bg color
-    bgColor: SIDE_BAR_BG_COLOR_LIST[0],
-    //  Whether to fix the left menu
-    fixed: true,
-    // Menu collapse
-    collapsed: false,
-    // When sider hide because of the responsive layout
-    siderHidden: false,
-    // Whether to display the menu name when folding the menu
-    collapsedShowTitle: false,
-    // Whether it can be dragged
-    // Only limited to the opening of the left menu, the mouse has a drag bar on the right side of the menu
-    canDrag: false,
-    // Whether to show no dom
-    show: true,
-    // Whether to show dom
-    hidden: false,
-    // Menu width
-    menuWidth: 210,
-    // Menu mode
-    mode: MenuModeEnum.INLINE,
-    // Menu type
-    type: MenuTypeEnum.SIDEBAR,
-    // Menu theme
-    theme: ThemeEnum.DARK,
-    // Split menu
-    split: false,
-    // Top menu layout
-    topMenuAlign: 'center',
-    // Fold trigger position
-    trigger: TriggerEnum.HEADER,
-    // Turn on accordion mode, only show a menu
-    accordion: true,
-    // Switch page to close menu
-    closeMixSidebarOnChange: false,
-    // Module opening method ‘click’ |'hover'
-    mixSideTrigger: MixSidebarTriggerEnum.CLICK,
-    // Fixed expanded menu
-    mixSideFixed: false
-  },
 
   // Multi-label
   multiTabsSetting: {

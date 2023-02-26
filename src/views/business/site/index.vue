@@ -244,21 +244,21 @@
   $welcome-height: 200px;
   $total-height: 112px;
 
-  $page-height: calc(100vh - $layout-header-height - $layout-tab-height);
-  $page-width: calc(100vw - $layout-sidebar-nav-width - $layout-sidebar-menu-width);
+  $page-height: calc(100vh - 60px);
+  $page-width: calc(100vw - 227px);
 
-  $height1: calc($layout-header-height + $layout-tab-height); // 页头高度
-  $height2: calc(($page-wrapper-padding + $column-container-padding) * 2); //容器高度
-  $height3: calc(112px + $wrapper-margin-bottom); // 总数高度
-  $height4: calc((59px + var(--el-card-padding) + 65px) * 2); //卡片高度
+  $height1: 60px; // 页头高度
+  $height2: 60px; //容器高度
+  $height3: 60px; // 总数高度
+  $height4: 60px; //卡片高度
 
   $item-body-height: calc((100vh - ($height1 + $height2 + $height3 + $height4)) / 2);
 
   .page_wrapper {
-    min-height: $page-height;
-    min-width: $page-width;
-    padding: $page-wrapper-padding;
-    border-radius: $page-radius;
+    min-height: calc(100vh - 60px);
+    min-width: calc(100vw - 227px);
+    padding: 10px;
+    border-radius: 5px;
 
     &:deep(.el-card) {
       border-radius: $page-radius;

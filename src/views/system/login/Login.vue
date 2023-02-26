@@ -325,6 +325,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-position: 0 0;
+    background-size: 100% 100%;
     .main-container {
       display: flex;
       flex-direction: column;
@@ -462,7 +464,7 @@
         }
 
         .protocol {
-          margin-top: 30px;
+          margin-top: 10px;
           a {
             color: #408cff;
           }
@@ -471,8 +473,11 @@
     }
     .copyright-container {
       color: #fff;
-      bottom: 40px;
+      bottom: 10px;
       position: absolute;
+      font-family: Arial;
+      font-size: 12px;
+      letter-spacing: 1px;
     }
   }
   .form_wrapper {

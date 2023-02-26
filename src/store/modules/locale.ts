@@ -7,7 +7,8 @@ export interface LocalStateType {
   locale: Locale;
 }
 
-const localeState = defineStore('locale-state', {
+const localeState = defineStore({
+  id: 'app-locale',
   state(): LocalStateType {
     return {
       locale: Locale.ZH_CN
@@ -18,8 +19,7 @@ const localeState = defineStore('locale-state', {
     setLocaleInfo(locale: Locale) {
       this.locale = locale;
     }
-  },
-  persist: true
+  }
 });
 export function localeStateStoreHook() {
   return localeState(store);

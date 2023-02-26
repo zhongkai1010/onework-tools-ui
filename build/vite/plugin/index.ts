@@ -11,6 +11,7 @@ import Icons from 'unplugin-icons/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import eslint from 'vite-plugin-eslint';
 import topLevelAwait from 'vite-plugin-top-level-await';
+import { configHtmlPlugin } from './html';
 
 import { configMockPlugin } from './mock';
 import { configVisualizerConfig } from './visualizer';
@@ -75,7 +76,8 @@ export function createVitePlugins(viteEnv: ViteEnv, isBuild: boolean): any[] {
       promiseImportName: (i) => `__tla_${i}`
     })
   ];
-
+  // vite-plugin-html
+  vitePlugins.push(configHtmlPlugin(viteEnv, isBuild));
   // vite-plugin-mock
   VITE_USE_MOCK && vitePlugins.push(configMockPlugin(isBuild));
   // rollup-plugin-visualizer

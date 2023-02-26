@@ -1,42 +1,49 @@
 <template>
   <div class="sider-container">
-    <el-menu default-active="2" class="el-menu-vertical-demo">
-      <el-sub-menu index="1">
-        <template #title>
-          <span>Navigator One</span>
-        </template>
-        <el-menu-item-group title="Group One">
-          <el-menu-item index="1-1">
-            <el-icon><Loading /></el-icon>
-            item one</el-menu-item
-          >
-          <el-menu-item index="1-2">item two</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group Two">
-          <el-menu-item index="1-3">item three</el-menu-item>
-        </el-menu-item-group>
-        <el-sub-menu index="1-4">
-          <template #title>item four</template>
-          <el-menu-item index="1-4-1">item one</el-menu-item>
+    <el-menu router>
+      <template v-for="menu in props.menus" :key="menu.name">
+        <el-sub-menu v-if="menu.meta" :index="menu.name">
+          <template #title>
+            <Icon :icon="menu.icon" v-if="menu.icon" />
+            <span>{{ t(menu.meta?.title as string) }}</span>
+          </template>
         </el-sub-menu>
-      </el-sub-menu>
-      <el-menu-item index="2">
-        <span>Navigator Two</span>
-      </el-menu-item>
-      <el-menu-item index="3" disabled>
-        <span>Navigator Three</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <span>Navigator Four</span>
-      </el-menu-item>
+      </template>
     </el-menu>
   </div>
 </template>
 
 <script setup lang="ts">
-  import { Loading } from '@element-plus/icons-vue';
+  import { Icon } from '@iconify/vue';
+  import { useI18n } from '/@/hooks/web/useI18n';
+  import { Menu } from '/@/router/types';
+  const { t } = useI18n();
+
+  interface Props {
+    menus: Menu[];
+  }
+
+  const props = defineProps<Props>();
+  console.log(props);
 </script>
 <style lang="scss" scoped>
   .sider-container {
+    box-shadow: 1px 0 4px #00152914;
+    svg {
+      font-size: 20px;
+      margin-right: 5px;
+    }
+
+    .el-menu-item {
+      &.is-active {
+        background-color: #408cff;
+        color: #fff;
+      }
+    }
+
+    .el-menu {
+      height: 100%;
+      border: 0;
+    }
   }
 </style>

@@ -1,24 +1,16 @@
-import type {
-  ProjectConfig,
-  HeaderSetting,
-  MenuSetting,
-  TransitionSetting,
-  MultiTabsSetting
-} from '/#/config';
+import type { ProjectConfig, TransitionSetting, MultiTabsSetting } from '/#/config';
 import type { BeforeMiniState } from '/#/store';
 
 import { defineStore } from 'pinia';
 import { store } from '/@/store';
 
-import { ThemeEnum } from '/@/enums/appEnum';
-import { APP_DARK_MODE_KEY_, PROJ_CFG_KEY } from '/@/enums/cacheEnum';
+import { PROJ_CFG_KEY } from '/@/enums/cacheEnum';
 import { Persistent } from '/@/utils/cache/persistent';
-import { darkMode } from '/@/settings/designSetting';
+
 import { resetRouter } from '/@/router';
 import { deepMerge } from '/@/utils';
 
 interface AppState {
-  darkMode?: ThemeEnum;
   // Page loading status
   pageLoading: boolean;
   // project config
@@ -30,7 +22,6 @@ let timeId: TimeoutHandle;
 export const useAppStore = defineStore({
   id: 'app',
   state: (): AppState => ({
-    darkMode: undefined,
     pageLoading: false,
     projectConfig: Persistent.getLocal(PROJ_CFG_KEY),
     beforeMiniInfo: {}
@@ -39,9 +30,6 @@ export const useAppStore = defineStore({
     getPageLoading(): boolean {
       return this.pageLoading;
     },
-    getDarkMode(): 'light' | 'dark' | string {
-      return this.darkMode || localStorage.getItem(APP_DARK_MODE_KEY_) || darkMode;
-    },
 
     getBeforeMiniInfo(): BeforeMiniState {
       return this.beforeMiniInfo;
@@ -49,13 +37,6 @@ export const useAppStore = defineStore({
 
     getProjectConfig(): ProjectConfig {
       return this.projectConfig || ({} as ProjectConfig);
-    },
-
-    getHeaderSetting(): HeaderSetting {
-      return this.getProjectConfig.headerSetting;
-    },
-    getMenuSetting(): MenuSetting {
-      return this.getProjectConfig.menuSetting;
     },
     getTransitionSetting(): TransitionSetting {
       return this.getProjectConfig.transitionSetting;
@@ -67,11 +48,6 @@ export const useAppStore = defineStore({
   actions: {
     setPageLoading(loading: boolean): void {
       this.pageLoading = loading;
-    },
-
-    setDarkMode(mode: ThemeEnum): void {
-      this.darkMode = mode;
-      localStorage.setItem(APP_DARK_MODE_KEY_, mode);
     },
 
     setBeforeMiniInfo(state: BeforeMiniState): void {

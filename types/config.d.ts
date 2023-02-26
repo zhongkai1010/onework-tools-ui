@@ -1,38 +1,13 @@
-import { MenuTypeEnum, MenuModeEnum, TriggerEnum, MixSidebarTriggerEnum } from '/@/enums/menuEnum';
 import {
   ContentEnum,
   PermissionModeEnum,
-  ThemeEnum,
   RouterTransitionEnum,
-  SettingButtonPositionEnum,
   SessionTimeoutProcessingEnum
 } from '/@/enums/appEnum';
 
 import { CacheTypeEnum } from '/@/enums/cacheEnum';
 
 export type LocaleType = 'zh_CN' | 'en' | 'ru' | 'ja' | 'ko';
-
-export interface MenuSetting {
-  bgColor: string;
-  fixed: boolean;
-  collapsed: boolean;
-  siderHidden: boolean;
-  canDrag: boolean;
-  show: boolean;
-  hidden: boolean;
-  split: boolean;
-  menuWidth: number;
-  mode: MenuModeEnum;
-  type: MenuTypeEnum;
-  theme: ThemeEnum;
-  topMenuAlign: 'start' | 'center' | 'end';
-  trigger: TriggerEnum;
-  accordion: boolean;
-  closeMixSidebarOnChange: boolean;
-  collapsedShowTitle: boolean;
-  mixSideTrigger: MixSidebarTriggerEnum;
-  mixSideFixed: boolean;
-}
 
 export interface MultiTabsSetting {
   cache: boolean;
@@ -41,22 +16,6 @@ export interface MultiTabsSetting {
   canDrag: boolean;
   showRedo: boolean;
   showFold: boolean;
-}
-
-export interface HeaderSetting {
-  bgColor: string;
-  fixed: boolean;
-  show: boolean;
-  theme: ThemeEnum;
-  // Turn on full screen
-  showFullScreen: boolean;
-  // Whether to show the lock screen
-  useLockPage: boolean;
-  // Show document button
-  showDoc: boolean;
-  // Show message center button
-  showNotice: boolean;
-  showSearch: boolean;
 }
 
 export interface LocaleSetting {
@@ -83,22 +42,13 @@ export interface TransitionSetting {
 export interface ProjectConfig {
   // Storage location of permission related information
   permissionCacheType: CacheTypeEnum;
-  // Whether to show the configuration button
-  showSettingButton: boolean;
-  // Whether to show the theme switch button
-  showDarkModeToggle: boolean;
-  // Configure where the button is displayed
-  settingButtonPosition: SettingButtonPositionEnum;
+
   // Permission mode
   permissionMode: PermissionModeEnum;
   // Session timeout processing
   sessionTimeoutProcessing: SessionTimeoutProcessingEnum;
   // Website gray mode, open for possible mourning dates
   grayMode: boolean;
-  // Whether to turn on the color weak mode
-  colorWeak: boolean;
-  // Theme color
-  themeColor: string;
 
   // The main interface is displayed in full screen, the menu is not displayed, and the top
   fullContent: boolean;
@@ -108,10 +58,7 @@ export interface ProjectConfig {
   showLogo: boolean;
   // Whether to show the global footer
   showFooter: boolean;
-  // menuType: MenuTypeEnum;
-  headerSetting: HeaderSetting;
-  // menuSetting
-  menuSetting: MenuSetting;
+
   // Multi-tab settings
   multiTabsSetting: MultiTabsSetting;
   // Animation configuration
