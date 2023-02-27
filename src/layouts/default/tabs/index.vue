@@ -9,7 +9,7 @@
         <template #label>
           <div class="tab" @contextmenu="(event:MouseEvent)=>onClickRightTab(event,item)">
             <span>{{ t(item.meta?.title) }}</span>
-            <Icon icon="ep:close" />
+            <Icon icon="ep:close" v-if="!item.meta.affix" />
           </div>
         </template>
       </el-tab-pane>
@@ -47,16 +47,15 @@
   </div>
 </template>
 <script lang="ts" setup>
-  import type { TabsPaneContext } from 'element-plus';
   import { Icon } from '@iconify/vue';
-  import { RouteLocationNormalized, RouteMeta } from 'vue-router';
+  import type { TabsPaneContext } from 'element-plus';
+  import { RouteLocationNormalized, RouteMeta, useRouter } from 'vue-router';
   import { useI18n } from '/@/hooks/web/useI18n';
+  import { useGo } from '/@/hooks/web/usePage';
   import { listenerRouteChange } from '/@/logics/mitt/routeChange';
   import { REDIRECT_NAME } from '/@/router/constant';
   import { useMultipleTabStore } from '/@/store/modules/multipleTab';
   import { useUserStore } from '/@/store/modules/user';
-  import { useRouter } from 'vue-router';
-  import { useGo } from '/@/hooks/web/usePage';
 
   const { t } = useI18n();
   const tabStore = useMultipleTabStore();
@@ -83,6 +82,7 @@
   });
 
   listenerRouteChange((route) => {
+    console.log('tab-listenerRouteChange');
     const { name } = route;
     if (name === REDIRECT_NAME || !route || !userStore.getToken) {
       return;
@@ -150,14 +150,20 @@
         break;
       case 'other':
         await tabStore.closeOtherTabs(tabsMenu.value.tab as RouteLocationNormalized, router);
+        go(tabsMenu.value.tab?.path, false);
+        break;
       case 'right':
         await tabStore.closeRightTabs(tabsMenu.value.tab as RouteLocationNormalized, router);
+        go(tabsMenu.value.tab?.path, false);
+        break;
       case 'left':
         await tabStore.closeLeftTabs(tabsMenu.value.tab as RouteLocationNormalized, router);
+        go(tabsMenu.value.tab?.path, false);
+        break;
       default:
         break;
     }
-    go(tabsMenu.value.tab?.path, false);
+
     tabsMenu.value = {
       x: 0,
       y: 0,

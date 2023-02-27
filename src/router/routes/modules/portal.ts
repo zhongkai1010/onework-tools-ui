@@ -14,7 +14,11 @@ export default [
         name: 'portal_index',
         path: 'index',
         component: () => import('/@/views/business/portal/index.vue'),
-        meta: { title: t('router.portal.index'), icon: 'ant-design:ant-design-outlined' }
+        meta: {
+          title: t('router.portal.index'),
+          icon: 'ant-design:ant-design-outlined',
+          affix: true
+        }
       },
       {
         name: 'portal_about',

@@ -41,7 +41,10 @@ const setting: ProjectConfig = {
   // Whether to show footer
   // 是否显示页脚
   showFooter: false,
-
+  // menuSetting
+  menuSetting: {
+    collapsed: false
+  },
   // Multi-label
   // 多标签
   multiTabsSetting: {
@@ -79,7 +82,7 @@ const setting: ProjectConfig = {
     // 是否开启页面切换加载
     // Only open when enable=true
     // 仅当enable=true时开启
-    openPageLoading: false,
+    openPageLoading: true,
 
     // Whether to open the top progress bar
     // 是否开启顶部进度条

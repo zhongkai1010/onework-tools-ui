@@ -8,13 +8,17 @@ export default [
     path: '/manage',
     component: LAYOUT,
     redirect: '/manage/index',
-    meta: { title: t('router.manage.manage'), orderNo: 1 },
+    meta: { title: t('router.manage.manage'), orderNo: 1, icon: 'ant-design:ant-design-outlined' },
     children: [
       {
         name: 'manage_index',
         path: 'index',
         component: () => import('/@/views/business/manage/index.vue'),
-        meta: { title: t('router.manage.index'), icon: 'ant-design:ant-design-outlined' }
+        meta: {
+          title: t('router.manage.index'),
+          icon: 'ant-design:ant-design-outlined',
+          affix: true
+        }
       },
       {
         name: 'manage_site_index',

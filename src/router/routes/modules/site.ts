@@ -14,7 +14,7 @@ export default [
         name: 'site_index',
         path: 'index',
         component: () => import('/@/views/business/site/index.vue'),
-        meta: { title: t('router.site.index'), icon: 'ant-design:ant-design-outlined' }
+        meta: { title: t('router.site.index'), icon: 'ant-design:ant-design-outlined', affix: true }
       },
       {
         name: 'site_crc',

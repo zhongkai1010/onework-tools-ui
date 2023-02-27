@@ -17,12 +17,6 @@
             <el-option label="Zone two" value="beijing" />
           </el-select>
         </el-form-item>
-        <el-form-item label="审核类型">
-          <el-select v-model="formInline.region" placeholder="请选择审核类型">
-            <el-option label="Zone one" value="shanghai" />
-            <el-option label="Zone two" value="beijing" />
-          </el-select>
-        </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="onSubmit">查询</el-button>
           <el-button @click="onSubmit">重置</el-button>
@@ -36,10 +30,6 @@
         <el-table-column prop="column3" label="角色类型" width="120" />
         <el-table-column prop="column4" label="SMO" />
         <el-table-column prop="column5" label="申请事件" width="120" />
-        <el-table-column prop="column5" label="审核状态" width="120" />
-        <el-table-column prop="column5" label="审核人" width="120" />
-        <el-table-column prop="column5" label="审核时间" width="120" />
-        <el-table-column prop="column5" label="备注" width="120" />
         <el-table-column prop="column6" label="操作" fixed="right" />
       </el-table>
     </el-col>

@@ -1,3 +1,3 @@
-import pageWrapper from './src/PageWrapper.vue';
+import PageWrapper from './src/PageWrapper.vue';
 
-export const PageWrapper = pageWrapper;
+export { PageWrapper };

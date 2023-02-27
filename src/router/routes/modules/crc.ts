@@ -8,13 +8,13 @@ export default [
     path: '/crc',
     component: LAYOUT,
     redirect: '/crc/index',
-    meta: { title: t('router.crc.crc'), orderNo: 1 },
+    meta: { title: t('router.crc.crc'), orderNo: 1, icon: 'ant-design:ant-design-outlined' },
     children: [
       {
         name: 'crc_index',
         path: 'index',
         component: () => import('/@/views/business/crc/index.vue'),
-        meta: { title: t('router.crc.index'), icon: 'ant-design:ant-design-outlined' }
+        meta: { title: t('router.crc.index'), icon: 'ant-design:ant-design-outlined', affix: true }
       },
       {
         name: 'crc_work',

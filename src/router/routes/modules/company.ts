@@ -8,13 +8,17 @@ export default [
     path: '/company',
     component: LAYOUT,
     redirect: '/company/index',
-    meta: { title: t('router.company.company'), orderNo: 1 },
+    meta: { title: t('router.company.company'), icon: 'ant-design:ant-design-outlined' },
     children: [
       {
         name: 'company_index',
         path: 'index',
         component: () => import('/@/views/business/company/index.vue'),
-        meta: { title: t('router.company.index'), icon: 'ant-design:ant-design-outlined' }
+        meta: {
+          title: t('router.company.index'),
+          icon: 'ant-design:ant-design-outlined',
+          affix: true
+        }
       },
       {
         name: 'company_crc',

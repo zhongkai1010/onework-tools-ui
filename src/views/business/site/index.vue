@@ -1,5 +1,5 @@
 <template>
-  <div class="page_wrapper">
+  <PageWrapper class="page-container" :interval="false">
     <el-row :span="24">
       <el-col :span="14" class="column-container">
         <el-row :span="24">
@@ -60,7 +60,6 @@
               <div class="title">
                 <img :src="totalIconImg" />
                 <span>CRC人员</span>
-                <span>></span>
               </div>
               <span class="text"> 360 </span>
             </a>
@@ -68,7 +67,6 @@
               <div class="title">
                 <img :src="totalIconImg" />
                 <span>合作SMO公司</span>
-                <span>></span>
               </div>
               <span class="text"> 360 </span>
             </a>
@@ -77,7 +75,6 @@
               <div class="title">
                 <img :src="totalIconImg" />
                 <span>项目总数</span>
-                <span>></span>
               </div>
               <span class="text"> 360 </span>
             </a>
@@ -225,7 +222,7 @@
         </el-row>
       </el-col>
     </el-row>
-  </div>
+  </PageWrapper>
 </template>
 
 <script setup lang="ts">
@@ -233,6 +230,8 @@
   import welcomeBgImg from '/@/assets/index-welcome-bg.png';
   import icon1Img from '/@/assets/icon1.png';
   import totalIconImg from '/@/assets/index-total-icon.png';
+
+  import { PageWrapper } from '/@/components/Page/index';
 </script>
 
 <style lang="scss" scoped>
@@ -244,21 +243,15 @@
   $welcome-height: 200px;
   $total-height: 112px;
 
-  $page-height: calc(100vh - 60px);
-  $page-width: calc(100vw - 227px);
-
-  $height1: 60px; // 页头高度
-  $height2: 60px; //容器高度
-  $height3: 60px; // 总数高度
-  $height4: 60px; //卡片高度
-
-  $item-body-height: calc((100vh - ($height1 + $height2 + $height3 + $height4)) / 2);
-
-  .page_wrapper {
-    min-height: calc(100vh - 60px);
-    min-width: calc(100vw - 227px);
-    padding: 10px;
-    border-radius: 5px;
+  $nav-wrapper-height: calc($layout-page-min-height - $welcome-height - $wrapper-margin-bottom * 2);
+  $tabs-content-height: calc(
+    (
+        $layout-page-min-height - $total-height - $page-wrapper-padding * 3 - 78px -
+          var(--el-card-padding) * 10
+      ) / 2
+  );
+  .page-container {
+    padding: 0px;
 
     &:deep(.el-card) {
       border-radius: $page-radius;
@@ -302,10 +295,7 @@
       }
 
       .nav-wrapper {
-        min-height: calc(
-          $page-height - $page-wrapper-padding * 2 - $column-container-padding * 2 - $welcome-height -
-            $wrapper-margin-bottom
-        );
+        min-height: $nav-wrapper-height;
 
         .nav-container {
           display: grid;
@@ -389,6 +379,10 @@
           border-radius: 0px;
         }
 
+        &:deep(.is-active) {
+          color: #fff !important;
+        }
+
         & :deep(.el-tabs__item) {
           height: 30px;
           line-height: 30px;
@@ -400,7 +394,7 @@
         }
 
         & :deep(.el-tabs__content) {
-          height: $item-body-height;
+          height: $tabs-content-height;
           overflow: auto;
           @include scrollBar;
         }

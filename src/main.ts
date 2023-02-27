@@ -18,6 +18,8 @@ import './style/reset.scss';
 import 'element-plus/dist/index.css';
 // tailwindcss
 import './style/tailwind.css';
+// nprogress
+import 'nprogress/nprogress.css';
 
 async function bootstrap() {
   const app = createApp(App);

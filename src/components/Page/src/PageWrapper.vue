@@ -1,6 +1,6 @@
 <template>
-  <div class="body_wrapper">
-    <div class="body_container" v-bind="attrs">
+  <div class="body-wrapper">
+    <div class="body-container" :class="{ 'is-interval': interval }" v-bind="attrs">
       <slot></slot>
     </div>
   </div>
@@ -9,17 +9,26 @@
 <script lang="ts" setup>
   import { useAttrs } from 'vue';
 
+  interface Props {
+    interval?: boolean;
+  }
   const attrs = useAttrs();
+  const props = defineProps<Props>();
+  const interval = computed(() => props.interval);
 </script>
 
 <style lang="scss" scoped>
-  .body_wrapper {
+  .body-wrapper {
     margin: $layout-body-margin;
-    min-height: $layout-body-min-height;
-    .body_container {
+    min-height: $layout-page-min-height;
+    .body-container {
       background-color: #fff;
       border-radius: 5px;
-      min-height: $layout-body-min-height;
+      min-height: $layout-page-min-height;
+    }
+
+    .is-interval {
+      padding: $page-wrapper-padding;
     }
   }
 </style>

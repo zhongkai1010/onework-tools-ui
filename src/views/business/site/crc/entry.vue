@@ -1,5 +1,5 @@
 <template>
-  <PageWrapper class="page-container">
+  <PageWrapper class="page-container" interval>
     <el-tabs :modelValue="pageConfig.defalutTab" type="card">
       <el-tab-pane v-for="tab in tabs" :label="tab.text" :name="tab.name" :key="tab.name">
         <component :is="tab.component" />
@@ -9,8 +9,8 @@
 </template>
 
 <script setup lang="ts">
-  import ReviewedTab from './components/job/ReviewedTab.vue';
-  import AuditedTab from './components/job/AuditedTab.vue';
+  import ReviewedTab from './components/entry/ReviewedTab.vue';
+  import AuditedTab from './components/entry/AuditedTab.vue';
   import { PageWrapper } from '/@/components/Page';
   const pageConfig = {
     defalutTab: 'reviewed'
@@ -24,7 +24,7 @@
 <style scoped lang="scss">
   .page-container {
     &:deep(.el-tabs__nav) {
-      border-radius: 0px;
+      border-radius: 5px;
     }
 
     & :deep(.el-tabs__item) {

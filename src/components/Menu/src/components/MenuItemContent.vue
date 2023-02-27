@@ -1,5 +1,7 @@
 <template>
-  <Icon :icon="icon" />
+  <el-icon>
+    <Icon :icon="icon" />
+  </el-icon>
   <span>{{ text }}</span>
 </template>
 

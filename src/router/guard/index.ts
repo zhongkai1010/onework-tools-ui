@@ -146,7 +146,7 @@ export function createProgressGuard(router: Router) {
   });
 
   router.afterEach(async () => {
-    unref(getOpenNProgress) && nProgress.done();
+    // unref(getOpenNProgress) && nProgress.done();
     return true;
   });
 }

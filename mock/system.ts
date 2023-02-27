@@ -10,7 +10,7 @@ export function createFakeUserList() {
       desc: 'manager',
       password: '123456',
       token: 'fakeToken1',
-      homePath: '/crc/index',
+      homePath: '/site/index',
       roles: [
         {
           roleName: 'Super Admin',
@@ -26,7 +26,7 @@ export function createFakeUserList() {
       avatar: '',
       desc: 'tester',
       token: 'fakeToken2',
-      homePath: '/crc/index',
+      homePath: '/site/index',
       roles: [
         {
           roleName: 'Tester',

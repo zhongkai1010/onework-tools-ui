@@ -1,13 +1,13 @@
-$z-layers: (
-  'level_one': 1,
+$z-layers: ('level_one': 1,
   'level_two': 10,
   'level_three': 100,
   'level_four': 1000,
-  'level_zero': -1
-);
+  'level_zero': -1);
 
 $layout-hearder-height: 60px;
 $layout-tabs-height: 50px;
 $layout-sider-width: 277px;
 $layout-body-margin: 10px;
 $layout-body-min-height: calc(100vh - $layout-hearder-height - $layout-tabs-height);
+$layout-page-min-height:calc($layout-body-min-height - $layout-body-margin * 2);
+$page-wrapper-padding:20px

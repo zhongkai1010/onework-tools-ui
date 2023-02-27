@@ -1,6 +1,6 @@
 <template>
   <div class="sider-container">
-    <BasicMenu :items="props.menus" router :defaultActive="defaultActive" unique-opened />
+    <BasicMenu :items="props.menus" :prop="{ router: true, defaultActive, uniqueOpened: true }" />
   </div>
 </template>
 
@@ -20,21 +20,22 @@
   const homePath = userStore.getUserInfo.homePath ?? PageEnum.BASE_HOME;
 
   const props = defineProps<Props>();
+
   const defaultActive = ref(homePath);
 
   listenerRouteChange((route) => {
     if (route.name === REDIRECT_NAME) return;
     defaultActive.value = route.path;
-    console.log('listenerRouteChange', route);
+    console.log('sider-listenerRouteChange');
   });
 </script>
 <style lang="scss" scoped>
   .sider-container {
     box-shadow: 1px 0 4px #00152914;
-    &:deep(svg) {
-      font-size: 14px;
-      margin-right: 5px;
-    }
+    // &:deep(svg) {
+    //   font-size: 14px;
+    //   margin-right: 5px;
+    // }
 
     &:deep(.el-menu-item) {
       &.is-active {

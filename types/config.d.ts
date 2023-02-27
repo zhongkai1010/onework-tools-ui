@@ -9,6 +9,10 @@ import { CacheTypeEnum } from '/@/enums/cacheEnum';
 
 export type LocaleType = 'zh_CN' | 'en' | 'ru' | 'ja' | 'ko';
 
+export interface MenuSetting {
+  collapsed: boolean;
+}
+
 export interface MultiTabsSetting {
   cache: boolean;
   show: boolean;
@@ -58,7 +62,8 @@ export interface ProjectConfig {
   showLogo: boolean;
   // Whether to show the global footer
   showFooter: boolean;
-
+  // menuSetting
+  menuSetting: MenuSetting;
   // Multi-tab settings
   multiTabsSetting: MultiTabsSetting;
   // Animation configuration
