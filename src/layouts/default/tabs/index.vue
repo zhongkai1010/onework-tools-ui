@@ -1,22 +1,49 @@
 <template>
   <div class="tabs-container">
-    <el-tabs v-model="activeKeyRef" type="card" @tab-click="handleClick">
+    <el-tabs v-model="activeKeyRef" type="card" @tab-click="onClickTab">
       <el-tab-pane
         :name="item.query ? item.fullPath : item.path"
         v-for="item in getTabsState"
         :key="item.name"
       >
         <template #label>
-          <div class="tab" @contextmenu="onTabContextMenu">
+          <div class="tab" @contextmenu="(event:MouseEvent)=>onClickRightTab(event,item)">
             <span>{{ t(item.meta?.title) }}</span>
-            <Icon
-              icon="ep:close"
-              @click.stop:="() => handleEdit(item.query ? item.fullPath : item.path)"
-            />
+            <Icon icon="ep:close" />
           </div>
         </template>
       </el-tab-pane>
     </el-tabs>
+
+    <ul
+      class="el-dropdown-menu tabs-menu"
+      :style="{
+        display: tabsMenu.show ? 'block' : 'none',
+        top: `${tabsMenu.y + 5}px`,
+        left: `${tabsMenu.x}px`
+      }"
+    >
+      <li class="el-dropdown-menu__item" @click="onClickTabMenu('refresh')">
+        <Icon icon="ant-design:sync-outlined" />
+        <span>刷新</span>
+      </li>
+      <li class="el-dropdown-menu__item" @click="onClickTabMenu('other')">
+        <Icon icon="ant-design:close-outlined" />
+        <span>关闭其它</span>
+      </li>
+      <li class="el-dropdown-menu__item" @click="onClickTabMenu('right')">
+        <Icon icon="ant-design:arrow-right-outlined" />
+        <span>关闭右侧</span>
+      </li>
+      <li class="el-dropdown-menu__item" @click="onClickTabMenu('left')">
+        <Icon icon="ant-design:arrow-left-outlined" />
+        <span>关闭左侧</span>
+      </li>
+      <li class="el-dropdown-menu__item" @click="onClickTabMenu('all')">
+        <Icon icon="ant-design:close-outlined" />
+        <span>关闭全部</span>
+      </li>
+    </ul>
   </div>
 </template>
 <script lang="ts" setup>
@@ -41,7 +68,19 @@
     return tabStore.getTabList.filter((item) => !item.meta?.hideTab);
   });
 
+  interface TabMenuState {
+    x: number;
+    y: number;
+    show: boolean;
+    tab?: RouteLocationNormalized;
+  }
+
   const unClose = computed(() => unref(getTabsState).length === 1);
+  const tabsMenu = shallowRef<TabMenuState>({
+    x: 0,
+    y: 0,
+    show: false
+  });
 
   listenerRouteChange((route) => {
     const { name } = route;
@@ -64,7 +103,6 @@
     } else {
       tabStore.addTab(unref(route));
     }
-    console.log('currentActiveMenu', currentActiveMenu);
   });
 
   /**
@@ -72,31 +110,59 @@
    * @param tab
    * @param event
    */
-  const handleClick = (tab: TabsPaneContext, event: Event) => {
-    console.log(tab, event);
-    activeKeyRef.value = tab.props.name as string;
-    go(activeKeyRef.value, false);
+  const onClickTab = async (tab: TabsPaneContext, event: Event) => {
+    const tag = (event.target as Element).tagName;
+    if (tag === 'svg') {
+      if (unref(unClose)) {
+        return;
+      }
+      await tabStore.closeTabByKey(tab.props.name as string, router);
+    } else {
+      activeKeyRef.value = tab.props.name as string;
+      go(activeKeyRef.value, false);
+    }
   };
 
   /**
    * 标签右键
    */
-  const onTabContextMenu = (e: MouseEvent) => {
+  const onClickRightTab = (e: MouseEvent, tab: RouteLocationNormalized) => {
     e.preventDefault();
-    console.log('onTabContextMenu', e);
+    tabsMenu.value = {
+      x: e.clientX,
+      y: e.clientY,
+      show: true,
+      tab
+    };
   };
 
-  // Close the current tab
-  // 关闭当前选项卡
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-  const handleEdit = async (targetKey: string) => {
-    // Added operation to hide, currently only use delete operation
-    // 新增隐藏操作，目前仅使用删除操作
-    if (unref(unClose)) {
-      return;
+  /**
+   * 点击右键菜单面板
+   * @param command
+   */
+  const onClickTabMenu = async (command: string) => {
+    switch (command) {
+      case 'all':
+        await tabStore.closeAllTab(router);
+        break;
+      case 'refresh':
+        await tabStore.refreshPage(router);
+        break;
+      case 'other':
+        await tabStore.closeOtherTabs(tabsMenu.value.tab as RouteLocationNormalized, router);
+      case 'right':
+        await tabStore.closeRightTabs(tabsMenu.value.tab as RouteLocationNormalized, router);
+      case 'left':
+        await tabStore.closeLeftTabs(tabsMenu.value.tab as RouteLocationNormalized, router);
+      default:
+        break;
     }
-
-    await tabStore.closeTabByKey(targetKey, router);
+    go(tabsMenu.value.tab?.path, false);
+    tabsMenu.value = {
+      x: 0,
+      y: 0,
+      show: false
+    };
   };
 </script>
 <style lang="scss" scoped>
@@ -105,6 +171,7 @@
       display: flex;
       align-items: center;
       width: 100%;
+      padding: 0 20px;
     }
 
     &:deep(.el-tabs) {
@@ -117,7 +184,7 @@
     &:deep(.el-tabs__item) {
       border: 0px;
       margin-right: 10px;
-
+      padding: 0px !important;
       display: inline-flex;
       align-items: center;
       border-radius: 1px 1px 0px 0px;
@@ -144,6 +211,20 @@
 
     &:deep(.el-tabs__nav) {
       border: 0px;
+    }
+
+    .tabs-menu {
+      position: fixed;
+      width: 120px;
+      border: 1px solid rgb(0 21 41 / 8%);
+      z-index: 9999;
+      &:deep(span) {
+        padding-left: 5px;
+      }
+      .el-dropdown-menu__item:hover {
+        background-color: var(--el-color-primary);
+        color: var(--el-color-white);
+      }
     }
   }
 </style>

@@ -15,12 +15,11 @@
 <style lang="scss" scoped>
   .body_wrapper {
     margin: $layout-body-margin;
-    min-height: $main-no-margin-height;
+    min-height: $layout-body-min-height;
     .body_container {
-      padding: $layout-body-padding;
       background-color: #fff;
       border-radius: 5px;
-      min-height: $main-no-margin-height;
+      min-height: $layout-body-min-height;
     }
   }
 </style>

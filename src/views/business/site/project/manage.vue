@@ -158,10 +158,10 @@
 <style scoped lang="scss">
   .body_wrapper {
     margin: $layout-body-margin;
-    min-height: $main-no-margin-height;
+    min-height: $layout-body-min-height;
 
     .card_wrapper {
-      min-height: calc($main-no-margin-height);
+      min-height: calc($layout-body-min-height);
 
       .nav_wrapper {
         li {

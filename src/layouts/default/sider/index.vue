@@ -1,19 +1,32 @@
 <template>
   <div class="sider-container">
-    <BasicMenu :items="props.menus" router />
+    <BasicMenu :items="props.menus" router :defaultActive="defaultActive" unique-opened />
   </div>
 </template>
 
 <script setup lang="ts">
   import { BasicMenu } from '/@/components/Menu';
+  import { PageEnum } from '/@/enums/pageEnum';
+  import { listenerRouteChange } from '/@/logics/mitt/routeChange';
+  import { REDIRECT_NAME } from '/@/router/constant';
   import { Menu } from '/@/router/types';
+  import { useUserStore } from '/@/store/modules/user';
 
   interface Props {
     menus: Menu[];
   }
+  const userStore = useUserStore();
+
+  const homePath = userStore.getUserInfo.homePath ?? PageEnum.BASE_HOME;
 
   const props = defineProps<Props>();
-  console.log(props);
+  const defaultActive = ref(homePath);
+
+  listenerRouteChange((route) => {
+    if (route.name === REDIRECT_NAME) return;
+    defaultActive.value = route.path;
+    console.log('listenerRouteChange', route);
+  });
 </script>
 <style lang="scss" scoped>
   .sider-container {

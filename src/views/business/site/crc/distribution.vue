@@ -147,12 +147,12 @@
 <style scoped lang="scss">
   .body_wrapper {
     margin: $layout-body-margin;
-    min-height: $main-no-margin-height;
+    min-height: $layout-body-min-height;
     .body_container {
       padding: 20px;
       background-color: #fff;
       border-radius: 5px;
-      min-height: $main-no-margin-height;
+      min-height: $layout-body-min-height;
     }
     .column_container {
       margin-bottom: 10px;
