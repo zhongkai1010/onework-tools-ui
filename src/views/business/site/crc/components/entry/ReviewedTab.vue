@@ -25,12 +25,12 @@
     </el-col>
     <el-col :span="24" class="table">
       <el-table :data="tableData" table-layout="auto" border>
-        <el-table-column prop="column1" label="序号" width="120" />
-        <el-table-column prop="column2" label="名称" width="220" />
-        <el-table-column prop="column3" label="角色类型" width="120" />
-        <el-table-column prop="column4" label="SMO" />
-        <el-table-column prop="column5" label="申请事件" width="120" />
-        <el-table-column prop="column6" label="操作" fixed="right" />
+        <el-table-column prop="column1" label="序号" width="120" align="center" />
+        <el-table-column prop="column2" label="姓名" />
+        <el-table-column prop="column3" label="角色类型" width="220" align="center" />
+        <el-table-column prop="column4" label="SMO" width="120" align="center" />
+        <el-table-column prop="column5" label="申请事件" width="120" align="center" />
+        <el-table-column prop="column6" label="操作" fixed="right" width="220" align="center" />
       </el-table>
     </el-col>
   </el-row>
@@ -38,6 +38,9 @@
 
 <script setup lang="ts">
   import { reactive } from 'vue';
+  import Api from '/@/api/business/site/crc/entry';
+
+  await Api.getList({});
 
   const formInline = reactive({
     user: '',

@@ -1,7 +1,12 @@
-import { GetListSearchParams, ReviewApplyParams, SiteApplyJoinCRCRecord } from './types';
-import { RequestResult, ResponseData, ResponsePageData } from '/@/api/types';
-
+import { Result } from '/#/axios';
+import { BasicFetchResult, BasicPageParams } from '/@/api/model/baseModel';
 import { defHttp } from '/@/utils/http/axios';
+
+export enum Api {
+  getList = '/site/crc/entry/getList',
+  getCRCWarning = '/site/crc/entry/getList',
+  reviewApply = '/site/crc/entry/reviewApply'
+}
 
 export default {
   /**
@@ -9,9 +14,9 @@ export default {
    * @param params
    * @returns
    */
-  getList: (params: Partial<GetListSearchParams>) =>
-    defHttp.get<RequestResult<ResponsePageData<SiteApplyJoinCRCRecord>>>({
-      url: '/site/crc/entry/getList',
+  getList: (params: SearchCRCParams) =>
+    defHttp.get<Result<BasicFetchResult<SiteApplyJoinCRCRecord>>>({
+      url: Api.getList,
       params
     }),
 
@@ -21,8 +26,8 @@ export default {
    * @returns
    */
   getCRCWarning: (uid: string) =>
-    defHttp.get<RequestResult<ResponseData<SiteApplyJoinCRCRecord>>>({
-      url: '/site/crc/entry/getCRCWarning',
+    defHttp.get<Result<BasicFetchResult<SiteApplyJoinCRCRecord>>>({
+      url: Api.getCRCWarning,
       params: { uid }
     }),
 
@@ -32,5 +37,77 @@ export default {
    * @returns
    */
   reviewApply: (data: ReviewApplyParams) =>
-    defHttp.post<RequestResult<any>>({ url: '/site/crc/entry/reviewApply', data })
+    defHttp.post<Result<any>>({ url: Api.reviewApply, data })
 };
+
+export interface SearchCRCParams extends BasicPageParams {
+  userName?: string;
+  smoName?: string;
+  roleType?: string;
+}
+
+export interface ReviewApplyParams {
+  /**
+   * 申请id集合
+   */
+  crcApprovalIds: string[];
+  /**
+   * 驳回原因
+   */
+  rejectReason?: string;
+  /**
+   * 审核状态，1通过 2驳回
+   */
+  status: number;
+}
+
+export interface SiteApplyJoinCRCRecord {
+  /**
+   * 申请记录id
+   */
+  crcApprovalId: string;
+  /**
+   * crc姓名
+   */
+  userName: string;
+
+  /**
+   * 角色类型，1正式CRC 2实习CRC
+   */
+  roleType: string;
+  /**
+   * 角色类型
+   */
+  roleTypeValue: string;
+
+  /**
+   * smo名称
+   */
+  smoName: string;
+
+  /**
+   * 申请时间
+   */
+  applyTime: string;
+  /**
+   * 审核状态， 0待审核 1已通过 2未通过
+   */
+  status: number;
+  /**
+   * 审核状态
+   */
+  statusValue: string;
+
+  /**
+   * 审核人
+   */
+  approveName: string;
+  /**
+   * 审核时间
+   */
+  approveTime: string;
+  /**
+   * 驳回理由
+   */
+  rejectReason: string;
+}
