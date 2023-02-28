@@ -15,7 +15,7 @@ export default {
    * @returns
    */
   getList: (params: SearchCRCParams) =>
-    defHttp.get<Result<BasicFetchResult<SiteApplyJoinCRCRecord>>>({
+    defHttp.get<BasicFetchResult<SiteApplyJoinCRCRecord>>({
       url: Api.getList,
       params
     }),

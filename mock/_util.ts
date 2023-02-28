@@ -1,4 +1,5 @@
 // Interface data format used to return a unified format
+import { Result } from '/#/axios';
 import { ResultEnum } from '/@/enums/httpEnum';
 
 export function resultSuccess<T = Recordable>(result: T, { message = 'ok' } = {}) {
@@ -7,7 +8,7 @@ export function resultSuccess<T = Recordable>(result: T, { message = 'ok' } = {}
     result,
     message,
     type: 'success'
-  };
+  } as Result<T>;
 }
 
 export function resultPageSuccess<T = any>(

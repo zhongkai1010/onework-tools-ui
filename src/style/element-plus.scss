@@ -1,5 +1,6 @@
 :root {
   --el-border-radius-base: 5px;
+
 }
 
 .el-card {
@@ -10,3 +11,7 @@
   @include scrollBar;
 }
 
+.el-table {
+  --el-table-header-bg-color: #F2F2F2;
+  --el-table-header-text-color: #rgb(48, 49, 51)
+}
