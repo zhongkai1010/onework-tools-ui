@@ -44,6 +44,7 @@ export interface SearchCRCParams extends BasicPageParams {
   userName?: string;
   smoName?: string;
   roleType?: string;
+  status?: number;
 }
 
 export interface ReviewApplyParams {
